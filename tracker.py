@@ -161,8 +161,6 @@ def run_tracker():
 
       sma_status = check_200_weekly_sma(ticker, price)
 
-      # --- CALCULS AVEC COULEURS POUR TOUS LES INDICATEURS ---
-
       # 1. Forward P/E
       fwd_pe = info.get("forwardPE")
       if isinstance(fwd_pe, (int, float)):
@@ -202,12 +200,21 @@ def run_tracker():
       else:
         peg_str = "`N/A`"
 
-      # 4. Dividend Yield
+      # 4. Dividend Yield (Calcul sécurisé direct)
+      div_rate = info.get("dividendRate")
       div_yield = info.get("dividendYield")
-      if isinstance(div_yield, (int, float)):
-        div_pct = div_yield if div_yield > 1 else div_yield * 100
-        div_pct = round(div_pct, 2)
-        div_str = f"🟢 `{div_pct}%`" if div_pct >= 3.5 else f"`{div_pct}%`"
+
+      div_pct = 0.0
+      if isinstance(div_rate, (int, float)) and price > 0:
+        div_pct = (div_rate / price) * 100
+      elif isinstance(div_yield, (int, float)):
+        div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
+
+      div_pct = round(div_pct, 2)
+      if div_pct >= 2.5:
+        div_str = f"🟢 `{div_pct}%`"
+      elif div_pct > 0:
+        div_str = f"🟡 `{div_pct}%`"
       else:
         div_str = "`0%`"
 
