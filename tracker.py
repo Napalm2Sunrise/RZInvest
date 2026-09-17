@@ -182,69 +182,65 @@ def run_tracker():
           f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
       )
 
-      # --- CALCULS AVEC INDICATEURS DE COULEURS ---
+      # --- COLORATION SYNTAXIQUE DES VALEURS (DIFF) ---
 
-      # 1. PEG Ratio
+      # 1. PEG
       peg = info.get("pegRatio")
       if isinstance(peg, (int, float)):
-        if peg < 1.0:
-          peg_str = f"🟢 `{round(peg, 2)}`"
-        elif peg > 2.0:
-          peg_str = f"🔴 `{round(peg, 2)}`"
-        else:
-          peg_str = f"🟡 `{round(peg, 2)}`"
+        val = round(peg, 2)
+        peg_str = (
+            f"+ {val}" if peg < 1.0 else (f"- {val}" if peg > 2.0 else f"  {val}")
+        )
       else:
-        peg_str = "`N/A`"
+        peg_str = "  N/A"
 
       # 2. EV/EBITDA
       ev_ebitda = info.get("enterpriseToEbitda")
       if isinstance(ev_ebitda, (int, float)):
-        if ev_ebitda < 10:
-          ev_ebitda_str = f"🟢 `{round(ev_ebitda, 2)}`"
-        elif ev_ebitda > 18:
-          ev_ebitda_str = f"🔴 `{round(ev_ebitda, 2)}`"
-        else:
-          ev_ebitda_str = f"🟡 `{round(ev_ebitda, 2)}`"
+        val = round(ev_ebitda, 2)
+        ev_ebitda_str = (
+            f"+ {val}"
+            if ev_ebitda < 10
+            else (f"- {val}" if ev_ebitda > 18 else f"  {val}")
+        )
       else:
-        ev_ebitda_str = "`N/A`"
+        ev_ebitda_str = "  N/A"
 
       # 3. Dividend Yield
       div_yield = info.get("dividendYield")
       if isinstance(div_yield, (int, float)):
-        div_pct = div_yield * 100
-        div_str = (
-            f"🟢 `{round(div_pct, 2)}%`"
-            if div_pct >= 3.5
-            else f"`{round(div_pct, 2)}%`"
-        )
+        div_pct = round(div_yield * 100, 2)
+        div_str = f"+ {div_pct}%" if div_pct >= 3.5 else f"  {div_pct}%"
       else:
-        div_str = "`0%`"
+        div_str = "  0%"
 
       # 4. ROE
       roe = info.get("returnOnEquity")
       if isinstance(roe, (int, float)):
-        roe_pct = roe * 100
-        if roe_pct >= 15:
-          roe_str = f"🟢 `{round(roe_pct, 1)}%`"
-        elif roe_pct < 8:
-          roe_str = f"🔴 `{round(roe_pct, 1)}%`"
-        else:
-          roe_str = f"🟡 `{round(roe_pct, 1)}%`"
+        roe_pct = round(roe * 100, 1)
+        roe_str = (
+            f"+ {roe_pct}%"
+            if roe_pct >= 15
+            else (f"- {roe_pct}%" if roe_pct < 8 else f"  {roe_pct}%")
+        )
       else:
-        roe_str = "`N/A`"
+        roe_str = "  N/A"
 
       next_earnings = get_next_earnings_date(ticker)
       news = get_recent_news(ticker)
 
-      sma_display = (
-          f"`{sma_status}`" if "Under" not in sma_status else f"**{sma_status}**"
-      )
-
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
+
+      # Construction du message avec bloc de code "diff" pour les couleurs
       message += f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}` ({change_pct:+.2f}%)\n"
-      message += f"├ **200 W-SMA** : {sma_display}\n"
-      message += f"├ **Valo.** : Fwd P/E `{fwd_pe_str}` | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
-      message += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
+      message += f"├ **200 W-SMA** : `{sma_status}`\n"
+      message += "```diff\n"
+      message += f"Fwd P/E   : {fwd_pe_str}\n"
+      message += f"EV/EBITDA : {ev_ebitda_str}\n"
+      message += f"PEG       : {peg_str}\n"
+      message += f"Dividende : {div_str}\n"
+      message += f"ROE       : {roe_str}\n"
+      message += "```\n"
       message += f"├ **Marges** : Brut `{gross_margin}` | Net `{profit_margin}`\n"
       message += f"├ **FCF** : `{fcf}`\n"
       message += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
