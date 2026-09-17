@@ -19,7 +19,7 @@ jobs:
           python-version: '3.10'
 
       - name: Installer les outils
-        run: pip install yfinance requests
+        run: pip install yfinance requests pillow
 
       - name: Lancer la recherche
         env:
