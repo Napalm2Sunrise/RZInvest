@@ -72,6 +72,23 @@ def send_telegram(message):
   )
 
 
+def check_200_weekly_sma(ticker, current_price):
+  """Calcule si le prix est au-dessus ou en dessous de la SMA 200 semaines."""
+  try:
+    # Récupération de l'historique hebdomadaire sur 5 ans (~260 semaines)
+    hist = ticker.history(period="5y", interval="1wk")
+    if len(hist) >= 200:
+      # Calcul de la moyenne des 200 dernières clôtures hebdomadaires
+      sma_200 = hist["Close"].tail(200).mean()
+      if current_price < sma_200:
+        return "Under 🔥"
+      else:
+        return "Above"
+  except Exception:
+    pass
+  return "N/A"
+
+
 def get_next_earnings_date(ticker):
   """Récupère la prochaine date de publication future."""
   try:
@@ -84,7 +101,6 @@ def get_next_earnings_date(ticker):
         if d_date >= now:
           return d_date.strftime("%Y-%m-%d")
 
-    # Alternative via l'horodatage des résultats
     earnings_epoch = ticker.info.get("earningsTimestamp") or ticker.info.get(
         "earningsTimestampStart"
     )
@@ -109,7 +125,6 @@ def get_recent_news(ticker, max_items=2):
         title = content.get("title") or item.get("title", "")
         title_lower = title.lower()
 
-        # Récupération du lien direct
         link = None
         if "clickThroughUrl" in content and content["clickThroughUrl"]:
           link = content["clickThroughUrl"].get("url")
@@ -118,7 +133,6 @@ def get_recent_news(ticker, max_items=2):
         elif "link" in item:
           link = item["link"]
 
-        # Filtre d'importance basé sur les mots-clés
         is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
 
         if is_important and count < max_items:
@@ -153,7 +167,10 @@ def run_tracker():
       currency = info.get("currency", "USD")
       curr_symbol = "€" if currency == "EUR" else "$"
 
-      # 3. Ratios et Marges
+      # 3. SMA 200 Hebdomadaire
+      sma_status = check_200_weekly_sma(ticker, price)
+
+      # 4. Ratios et Marges
       fwd_pe = info.get("forwardPE")
       fwd_pe_str = (
           f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
@@ -170,20 +187,21 @@ def run_tracker():
           else "N/A"
       )
 
-      # 4. Free Cash Flow
+      # 5. Free Cash Flow
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
         fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
-      # 5. Prochaine date de publication
+      # 6. Prochaine date de publication
       next_earnings = get_next_earnings_date(ticker)
 
-      # 6. Actualités filtrées
+      # 7. Actualités filtrées
       news = get_recent_news(ticker)
 
       # Construction du message Markdown
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : {price:.2f} {curr_symbol} ({change_pct:+.2f}%)\n"
+      message += f"├ 200 weekly sma : `{sma_status}`\n"
       message += f"├ Marges : Brut `{gross_margin}` | Net `{profit_margin}`\n"
       message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe_str}`\n"
       message += f"├ 📅 Prochaine publication : `{next_earnings}`\n"
