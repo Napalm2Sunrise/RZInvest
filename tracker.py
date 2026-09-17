@@ -3,13 +3,63 @@ import os
 import requests
 import yfinance as yf
 
+# Liste de vos actions à surveiller
 TICKERS = ["MC.PA", "TTE.PA", "AAPL", "MSFT", "NVDA"]
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 
+# Mots-clés pour filtrer uniquement les actualités à fort impact
+IMPORTANT_KEYWORDS = [
+    # Résultats & Finance
+    "result",
+    "earnings",
+    "revenue",
+    "profit",
+    "margin",
+    "guidance",
+    "dividend",
+    "fcf",
+    "cash flow",
+    "quarter",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "bénéfice",
+    "chiffre d'affaires",
+    "résultat",
+    "dividende",
+    # Stratégie & Événements majeurs
+    "buyout",
+    "acquisition",
+    "merger",
+    "takeover",
+    "sec",
+    "investigation",
+    "lawsuit",
+    "ceo",
+    "cfo",
+    "layoff",
+    "restructuring",
+    "rachat",
+    "procès",
+    "démission",
+    "licenciement",
+    # Mouvements de marché majeurs
+    "upgrade",
+    "downgrade",
+    "record",
+    "plunge",
+    "surge",
+    "crash",
+    "chute",
+    "envolée",
+]
+
 
 def send_telegram(message):
+  """Envoie le message formaté sur Telegram."""
   url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
   requests.post(
       url,
@@ -23,7 +73,7 @@ def send_telegram(message):
 
 
 def get_next_earnings_date(ticker):
-  """Récupère la prochaine date de publication."""
+  """Récupère la prochaine date de publication future."""
   try:
     calendar = ticker.calendar
     now = datetime.now().date()
@@ -34,8 +84,10 @@ def get_next_earnings_date(ticker):
         if d_date >= now:
           return d_date.strftime("%Y-%m-%d")
 
-    # Alternative via info si le calendrier est vide
-    earnings_epoch = ticker.info.get("earningsTimestamp") or ticker.info.get("earningsTimestampStart")
+    # Alternative via l'horodatage des résultats
+    earnings_epoch = ticker.info.get("earningsTimestamp") or ticker.info.get(
+        "earningsTimestampStart"
+    )
     if earnings_epoch:
       e_date = datetime.fromtimestamp(earnings_epoch).date()
       if e_date >= now:
@@ -46,18 +98,18 @@ def get_next_earnings_date(ticker):
 
 
 def get_recent_news(ticker, max_items=2):
-  """Récupère et formatte les dernières actualités."""
+  """Récupère uniquement les actualités à fort impact (filtre intelligent)."""
   news_text = ""
   try:
     news_list = ticker.news
     if news_list:
       count = 0
       for item in news_list:
-        # Prise en compte de la nouvelle structure d'objet yfinance
         content = item.get("content", item)
-        title = content.get("title") or item.get("title")
-        
-        # Récupération du lien (dans canonicalUrl ou link)
+        title = content.get("title") or item.get("title", "")
+        title_lower = title.lower()
+
+        # Récupération du lien direct
         link = None
         if "clickThroughUrl" in content and content["clickThroughUrl"]:
           link = content["clickThroughUrl"].get("url")
@@ -66,17 +118,21 @@ def get_recent_news(ticker, max_items=2):
         elif "link" in item:
           link = item["link"]
 
-        if title and count < max_items:
+        # Filtre d'importance basé sur les mots-clés
+        is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
+
+        if is_important and count < max_items:
           if link:
-            news_text += f"    • [{title}]({link})\n"
+            news_text += f"    • 🔥 [{title}]({link})\n"
           else:
-            news_text += f"    • {title}\n"
+            news_text += f"    • 🔥 {title}\n"
           count += 1
   except Exception:
     pass
 
   if not news_text:
-    news_text = "    • Aucune dépêche récente.\n"
+    news_text = "    • Aucune dépêche majeure aujourd'hui.\n"
+
   return news_text
 
 
@@ -88,18 +144,20 @@ def run_tracker():
       ticker = yf.Ticker(symbol)
       info = ticker.info
 
-      # 1. Cours et Variation
+      # 1. Cours et Variation du jour
       price = info.get("currentPrice") or info.get("regularMarketPrice", 0)
       prev_close = info.get("previousClose", 1)
       change_pct = ((price - prev_close) / prev_close) * 100
 
-      # 2. Devises
+      # 2. Devises (§ ou €)
       currency = info.get("currency", "USD")
       curr_symbol = "€" if currency == "EUR" else "$"
 
       # 3. Ratios et Marges
       fwd_pe = info.get("forwardPE")
-      fwd_pe_str = f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
+      fwd_pe_str = (
+          f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
+      )
 
       gross_margin = (
           f"{round(info.get('grossMargins', 0) * 100, 1)}%"
@@ -120,16 +178,16 @@ def run_tracker():
       # 5. Prochaine date de publication
       next_earnings = get_next_earnings_date(ticker)
 
-      # 6. Actualités récentes
+      # 6. Actualités filtrées
       news = get_recent_news(ticker)
 
-      # Construction du message
+      # Construction du message Markdown
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : {price:.2f} {curr_symbol} ({change_pct:+.2f}%)\n"
       message += f"├ Marges : Brut `{gross_margin}` | Net `{profit_margin}`\n"
       message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe_str}`\n"
       message += f"├ 📅 Prochaine publication : `{next_earnings}`\n"
-      message += f"└ 📰 **Actualités récentes :**\n{news}\n"
+      message += f"└ 📰 **Actualités majeures :**\n{news}\n"
 
     except Exception as e:
       message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
