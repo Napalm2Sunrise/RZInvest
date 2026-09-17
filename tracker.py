@@ -161,66 +161,57 @@ def run_tracker():
 
       sma_status = check_200_weekly_sma(ticker, price)
 
-      # Marges & FCF
-      gross_margin = (
-          f"{round(info.get('grossMargins', 0) * 100, 1)}%"
-          if info.get("grossMargins")
-          else "N/A"
-      )
-      profit_margin = (
-          f"{round(info.get('profitMargins', 0) * 100, 1)}%"
-          if info.get("profitMargins")
-          else "N/A"
-      )
+      # --- CALCULS AVEC COULEURS POUR TOUS LES INDICATEURS ---
 
-      fcf = info.get("freeCashflow", "N/A")
-      if isinstance(fcf, (int, float)):
-        fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
-
+      # 1. Forward P/E
       fwd_pe = info.get("forwardPE")
-      fwd_pe_str = (
-          f"`{round(fwd_pe, 2)}`" if isinstance(fwd_pe, (int, float)) else "`N/A`"
-      )
-
-      # --- CALCULS AVEC COULEURS VISUELLES & CORRECTION DU DIVIDENDE ---
-
-      # 1. PEG Ratio
-      peg = info.get("pegRatio")
-      if isinstance(peg, (int, float)):
-        val = round(peg, 2)
-        if peg < 1.0:
-          peg_str = f"🟢 `{val}`"
-        elif peg > 2.0:
-          peg_str = f"🔴 `{val}`"
+      if isinstance(fwd_pe, (int, float)):
+        val = round(fwd_pe, 2)
+        if val < 15:
+          fwd_pe_str = f"🟢 `{val}`"
+        elif val > 25:
+          fwd_pe_str = f"🔴 `{val}`"
         else:
-          peg_str = f"🟡 `{val}`"
+          fwd_pe_str = f"🟡 `{val}`"
       else:
-        peg_str = "`N/A`"
+        fwd_pe_str = "`N/A`"
 
       # 2. EV/EBITDA
       ev_ebitda = info.get("enterpriseToEbitda")
       if isinstance(ev_ebitda, (int, float)):
         val = round(ev_ebitda, 2)
-        if ev_ebitda < 10:
+        if val < 10:
           ev_ebitda_str = f"🟢 `{val}`"
-        elif ev_ebitda > 18:
+        elif val > 18:
           ev_ebitda_str = f"🔴 `{val}`"
         else:
           ev_ebitda_str = f"🟡 `{val}`"
       else:
         ev_ebitda_str = "`N/A`"
 
-      # 3. Dividend Yield (Correction du calcul)
+      # 3. PEG Ratio
+      peg = info.get("pegRatio")
+      if isinstance(peg, (int, float)):
+        val = round(peg, 2)
+        if val < 1.0:
+          peg_str = f"🟢 `{val}`"
+        elif val > 2.0:
+          peg_str = f"🔴 `{val}`"
+        else:
+          peg_str = f"🟡 `{val}`"
+      else:
+        peg_str = "`N/A`"
+
+      # 4. Dividend Yield
       div_yield = info.get("dividendYield")
       if isinstance(div_yield, (int, float)):
-        # Si la valeur est > 1, elle est déjà exprimée en pourcentage par yfinance
         div_pct = div_yield if div_yield > 1 else div_yield * 100
         div_pct = round(div_pct, 2)
         div_str = f"🟢 `{div_pct}%`" if div_pct >= 3.5 else f"`{div_pct}%`"
       else:
         div_str = "`0%`"
 
-      # 4. ROE
+      # 5. ROE
       roe = info.get("returnOnEquity")
       if isinstance(roe, (int, float)):
         roe_pct = round(roe * 100, 1)
@@ -232,6 +223,37 @@ def run_tracker():
           roe_str = f"🟡 `{roe_pct}%`"
       else:
         roe_str = "`N/A`"
+
+      # 6. Marge Brute
+      gross = info.get("grossMargins")
+      if isinstance(gross, (int, float)):
+        gross_pct = round(gross * 100, 1)
+        if gross_pct >= 50:
+          gross_margin_str = f"🟢 `{gross_pct}%`"
+        elif gross_pct < 30:
+          gross_margin_str = f"🔴 `{gross_pct}%`"
+        else:
+          gross_margin_str = f"🟡 `{gross_pct}%`"
+      else:
+        gross_margin_str = "`N/A`"
+
+      # 7. Marge Nette
+      profit = info.get("profitMargins")
+      if isinstance(profit, (int, float)):
+        profit_pct = round(profit * 100, 1)
+        if profit_pct >= 15:
+          profit_margin_str = f"🟢 `{profit_pct}%`"
+        elif profit_pct < 8:
+          profit_margin_str = f"🔴 `{profit_pct}%`"
+        else:
+          profit_margin_str = f"🟡 `{profit_pct}%`"
+      else:
+        profit_margin_str = "`N/A`"
+
+      # FCF
+      fcf = info.get("freeCashflow", "N/A")
+      if isinstance(fcf, (int, float)):
+        fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
       next_earnings = get_next_earnings_date(ticker)
       news = get_recent_news(ticker)
@@ -245,7 +267,7 @@ def run_tracker():
       message += f"├ **200 W-SMA** : {sma_display}\n"
       message += f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
       message += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
-      message += f"├ **Marges** : Brut `{gross_margin}` | Net `{profit_margin}`\n"
+      message += f"├ **Marges** : Brut {gross_margin_str} | Net {profit_margin_str}\n"
       message += f"├ **FCF** : `{fcf}`\n"
       message += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
       message += f"└ 📰 **News** :\n{news}\n"
