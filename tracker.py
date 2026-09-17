@@ -11,9 +11,28 @@ CHAT_ID = os.environ.get("CHAT_ID")
 
 def send_telegram(message):
   url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-  requests.post(
-      url, json={"chat_id": CHAT_ID, "text": message, "parse_mode": "Markdown"}
-  )
+  # Découpage si le message dépasse la limite de Telegram (4096 caractères)
+  if len(message) > 4000:
+    for x in range(0, len(message), 4000):
+      requests.post(
+          url,
+          json={
+              "chat_id": CHAT_ID,
+              "text": message[x : x + 4000],
+              "parse_mode": "Markdown",
+              "disable_web_page_preview": True,
+          },
+      )
+  else:
+    requests.post(
+        url,
+        json={
+            "chat_id": CHAT_ID,
+            "text": message,
+            "parse_mode": "Markdown",
+            "disable_web_page_preview": True,
+        },
+    )
 
 
 def get_next_earnings_date(ticker):
@@ -23,14 +42,8 @@ def get_next_earnings_date(ticker):
     if calendar and "Earnings Date" in calendar:
       dates = calendar["Earnings Date"]
       now = datetime.now().date()
-
-      # Parcours des dates fournies pour trouver la première date à venir
       for d in dates:
-        if isinstance(d, datetime):
-          d_date = d.date()
-        else:
-          d_date = d
-
+        d_date = d.date() if isinstance(d, datetime) else d
         if d_date >= now:
           return d_date.strftime("%Y-%m-%d")
   except Exception:
@@ -38,8 +51,29 @@ def get_next_earnings_date(ticker):
   return "Non communiquée"
 
 
+def get_recent_news(ticker, max_items=2):
+  """Récupère les derniers titres d'actualités."""
+  news_text = ""
+  try:
+    news_list = ticker.news
+    if news_list:
+      count = 0
+      for item in news_list:
+        title = item.get("title")
+        link = item.get("link")
+        if title and link and count < max_items:
+          news_text += f"    • [{title}]({link})\n"
+          count += 1
+  except Exception:
+    pass
+
+  if not news_text:
+    news_text = "    • Aucune dépêche récente.\n"
+  return news_text
+
+
 def run_tracker():
-  message = "📊 **RÉCAPITULATIF FIN DE JOURNÉE**\n\n"
+  message = "📊 **RÉCAPITULATIF ET ACTUALITÉS DU JOUR**\n\n"
 
   for symbol in TICKERS:
     try:
@@ -77,15 +111,19 @@ def run_tracker():
       if isinstance(fcf, (int, float)):
         fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
-      # 5. Prochaine date de publication filtrée
+      # 5. Prochaine date de publication
       next_earnings = get_next_earnings_date(ticker)
 
-      # Construction du message Telegram
+      # 6. Actualités récentes
+      news = get_recent_news(ticker)
+
+      # Construction du message
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : {price:.2f} {curr_symbol} ({change_pct:+.2f}%)\n"
       message += f"├ Marges : Brut `{gross_margin}` | Net `{profit_margin}`\n"
       message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe_str}`\n"
-      message += f"└ 📅 Prochaine publication : `{next_earnings}`\n\n"
+      message += f"├ 📅 Prochaine publication : `{next_earnings}`\n"
+      message += f"└ 📰 **Actualités récentes :**\n{news}\n"
 
     except Exception as e:
       message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
