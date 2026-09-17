@@ -162,11 +162,7 @@ def run_tracker():
 
       sma_status = check_200_weekly_sma(ticker, price)
 
-      fwd_pe = info.get("forwardPE")
-      fwd_pe_str = (
-          f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
-      )
-
+      # Marges
       gross_margin = (
           f"{round(info.get('grossMargins', 0) * 100, 1)}%"
           if info.get("grossMargins")
@@ -178,9 +174,42 @@ def run_tracker():
           else "N/A"
       )
 
+      # FCF
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
         fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
+
+      # Valorisations
+      fwd_pe = info.get("forwardPE")
+      fwd_pe_str = (
+          f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
+      )
+
+      # 2. EV/EBITDA
+      ev_ebitda = info.get("enterpriseToEbitda")
+      ev_ebitda_str = (
+          f"{round(ev_ebitda, 2)}"
+          if isinstance(ev_ebitda, (int, float))
+          else "N/A"
+      )
+
+      # 3. Dividend Yield
+      div_yield = info.get("dividendYield")
+      div_str = (
+          f"{round(div_yield * 100, 2)}%"
+          if isinstance(div_yield, (int, float))
+          else "0%"
+      )
+
+      # 4. PEG Ratio
+      peg = info.get("pegRatio")
+      peg_str = f"{round(peg, 2)}" if isinstance(peg, (int, float)) else "N/A"
+
+      # 5. ROE
+      roe = info.get("returnOnEquity")
+      roe_str = (
+          f"{round(roe * 100, 1)}%" if isinstance(roe, (int, float)) else "N/A"
+      )
 
       next_earnings = get_next_earnings_date(ticker)
       news = get_recent_news(ticker)
@@ -192,8 +221,10 @@ def run_tracker():
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}` ({change_pct:+.2f}%)\n"
       message += f"├ **200 W-SMA** : {sma_display}\n"
+      message += f"├ **Valo.** : Fwd P/E `{fwd_pe_str}` | EV/EBITDA `{ev_ebitda_str}` | PEG `{peg_str}`\n"
+      message += f"├ **Rendement** : Div. `{div_str}` | ROE `{roe_str}`\n"
       message += f"├ **Marges** : Brut `{gross_margin}` | Net `{profit_margin}`\n"
-      message += f"├ **FCF** : `{fcf}` | **Fwd P/E** : `{fwd_pe_str}`\n"
+      message += f"├ **FCF** : `{fcf}`\n"
       message += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
       message += f"└ 📰 **News** :\n{news}\n"
 
