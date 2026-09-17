@@ -200,7 +200,7 @@ def run_tracker():
       else:
         peg_str = "`N/A`"
 
-      # 4. Dividend Yield (Calcul sécurisé direct)
+      # 4. Dividend Yield
       div_rate = info.get("dividendRate")
       div_yield = info.get("dividendYield")
 
@@ -257,6 +257,19 @@ def run_tracker():
       else:
         profit_margin_str = "`N/A`"
 
+      # 8. Revenue Growth (Croissance du CA)
+      rev_growth = info.get("revenueGrowth")
+      if isinstance(rev_growth, (int, float)):
+        growth_pct = round(rev_growth * 100, 1)
+        if growth_pct >= 10:
+          rev_growth_str = f"🟢 `{growth_pct}%`"
+        elif growth_pct < 0:
+          rev_growth_str = f"🔴 `{growth_pct}%`"
+        else:
+          rev_growth_str = f"🟡 `{growth_pct}%`"
+      else:
+        rev_growth_str = "`N/A`"
+
       # FCF
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
@@ -272,6 +285,7 @@ def run_tracker():
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}` ({change_pct:+.2f}%)\n"
       message += f"├ **200 W-SMA** : {sma_display}\n"
+      message += f"├ **Croissance** : CA {rev_growth_str}\n"
       message += f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
       message += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
       message += f"├ **Marges** : Brut {gross_margin_str} | Net {profit_margin_str}\n"
