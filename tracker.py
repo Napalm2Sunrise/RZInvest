@@ -3,7 +3,6 @@ import os
 import requests
 import yfinance as yf
 
-# Liste des actions à surveiller
 TICKERS = ["MC.PA", "TTE.PA", "AAPL", "MSFT", "NVDA"]
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
@@ -162,7 +161,7 @@ def run_tracker():
 
       sma_status = check_200_weekly_sma(ticker, price)
 
-      # Marges
+      # Marges & FCF
       gross_margin = (
           f"{round(info.get('grossMargins', 0) * 100, 1)}%"
           if info.get("grossMargins")
@@ -174,42 +173,65 @@ def run_tracker():
           else "N/A"
       )
 
-      # FCF
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
         fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
-      # Valorisations
       fwd_pe = info.get("forwardPE")
       fwd_pe_str = (
           f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
       )
 
+      # --- CALCULS AVEC INDICATEURS DE COULEURS ---
+
+      # 1. PEG Ratio
+      peg = info.get("pegRatio")
+      if isinstance(peg, (int, float)):
+        if peg < 1.0:
+          peg_str = f"🟢 `{round(peg, 2)}`"
+        elif peg > 2.0:
+          peg_str = f"🔴 `{round(peg, 2)}`"
+        else:
+          peg_str = f"🟡 `{round(peg, 2)}`"
+      else:
+        peg_str = "`N/A`"
+
       # 2. EV/EBITDA
       ev_ebitda = info.get("enterpriseToEbitda")
-      ev_ebitda_str = (
-          f"{round(ev_ebitda, 2)}"
-          if isinstance(ev_ebitda, (int, float))
-          else "N/A"
-      )
+      if isinstance(ev_ebitda, (int, float)):
+        if ev_ebitda < 10:
+          ev_ebitda_str = f"🟢 `{round(ev_ebitda, 2)}`"
+        elif ev_ebitda > 18:
+          ev_ebitda_str = f"🔴 `{round(ev_ebitda, 2)}`"
+        else:
+          ev_ebitda_str = f"🟡 `{round(ev_ebitda, 2)}`"
+      else:
+        ev_ebitda_str = "`N/A`"
 
       # 3. Dividend Yield
       div_yield = info.get("dividendYield")
-      div_str = (
-          f"{round(div_yield * 100, 2)}%"
-          if isinstance(div_yield, (int, float))
-          else "0%"
-      )
+      if isinstance(div_yield, (int, float)):
+        div_pct = div_yield * 100
+        div_str = (
+            f"🟢 `{round(div_pct, 2)}%`"
+            if div_pct >= 3.5
+            else f"`{round(div_pct, 2)}%`"
+        )
+      else:
+        div_str = "`0%`"
 
-      # 4. PEG Ratio
-      peg = info.get("pegRatio")
-      peg_str = f"{round(peg, 2)}" if isinstance(peg, (int, float)) else "N/A"
-
-      # 5. ROE
+      # 4. ROE
       roe = info.get("returnOnEquity")
-      roe_str = (
-          f"{round(roe * 100, 1)}%" if isinstance(roe, (int, float)) else "N/A"
-      )
+      if isinstance(roe, (int, float)):
+        roe_pct = roe * 100
+        if roe_pct >= 15:
+          roe_str = f"🟢 `{round(roe_pct, 1)}%`"
+        elif roe_pct < 8:
+          roe_str = f"🔴 `{round(roe_pct, 1)}%`"
+        else:
+          roe_str = f"🟡 `{round(roe_pct, 1)}%`"
+      else:
+        roe_str = "`N/A`"
 
       next_earnings = get_next_earnings_date(ticker)
       news = get_recent_news(ticker)
@@ -221,8 +243,8 @@ def run_tracker():
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
       message += f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}` ({change_pct:+.2f}%)\n"
       message += f"├ **200 W-SMA** : {sma_display}\n"
-      message += f"├ **Valo.** : Fwd P/E `{fwd_pe_str}` | EV/EBITDA `{ev_ebitda_str}` | PEG `{peg_str}`\n"
-      message += f"├ **Rendement** : Div. `{div_str}` | ROE `{roe_str}`\n"
+      message += f"├ **Valo.** : Fwd P/E `{fwd_pe_str}` | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
+      message += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
       message += f"├ **Marges** : Brut `{gross_margin}` | Net `{profit_margin}`\n"
       message += f"├ **FCF** : `{fcf}`\n"
       message += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
