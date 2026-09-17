@@ -1,9 +1,32 @@
 from datetime import datetime
 import os
+import time
 import requests
 import yfinance as yf
 
-TICKERS = ["AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "AVGO", "AYA.TO", "BKNG", "GEV", "GOOG", "ISRG", "META", "MC.PA", "MSFT", "NVDA", "ONON", "SPCX", "SPGI", "SU.PA", "TTE.PA", "TSLA"]
+TICKERS = [
+    "AED.BR",
+    "CPINV.BE",
+    "HOMI.BR",
+    "RET.BR",
+    "AMKR",
+    "AVGO",
+    "AYA.TO",
+    "BKNG",
+    "GEV",
+    "GOOG",
+    "ISRG",
+    "META",
+    "MC.PA",
+    "MSFT",
+    "NVDA",
+    "ONON",
+    "SPCX",
+    "SPGI",
+    "SU.PA",
+    "TTE.PA",
+    "TSLA",
+]
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
@@ -56,7 +79,7 @@ IMPORTANT_KEYWORDS = [
 def send_telegram(message):
   """Envoie le message formaté en Markdown sur Telegram."""
   url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-  requests.post(
+  response = requests.post(
       url,
       json={
           "chat_id": CHAT_ID,
@@ -65,6 +88,7 @@ def send_telegram(message):
           "disable_web_page_preview": True,
       },
   )
+  return response.ok
 
 
 def check_200_weekly_sma(ticker, current_price):
@@ -144,8 +168,15 @@ def get_recent_news(ticker, max_items=1):
 
 
 def run_tracker():
-  message = "📊 **RÉCAPITULATIF BOURSIER DU JOUR**\n"
-  message += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
+  header = "📊 **RÉCAPITULATIF BOURSIER DU JOUR**\n"
+  header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
+
+  # Envoie d'abord le titre
+  send_telegram(header)
+  time.sleep(0.5)
+
+  current_message = ""
+  tickers_in_batch = 0
 
   for symbol in TICKERS:
     try:
@@ -257,7 +288,7 @@ def run_tracker():
       else:
         profit_margin_str = "`N/A`"
 
-      # 8. Revenue Growth (Croissance du CA)
+      # 8. Revenue Growth
       rev_growth = info.get("revenueGrowth")
       if isinstance(rev_growth, (int, float)):
         growth_pct = round(rev_growth * 100, 1)
@@ -283,20 +314,41 @@ def run_tracker():
       )
 
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
-      message += f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}` ({change_pct:+.2f}%)\n"
-      message += f"├ **200 W-SMA** : {sma_display}\n"
-      message += f"├ **Croissance** : CA {rev_growth_str}\n"
-      message += f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
-      message += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
-      message += f"├ **Marges** : Brut {gross_margin_str} | Net {profit_margin_str}\n"
-      message += f"├ **FCF** : `{fcf}`\n"
-      message += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
-      message += f"└ 📰 **News** :\n{news}\n"
+
+      item_text = (
+          f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}`"
+          f" ({change_pct:+.2f}%)\n"
+      )
+      item_text += f"├ **200 W-SMA** : {sma_display}\n"
+      item_text += f"├ **Croissance** : CA {rev_growth_str}\n"
+      item_text += (
+          f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} |"
+          f" PEG {peg_str}\n"
+      )
+      item_text += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
+      item_text += (
+          f"├ **Marges** : Brut {gross_margin_str} | Net {profit_margin_str}\n"
+      )
+      item_text += f"├ **FCF** : `{fcf}`\n"
+      item_text += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
+      item_text += f"└ 📰 **News** :\n{news}\n"
+
+      current_message += item_text
+      tickers_in_batch += 1
+
+      # Envoi par paquets de 5 tickers pour éviter de dépasser 4096 caractères
+      if tickers_in_batch >= 5:
+        send_telegram(current_message)
+        current_message = ""
+        tickers_in_batch = 0
+        time.sleep(1)
 
     except Exception as e:
-      message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
+      current_message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
 
-  send_telegram(message)
+  # Envoie le reste des tickers s'il en reste
+  if current_message:
+    send_telegram(current_message)
 
 
 if __name__ == "__main__":
