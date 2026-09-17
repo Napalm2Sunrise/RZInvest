@@ -1,8 +1,8 @@
+from datetime import datetime
 import os
 import requests
 import yfinance as yf
 
-# Indiquez vos actions ici (symboles Yahoo Finance, ex: MC.PA pour LVMH, AAPL pour Apple)
 TICKERS = ["MC.PA", "TTE.PA", "AAPL", "MSFT", "NVDA"]
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
@@ -16,6 +16,28 @@ def send_telegram(message):
   )
 
 
+def get_next_earnings_date(ticker):
+  """Filtre les dates pour ne garder que la prochaine publication future."""
+  try:
+    calendar = ticker.calendar
+    if calendar and "Earnings Date" in calendar:
+      dates = calendar["Earnings Date"]
+      now = datetime.now().date()
+
+      # Parcours des dates fournies pour trouver la première date à venir
+      for d in dates:
+        if isinstance(d, datetime):
+          d_date = d.date()
+        else:
+          d_date = d
+
+        if d_date >= now:
+          return d_date.strftime("%Y-%m-%d")
+  except Exception:
+    pass
+  return "Non communiquée"
+
+
 def run_tracker():
   message = "📊 **RÉCAPITULATIF FIN DE JOURNÉE**\n\n"
 
@@ -24,13 +46,21 @@ def run_tracker():
       ticker = yf.Ticker(symbol)
       info = ticker.info
 
-      # 1. Calcul du prix et de la variation
+      # 1. Cours et Variation
       price = info.get("currentPrice") or info.get("regularMarketPrice", 0)
       prev_close = info.get("previousClose", 1)
       change_pct = ((price - prev_close) / prev_close) * 100
 
-      # 2. Indicateurs clés
-      fwd_pe = info.get("forwardPE", "N/A")
+      # 2. Devises
+      currency = info.get("currency", "USD")
+      curr_symbol = "€" if currency == "EUR" else "$"
+
+      # 3. Ratios et Marges
+      fwd_pe = info.get("forwardPE")
+      fwd_pe_str = (
+          f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
+      )
+
       gross_margin = (
           f"{round(info.get('grossMargins', 0) * 100, 1)}%"
           if info.get("grossMargins")
@@ -41,24 +71,22 @@ def run_tracker():
           if info.get("profitMargins")
           else "N/A"
       )
+
+      # 4. Free Cash Flow
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
-        fcf = f"{round(fcf / 1e9, 2)} Mrd $"
+        fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
-      # Alignement du texte
+      # 5. Prochaine date de publication filtrée
+      next_earnings = get_next_earnings_date(ticker)
+
+      # Construction du message Telegram
       status_emoji = "🟢" if change_pct >= 0 else "🔴"
-      message += f"{status_emoji} **{symbol}** : {price:.2f} ({change_pct:+.2f}%)\n"
+      message += f"{status_emoji} **{symbol}** : {price:.2f} {curr_symbol} ({change_pct:+.2f}%)\n"
       message += f"├ Marges : Brut `{gross_margin}` | Net `{profit_margin}`\n"
-      message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe}`\n"
+      message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe_str}`\n"
+      message += f"└ 📅 Prochaine publication : `{next_earnings}`\n\n"
 
-      # 3. Alerte calendrier résultats
-      calendar = ticker.calendar
-      if calendar and "Earnings Date" in calendar:
-        message += (
-          f"└ 📅 Prochaines publications : {calendar['Earnings Date'][0]}\n"
-        )
-
-      message += "\n"
     except Exception as e:
       message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
 
