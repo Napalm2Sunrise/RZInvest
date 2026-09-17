@@ -3,7 +3,7 @@ import os
 import requests
 import yfinance as yf
 
-TICKERS = ["MC.PA", "TTE.PA", "AAPL", "MSFT", "NVDA"]
+TICKERS = ["AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "AVGO", "AYA.TO", "BKNG", "GEV", "GOOG", "ISRG", "META", "MC.PA", "MSFT", "NVDA", "ONON", "SPCX", "SPGI", "SU.PA", "TTE.PA", "TSLA"]
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
