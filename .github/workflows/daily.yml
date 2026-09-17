@@ -3,7 +3,7 @@ name: Automatique Bourse
 on:
   schedule:
     # S'exécute à 21h30 (heure UTC) du lundi au vendredi
-    - cron: '30 21 * * 1-5'
+    - cron: '30 19 * * 1-5'
   workflow_dispatch: # Permet de lancer le programme à la demande pour tester
 
 jobs:
