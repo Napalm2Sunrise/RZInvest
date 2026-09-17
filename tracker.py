@@ -1,17 +1,18 @@
 from datetime import datetime
 import os
+from PIL import Image, ImageDraw, ImageFont
 import requests
 import yfinance as yf
 
-# Liste de vos actions à surveiller
+# 1. LISTE DES ACTIONS À SURVEILLER
 TICKERS = ["MC.PA", "TTE.PA", "AAPL", "MSFT", "NVDA"]
 
+# 2. IDENTIFIANTS TELEGRAM (RÉCUPÉRÉS DEPUIS GITHUB SECRETS)
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 
-# Mots-clés pour filtrer uniquement les actualités à fort impact
+# 3. MOTS-CLÉS POUR FILTRER LES ACTUALITÉS IMPORTANTES
 IMPORTANT_KEYWORDS = [
-    # Résultats & Finance
     "result",
     "earnings",
     "revenue",
@@ -22,85 +23,54 @@ IMPORTANT_KEYWORDS = [
     "fcf",
     "cash flow",
     "quarter",
-    "q1",
-    "q2",
-    "q3",
-    "q4",
     "bénéfice",
     "chiffre d'affaires",
     "résultat",
-    "dividende",
-    # Stratégie & Événements majeurs
     "buyout",
     "acquisition",
     "merger",
-    "takeover",
     "sec",
-    "investigation",
-    "lawsuit",
     "ceo",
     "cfo",
     "layoff",
-    "restructuring",
-    "rachat",
-    "procès",
-    "démission",
-    "licenciement",
-    # Mouvements de marché majeurs
     "upgrade",
     "downgrade",
-    "record",
-    "plunge",
-    "surge",
-    "crash",
-    "chute",
-    "envolée",
 ]
 
 
-def send_telegram(message):
-  """Envoie le message formaté sur Telegram."""
-  url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-  requests.post(
-      url,
-      json={
-          "chat_id": CHAT_ID,
-          "text": message,
-          "parse_mode": "Markdown",
-          "disable_web_page_preview": True,
-      },
-  )
+def send_telegram_photo(image_path, caption=""):
+  """Envoie l'image générée ET la légende texte avec liens sur Telegram."""
+  url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+  with open(image_path, "rb") as photo:
+    requests.post(
+        url,
+        data={"chat_id": CHAT_ID, "caption": caption, "parse_mode": "Markdown"},
+        files={"photo": photo},
+    )
 
 
 def check_200_weekly_sma(ticker, current_price):
-  """Calcule si le prix est au-dessus ou en dessous de la SMA 200 semaines."""
+  """Calcule si le prix est au-dessus ou sous la Moyenne Mobile 200 Semaines."""
   try:
-    # Récupération de l'historique hebdomadaire sur 5 ans (~260 semaines)
     hist = ticker.history(period="5y", interval="1wk")
     if len(hist) >= 200:
-      # Calcul de la moyenne des 200 dernières clôtures hebdomadaires
       sma_200 = hist["Close"].tail(200).mean()
-      if current_price < sma_200:
-        return "Under 🔥"
-      else:
-        return "Above"
+      return "Under 🔥" if current_price < sma_200 else "Above"
   except Exception:
     pass
   return "N/A"
 
 
 def get_next_earnings_date(ticker):
-  """Récupère la prochaine date de publication future."""
+  """Trouve la prochaine date de résultats."""
   try:
     calendar = ticker.calendar
     now = datetime.now().date()
-
     if isinstance(calendar, dict) and "Earnings Date" in calendar:
       for d in calendar["Earnings Date"]:
         d_date = d.date() if isinstance(d, datetime) else d
         if d_date >= now:
           return d_date.strftime("%Y-%m-%d")
-
     earnings_epoch = ticker.info.get("earningsTimestamp") or ticker.info.get(
         "earningsTimestampStart"
     )
@@ -110,67 +80,121 @@ def get_next_earnings_date(ticker):
         return e_date.strftime("%Y-%m-%d")
   except Exception:
     pass
-  return "À déterminer"
+  return "A determiner"
 
 
-def get_recent_news(ticker, max_items=2):
-  """Récupère uniquement les actualités à fort impact (filtre intelligent)."""
-  news_text = ""
+def generate_image(data):
+  """Dessine la carte d'analyse financière sous forme d'image PNG."""
+  width = 800
+  height = 120 + len(data) * 160
+  bg_color = (20, 24, 33)  # Fond sombre
+  card_color = (30, 36, 48)  # Fond des cartes
+
+  img = Image.new("RGB", (width, height), color=bg_color)
+  draw = ImageDraw.Draw(img)
+
+  # Chargement des polices de caractères
   try:
-    news_list = ticker.news
-    if news_list:
-      count = 0
-      for item in news_list:
-        content = item.get("content", item)
-        title = content.get("title") or item.get("title", "")
-        title_lower = title.lower()
-
-        link = None
-        if "clickThroughUrl" in content and content["clickThroughUrl"]:
-          link = content["clickThroughUrl"].get("url")
-        elif "canonicalUrl" in content and content["canonicalUrl"]:
-          link = content["canonicalUrl"].get("url")
-        elif "link" in item:
-          link = item["link"]
-
-        is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
-
-        if is_important and count < max_items:
-          if link:
-            news_text += f"    • 🔥 [{title}]({link})\n"
-          else:
-            news_text += f"    • 🔥 {title}\n"
-          count += 1
+    font_title = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 22
+    )
+    font_bold = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 15
+    )
+    font_normal = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 13
+    )
   except Exception:
-    pass
+    font_title = font_bold = font_normal = ImageFont.load_default()
 
-  if not news_text:
-    news_text = "    • Aucune dépêche majeure aujourd'hui.\n"
+  # En-tête de l'image
+  draw.text(
+      (30, 25),
+      "RÉCAPITULATIF BOURSIER DU JOUR",
+      fill=(255, 255, 255),
+      font=font_title,
+  )
+  draw.text(
+      (30, 55),
+      datetime.now().strftime("%d/%m/%Y - %H:%M"),
+      fill=(140, 150, 165),
+      font=font_normal,
+  )
 
-  return news_text
+  y = 90
+  for item in data:
+    # Boîte pour chaque action
+    draw.rectangle([25, y, width - 25, y + 145], fill=card_color)
+
+    # Barre latérale verte (hausse) ou rouge (baisse)
+    bar_color = (
+        (46, 204, 113) if item["change_pct"] >= 0 else (231, 76, 60)
+    )  # Vert / Rouge
+    draw.rectangle([25, y, 32, y + 145], fill=bar_color)
+
+    # Ligne 1 : Symbole, Prix et Variation
+    header_text = f"{item['symbol']} : {item['price']:.2f} {item['curr_symbol']} ({item['change_pct']:+.2f}%)"
+    draw.text((45, y + 12), header_text, fill=(255, 255, 255), font=font_bold)
+
+    # Ligne 2 : 200 Weekly SMA et Prochaine publication
+    sma_color = (
+        (241, 196, 15) if "Under" in item["sma_status"] else (180, 190, 200)
+    )
+    draw.text(
+        (45, y + 42),
+        f"200 W-SMA: {item['sma_status']}",
+        fill=sma_color,
+        font=font_bold,
+    )
+    draw.text(
+        (350, y + 42),
+        f"Prochaine pub.: {item['next_earnings']}",
+        fill=(180, 190, 200),
+        font=font_normal,
+    )
+
+    # Ligne 3 : Marges, FCF et Forward P/E
+    marge_text = f"Marges : Brut {item['gross_margin']} | Net {item['profit_margin']}   -   FCF : {item['fcf']}   -   Fwd P/E : {item['fwd_pe_str']}"
+    draw.text(
+        (45, y + 70), marge_text, fill=(160, 175, 195), font=font_normal
+    )
+
+    # Ligne 4 : Titre résumé de l'actualité
+    news_title = item["news_title"] if item["news_title"] else "Aucune dépêche majeure."
+    if len(news_title) > 80:
+      news_title = news_title[:77] + "..."
+    draw.text(
+        (45, y + 102),
+        f"News : {news_title}",
+        fill=(220, 225, 230),
+        font=font_normal,
+    )
+
+    y += 160
+
+  output_path = "summary.png"
+  img.save(output_path)
+  return output_path
 
 
 def run_tracker():
-  message = "📊 **RÉCAPITULATIF ET ACTUALITÉS DU JOUR**\n\n"
+  data = []
+  clickable_links = ""
 
   for symbol in TICKERS:
     try:
       ticker = yf.Ticker(symbol)
       info = ticker.info
 
-      # 1. Cours et Variation du jour
       price = info.get("currentPrice") or info.get("regularMarketPrice", 0)
       prev_close = info.get("previousClose", 1)
       change_pct = ((price - prev_close) / prev_close) * 100
 
-      # 2. Devises (§ ou €)
       currency = info.get("currency", "USD")
       curr_symbol = "€" if currency == "EUR" else "$"
 
-      # 3. SMA 200 Hebdomadaire
       sma_status = check_200_weekly_sma(ticker, price)
 
-      # 4. Ratios et Marges
       fwd_pe = info.get("forwardPE")
       fwd_pe_str = (
           f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
@@ -187,30 +211,66 @@ def run_tracker():
           else "N/A"
       )
 
-      # 5. Free Cash Flow
       fcf = info.get("freeCashflow", "N/A")
       if isinstance(fcf, (int, float)):
         fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
 
-      # 6. Prochaine date de publication
       next_earnings = get_next_earnings_date(ticker)
 
-      # 7. Actualités filtrées
-      news = get_recent_news(ticker)
+      # Récupération de l'actualité + lien cliquable
+      news_title = ""
+      news_link = None
+      if ticker.news:
+        for item in ticker.news:
+          content = item.get("content", item)
+          title = content.get("title") or item.get("title", "")
 
-      # Construction du message Markdown
-      status_emoji = "🟢" if change_pct >= 0 else "🔴"
-      message += f"{status_emoji} **{symbol}** : {price:.2f} {curr_symbol} ({change_pct:+.2f}%)\n"
-      message += f"├ 200 weekly sma : `{sma_status}`\n"
-      message += f"├ Marges : Brut `{gross_margin}` | Net `{profit_margin}`\n"
-      message += f"├ FCF : `{fcf}` | Forward P/E : `{fwd_pe_str}`\n"
-      message += f"├ 📅 Prochaine publication : `{next_earnings}`\n"
-      message += f"└ 📰 **Actualités majeures :**\n{news}\n"
+          link = None
+          if "clickThroughUrl" in content and content["clickThroughUrl"]:
+            link = content["clickThroughUrl"].get("url")
+          elif "canonicalUrl" in content and content["canonicalUrl"]:
+            link = content["canonicalUrl"].get("url")
+          elif "link" in item:
+            link = item["link"]
 
+          if any(kw in title.lower() for kw in IMPORTANT_KEYWORDS):
+            news_title = title
+            news_link = link
+            break
+
+      # Si on a trouvé un article important, on prépare le lien cliquable pour Telegram
+      if news_title and news_link:
+        clickable_links += f"• **{symbol}** : [{news_title}]({news_link})\n"
+
+      data.append({
+          "symbol": symbol,
+          "price": price,
+          "change_pct": change_pct,
+          "curr_symbol": curr_symbol,
+          "sma_status": sma_status,
+          "fwd_pe_str": fwd_pe_str,
+          "gross_margin": gross_margin,
+          "profit_margin": profit_margin,
+          "fcf": fcf,
+          "next_earnings": next_earnings,
+          "news_title": news_title,
+      })
     except Exception as e:
-      message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
+      print(f"Erreur sur {symbol}: {e}")
 
-  send_telegram(message)
+  # Génération de l'image et envoi sur Telegram avec la légende textuelle
+  if data:
+    image_path = generate_image(data)
+    caption_text = "📊 **RÉCAPITULATIF BOURSIER DU JOUR**\n\n"
+    if clickable_links:
+      caption_text += (
+          "🔗 **Dépêches importantes (liens cliquables) :**\n"
+          + clickable_links
+      )
+    else:
+      caption_text += "📰 Aucune dépêche majeure aujourd'hui."
+
+    send_telegram_photo(image_path, caption=caption_text)
 
 
 if __name__ == "__main__":
