@@ -11,58 +11,66 @@ CHAT_ID = os.environ.get("CHAT_ID")
 
 def send_telegram(message):
   url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-  # Découpage si le message dépasse la limite de Telegram (4096 caractères)
-  if len(message) > 4000:
-    for x in range(0, len(message), 4000):
-      requests.post(
-          url,
-          json={
-              "chat_id": CHAT_ID,
-              "text": message[x : x + 4000],
-              "parse_mode": "Markdown",
-              "disable_web_page_preview": True,
-          },
-      )
-  else:
-    requests.post(
-        url,
-        json={
-            "chat_id": CHAT_ID,
-            "text": message,
-            "parse_mode": "Markdown",
-            "disable_web_page_preview": True,
-        },
-    )
+  requests.post(
+      url,
+      json={
+          "chat_id": CHAT_ID,
+          "text": message,
+          "parse_mode": "Markdown",
+          "disable_web_page_preview": True,
+      },
+  )
 
 
 def get_next_earnings_date(ticker):
-  """Filtre les dates pour ne garder que la prochaine publication future."""
+  """Récupère la prochaine date de publication."""
   try:
     calendar = ticker.calendar
-    if calendar and "Earnings Date" in calendar:
-      dates = calendar["Earnings Date"]
-      now = datetime.now().date()
-      for d in dates:
+    now = datetime.now().date()
+
+    if isinstance(calendar, dict) and "Earnings Date" in calendar:
+      for d in calendar["Earnings Date"]:
         d_date = d.date() if isinstance(d, datetime) else d
         if d_date >= now:
           return d_date.strftime("%Y-%m-%d")
+
+    # Alternative via info si le calendrier est vide
+    earnings_epoch = ticker.info.get("earningsTimestamp") or ticker.info.get("earningsTimestampStart")
+    if earnings_epoch:
+      e_date = datetime.fromtimestamp(earnings_epoch).date()
+      if e_date >= now:
+        return e_date.strftime("%Y-%m-%d")
   except Exception:
     pass
-  return "Non communiquée"
+  return "À déterminer"
 
 
 def get_recent_news(ticker, max_items=2):
-  """Récupère les derniers titres d'actualités."""
+  """Récupère et formatte les dernières actualités."""
   news_text = ""
   try:
     news_list = ticker.news
     if news_list:
       count = 0
       for item in news_list:
-        title = item.get("title")
-        link = item.get("link")
-        if title and link and count < max_items:
-          news_text += f"    • [{title}]({link})\n"
+        # Prise en compte de la nouvelle structure d'objet yfinance
+        content = item.get("content", item)
+        title = content.get("title") or item.get("title")
+        
+        # Récupération du lien (dans canonicalUrl ou link)
+        link = None
+        if "clickThroughUrl" in content and content["clickThroughUrl"]:
+          link = content["clickThroughUrl"].get("url")
+        elif "canonicalUrl" in content and content["canonicalUrl"]:
+          link = content["canonicalUrl"].get("url")
+        elif "link" in item:
+          link = item["link"]
+
+        if title and count < max_items:
+          if link:
+            news_text += f"    • [{title}]({link})\n"
+          else:
+            news_text += f"    • {title}\n"
           count += 1
   except Exception:
     pass
@@ -91,9 +99,7 @@ def run_tracker():
 
       # 3. Ratios et Marges
       fwd_pe = info.get("forwardPE")
-      fwd_pe_str = (
-          f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
-      )
+      fwd_pe_str = f"{round(fwd_pe, 2)}" if isinstance(fwd_pe, (int, float)) else "N/A"
 
       gross_margin = (
           f"{round(info.get('grossMargins', 0) * 100, 1)}%"
