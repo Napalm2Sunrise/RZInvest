@@ -36,7 +36,6 @@ TICKERS = [
     "VRSN", 
 ]
 
-# Calendrier des prochaines publications macroéconomiques majeures (Format : AAAA-MM-JJ)
 MACRO_EVENTS = {
     "FED (Réunion)": "2026-10-28",
     "CPI US": "2026-10-14",
@@ -49,47 +48,12 @@ CHAT_ID = os.environ.get("CHAT_ID")
 CACHE_FILE = "sent_news.json"
 
 IMPORTANT_KEYWORDS = [
-    "result",
-    "earnings",
-    "revenue",
-    "profit",
-    "margin",
-    "guidance",
-    "dividend",
-    "fcf",
-    "cash flow",
-    "quarter",
-    "q1",
-    "q2",
-    "q3",
-    "q4",
-    "bénéfice",
-    "chiffre d'affaires",
-    "résultat",
-    "dividende",
-    "buyout",
-    "acquisition",
-    "merger",
-    "takeover",
-    "sec",
-    "investigation",
-    "lawsuit",
-    "ceo",
-    "cfo",
-    "layoff",
-    "restructuring",
-    "rachat",
-    "procès",
-    "démission",
-    "licenciement",
-    "upgrade",
-    "downgrade",
-    "record",
-    "plunge",
-    "surge",
-    "crash",
-    "chute",
-    "envolée",
+    "result", "earnings", "revenue", "profit", "margin", "guidance", "dividend",
+    "fcf", "cash flow", "quarter", "q1", "q2", "q3", "q4", "bénéfice",
+    "chiffre d'affaires", "résultat", "dividende", "buyout", "acquisition",
+    "merger", "takeover", "sec", "investigation", "lawsuit", "ceo", "cfo",
+    "layoff", "restructuring", "rachat", "procès", "démission", "licenciement",
+    "upgrade", "downgrade", "record", "plunge", "surge", "crash", "chute", "envolée",
 ]
 
 
@@ -206,7 +170,6 @@ def send_prices():
     header = "📈 **SUIVI DES COURS & DATES**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
 
-    # Ajout du bloc macroéconomique dans le premier message
     header += "🏛️ **CALENDRIER MACROÉCONOMIQUE**\n"
     for event_name, event_date_str in MACRO_EVENTS.items():
         formatted_d = format_event_date(event_date_str)
@@ -221,7 +184,6 @@ def send_prices():
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            # Récupération sécurisée du prix actuel
             price = (
                 info.get("currentPrice")
                 or info.get("regularMarketPrice")
@@ -285,9 +247,7 @@ def send_news():
     sent_cache = load_sent_news()
     now_ts = datetime.now().timestamp()
 
-    # 24h en jours ouvrés = 24h en semaine, 72h si weekend inclus
     cutoff_ts = now_ts - (72 * 3600 if datetime.now().weekday() == 0 else 24 * 3600)
-
     news_count = 0
 
     for symbol in TICKERS:
@@ -301,7 +261,6 @@ def send_news():
                 summary = content.get("summary") or item.get("summary") or content.get("description") or ""
                 pub_time = content.get("pubDate") or item.get("providerPublishTime", 0)
 
-                # Si la date est en ISO string, conversion
                 if isinstance(pub_time, str):
                     try:
                         pub_time = datetime.fromisoformat(
@@ -310,7 +269,6 @@ def send_news():
                     except Exception:
                         pub_time = now_ts
 
-                # Règle 1 : Moins de 24h ouvrées
                 if pub_time < cutoff_ts:
                     continue
 
@@ -324,7 +282,6 @@ def send_news():
 
                 news_id = link or title
 
-                # Règle 2 : Ne pas se répéter
                 if news_id in sent_cache:
                     continue
 
@@ -343,7 +300,7 @@ def send_news():
                     send_telegram(news_message)
                     sent_cache[news_id] = now_ts
                     news_count += 1
-                    time.sleep(1)  # Petite pause pour respecter l'API Telegram
+                    time.sleep(1)
 
         except Exception:
             pass
@@ -355,16 +312,15 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale : génère un tableau en image avec code couleur dynamique."""
+    """3. Analyse Fondamentale : génère un tableau en image sécurisé avec couleurs."""
     data = []
     cell_colors = []
 
     for symbol in TICKERS:
         try:
             ticker = yf.Ticker(symbol)
-            info = ticker.info
+            info = ticker.info or {}
 
-            # Initialisation des valeurs par défaut
             rev_str, pe_str, ev_str, peg_str, div_str, roe_str, profit_str = ["N/A"] * 7
             c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof = ['#ffffff'] * 7
 
@@ -428,7 +384,7 @@ def send_fundamentals():
 
             cell_colors.append(['#ffffff', c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof])
 
-        except Exception as e:
+        except Exception:
             continue
 
     if not data:
@@ -437,18 +393,12 @@ def send_fundamentals():
 
     df = pd.DataFrame(data)
 
-    fig, ax = plt.subplots(figsize=(10, len(df) * 0.45 + 1.2), dpi=200)
+    fig, ax = plt.subplots(figsize=(10, len(df) * 0.4 + 1.2), dpi=200)
     ax.axis('off')
-    ax.axis('tight')
-
-    # Construction securisee des couleurs
-    header_colors = ['#1e293b'] * len(df.columns)
-    full_colors = [header_colors] + cell_colors
 
     table = ax.table(
         cellText=df.values,
         colLabels=df.columns,
-        cellColours=full_colors,
         cellLoc='center',
         loc='center'
     )
@@ -457,11 +407,17 @@ def send_fundamentals():
     table.set_fontsize(9)
     table.scale(1.2, 1.5)
 
-    # Texte blanc pour l'en-tête
-    for col_idx in range(len(df.columns)):
-        cell = table[(0, col_idx)]
-        cell.get_text().set_color('white')
-        cell.get_text().set_weight('bold')
+    # Application sécurisée des couleurs et styles
+    for row_idx in range(len(df) + 1):
+        for col_idx in range(len(df.columns)):
+            cell = table[(row_idx, col_idx)]
+            if row_idx == 0:
+                cell.set_facecolor('#1e293b')
+                cell.get_text().set_color('white')
+                cell.get_text().set_weight('bold')
+            else:
+                bg_color = cell_colors[row_idx - 1][col_idx]
+                cell.set_facecolor(bg_color)
 
     plt.title(f"📊 BUREAU D'ANALYSE FONDAMENTALE ({datetime.now().strftime('%d/%m/%Y')})", 
               fontsize=12, fontweight='bold', pad=15)
