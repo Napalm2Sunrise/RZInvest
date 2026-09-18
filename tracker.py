@@ -339,7 +339,7 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale complète (Croissance, Valo, Rendement, Marges, FCF)."""
+    """3. Analyse Fondamentale complète avec émojis de couleur."""
     header = "📊 **BUREAU D'ANALYSE FONDAMENTALE (HEBDO)**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y')}`\n\n"
     send_telegram(header)
@@ -369,15 +369,40 @@ def send_fundamentals():
             else:
                 curr_symbol = "$"
 
+            # 1. Croissance CA
+            rev_growth = info.get("revenueGrowth")
+            if isinstance(rev_growth, (int, float)):
+                rev_val = rev_growth * 100
+                emoji_rev = "🟢" if rev_val >= 10 else ("🟡" if rev_val >= 0 else "🔴")
+                rev_str = f"{emoji_rev} `{rev_val:+.1f}%`"
+            else:
+                rev_str = "`N/A`"
+
+            # 2. Forward P/E
             fwd_pe = info.get("forwardPE")
-            fwd_pe_str = f"`{round(fwd_pe, 2)}`" if isinstance(fwd_pe, (int, float)) else "`N/A`"
+            if isinstance(fwd_pe, (int, float)):
+                emoji_pe = "🟢" if fwd_pe < 20 else ("🟡" if fwd_pe <= 35 else "🔴")
+                fwd_pe_str = f"{emoji_pe} `{round(fwd_pe, 1)}`"
+            else:
+                fwd_pe_str = "`N/A`"
 
+            # 3. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
-            ev_ebitda_str = f"`{round(ev_ebitda, 2)}`" if isinstance(ev_ebitda, (int, float)) else "`N/A`"
+            if isinstance(ev_ebitda, (int, float)):
+                emoji_ev = "🟢" if ev_ebitda < 12 else ("🟡" if ev_ebitda <= 20 else "🔴")
+                ev_ebitda_str = f"{emoji_ev} `{round(ev_ebitda, 1)}`"
+            else:
+                ev_ebitda_str = "`N/A`"
 
+            # 4. PEG Ratio
             peg = info.get("pegRatio")
-            peg_str = f"`{round(peg, 2)}`" if isinstance(peg, (int, float)) else "`N/A`"
+            if isinstance(peg, (int, float)):
+                emoji_peg = "🟢" if peg < 1.0 else ("🟡" if peg <= 2.0 else "🔴")
+                peg_str = f"{emoji_peg} `{round(peg, 2)}`"
+            else:
+                peg_str = "`N/A`"
 
+            # 5. Dividend Yield
             div_rate = info.get("dividendRate")
             div_yield = info.get("dividendYield")
             div_pct = 0.0
@@ -385,29 +410,43 @@ def send_fundamentals():
                 div_pct = (div_rate / price) * 100
             elif isinstance(div_yield, (int, float)):
                 div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
-            div_str = f"`{round(div_pct, 2)}%`"
+            
+            emoji_div = "🟢" if div_pct >= 3.0 else ("🟡" if div_pct >= 1.5 else "⚪")
+            div_str = f"{emoji_div} `{div_pct:.2f}%`"
 
+            # 6. ROE
             roe = info.get("returnOnEquity")
-            roe_str = f"`{round(roe * 100, 1)}%`" if isinstance(roe, (int, float)) else "`N/A`"
+            if isinstance(roe, (int, float)):
+                roe_val = roe * 100
+                emoji_roe = "🟢" if roe_val >= 15 else ("🟡" if roe_val >= 8 else "🔴")
+                roe_str = f"{emoji_roe} `{roe_val:.1f}%`"
+            else:
+                roe_str = "`N/A`"
 
+            # 7. Marges
             gross = info.get("grossMargins")
-            gross_str = f"`{round(gross * 100, 1)}%`" if isinstance(gross, (int, float)) else "`N/A`"
+            gross_str = f"`{gross * 100:.1f}%`" if isinstance(gross, (int, float)) else "`N/A`"
 
             profit = info.get("profitMargins")
-            profit_str = f"`{round(profit * 100, 1)}%`" if isinstance(profit, (int, float)) else "`N/A`"
+            if isinstance(profit, (int, float)):
+                profit_val = profit * 100
+                emoji_profit = "🟢" if profit_val >= 15 else ("🟡" if profit_val >= 5 else "🔴")
+                profit_str = f"{emoji_profit} `{profit_val:.1f}%`"
+            else:
+                profit_str = "`N/A`"
 
-            rev_growth = info.get("revenueGrowth")
-            rev_growth_str = f"`{round(rev_growth * 100, 1)}%`" if isinstance(rev_growth, (int, float)) else "`N/A`"
-
-            fcf = info.get("freeCashflow", "N/A")
+            # 8. FCF
+            fcf = info.get("freeCashflow")
             if isinstance(fcf, (int, float)):
-                fcf_str = f"`{round(fcf / 1e9, 2)} Mrd {curr_symbol}`"
+                fcf_mrd = fcf / 1e9
+                emoji_fcf = "🟢" if fcf_mrd >= 0 else "🔴"
+                fcf_str = f"{emoji_fcf} `{fcf_mrd:+.2f} Mrd {curr_symbol}`"
             else:
                 fcf_str = "`N/A`"
 
             item_text = f"🏢 **{symbol}**\n"
-            item_text += f"├ **Croissance CA** : {rev_growth_str}\n"
-            item_text += f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
+            item_text += f"├ **Croissance CA** : {rev_str}\n"
+            item_text += f"├ **Valo.** : P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
             item_text += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
             item_text += f"├ **Marges** : Brut {gross_str} | Net {profit_str}\n"
             item_text += f"└ **FCF** : {fcf_str}\n\n"
