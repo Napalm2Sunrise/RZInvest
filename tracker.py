@@ -30,6 +30,14 @@ TICKERS = [
     "TSLA",
 ]
 
+# Calendrier des prochaines publications macroéconomiques majeures (Format : AAAA-MM-JJ)
+MACRO_EVENTS = {
+    "FED (Réunion)": "2026-10-28",
+    "CPI US": "2026-10-14",
+    "Core PCE": "2026-09-30",
+    "NFP": "2026-10-02",
+}
+
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 CACHE_FILE = "sent_news.json"
@@ -127,7 +135,7 @@ def check_200_weekly_sma(ticker, current_price):
 
 
 def get_next_earnings_date(ticker):
-    """Récupère la prochaine date de publication."""
+    """Récupère la prochaine date de publication d'une entreprise."""
     try:
         calendar = ticker.calendar
         now = datetime.now().date()
@@ -152,7 +160,7 @@ def get_next_earnings_date(ticker):
         if target_date:
             formatted_date = target_date.strftime("%d/%m/%Y")
             days_diff = (target_date - now).days
-            if 0 <= days_diff < 5:
+            if 0 <= days_diff <= 5:
                 return f"{formatted_date} 🔥"
             return formatted_date
 
@@ -162,14 +170,34 @@ def get_next_earnings_date(ticker):
     return "À déterminer"
 
 
+def format_event_date(date_str):
+    """Formate la date macroéconomique et ajoute l'icône 🔥 si elle a lieu dans les 5 jours."""
+    try:
+        event_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        now = datetime.now().date()
+        formatted_date = event_date.strftime("%d/%m/%Y")
+        days_diff = (event_date - now).days
+
+        if 0 <= days_diff <= 5:
+            return f"{formatted_date} 🔥"
+        return formatted_date
+    except Exception:
+        return date_str
+
+
 def send_prices():
     """1. Prix, Evolution, 200 W-SMA & Prochaines publications."""
     header = "📈 **SUIVI DES COURS & DATES**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
-    send_telegram(header)
-    time.sleep(0.5)
 
-    current_message = ""
+    # Ajout du bloc macroéconomique dans le premier message
+    header += "🏛️ **CALENDRIER MACROÉCONOMIQUE**\n"
+    for event_name, event_date_str in MACRO_EVENTS.items():
+        formatted_d = format_event_date(event_date_str)
+        header += f"├ **{event_name}** : `{formatted_d}`\n"
+    header += "\n" + "─" * 20 + "\n\n"
+
+    current_message = header
     batch_count = 0
 
     for symbol in TICKERS:
@@ -225,7 +253,7 @@ def send_prices():
             current_message += item_text
             batch_count += 1
 
-            # Paquets de 10 actions pour réduire le nombre de messages
+            # Paquets de 10 actions
             if batch_count >= 10:
                 send_telegram(current_message)
                 current_message = ""
@@ -267,7 +295,9 @@ def send_news():
                 # Si la date est en ISO string, conversion
                 if isinstance(pub_time, str):
                     try:
-                        pub_time = datetime.fromisoformat(pub_time.replace("Z", "+00:00")).timestamp()
+                        pub_time = datetime.fromisoformat(
+                            pub_time.replace("Z", "+00:00")
+                        ).timestamp()
                     except Exception:
                         pub_time = now_ts
 
