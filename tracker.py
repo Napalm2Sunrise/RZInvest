@@ -3,6 +3,8 @@ import json
 import os
 import sys
 import time
+import matplotlib.pyplot as plt
+import pandas as pd
 import requests
 import yfinance as yf
 
@@ -103,6 +105,16 @@ def send_telegram(message):
             "disable_web_page_preview": True,
         },
     )
+    return response.ok
+
+
+def send_telegram_photo(photo_path, caption=""):
+    """Envoie une image stockée sur le serveur vers Telegram."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendPhoto"
+    with open(photo_path, 'rb') as photo:
+        payload = {'chat_id': CHAT_ID, 'caption': caption, 'parse_mode': 'Markdown'}
+        files = {'photo': photo}
+        response = requests.post(url, data=payload, files=files)
     return response.ok
 
 
@@ -343,130 +355,96 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale (Titre intégré au 1er paquet d'actions)."""
-    header = "📊 **ANALYSE FONDAMENTALE (HEBDO)**\n"
-    header += f"📅 `{datetime.now().strftime('%d/%m/%Y')}`\n\n"
-
-    current_message = header
-    batch_count = 0
+    """3. Analyse Fondamentale : génère un tableau synthétique sous forme d'image PNG."""
+    data = []
 
     for symbol in TICKERS:
         try:
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            price = (
-                info.get("currentPrice")
-                or info.get("regularMarketPrice")
-                or info.get("ask")
-                or info.get("bid")
-            )
-            if not price or price == 0:
-                hist = ticker.history(period="5d")
-                price = float(hist["Close"].iloc[-1]) if not hist.empty else 1.0
-
-            currency = info.get("currency", "USD")
-            if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA"]) or currency == "EUR":
-                curr_symbol = "€"
-            else:
-                curr_symbol = "$"
-
-            # 1. Croissance CA
+            # Croissance CA
             rev_growth = info.get("revenueGrowth")
-            if isinstance(rev_growth, (int, float)):
-                rev_val = rev_growth * 100
-                emoji_rev = "🟢" if rev_val >= 10 else ("🟡" if rev_val >= 0 else "🔴")
-                rev_str = f"{emoji_rev} `{rev_val:+.1f}%`"
-            else:
-                rev_str = "`N/A`"
+            rev_str = f"{rev_growth * 100:+.1f}%" if isinstance(rev_growth, (int, float)) else "N/A"
 
-            # 2. Forward P/E
+            # Forward P/E
             fwd_pe = info.get("forwardPE")
-            if isinstance(fwd_pe, (int, float)):
-                emoji_pe = "🟢" if fwd_pe < 20 else ("🟡" if fwd_pe <= 35 else "🔴")
-                fwd_pe_str = f"{emoji_pe} `{round(fwd_pe, 1)}`"
-            else:
-                fwd_pe_str = "`N/A`"
+            pe_str = f"{fwd_pe:.1f}" if isinstance(fwd_pe, (int, float)) else "N/A"
 
-            # 3. EV/EBITDA
+            # EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
-            if isinstance(ev_ebitda, (int, float)):
-                emoji_ev = "🟢" if ev_ebitda < 12 else ("🟡" if ev_ebitda <= 20 else "🔴")
-                ev_ebitda_str = f"{emoji_ev} `{round(ev_ebitda, 1)}`"
-            else:
-                ev_ebitda_str = "`N/A`"
+            ev_str = f"{ev_ebitda:.1f}" if isinstance(ev_ebitda, (int, float)) else "N/A"
 
-            # 4. PEG Ratio
+            # PEG Ratio
             peg = info.get("pegRatio")
-            if isinstance(peg, (int, float)):
-                emoji_peg = "🟢" if peg < 1.0 else ("🟡" if peg <= 2.0 else "🔴")
-                peg_str = f"{emoji_peg} `{round(peg, 2)}`"
-            else:
-                peg_str = "`N/A`"
+            peg_str = f"{peg:.2f}" if isinstance(peg, (int, float)) else "N/A"
 
-            # 5. Dividend Yield
-            div_rate = info.get("dividendRate")
+            # Dividend Yield
             div_yield = info.get("dividendYield")
-            div_pct = 0.0
-            if isinstance(div_rate, (int, float)) and price > 0:
-                div_pct = (div_rate / price) * 100
-            elif isinstance(div_yield, (int, float)):
-                div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
-            
-            emoji_div = "🟢" if div_pct >= 3.0 else ("🟡" if div_pct >= 1.5 else "⚪")
-            div_str = f"{emoji_div} `{div_pct:.2f}%`"
+            div_str = f"{div_yield * 100:.2f}%" if isinstance(div_yield, (int, float)) else "0.00%"
 
-            # 6. ROE
+            # ROE
             roe = info.get("returnOnEquity")
-            if isinstance(roe, (int, float)):
-                roe_val = roe * 100
-                emoji_roe = "🟢" if roe_val >= 15 else ("🟡" if roe_val >= 8 else "🔴")
-                roe_str = f"{emoji_roe} `{roe_val:.1f}%`"
-            else:
-                roe_str = "`N/A`"
+            roe_str = f"{roe * 100:.1f}%" if isinstance(roe, (int, float)) else "N/A"
 
-            # 7. Marges
-            gross = info.get("grossMargins")
-            gross_str = f"`{gross * 100:.1f}%`" if isinstance(gross, (int, float)) else "`N/A`"
-
+            # Marge Nette
             profit = info.get("profitMargins")
-            if isinstance(profit, (int, float)):
-                profit_val = profit * 100
-                emoji_profit = "🟢" if profit_val >= 15 else ("🟡" if profit_val >= 5 else "🔴")
-                profit_str = f"{emoji_profit} `{profit_val:.1f}%`"
-            else:
-                profit_str = "`N/A`"
+            profit_str = f"{profit * 100:.1f}%" if isinstance(profit, (int, float)) else "N/A"
 
-            # 8. FCF
-            fcf = info.get("freeCashflow")
-            if isinstance(fcf, (int, float)):
-                fcf_mrd = fcf / 1e9
-                emoji_fcf = "🟢" if fcf_mrd >= 0 else "🔴"
-                fcf_str = f"{emoji_fcf} `{fcf_mrd:+.2f} Mrd {curr_symbol}`"
-            else:
-                fcf_str = "`N/A`"
+            data.append({
+                "Ticker": symbol,
+                "Croit. CA": rev_str,
+                "Fwd P/E": pe_str,
+                "EV/EBITDA": ev_str,
+                "PEG": peg_str,
+                "Div.": div_str,
+                "ROE": roe_str,
+                "Marge N.": profit_str
+            })
+        except Exception:
+            continue
 
-            item_text = f"🏢 **{symbol}**\n"
-            item_text += f"├ **Croissance CA** : {rev_str}\n"
-            item_text += f"├ **Valo.** : P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
-            item_text += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
-            item_text += f"├ **Marges** : Brut {gross_str} | Net {profit_str}\n"
-            item_text += f"└ **FCF** : {fcf_str}\n\n"
+    if not data:
+        send_telegram("❌ Impossible de générer l'analyse fondamentale.")
+        return
 
-            current_message += item_text
-            batch_count += 1
+    df = pd.DataFrame(data)
 
-            if batch_count >= 13:
-                send_telegram(current_message)
-                current_message = ""
-                batch_count = 0
-                time.sleep(1)
+    # Dimensionnement dynamique en fonction du nombre d'actions
+    fig, ax = plt.subplots(figsize=(10, len(df) * 0.4 + 1.2), dpi=200)
+    ax.axis('off')
+    ax.axis('tight')
 
-        except Exception as e:
-            current_message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
+    # Dessin du tableau Matplotlib
+    table = ax.table(
+        cellText=df.values,
+        colLabels=df.columns,
+        cellLoc='center',
+        loc='center'
+    )
 
-    if current_message:
-        send_telegram(current_message)
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1.2, 1.5)
+
+    # Stylisation des en-têtes et des lignes
+    for (row, col), cell in table.get_celld().items():
+        if row == 0:
+            cell.set_facecolor('#1e293b')
+            cell.get_text().set_color('white')
+            cell.get_text().set_weight('bold')
+        else:
+            cell.set_facecolor('#f8fafc' if row % 2 == 0 else '#ffffff')
+
+    plt.title(f"📊 BUREAU D'ANALYSE FONDAMENTALE ({datetime.now().strftime('%d/%m/%Y')})", 
+              fontsize=12, fontweight='bold', pad=15)
+
+    image_filename = "fundamentals.png"
+    plt.savefig(image_filename, bbox_inches='tight', pad_inches=0.2)
+    plt.close()
+
+    # Envoi de la photo générée
+    send_telegram_photo(image_filename, caption="📊 **Analyse Fondamentale Hebdomadaire**")
 
 
 if __name__ == "__main__":
