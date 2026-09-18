@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Dashboard</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 16px; padding-bottom: 30px; }
+    
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+    .title { font-size: 18px; font-weight: 800; color: #38bdf8; }
+    .last-update { font-size: 11px; color: #64748b; }
+
+    /* Nav Tabs */
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; }
+    .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
+
+    /* Filters */
+    .filter-bar { margin-bottom: 16px; display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+    .chip { background: #1e293b; color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; border: 1px solid transparent; }
+    .chip.active { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-color: #38bdf8; }
+
+    /* Content Cards */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; }
+    .price-tag { font-weight: 700; font-size: 14px; }
+    .pos { color: #34d399; }
+    .neg { color: #f87171; }
+
+    .news-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #f1f5f9; line-height: 1.3; }
+    .news-summary { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 10px; }
+    .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
+
+    .badge { padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-top: 4px; }
+    .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+    .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+
+    /* Grid Fundamentals */
+    .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; font-size: 12px; }
+    .fund-item { background: rgba(15, 23, 42, 0.5); padding: 8px; border-radius: 6px; }
+    .fund-label { color: #64748b; font-size: 10px; text-transform: uppercase; }
+    .fund-val { font-weight: 700; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="title">Trading Hub</div>
+      <div class="last-update" id="update-time">Chargement...</div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
+    <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
+    <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
+  </div>
+
+  <div class="filter-bar" id="ticker-filters">
+    <div class="chip active" onclick="filterByTicker('ALL', this)">TOUS</div>
+  </div>
+
+  <!-- SECTION NEWS -->
+  <div id="news-sec" class="section active">
+    <div id="news-container"></div>
+  </div>
+
+  <!-- SECTION PRICES -->
+  <div id="prices-sec" class="section">
+    <div id="prices-container"></div>
+  </div>
+
+  <!-- SECTION FUNDAMENTALS -->
+  <div id="fund-sec" class="section">
+    <div id="fund-container"></div>
+  </div>
+
+  <script>
+    const tg = window.Telegram?.WebApp;
+    if (tg) tg.expand(); // Ouvre en plein écran sur Telegram
+
+    let globalData = null;
+    let selectedTicker = 'ALL';
+
+    async function loadData() {
+      try {
+        const res = await fetch('data.json?v=' + new Date().getTime());
+        globalData = await res.json();
+        document.getElementById('update-time').innerText = "MàJ: " + globalData.updated_at;
+        
+        buildFilters();
+        renderAll();
+      } catch (e) {
+        document.getElementById('update-time').innerText = "Erreur de chargement";
+      }
+    }
+
+    function buildFilters() {
+      const tickers = new Set();
+      if(globalData.prices) globalData.prices.forEach(p => tickers.add(p.ticker));
+      
+      const filterBar = document.getElementById('ticker-filters');
+      tickers.forEach(t => {
+        const chip = document.createElement('div');
+        chip.className = 'chip';
+        chip.innerText = t;
+        chip.onclick = (e) => filterByTicker(t, chip);
+        filterBar.appendChild(chip);
+      });
+    }
+
+    function filterByTicker(ticker, el) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      selectedTicker = ticker;
+      renderAll();
+    }
+
+    function switchTab(secId, btn) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(secId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function renderAll() {
+      if(!globalData) return;
+
+      // News
+      const newsCont = document.getElementById('news-container');
+      newsCont.innerHTML = '';
+      const filteredNews = selectedTicker === 'ALL' ? globalData.news : globalData.news.filter(n => n.ticker === selectedTicker);
+      
+      filteredNews.forEach(n => {
+        newsCont.innerHTML += `
+          <div class="card">
+            <div class="card-header">
+              <span class="ticker-name">${n.ticker}</span>
+              <span class="last-update">${n.date}</span>
+            </div>
+            <div class="news-title">${n.title}</div>
+            <div class="news-summary">${n.summary}</div>
+            ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
+          </div>`;
+      });
+
+      // Prices
+      const priceCont = document.getElementById('prices-container');
+      priceCont.innerHTML = '';
+      const filteredPrices = selectedTicker === 'ALL' ? globalData.prices : globalData.prices.filter(p => p.ticker === selectedTicker);
+
+      filteredPrices.forEach(p => {
+        const isPos = p.change >= 0;
+        priceCont.innerHTML += `
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <span class="ticker-name">${p.ticker}</span>
+                <span class="badge ${p.sma200.includes('Under') ? 'bg-alert' : 'bg-ok'}">${p.sma200}</span>
+              </div>
+              <div style="text-align:right">
+                <div class="price-tag">${p.price} ${p.currency}</div>
+                <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${p.change.toFixed(2)}%</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:6px;">📅 Prochaine pub. : <b>${p.earnings}</b></div>
+          </div>`;
+      });
+
+      // Fundamentals
+      const fundCont = document.getElementById('fund-container');
+      fundCont.innerHTML = '';
+      const filteredFund = selectedTicker === 'ALL' ? globalData.fundamentals : globalData.fundamentals.filter(f => f.ticker === selectedTicker);
+
+      filteredFund.forEach(f => {
+        fundCont.innerHTML += `
+          <div class="card">
+            <div class="ticker-name" style="margin-bottom:8px;">${f.ticker}</div>
+            <div class="fund-grid">
+              <div class="fund-item"><div class="fund-label">Croit. CA</div><div class="fund-val">${f.rev_growth}</div></div>
+              <div class="fund-item"><div class="fund-label">Fwd P/E</div><div class="fund-val">${f.pe}</div></div>
+              <div class="fund-item"><div class="fund-label">EV/EBITDA</div><div class="fund-val">${f.ev}</div></div>
+              <div class="fund-item"><div class="fund-label">ROE</div><div class="fund-val">${f.roe}</div></div>
+            </div>
+          </div>`;
+      });
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
