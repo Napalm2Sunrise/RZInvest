@@ -177,12 +177,34 @@ def send_prices():
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            price = info.get("currentPrice") or info.get("regularMarketPrice", 0)
-            prev_close = info.get("previousClose", 1)
-            change_pct = ((price - prev_close) / prev_close) * 100
+            # Récupération sécurisée du prix actuel
+            price = (
+                info.get("currentPrice")
+                or info.get("regularMarketPrice")
+                or info.get("ask")
+                or info.get("bid")
+            )
+
+            # Si yfinance ne renvoie rien dans info, on prend le dernier prix de l'historique
+            if not price or price == 0:
+                hist = ticker.history(period="5d")
+                if not hist.empty:
+                    price = float(hist["Close"].iloc[-1])
+                else:
+                    price = 0.0
+
+            prev_close = info.get("previousClose") or price
+            if prev_close > 0 and price > 0:
+                change_pct = ((price - prev_close) / prev_close) * 100
+            else:
+                change_pct = 0.0
 
             currency = info.get("currency", "USD")
-            curr_symbol = "€" if currency == "EUR" else "$"
+            # Forcer € si le ticker se termine par .BR, .BE ou .PA
+            if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA"]) or currency == "EUR":
+                curr_symbol = "€"
+            else:
+                curr_symbol = "$"
 
             sma_status = check_200_weekly_sma(ticker, price)
             next_earnings = get_next_earnings_date(ticker)
@@ -190,7 +212,8 @@ def send_prices():
             sma_display = (
                 f"`{sma_status}`" if "Under" not in sma_status else f"**{sma_status}**"
             )
-            status_emoji = "🟢" if change_pct >= 0 else "RAW_TEXT_4"
+
+            status_emoji = "🟢" if change_pct >= 0 else "🔴"
 
             item_text = (
                 f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}`"
@@ -202,7 +225,8 @@ def send_prices():
             current_message += item_text
             batch_count += 1
 
-            if batch_count >= 5:
+            # Paquets de 10 actions pour réduire le nombre de messages
+            if batch_count >= 10:
                 send_telegram(current_message)
                 current_message = ""
                 batch_count = 0
@@ -222,7 +246,7 @@ def send_news():
 
     sent_cache = load_sent_news()
     now_ts = datetime.now().timestamp()
-    
+
     # 24h en jours ouvrés = 24h en semaine, 72h si weekend inclus
     cutoff_ts = now_ts - (72 * 3600 if datetime.now().weekday() == 0 else 24 * 3600)
 
@@ -273,7 +297,7 @@ def send_news():
                         symbol_news += f"  • [{title}]({link})\n"
                     else:
                         symbol_news += f"  • {title}\n"
-                    
+
                     sent_cache[news_id] = now_ts
 
             if symbol_news:
@@ -306,9 +330,22 @@ def send_fundamentals():
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            price = info.get("currentPrice") or info.get("regularMarketPrice", 1)
+            # Récupération du prix pour calculer le dividend yield
+            price = (
+                info.get("currentPrice")
+                or info.get("regularMarketPrice")
+                or info.get("ask")
+                or info.get("bid")
+            )
+            if not price or price == 0:
+                hist = ticker.history(period="5d")
+                price = float(hist["Close"].iloc[-1]) if not hist.empty else 1.0
+
             currency = info.get("currency", "USD")
-            curr_symbol = "€" if currency == "EUR" else "$"
+            if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA"]) or currency == "EUR":
+                curr_symbol = "€"
+            else:
+                curr_symbol = "$"
 
             # 1. Forward P/E
             fwd_pe = info.get("forwardPE")
