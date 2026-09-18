@@ -12,9 +12,12 @@ TICKERS = [
     "HOMI.BR",
     "RET.BR",
     "AMKR",
+    "ASML.AS",   
     "AVGO",
     "AYA.TO",
     "BKNG",
+    "CPRT",
+    "CSW",
     "GEV",
     "GOOG",
     "ISRG",
@@ -28,6 +31,7 @@ TICKERS = [
     "SU.PA",
     "TTE.PA",
     "TSLA",
+    "VRSN", 
 ]
 
 # Calendrier des prochaines publications macroéconomiques majeures (Format : AAAA-MM-JJ)
@@ -340,7 +344,7 @@ def send_news():
 
 def send_fundamentals():
     """3. Analyse Fondamentale (Titre intégré au 1er paquet d'actions)."""
-    header = "📊 **BUREAU D'ANALYSE FONDAMENTALE (HEBDO)**\n"
+    header = "📊 **ANALYSE FONDAMENTALE (HEBDO)**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y')}`\n\n"
 
     current_message = header
