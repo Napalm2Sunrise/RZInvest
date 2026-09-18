@@ -243,12 +243,13 @@ def send_prices():
 
 
 def send_news():
-    """2. News récentes : envoie chaque article sous forme de résumé individuel."""
+    """2. News récentes : regroupe les actualités par blocs pour limiter les messages."""
     sent_cache = load_sent_news()
     now_ts = datetime.now().timestamp()
 
     cutoff_ts = now_ts - (72 * 3600 if datetime.now().weekday() == 0 else 24 * 3600)
-    news_count = 0
+    
+    pending_articles = []
 
     for symbol in TICKERS:
         try:
@@ -290,25 +291,40 @@ def send_news():
                 is_important = any(kw in title_lower or kw in summary_lower for kw in IMPORTANT_KEYWORDS)
 
                 if is_important:
-                    news_message = f"📰 **{symbol}** — *Actualité Majeure*\n\n"
-                    news_message += f"📌 **{title}**\n\n"
+                    # Construction du bloc texte d'un article
+                    art_text = f"📰 **{symbol}** — *Actualité Majeure*\n"
+                    art_text += f"📌 **{title}**\n"
                     if summary:
-                        news_message += f"📝 **Résumé** :\n{summary}\n\n"
+                        art_text += f"📝 {summary}\n"
                     if link:
-                        news_message += f"🔗 [Lire l'article complet]({link})"
-
-                    send_telegram(news_message)
-                    sent_cache[news_id] = now_ts
-                    news_count += 1
-                    time.sleep(1)
+                        art_text += f"🔗 [Lire l'article]({link})\n"
+                    
+                    pending_articles.append((news_id, art_text))
 
         except Exception:
             pass
 
-    save_sent_news(sent_cache)
-
-    if news_count == 0:
+    if not pending_articles:
         send_telegram("📰 **ACTUALITÉS** : Aucune nouvelle dépêche majeure récente.")
+        return
+
+    # Regroupement par paquets de 3 actualités par message
+    BATCH_SIZE = 3
+    for i in range(0, len(pending_articles), BATCH_SIZE):
+        batch = pending_articles[i:i + BATCH_SIZE]
+        
+        # En-tête du message groupé
+        message = f"📰 **REVUE DE PRESSE ({len(batch)} news)**\n\n"
+        message += "\n─" * 15 + "\n\n"
+        message += "\n\n".join([item[1] for item in batch])
+
+        if send_telegram(message):
+            # Marquer comme envoyées seulement si l'envoi a réussi
+            for news_id, _ in batch:
+                sent_cache[news_id] = now_ts
+            time.sleep(1)
+
+    save_sent_news(sent_cache)
 
 
 def get_color_class(metric_type, val_str):
