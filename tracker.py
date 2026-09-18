@@ -312,7 +312,7 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale : génère un tableau en image sécurisé avec couleurs."""
+    """3. Analyse Fondamentale : rendu propre avec seuils ajustés."""
     data = []
     cell_colors = []
 
@@ -324,36 +324,40 @@ def send_fundamentals():
             rev_str, pe_str, ev_str, peg_str, div_str, roe_str, profit_str = ["N/A"] * 7
             c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof = ['#ffffff'] * 7
 
-            # 1. Croissance CA
+            # 1. Croissance CA (Neutre pour l'immobilier/REITs)
             rev_growth = info.get("revenueGrowth")
             if isinstance(rev_growth, (int, float)):
                 rev_str = f"{rev_growth * 100:+.1f}%"
                 c_rev = '#d1fae5' if rev_growth >= 0.1 else ('#fef3c7' if rev_growth >= 0 else '#fee2e2')
 
-            # 2. Forward P/E
+            # 2. Forward P/E (Seuils élargis : Vert < 25, Jaune <= 50, Rouge > 50)
             fwd_pe = info.get("forwardPE")
-            if isinstance(fwd_pe, (int, float)):
+            if isinstance(fwd_pe, (int, float)) and fwd_pe > 0:
                 pe_str = f"{fwd_pe:.1f}"
-                c_pe = '#d1fae5' if fwd_pe < 20 else ('#fef3c7' if fwd_pe <= 35 else '#fee2e2')
+                c_pe = '#d1fae5' if fwd_pe < 25 else ('#fef3c7' if fwd_pe <= 50 else '#fee2e2')
 
             # 3. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
-            if isinstance(ev_ebitda, (int, float)):
+            if isinstance(ev_ebitda, (int, float)) and ev_ebitda > 0:
                 ev_str = f"{ev_ebitda:.1f}"
-                c_ev = '#d1fae5' if ev_ebitda < 12 else ('#fef3c7' if ev_ebitda <= 20 else '#fee2e2')
+                c_ev = '#d1fae5' if ev_ebitda < 15 else ('#fef3c7' if ev_ebitda <= 30 else '#fee2e2')
 
             # 4. PEG
             peg = info.get("pegRatio")
-            if isinstance(peg, (int, float)):
+            if isinstance(peg, (int, float)) and peg > 0:
                 peg_str = f"{peg:.2f}"
-                c_peg = '#d1fae5' if peg < 1.0 else ('#fef3c7' if peg <= 2.0 else '#fee2e2')
+                c_peg = '#d1fae5' if peg < 1.2 else ('#fef3c7' if peg <= 2.2 else '#fee2e2')
 
-            # 5. Dividende
+            # 5. Dividende (Correction du facteur 100)
             div_yield = info.get("dividendYield")
             if isinstance(div_yield, (int, float)):
                 div_val = div_yield * 100 if div_yield < 1.0 else div_yield
-                div_str = f"{div_val:.2f}%"
-                c_div = '#d1fae5' if div_val >= 3.0 else ('#fef3c7' if div_val >= 1.5 else '#ffffff')
+                # Filtre contre les abérrations d'API > 20%
+                if div_val < 20.0:
+                    div_str = f"{div_val:.2f}%"
+                    c_div = '#d1fae5' if div_val >= 3.0 else ('#fef3c7' if div_val >= 1.0 else '#ffffff')
+                else:
+                    div_str = f"{div_val / 100:.2f}%"
             else:
                 div_str = "0.00%"
 
@@ -362,7 +366,7 @@ def send_fundamentals():
             if isinstance(roe, (int, float)):
                 roe_val = roe * 100
                 roe_str = f"{roe_val:.1f}%"
-                c_roe = '#d1fae5' if roe_val >= 15 else ('#fef3c7' if roe_val >= 8 else '#fee2e2')
+                c_roe = '#d1fae5' if roe_val >= 15 else ('#fef3c7' if roe_val >= 5 else '#fee2e2')
 
             # 7. Marge Nette
             profit = info.get("profitMargins")
@@ -407,7 +411,6 @@ def send_fundamentals():
     table.set_fontsize(9)
     table.scale(1.2, 1.5)
 
-    # Application sécurisée des couleurs et styles
     for row_idx in range(len(df) + 1):
         for col_idx in range(len(df.columns)):
             cell = table[(row_idx, col_idx)]
