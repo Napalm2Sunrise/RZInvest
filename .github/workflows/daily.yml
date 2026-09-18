@@ -2,15 +2,14 @@ name: Daily Tracker
 
 on:
   schedule:
-    - cron: '0 8 * * *' # S'exécute automatiquement tous les jours
+    - cron: '0 8 * * *' # Exécution automatique quotidienne
   workflow_dispatch: # Permet le lancement manuel
 
 jobs:
   run-tracker:
-    runs-mode: write
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Important pour pouvoir pusher data.json
+      contents: write # Autorise le bot à enregistrer et pusher data.json
 
     steps:
       - name: Checkout du code
