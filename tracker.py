@@ -355,41 +355,76 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale : génère un tableau synthétique sous forme d'image PNG."""
+    """3. Analyse Fondamentale : génère un tableau en image avec un code couleur et l'envoie."""
     data = []
+    cell_colors = []  # Pour stocker les couleurs de chaque cellule
 
     for symbol in TICKERS:
         try:
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            # Croissance CA
+            row_colors = ['#ffffff'] * 8  # Blanc par défaut pour la ligne
+
+            # 1. Ticker (Fond blanc)
             rev_growth = info.get("revenueGrowth")
             rev_str = f"{rev_growth * 100:+.1f}%" if isinstance(rev_growth, (int, float)) else "N/A"
+            if isinstance(rev_growth, (int, float)):
+                c_rev = '#d1fae5' if rev_growth >= 0.1 else ('#fef3c7' if rev_growth >= 0 else '#fee2e2')
+            else:
+                c_rev = '#ffffff'
 
-            # Forward P/E
+            # 2. Forward P/E
             fwd_pe = info.get("forwardPE")
             pe_str = f"{fwd_pe:.1f}" if isinstance(fwd_pe, (int, float)) else "N/A"
+            if isinstance(fwd_pe, (int, float)):
+                c_pe = '#d1fae5' if fwd_pe < 20 else ('#fef3c7' if fwd_pe <= 35 else '#fee2e2')
+            else:
+                c_pe = '#ffffff'
 
-            # EV/EBITDA
+            # 3. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
             ev_str = f"{ev_ebitda:.1f}" if isinstance(ev_ebitda, (int, float)) else "N/A"
+            if isinstance(ev_ebitda, (int, float)):
+                c_ev = '#d1fae5' if ev_ebitda < 12 else ('#fef3c7' if ev_ebitda <= 20 else '#fee2e2')
+            else:
+                c_ev = '#ffffff'
 
-            # PEG Ratio
+            # 4. PEG
             peg = info.get("pegRatio")
             peg_str = f"{peg:.2f}" if isinstance(peg, (int, float)) else "N/A"
+            if isinstance(peg, (int, float)):
+                c_peg = '#d1fae5' if peg < 1.0 else ('#fef3c7' if peg <= 2.0 else '#fee2e2')
+            else:
+                c_peg = '#ffffff'
 
-            # Dividend Yield
+            # 5. Dividende
             div_yield = info.get("dividendYield")
-            div_str = f"{div_yield * 100:.2f}%" if isinstance(div_yield, (int, float)) else "0.00%"
+            if isinstance(div_yield, (int, float)):
+                div_val = div_yield * 100 if div_yield < 1.0 else div_yield
+                div_str = f"{div_val:.2f}%"
+                c_div = '#d1fae5' if div_val >= 3.0 else ('#fef3c7' if div_val >= 1.5 else '#ffffff')
+            else:
+                div_str = "0.00%"
+                c_div = '#ffffff'
 
-            # ROE
+            # 6. ROE
             roe = info.get("returnOnEquity")
             roe_str = f"{roe * 100:.1f}%" if isinstance(roe, (int, float)) else "N/A"
+            if isinstance(roe, (int, float)):
+                roe_val = roe * 100
+                c_roe = '#d1fae5' if roe_val >= 15 else ('#fef3c7' if roe_val >= 8 else '#fee2e2')
+            else:
+                c_roe = '#ffffff'
 
-            # Marge Nette
+            # 7. Marge Nette
             profit = info.get("profitMargins")
             profit_str = f"{profit * 100:.1f}%" if isinstance(profit, (int, float)) else "N/A"
+            if isinstance(profit, (int, float)):
+                prof_val = profit * 100
+                c_prof = '#d1fae5' if prof_val >= 15 else ('#fef3c7' if prof_val >= 5 else '#fee2e2')
+            else:
+                c_prof = '#ffffff'
 
             data.append({
                 "Ticker": symbol,
@@ -401,6 +436,10 @@ def send_fundamentals():
                 "ROE": roe_str,
                 "Marge N.": profit_str
             })
+
+            # Couleurs par colonne pour cette ligne (Ticker en blanc)
+            cell_colors.append(['#ffffff', c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof])
+
         except Exception:
             continue
 
@@ -410,15 +449,19 @@ def send_fundamentals():
 
     df = pd.DataFrame(data)
 
-    # Dimensionnement dynamique en fonction du nombre d'actions
-    fig, ax = plt.subplots(figsize=(10, len(df) * 0.4 + 1.2), dpi=200)
+    # Création de l'image
+    fig, ax = plt.subplots(figsize=(10, len(df) * 0.45 + 1.2), dpi=200)
     ax.axis('off')
     ax.axis('tight')
 
-    # Dessin du tableau Matplotlib
+    # Ajout de l'en-tête dans les couleurs (bleu foncé)
+    header_colors = ['#1e293b'] * len(df.columns)
+    full_colors = [header_colors] + cell_colors
+
     table = ax.table(
         cellText=df.values,
         colLabels=df.columns,
+        cellColours=full_colors,
         cellLoc='center',
         loc='center'
     )
@@ -427,14 +470,11 @@ def send_fundamentals():
     table.set_fontsize(9)
     table.scale(1.2, 1.5)
 
-    # Stylisation des en-têtes et des lignes
-    for (row, col), cell in table.get_celld().items():
-        if row == 0:
-            cell.set_facecolor('#1e293b')
-            cell.get_text().set_color('white')
-            cell.get_text().set_weight('bold')
-        else:
-            cell.set_facecolor('#f8fafc' if row % 2 == 0 else '#ffffff')
+    # Stylisation du texte des en-têtes en blanc et gras
+    for col_idx in range(len(df.columns)):
+        cell = table[(0, col_idx)]
+        cell.get_text().set_color('white')
+        cell.get_text().set_weight('bold')
 
     plt.title(f"📊 BUREAU D'ANALYSE FONDAMENTALE ({datetime.now().strftime('%d/%m/%Y')})", 
               fontsize=12, fontweight='bold', pad=15)
@@ -443,7 +483,6 @@ def send_fundamentals():
     plt.savefig(image_filename, bbox_inches='tight', pad_inches=0.2)
     plt.close()
 
-    # Envoi de la photo générée
     send_telegram_photo(image_filename, caption="📊 **Analyse Fondamentale Hebdomadaire**")
 
 
