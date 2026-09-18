@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
+import json
 import os
+import sys
 import time
 import requests
 import yfinance as yf
@@ -30,6 +32,7 @@ TICKERS = [
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
+CACHE_FILE = "sent_news.json"
 
 IMPORTANT_KEYWORDS = [
     "result",
@@ -91,6 +94,23 @@ def send_telegram(message):
     return response.ok
 
 
+def load_sent_news():
+    """Charge l'historique des news envoyées depuis un fichier JSON."""
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def save_sent_news(data):
+    """Sauvegarde l'historique des news envoyées."""
+    with open(CACHE_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+
 def check_200_weekly_sma(ticker, current_price):
     """Calcule si le prix est au-dessus ou sous la Moyenne Mobile 200 Semaines."""
     try:
@@ -107,7 +127,7 @@ def check_200_weekly_sma(ticker, current_price):
 
 
 def get_next_earnings_date(ticker):
-    """Récupère la prochaine date de publication au format DD/MM/YYYY avec 🔥 si dans <= 5 jours."""
+    """Récupère la prochaine date de publication."""
     try:
         calendar = ticker.calendar
         now = datetime.now().date()
@@ -142,53 +162,15 @@ def get_next_earnings_date(ticker):
     return "À déterminer"
 
 
-def get_recent_news(ticker, max_items=1):
-    """Récupère l'actualité à fort impact avec lien cliquable."""
-    news_text = ""
-    try:
-        news_list = ticker.news
-        if news_list:
-            count = 0
-            for item in news_list:
-                content = item.get("content", item)
-                title = content.get("title") or item.get("title", "")
-                title_lower = title.lower()
-
-                link = None
-                if "clickThroughUrl" in content and content["clickThroughUrl"]:
-                    link = content["clickThroughUrl"].get("url")
-                elif "canonicalUrl" in content and content["canonicalUrl"]:
-                    link = content["canonicalUrl"].get("url")
-                elif "link" in item:
-                    link = item["link"]
-
-                is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
-
-                if is_important and count < max_items:
-                    if link:
-                        news_text += f"    • [{title}]({link})\n"
-                    else:
-                        news_text += f"    • {title}\n"
-                    count += 1
-    except Exception:
-        pass
-
-    if not news_text:
-        news_text = "    • Aucune dépêche majeure.\n"
-
-    return news_text
-
-
-def run_tracker():
-    header = "📊 **RÉCAPITULATIF BOURSIER DU JOUR**\n"
+def send_prices():
+    """1. Prix, Evolution, 200 W-SMA & Prochaines publications."""
+    header = "📈 **SUIVI DES COURS & DATES**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
-
-    # Envoie d'abord le titre
     send_telegram(header)
     time.sleep(0.5)
 
     current_message = ""
-    tickers_in_batch = 0
+    batch_count = 0
 
     for symbol in TICKERS:
         try:
@@ -203,165 +185,204 @@ def run_tracker():
             curr_symbol = "€" if currency == "EUR" else "$"
 
             sma_status = check_200_weekly_sma(ticker, price)
-
-            # 1. Forward P/E
-            fwd_pe = info.get("forwardPE")
-            if isinstance(fwd_pe, (int, float)):
-                val = round(fwd_pe, 2)
-                if val < 15:
-                    fwd_pe_str = f"🟢 `{val}`"
-                elif val > 25:
-                    fwd_pe_str = f"🔴 `{val}`"
-                else:
-                    fwd_pe_str = f"🟡 `{val}`"
-            else:
-                fwd_pe_str = "`N/A`"
-
-            # 2. EV/EBITDA
-            ev_ebitda = info.get("enterpriseToEbitda")
-            if isinstance(ev_ebitda, (int, float)):
-                val = round(ev_ebitda, 2)
-                if val < 10:
-                    ev_ebitda_str = f"🟢 `{val}`"
-                elif val > 18:
-                    ev_ebitda_str = f"🔴 `{val}`"
-                else:
-                    ev_ebitda_str = f"🟡 `{val}`"
-            else:
-                ev_ebitda_str = "`N/A`"
-
-            # 3. PEG Ratio
-            peg = info.get("pegRatio")
-            if isinstance(peg, (int, float)):
-                val = round(peg, 2)
-                if val < 1.0:
-                    peg_str = f"🟢 `{val}`"
-                elif val > 2.0:
-                    peg_str = f"🔴 `{val}`"
-                else:
-                    peg_str = f"🟡 `{val}`"
-            else:
-                peg_str = "`N/A`"
-
-            # 4. Dividend Yield
-            div_rate = info.get("dividendRate")
-            div_yield = info.get("dividendYield")
-
-            div_pct = 0.0
-            if isinstance(div_rate, (int, float)) and price > 0:
-                div_pct = (div_rate / price) * 100
-            elif isinstance(div_yield, (int, float)):
-                div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
-
-            div_pct = round(div_pct, 2)
-            if div_pct >= 2.5:
-                div_str = f"🟢 `{div_pct}%`"
-            elif div_pct > 0:
-                div_str = f"🟡 `{div_pct}%`"
-            else:
-                div_str = "`0%`"
-
-            # 5. ROE
-            roe = info.get("returnOnEquity")
-            if isinstance(roe, (int, float)):
-                roe_pct = round(roe * 100, 1)
-                if roe_pct >= 15:
-                    roe_str = f"🟢 `{roe_pct}%`"
-                elif roe_pct < 8:
-                    roe_str = f"🔴 `{roe_pct}%`"
-                else:
-                    roe_str = f"🟡 `{roe_pct}%`"
-            else:
-                roe_str = "`N/A`"
-
-            # 6. Marge Brute
-            gross = info.get("grossMargins")
-            if isinstance(gross, (int, float)):
-                gross_pct = round(gross * 100, 1)
-                if gross_pct >= 50:
-                    gross_margin_str = f"🟢 `{gross_pct}%`"
-                elif gross_pct < 30:
-                    gross_margin_str = f"🔴 `{gross_pct}%`"
-                else:
-                    gross_margin_str = f"🟡 `{gross_pct}%`"
-            else:
-                gross_margin_str = "`N/A`"
-
-            # 7. Marge Nette
-            profit = info.get("profitMargins")
-            if isinstance(profit, (int, float)):
-                profit_pct = round(profit * 100, 1)
-                if profit_pct >= 15:
-                    profit_margin_str = f"🟢 `{profit_pct}%`"
-                elif profit_pct < 8:
-                    profit_margin_str = f"🔴 `{profit_pct}%`"
-                else:
-                    profit_margin_str = f"🟡 `{profit_pct}%`"
-            else:
-                profit_margin_str = "`N/A`"
-
-            # 8. Revenue Growth
-            rev_growth = info.get("revenueGrowth")
-            if isinstance(rev_growth, (int, float)):
-                growth_pct = round(rev_growth * 100, 1)
-                if growth_pct >= 10:
-                    rev_growth_str = f"🟢 `{growth_pct}%`"
-                elif growth_pct < 0:
-                    rev_growth_str = f"🔴 `{growth_pct}%`"
-                else:
-                    rev_growth_str = f"🟡 `{growth_pct}%`"
-            else:
-                rev_growth_str = "`N/A`"
-
-            # FCF
-            fcf = info.get("freeCashflow", "N/A")
-            if isinstance(fcf, (int, float)):
-                fcf = f"{round(fcf / 1e9, 2)} Mrd {curr_symbol}"
-
             next_earnings = get_next_earnings_date(ticker)
-            news = get_recent_news(ticker)
 
             sma_display = (
                 f"`{sma_status}`" if "Under" not in sma_status else f"**{sma_status}**"
             )
-
-            status_emoji = "🟢" if change_pct >= 0 else "🔴"
+            status_emoji = "🟢" if change_pct >= 0 else "RAW_TEXT_4"
 
             item_text = (
                 f"{status_emoji} **{symbol}** : `{price:.2f} {curr_symbol}`"
                 f" ({change_pct:+.2f}%)\n"
             )
             item_text += f"├ **200 W-SMA** : {sma_display}\n"
-            item_text += f"├ **Croissance** : CA {rev_growth_str}\n"
-            item_text += (
-                f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} |"
-                f" PEG {peg_str}\n"
-            )
-            item_text += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
-            item_text += (
-                f"├ **Marges** : Brut {gross_margin_str} | Net {profit_margin_str}\n"
-            )
-            item_text += f"├ **FCF** : `{fcf}`\n"
-            item_text += f"├ 📅 **Prochaine pub.** : `{next_earnings}`\n"
-            item_text += f"└ 📰 **News** :\n{news}\n"
+            item_text += f"└ 📅 **Prochaine pub.** : `{next_earnings}`\n\n"
 
             current_message += item_text
-            tickers_in_batch += 1
+            batch_count += 1
 
-            # Envoi par paquets de 5 tickers pour éviter de dépasser 4096 caractères
-            if tickers_in_batch >= 5:
+            if batch_count >= 5:
                 send_telegram(current_message)
                 current_message = ""
-                tickers_in_batch = 0
+                batch_count = 0
                 time.sleep(1)
 
         except Exception as e:
             current_message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
 
-    # Envoie le reste des tickers s'il en reste
+    if current_message:
+        send_telegram(current_message)
+
+
+def send_news():
+    """2. News récentes (< 24h ouvrées et sans doublons)."""
+    header = "📰 **DERNIÈRES ACTUALITÉS MAJEURES**\n"
+    header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
+
+    sent_cache = load_sent_news()
+    now_ts = datetime.now().timestamp()
+    
+    # 24h en jours ouvrés = 24h en semaine, 72h si weekend inclus
+    cutoff_ts = now_ts - (72 * 3600 if datetime.now().weekday() == 0 else 24 * 3600)
+
+    news_found = False
+    full_message = header
+
+    for symbol in TICKERS:
+        try:
+            ticker = yf.Ticker(symbol)
+            news_list = ticker.news or []
+            symbol_news = ""
+
+            for item in news_list:
+                content = item.get("content", item)
+                title = content.get("title") or item.get("title", "")
+                pub_time = content.get("pubDate") or item.get("providerPublishTime", 0)
+
+                # Si la date est en ISO string, conversion
+                if isinstance(pub_time, str):
+                    try:
+                        pub_time = datetime.fromisoformat(pub_time.replace("Z", "+00:00")).timestamp()
+                    except Exception:
+                        pub_time = now_ts
+
+                # Règle 1 : Moins de 24h ouvrées
+                if pub_time < cutoff_ts:
+                    continue
+
+                link = None
+                if "clickThroughUrl" in content and content["clickThroughUrl"]:
+                    link = content["clickThroughUrl"].get("url")
+                elif "canonicalUrl" in content and content["canonicalUrl"]:
+                    link = content["canonicalUrl"].get("url")
+                elif "link" in item:
+                    link = item["link"]
+
+                news_id = link or title
+
+                # Règle 2 : Ne pas se répéter
+                if news_id in sent_cache:
+                    continue
+
+                title_lower = title.lower()
+                is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
+
+                if is_important:
+                    if link:
+                        symbol_news += f"  • [{title}]({link})\n"
+                    else:
+                        symbol_news += f"  • {title}\n"
+                    
+                    sent_cache[news_id] = now_ts
+
+            if symbol_news:
+                full_message += f"🔹 **{symbol}** :\n{symbol_news}\n"
+                news_found = True
+
+        except Exception:
+            pass
+
+    save_sent_news(sent_cache)
+
+    if news_found:
+        send_telegram(full_message)
+    else:
+        send_telegram(header + "Aucune nouvelle dépêche majeure récente.")
+
+
+def send_fundamentals():
+    """3. Analyse Fondamentale complète (Croissance, Valo, Rendement, Marges, FCF)."""
+    header = "📊 **BUREAU D'ANALYSE FONDAMENTALE (HEBDO)**\n"
+    header += f"📅 `{datetime.now().strftime('%d/%m/%Y')}`\n\n"
+    send_telegram(header)
+    time.sleep(0.5)
+
+    current_message = ""
+    batch_count = 0
+
+    for symbol in TICKERS:
+        try:
+            ticker = yf.Ticker(symbol)
+            info = ticker.info
+
+            price = info.get("currentPrice") or info.get("regularMarketPrice", 1)
+            currency = info.get("currency", "USD")
+            curr_symbol = "€" if currency == "EUR" else "$"
+
+            # 1. Forward P/E
+            fwd_pe = info.get("forwardPE")
+            fwd_pe_str = f"`{round(fwd_pe, 2)}`" if isinstance(fwd_pe, (int, float)) else "`N/A`"
+
+            # 2. EV/EBITDA
+            ev_ebitda = info.get("enterpriseToEbitda")
+            ev_ebitda_str = f"`{round(ev_ebitda, 2)}`" if isinstance(ev_ebitda, (int, float)) else "`N/A`"
+
+            # 3. PEG Ratio
+            peg = info.get("pegRatio")
+            peg_str = f"`{round(peg, 2)}`" if isinstance(peg, (int, float)) else "`N/A`"
+
+            # 4. Dividend Yield
+            div_rate = info.get("dividendRate")
+            div_yield = info.get("dividendYield")
+            div_pct = 0.0
+            if isinstance(div_rate, (int, float)) and price > 0:
+                div_pct = (div_rate / price) * 100
+            elif isinstance(div_yield, (int, float)):
+                div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
+            div_str = f"`{round(div_pct, 2)}%`"
+
+            # 5. ROE
+            roe = info.get("returnOnEquity")
+            roe_str = f"`{round(roe * 100, 1)}%`" if isinstance(roe, (int, float)) else "`N/A`"
+
+            # 6. Marges
+            gross = info.get("grossMargins")
+            gross_str = f"`{round(gross * 100, 1)}%`" if isinstance(gross, (int, float)) else "`N/A`"
+
+            profit = info.get("profitMargins")
+            profit_str = f"`{round(profit * 100, 1)}%`" if isinstance(profit, (int, float)) else "`N/A`"
+
+            # 7. Revenue Growth
+            rev_growth = info.get("revenueGrowth")
+            rev_growth_str = f"`{round(rev_growth * 100, 1)}%`" if isinstance(rev_growth, (int, float)) else "`N/A`"
+
+            # 8. FCF
+            fcf = info.get("freeCashflow", "N/A")
+            if isinstance(fcf, (int, float)):
+                fcf_str = f"`{round(fcf / 1e9, 2)} Mrd {curr_symbol}`"
+            else:
+                fcf_str = "`N/A`"
+
+            item_text = f"🏢 **{symbol}**\n"
+            item_text += f"├ **Croissance CA** : {rev_growth_str}\n"
+            item_text += f"├ **Valo.** : Fwd P/E {fwd_pe_str} | EV/EBITDA {ev_ebitda_str} | PEG {peg_str}\n"
+            item_text += f"├ **Rendement** : Div. {div_str} | ROE {roe_str}\n"
+            item_text += f"├ **Marges** : Brut {gross_str} | Net {profit_str}\n"
+            item_text += f"└ **FCF** : {fcf_str}\n\n"
+
+            current_message += item_text
+            batch_count += 1
+
+            if batch_count >= 5:
+                send_telegram(current_message)
+                current_message = ""
+                batch_count = 0
+                time.sleep(1)
+
+        except Exception as e:
+            current_message += f"❌ Erreur sur {symbol}: {str(e)}\n\n"
+
     if current_message:
         send_telegram(current_message)
 
 
 if __name__ == "__main__":
-    run_tracker()
+    if len(sys.argv) > 1:
+        mode = sys.argv[1]
+        if mode == "prices":
+            send_prices()
+        elif mode == "news":
+            send_news()
+        elif mode == "fundamentals":
+            send_fundamentals()
