@@ -3,10 +3,10 @@ import json
 import os
 import sys
 import time
-import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import yfinance as yf
+from playwright.sync_api import sync_playwright
 
 TICKERS = [
     "AED.BR",
@@ -311,10 +311,174 @@ def send_news():
         send_telegram("📰 **ACTUALITÉS** : Aucune nouvelle dépêche majeure récente.")
 
 
+def get_color_class(metric_type, val_str):
+    """Détermine la couleur des badges en fonction des valeurs."""
+    try:
+        val = float(str(val_str).replace('%', '').replace('+', '').strip())
+        if metric_type == 'pe':
+            return 'bg-green' if val < 25 else ('bg-yellow' if val <= 50 else 'bg-red')
+        elif metric_type == 'ev':
+            return 'bg-green' if val < 15 else ('bg-yellow' if val <= 30 else 'bg-red')
+        elif metric_type == 'peg':
+            return 'bg-green' if val < 1.2 else ('bg-yellow' if val <= 2.2 else 'bg-red')
+        elif metric_type == 'croit':
+            return 'bg-green' if val >= 10 else ('bg-yellow' if val >= 0 else 'bg-red')
+        elif metric_type in ['marge', 'roe']:
+            return 'bg-green' if val >= 15 else ('bg-yellow' if val >= 5 else 'bg-red')
+        elif metric_type == 'div':
+            return 'bg-green' if val >= 3.0 else ('bg-yellow' if val >= 1.0 else '')
+    except Exception:
+        pass
+    return ''
+
+
+def generate_html_dashboard(df):
+    """Génère l'image dashboard moderne HTML/CSS via Playwright."""
+    date_str = datetime.now().strftime("%d/%m/%Y")
+
+    def clean_num(val):
+        try:
+            return float(str(val).replace('%', '').replace('+', '').strip())
+        except Exception:
+            return None
+
+    # Calculs pour les KPIs globaux
+    croit_series = df['Croit. CA'].apply(clean_num).dropna()
+    ev_series = df['EV/EBITDA'].apply(clean_num).dropna()
+    marge_series = df['Marge N.'].apply(clean_num).dropna()
+    roe_series = df['ROE'].apply(clean_num).dropna()
+    div_series = df['Div.'].apply(clean_num).dropna()
+
+    croit_mean = croit_series.mean() if not croit_series.empty else 0
+    ev_mean = ev_series.median() if not ev_series.empty else 0
+    marge_mean = marge_series.mean() if not marge_series.empty else 0
+    roe_mean = roe_series.mean() if not roe_series.empty else 0
+    div_mean = div_series.mean() if not div_series.empty else 0
+
+    # Tri pour le Top ROE du bas
+    roe_data = []
+    for _, row in df.iterrows():
+        val = clean_num(row['ROE'])
+        if val is not None:
+            roe_data.append((row['Ticker'], val))
+    roe_data.sort(key=lambda x: x[1], reverse=True)
+    top_roe = roe_data[:3]
+
+    top_roe_html = ""
+    for idx, (ticker, val) in enumerate(top_roe, 1):
+        top_roe_html += f"""
+        <div class="top-item">
+            <span>{idx}. {ticker}</span>
+            <span style="color:#34d399">{val:.1f}%</span>
+        </div>
+        """
+
+    # Construction des lignes du tableau
+    table_rows = ""
+    for _, row in df.iterrows():
+        table_rows += f"""
+        <tr>
+            <td class="ticker">{row['Ticker']}</td>
+            <td><span class="badge {get_color_class('croit', row['Croit. CA'])}">{row['Croit. CA']}</span></td>
+            <td><span class="badge {get_color_class('pe', row['Fwd P/E'])}">{row['Fwd P/E']}</span></td>
+            <td><span class="badge {get_color_class('ev', row['EV/EBITDA'])}">{row['EV/EBITDA']}</span></td>
+            <td><span class="badge {get_color_class('peg', row['PEG'])}">{row['PEG']}</span></td>
+            <td><span class="badge {get_color_class('div', row['Div.'])}">{row['Div.']}</span></td>
+            <td><span class="badge {get_color_class('roe', row['ROE'])}">{row['ROE']}</span></td>
+            <td><span class="badge {get_color_class('marge', row['Marge N.'])}">{row['Marge N.']}</span></td>
+        </tr>
+        """
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+      <style>
+        * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+        body {{ background-color: #06090e; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 24px; width: 900px; }}
+        .header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }}
+        .title {{ font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: 0.5px; }}
+        .subtitle {{ font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }}
+        .date-badge {{ background: #1e293b; color: #38bdf8; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.2); }}
+        .kpi-grid {{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }}
+        .kpi-card {{ background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; text-align: center; }}
+        .kpi-title {{ font-size: 10px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }}
+        .kpi-val {{ font-size: 16px; font-weight: 800; color: #34d399; }}
+        .table-card {{ background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; margin-bottom: 20px; }}
+        table {{ width: 100%; border-collapse: collapse; }}
+        th {{ color: #64748b; font-size: 10px; text-transform: uppercase; padding: 8px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); text-align: center; }}
+        td {{ padding: 6px 4px; text-align: center; font-size: 12px; font-weight: 600; }}
+        .ticker {{ text-align: left; color: #38bdf8; font-weight: 700; padding-left: 8px; }}
+        .badge {{ padding: 3px 6px; border-radius: 4px; font-size: 11px; display: inline-block; width: 85%; color: #94a3b8; }}
+        .bg-green {{ background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }}
+        .bg-yellow {{ background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }}
+        .bg-red {{ background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }}
+        .bottom-grid {{ display: grid; grid-template-columns: 2fr 1fr; gap: 15px; }}
+        .bottom-card {{ background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; }}
+        .bottom-title {{ font-size: 11px; font-weight: 700; color: #38bdf8; margin-bottom: 8px; text-transform: uppercase; }}
+        .top-item {{ display: flex; justify-content: space-between; font-size: 11px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-weight: 600; }}
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div>
+          <div class="title">BUREAU D'ANALYSE FONDAMENTALE</div>
+          <div class="subtitle">Analyse Fondamentale des Valeurs En Portefeuille</div>
+        </div>
+        <div class="date-badge">{date_str}</div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-title">Croissance CA</div><div class="kpi-val">+{croit_mean:.1f}%</div></div>
+        <div class="kpi-card"><div class="kpi-title">EV/EBITDA Med.</div><div class="kpi-val" style="color:#fbbf24">{ev_mean:.1f}x</div></div>
+        <div class="kpi-card"><div class="kpi-title">Marge Nette</div><div class="kpi-val">{marge_mean:.1f}%</div></div>
+        <div class="kpi-card"><div class="kpi-title">ROE Moyen</div><div class="kpi-val">{roe_mean:.1f}%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Dividende Moy.</div><div class="kpi-val" style="color:#38bdf8">{div_mean:.2f}%</div></div>
+      </div>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left; padding-left:8px;">Ticker</th>
+              <th>Croit. CA</th><th>Fwd P/E</th><th>EV/EBITDA</th><th>PEG</th><th>Div.</th><th>ROE</th><th>Marge N.</th>
+            </tr>
+          </thead>
+          <tbody>{table_rows}</tbody>
+        </table>
+      </div>
+      <div class="bottom-grid">
+        <div class="bottom-card">
+          <div class="bottom-title">📌 POINTS CLÉS</div>
+          <div style="font-size: 11px; color: #94a3b8; line-height: 1.6;">
+            • <b>Avis global :</b> Vert = Niveaux attractifs / Jaune = Neutre / Rouge = Vigilance.<br>
+            • <b>Immobilier / REITs :</b> Marge Nette et Croissance CA à interpréter avec précaution.<br>
+            • <b>Mises à jour :</b> Rapport hebdomadaire exécuté automatiquement via GitHub Actions.
+          </div>
+        </div>
+        <div class="bottom-card">
+          <div class="bottom-title">🏆 TOP ROE</div>
+          <div>{top_roe_html}</div>
+        </div>
+      </div>
+    </body>
+    </html>
+    """
+
+    image_filename = "fundamentals.png"
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": 930, "height": 1300})
+        page.set_content(html_content)
+        page.screenshot(path=image_filename, full_page=True)
+        browser.close()
+
+    return image_filename
+
+
 def send_fundamentals():
-    """3. Analyse Fondamentale : rendu propre avec seuils ajustés."""
+    """3. Analyse Fondamentale : rendu propre avec Playwright."""
     data = []
-    cell_colors = []
 
     for symbol in TICKERS:
         try:
@@ -322,40 +486,33 @@ def send_fundamentals():
             info = ticker.info or {}
 
             rev_str, pe_str, ev_str, peg_str, div_str, roe_str, profit_str = ["N/A"] * 7
-            c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof = ['#ffffff'] * 7
 
-            # 1. Croissance CA (Neutre pour l'immobilier/REITs)
+            # 1. Croissance CA
             rev_growth = info.get("revenueGrowth")
             if isinstance(rev_growth, (int, float)):
                 rev_str = f"{rev_growth * 100:+.1f}%"
-                c_rev = '#d1fae5' if rev_growth >= 0.1 else ('#fef3c7' if rev_growth >= 0 else '#fee2e2')
 
-            # 2. Forward P/E (Seuils élargis : Vert < 25, Jaune <= 50, Rouge > 50)
+            # 2. Forward P/E
             fwd_pe = info.get("forwardPE")
             if isinstance(fwd_pe, (int, float)) and fwd_pe > 0:
                 pe_str = f"{fwd_pe:.1f}"
-                c_pe = '#d1fae5' if fwd_pe < 25 else ('#fef3c7' if fwd_pe <= 50 else '#fee2e2')
 
             # 3. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
             if isinstance(ev_ebitda, (int, float)) and ev_ebitda > 0:
                 ev_str = f"{ev_ebitda:.1f}"
-                c_ev = '#d1fae5' if ev_ebitda < 15 else ('#fef3c7' if ev_ebitda <= 30 else '#fee2e2')
 
             # 4. PEG
             peg = info.get("pegRatio")
             if isinstance(peg, (int, float)) and peg > 0:
                 peg_str = f"{peg:.2f}"
-                c_peg = '#d1fae5' if peg < 1.2 else ('#fef3c7' if peg <= 2.2 else '#fee2e2')
 
-            # 5. Dividende (Correction du facteur 100)
+            # 5. Dividende
             div_yield = info.get("dividendYield")
             if isinstance(div_yield, (int, float)):
                 div_val = div_yield * 100 if div_yield < 1.0 else div_yield
-                # Filtre contre les abérrations d'API > 20%
                 if div_val < 20.0:
                     div_str = f"{div_val:.2f}%"
-                    c_div = '#d1fae5' if div_val >= 3.0 else ('#fef3c7' if div_val >= 1.0 else '#ffffff')
                 else:
                     div_str = f"{div_val / 100:.2f}%"
             else:
@@ -364,16 +521,12 @@ def send_fundamentals():
             # 6. ROE
             roe = info.get("returnOnEquity")
             if isinstance(roe, (int, float)):
-                roe_val = roe * 100
-                roe_str = f"{roe_val:.1f}%"
-                c_roe = '#d1fae5' if roe_val >= 15 else ('#fef3c7' if roe_val >= 5 else '#fee2e2')
+                roe_str = f"{roe * 100:.1f}%"
 
             # 7. Marge Nette
             profit = info.get("profitMargins")
             if isinstance(profit, (int, float)):
-                prof_val = profit * 100
-                profit_str = f"{prof_val:.1f}%"
-                c_prof = '#d1fae5' if prof_val >= 15 else ('#fef3c7' if prof_val >= 5 else '#fee2e2')
+                profit_str = f"{profit * 100:.1f}%"
 
             data.append({
                 "Ticker": symbol,
@@ -386,8 +539,6 @@ def send_fundamentals():
                 "Marge N.": profit_str
             })
 
-            cell_colors.append(['#ffffff', c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof])
-
         except Exception:
             continue
 
@@ -396,39 +547,7 @@ def send_fundamentals():
         return
 
     df = pd.DataFrame(data)
-
-    fig, ax = plt.subplots(figsize=(10, len(df) * 0.4 + 1.2), dpi=200)
-    ax.axis('off')
-
-    table = ax.table(
-        cellText=df.values,
-        colLabels=df.columns,
-        cellLoc='center',
-        loc='center'
-    )
-
-    table.auto_set_font_size(False)
-    table.set_fontsize(9)
-    table.scale(1.2, 1.5)
-
-    for row_idx in range(len(df) + 1):
-        for col_idx in range(len(df.columns)):
-            cell = table[(row_idx, col_idx)]
-            if row_idx == 0:
-                cell.set_facecolor('#1e293b')
-                cell.get_text().set_color('white')
-                cell.get_text().set_weight('bold')
-            else:
-                bg_color = cell_colors[row_idx - 1][col_idx]
-                cell.set_facecolor(bg_color)
-
-    plt.title(f"📊 BUREAU D'ANALYSE FONDAMENTALE ({datetime.now().strftime('%d/%m/%Y')})", 
-              fontsize=12, fontweight='bold', pad=15)
-
-    image_filename = "fundamentals.png"
-    plt.savefig(image_filename, bbox_inches='tight', pad_inches=0.2)
-    plt.close()
-
+    image_filename = generate_html_dashboard(df)
     send_telegram_photo(image_filename, caption="📊 **Analyse Fondamentale Hebdomadaire**")
 
 
