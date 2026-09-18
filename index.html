@@ -65,9 +65,26 @@
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
   </div>
 
-  <div class="filter-bar" id="ticker-filters">
-    <div class="chip active" onclick="filterByTicker('ALL', this)">TOUS</div>
-  </div>
+<!-- Remplacement du conteneur de filtres par un menu déroulant -->
+<div style="margin: 15px 0;">
+  <label for="ticker-select" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px; display: block;">
+    Sélectionner un ticker :
+  </label>
+  <select id="ticker-select" onchange="filterBySelect(this.value)" style="
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+  ">
+    <option value="ALL">TOUS LES TICKERS</option>
+  </select>
+</div>
 
   <!-- SECTION NEWS -->
   <div id="news-sec" class="section active">
