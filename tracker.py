@@ -355,48 +355,42 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale : génère un tableau en image avec un code couleur et l'envoie."""
+    """3. Analyse Fondamentale : génère un tableau en image avec code couleur dynamique."""
     data = []
-    cell_colors = []  # Pour stocker les couleurs de chaque cellule
+    cell_colors = []
 
     for symbol in TICKERS:
         try:
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            row_colors = ['#ffffff'] * 8  # Blanc par défaut pour la ligne
+            # Initialisation des valeurs par défaut
+            rev_str, pe_str, ev_str, peg_str, div_str, roe_str, profit_str = ["N/A"] * 7
+            c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof = ['#ffffff'] * 7
 
-            # 1. Ticker (Fond blanc)
+            # 1. Croissance CA
             rev_growth = info.get("revenueGrowth")
-            rev_str = f"{rev_growth * 100:+.1f}%" if isinstance(rev_growth, (int, float)) else "N/A"
             if isinstance(rev_growth, (int, float)):
+                rev_str = f"{rev_growth * 100:+.1f}%"
                 c_rev = '#d1fae5' if rev_growth >= 0.1 else ('#fef3c7' if rev_growth >= 0 else '#fee2e2')
-            else:
-                c_rev = '#ffffff'
 
             # 2. Forward P/E
             fwd_pe = info.get("forwardPE")
-            pe_str = f"{fwd_pe:.1f}" if isinstance(fwd_pe, (int, float)) else "N/A"
             if isinstance(fwd_pe, (int, float)):
+                pe_str = f"{fwd_pe:.1f}"
                 c_pe = '#d1fae5' if fwd_pe < 20 else ('#fef3c7' if fwd_pe <= 35 else '#fee2e2')
-            else:
-                c_pe = '#ffffff'
 
             # 3. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
-            ev_str = f"{ev_ebitda:.1f}" if isinstance(ev_ebitda, (int, float)) else "N/A"
             if isinstance(ev_ebitda, (int, float)):
+                ev_str = f"{ev_ebitda:.1f}"
                 c_ev = '#d1fae5' if ev_ebitda < 12 else ('#fef3c7' if ev_ebitda <= 20 else '#fee2e2')
-            else:
-                c_ev = '#ffffff'
 
             # 4. PEG
             peg = info.get("pegRatio")
-            peg_str = f"{peg:.2f}" if isinstance(peg, (int, float)) else "N/A"
             if isinstance(peg, (int, float)):
+                peg_str = f"{peg:.2f}"
                 c_peg = '#d1fae5' if peg < 1.0 else ('#fef3c7' if peg <= 2.0 else '#fee2e2')
-            else:
-                c_peg = '#ffffff'
 
             # 5. Dividende
             div_yield = info.get("dividendYield")
@@ -406,25 +400,20 @@ def send_fundamentals():
                 c_div = '#d1fae5' if div_val >= 3.0 else ('#fef3c7' if div_val >= 1.5 else '#ffffff')
             else:
                 div_str = "0.00%"
-                c_div = '#ffffff'
 
             # 6. ROE
             roe = info.get("returnOnEquity")
-            roe_str = f"{roe * 100:.1f}%" if isinstance(roe, (int, float)) else "N/A"
             if isinstance(roe, (int, float)):
                 roe_val = roe * 100
+                roe_str = f"{roe_val:.1f}%"
                 c_roe = '#d1fae5' if roe_val >= 15 else ('#fef3c7' if roe_val >= 8 else '#fee2e2')
-            else:
-                c_roe = '#ffffff'
 
             # 7. Marge Nette
             profit = info.get("profitMargins")
-            profit_str = f"{profit * 100:.1f}%" if isinstance(profit, (int, float)) else "N/A"
             if isinstance(profit, (int, float)):
                 prof_val = profit * 100
+                profit_str = f"{prof_val:.1f}%"
                 c_prof = '#d1fae5' if prof_val >= 15 else ('#fef3c7' if prof_val >= 5 else '#fee2e2')
-            else:
-                c_prof = '#ffffff'
 
             data.append({
                 "Ticker": symbol,
@@ -437,24 +426,22 @@ def send_fundamentals():
                 "Marge N.": profit_str
             })
 
-            # Couleurs par colonne pour cette ligne (Ticker en blanc)
             cell_colors.append(['#ffffff', c_rev, c_pe, c_ev, c_peg, c_div, c_roe, c_prof])
 
-        except Exception:
+        except Exception as e:
             continue
 
     if not data:
-        send_telegram("❌ Impossible de générer l'analyse fondamentale.")
+        send_telegram("❌ Erreur lors de la récupération des données fondamentales.")
         return
 
     df = pd.DataFrame(data)
 
-    # Création de l'image
     fig, ax = plt.subplots(figsize=(10, len(df) * 0.45 + 1.2), dpi=200)
     ax.axis('off')
     ax.axis('tight')
 
-    # Ajout de l'en-tête dans les couleurs (bleu foncé)
+    # Construction securisee des couleurs
     header_colors = ['#1e293b'] * len(df.columns)
     full_colors = [header_colors] + cell_colors
 
@@ -470,7 +457,7 @@ def send_fundamentals():
     table.set_fontsize(9)
     table.scale(1.2, 1.5)
 
-    # Stylisation du texte des en-têtes en blanc et gras
+    # Texte blanc pour l'en-tête
     for col_idx in range(len(df.columns)):
         cell = table[(0, col_idx)]
         cell.get_text().set_color('white')
