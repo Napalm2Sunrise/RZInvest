@@ -19,11 +19,6 @@
     .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; }
     .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
 
-    /* Filters */
-    .filter-bar { margin-bottom: 16px; display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
-    .chip { background: #1e293b; color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; border: 1px solid transparent; }
-    .chip.active { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-color: #38bdf8; }
-
     /* Content Cards */
     .section { display: none; }
     .section.active { display: block; }
@@ -65,26 +60,26 @@
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
   </div>
 
-<!-- Remplacement du conteneur de filtres par un menu déroulant -->
-<div style="margin: 15px 0;">
-  <label for="ticker-select" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px; display: block;">
-    Sélectionner un ticker :
-  </label>
-  <select id="ticker-select" onchange="filterBySelect(this.value)" style="
-    width: 100%;
-    padding: 10px 14px;
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    outline: none;
-    cursor: pointer;
-  ">
-    <option value="ALL">TOUS LES TICKERS</option>
-  </select>
-</div>
+  <!-- Conteneur de filtres par menu déroulant -->
+  <div style="margin: 15px 0;">
+    <label for="ticker-select" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px; display: block;">
+      Sélectionner un ticker :
+    </label>
+    <select id="ticker-select" onchange="filterBySelect(this.value)" style="
+      width: 100%;
+      padding: 10px 14px;
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    ">
+      <option value="ALL">TOUS LES TICKERS</option>
+    </select>
+  </div>
 
   <!-- SECTION NEWS -->
   <div id="news-sec" class="section active">
@@ -122,23 +117,21 @@
     }
 
     function buildFilters() {
-      const tickers = new Set();
-      if(globalData.prices) globalData.prices.forEach(p => tickers.add(p.ticker));
-      
-      const filterBar = document.getElementById('ticker-filters');
-      tickers.forEach(t => {
-        const chip = document.createElement('div');
-        chip.className = 'chip';
-        chip.innerText = t;
-        chip.onclick = (e) => filterByTicker(t, chip);
-        filterBar.appendChild(chip);
+      const select = document.getElementById('ticker-select');
+      if (!select || !globalData || !globalData.prices) return;
+
+      select.innerHTML = '<option value="ALL">TOUS LES TICKERS</option>';
+
+      globalData.prices.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.ticker;
+        option.textContent = p.ticker;
+        select.appendChild(option);
       });
     }
 
-    function filterByTicker(ticker, el) {
-      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      selectedTicker = ticker;
+    function filterBySelect(symbol) {
+      selectedTicker = symbol;
       renderAll();
     }
 
@@ -157,18 +150,22 @@
       newsCont.innerHTML = '';
       const filteredNews = selectedTicker === 'ALL' ? globalData.news : globalData.news.filter(n => n.ticker === selectedTicker);
       
-      filteredNews.forEach(n => {
-        newsCont.innerHTML += `
-          <div class="card">
-            <div class="card-header">
-              <span class="ticker-name">${n.ticker}</span>
-              <span class="last-update">${n.date}</span>
-            </div>
-            <div class="news-title">${n.title}</div>
-            <div class="news-summary">${n.summary}</div>
-            ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
-          </div>`;
-      });
+      if (filteredNews.length === 0) {
+        newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible pour ce ticker.</div>';
+      } else {
+        filteredNews.forEach(n => {
+          newsCont.innerHTML += `
+            <div class="card">
+              <div class="card-header">
+                <span class="ticker-name">${n.ticker}</span>
+                <span class="last-update">${n.date}</span>
+              </div>
+              <div class="news-title">${n.title}</div>
+              <div class="news-summary">${n.summary}</div>
+              ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
+            </div>`;
+        });
+      }
 
       // Prices
       const priceCont = document.getElementById('prices-container');
