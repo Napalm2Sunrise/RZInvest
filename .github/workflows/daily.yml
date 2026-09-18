@@ -2,12 +2,31 @@ name: Automatique Bourse
 
 on:
   schedule:
-    # S'exécute à 21h30 (heure UTC) du lundi au vendredi
-    - cron: '30 19 * * 1-5'
-  workflow_dispatch: # Permet de lancer le programme à la demande pour tester
+    # 1. News à 8h35 et 15h15 (Lundi au Vendredi)
+    - cron: '35 7 * * 1-5'
+    - cron: '15 13 * * 1-5'
+
+    # 2. Cours & SMA à 9h16 et 15h48 (Lundi au Vendredi)
+    - cron: '16 7 * * 1-5'
+    - cron: '48 13 * * 1-5'
+
+    # 3. Fondamentaux le Lundi à 10h00
+    - cron: '00 9 * * 1'
+
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'Type de rapport à executer'
+        required: true
+        default: 'prices'
+        type: choice
+        options:
+          - prices
+          - news
+          - fundamentals
 
 jobs:
-  run-script:
+  run-tracker:
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le code
@@ -18,11 +37,42 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Installer les outils
+      - name: Restaurer le cache des News
+        uses: actions/cache@v3
+        with:
+          path: sent_news.json
+          key: news-cache-${{ github.run_id }}
+          restore-keys: |
+            news-cache-
+
+      - name: Installer les dépendances
         run: pip install yfinance requests
 
-      - name: Lancer la recherche
+      - name: Déterminer le mode d'exécution
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run_mode=${{ github.event.inputs.type }}" >> $GITHUB_OUTPUT
+          else
+            CRON="${{ github.event.schedule }}"
+            if [ "$CRON" = "35 7 * * 1-5" ] || [ "$CRON" = "15 13 * * 1-5" ]; then
+              echo "run_mode=news" >> $GITHUB_OUTPUT
+            elif [ "$CRON" = "16 7 * * 1-5" ] || [ "$CRON" = "48 13 * * 1-5" ]; then
+              echo "run_mode=prices" >> $GITHUB_OUTPUT
+            elif [ "$CRON" = "00 9 * * 1" ]; then
+              echo "run_mode=fundamentals" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Lancer le script
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python tracker.py
+        run: python tracker.py ${{ steps.mode.outputs.run_mode }}
+
+      - name: Sauvegarder le cache des News
+        if: steps.mode.outputs.run_mode == 'news'
+        uses: actions/cache/save@v3
+        with:
+          path: sent_news.json
+          key: news-cache-${{ github.run_id }}
