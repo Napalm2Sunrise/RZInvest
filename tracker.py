@@ -213,7 +213,6 @@ def send_prices():
                 or info.get("bid")
             )
 
-            # Si yfinance ne renvoie rien dans info, on prend le dernier prix de l'historique
             if not price or price == 0:
                 hist = ticker.history(period="5d")
                 if not hist.empty:
@@ -228,7 +227,6 @@ def send_prices():
                 change_pct = 0.0
 
             currency = info.get("currency", "USD")
-            # Forcer € si le ticker se termine par .BR, .BE ou .PA
             if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA"]) or currency == "EUR":
                 curr_symbol = "€"
             else:
@@ -253,7 +251,6 @@ def send_prices():
             current_message += item_text
             batch_count += 1
 
-            # Paquets de 10 actions
             if batch_count >= 10:
                 send_telegram(current_message)
                 current_message = ""
@@ -268,28 +265,24 @@ def send_prices():
 
 
 def send_news():
-    """2. News récentes (< 24h ouvrées et sans doublons)."""
-    header = "📰 **DERNIÈRES ACTUALITÉS MAJEURES**\n"
-    header += f"📅 `{datetime.now().strftime('%d/%m/%Y - %H:%M')}`\n\n"
-
+    """2. News récentes : envoie chaque article sous forme de résumé individuel."""
     sent_cache = load_sent_news()
     now_ts = datetime.now().timestamp()
 
     # 24h en jours ouvrés = 24h en semaine, 72h si weekend inclus
     cutoff_ts = now_ts - (72 * 3600 if datetime.now().weekday() == 0 else 24 * 3600)
 
-    news_found = False
-    full_message = header
+    news_count = 0
 
     for symbol in TICKERS:
         try:
             ticker = yf.Ticker(symbol)
             news_list = ticker.news or []
-            symbol_news = ""
 
             for item in news_list:
                 content = item.get("content", item)
                 title = content.get("title") or item.get("title", "")
+                summary = content.get("summary") or item.get("summary") or content.get("description") or ""
                 pub_time = content.get("pubDate") or item.get("providerPublishTime", 0)
 
                 # Si la date est en ISO string, conversion
@@ -320,29 +313,29 @@ def send_news():
                     continue
 
                 title_lower = title.lower()
-                is_important = any(kw in title_lower for kw in IMPORTANT_KEYWORDS)
+                summary_lower = summary.lower()
+                is_important = any(kw in title_lower or kw in summary_lower for kw in IMPORTANT_KEYWORDS)
 
                 if is_important:
+                    news_message = f"📰 **{symbol}** — *Actualité Majeure*\n\n"
+                    news_message += f"📌 **{title}**\n\n"
+                    if summary:
+                        news_message += f"📝 **Résumé** :\n{summary}\n\n"
                     if link:
-                        symbol_news += f"  • [{title}]({link})\n"
-                    else:
-                        symbol_news += f"  • {title}\n"
+                        news_message += f"🔗 [Lire l'article complet]({link})"
 
+                    send_telegram(news_message)
                     sent_cache[news_id] = now_ts
-
-            if symbol_news:
-                full_message += f"🔹 **{symbol}** :\n{symbol_news}\n"
-                news_found = True
+                    news_count += 1
+                    time.sleep(1)  # Petite pause pour respecter l'API Telegram
 
         except Exception:
             pass
 
     save_sent_news(sent_cache)
 
-    if news_found:
-        send_telegram(full_message)
-    else:
-        send_telegram(header + "Aucune nouvelle dépêche majeure récente.")
+    if news_count == 0:
+        send_telegram("📰 **ACTUALITÉS** : Aucune nouvelle dépêche majeure récente.")
 
 
 def send_fundamentals():
@@ -360,7 +353,6 @@ def send_fundamentals():
             ticker = yf.Ticker(symbol)
             info = ticker.info
 
-            # Récupération du prix pour calculer le dividend yield
             price = (
                 info.get("currentPrice")
                 or info.get("regularMarketPrice")
@@ -377,19 +369,15 @@ def send_fundamentals():
             else:
                 curr_symbol = "$"
 
-            # 1. Forward P/E
             fwd_pe = info.get("forwardPE")
             fwd_pe_str = f"`{round(fwd_pe, 2)}`" if isinstance(fwd_pe, (int, float)) else "`N/A`"
 
-            # 2. EV/EBITDA
             ev_ebitda = info.get("enterpriseToEbitda")
             ev_ebitda_str = f"`{round(ev_ebitda, 2)}`" if isinstance(ev_ebitda, (int, float)) else "`N/A`"
 
-            # 3. PEG Ratio
             peg = info.get("pegRatio")
             peg_str = f"`{round(peg, 2)}`" if isinstance(peg, (int, float)) else "`N/A`"
 
-            # 4. Dividend Yield
             div_rate = info.get("dividendRate")
             div_yield = info.get("dividendYield")
             div_pct = 0.0
@@ -399,22 +387,18 @@ def send_fundamentals():
                 div_pct = div_yield * 100 if div_yield < 0.2 else div_yield
             div_str = f"`{round(div_pct, 2)}%`"
 
-            # 5. ROE
             roe = info.get("returnOnEquity")
             roe_str = f"`{round(roe * 100, 1)}%`" if isinstance(roe, (int, float)) else "`N/A`"
 
-            # 6. Marges
             gross = info.get("grossMargins")
             gross_str = f"`{round(gross * 100, 1)}%`" if isinstance(gross, (int, float)) else "`N/A`"
 
             profit = info.get("profitMargins")
             profit_str = f"`{round(profit * 100, 1)}%`" if isinstance(profit, (int, float)) else "`N/A`"
 
-            # 7. Revenue Growth
             rev_growth = info.get("revenueGrowth")
             rev_growth_str = f"`{round(rev_growth * 100, 1)}%`" if isinstance(rev_growth, (int, float)) else "`N/A`"
 
-            # 8. FCF
             fcf = info.get("freeCashflow", "N/A")
             if isinstance(fcf, (int, float)):
                 fcf_str = f"`{round(fcf / 1e9, 2)} Mrd {curr_symbol}`"
