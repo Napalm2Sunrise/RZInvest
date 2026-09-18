@@ -1,5 +1,5 @@
 {
-  "updated_at": "18/09/2026 à 21:59",
+  "updated_at": "18/09/2026 à 22:17",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -35,8 +35,8 @@
     },
     {
       "ticker": "AMKR",
-      "price": 50.33,
-      "change": 4.96,
+      "price": 50.3,
+      "change": 4.9,
       "currency": "$",
       "sma200": "Above",
       "earnings": "26/10/2026"
@@ -59,64 +59,64 @@
     },
     {
       "ticker": "AYA.TO",
-      "price": 39.84,
-      "change": -1.17,
+      "price": 40.27,
+      "change": -0.1,
       "currency": "$",
       "sma200": "Above",
       "earnings": "11/11/2026"
     },
     {
       "ticker": "BKNG",
-      "price": 167.67,
-      "change": -1.67,
+      "price": 167.9,
+      "change": -1.54,
       "currency": "$",
       "sma200": "Above",
       "earnings": "27/10/2026"
     },
     {
       "ticker": "CPRT",
-      "price": 29.27,
-      "change": -1.31,
+      "price": 29.28,
+      "change": -1.28,
       "currency": "$",
       "sma200": "Under 🔥",
       "earnings": "19/11/2026"
     },
     {
       "ticker": "CSW",
-      "price": 287.55,
-      "change": -0.38,
+      "price": 287.68,
+      "change": -0.34,
       "currency": "$",
       "sma200": "Above",
       "earnings": "29/10/2026"
     },
     {
       "ticker": "GEV",
-      "price": 939.87,
-      "change": 1.62,
+      "price": 940.33,
+      "change": 1.66,
       "currency": "$",
       "sma200": "N/A",
       "earnings": "28/10/2026"
     },
     {
       "ticker": "GOOG",
-      "price": 344.35,
-      "change": 0.19,
+      "price": 344.41,
+      "change": 0.21,
       "currency": "$",
       "sma200": "Above",
       "earnings": "28/10/2026"
     },
     {
       "ticker": "ISRG",
-      "price": 393.25,
-      "change": 2.53,
+      "price": 393.33,
+      "change": 2.55,
       "currency": "$",
       "sma200": "Under 🔥",
       "earnings": "20/10/2026"
     },
     {
       "ticker": "META",
-      "price": 665.88,
-      "change": -2.41,
+      "price": 665.75,
+      "change": -2.43,
       "currency": "$",
       "sma200": "Above",
       "earnings": "28/10/2026"
@@ -131,40 +131,40 @@
     },
     {
       "ticker": "MSFT",
-      "price": 493.38,
-      "change": -0.88,
+      "price": 493.78,
+      "change": -0.8,
       "currency": "$",
       "sma200": "Above",
       "earnings": "28/10/2026"
     },
     {
       "ticker": "NVDA",
-      "price": 222.04,
-      "change": 1.23,
+      "price": 222.27,
+      "change": 1.34,
       "currency": "$",
       "sma200": "Above",
       "earnings": "17/11/2026"
     },
     {
       "ticker": "ONON",
-      "price": 27.27,
-      "change": -0.22,
+      "price": 27.26,
+      "change": -0.26,
       "currency": "$",
       "sma200": "Under 🔥",
       "earnings": "11/11/2026"
     },
     {
       "ticker": "SPCX",
-      "price": 152.82,
-      "change": -1.29,
+      "price": 152.71,
+      "change": -1.36,
       "currency": "$",
       "sma200": "N/A",
       "earnings": "03/11/2026"
     },
     {
       "ticker": "SPGI",
-      "price": 405.25,
-      "change": 0.28,
+      "price": 405.32,
+      "change": 0.3,
       "currency": "$",
       "sma200": "Under 🔥",
       "earnings": "29/10/2026"
@@ -187,7 +187,7 @@
     },
     {
       "ticker": "TSLA",
-      "price": 364.26,
+      "price": 364.27,
       "change": -0.53,
       "currency": "$",
       "sma200": "Above",
@@ -195,8 +195,8 @@
     },
     {
       "ticker": "VRSN",
-      "price": 303.05,
-      "change": 0.33,
+      "price": 303.12,
+      "change": 0.35,
       "currency": "$",
       "sma200": "Above",
       "earnings": "22/10/2026"
@@ -366,6 +366,20 @@
     },
     {
       "ticker": "META",
+      "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+      "summary": "Tech stocks rose late Friday afternoon, with the State Street Technology Select Sector SPDR ETF (XLK",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-195713111.html",
+      "date": "21:57"
+    },
+    {
+      "ticker": "META",
+      "title": "How Shopify and Meta are diving deeper into banking",
+      "summary": "The commerce company has made major inroads into embedded finance, a strategy that could get a boost from partnering with the social media giant's new AI agent.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/shopify-meta-diving-deeper-banking-194706752.html",
+      "date": "21:47"
+    },
+    {
+      "ticker": "META",
       "title": "Goldman Sachs Sends Stark Warning on S&P 500 Earnings",
       "summary": "AI Boom Is Supercharging S&P 500 Profits. Goldman Sachs Warns the Boost Won't Last",
       "link": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-sends-stark-warning-193526963.html",
@@ -414,13 +428,6 @@
       "date": "19:35"
     },
     {
-      "ticker": "META",
-      "title": "Disney names Karandeep Anand as first-ever CTO",
-      "summary": "Karandeep Anand, who previously led AI chatbot startup Character.AI, will join Disney on Oct. 2 in the newly created role",
-      "link": "https://finance.yahoo.com/technology/articles/disney-names-karandeep-anand-first-173120309.html",
-      "date": "19:31"
-    },
-    {
       "ticker": "MC.PA",
       "title": "Hyrox CEO on big sale, Olympic efforts, and the diarrhea incident captivating social media",
       "summary": "Hyrox is at a crossroads.",
@@ -447,6 +454,13 @@
       "summary": "Morning Brief host Julie Hyman sits down with Yahoo Finance Breaking Business News Reporter Jake Conley and Washington Crossing Advisors senior portfolio manager Chad Morganlander to discuss the lates...",
       "link": "https://finance.yahoo.com/video/astonishing-theft-unprecedented-proportions-nyt-134822530.html",
       "date": "15:48"
+    },
+    {
+      "ticker": "MSFT",
+      "title": "Should You Buy NetApp Stock For The Shares It Keeps Retiring?",
+      "summary": "NetApp (NTAP) has spent years quietly retiring its own stock while the attention went to its flash arrays and AI deals. The stock is not quiet now: it has gained about 92% over the trailing six months...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/buy-netapp-stock-shares-keeps-195326629.html",
+      "date": "21:53"
     },
     {
       "ticker": "MSFT",
@@ -505,13 +519,6 @@
       "date": "20:07"
     },
     {
-      "ticker": "MSFT",
-      "title": "Credo Technology Group vs. Sandisk: Which Technology Stock Is a Better Buy in 2026?",
-      "summary": "One company is growing at a pace that is almost impossible to find in semiconductors. The other has reinvented itself as a contracted AI infrastructure play with billions in guaranteed revenue.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-vs-sandisk-180501158.html",
-      "date": "20:05"
-    },
-    {
       "ticker": "NVDA",
       "title": "S&P 500 wavers after best one-day rally in six weeks: AlphaCheck",
       "summary": "Here's a check of the markets in the first few minutes of trading.",
@@ -526,95 +533,11 @@
       "date": "11:46"
     },
     {
-      "ticker": "NVDA",
-      "title": "SpaceX Stock Is Down 33% From Its High. Here's Why Morgan Stanley Thinks There's 106% Upside From Here.",
-      "summary": "SpaceX's valuation now hovers just below $2 trillion.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-down-33-high-195000333.html",
-      "date": "21:50"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "2 Stocks to Buy as Google Starts Selling Its AI Chips",
-      "summary": "The search giant's in-house AI chip is now a product line. Two companies collect on every system that ships.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/2-stocks-buy-google-starts-194201501.html",
-      "date": "21:42"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "\"Magnificent Seven\" Stocks Ranked by Share Repurchases and Dividends",
-      "summary": "Investors have good reason to pay attention to how much money companies distribute back to shareholders.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/magnificent-seven-stocks-ranked-share-194000192.html",
-      "date": "21:40"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Prediction: Cameco's Westinghouse Stake Becomes the Real Growth Story by 2028",
-      "summary": "Cameco's stake in Westinghouse could be a strong tailwind for the stock as nuclear energy enjoys a resurgence.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-camecos-westinghouse-stake-becomes-192500378.html",
-      "date": "21:25"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Why XRP Is Up Today",
-      "summary": "XRP rose on Friday as oil prices eased and the SEC offered limited relief for tokenized-stock trading.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/why-xrp-today-192412436.html",
-      "date": "21:24"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "500th Episode: Investing Tips from 11 Years of Podcasting About Stocks",
-      "summary": "Bulls and bears, COVID, a banking crisis, and the AI Revolution. What stocks stand out over the last 11 years?",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/500th-episode-investing-tips-11-192400433.html",
-      "date": "21:24"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Why Ethereum Jumped 5.8% Today",
-      "summary": "Blockchain-based stock trading got its first official green light. It's tiny, temporary, and Ethereum-shaped.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/why-ethereum-jumped-5-8-192028457.html",
-      "date": "21:20"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Why Bitcoin Is Up Today",
-      "summary": "Bitcoin is higher Friday as oil prices retreat and the SEC offers limited relief for tokenized-stock trading.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/why-bitcoin-today-191821122.html",
-      "date": "21:18"
-    },
-    {
       "ticker": "ONON",
       "title": "Sector Update: Consumer Stocks Softer Late Afternoon",
       "summary": "Consumer stocks were lower late Friday afternoon, with the State Street Consumer Staples Select Sect",
       "link": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-softer-afternoon-195143538.html",
       "date": "21:51"
-    },
-    {
-      "ticker": "ONON",
-      "title": "On Holding’s Kylian Mbappé Deal Splits Analysts — Why Wall Street Has Different Takes On ONON",
-      "summary": "Jefferies sees higher spending and limited growth upside, while Evercore ISI views On Holding’s soccer push as a potential catalyst.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/holding-kylian-mbapp-deal-splits-170634965.html",
-      "date": "19:06"
-    },
-    {
-      "ticker": "ONON",
-      "title": "Mbappé signing won't fix On Holding's growth problem, Jefferies says",
-      "summary": "On Holding (NYSE:ONON)'s leap into football may say more about the brand's growing costs than its growth prospects, according to a new note from Jefferies. The Swiss sportswear company announced its e...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/mbapp-signing-wont-fix-holdings-161500083.html",
-      "date": "18:15"
-    },
-    {
-      "ticker": "ONON",
-      "title": "Top Midday Stories: Buffett Steps Down as Berkshire Chairman; Soccer Star Mbappe Leaves Nike for On",
-      "summary": "The Dow Jones and S&P 500 Index were down in late-morning trading Friday, while the Nasdaq Composite",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-buffett-steps-153244238.html",
-      "date": "17:32"
-    },
-    {
-      "ticker": "ONON",
-      "title": "CNBC Host Says Berkshire Should Buy Iconic Consumer Brand After Stock Falls 75%",
-      "summary": "A CNBC anchor floated Warren Buffett as the unlikely savior for one of America's most iconic sports brands, and the math behind a potential deal is harder to dismiss than it sounds.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/cnbc-host-says-berkshire-buy-144105168.html",
-      "date": "16:41"
     },
     {
       "ticker": "SPCX",
@@ -629,6 +552,20 @@
       "summary": "SpaceX fell nearly 2% on Friday, paring its gain for the week to around 1%, as investors weighed a delay to the company's first orbital Starship flight against a fresh round of bullish commentary from...",
       "link": "https://finance.yahoo.com/markets/stocks/article/spacex-stock-falls-as-starships-test-flight-slips-to-sept-28-retail-investors-sell-shares-143200705.html",
       "date": "16:32"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "Sector Update: Tech Stocks Rise Late Afternoon",
+      "summary": "Tech stocks rose late Friday afternoon, with the State Street Technology Select Sector SPDR ETF (XLK",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-afternoon-195713111.html",
+      "date": "21:57"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "SpaceX adds $946M NASA crew deal through 2030",
+      "summary": "Key takeawaysNASA awarded Space Exploration Technologies Corp. (NASDAQ:SPCX) three additional astronaut missions worth a combined $946 million.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-adds-946m-nasa-crew-195530149.html",
+      "date": "21:55"
     },
     {
       "ticker": "SPCX",
@@ -671,20 +608,6 @@
       "summary": "Capacity is scaling faster than investors can verify utilization, contract durability or capital efficiency.",
       "link": "https://finance.yahoo.com/technology/ai/articles/spacex-falls-2-4-10-181217064.html",
       "date": "20:12"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "Sector Update: Tech Stocks Edge Higher Friday Afternoon",
-      "summary": "Tech stocks were edging higher Friday afternoon, with the State Street Technology Select Sector SPDR",
-      "link": "https://finance.yahoo.com/technology/articles/sector-tech-stocks-edge-higher-173500656.html",
-      "date": "19:35"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "SpaceX Lands 3 Additional NASA Crew Missions Under $946M Contract Modification",
-      "summary": "The latest NASA award expands SpaceX’s role in transporting astronauts and cargo to the International Space Station.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-lands-3-additional-nasa-172818841.html",
-      "date": "19:28"
     },
     {
       "ticker": "SPGI",
@@ -755,6 +678,13 @@
       "summary": "Cipher Digital (CIFR) stock fell 36.2% over the past three months. Over twelve months it is still up 54.1%, against 15.5% for the S&P 500. The company is moving from bitcoin mining to leasing data cen...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/far-cipher-digital-stock-fall-202813538.html",
       "date": "22:28"
+    },
+    {
+      "ticker": "TTE.PA",
+      "title": "Sector Update: Energy Stocks Fall Late Afternoon",
+      "summary": "Energy stocks fell late Friday afternoon with the NYSE Energy Sector Index declining 0.7% and the St",
+      "link": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-fall-afternoon-200621416.html",
+      "date": "22:06"
     },
     {
       "ticker": "TTE.PA",
@@ -915,14 +845,14 @@
     {
       "ticker": "AYA.TO",
       "rev_growth": "+150.7%",
-      "pe": "19.2x",
+      "pe": "19.4x",
       "ev": "27.5x",
       "roe": "25.7%"
     },
     {
       "ticker": "BKNG",
       "rev_growth": "+8.1%",
-      "pe": "13.5x",
+      "pe": "13.6x",
       "ev": "12.7x",
       "roe": "0.0%"
     },
@@ -936,7 +866,7 @@
     {
       "ticker": "CSW",
       "rev_growth": "+33.0%",
-      "pe": "21.0x",
+      "pe": "21.1x",
       "ev": "19.5x",
       "roe": "10.9%"
     },
@@ -955,6 +885,13 @@
       "roe": "17.4%"
     },
     {
+      "ticker": "META",
+      "rev_growth": "+28.0%",
+      "pe": "19.0x",
+      "ev": "16.1x",
+      "roe": "29.8%"
+    },
+    {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
       "pe": "16.0x",
@@ -969,16 +906,9 @@
       "roe": "34.0%"
     },
     {
-      "ticker": "NVDA",
-      "rev_growth": "+105.9%",
-      "pe": "14.2x",
-      "ev": "26.1x",
-      "roe": "117.2%"
-    },
-    {
       "ticker": "SPCX",
       "rev_growth": "+91.9%",
-      "pe": "87.3x",
+      "pe": "87.6x",
       "ev": "681.9x",
       "roe": "0.0%"
     },
@@ -999,7 +929,7 @@
     {
       "ticker": "TSLA",
       "rev_growth": "+25.5%",
-      "pe": "165.9x",
+      "pe": "165.8x",
       "ev": "132.0x",
       "roe": "4.7%"
     },
