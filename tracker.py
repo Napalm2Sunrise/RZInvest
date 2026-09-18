@@ -339,13 +339,11 @@ def send_news():
 
 
 def send_fundamentals():
-    """3. Analyse Fondamentale complète avec émojis de couleur (paquets de 10)."""
+    """3. Analyse Fondamentale (Titre intégré au 1er paquet d'actions)."""
     header = "📊 **BUREAU D'ANALYSE FONDAMENTALE (HEBDO)**\n"
     header += f"📅 `{datetime.now().strftime('%d/%m/%Y')}`\n\n"
-    send_telegram(header)
-    time.sleep(0.5)
 
-    current_message = ""
+    current_message = header
     batch_count = 0
 
     for symbol in TICKERS:
@@ -454,8 +452,7 @@ def send_fundamentals():
             current_message += item_text
             batch_count += 1
 
-            # Paquets de 10 actions pour réduire le nombre de messages à 2
-            if batch_count >= 10:
+            if batch_count >= 13:
                 send_telegram(current_message)
                 current_message = ""
                 batch_count = 0
