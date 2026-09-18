@@ -1,86 +1,41 @@
-name: Automatique Bourse
+name: Daily Tracker
 
 on:
   schedule:
-    # 1. News à 8h35 et 15h15 (Lundi au Vendredi)
-    - cron: '35 7 * * 1-5'
-    - cron: '15 13 * * 1-5'
-
-    # 2. Cours & SMA à 9h16 et 15h48 (Lundi au Vendredi)
-    - cron: '16 7 * * 1-5'
-    - cron: '48 13 * * 1-5'
-
-    # 3. Fondamentaux le Lundi à 10h00
-    - cron: '00 9 * * 1'
-
-  workflow_dispatch:
-    inputs:
-      type:
-        description: 'Type de rapport à executer'
-        required: true
-        default: 'prices'
-        type: choice
-        options:
-          - prices
-          - news
-          - fundamentals
+    - cron: '0 8 * * *' # S'exécute automatiquement tous les jours
+  workflow_dispatch: # Permet le lancement manuel
 
 jobs:
   run-tracker:
+    runs-mode: write
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Important pour pouvoir pusher data.json
+
     steps:
-      - name: Récupérer le code
+      - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Installer Python
-        uses: actions/setup-python@v4
+      - name: Configurer Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
-      - name: Restaurer le cache des News
-        uses: actions/cache@v3
-        with:
-          path: sent_news.json
-          key: news-cache-${{ github.run_id }}
-          restore-keys: |
-            news-cache-
 
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install playwright
 
-      - name: Installer Playwright Chromium
-        run: |
-          playwright install chromium
-          playwright install-deps
-
-      - name: Déterminer le mode d'exécution
-        id: mode
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "run_mode=${{ github.event.inputs.type }}" >> $GITHUB_OUTPUT
-          else
-            CRON="${{ github.event.schedule }}"
-            if [ "$CRON" = "35 7 * * 1-5" ] || [ "$CRON" = "15 13 * * 1-5" ]; then
-              echo "run_mode=news" >> $GITHUB_OUTPUT
-            elif [ "$CRON" = "16 7 * * 1-5" ] || [ "$CRON" = "48 13 * * 1-5" ]; then
-              echo "run_mode=prices" >> $GITHUB_OUTPUT
-            elif [ "$CRON" = "00 9 * * 1" ]; then
-              echo "run_mode=fundamentals" >> $GITHUB_OUTPUT
-            fi
-          fi
-
-      - name: Lancer le script
+      - name: Exécuter le tracker Python
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: python tracker.py ${{ steps.mode.outputs.run_mode }}
+        run: python tracker.py
 
-      - name: Sauvegarder le cache des News
-        if: steps.mode.outputs.run_mode == 'news'
-        uses: actions/cache/save@v3
-        with:
-          path: sent_news.json
-          key: news-cache-${{ github.run_id }}
+      - name: Commit et Push de data.json
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data.json
+          git commit -m "Auto-update data.json" || exit 0
+          git push
