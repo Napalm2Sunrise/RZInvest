@@ -4,6 +4,9 @@ import os
 from zoneinfo import ZoneInfo
 import yfinance as yf
 
+# ==============================================================================
+# SOURCE DE VÉRITÉ (Option B) : Modifiez vos tickers directement ici
+# ==============================================================================
 TICKERS = [
     "AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "ASML.AS",   
     "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", 
@@ -23,14 +26,25 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def check_200_weekly_sma(ticker, current_price):
+    """Calcul de la 200 Weekly SMA.
+    - Si Under : 'Under 🔥'
+    - Si Above : 'Above +X.X%'
+    """
     try:
         hist = ticker.history(period="5y", interval="1wk")
         if len(hist) >= 200:
             sma_200 = hist["Close"].tail(200).mean()
-            return "Under 🔥" if current_price < sma_200 else "Above"
+            if sma_200 > 0 and current_price > 0:
+                raw_pct = ((current_price - sma_200) / sma_200) * 100
+                pct = round(raw_pct, 1)
+
+                if current_price < sma_200:
+                    return "Under 🔥", pct
+                else:
+                    return f"Above +{pct}%", pct
     except Exception:
         pass
-    return "N/A"
+    return "N/A", None
 
 def get_next_earnings_date(ticker, belgium_tz):
     try:
@@ -56,23 +70,29 @@ def generate_dashboard_data():
     now_ts = now_be.timestamp()
     cutoff_ts = now_ts - (72 * 3600 if now_be.weekday() == 0 else 24 * 3600)
 
+    print(f"📊 Mise à jour des données pour {len(TICKERS)} tickers...")
+
     for symbol in TICKERS:
         try:
+            print(f"   ➜ Traitement : {symbol}")
             ticker = yf.Ticker(symbol)
             info = ticker.info or {}
 
-            # 1. PRIX
+            # 1. PRIX & SMA 200 WEEKLY
             price = info.get("currentPrice") or info.get("regularMarketPrice") or 0.0
             prev_close = info.get("previousClose") or price
             change_pct = ((price - prev_close) / prev_close) * 100 if prev_close > 0 else 0.0
             currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
+
+            sma200_str, sma200_pct = check_200_weekly_sma(ticker, price)
 
             prices_data.append({
                 "ticker": symbol,
                 "price": round(price, 2),
                 "change": round(change_pct, 2),
                 "currency": currency,
-                "sma200": check_200_weekly_sma(ticker, price),
+                "sma200": sma200_str,
+                "sma200_pct": sma200_pct,
                 "earnings": get_next_earnings_date(ticker, belgium_tz)
             })
 
@@ -111,7 +131,7 @@ def generate_dashboard_data():
             })
 
         except Exception as e:
-            print(f"Erreur sur {symbol}: {e}")
+            print(f"⚠️ Erreur sur {symbol}: {e}")
 
     # Enregistrement dans le fichier JSON pour la Mini App avec la date belge
     output = {
@@ -124,7 +144,7 @@ def generate_dashboard_data():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ data.json généré avec succès à {now_be.strftime('%H:%M')} (Heure belge) !")
+    print(f"\n✅ data.json généré avec succès à {now_be.strftime('%H:%M')} (Heure belge) !")
 
 if __name__ == "__main__":
     generate_dashboard_data()
