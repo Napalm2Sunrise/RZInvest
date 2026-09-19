@@ -112,14 +112,18 @@ def get_quarterly_history_fmp(symbol, ticker, info):
 
     fmp_symbol = get_fmp_symbol(symbol)
     
-    # 1. Récupération de 15 trimestres pour calculer la croissance YoY (Q vs Q-4)
-    ratios_data = fetch_fmp_data(f"ratios/{fmp_symbol}?period=quarter&limit=15")
-    key_metrics_data = fetch_fmp_data(f"key-metrics/{fmp_symbol}?period=quarter&limit=15")
-    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=15")
+    # 1. Récupération des états financiers (autorisés en version gratuite FMP)
+    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=16")
+    key_metrics_data = fetch_fmp_data(f"key-metrics/{fmp_symbol}?period=quarter&limit=16")
 
-    # TENTATIVE VIA FMP
+    # Métriques actuelles (Yahoo + FMP) pour le remplissage sécurisé des ratios de valorisation
+    curr_pe = clean_val(info.get('forwardPE') or info.get('trailingPE'), "{:.1f}x")
+    curr_ev = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
+    curr_roe = clean_val(info.get('returnOnEquity', 0) * 100 if info.get('returnOnEquity') else None, "{:.1f}%")
+    curr_peg = clean_val(info.get('pegRatio'), "{:.2f}")
+
     if isinstance(income_data, list) and len(income_data) > 0:
-        ratios_dict = {r.get('date'): r for r in ratios_data} if isinstance(ratios_data, list) else {}
+        income_data = sorted(income_data, key=lambda x: x.get('date', ''), reverse=True)
         metrics_dict = {m.get('date'): m for m in key_metrics_data} if isinstance(key_metrics_data, list) else {}
 
         for i, inc in enumerate(income_data[:10]):
@@ -129,44 +133,50 @@ def get_quarterly_history_fmp(symbol, ticker, info):
             q_label = f"{period}-{year}" if period and year else date_str
             quarters.append(q_label)
 
-            # Marge Nette %
+            # --- A. MARGE NETTE % ---
             rev = inc.get('revenue')
             net_inc = inc.get('netIncome')
-            if rev and net_inc and rev != 0:
+            if rev and net_inc and rev > 0:
                 history["Marge Net %"].append(clean_val((net_inc / rev) * 100, "{:.1f}%"))
             else:
                 history["Marge Net %"].append("N/A")
 
-            # Croissance CA (YoY : Trimestre vs Même trimestre N-1)
+            # --- B. CROISSANCE CA (YoY : Trimestre vs Même trimestre N-1) ---
             if i + 4 < len(income_data):
                 prev_rev = income_data[i + 4].get('revenue')
-                if rev and prev_rev and prev_rev != 0:
+                if rev and prev_rev and prev_rev > 0:
                     growth = ((rev - prev_rev) / prev_rev) * 100
+                    history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
+                else:
+                    history["Croit. CA."].append("N/A")
+            elif i + 1 < len(income_data):  # Fallback QoQ si N-1 indisponible
+                prev_q = income_data[i + 1].get('revenue')
+                if rev and prev_q and prev_q > 0:
+                    growth = ((rev - prev_q) / prev_q) * 100
                     history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
                 else:
                     history["Croit. CA."].append("N/A")
             else:
                 history["Croit. CA."].append("N/A")
 
-            # Ratios (Lecture croisée ratios + key-metrics)
-            r = ratios_dict.get(date_str, {})
+            # --- C. RATIOS (Extraction FMP si disponible, sinon fallback actuel) ---
             m = metrics_dict.get(date_str, {})
+            
+            pe = clean_val(m.get('peRatio'), "{:.1f}x")
+            history["Fwd P/E"].append(pe if pe != "N/A" else curr_pe)
 
-            pe_val = r.get('priceEarningsRatio') or m.get('peRatio')
-            history["Fwd P/E"].append(clean_val(pe_val, "{:.1f}x"))
+            ev = clean_val(m.get('enterpriseValueMultiple'), "{:.1f}x")
+            history["EV/EBITDA"].append(ev if ev != "N/A" else curr_ev)
 
-            ev_val = r.get('enterpriseValueMultiple') or m.get('enterpriseValueMultiple')
-            history["EV/EBITDA"].append(clean_val(ev_val, "{:.1f}x"))
+            roe = clean_val(m.get('roe', 0) * 100 if m.get('roe') else None, "{:.1f}%")
+            history["ROE"].append(roe if roe != "N/A" else curr_roe)
 
-            roe_val = r.get('returnOnEquity') or m.get('roe')
-            history["ROE"].append(clean_val(roe_val * 100 if roe_val else None, "{:.1f}%"))
-
-            peg_val = r.get('priceEarningsToGrowthRatio') or m.get('pegRatio')
-            history["PEG"].append(clean_val(peg_val, "{:.2f}"))
+            peg = clean_val(m.get('pegRatio'), "{:.2f}")
+            history["PEG"].append(peg if peg != "N/A" else curr_peg)
 
         return quarters, history
 
-    # 2. FALLBACK SÉCURITÉ (Yahoo Finance si FMP ne renvoie rien)
+    # 2. FALLBACK YAHOO FINANCE SI FMP NE RENVOIE RIEN
     try:
         q_fin = ticker.quarterly_financials
         if q_fin is not None and not q_fin.empty:
@@ -189,15 +199,18 @@ def get_quarterly_history_fmp(symbol, ticker, info):
                     if i + 4 < len(q_fin.columns):
                         tot_rev_prev = q_fin.loc['Total Revenue', q_fin.columns[i + 4]]
                         history["Croit. CA."].append(clean_val(((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None, "{:+.1f}%"))
+                    elif i + 1 < len(q_fin.columns):
+                        tot_rev_prev = q_fin.loc['Total Revenue', q_fin.columns[i + 1]]
+                        history["Croit. CA."].append(clean_val(((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None, "{:+.1f}%"))
                     else:
                         history["Croit. CA."].append("N/A")
                 except Exception:
                     history["Croit. CA."].append("N/A")
 
-                history["Fwd P/E"].append(clean_val(info.get('forwardPE'), "{:.1f}x") if i == 0 else "N/A")
-                history["EV/EBITDA"].append(clean_val(info.get('enterpriseToEbitda'), "{:.1f}x") if i == 0 else "N/A")
-                history["ROE"].append(clean_val(info.get('returnOnEquity', 0) * 100 if info.get('returnOnEquity') else None, "{:.1f}%") if i == 0 else "N/A")
-                history["PEG"].append(clean_val(info.get('pegRatio'), "{:.2f}") if i == 0 else "N/A")
+                history["Fwd P/E"].append(curr_pe)
+                history["EV/EBITDA"].append(curr_ev)
+                history["ROE"].append(curr_roe)
+                history["PEG"].append(curr_peg)
     except Exception as e:
         print(f"    ⚠️ Erreur Fallback Yahoo sur {symbol} : {e}")
 
