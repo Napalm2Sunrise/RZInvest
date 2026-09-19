@@ -2,7 +2,7 @@ name: Hourly Tracker
 
 on:
   schedule:
-    # S'exécute à min 05, toutes les heures de 08h05 à 22h05 UTC, du lundi (1) au vendredi (5)
+    # S'exécute à min 05, toutes les heures de 06h05 à 20h05 UTC, du lundi (1) au vendredi (5)
     - cron: '5 6-20 * * 1-5'
   workflow_dispatch: # Conserve la possibilité de lancer manuellement
 
@@ -28,7 +28,7 @@ jobs:
 
       - name: Exécuter le tracker Python
         env:
-          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python tracker.py
