@@ -6,7 +6,7 @@
   <title>Trading Dashboard</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Lignes ajoutées pour définir logo.png comme icône/favicon -->
+  <!-- Favicon -->
   <link rel="apple-touch-icon" href="logo.png">
   <link rel="icon" type="image/png" href="logo.png">
 
@@ -25,10 +25,11 @@
     .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; }
     .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
 
-    /* Content Cards */
+    /* Content Sections */
     .section { display: none; }
     .section.active { display: block; }
 
+    /* Cards */
     .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
     .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; }
@@ -44,11 +45,57 @@
     .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; }
     .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; }
 
-    /* Grid Fundamentals */
-    .fund-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; font-size: 12px; }
-    .fund-item { background: rgba(15, 23, 42, 0.5); padding: 8px; border-radius: 6px; }
-    .fund-label { color: #64748b; font-size: 10px; text-transform: uppercase; }
-    .fund-val { font-weight: 700; margin-top: 2px; }
+    /* Style du Tableau de Ratios */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ratios-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .ratios-table th {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 12px 10px;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .ratios-table td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .ratios-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .ratios-table tr:nth-child(even) {
+      background-color: rgba(15, 23, 42, 0.3);
+    }
+
+    .ratios-table .ticker-cell {
+      font-weight: 800;
+      color: #38bdf8;
+      position: sticky;
+      left: 0;
+      background: #1e293b;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -97,9 +144,26 @@
     <div id="prices-container"></div>
   </div>
 
-  <!-- SECTION FUNDAMENTALS -->
+  <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
-    <div id="fund-container"></div>
+    <div class="table-container">
+      <table class="ratios-table">
+        <thead>
+          <tr>
+            <th class="ticker-cell">Tickers</th>
+            <th>Croit. CA.</th>
+            <th>Fwd P/E</th>
+            <th>EV/EBITDA</th>
+            <th>ROE</th>
+            <th>PEG</th>
+            <th>Marge Net %</th>
+          </tr>
+        </thead>
+        <tbody id="ratios-tbody">
+          <!-- Les lignes de données seront injectées ici par JS -->
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script>
@@ -151,7 +215,7 @@
     function renderAll() {
       if(!globalData) return;
 
-      // News
+      // 1. News
       const newsCont = document.getElementById('news-container');
       newsCont.innerHTML = '';
       const filteredNews = selectedTicker === 'ALL' ? globalData.news : globalData.news.filter(n => n.ticker === selectedTicker);
@@ -173,7 +237,7 @@
         });
       }
 
-      // Prices
+      // 2. Prices
       const priceCont = document.getElementById('prices-container');
       priceCont.innerHTML = '';
       const filteredPrices = selectedTicker === 'ALL' ? globalData.prices : globalData.prices.filter(p => p.ticker === selectedTicker);
@@ -196,23 +260,27 @@
           </div>`;
       });
 
-      // Fundamentals
-      const fundCont = document.getElementById('fund-container');
-      fundCont.innerHTML = '';
+      // 3. Fundamentals (Format Tableau)
+      const tbody = document.getElementById('ratios-tbody');
+      tbody.innerHTML = '';
       const filteredFund = selectedTicker === 'ALL' ? globalData.fundamentals : globalData.fundamentals.filter(f => f.ticker === selectedTicker);
 
-      filteredFund.forEach(f => {
-        fundCont.innerHTML += `
-          <div class="card">
-            <div class="ticker-name" style="margin-bottom:8px;">${f.ticker}</div>
-            <div class="fund-grid">
-              <div class="fund-item"><div class="fund-label">Croit. CA</div><div class="fund-val">${f.rev_growth}</div></div>
-              <div class="fund-item"><div class="fund-label">Fwd P/E</div><div class="fund-val">${f.pe}</div></div>
-              <div class="fund-item"><div class="fund-label">EV/EBITDA</div><div class="fund-val">${f.ev}</div></div>
-              <div class="fund-item"><div class="fund-label">ROE</div><div class="fund-val">${f.roe}</div></div>
-            </div>
-          </div>`;
-      });
+      if (filteredFund.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
+      } else {
+        filteredFund.forEach(f => {
+          tbody.innerHTML += `
+            <tr>
+              <td class="ticker-cell">${f.ticker}</td>
+              <td>${f.rev_growth || 'N/A'}</td>
+              <td>${f.pe || 'N/A'}</td>
+              <td>${f.ev || 'N/A'}</td>
+              <td>${f.roe || 'N/A'}</td>
+              <td>${f.peg || 'N/A'}</td>
+              <td>${f.net_margin || 'N/A'}</td>
+            </tr>`;
+        });
+      }
     }
 
     loadData();
