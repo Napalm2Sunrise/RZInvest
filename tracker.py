@@ -28,13 +28,16 @@ IMPORTANT_KEYWORDS = [
 def check_200_weekly_sma(ticker, current_price):
     """Calcul exact de la 200 Weekly SMA (Moyenne Mobile Simple)."""
     try:
-        # Récupère l'historique sur 5 ans en bougies hebdomadaires
-        hist = ticker.history(period="5y", interval="1wk")
+        # Récupère 10 ans de données pour avoir au moins 200 semaines de recul
+        hist = ticker.history(period="10y", interval="1wk")
         
+        # On s'assure d'avoir au moins 200 bougies hebdomadaires
         if len(hist) >= 200:
-            # Calcule la vraie moyenne mobile glissante à 200 semaines
+            # Calcul de la moyenne mobile glissante à 200 semaines sur les prix de clôture
             sma_series = hist["Close"].rolling(window=200).mean()
-            sma_200 = sma_series.iloc[-1] # Récupère la valeur de la SMA 200 actuelle
+            
+            # Récupération de la dernière valeur valide de la SMA
+            sma_200 = sma_series.dropna().iloc[-1]
 
             if sma_200 > 0 and current_price > 0:
                 raw_pct = ((current_price - sma_200) / sma_200) * 100
