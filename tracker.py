@@ -26,14 +26,16 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def check_200_weekly_sma(ticker, current_price):
-    """Calcul de la 200 Weekly SMA.
-    - Si Under : 'Under 🔥'
-    - Si Above : 'Above +X.X%'
-    """
+    """Calcul exact de la 200 Weekly SMA (Moyenne Mobile Simple)."""
     try:
+        # Récupère l'historique sur 5 ans en bougies hebdomadaires
         hist = ticker.history(period="5y", interval="1wk")
+        
         if len(hist) >= 200:
-            sma_200 = hist["Close"].tail(200).mean()
+            # Calcule la vraie moyenne mobile glissante à 200 semaines
+            sma_series = hist["Close"].rolling(window=200).mean()
+            sma_200 = sma_series.iloc[-1] # Récupère la valeur de la SMA 200 actuelle
+
             if sma_200 > 0 and current_price > 0:
                 raw_pct = ((current_price - sma_200) / sma_200) * 100
                 pct = round(raw_pct, 1)
@@ -42,8 +44,9 @@ def check_200_weekly_sma(ticker, current_price):
                     return "Under 🔥", pct
                 else:
                     return f"Above +{pct}%", pct
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Erreur calcul SMA200: {e}")
+        
     return "N/A", None
 
 def get_next_earnings_date(ticker, belgium_tz):
