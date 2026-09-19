@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import math
 import os
 from zoneinfo import ZoneInfo
 import yfinance as yf
@@ -24,6 +25,21 @@ IMPORTANT_KEYWORDS = [
     "merger", "takeover", "sec", "investigation", "lawsuit", "ceo", "cfo",
     "layoff", "restructuring", "rachat", "procès", "démission", "licenciement"
 ]
+
+def clean_val(val, fmt="{:.1f}%"):
+    """
+    Nettoie les valeurs NaN, None ou Inf
+    et applique le formatage désiré.
+    """
+    if val is None:
+        return "N/A"
+    try:
+        f_val = float(val)
+        if math.isnan(f_val) or math.isinf(f_val):
+            return "N/A"
+        return fmt.format(f_val)
+    except Exception:
+        return "N/A"
 
 def check_200_weekly_sma(ticker, current_price):
     """Calcul exact de la 200 Weekly SMA (données brutes non ajustées comme TradingView)."""
@@ -64,7 +80,7 @@ def get_next_earnings_date(ticker, belgium_tz):
     return "N/A"
 
 def get_quarterly_history(ticker, info):
-    """Récupère les données historiques réelles sur les 6 derniers trimestres."""
+    """Récupère les données historiques réelles sur les 6 derniers trimestres avec sécurisation NaN."""
     quarters = []
     history = {
         "Croit. CA.": [],
@@ -80,11 +96,11 @@ def get_quarterly_history(ticker, info):
         if q_fin is not None and not q_fin.empty:
             cols = list(q_fin.columns[:6])  # Prend les 6 trimestres les plus récents
 
-            # Ratios statiques ou actuels de référence
-            fwd_pe = f"{info.get('forwardPE'):.1f}x" if info.get('forwardPE') else "N/A"
-            ev_ebitda = f"{info.get('enterpriseToEbitda'):.1f}x" if info.get('enterpriseToEbitda') else "N/A"
-            roe = f"{info.get('returnOnEquity', 0)*100:.1f}%" if info.get('returnOnEquity') else "N/A"
-            peg = f"{info.get('pegRatio'):.2f}" if info.get('pegRatio') else "N/A"
+            # Ratios statiques nettoyés
+            fwd_pe = clean_val(info.get('forwardPE'), "{:.1f}x")
+            ev_ebitda = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
+            roe = clean_val(info.get('returnOnEquity', 0) * 100, "{:.1f}%")
+            peg = clean_val(info.get('pegRatio'), "{:.2f}")
 
             for i, col in enumerate(cols):
                 # Formatage du nom du trimestre (ex: Q1-2026)
@@ -100,39 +116,37 @@ def get_quarterly_history(ticker, info):
 
                     if net_inc is not None and tot_rev is not None and tot_rev != 0:
                         margin = (net_inc / tot_rev) * 100
-                        history["Marge Net %"].append(f"{margin:.1f}%")
+                        history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                     else:
                         history["Marge Net %"].append("N/A")
                 except Exception:
                     history["Marge Net %"].append("N/A")
 
-                # 2. Calcul Croissance CA (comparé au même trimestre de l'année précédente si dispo, ou YoY)
+                # 2. Calcul Croissance CA (comparé à N-4)
                 try:
                     tot_rev_current = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
-                    # Recherche du trimestre N-1 (4 trimestres plus loin)
                     if i + 4 < len(q_fin.columns):
                         prev_col = q_fin.columns[i + 4]
                         tot_rev_prev = q_fin.loc['Total Revenue', prev_col]
                         if tot_rev_current and tot_rev_prev and tot_rev_prev != 0:
                             growth = ((tot_rev_current - tot_rev_prev) / tot_rev_prev) * 100
-                            history["Croit. CA."].append(f"{growth:+.1f}%")
+                            history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
                         else:
                             history["Croit. CA."].append("N/A")
                     else:
-                        # Fallback sur la croissance globale
                         rev_growth = info.get('revenueGrowth')
-                        history["Croit. CA."].append(f"{rev_growth * 100:+.1f}%" if rev_growth else "N/A")
+                        history["Croit. CA."].append(clean_val(rev_growth * 100 if rev_growth else None, "{:+.1f}%"))
                 except Exception:
                     history["Croit. CA."].append("N/A")
 
-                # Ratios de valorisation (reprise des valeurs actuelles)
+                # Ratios de valorisation
                 history["Fwd P/E"].append(fwd_pe)
                 history["EV/EBITDA"].append(ev_ebitda)
                 history["ROE"].append(roe)
                 history["PEG"].append(peg)
 
     except Exception as e:
-        print(f"   ⚠️ Impossible de charger l'historique trimestriel : {e}")
+        print(f"    ⚠️ Impossible de charger l'historique trimestriel : {e}")
 
     return quarters, history
 
@@ -151,7 +165,7 @@ def generate_dashboard_data():
 
     for symbol in TICKERS:
         try:
-            print(f"   ➜ Traitement : {symbol}")
+            print(f"    ➜ Traitement : {symbol}")
             ticker = yf.Ticker(symbol)
             info = ticker.info or {}
 
@@ -198,7 +212,7 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. RATIOS & HISTORIQUE TRIMESTRIEL
+            # 3. RATIOS & HISTORIQUE TRIMESTRIEL (avec sécurisation clean_val)
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
             ev_ebitda = info.get('enterpriseToEbitda')
@@ -210,12 +224,12 @@ def generate_dashboard_data():
 
             fundamentals_data.append({
                 "ticker": symbol,
-                "rev_growth": f"{rev_growth * 100:+.1f}%" if rev_growth is not None else "N/A",
-                "pe": f"{fwd_pe:.1f}x" if fwd_pe is not None else "N/A",
-                "ev": f"{ev_ebitda:.1f}x" if ev_ebitda is not None else "N/A",
-                "roe": f"{roe * 100:.1f}%" if roe is not None else "N/A",
-                "peg": f"{peg:.2f}" if peg is not None else "N/A",
-                "net_margin": f"{profit_margin * 100:.1f}%" if profit_margin is not None else "N/A",
+                "rev_growth": clean_val(rev_growth * 100 if rev_growth else None, "{:+.1f}%"),
+                "pe": clean_val(fwd_pe, "{:.1f}x"),
+                "ev": clean_val(ev_ebitda, "{:.1f}x"),
+                "roe": clean_val(roe * 100 if roe else None, "{:.1f}%"),
+                "peg": clean_val(peg, "{:.2f}"),
+                "net_margin": clean_val(profit_margin * 100 if profit_margin else None, "{:.1f}%"),
                 "quarters": quarters,
                 "history": q_history
             })
