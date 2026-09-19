@@ -3,7 +3,6 @@ import json
 import math
 import os
 import time
-import urllib.request
 from zoneinfo import ZoneInfo
 import yfinance as yf
 
@@ -62,9 +61,11 @@ def get_next_earnings_date(ticker, belgium_tz):
         pass
     return "N/A"
 
-def get_annual_history(ticker):
-    """Récupère l'historique sur les 5 dernières années via Yahoo Finance."""
-    years_labels = []
+def get_annual_history(ticker, info):
+    """
+    Construit la vue annuelle dynamique : 2026 (TTM/Actuel) + Années précédentes.
+    """
+    years_labels = ["2026 (TTM)"]
     history = {
         "Croit. CA.": [],
         "Marge Net %": [],
@@ -74,18 +75,33 @@ def get_annual_history(ticker):
         "PEG": []
     }
 
+    # 1. VALEURS POUR 2026 (TTM / ACTUELLES)
+    rev_growth = info.get('revenueGrowth')
+    fwd_pe = info.get('forwardPE')
+    ev_ebitda = info.get('enterpriseToEbitda')
+    roe = info.get('returnOnEquity')
+    peg = info.get('pegRatio')
+    profit_margin = info.get('profitMargins')
+
+    history["Croit. CA."].append(clean_val(rev_growth * 100 if rev_growth else None, "{:+.1f}%"))
+    history["Marge Net %"].append(clean_val(profit_margin * 100 if profit_margin else None, "{:.1f}%"))
+    history["Fwd P/E"].append(clean_val(fwd_pe, "{:.1f}x"))
+    history["EV/EBITDA"].append(clean_val(ev_ebitda, "{:.1f}x"))
+    history["ROE"].append(clean_val(roe * 100 if roe else None, "{:.1f}%"))
+    history["PEG"].append(clean_val(peg, "{:.2f}"))
+
+    # 2. VALEURS HISTORIQUES
     try:
         fin = ticker.financials
         bs = ticker.balance_sheet
 
         if fin is not None and not fin.empty:
             cols = list(fin.columns)
-            # Tri des colonnes par année décroissante
             sorted_cols = sorted(cols, key=lambda c: c.year if hasattr(c, "year") else int(str(c)[:4]), reverse=True)
 
             data_by_year = {}
             for col in sorted_cols:
-                yr = col.year if hasattr(col, "year") else int(str(c)[:4])
+                yr = col.year if hasattr(col, "year") else int(str(col)[:4])
                 
                 rev = float(fin.loc['Total Revenue', col]) if 'Total Revenue' in fin.index and not math.isnan(fin.loc['Total Revenue', col]) else None
                 net_inc = float(fin.loc['Net Income', col]) if 'Net Income' in fin.index and not math.isnan(fin.loc['Net Income', col]) else None
@@ -103,11 +119,11 @@ def get_annual_history(ticker):
 
             all_years = sorted(data_by_year.keys(), reverse=True)
 
-            for yr in all_years[:5]:
+            for yr in all_years[:4]:  # Prend jusqu'à 4 années passées (ex: 2025, 2024, 2023, 2022)
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
-                # 1. CROISSANCE CA (YoY vs Année Y-1)
+                # Croissance CA YoY vs Année précédente
                 prev_yr = yr - 1
                 if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
                     rev_curr = item["revenue"]
@@ -120,21 +136,21 @@ def get_annual_history(ticker):
                 else:
                     history["Croit. CA."].append("N/A")
 
-                # 2. MARGE NETTE %
+                # Marge Nette %
                 if item["revenue"] and item["net_income"] and item["revenue"] > 0:
                     margin = (item["net_income"] / item["revenue"]) * 100
                     history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                 else:
                     history["Marge Net %"].append("N/A")
 
-                # 3. ROE ANNUEL
+                # ROE %
                 if item["net_income"] and item["equity"] and item["equity"] > 0:
                     roe_val = (item["net_income"] / item["equity"]) * 100
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
 
-                # Ratios de valorisation historiques non disponibles gratuitement
+                # Ratios non-disponibles dans l'historique gratuit
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
                 history["PEG"].append("N/A")
@@ -154,7 +170,7 @@ def generate_dashboard_data():
     now_ts = now_be.timestamp()
     cutoff_ts = now_ts - (72 * 3600 if now_be.weekday() == 0 else 24 * 3600)
 
-    print(f"📊 Mise à jour des données (vue annuelle) pour {len(TICKERS)} tickers...")
+    print(f"📊 Mise à jour des données (vue 2026 TTM + Annuel) pour {len(TICKERS)} tickers...")
 
     for symbol in TICKERS:
         try:
@@ -205,8 +221,8 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. HISTORIQUE ANNUEL (5 ans)
-            years, annual_history = get_annual_history(ticker)
+            # 3. HISTORIQUE ANNUEL (avec 2026 TTM)
+            years, annual_history = get_annual_history(ticker, info)
 
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
@@ -223,7 +239,7 @@ def generate_dashboard_data():
                 "roe": clean_val(roe * 100 if roe else None, "{:.1f}%"),
                 "peg": clean_val(peg, "{:.2f}"),
                 "net_margin": clean_val(profit_margin * 100 if profit_margin else None, "{:.1f}%"),
-                "quarters": years,  # Réutilisation de la clé pour garder la comptabilité avec le front HTML
+                "quarters": years,
                 "history": annual_history
             })
 
@@ -240,7 +256,7 @@ def generate_dashboard_data():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ data.json généré avec succès en vue annuelle !")
+    print(f"\n✅ data.json généré avec succès avec la colonne 2026 (TTM) !")
 
 if __name__ == "__main__":
     generate_dashboard_data()
