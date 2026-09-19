@@ -1,12 +1,13 @@
 {
-  "updated_at": "19/09/2026 à 15:22",
+  "updated_at": "19/09/2026 à 15:26",
   "prices": [
     {
       "ticker": "AED.BR",
       "price": 65.6,
       "change": -0.68,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +13.3%",
+      "sma200_pct": 13.3,
       "earnings": "N/A"
     },
     {
@@ -15,6 +16,7 @@
       "change": 0.0,
       "currency": "€",
       "sma200": "N/A",
+      "sma200_pct": null,
       "earnings": "N/A"
     },
     {
@@ -22,7 +24,8 @@
       "price": 17.84,
       "change": -1.11,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +10.1%",
+      "sma200_pct": 10.1,
       "earnings": "N/A"
     },
     {
@@ -30,7 +33,8 @@
       "price": 64.6,
       "change": -0.77,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +19.8%",
+      "sma200_pct": 19.8,
       "earnings": "13/11/2026"
     },
     {
@@ -38,7 +42,8 @@
       "price": 50.3,
       "change": 4.9,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +54.5%",
+      "sma200_pct": 54.5,
       "earnings": "26/10/2026"
     },
     {
@@ -46,7 +51,8 @@
       "price": 1446.0,
       "change": 1.97,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +77.1%",
+      "sma200_pct": 77.1,
       "earnings": "14/10/2026"
     },
     {
@@ -54,7 +60,8 @@
       "price": 357.61,
       "change": 2.97,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +78.2%",
+      "sma200_pct": 78.2,
       "earnings": "09/12/2026"
     },
     {
@@ -62,7 +69,8 @@
       "price": 40.27,
       "change": -0.1,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +173.6%",
+      "sma200_pct": 173.6,
       "earnings": "11/11/2026"
     },
     {
@@ -70,7 +78,8 @@
       "price": 167.9,
       "change": -1.54,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +5.6%",
+      "sma200_pct": 5.6,
       "earnings": "27/10/2026"
     },
     {
@@ -79,6 +88,7 @@
       "change": -1.28,
       "currency": "$",
       "sma200": "Under 🔥",
+      "sma200_pct": -35.3,
       "earnings": "19/11/2026"
     },
     {
@@ -86,7 +96,8 @@
       "price": 287.68,
       "change": -0.34,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +14.6%",
+      "sma200_pct": 14.6,
       "earnings": "29/10/2026"
     },
     {
@@ -95,6 +106,7 @@
       "change": 1.66,
       "currency": "$",
       "sma200": "N/A",
+      "sma200_pct": null,
       "earnings": "28/10/2026"
     },
     {
@@ -102,7 +114,8 @@
       "price": 344.41,
       "change": 0.21,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +76.4%",
+      "sma200_pct": 76.4,
       "earnings": "28/10/2026"
     },
     {
@@ -111,6 +124,7 @@
       "change": 2.55,
       "currency": "$",
       "sma200": "Under 🔥",
+      "sma200_pct": -6.0,
       "earnings": "20/10/2026"
     },
     {
@@ -118,7 +132,8 @@
       "price": 665.75,
       "change": -2.43,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +35.0%",
+      "sma200_pct": 35.0,
       "earnings": "28/10/2026"
     },
     {
@@ -127,6 +142,7 @@
       "change": -2.3,
       "currency": "€",
       "sma200": "Under 🔥",
+      "sma200_pct": -35.2,
       "earnings": "N/A"
     },
     {
@@ -134,7 +150,8 @@
       "price": 493.78,
       "change": -0.8,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +25.1%",
+      "sma200_pct": 25.1,
       "earnings": "28/10/2026"
     },
     {
@@ -142,7 +159,8 @@
       "price": 222.27,
       "change": 1.34,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +92.2%",
+      "sma200_pct": 92.2,
       "earnings": "17/11/2026"
     },
     {
@@ -151,6 +169,7 @@
       "change": -0.26,
       "currency": "$",
       "sma200": "Under 🔥",
+      "sma200_pct": -28.8,
       "earnings": "11/11/2026"
     },
     {
@@ -159,6 +178,7 @@
       "change": -1.36,
       "currency": "$",
       "sma200": "N/A",
+      "sma200_pct": null,
       "earnings": "03/11/2026"
     },
     {
@@ -167,6 +187,7 @@
       "change": 0.3,
       "currency": "$",
       "sma200": "Under 🔥",
+      "sma200_pct": -2.7,
       "earnings": "29/10/2026"
     },
     {
@@ -174,7 +195,8 @@
       "price": 285.75,
       "change": -0.47,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +38.2%",
+      "sma200_pct": 38.2,
       "earnings": "N/A"
     },
     {
@@ -182,7 +204,8 @@
       "price": 79.32,
       "change": -0.39,
       "currency": "€",
-      "sma200": "Above",
+      "sma200": "Above +43.8%",
+      "sma200_pct": 43.8,
       "earnings": "29/10/2026"
     },
     {
@@ -190,7 +213,8 @@
       "price": 364.27,
       "change": -0.53,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +26.5%",
+      "sma200_pct": 26.5,
       "earnings": "21/10/2026"
     },
     {
@@ -198,7 +222,8 @@
       "price": 303.12,
       "change": 0.35,
       "currency": "$",
-      "sma200": "Above",
+      "sma200": "Above +35.6%",
+      "sma200_pct": 35.6,
       "earnings": "22/10/2026"
     }
   ],
