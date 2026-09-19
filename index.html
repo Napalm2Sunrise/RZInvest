@@ -340,15 +340,16 @@
       const tbody = document.getElementById('ratios-tbody');
 
       tbody.innerHTML = '';
-      const filteredFund = selectedTicker === 'ALL' ? (globalData.fundamentals || []) : (globalData.fundamentals || []).filter(f => f.ticker === selectedTicker);
+      const fundList = globalData.fundamentals || [];
 
-      if (filteredFund.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
-        return;
-      }
+      if (selectedTicker !== 'ALL') {
+        // Vue filtrée sur un seul ticker
+        const fund = fundList.find(f => f.ticker === selectedTicker);
 
-      if (selectedTicker !== 'ALL' && filteredFund[0].quarters && filteredFund[0].quarters.length > 0) {
-        const fund = filteredFund[0];
+        if (!fund || !fund.quarters || fund.quarters.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
+          return;
+        }
 
         let headHtml = `<tr><th class="ticker-cell">Métrique</th>`;
         fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
@@ -369,6 +370,7 @@
         });
 
       } else {
+        // Vue globale : Récupère tous les tickers depuis globalData.prices
         thead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
@@ -380,10 +382,18 @@
             <th>Marge Net %</th>
           </tr>`;
 
-        filteredFund.forEach(f => {
+        const allTickers = (globalData.prices || []).map(p => p.ticker);
+
+        if (allTickers.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
+          return;
+        }
+
+        allTickers.forEach(ticker => {
+          const f = fundList.find(item => item.ticker === ticker) || {};
           tbody.innerHTML += `
             <tr>
-              <td class="ticker-cell">${f.ticker}</td>
+              <td class="ticker-cell">${ticker}</td>
               <td><span class="badge-ratio ${getMetricBadgeClass('rev_growth', f.rev_growth)}">${f.rev_growth || 'N/A'}</span></td>
               <td><span class="badge-ratio ${getMetricBadgeClass('pe', f.pe)}">${f.pe || 'N/A'}</span></td>
               <td><span class="badge-ratio ${getMetricBadgeClass('ev', f.ev)}">${f.ev || 'N/A'}</span></td>
