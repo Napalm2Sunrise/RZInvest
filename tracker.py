@@ -26,17 +26,17 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def check_200_weekly_sma(ticker, current_price):
-    """Calcul exact de la 200 Weekly SMA (Moyenne Mobile Simple)."""
+    """Calcul exact de la 200 Weekly SMA.
+    - Si Under : 'Under -X.X% 🔥'
+    - Si Above : 'Above +X.X%'
+    """
     try:
-        # Récupère 10 ans de données pour avoir au moins 200 semaines de recul
+        # Récupère 10 ans de données pour avoir assez de recul historique
         hist = ticker.history(period="10y", interval="1wk")
         
-        # On s'assure d'avoir au moins 200 bougies hebdomadaires
         if len(hist) >= 200:
-            # Calcul de la moyenne mobile glissante à 200 semaines sur les prix de clôture
+            # Calcule la moyenne mobile glissante à 200 semaines
             sma_series = hist["Close"].rolling(window=200).mean()
-            
-            # Récupération de la dernière valeur valide de la SMA
             sma_200 = sma_series.dropna().iloc[-1]
 
             if sma_200 > 0 and current_price > 0:
@@ -44,7 +44,7 @@ def check_200_weekly_sma(ticker, current_price):
                 pct = round(raw_pct, 1)
 
                 if current_price < sma_200:
-                    return "Under 🔥", pct
+                    return f"Under {pct}% 🔥", pct
                 else:
                     return f"Above +{pct}%", pct
     except Exception as e:
