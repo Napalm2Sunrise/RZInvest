@@ -46,7 +46,7 @@
     .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; }
     .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; }
 
-    /* Badges Ratios Colorés */
+    /* Badges Ratios Colorés (Vert / Jaune / Rouge) */
     .badge-ratio {
       padding: 4px 8px;
       border-radius: 6px;
@@ -55,9 +55,9 @@
       display: inline-block;
       text-align: center;
     }
-    .badge-green { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
-    .badge-light-green { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .badge-red { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .badge-green { background: rgba(34, 197, 94, 0.18); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
+    .badge-yellow { background: rgba(234, 179, 8, 0.18); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); }
+    .badge-red { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
     .badge-neutral { background: rgba(255, 255, 255, 0.05); color: #9ca3af; border: 1px solid rgba(255, 255, 255, 0.1); }
 
     /* Controls & Selects */
@@ -142,7 +142,7 @@
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
   </div>
 
-  <!-- Conteneur de filtres par menu déroulant -->
+  <!-- Menu déroulant Tickers -->
   <div style="margin: 15px 0;">
     <label for="ticker-select" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px; display: block;">
       Sélectionner un ticker :
@@ -178,20 +178,21 @@
           </tr>
         </thead>
         <tbody id="ratios-tbody">
-          <!-- Injecté dynamiquement par JS -->
+          <!-- Injecté dynamiquement -->
         </tbody>
       </table>
     </div>
   </div>
 
   <script>
-    const tg = window.Telegram?.WebApp;
-    if (tg) tg.expand();
+    if (window.Telegram && window.Telegram.WebApp) {
+      try { window.Telegram.WebApp.expand(); } catch (e) {}
+    }
 
     let globalData = null;
     let selectedTicker = 'ALL';
 
-    // Fonction de qualification des couleurs pour chaque métrique
+    // Fonction de classification tricolore : Vert / Jaune / Rouge
     function getMetricBadgeClass(metricName, valStr) {
       if (!valStr || valStr === "N/A") return "badge-neutral";
       
@@ -202,37 +203,37 @@
         case "Croit. CA.":
         case "rev_growth":
           if (num >= 10) return "badge-green";
-          if (num > 0) return "badge-light-green";
+          if (num >= 0) return "badge-yellow";
           return "badge-red";
 
         case "Marge Net %":
         case "net_margin":
-          if (num >= 20) return "badge-green";
-          if (num >= 10) return "badge-light-green";
+          if (num >= 15) return "badge-green";
+          if (num >= 5) return "badge-yellow";
           return "badge-red";
 
         case "ROE":
         case "roe":
           if (num >= 15) return "badge-green";
-          if (num >= 8) return "badge-light-green";
+          if (num >= 8) return "badge-yellow";
           return "badge-red";
 
         case "Fwd P/E":
         case "pe":
           if (num <= 20) return "badge-green";
-          if (num <= 35) return "badge-light-green";
+          if (num <= 35) return "badge-yellow";
           return "badge-red";
 
         case "EV/EBITDA":
         case "ev":
           if (num <= 12) return "badge-green";
-          if (num <= 20) return "badge-light-green";
+          if (num <= 22) return "badge-yellow";
           return "badge-red";
 
         case "PEG":
         case "peg":
           if (num <= 1.0) return "badge-green";
-          if (num <= 2.0) return "badge-light-green";
+          if (num <= 2.0) return "badge-yellow";
           return "badge-red";
 
         default:
@@ -242,14 +243,16 @@
 
     async function loadData() {
       try {
-        const res = await fetch('data.json?v=' + new Date().getTime());
+        const res = await fetch('data.json?v=' + Date.now());
+        if (!res.ok) throw new Error('Impossible de charger data.json');
         globalData = await res.json();
-        document.getElementById('update-time').innerText = "MàJ: " + globalData.updated_at;
+        document.getElementById('update-time').innerText = "MàJ: " + (globalData.updated_at || "N/A");
         
         buildFilters();
         renderAll();
       } catch (e) {
-        document.getElementById('update-time').innerText = "Erreur de chargement";
+        console.error(e);
+        document.getElementById('update-time').innerText = "Erreur de chargement data.json";
       }
     }
 
@@ -285,7 +288,7 @@
       // 1. News
       const newsCont = document.getElementById('news-container');
       newsCont.innerHTML = '';
-      const filteredNews = selectedTicker === 'ALL' ? globalData.news : globalData.news.filter(n => n.ticker === selectedTicker);
+      const filteredNews = selectedTicker === 'ALL' ? (globalData.news || []) : (globalData.news || []).filter(n => n.ticker === selectedTicker);
       
       if (filteredNews.length === 0) {
         newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible pour ce ticker.</div>';
@@ -307,23 +310,24 @@
       // 2. Prices
       const priceCont = document.getElementById('prices-container');
       priceCont.innerHTML = '';
-      const filteredPrices = selectedTicker === 'ALL' ? globalData.prices : globalData.prices.filter(p => p.ticker === selectedTicker);
+      const filteredPrices = selectedTicker === 'ALL' ? (globalData.prices || []) : (globalData.prices || []).filter(p => p.ticker === selectedTicker);
 
       filteredPrices.forEach(p => {
-        const isPos = p.change >= 0;
+        const changeNum = parseFloat(p.change) || 0;
+        const isPos = changeNum >= 0;
         priceCont.innerHTML += `
           <div class="card">
             <div class="card-header">
               <div>
                 <span class="ticker-name">${p.ticker}</span>
-                <span class="badge-sma ${p.sma200.includes('Under') ? 'bg-alert' : 'bg-ok'}">${p.sma200}</span>
+                <span class="badge-sma ${p.sma200 && p.sma200.includes('Under') ? 'bg-alert' : 'bg-ok'}">${p.sma200 || ''}</span>
               </div>
               <div style="text-align:right">
-                <div class="price-tag">${p.price} ${p.currency}</div>
-                <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${p.change.toFixed(2)}%</div>
+                <div class="price-tag">${p.price} ${p.currency || ''}</div>
+                <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${changeNum.toFixed(2)}%</div>
               </div>
             </div>
-            <div style="font-size:11px; color:#94a3b8; margin-top:6px;">📅 Prochaine pub. : <b>${p.earnings}</b></div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:6px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>
           </div>`;
       });
 
@@ -336,28 +340,25 @@
       const tbody = document.getElementById('ratios-tbody');
 
       tbody.innerHTML = '';
-      const filteredFund = selectedTicker === 'ALL' ? globalData.fundamentals : globalData.fundamentals.filter(f => f.ticker === selectedTicker);
+      const filteredFund = selectedTicker === 'ALL' ? (globalData.fundamentals || []) : (globalData.fundamentals || []).filter(f => f.ticker === selectedTicker);
 
       if (filteredFund.length === 0) {
         tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
         return;
       }
 
-      // CAS 1 : TICKER UNIQUE SÉLECTIONNÉ -> Vue Détaillée par Ticker
       if (selectedTicker !== 'ALL' && filteredFund[0].quarters && filteredFund[0].quarters.length > 0) {
         const fund = filteredFund[0];
 
-        // En-têtes avec le nom des années / TTM
         let headHtml = `<tr><th class="ticker-cell">Métrique</th>`;
         fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
         headHtml += `</tr>`;
         thead.innerHTML = headHtml;
 
-        // Lignes par métrique avec application des badges de couleur
         const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
         metrics.forEach(m => {
           let rowHtml = `<tr><td class="ticker-cell">${m}</td>`;
-          const vals = fund.history[m] || [];
+          const vals = (fund.history && fund.history[m]) || [];
           fund.quarters.forEach((_, idx) => {
             const val = vals[idx] || 'N/A';
             const badgeClass = getMetricBadgeClass(m, val);
@@ -368,7 +369,6 @@
         });
 
       } else {
-        // CAS 2 : "TOUS LES TICKERS" -> Vue Synthétique Globale
         thead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
