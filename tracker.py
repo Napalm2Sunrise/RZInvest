@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 import yfinance as yf
 
 # ==============================================================================
-# SOURCE DE VÉRITÉ (Option B) : Modifiez vos tickers directement ici
+# TICKERS
 # ==============================================================================
 TICKERS = [
     "AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "ASML.AS",   
@@ -27,10 +27,7 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def clean_val(val, fmt="{:.1f}%"):
-    """
-    Nettoie les valeurs NaN, None ou Inf
-    et applique le formatage désiré.
-    """
+    """Nettoie les valeurs NaN, None ou Inf."""
     if val is None:
         return "N/A"
     try:
@@ -42,7 +39,7 @@ def clean_val(val, fmt="{:.1f}%"):
         return "N/A"
 
 def check_200_weekly_sma(ticker, current_price):
-    """Calcul exact de la 200 Weekly SMA (données brutes non ajustées comme TradingView)."""
+    """Calcul exact de la 200 Weekly SMA."""
     try:
         hist_daily = ticker.history(period="max", interval="1d", auto_adjust=False, back_adjust=False)
         
@@ -80,27 +77,28 @@ def get_next_earnings_date(ticker, belgium_tz):
     return "N/A"
 
 def get_quarterly_history(ticker, info):
-    """Récupère les données historiques réelles sur les 6 derniers trimestres avec sécurisation NaN."""
+    """Récupère les données historiques réelles sur 10 trimestres."""
     quarters = []
     history = {
         "Croit. CA.": [],
+        "Marge Net %": [],
         "Fwd P/E": [],
         "EV/EBITDA": [],
         "ROE": [],
-        "PEG": [],
-        "Marge Net %": []
+        "PEG": []
     }
 
     try:
         q_fin = ticker.quarterly_financials
         if q_fin is not None and not q_fin.empty:
-            cols = list(q_fin.columns[:6])  # Prend les 6 trimestres les plus récents
+            # Récupère jusqu'à 10 trimestres
+            cols = list(q_fin.columns[:10])
 
-            # Ratios statiques nettoyés
-            fwd_pe = clean_val(info.get('forwardPE'), "{:.1f}x")
-            ev_ebitda = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
-            roe = clean_val(info.get('returnOnEquity', 0) * 100, "{:.1f}%")
-            peg = clean_val(info.get('pegRatio'), "{:.2f}")
+            # Ratios statiques actuels
+            fwd_pe_now = clean_val(info.get('forwardPE'), "{:.1f}x")
+            ev_ebitda_now = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
+            roe_now = clean_val(info.get('returnOnEquity', 0) * 100, "{:.1f}%")
+            peg_now = clean_val(info.get('pegRatio'), "{:.2f}")
 
             for i, col in enumerate(cols):
                 # Formatage du nom du trimestre (ex: Q1-2026)
@@ -109,7 +107,7 @@ def get_quarterly_history(ticker, info):
                 q_label = f"Q{q_num}-{dt.year}"
                 quarters.append(q_label)
 
-                # 1. Calcul Marge Nette %
+                # 1. Calcul Marge Nette % (Trimester par Trimester)
                 try:
                     net_inc = q_fin.loc['Net Income', col] if 'Net Income' in q_fin.index else None
                     tot_rev = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
@@ -122,7 +120,7 @@ def get_quarterly_history(ticker, info):
                 except Exception:
                     history["Marge Net %"].append("N/A")
 
-                # 2. Calcul Croissance CA (comparé à N-4)
+                # 2. Calcul Croissance CA YoY (Comparé à N-4)
                 try:
                     tot_rev_current = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
                     if i + 4 < len(q_fin.columns):
@@ -134,16 +132,23 @@ def get_quarterly_history(ticker, info):
                         else:
                             history["Croit. CA."].append("N/A")
                     else:
-                        rev_growth = info.get('revenueGrowth')
-                        history["Croit. CA."].append(clean_val(rev_growth * 100 if rev_growth else None, "{:+.1f}%"))
+                        # Si on n'a pas N-4 pour ce trimestre spécifique, indiquer N/A au lieu d'une fausse répétition
+                        history["Croit. CA."].append("N/A")
                 except Exception:
                     history["Croit. CA."].append("N/A")
 
-                # Ratios de valorisation
-                history["Fwd P/E"].append(fwd_pe)
-                history["EV/EBITDA"].append(ev_ebitda)
-                history["ROE"].append(roe)
-                history["PEG"].append(peg)
+                # 3. Ratios statiques actuels (affichés uniquement sur le dernier trimestre disponible i == 0)
+                if i == 0:
+                    history["Fwd P/E"].append(fwd_pe_now)
+                    history["EV/EBITDA"].append(ev_ebitda_now)
+                    history["ROE"].append(roe_now)
+                    history["PEG"].append(peg_now)
+                else:
+                    # N/A pour les trimestres passés car non fournis dans les API Yahoo historiques
+                    history["Fwd P/E"].append("N/A")
+                    history["EV/EBITDA"].append("N/A")
+                    history["ROE"].append("N/A")
+                    history["PEG"].append("N/A")
 
     except Exception as e:
         print(f"    ⚠️ Impossible de charger l'historique trimestriel : {e}")
@@ -155,7 +160,6 @@ def generate_dashboard_data():
     news_data = []
     fundamentals_data = []
 
-    # Application du fuseau horaire belge (Europe/Brussels)
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
@@ -212,7 +216,7 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. RATIOS & HISTORIQUE TRIMESTRIEL (avec sécurisation clean_val)
+            # 3. RATIOS & HISTORIQUE TRIMESTRIEL
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
             ev_ebitda = info.get('enterpriseToEbitda')
@@ -237,7 +241,6 @@ def generate_dashboard_data():
         except Exception as e:
             print(f"⚠️ Erreur sur {symbol}: {e}")
 
-    # Enregistrement dans le fichier JSON
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
         "prices": prices_data,
