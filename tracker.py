@@ -130,13 +130,22 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. RATIOS
+            # 3. RATIOS (Format enrichi pour affichage en tableau)
+            rev_growth = info.get('revenueGrowth')
+            fwd_pe = info.get('forwardPE')
+            ev_ebitda = info.get('enterpriseToEbitda')
+            roe = info.get('returnOnEquity')
+            peg = info.get('pegRatio')
+            profit_margin = info.get('profitMargins')
+
             fundamentals_data.append({
                 "ticker": symbol,
-                "rev_growth": f"{(info.get('revenueGrowth') or 0)*100:+.1f}%",
-                "pe": f"{info.get('forwardPE', 0):.1f}x",
-                "ev": f"{info.get('enterpriseToEbitda', 0):.1f}x",
-                "roe": f"{(info.get('returnOnEquity') or 0)*100:.1f}%"
+                "rev_growth": f"{rev_growth * 100:+.1f}%" if rev_growth is not None else "N/A",
+                "pe": f"{fwd_pe:.1f}x" if fwd_pe is not None else "N/A",
+                "ev": f"{ev_ebitda:.1f}x" if ev_ebitda is not None else "N/A",
+                "roe": f"{roe * 100:.1f}%" if roe is not None else "N/A",
+                "peg": f"{peg:.2f}" if peg is not None else "N/A",
+                "net_margin": f"{profit_margin * 100:.1f}%" if profit_margin is not None else "N/A"
             })
 
         except Exception as e:
