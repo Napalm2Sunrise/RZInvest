@@ -26,21 +26,21 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def check_200_weekly_sma(ticker, current_price):
-    """Calcul exact de la 200 Weekly SMA identique à TradingView."""
+    """Calcul exact de la 200 Weekly SMA (données brutes non ajustées comme TradingView)."""
     try:
-        # 1. Récupération des données journalières sur max d'historique
-        hist_daily = ticker.history(period="max", interval="1d")
+        # Récupération avec auto_adjust=False pour avoir les VRAIS prix de clôture historiques
+        hist_daily = ticker.history(period="max", interval="1d", auto_adjust=False, back_adjust=False)
         
         if not hist_daily.empty and len(hist_daily) >= 1000:
-            # 2. Conversion en bougies hebdomadaires (clôture du vendredi)
+            # Conversion en bougies hebdomadaires (vendredi)
             hist_weekly = hist_daily['Close'].resample('W-FRI').last().dropna()
             
             if len(hist_weekly) >= 200:
-                # 3. Calcul de la moyenne mobile sur 200 semaines
+                # Calcul de la SMA 200
                 sma_series = hist_weekly.rolling(window=200).mean()
                 
-                # On prend la dernière SMA calculée sur une semaine complète/clôturée
-                sma_200 = sma_series.iloc[-2] if len(sma_series) > 200 else sma_series.iloc[-1]
+                # Dernière SMA 200 calculée
+                sma_200 = sma_series.iloc[-1]
 
                 if sma_200 > 0 and current_price > 0:
                     raw_pct = ((current_price - sma_200) / sma_200) * 100
