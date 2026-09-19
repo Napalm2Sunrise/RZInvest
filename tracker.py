@@ -28,18 +28,13 @@ IMPORTANT_KEYWORDS = [
 def check_200_weekly_sma(ticker, current_price):
     """Calcul exact de la 200 Weekly SMA (données brutes non ajustées comme TradingView)."""
     try:
-        # Récupération avec auto_adjust=False pour avoir les VRAIS prix de clôture historiques
         hist_daily = ticker.history(period="max", interval="1d", auto_adjust=False, back_adjust=False)
         
         if not hist_daily.empty and len(hist_daily) >= 1000:
-            # Conversion en bougies hebdomadaires (vendredi)
             hist_weekly = hist_daily['Close'].resample('W-FRI').last().dropna()
             
             if len(hist_weekly) >= 200:
-                # Calcul de la SMA 200
                 sma_series = hist_weekly.rolling(window=200).mean()
-                
-                # Dernière SMA 200 calculée
                 sma_200 = sma_series.iloc[-1]
 
                 if sma_200 > 0 and current_price > 0:
@@ -67,6 +62,79 @@ def get_next_earnings_date(ticker, belgium_tz):
     except Exception:
         pass
     return "N/A"
+
+def get_quarterly_history(ticker, info):
+    """Récupère les données historiques réelles sur les 6 derniers trimestres."""
+    quarters = []
+    history = {
+        "Croit. CA.": [],
+        "Fwd P/E": [],
+        "EV/EBITDA": [],
+        "ROE": [],
+        "PEG": [],
+        "Marge Net %": []
+    }
+
+    try:
+        q_fin = ticker.quarterly_financials
+        if q_fin is not None and not q_fin.empty:
+            cols = list(q_fin.columns[:6])  # Prend les 6 trimestres les plus récents
+
+            # Ratios statiques ou actuels de référence
+            fwd_pe = f"{info.get('forwardPE'):.1f}x" if info.get('forwardPE') else "N/A"
+            ev_ebitda = f"{info.get('enterpriseToEbitda'):.1f}x" if info.get('enterpriseToEbitda') else "N/A"
+            roe = f"{info.get('returnOnEquity', 0)*100:.1f}%" if info.get('returnOnEquity') else "N/A"
+            peg = f"{info.get('pegRatio'):.2f}" if info.get('pegRatio') else "N/A"
+
+            for i, col in enumerate(cols):
+                # Formatage du nom du trimestre (ex: Q1-2026)
+                dt = col.to_pydatetime() if hasattr(col, "to_pydatetime") else col
+                q_num = (dt.month - 1) // 3 + 1
+                q_label = f"Q{q_num}-{dt.year}"
+                quarters.append(q_label)
+
+                # 1. Calcul Marge Nette %
+                try:
+                    net_inc = q_fin.loc['Net Income', col] if 'Net Income' in q_fin.index else None
+                    tot_rev = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
+
+                    if net_inc is not None and tot_rev is not None and tot_rev != 0:
+                        margin = (net_inc / tot_rev) * 100
+                        history["Marge Net %"].append(f"{margin:.1f}%")
+                    else:
+                        history["Marge Net %"].append("N/A")
+                except Exception:
+                    history["Marge Net %"].append("N/A")
+
+                # 2. Calcul Croissance CA (comparé au même trimestre de l'année précédente si dispo, ou YoY)
+                try:
+                    tot_rev_current = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
+                    # Recherche du trimestre N-1 (4 trimestres plus loin)
+                    if i + 4 < len(q_fin.columns):
+                        prev_col = q_fin.columns[i + 4]
+                        tot_rev_prev = q_fin.loc['Total Revenue', prev_col]
+                        if tot_rev_current and tot_rev_prev and tot_rev_prev != 0:
+                            growth = ((tot_rev_current - tot_rev_prev) / tot_rev_prev) * 100
+                            history["Croit. CA."].append(f"{growth:+.1f}%")
+                        else:
+                            history["Croit. CA."].append("N/A")
+                    else:
+                        # Fallback sur la croissance globale
+                        rev_growth = info.get('revenueGrowth')
+                        history["Croit. CA."].append(f"{rev_growth * 100:+.1f}%" if rev_growth else "N/A")
+                except Exception:
+                    history["Croit. CA."].append("N/A")
+
+                # Ratios de valorisation (reprise des valeurs actuelles)
+                history["Fwd P/E"].append(fwd_pe)
+                history["EV/EBITDA"].append(ev_ebitda)
+                history["ROE"].append(roe)
+                history["PEG"].append(peg)
+
+    except Exception as e:
+        print(f"   ⚠️ Impossible de charger l'historique trimestriel : {e}")
+
+    return quarters, history
 
 def generate_dashboard_data():
     prices_data = []
@@ -130,13 +198,15 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. RATIOS (Format enrichi pour affichage en tableau)
+            # 3. RATIOS & HISTORIQUE TRIMESTRIEL
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
             ev_ebitda = info.get('enterpriseToEbitda')
             roe = info.get('returnOnEquity')
             peg = info.get('pegRatio')
             profit_margin = info.get('profitMargins')
+
+            quarters, q_history = get_quarterly_history(ticker, info)
 
             fundamentals_data.append({
                 "ticker": symbol,
@@ -145,13 +215,15 @@ def generate_dashboard_data():
                 "ev": f"{ev_ebitda:.1f}x" if ev_ebitda is not None else "N/A",
                 "roe": f"{roe * 100:.1f}%" if roe is not None else "N/A",
                 "peg": f"{peg:.2f}" if peg is not None else "N/A",
-                "net_margin": f"{profit_margin * 100:.1f}%" if profit_margin is not None else "N/A"
+                "net_margin": f"{profit_margin * 100:.1f}%" if profit_margin is not None else "N/A",
+                "quarters": quarters,
+                "history": q_history
             })
 
         except Exception as e:
             print(f"⚠️ Erreur sur {symbol}: {e}")
 
-    # Enregistrement dans le fichier JSON pour la Mini App avec la date belge
+    # Enregistrement dans le fichier JSON
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
         "prices": prices_data,
