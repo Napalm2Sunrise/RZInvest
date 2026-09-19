@@ -17,7 +17,7 @@ TICKERS = [
 ]
 
 # Clé API Financial Modeling Prep
-FMP_API_KEY = os.environ.get("FMP_API_KEY", "qyN7pi1oLf1t6V6KyNWmF5n8W4buc7GV")
+FMP_API_KEY = os.environ.get("FMP_API_KEY")
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
