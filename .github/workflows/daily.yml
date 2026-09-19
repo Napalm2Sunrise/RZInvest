@@ -28,6 +28,7 @@ jobs:
 
       - name: Exécuter le tracker Python
         env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python tracker.py
