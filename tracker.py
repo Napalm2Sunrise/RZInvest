@@ -16,11 +16,18 @@ TICKERS = [
     "TTE.PA", "TSLA", "VRSN"
 ]
 
-# Clé API Finnhub (récupérée de l'environnement GitHub Actions)
-FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "")
+# Récupération des clés d'environnement (compatible FMP_API_KEY et FINNHUB_API_KEY)
+FMP_API_KEY = os.environ.get("FMP_API_KEY") or os.environ.get("FINNHUB_API_KEY", "")
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
+CHAT_ID = os.environ.get("CHAT_ID", "")
 
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
-CHAT_ID = os.environ.get("CHAT_ID")
+IMPORTANT_KEYWORDS = [
+    "result", "earnings", "revenue", "profit", "margin", "guidance", "dividend",
+    "fcf", "cash flow", "quarter", "q1", "q2", "q3", "q4", "bénéfice",
+    "chiffre d'affaires", "résultat", "dividende", "buyout", "acquisition",
+    "merger", "takeover", "sec", "investigation", "lawsuit", "ceo", "cfo",
+    "layoff", "restructuring", "rachat", "procès", "démission", "licenciement"
+]
 
 def clean_val(val, fmt="{:.1f}%"):
     """Nettoie les valeurs NaN, None ou Inf."""
@@ -34,27 +41,32 @@ def clean_val(val, fmt="{:.1f}%"):
     except Exception:
         return "N/A"
 
-def fetch_finnhub_data(endpoint):
-    """Effectue un appel API HTTP vers Finnhub."""
-    if not FINNHUB_API_KEY:
-        return None
+def fetch_fmp_data(endpoint):
+    """Effectue un appel API HTTP vers Financial Modeling Prep."""
+    if not FMP_API_KEY:
+        return []
     try:
-        sep = "&" if "?" in endpoint else "?"
-        url = f"https://finnhub.io/api/v1/{endpoint}{sep}token={FINNHUB_API_KEY}"
+        url = f"https://financialmodelingprep.com/api/v3/{endpoint}?apikey={FMP_API_KEY}"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             if response.status == 200:
                 return json.loads(response.read().decode('utf-8'))
     except Exception as e:
-        print(f"    ⚠️ Erreur API Finnhub ({endpoint}): {e}")
-    return None
+        print(f"    ⚠️ Erreur API FMP ({endpoint}): {e}")
+    return []
+
+def get_fmp_symbol(symbol):
+    """Convertit les symboles Yahoo vers le format FMP (ex: ASML.AS -> ASML)."""
+    return symbol.split('.')[0]
 
 def check_200_weekly_sma(ticker, current_price):
     """Calcul exact de la 200 Weekly SMA."""
     try:
         hist_daily = ticker.history(period="max", interval="1d", auto_adjust=False, back_adjust=False)
+        
         if not hist_daily.empty and len(hist_daily) >= 1000:
             hist_weekly = hist_daily['Close'].resample('W-FRI').last().dropna()
+            
             if len(hist_weekly) >= 200:
                 sma_series = hist_weekly.rolling(window=200).mean()
                 sma_200 = sma_series.iloc[-1]
@@ -85,8 +97,8 @@ def get_next_earnings_date(ticker, belgium_tz):
         pass
     return "N/A"
 
-def get_quarterly_history(symbol, ticker, info):
-    """Récupère l'historique sur 10 trimestres via Finnhub ou Fallback Yahoo Finance."""
+def get_quarterly_history_fmp(symbol, ticker, info):
+    """Récupère l'historique sur 10 trimestres via FMP ou Fallback Yahoo Finance."""
     quarters = []
     history = {
         "Croit. CA.": [],
@@ -97,71 +109,73 @@ def get_quarterly_history(symbol, ticker, info):
         "PEG": []
     }
 
-    # Métriques actuelles (Yahoo) pour remplissage des ratios
+    fmp_symbol = get_fmp_symbol(symbol)
+    
+    # 1. Récupération des états financiers via FMP
+    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=16")
+    key_metrics_data = fetch_fmp_data(f"key-metrics/{fmp_symbol}?period=quarter&limit=16")
+
+    # Métriques actuelles pour fallback
     curr_pe = clean_val(info.get('forwardPE') or info.get('trailingPE'), "{:.1f}x")
     curr_ev = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
     curr_roe = clean_val(info.get('returnOnEquity', 0) * 100 if info.get('returnOnEquity') else None, "{:.1f}%")
     curr_peg = clean_val(info.get('pegRatio'), "{:.2f}")
 
-    # 1. TENTATIVE VIA FINNHUB
-    finnhub_data = fetch_finnhub_data(f"stock/financials-reported?symbol={symbol}&freq=quarterly")
-    
-    if finnhub_data and isinstance(finnhub_data.get("data"), list) and len(finnhub_data["data"]) > 0:
-        reports = sorted(finnhub_data["data"], key=lambda x: x.get("endDate", ""), reverse=True)
-        
-        for i, rep in enumerate(reports[:10]):
-            year = rep.get("year")
-            quarter = rep.get("quarter")
-            q_label = f"Q{quarter}-{year}" if quarter and year else rep.get("endDate", "N/A")
+    if isinstance(income_data, list) and len(income_data) > 0:
+        income_data = sorted(income_data, key=lambda x: x.get('date', ''), reverse=True)
+        metrics_dict = {m.get('date'): m for m in key_metrics_data} if isinstance(key_metrics_data, list) else {}
+
+        for i, inc in enumerate(income_data[:10]):
+            date_str = inc.get('date', '')
+            period = inc.get('period', '')
+            year = date_str.split('-')[0] if date_str else ''
+            q_label = f"{period}-{year}" if period and year else date_str
             quarters.append(q_label)
 
-            # Extraction des données financières Finnhub
-            ic_reports = rep.get("report", {}).get("ic", [])
-            revenue = None
-            net_income = None
-
-            for concept in ic_reports:
-                concept_name = concept.get("concept", "").lower()
-                val = concept.get("value")
-                if val is not None:
-                    if "revenues" in concept_name or "salesrevenue net" in concept_name or "revenuefromcontractwithcustomer" in concept_name:
-                        revenue = float(val)
-                    elif "netincomeloss" in concept_name or "profitloss" in concept_name:
-                        net_income = float(val)
-
-            # Marge Nette
-            if revenue and net_income and revenue > 0:
-                history["Marge Net %"].append(clean_val((net_income / revenue) * 100, "{:.1f}%"))
+            # --- A. MARGE NETTE % ---
+            rev = inc.get('revenue')
+            net_inc = inc.get('netIncome')
+            if rev and net_inc and rev > 0:
+                history["Marge Net %"].append(clean_val((net_inc / rev) * 100, "{:.1f}%"))
             else:
                 history["Marge Net %"].append("N/A")
 
-            # Croissance CA (YoY vs Q-4)
-            if i + 4 < len(reports):
-                prev_ic = reports[i + 4].get("report", {}).get("ic", [])
-                prev_rev = None
-                for c in prev_ic:
-                    c_name = c.get("concept", "").lower()
-                    if "revenues" in c_name or "salesrevenue net" in c_name or "revenuefromcontractwithcustomer" in c_name:
-                        prev_rev = float(c.get("value", 0))
-                        break
-                if revenue and prev_rev and prev_rev > 0:
-                    growth = ((revenue - prev_rev) / prev_rev) * 100
+            # --- B. CROISSANCE CA ---
+            if i + 4 < len(income_data):
+                prev_rev = income_data[i + 4].get('revenue')
+                if rev and prev_rev and prev_rev > 0:
+                    growth = ((rev - prev_rev) / prev_rev) * 100
+                    history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
+                else:
+                    history["Croit. CA."].append("N/A")
+            elif i + 1 < len(income_data):
+                prev_q = income_data[i + 1].get('revenue')
+                if rev and prev_q and prev_q > 0:
+                    growth = ((rev - prev_q) / prev_q) * 100
                     history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
                 else:
                     history["Croit. CA."].append("N/A")
             else:
                 history["Croit. CA."].append("N/A")
 
-            # Ratios
-            history["Fwd P/E"].append(curr_pe)
-            history["EV/EBITDA"].append(curr_ev)
-            history["ROE"].append(curr_roe)
-            history["PEG"].append(curr_peg)
+            # --- C. RATIOS ---
+            m = metrics_dict.get(date_str, {})
+            
+            pe = clean_val(m.get('peRatio'), "{:.1f}x")
+            history["Fwd P/E"].append(pe if pe != "N/A" else curr_pe)
 
-        if len(quarters) > 0:
-            return quarters, history
+            ev = clean_val(m.get('enterpriseValueMultiple'), "{:.1f}x")
+            history["EV/EBITDA"].append(ev if ev != "N/A" else curr_ev)
 
-    # 2. FALLBACK YAHOO FINANCE (Si Finnhub ne renvoie pas de données)
+            roe = clean_val(m.get('roe', 0) * 100 if m.get('roe') else None, "{:.1f}%")
+            history["ROE"].append(roe if roe != "N/A" else curr_roe)
+
+            peg = clean_val(m.get('pegRatio'), "{:.2f}")
+            history["PEG"].append(peg if peg != "N/A" else curr_peg)
+
+        return quarters, history
+
+    # 2. FALLBACK YAHOO FINANCE SI FMP NE RENVOIE RIEN
     try:
         q_fin = ticker.quarterly_financials
         if q_fin is not None and not q_fin.empty:
@@ -175,10 +189,7 @@ def get_quarterly_history(symbol, ticker, info):
                 try:
                     net_inc = q_fin.loc['Net Income', col] if 'Net Income' in q_fin.index else None
                     tot_rev = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
-                    if net_inc is not None and tot_rev is not None and tot_rev > 0:
-                        history["Marge Net %"].append(clean_val((net_inc / tot_rev) * 100, "{:.1f}%"))
-                    else:
-                        history["Marge Net %"].append("N/A")
+                    history["Marge Net %"].append(clean_val((net_inc / tot_rev) * 100 if net_inc and tot_rev else None, "{:.1f}%"))
                 except Exception:
                     history["Marge Net %"].append("N/A")
 
@@ -186,12 +197,10 @@ def get_quarterly_history(symbol, ticker, info):
                     tot_rev_curr = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
                     if i + 4 < len(q_fin.columns):
                         tot_rev_prev = q_fin.loc['Total Revenue', q_fin.columns[i + 4]]
-                        growth = ((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None
-                        history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
+                        history["Croit. CA."].append(clean_val(((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None, "{:+.1f}%"))
                     elif i + 1 < len(q_fin.columns):
                         tot_rev_prev = q_fin.loc['Total Revenue', q_fin.columns[i + 1]]
-                        growth = ((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None
-                        history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
+                        history["Croit. CA."].append(clean_val(((tot_rev_curr - tot_rev_prev) / tot_rev_prev) * 100 if tot_rev_curr and tot_rev_prev else None, "{:+.1f}%"))
                     else:
                         history["Croit. CA."].append("N/A")
                 except Exception:
@@ -268,9 +277,8 @@ def generate_dashboard_data():
                     })
 
             # 3. HISTORIQUE TRIMESTRIEL
-            quarters, q_history = get_quarterly_history(symbol, ticker, info)
+            quarters, q_history = get_quarterly_history_fmp(symbol, ticker, info)
 
-            # Ratios globaux (synthèse)
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
             ev_ebitda = info.get('enterpriseToEbitda')
