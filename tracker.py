@@ -112,35 +112,57 @@ def get_quarterly_history_fmp(symbol, ticker, info):
 
     fmp_symbol = get_fmp_symbol(symbol)
     
-    # Appel des métriques trimestrielles FMP
-    metrics_data = fetch_fmp_data(f"key-metrics/{fmp_symbol}?period=quarter&limit=14")
-    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=14")
+    # 1. Récupération de 15 trimestres pour calculer la croissance YoY (Q vs Q-4)
+    ratios_data = fetch_fmp_data(f"ratios/{fmp_symbol}?period=quarter&limit=15")
+    key_metrics_data = fetch_fmp_data(f"key-metrics/{fmp_symbol}?period=quarter&limit=15")
+    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=15")
 
-    # 1. TENTATIVE VIA FMP
-    if isinstance(metrics_data, list) and len(metrics_data) > 0 and isinstance(income_data, list) and len(income_data) > 0:
-        for i, m in enumerate(metrics_data[:10]):
-            date_str = m.get('date', '')
-            period = m.get('period', '')
+    # TENTATIVE VIA FMP
+    if isinstance(income_data, list) and len(income_data) > 0:
+        ratios_dict = {r.get('date'): r for r in ratios_data} if isinstance(ratios_data, list) else {}
+        metrics_dict = {m.get('date'): m for m in key_metrics_data} if isinstance(key_metrics_data, list) else {}
+
+        for i, inc in enumerate(income_data[:10]):
+            date_str = inc.get('date', '')
+            period = inc.get('period', '')
             year = date_str.split('-')[0] if date_str else ''
             q_label = f"{period}-{year}" if period and year else date_str
             quarters.append(q_label)
 
-            history["Fwd P/E"].append(clean_val(m.get('peRatio'), "{:.1f}x"))
-            history["EV/EBITDA"].append(clean_val(m.get('enterpriseValueMultiple'), "{:.1f}x"))
-            history["ROE"].append(clean_val(m.get('roe', 0) * 100 if m.get('roe') else None, "{:.1f}%"))
-            history["PEG"].append(clean_val(m.get('pegRatio'), "{:.2f}"))
-            history["Marge Net %"].append(clean_val(m.get('netProfitMargin', 0) * 100 if m.get('netProfitMargin') else None, "{:.1f}%"))
+            # Marge Nette %
+            rev = inc.get('revenue')
+            net_inc = inc.get('netIncome')
+            if rev and net_inc and rev != 0:
+                history["Marge Net %"].append(clean_val((net_inc / rev) * 100, "{:.1f}%"))
+            else:
+                history["Marge Net %"].append("N/A")
 
+            # Croissance CA (YoY : Trimestre vs Même trimestre N-1)
             if i + 4 < len(income_data):
-                curr_rev = income_data[i].get('revenue')
                 prev_rev = income_data[i + 4].get('revenue')
-                if curr_rev and prev_rev and prev_rev != 0:
-                    growth = ((curr_rev - prev_rev) / prev_rev) * 100
+                if rev and prev_rev and prev_rev != 0:
+                    growth = ((rev - prev_rev) / prev_rev) * 100
                     history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
                 else:
                     history["Croit. CA."].append("N/A")
             else:
                 history["Croit. CA."].append("N/A")
+
+            # Ratios (Lecture croisée ratios + key-metrics)
+            r = ratios_dict.get(date_str, {})
+            m = metrics_dict.get(date_str, {})
+
+            pe_val = r.get('priceEarningsRatio') or m.get('peRatio')
+            history["Fwd P/E"].append(clean_val(pe_val, "{:.1f}x"))
+
+            ev_val = r.get('enterpriseValueMultiple') or m.get('enterpriseValueMultiple')
+            history["EV/EBITDA"].append(clean_val(ev_val, "{:.1f}x"))
+
+            roe_val = r.get('returnOnEquity') or m.get('roe')
+            history["ROE"].append(clean_val(roe_val * 100 if roe_val else None, "{:.1f}%"))
+
+            peg_val = r.get('priceEarningsToGrowthRatio') or m.get('pegRatio')
+            history["PEG"].append(clean_val(peg_val, "{:.2f}"))
 
         return quarters, history
 
