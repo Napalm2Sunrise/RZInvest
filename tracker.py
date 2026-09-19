@@ -17,8 +17,6 @@ TICKERS = [
     "TTE.PA", "TSLA", "VRSN"
 ]
 
-FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "")
-
 def clean_val(val, fmt="{:.1f}%"):
     """Nettoie les valeurs NaN, None ou Inf."""
     if val is None:
@@ -64,11 +62,9 @@ def get_next_earnings_date(ticker, belgium_tz):
         pass
     return "N/A"
 
-def get_quarterly_history(symbol, ticker, info):
-    """
-    Récupère l'historique trimestriel fiable via Yahoo Finance avec comparaison YoY exacte.
-    """
-    quarters = []
+def get_annual_history(ticker):
+    """Récupère l'historique sur les 5 dernières années via Yahoo Finance."""
+    years_labels = []
     history = {
         "Croit. CA.": [],
         "Marge Net %": [],
@@ -79,45 +75,43 @@ def get_quarterly_history(symbol, ticker, info):
     }
 
     try:
-        q_fin = ticker.quarterly_financials
-        q_bs = ticker.quarterly_balance_sheet
-        
-        if q_fin is not None and not q_fin.empty:
-            cols = list(q_fin.columns)
-            
-            # Map des trimestres pour un calcul YoY exact
-            data_by_period = {}
-            for col in cols:
-                dt = col.to_pydatetime() if hasattr(col, "to_pydatetime") else col
-                q_num = (dt.month - 1) // 3 + 1
-                key = (dt.year, q_num)
+        fin = ticker.financials
+        bs = ticker.balance_sheet
+
+        if fin is not None and not fin.empty:
+            cols = list(fin.columns)
+            # Tri des colonnes par année décroissante
+            sorted_cols = sorted(cols, key=lambda c: c.year if hasattr(c, "year") else int(str(c)[:4]), reverse=True)
+
+            data_by_year = {}
+            for col in sorted_cols:
+                yr = col.year if hasattr(col, "year") else int(str(c)[:4])
                 
-                rev = float(q_fin.loc['Total Revenue', col]) if 'Total Revenue' in q_fin.index and not math.isnan(q_fin.loc['Total Revenue', col]) else None
-                net_inc = float(q_fin.loc['Net Income', col]) if 'Net Income' in q_fin.index and not math.isnan(q_fin.loc['Net Income', col]) else None
+                rev = float(fin.loc['Total Revenue', col]) if 'Total Revenue' in fin.index and not math.isnan(fin.loc['Total Revenue', col]) else None
+                net_inc = float(fin.loc['Net Income', col]) if 'Net Income' in fin.index and not math.isnan(fin.loc['Net Income', col]) else None
                 
                 equity = None
-                if q_bs is not None and not q_bs.empty and col in q_bs.columns:
-                    if 'Stockholders Equity' in q_bs.index and not math.isnan(q_bs.loc['Stockholders Equity', col]):
-                        equity = float(q_bs.loc['Stockholders Equity', col])
+                if bs is not None and not bs.empty and col in bs.columns:
+                    if 'Stockholders Equity' in bs.index and not math.isnan(bs.loc['Stockholders Equity', col]):
+                        equity = float(bs.loc['Stockholders Equity', col])
 
-                data_by_period[key] = {
-                    "label": f"Q{q_num}-{dt.year}",
+                data_by_year[yr] = {
                     "revenue": rev,
                     "net_income": net_inc,
                     "equity": equity
                 }
 
-            sorted_keys = sorted(data_by_period.keys(), reverse=True)[:10]
+            all_years = sorted(data_by_year.keys(), reverse=True)
 
-            for (yr, q_num) in sorted_keys:
-                item = data_by_period[(yr, q_num)]
-                quarters.append(item["label"])
+            for yr in all_years[:5]:
+                years_labels.append(str(yr))
+                item = data_by_year[yr]
 
-                # --- 1. CROISSANCE CA (Comparaison exacte avec l'année N-1) ---
-                prev_year_key = (yr - 1, q_num)
-                if prev_year_key in data_by_period and data_by_period[prev_year_key]["revenue"]:
+                # 1. CROISSANCE CA (YoY vs Année Y-1)
+                prev_yr = yr - 1
+                if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
                     rev_curr = item["revenue"]
-                    rev_prev = data_by_period[prev_year_key]["revenue"]
+                    rev_prev = data_by_year[prev_yr]["revenue"]
                     if rev_curr and rev_prev and rev_prev > 0:
                         growth = ((rev_curr - rev_prev) / rev_prev) * 100
                         history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
@@ -126,32 +120,29 @@ def get_quarterly_history(symbol, ticker, info):
                 else:
                     history["Croit. CA."].append("N/A")
 
-                # --- 2. MARGE NETTE % ---
+                # 2. MARGE NETTE %
                 if item["revenue"] and item["net_income"] and item["revenue"] > 0:
                     margin = (item["net_income"] / item["revenue"]) * 100
                     history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                 else:
                     history["Marge Net %"].append("N/A")
 
-                # --- 3. ROE HISTORIQUE TRIMESTRIEL ---
+                # 3. ROE ANNUEL
                 if item["net_income"] and item["equity"] and item["equity"] > 0:
-                    roe_val = (item["net_income"] * 4 / item["equity"]) * 100  # Annualisé
+                    roe_val = (item["net_income"] / item["equity"]) * 100
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
 
-                # Ratios de valorisation historiques non fournis par API gratuites sans historique de prix
+                # Ratios de valorisation historiques non disponibles gratuitement
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
                 history["PEG"].append("N/A")
 
-            if len(quarters) > 0:
-                return quarters, history
-
     except Exception as e:
-        print(f"    ⚠️ Erreur Yahoo Finance sur {symbol} : {e}")
+        print(f"    ⚠️ Erreur données annuelles : {e}")
 
-    return quarters, history
+    return years_labels, history
 
 def generate_dashboard_data():
     prices_data = []
@@ -163,7 +154,7 @@ def generate_dashboard_data():
     now_ts = now_be.timestamp()
     cutoff_ts = now_ts - (72 * 3600 if now_be.weekday() == 0 else 24 * 3600)
 
-    print(f"📊 Mise à jour des données pour {len(TICKERS)} tickers...")
+    print(f"📊 Mise à jour des données (vue annuelle) pour {len(TICKERS)} tickers...")
 
     for symbol in TICKERS:
         try:
@@ -214,8 +205,8 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. HISTORIQUE TRIMESTRIEL
-            quarters, q_history = get_quarterly_history(symbol, ticker, info)
+            # 3. HISTORIQUE ANNUEL (5 ans)
+            years, annual_history = get_annual_history(ticker)
 
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
@@ -232,8 +223,8 @@ def generate_dashboard_data():
                 "roe": clean_val(roe * 100 if roe else None, "{:.1f}%"),
                 "peg": clean_val(peg, "{:.2f}"),
                 "net_margin": clean_val(profit_margin * 100 if profit_margin else None, "{:.1f}%"),
-                "quarters": quarters,
-                "history": q_history
+                "quarters": years,  # Réutilisation de la clé pour garder la comptabilité avec le front HTML
+                "history": annual_history
             })
 
         except Exception as e:
@@ -249,7 +240,7 @@ def generate_dashboard_data():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ data.json généré avec succès à {now_be.strftime('%H:%M')} (Heure belge) !")
+    print(f"\n✅ data.json généré avec succès en vue annuelle !")
 
 if __name__ == "__main__":
     generate_dashboard_data()
