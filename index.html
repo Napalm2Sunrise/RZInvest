@@ -149,20 +149,6 @@
 
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
-    <div id="metric-filter-container" style="margin-bottom: 10px; display: none;">
-      <label for="metric-select" style="font-size: 12px; color: #94a3b8; margin-bottom: 4px; display: block;">
-        Métrique affichée par trimestre :
-      </label>
-      <select id="metric-select" class="select-control" onchange="renderFundamentals()">
-        <option value="Croit. CA.">Croit. CA.</option>
-        <option value="Marge Net %">Marge Net %</option>
-        <option value="Fwd P/E">Fwd P/E</option>
-        <option value="EV/EBITDA">EV/EBITDA</option>
-        <option value="ROE">ROE</option>
-        <option value="PEG">PEG</option>
-      </select>
-    </div>
-
     <div class="table-container">
       <table class="ratios-table">
         <thead id="ratios-thead">
@@ -284,8 +270,6 @@
     function renderFundamentals() {
       const thead = document.getElementById('ratios-thead');
       const tbody = document.getElementById('ratios-tbody');
-      const metricContainer = document.getElementById('metric-filter-container');
-      const selectedMetric = document.getElementById('metric-select').value;
 
       tbody.innerHTML = '';
       const filteredFund = selectedTicker === 'ALL' ? globalData.fundamentals : globalData.fundamentals.filter(f => f.ticker === selectedTicker);
@@ -295,12 +279,11 @@
         return;
       }
 
-      // Cas 1 : Vue détaillée pour 1 seul ticker sélectionné -> Affiche tous les ratios par trimestre
+      // CAS 1 : TICKER UNIQUE SÉLECTIONNÉ -> Vue Trimestrielle Détaillée
       if (selectedTicker !== 'ALL' && filteredFund[0].quarters && filteredFund[0].quarters.length > 0) {
-        metricContainer.style.display = 'none';
         const fund = filteredFund[0];
 
-        // En-têtes : Tickers + Trimestres
+        // En-têtes avec le nom des trimestres
         let headHtml = `<tr><th class="ticker-cell">Métrique</th>`;
         fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
         headHtml += `</tr>`;
@@ -319,54 +302,30 @@
         });
 
       } else {
-        // Cas 2 : Vue globale (TOUS LES TICKERS)
-        // Si les données quarterly sont présentes, on active le sélecteur de métrique trimestrielle
-        const sampleQuarters = filteredFund.find(f => f.quarters && f.quarters.length > 0)?.quarters;
+        // CAS 2 : "TOUS LES TICKERS" (Vue d'origine inchangée)
+        thead.innerHTML = `
+          <tr>
+            <th class="ticker-cell">Tickers</th>
+            <th>Croit. CA.</th>
+            <th>Fwd P/E</th>
+            <th>EV/EBITDA</th>
+            <th>ROE</th>
+            <th>PEG</th>
+            <th>Marge Net %</th>
+          </tr>`;
 
-        if (sampleQuarters && sampleQuarters.length > 0) {
-          metricContainer.style.display = 'block';
-
-          let headHtml = `<tr><th class="ticker-cell">Ticker</th>`;
-          sampleQuarters.forEach(q => { headHtml += `<th>${q}</th>`; });
-          headHtml += `</tr>`;
-          thead.innerHTML = headHtml;
-
-          filteredFund.forEach(f => {
-            let rowHtml = `<tr><td class="ticker-cell">${f.ticker}</td>`;
-            const vals = (f.history && f.history[selectedMetric]) ? f.history[selectedMetric] : [];
-            sampleQuarters.forEach((_, idx) => {
-              rowHtml += `<td>${vals[idx] || 'N/A'}</td>`;
-            });
-            rowHtml += `</tr>`;
-            tbody.innerHTML += rowHtml;
-          });
-        } else {
-          // Fallback : Tableau statique de base
-          metricContainer.style.display = 'none';
-          thead.innerHTML = `
+        filteredFund.forEach(f => {
+          tbody.innerHTML += `
             <tr>
-              <th class="ticker-cell">Tickers</th>
-              <th>Croit. CA.</th>
-              <th>Fwd P/E</th>
-              <th>EV/EBITDA</th>
-              <th>ROE</th>
-              <th>PEG</th>
-              <th>Marge Net %</th>
+              <td class="ticker-cell">${f.ticker}</td>
+              <td>${f.rev_growth || 'N/A'}</td>
+              <td>${f.pe || 'N/A'}</td>
+              <td>${f.ev || 'N/A'}</td>
+              <td>${f.roe || 'N/A'}</td>
+              <td>${f.peg || 'N/A'}</td>
+              <td>${f.net_margin || 'N/A'}</td>
             </tr>`;
-
-          filteredFund.forEach(f => {
-            tbody.innerHTML += `
-              <tr>
-                <td class="ticker-cell">${f.ticker}</td>
-                <td>${f.rev_growth || 'N/A'}</td>
-                <td>${f.pe || 'N/A'}</td>
-                <td>${f.ev || 'N/A'}</td>
-                <td>${f.roe || 'N/A'}</td>
-                <td>${f.peg || 'N/A'}</td>
-                <td>${f.net_margin || 'N/A'}</td>
-              </tr>`;
-          });
-        }
+        });
       }
     }
 
