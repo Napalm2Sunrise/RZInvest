@@ -2,11 +2,12 @@ from datetime import datetime
 import json
 import math
 import os
+import urllib.request
 from zoneinfo import ZoneInfo
 import yfinance as yf
 
 # ==============================================================================
-# TICKERS
+# CONFIGURATION
 # ==============================================================================
 TICKERS = [
     "AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "ASML.AS",   
@@ -14,6 +15,9 @@ TICKERS = [
     "META", "MC.PA", "MSFT", "NVDA", "ONON", "SPCX", "SPGI", "SU.PA", 
     "TTE.PA", "TSLA", "VRSN"
 ]
+
+# Clé API Financial Modeling Prep
+FMP_API_KEY = os.environ.get("FMP_API_KEY", "qyN7pi1oLf1t6V6KyNWmF5n8W4buc7GV")
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
@@ -37,6 +41,22 @@ def clean_val(val, fmt="{:.1f}%"):
         return fmt.format(f_val)
     except Exception:
         return "N/A"
+
+def fetch_fmp_data(endpoint):
+    """Effectue un appel API HTTP vers Financial Modeling Prep."""
+    try:
+        url = f"https://financialmodelingprep.com/api/v3/{endpoint}?apikey={FMP_API_KEY}"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            if response.status == 200:
+                return json.loads(response.read().decode('utf-8'))
+    except Exception as e:
+        print(f"Erreur API FMP ({endpoint}): {e}")
+    return []
+
+def get_fmp_symbol(symbol):
+    """Convertit les symboles Yahoo vers le format FMP (ex: ASML.AS -> ASML)."""
+    return symbol.split('.')[0]
 
 def check_200_weekly_sma(ticker, current_price):
     """Calcul exact de la 200 Weekly SMA."""
@@ -76,8 +96,8 @@ def get_next_earnings_date(ticker, belgium_tz):
         pass
     return "N/A"
 
-def get_quarterly_history(ticker, info):
-    """Récupère les données historiques réelles sur 10 trimestres."""
+def get_quarterly_history_fmp(symbol):
+    """Récupère l'historique réel sur 10 trimestres via FMP API."""
     quarters = []
     history = {
         "Croit. CA.": [],
@@ -88,70 +108,40 @@ def get_quarterly_history(ticker, info):
         "PEG": []
     }
 
-    try:
-        q_fin = ticker.quarterly_financials
-        if q_fin is not None and not q_fin.empty:
-            # Récupère jusqu'à 10 trimestres
-            cols = list(q_fin.columns[:10])
+    fmp_symbol = get_fmp_symbol(symbol)
+    
+    # Ratios trimestriels et compte de résultat (14 trimestres demandés pour calculer YoY)
+    ratios_data = fetch_fmp_data(f"ratios/{fmp_symbol}?period=quarter&limit=14")
+    income_data = fetch_fmp_data(f"income-statement/{fmp_symbol}?period=quarter&limit=14")
 
-            # Ratios statiques actuels
-            fwd_pe_now = clean_val(info.get('forwardPE'), "{:.1f}x")
-            ev_ebitda_now = clean_val(info.get('enterpriseToEbitda'), "{:.1f}x")
-            roe_now = clean_val(info.get('returnOnEquity', 0) * 100, "{:.1f}%")
-            peg_now = clean_val(info.get('pegRatio'), "{:.2f}")
+    if not ratios_data or not income_data:
+        return quarters, history
 
-            for i, col in enumerate(cols):
-                # Formatage du nom du trimestre (ex: Q1-2026)
-                dt = col.to_pydatetime() if hasattr(col, "to_pydatetime") else col
-                q_num = (dt.month - 1) // 3 + 1
-                q_label = f"Q{q_num}-{dt.year}"
-                quarters.append(q_label)
+    for i, r in enumerate(ratios_data[:10]):
+        date_str = r.get('date', '')
+        period = r.get('period', '')
+        year = date_str.split('-')[0] if date_str else ''
+        q_label = f"{period}-{year}" if period and year else date_str
+        quarters.append(q_label)
 
-                # 1. Calcul Marge Nette % (Trimester par Trimester)
-                try:
-                    net_inc = q_fin.loc['Net Income', col] if 'Net Income' in q_fin.index else None
-                    tot_rev = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
+        # 1. Ratios de valorisation et profitabilité
+        history["Fwd P/E"].append(clean_val(r.get('priceEarningsRatio'), "{:.1f}x"))
+        history["EV/EBITDA"].append(clean_val(r.get('enterpriseValueMultiple'), "{:.1f}x"))
+        history["ROE"].append(clean_val(r.get('returnOnEquity', 0) * 100 if r.get('returnOnEquity') else None, "{:.1f}%"))
+        history["PEG"].append(clean_val(r.get('priceEarningsToGrowthRatio'), "{:.2f}"))
+        history["Marge Net %"].append(clean_val(r.get('netProfitMargin', 0) * 100 if r.get('netProfitMargin') else None, "{:.1f}%"))
 
-                    if net_inc is not None and tot_rev is not None and tot_rev != 0:
-                        margin = (net_inc / tot_rev) * 100
-                        history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
-                    else:
-                        history["Marge Net %"].append("N/A")
-                except Exception:
-                    history["Marge Net %"].append("N/A")
-
-                # 2. Calcul Croissance CA YoY (Comparé à N-4)
-                try:
-                    tot_rev_current = q_fin.loc['Total Revenue', col] if 'Total Revenue' in q_fin.index else None
-                    if i + 4 < len(q_fin.columns):
-                        prev_col = q_fin.columns[i + 4]
-                        tot_rev_prev = q_fin.loc['Total Revenue', prev_col]
-                        if tot_rev_current and tot_rev_prev and tot_rev_prev != 0:
-                            growth = ((tot_rev_current - tot_rev_prev) / tot_rev_prev) * 100
-                            history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
-                        else:
-                            history["Croit. CA."].append("N/A")
-                    else:
-                        # Si on n'a pas N-4 pour ce trimestre spécifique, indiquer N/A au lieu d'une fausse répétition
-                        history["Croit. CA."].append("N/A")
-                except Exception:
-                    history["Croit. CA."].append("N/A")
-
-                # 3. Ratios statiques actuels (affichés uniquement sur le dernier trimestre disponible i == 0)
-                if i == 0:
-                    history["Fwd P/E"].append(fwd_pe_now)
-                    history["EV/EBITDA"].append(ev_ebitda_now)
-                    history["ROE"].append(roe_now)
-                    history["PEG"].append(peg_now)
-                else:
-                    # N/A pour les trimestres passés car non fournis dans les API Yahoo historiques
-                    history["Fwd P/E"].append("N/A")
-                    history["EV/EBITDA"].append("N/A")
-                    history["ROE"].append("N/A")
-                    history["PEG"].append("N/A")
-
-    except Exception as e:
-        print(f"    ⚠️ Impossible de charger l'historique trimestriel : {e}")
+        # 2. Croissance Chiffre d'Affaires YoY (Q vs Q-4)
+        if i + 4 < len(income_data):
+            curr_rev = income_data[i].get('revenue')
+            prev_rev = income_data[i + 4].get('revenue')
+            if curr_rev and prev_rev and prev_rev != 0:
+                growth = ((curr_rev - prev_rev) / prev_rev) * 100
+                history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
+            else:
+                history["Croit. CA."].append("N/A")
+        else:
+            history["Croit. CA."].append("N/A")
 
     return quarters, history
 
@@ -216,15 +206,16 @@ def generate_dashboard_data():
                         "date": pub_dt.strftime("%H:%M")
                     })
 
-            # 3. RATIOS & HISTORIQUE TRIMESTRIEL
+            # 3. HISTORIQUE TRIMESTRIEL FMP
+            quarters, q_history = get_quarterly_history_fmp(symbol)
+
+            # Ratios globaux (synthèse)
             rev_growth = info.get('revenueGrowth')
             fwd_pe = info.get('forwardPE')
             ev_ebitda = info.get('enterpriseToEbitda')
             roe = info.get('returnOnEquity')
             peg = info.get('pegRatio')
             profit_margin = info.get('profitMargins')
-
-            quarters, q_history = get_quarterly_history(ticker, info)
 
             fundamentals_data.append({
                 "ticker": symbol,
