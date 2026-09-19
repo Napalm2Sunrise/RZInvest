@@ -26,27 +26,30 @@ IMPORTANT_KEYWORDS = [
 ]
 
 def check_200_weekly_sma(ticker, current_price):
-    """Calcul exact de la 200 Weekly SMA.
-    - Si Under : 'Under -X.X% 🔥'
-    - Si Above : 'Above +X.X%'
-    """
+    """Calcul exact de la 200 Weekly SMA identique à TradingView."""
     try:
-        # Récupère 10 ans de données pour avoir assez de recul historique
-        hist = ticker.history(period="10y", interval="1wk")
+        # 1. Récupération des données journalières sur max d'historique
+        hist_daily = ticker.history(period="max", interval="1d")
         
-        if len(hist) >= 200:
-            # Calcule la moyenne mobile glissante à 200 semaines
-            sma_series = hist["Close"].rolling(window=200).mean()
-            sma_200 = sma_series.dropna().iloc[-1]
+        if not hist_daily.empty and len(hist_daily) >= 1000:
+            # 2. Conversion en bougies hebdomadaires (clôture du vendredi)
+            hist_weekly = hist_daily['Close'].resample('W-FRI').last().dropna()
+            
+            if len(hist_weekly) >= 200:
+                # 3. Calcul de la moyenne mobile sur 200 semaines
+                sma_series = hist_weekly.rolling(window=200).mean()
+                
+                # On prend la dernière SMA calculée sur une semaine complète/clôturée
+                sma_200 = sma_series.iloc[-2] if len(sma_series) > 200 else sma_series.iloc[-1]
 
-            if sma_200 > 0 and current_price > 0:
-                raw_pct = ((current_price - sma_200) / sma_200) * 100
-                pct = round(raw_pct, 1)
+                if sma_200 > 0 and current_price > 0:
+                    raw_pct = ((current_price - sma_200) / sma_200) * 100
+                    pct = round(raw_pct, 1)
 
-                if current_price < sma_200:
-                    return f"Under {pct}% 🔥", pct
-                else:
-                    return f"Above +{pct}%", pct
+                    if current_price < sma_200:
+                        return f"Under {pct}% 🔥", pct
+                    else:
+                        return f"Above +{pct}%", pct
     except Exception as e:
         print(f"Erreur calcul SMA200: {e}")
         
