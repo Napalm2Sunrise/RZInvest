@@ -47,6 +47,33 @@ def check_200_weekly_sma_from_hist(hist_daily, current_price):
         print(f"    ⚠️ Erreur calcul SMA200: {e}")
     return "N/A", None, False
 
+def calculate_rsi14_weekly(hist_daily):
+    """Calcul du RSI 14 périodes sur bougies hebdomadaires."""
+    try:
+        if hist_daily is not None and not hist_daily.empty:
+            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
+            if len(hist_weekly) >= 15:
+                delta = hist_weekly.diff()
+                gain = delta.where(delta > 0, 0.0)
+                loss = -delta.where(delta < 0, 0.0)
+
+                # Calcul des moyennes mobiles lissées (EMA / Wilder)
+                avg_gain = gain.ewm(alpha=1/14, adjust=False).mean()
+                avg_loss = loss.ewm(alpha=1/14, adjust=False).mean()
+
+                last_gain = avg_gain.iloc[-1]
+                last_loss = avg_loss.iloc[-1]
+
+                if last_loss == 0:
+                    return 100.0
+                
+                rs = last_gain / last_loss
+                rsi = 100 - (100 / (1 + rs))
+                return round(float(rsi), 1)
+    except Exception as e:
+        print(f"    ⚠️ Erreur calcul RSI14 Weekly: {e}")
+    return "N/A"
+
 def get_next_earnings_date(ticker, belgium_tz):
     """Récupère la prochaine date de résultats."""
     try:
@@ -190,7 +217,7 @@ def generate_dashboard_data():
 
     print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
     
-    # 1. Requête groupée pour les historiques daily (SMA200)
+    # 1. Requête groupée pour les historiques daily (SMA200 & RSI14)
     batch_hist = {}
     try:
         download_data = yf.download(TICKERS, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
@@ -217,7 +244,7 @@ def generate_dashboard_data():
             except Exception:
                 pass
 
-            # PRIX & SMA 200 WEEKLY
+            # PRIX, SMA 200 WEEKLY & RSI 14 WEEKLY
             price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
             
             hist_close = batch_hist.get(symbol)
@@ -235,6 +262,7 @@ def generate_dashboard_data():
             currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
 
             sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
+            rsi14_w = calculate_rsi14_weekly(hist_close)
 
             prices_data.append({
                 "ticker": symbol,
@@ -244,6 +272,7 @@ def generate_dashboard_data():
                 "sma200": sma200_str,
                 "sma200_pct": sma200_pct,
                 "is_under": is_under,
+                "rsi14_weekly": rsi14_w,
                 "earnings": get_next_earnings_date(ticker, belgium_tz)
             })
 
