@@ -324,10 +324,14 @@
       const priceCont = document.getElementById('prices-container');
       priceCont.innerHTML = '';
       const filteredPrices = selectedTicker === 'ALL' ? (globalData.prices || []) : (globalData.prices || []).filter(p => p.ticker === selectedTicker);
+      const fundList = globalData.fundamentals || [];
 
       filteredPrices.forEach(p => {
         const changeNum = parseFloat(p.change) || 0;
         const isPos = changeNum >= 0;
+        
+        // Recherche des données fondamentales pour le ticker actuel
+        const f = fundList.find(item => item.ticker === p.ticker) || {};
         
         // Détermination de la couleur SMA : VERT (bg-ok) si Under, ROUGE (bg-alert) si Above
         const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
@@ -363,6 +367,16 @@
           }
         }
 
+        // Traitement du PEG (même code couleur que la page ratios)
+        const pegVal = f.peg || 'N/A';
+        const pegClass = getMetricBadgeClass('peg', pegVal);
+        const pegHtml = `<div><span class="badge-ratio ${pegClass}">PEG ${pegVal}</span></div>`;
+
+        // Traitement du FWD P/E (même code couleur que la page ratios)
+        const peVal = f.pe || 'N/A';
+        const peClass = getMetricBadgeClass('pe', peVal);
+        const peHtml = `<div><span class="badge-ratio ${peClass}">FWD P/E ${peVal}</span></div>`;
+
         priceCont.innerHTML += `
           <div class="card">
             <div class="card-header">
@@ -371,6 +385,8 @@
                 ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-sma ${smaClass}">${p.sma200}</span></div>` : ''}
                 ${rsiHtml}
                 ${athHtml}
+                ${pegHtml}
+                ${peHtml}
               </div>
               <div style="text-align:right">
                 <div class="price-tag">${p.price} ${p.currency || ''}</div>
