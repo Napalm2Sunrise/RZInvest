@@ -37,8 +37,8 @@
 
     /* Cards */
     .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; display: block; }
     .price-tag { font-weight: 700; font-size: 14px; }
     .pos { color: #34d399; }
     .neg { color: #f87171; }
@@ -48,9 +48,11 @@
     .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
 
     /* Badges SMA200 / News */
-    .badge-sma { padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-top: 4px; }
-    .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-    .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .badge-sma { padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-top: 6px; }
+    
+    /* Inversion des couleurs : Under en VERT, Above en ROUGE */
+    .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+    .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 
     /* Badges Ratios Colorés (Vert / Jaune / Rouge) */
     .badge-ratio {
@@ -321,12 +323,17 @@
       filteredPrices.forEach(p => {
         const changeNum = parseFloat(p.change) || 0;
         const isPos = changeNum >= 0;
+        
+        // Détermination de la couleur inversée : VERT (bg-ok) si Under, ROUGE (bg-alert) si Above
+        const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
+        const smaClass = isUnder ? 'bg-ok' : 'bg-alert';
+
         priceCont.innerHTML += `
           <div class="card">
             <div class="card-header">
               <div>
                 <span class="ticker-name">${p.ticker}</span>
-                <span class="badge-sma ${p.sma200 && p.sma200.includes('Under') ? 'bg-alert' : 'bg-ok'}">${p.sma200 || ''}</span>
+                ${p.sma200 && p.sma200 !== 'N/A' ? `<div class="badge-sma ${smaClass}">${p.sma200}</div>` : ''}
               </div>
               <div style="text-align:right">
                 <div class="price-tag">${p.price} ${p.currency || ''}</div>
