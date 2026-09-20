@@ -80,9 +80,10 @@ def get_financial_item(df, possible_keys, col):
 
 def get_annual_history(ticker, info):
     """
-    Construit la vue annuelle dynamique : 2026 (TTM/Actuel) + Années précédentes.
+    Construit la vue annuelle dynamique : Année en cours (TTM) + Années précédentes clôturées.
     """
-    years_labels = ["2026 (TTM)"]
+    current_year = datetime.now().year
+    years_labels = [f"{current_year} (TTM)"]
     history = {
         "Croit. CA.": [],
         "Marge Net %": [],
@@ -92,7 +93,7 @@ def get_annual_history(ticker, info):
         "PEG": []
     }
 
-    # 1. VALEURS POUR 2026 (TTM / ACTUELLES)
+    # 1. VALEURS POUR L'ANNÉE EN COURS (TTM / ACTUELLES)
     rev_growth = info.get('revenueGrowth')
     fwd_pe = info.get('forwardPE') or info.get('trailingPE')
     ev_ebitda = info.get('enterpriseToEbitda')
@@ -107,7 +108,7 @@ def get_annual_history(ticker, info):
     history["ROE"].append(clean_val(roe * 100 if roe is not None else None, "{:.1f}%"))
     history["PEG"].append(clean_val(peg, "{:.2f}"))
 
-    # 2. VALEURS HISTORIQUES
+    # 2. VALEURS HISTORIQUES (Exclure l'année en cours et supérieures pour éviter le doublon avec TTM)
     try:
         fin = getattr(ticker, 'income_stmt', None)
         if fin is None or fin.empty:
@@ -133,9 +134,10 @@ def get_annual_history(ticker, info):
                     "equity": equity
                 }
 
-            all_years = sorted(data_by_year.keys(), reverse=True)
+            # Filtrage : ne garder que les années STRICTEMENT antérieures à l'année courante
+            past_years = [y for y in sorted(data_by_year.keys(), reverse=True) if y < current_year]
 
-            for yr in all_years[:4]:
+            for yr in past_years[:4]:
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
