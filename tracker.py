@@ -74,6 +74,20 @@ def calculate_rsi14_weekly(hist_daily):
         print(f"    ⚠️ Erreur calcul RSI14 Weekly: {e}")
     return "N/A"
 
+def calculate_ath_52w_pct(hist_daily, current_price):
+    """Calcul du % d'écart entre le prix actuel et le plus haut des 52 dernières semaines."""
+    try:
+        if hist_daily is not None and not hist_daily.empty:
+            # 52 semaines ~ 252 jours boursiers
+            last_52w = hist_daily.tail(252)
+            ath_52w = float(last_52w.max())
+            if ath_52w > 0 and current_price > 0:
+                pct = ((current_price - ath_52w) / ath_52w) * 100
+                return round(pct, 1)
+    except Exception as e:
+        print(f"    ⚠️ Erreur calcul ATH 52W: {e}")
+    return "N/A"
+
 def get_next_earnings_date(ticker, belgium_tz):
     """Récupère la prochaine date de résultats."""
     try:
@@ -217,7 +231,7 @@ def generate_dashboard_data():
 
     print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
     
-    # 1. Requête groupée pour les historiques daily (SMA200 & RSI14)
+    # 1. Requête groupée pour les historiques daily (SMA200, RSI14 & ATH 52W)
     batch_hist = {}
     try:
         download_data = yf.download(TICKERS, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
@@ -244,7 +258,7 @@ def generate_dashboard_data():
             except Exception:
                 pass
 
-            # PRIX, SMA 200 WEEKLY & RSI 14 WEEKLY
+            # PRIX, SMA 200 WEEKLY, RSI 14 WEEKLY & ATH 52W
             price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
             
             hist_close = batch_hist.get(symbol)
@@ -263,6 +277,7 @@ def generate_dashboard_data():
 
             sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
             rsi14_w = calculate_rsi14_weekly(hist_close)
+            ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
 
             prices_data.append({
                 "ticker": symbol,
@@ -273,6 +288,7 @@ def generate_dashboard_data():
                 "sma200_pct": sma200_pct,
                 "is_under": is_under,
                 "rsi14_weekly": rsi14_w,
+                "ath_52w_pct": ath_52w_pct,
                 "earnings": get_next_earnings_date(ticker, belgium_tz)
             })
 
