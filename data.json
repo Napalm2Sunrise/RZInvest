@@ -1,13 +1,14 @@
 {
-  "updated_at": "20/09/2026 à 19:45",
+  "updated_at": "20/09/2026 à 20:01",
   "prices": [
     {
       "ticker": "AED.BR",
       "price": 65.6,
       "change": -0.68,
       "currency": "€",
-      "sma200": "Above +1.6%",
+      "sma200": "200 W-SMA Above +1.6%",
       "sma200_pct": 1.6,
+      "is_under": false,
       "earnings": "N/A"
     },
     {
@@ -17,6 +18,7 @@
       "currency": "€",
       "sma200": "N/A",
       "sma200_pct": null,
+      "is_under": false,
       "earnings": "N/A"
     },
     {
@@ -24,8 +26,9 @@
       "price": 17.84,
       "change": -1.11,
       "currency": "€",
-      "sma200": "Under -1.9% 🔥",
+      "sma200": "200 W-SMA Under -1.9% 🔥",
       "sma200_pct": -1.9,
+      "is_under": true,
       "earnings": "N/A"
     },
     {
@@ -33,8 +36,9 @@
       "price": 64.6,
       "change": -0.77,
       "currency": "€",
-      "sma200": "Above +1.8%",
+      "sma200": "200 W-SMA Above +1.8%",
       "sma200_pct": 1.8,
+      "is_under": false,
       "earnings": "13/11/2026"
     },
     {
@@ -42,8 +46,9 @@
       "price": 50.3,
       "change": 4.9,
       "currency": "$",
-      "sma200": "Above +50.8%",
+      "sma200": "200 W-SMA Above +50.8%",
       "sma200_pct": 50.8,
+      "is_under": false,
       "earnings": "26/10/2026"
     },
     {
@@ -51,8 +56,9 @@
       "price": 1446.0,
       "change": 1.97,
       "currency": "€",
-      "sma200": "Above +74.8%",
+      "sma200": "200 W-SMA Above +74.8%",
       "sma200_pct": 74.8,
+      "is_under": false,
       "earnings": "14/10/2026"
     },
     {
@@ -60,8 +66,9 @@
       "price": 357.61,
       "change": 2.97,
       "currency": "$",
-      "sma200": "Above +76.2%",
+      "sma200": "200 W-SMA Above +76.2%",
       "sma200_pct": 76.2,
+      "is_under": false,
       "earnings": "09/12/2026"
     },
     {
@@ -69,8 +76,9 @@
       "price": 40.27,
       "change": -0.1,
       "currency": "$",
-      "sma200": "Above +173.6%",
+      "sma200": "200 W-SMA Above +173.6%",
       "sma200_pct": 173.6,
+      "is_under": false,
       "earnings": "11/11/2026"
     },
     {
@@ -78,8 +86,9 @@
       "price": 167.9,
       "change": -1.54,
       "currency": "$",
-      "sma200": "Above +4.1%",
+      "sma200": "200 W-SMA Above +4.1%",
       "sma200_pct": 4.1,
+      "is_under": false,
       "earnings": "27/10/2026"
     },
     {
@@ -87,8 +96,9 @@
       "price": 29.28,
       "change": -1.28,
       "currency": "$",
-      "sma200": "Under -35.3% 🔥",
+      "sma200": "200 W-SMA Under -35.3% 🔥",
       "sma200_pct": -35.3,
+      "is_under": true,
       "earnings": "19/11/2026"
     },
     {
@@ -96,8 +106,9 @@
       "price": 287.68,
       "change": -0.34,
       "currency": "$",
-      "sma200": "Above +13.9%",
+      "sma200": "200 W-SMA Above +13.9%",
       "sma200_pct": 13.9,
+      "is_under": false,
       "earnings": "29/10/2026"
     },
     {
@@ -107,6 +118,7 @@
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
+      "is_under": false,
       "earnings": "28/10/2026"
     },
     {
@@ -114,8 +126,9 @@
       "price": 344.41,
       "change": 0.21,
       "currency": "$",
-      "sma200": "Above +75.6%",
+      "sma200": "200 W-SMA Above +75.6%",
       "sma200_pct": 75.6,
+      "is_under": false,
       "earnings": "28/10/2026"
     },
     {
@@ -123,8 +136,9 @@
       "price": 393.33,
       "change": 2.55,
       "currency": "$",
-      "sma200": "Under -6.0% 🔥",
+      "sma200": "200 W-SMA Under -6.0% 🔥",
       "sma200_pct": -6.0,
+      "is_under": true,
       "earnings": "20/10/2026"
     },
     {
@@ -132,8 +146,9 @@
       "price": 665.75,
       "change": -2.43,
       "currency": "$",
-      "sma200": "Above +34.4%",
+      "sma200": "200 W-SMA Above +34.4%",
       "sma200_pct": 34.4,
+      "is_under": false,
       "earnings": "28/10/2026"
     },
     {
@@ -141,8 +156,9 @@
       "price": 402.8,
       "change": -2.3,
       "currency": "€",
-      "sma200": "Under -38.1% 🔥",
+      "sma200": "200 W-SMA Under -38.1% 🔥",
       "sma200_pct": -38.1,
+      "is_under": true,
       "earnings": "N/A"
     },
     {
@@ -150,8 +166,9 @@
       "price": 493.78,
       "change": -0.8,
       "currency": "$",
-      "sma200": "Above +23.4%",
+      "sma200": "200 W-SMA Above +23.4%",
       "sma200_pct": 23.4,
+      "is_under": false,
       "earnings": "28/10/2026"
     },
     {
@@ -159,8 +176,9 @@
       "price": 222.27,
       "change": 1.34,
       "currency": "$",
-      "sma200": "Above +91.8%",
+      "sma200": "200 W-SMA Above +91.8%",
       "sma200_pct": 91.8,
+      "is_under": false,
       "earnings": "17/11/2026"
     },
     {
@@ -168,8 +186,9 @@
       "price": 27.26,
       "change": -0.26,
       "currency": "$",
-      "sma200": "Under -28.8% 🔥",
+      "sma200": "200 W-SMA Under -28.8% 🔥",
       "sma200_pct": -28.8,
+      "is_under": true,
       "earnings": "11/11/2026"
     },
     {
@@ -179,6 +198,7 @@
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
+      "is_under": false,
       "earnings": "03/11/2026"
     },
     {
@@ -186,8 +206,9 @@
       "price": 405.32,
       "change": 0.3,
       "currency": "$",
-      "sma200": "Under -4.2% 🔥",
+      "sma200": "200 W-SMA Under -4.2% 🔥",
       "sma200_pct": -4.2,
+      "is_under": true,
       "earnings": "29/10/2026"
     },
     {
@@ -195,8 +216,9 @@
       "price": 285.75,
       "change": -0.47,
       "currency": "€",
-      "sma200": "Above +34.1%",
+      "sma200": "200 W-SMA Above +34.1%",
       "sma200_pct": 34.1,
+      "is_under": false,
       "earnings": "N/A"
     },
     {
@@ -204,8 +226,9 @@
       "price": 79.32,
       "change": -0.39,
       "currency": "€",
-      "sma200": "Above +31.1%",
+      "sma200": "200 W-SMA Above +31.1%",
       "sma200_pct": 31.1,
+      "is_under": false,
       "earnings": "29/10/2026"
     },
     {
@@ -213,8 +236,9 @@
       "price": 364.27,
       "change": -0.53,
       "currency": "$",
-      "sma200": "Above +26.5%",
+      "sma200": "200 W-SMA Above +26.5%",
       "sma200_pct": 26.5,
+      "is_under": false,
       "earnings": "21/10/2026"
     },
     {
@@ -222,12 +246,20 @@
       "price": 303.12,
       "change": 0.35,
       "currency": "$",
-      "sma200": "Above +33.7%",
+      "sma200": "200 W-SMA Above +33.7%",
       "sma200_pct": 33.7,
+      "is_under": false,
       "earnings": "22/10/2026"
     }
   ],
   "news": [
+    {
+      "ticker": "AVGO",
+      "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
+      "summary": "Jim Cramer watched what happened to Broadcom stock on September 14 and came to Mad Money that evening with a very specific read on the selloff.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-shares-strong-verdict-174700887.html",
+      "date": "19:47"
+    },
     {
       "ticker": "AVGO",
       "title": "3 Stocks Bound to Ignore The September Effect",
@@ -405,6 +437,13 @@
     },
     {
       "ticker": "MSFT",
+      "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
+      "summary": "Four quarters at the memory maker's guided pace would surpass what the software giant earned in its record fiscal 2026. Whether the pace holds hinges on memory prices.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-micron-earn-more-profit-173701623.html",
+      "date": "19:37"
+    },
+    {
+      "ticker": "MSFT",
       "title": "Can Nokia Oyj (HLSE:NOKIA) Speed Up Telecom AI With Its New Data Push?",
       "summary": "Nokia Oyj (HLSE:NOKIA) expanded its partnership with Microsoft to transform telecom automation using unified, AI-driven data operations. The collaboration connects Nokia Data Suite directly with Micro...",
       "link": "https://finance.yahoo.com/technology/ai/articles/nokia-oyj-hlse-nokia-speed-031933816.html",
@@ -437,6 +476,27 @@
       "summary": "As execution becomes easier to automate, accountability, trust and discernment become even more valuable leadership skills.",
       "link": "https://finance.yahoo.com/small-business/articles/ai-made-execution-easier-changed-183000456.html",
       "date": "20:30"
+    },
+    {
+      "ticker": "NVDA",
+      "title": "Rigetti Turned $10,000 Into Over $81,000 in 3 Years -- and It's Still 73% Off Its High. Here's Why I Still Wouldn't Touch It.",
+      "summary": "Rigetti Computing has been very volatile over the past few years.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/rigetti-turned-10-000-over-175001485.html",
+      "date": "19:50"
+    },
+    {
+      "ticker": "NVDA",
+      "title": "Can Your Retirement Plan Stand Up to Inflation? These 2 Tweaks Might Help.",
+      "summary": "You need an actual strategy to avoid falling behind.",
+      "link": "https://finance.yahoo.com/markets/articles/retirement-plan-stand-inflation-2-173800242.html",
+      "date": "19:38"
+    },
+    {
+      "ticker": "NVDA",
+      "title": "Prediction: Micron Will Earn More Profit Than Microsoft in Fiscal 2027",
+      "summary": "Four quarters at the memory maker's guided pace would surpass what the software giant earned in its record fiscal 2026. Whether the pace holds hinges on memory prices.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-micron-earn-more-profit-173701623.html",
+      "date": "19:37"
     },
     {
       "ticker": "NVDA",
@@ -486,27 +546,6 @@
       "summary": "Nvidia’s chief offers a new clue about future sales.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-just-announced-fantastic-163002960.html",
       "date": "18:30"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "I'm Watching PG&E Closely, but Here's Why I Haven't Bought the Dip",
-      "summary": "Utilities are usually seen as low-risk bets, but due to its California footprint, risk abounds with PG&E.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/im-watching-pg-e-closely-162500840.html",
-      "date": "18:25"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Musk Says NVIDIA (NVDA) AI Chips Are Headed to Space With SpaceX (SPCX) Next Year",
-      "summary": "Elon Musk has never shied away from ambitious timelines, and his most recent one connects two companies directly together. In a post on X dated September 13, Musk stated that he is “highly confident” ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/musk-says-nvidia-nvda-ai-162008359.html",
-      "date": "18:20"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "3 Reasons CRISPR Therapeutics Stock Is Still a Buy After a Rocky 2026",
-      "summary": "Don't read too much into this year's lackluster performance. Near-term catalysts are firming up.",
-      "link": "https://finance.yahoo.com/healthcare/articles/3-reasons-crispr-therapeutics-stock-161500018.html",
-      "date": "18:15"
     },
     {
       "ticker": "SPCX",
@@ -819,7 +858,6 @@
       "net_margin": "85.9%",
       "quarters": [
         "2026 (TTM)",
-        "2026",
         "2025",
         "2024",
         "2023"
@@ -827,14 +865,12 @@
       "history": {
         "Croit. CA.": [
           "+1.6%",
-          "+1.6%",
           "+3.1%",
           "+11.0%",
           "N/A"
         ],
         "Marge Net %": [
           "85.9%",
-          "76.1%",
           "67.1%",
           "79.8%",
           "130.1%"
@@ -843,25 +879,21 @@
           "10.4x",
           "N/A",
           "N/A",
-          "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
           "15.4x",
           "N/A",
           "N/A",
-          "N/A",
           "N/A"
         ],
         "ROE": [
           "9.8%",
-          "9.6%",
           "8.7%",
           "10.5%",
           "16.5%"
         ],
         "PEG": [
-          "N/A",
           "N/A",
           "N/A",
           "N/A",
@@ -1239,25 +1271,25 @@
       "net_margin": "10.3%",
       "quarters": [
         "2026 (TTM)",
-        "2026",
         "2025",
         "2024",
-        "2023"
+        "2023",
+        "2022"
       ],
       "history": {
         "Croit. CA.": [
           "+33.0%",
-          "+23.3%",
           "+10.8%",
           "+4.6%",
+          "N/A",
           "N/A"
         ],
         "Marge Net %": [
           "10.3%",
-          "10.4%",
           "15.6%",
           "12.8%",
-          "12.7%"
+          "12.7%",
+          "N/A"
         ],
         "Fwd P/E": [
           "21.1x",
@@ -1275,10 +1307,10 @@
         ],
         "ROE": [
           "10.9%",
-          "10.7%",
           "12.7%",
           "16.5%",
-          "18.3%"
+          "18.3%",
+          "N/A"
         ],
         "PEG": [
           "2.53",
@@ -1599,7 +1631,6 @@
       "net_margin": "40.3%",
       "quarters": [
         "2026 (TTM)",
-        "2026",
         "2025",
         "2024",
         "2023"
@@ -1607,13 +1638,11 @@
       "history": {
         "Croit. CA.": [
           "+17.7%",
-          "+17.8%",
           "+14.9%",
           "+15.7%",
           "N/A"
         ],
         "Marge Net %": [
-          "40.3%",
           "40.3%",
           "36.1%",
           "36.0%",
@@ -1623,26 +1652,22 @@
           "20.9x",
           "N/A",
           "N/A",
-          "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
           "19.1x",
           "N/A",
           "N/A",
-          "N/A",
           "N/A"
         ],
         "ROE": [
           "34.0%",
-          "30.2%",
           "29.6%",
           "32.8%",
           "35.1%"
         ],
         "PEG": [
           "1.60",
-          "N/A",
           "N/A",
           "N/A",
           "N/A"
@@ -1659,25 +1684,25 @@
       "net_margin": "63.7%",
       "quarters": [
         "2026 (TTM)",
-        "2026",
         "2025",
         "2024",
-        "2023"
+        "2023",
+        "2022"
       ],
       "history": {
         "Croit. CA.": [
           "+105.9%",
-          "+65.5%",
           "+114.2%",
           "+125.9%",
+          "N/A",
           "N/A"
         ],
         "Marge Net %": [
           "63.7%",
-          "55.6%",
           "55.8%",
           "48.8%",
-          "16.2%"
+          "16.2%",
+          "N/A"
         ],
         "Fwd P/E": [
           "14.2x",
@@ -1695,10 +1720,10 @@
         ],
         "ROE": [
           "117.2%",
-          "76.3%",
           "91.9%",
           "69.2%",
-          "19.8%"
+          "19.8%",
+          "N/A"
         ],
         "PEG": [
           "0.47",
