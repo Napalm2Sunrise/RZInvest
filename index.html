@@ -38,7 +38,7 @@
     /* Cards */
     .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
     .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; display: block; }
+    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; display: block; margin-bottom: 4px; }
     .price-tag { font-weight: 700; font-size: 14px; }
     .pos { color: #34d399; }
     .neg { color: #f87171; }
@@ -47,30 +47,21 @@
     .news-summary { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 10px; }
     .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
 
-    /* Badges SMA200 / RSI / News / ATH */
-    .badge-sma, .badge-rsi { padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-top: 6px; }
-    
-    /* Inversion des couleurs : Under en VERT, Above en ROUGE */
-    .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
-    .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
-
-    /* Style Badges RSI & ATH */
-    .rsi-hot { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
-    .rsi-normal { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
-    .ath-warning { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
-
-    /* Badges Ratios Colorés (Vert / Jaune / Rouge) */
-    .badge-ratio {
+    /* --- HARMONISATION DES BADGES / INDICATEURS --- */
+    .badge-tag {
+      display: inline-block;
       padding: 4px 8px;
       border-radius: 6px;
+      font-size: 11px;
       font-weight: 700;
-      font-size: 12px;
-      display: inline-block;
-      text-align: center;
+      margin-top: 4px;
+      line-height: 1.2;
     }
-    .badge-green { background: rgba(34, 197, 94, 0.18); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); }
-    .badge-yellow { background: rgba(234, 179, 8, 0.18); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.4); }
-    .badge-red { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    /* Couleurs Unifiées */
+    .badge-green { background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-yellow { background: rgba(234, 179, 8, 0.18); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+    .badge-red { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
     .badge-neutral { background: rgba(255, 255, 255, 0.05); color: #9ca3af; border: 1px solid rgba(255, 255, 255, 0.1); }
 
     /* Controls & Selects */
@@ -330,59 +321,57 @@
         const changeNum = parseFloat(p.change) || 0;
         const isPos = changeNum >= 0;
         
-        // Recherche des données fondamentales pour le ticker actuel
+        // Recherche des données fondamentales pour le ticker
         const f = fundList.find(item => item.ticker === p.ticker) || {};
         
-        // Détermination de la couleur SMA : VERT (bg-ok) si Under, ROUGE (bg-alert) si Above
+        // 1. SMA 200 (Inversion des couleurs : Under en VERT, Above en ROUGE)
         const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
-        const smaClass = isUnder ? 'bg-ok' : 'bg-alert';
+        const smaClass = isUnder ? 'badge-green' : 'badge-red';
 
-        // Traitement du RSI14 Weekly
+        // 2. RSI14 Weekly
         let rsiHtml = '';
         if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
           const rsiVal = parseFloat(p.rsi14_weekly);
           if (!isNaN(rsiVal)) {
             const isRsiExtreme = (rsiVal <= 30 || rsiVal >= 70);
-            const rsiClass = isRsiExtreme ? 'rsi-hot' : 'rsi-normal';
+            const rsiClass = isRsiExtreme ? 'badge-green' : 'badge-red';
             const fireEmoji = isRsiExtreme ? ' 🔥' : '';
-            rsiHtml = `<div><span class="badge-rsi ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
+            rsiHtml = `<div><span class="badge-tag ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
           }
         }
 
-        // Traitement de l'ATH 52W
+        // 3. ATH 52W
         let athHtml = '';
         if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
           const athVal = parseFloat(p.ath_52w_pct);
           if (!isNaN(athVal)) {
-            let athClass = 'rsi-normal'; // Rouge par défaut (ex: +15% ou > 0%)
-            
+            let athClass = 'badge-red'; 
             if (athVal <= -10) {
-              athClass = 'rsi-hot';     // Vert si pire ou égal à -10% (ex: -32%)
+              athClass = 'badge-green';
             } else if (athVal <= 0) {
-              athClass = 'ath-warning'; // Jaune si entre 0% et -10% (ex: -1%)
+              athClass = 'badge-yellow';
             }
-
             const sign = athVal > 0 ? '+' : '';
-            athHtml = `<div><span class="badge-rsi ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
+            athHtml = `<div><span class="badge-tag ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
           }
         }
 
-        // Traitement du PEG (même code couleur que la page ratios)
+        // 4. PEG
         const pegVal = f.peg || 'N/A';
         const pegClass = getMetricBadgeClass('peg', pegVal);
-        const pegHtml = `<div><span class="badge-ratio ${pegClass}">PEG ${pegVal}</span></div>`;
+        const pegHtml = `<div><span class="badge-tag ${pegClass}">PEG ${pegVal}</span></div>`;
 
-        // Traitement du FWD P/E (même code couleur que la page ratios)
+        // 5. FWD P/E
         const peVal = f.pe || 'N/A';
         const peClass = getMetricBadgeClass('pe', peVal);
-        const peHtml = `<div><span class="badge-ratio ${peClass}">FWD P/E ${peVal}</span></div>`;
+        const peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
 
         priceCont.innerHTML += `
           <div class="card">
             <div class="card-header">
               <div>
                 <span class="ticker-name">${p.ticker}</span>
-                ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-sma ${smaClass}">${p.sma200}</span></div>` : ''}
+                ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : ''}
                 ${rsiHtml}
                 ${athHtml}
                 ${pegHtml}
@@ -393,7 +382,7 @@
                 <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${changeNum.toFixed(2)}%</div>
               </div>
             </div>
-            <div style="font-size:11px; color:#94a3b8; margin-top:6px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>
+            <div style="font-size:11px; color:#94a3b8; margin-top:8px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>
           </div>`;
       });
 
@@ -429,7 +418,7 @@
           fund.quarters.forEach((_, idx) => {
             const val = vals[idx] || 'N/A';
             const badgeClass = getMetricBadgeClass(m, val);
-            rowHtml += `<td><span class="badge-ratio ${badgeClass}">${val}</span></td>`;
+            rowHtml += `<td><span class="badge-tag ${badgeClass}">${val}</span></td>`;
           });
           rowHtml += `</tr>`;
           tbody.innerHTML += rowHtml;
@@ -460,12 +449,12 @@
           tbody.innerHTML += `
             <tr>
               <td class="ticker-cell">${ticker}</td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('rev_growth', f.rev_growth)}">${f.rev_growth || 'N/A'}</span></td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('pe', f.pe)}">${f.pe || 'N/A'}</span></td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('ev', f.ev)}">${f.ev || 'N/A'}</span></td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('roe', f.roe)}">${f.roe || 'N/A'}</span></td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('peg', f.peg)}">${f.peg || 'N/A'}</span></td>
-              <td><span class="badge-ratio ${getMetricBadgeClass('net_margin', f.net_margin)}">${f.net_margin || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('rev_growth', f.rev_growth)}">${f.rev_growth || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('pe', f.pe)}">${f.pe || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('ev', f.ev)}">${f.ev || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('roe', f.roe)}">${f.roe || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('peg', f.peg)}">${f.peg || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('net_margin', f.net_margin)}">${f.net_margin || 'N/A'}</span></td>
             </tr>`;
         });
       }
