@@ -47,16 +47,17 @@
     .news-summary { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 10px; }
     .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
 
-    /* Badges SMA200 / RSI / News */
+    /* Badges SMA200 / RSI / News / ATH */
     .badge-sma, .badge-rsi { padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-top: 6px; }
     
     /* Inversion des couleurs : Under en VERT, Above en ROUGE */
     .bg-ok { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
     .bg-alert { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
 
-    /* Style Badges RSI */
+    /* Style Badges RSI & ATH */
     .rsi-hot { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
     .rsi-normal { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .ath-warning { background: rgba(234, 179, 8, 0.2); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
 
     /* Badges Ratios Colorés (Vert / Jaune / Rouge) */
     .badge-ratio {
@@ -344,6 +345,24 @@
           }
         }
 
+        // Traitement de l'ATH 52W
+        let athHtml = '';
+        if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
+          const athVal = parseFloat(p.ath_52w_pct);
+          if (!isNaN(athVal)) {
+            let athClass = 'rsi-normal'; // Rouge par défaut (ex: +15% ou > 0%)
+            
+            if (athVal <= -10) {
+              athClass = 'rsi-hot';     // Vert si pire ou égal à -10% (ex: -32%)
+            } else if (athVal <= 0) {
+              athClass = 'ath-warning'; // Jaune si entre 0% et -10% (ex: -1%)
+            }
+
+            const sign = athVal > 0 ? '+' : '';
+            athHtml = `<div><span class="badge-rsi ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
+          }
+        }
+
         priceCont.innerHTML += `
           <div class="card">
             <div class="card-header">
@@ -351,6 +370,7 @@
                 <span class="ticker-name">${p.ticker}</span>
                 ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-sma ${smaClass}">${p.sma200}</span></div>` : ''}
                 ${rsiHtml}
+                ${athHtml}
               </div>
               <div style="text-align:right">
                 <div class="price-tag">${p.price} ${p.currency || ''}</div>
