@@ -1,5 +1,5 @@
 {
-  "updated_at": "20/09/2026 à 20:49",
+  "updated_at": "20/09/2026 à 20:58",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -9,7 +9,7 @@
       "sma200": "200 W-SMA Above +1.6%",
       "sma200_pct": 1.6,
       "is_under": false,
-      "rsi14_weekly": 40.0,
+      "rsi14_weekly": 41.3,
       "ath_52w_pct": -17.2,
       "earnings": "N/A"
     },
@@ -33,7 +33,7 @@
       "sma200": "200 W-SMA Under -1.9% 🔥",
       "sma200_pct": -1.9,
       "is_under": true,
-      "rsi14_weekly": 38.9,
+      "rsi14_weekly": 40.1,
       "ath_52w_pct": -11.7,
       "earnings": "N/A"
     },
@@ -45,7 +45,7 @@
       "sma200": "200 W-SMA Above +1.8%",
       "sma200_pct": 1.8,
       "is_under": false,
-      "rsi14_weekly": 42.8,
+      "rsi14_weekly": 42.4,
       "ath_52w_pct": -9.8,
       "earnings": "13/11/2026"
     },
@@ -66,10 +66,10 @@
       "price": 1446.0,
       "change": 1.97,
       "currency": "€",
-      "sma200": "200 W-SMA Above +74.8%",
-      "sma200_pct": 74.8,
+      "sma200": "200 W-SMA Above +74.9%",
+      "sma200_pct": 74.9,
       "is_under": false,
-      "rsi14_weekly": 52.8,
+      "rsi14_weekly": 49.3,
       "ath_52w_pct": -16.0,
       "earnings": "14/10/2026"
     },
@@ -189,7 +189,7 @@
       "sma200": "200 W-SMA Under -38.1% 🔥",
       "sma200_pct": -38.1,
       "is_under": true,
-      "rsi14_weekly": 30.9,
+      "rsi14_weekly": 32.2,
       "ath_52w_pct": -38.2,
       "earnings": "N/A"
     },
@@ -261,7 +261,7 @@
       "sma200": "200 W-SMA Above +34.1%",
       "sma200_pct": 34.1,
       "is_under": false,
-      "rsi14_weekly": 54.2,
+      "rsi14_weekly": 51.4,
       "ath_52w_pct": -8.1,
       "earnings": "N/A"
     },
@@ -273,7 +273,7 @@
       "sma200": "200 W-SMA Above +31.1%",
       "sma200_pct": 31.1,
       "is_under": false,
-      "rsi14_weekly": 61.1,
+      "rsi14_weekly": 62.0,
       "ath_52w_pct": -2.1,
       "earnings": "29/10/2026"
     },
@@ -424,6 +424,13 @@
     },
     {
       "ticker": "META",
+      "title": "I Own Constellation for the Nuclear Fleet, Not the AI Headlines. Here's Why That Matters Now.",
+      "summary": "Constellation Energy has the largest nuclear fleet in the country and should benefit from rising power demand in the decades ahead.",
+      "link": "https://finance.yahoo.com/energy/articles/own-constellation-nuclear-fleet-not-185000512.html",
+      "date": "20:50"
+    },
+    {
+      "ticker": "META",
       "title": "Billionaire Bill Ackman Dumps Alphabet and Loads Up On a Mega-Cap Stock Down 15% From Its Peak",
       "summary": "Bill Ackman sold Alphabet and bought Meta Platforms during Q2.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/billionaire-bill-ackman-dumps-alphabet-172300077.html",
@@ -472,18 +479,18 @@
       "date": "13:15"
     },
     {
-      "ticker": "META",
-      "title": "Forget Buying All Seven: The \"Magnificent Seven\" Stock Most Likely to Double by 2028",
-      "summary": "I believe investors are underrating the potential of this compounding machine.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/forget-buying-seven-magnificent-seven-185000912.html",
-      "date": "20:50"
-    },
-    {
       "ticker": "MC.PA",
       "title": "What does the EU have that the U.S. does not?",
       "summary": "Investing.com -- European assets may offer investors advantages that are being overlooked as markets remain heavily focused on U.S. technology leadership, according to Macquarie Global Strategy, which...",
       "link": "https://finance.yahoo.com/markets/world-indices/articles/does-eu-u-does-not-023044034.html",
       "date": "04:30"
+    },
+    {
+      "ticker": "MSFT",
+      "title": "I Own Constellation for the Nuclear Fleet, Not the AI Headlines. Here's Why That Matters Now.",
+      "summary": "Constellation Energy has the largest nuclear fleet in the country and should benefit from rising power demand in the decades ahead.",
+      "link": "https://finance.yahoo.com/energy/articles/own-constellation-nuclear-fleet-not-185000512.html",
+      "date": "20:50"
     },
     {
       "ticker": "MSFT",
@@ -514,10 +521,10 @@
       "date": "00:57"
     },
     {
-      "ticker": "MSFT",
-      "title": "Forget Buying All Seven: The \"Magnificent Seven\" Stock Most Likely to Double by 2028",
-      "summary": "I believe investors are underrating the potential of this compounding machine.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/forget-buying-seven-magnificent-seven-185000912.html",
+      "ticker": "NVDA",
+      "title": "I Own Constellation for the Nuclear Fleet, Not the AI Headlines. Here's Why That Matters Now.",
+      "summary": "Constellation Energy has the largest nuclear fleet in the country and should benefit from rising power demand in the decades ahead.",
+      "link": "https://finance.yahoo.com/energy/articles/own-constellation-nuclear-fleet-not-185000512.html",
       "date": "20:50"
     },
     {
@@ -582,13 +589,6 @@
       "summary": "The Vanguard Total Bond Market ETF is the largest bond-focused ETF.",
       "link": "https://finance.yahoo.com/markets/options/articles/invest-10-000-bond-etf-165002215.html",
       "date": "18:50"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Prediction: Even With the $1,999 Price Tag, Apple's Foldable iPhone Duo Will Be a Hit and Apple Will Join Nvidia in the $5 Trillion Club.",
-      "summary": "Apple is on track to do something great that it hasn't done since 2012.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-even-1-999-price-163700612.html",
-      "date": "18:37"
     },
     {
       "ticker": "SPCX",
