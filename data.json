@@ -1,5 +1,5 @@
 {
-  "updated_at": "20/09/2026 à 20:01",
+  "updated_at": "20/09/2026 à 20:21",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -9,6 +9,7 @@
       "sma200": "200 W-SMA Above +1.6%",
       "sma200_pct": 1.6,
       "is_under": false,
+      "rsi14_weekly": 40.0,
       "earnings": "N/A"
     },
     {
@@ -19,6 +20,7 @@
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
+      "rsi14_weekly": "N/A",
       "earnings": "N/A"
     },
     {
@@ -29,6 +31,7 @@
       "sma200": "200 W-SMA Under -1.9% 🔥",
       "sma200_pct": -1.9,
       "is_under": true,
+      "rsi14_weekly": 38.9,
       "earnings": "N/A"
     },
     {
@@ -39,6 +42,7 @@
       "sma200": "200 W-SMA Above +1.8%",
       "sma200_pct": 1.8,
       "is_under": false,
+      "rsi14_weekly": 42.8,
       "earnings": "13/11/2026"
     },
     {
@@ -49,6 +53,7 @@
       "sma200": "200 W-SMA Above +50.8%",
       "sma200_pct": 50.8,
       "is_under": false,
+      "rsi14_weekly": 44.8,
       "earnings": "26/10/2026"
     },
     {
@@ -59,6 +64,7 @@
       "sma200": "200 W-SMA Above +74.8%",
       "sma200_pct": 74.8,
       "is_under": false,
+      "rsi14_weekly": 52.8,
       "earnings": "14/10/2026"
     },
     {
@@ -69,6 +75,7 @@
       "sma200": "200 W-SMA Above +76.2%",
       "sma200_pct": 76.2,
       "is_under": false,
+      "rsi14_weekly": 46.4,
       "earnings": "09/12/2026"
     },
     {
@@ -79,6 +86,7 @@
       "sma200": "200 W-SMA Above +173.6%",
       "sma200_pct": 173.6,
       "is_under": false,
+      "rsi14_weekly": 68.2,
       "earnings": "11/11/2026"
     },
     {
@@ -89,6 +97,7 @@
       "sma200": "200 W-SMA Above +4.1%",
       "sma200_pct": 4.1,
       "is_under": false,
+      "rsi14_weekly": 41.7,
       "earnings": "27/10/2026"
     },
     {
@@ -99,6 +108,7 @@
       "sma200": "200 W-SMA Under -35.3% 🔥",
       "sma200_pct": -35.3,
       "is_under": true,
+      "rsi14_weekly": 39.9,
       "earnings": "19/11/2026"
     },
     {
@@ -109,6 +119,7 @@
       "sma200": "200 W-SMA Above +13.9%",
       "sma200_pct": 13.9,
       "is_under": false,
+      "rsi14_weekly": 47.1,
       "earnings": "29/10/2026"
     },
     {
@@ -119,6 +130,7 @@
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
+      "rsi14_weekly": 48.9,
       "earnings": "28/10/2026"
     },
     {
@@ -129,6 +141,7 @@
       "sma200": "200 W-SMA Above +75.6%",
       "sma200_pct": 75.6,
       "is_under": false,
+      "rsi14_weekly": 51.9,
       "earnings": "28/10/2026"
     },
     {
@@ -139,6 +152,7 @@
       "sma200": "200 W-SMA Under -6.0% 🔥",
       "sma200_pct": -6.0,
       "is_under": true,
+      "rsi14_weekly": 45.5,
       "earnings": "20/10/2026"
     },
     {
@@ -149,6 +163,7 @@
       "sma200": "200 W-SMA Above +34.4%",
       "sma200_pct": 34.4,
       "is_under": false,
+      "rsi14_weekly": 56.5,
       "earnings": "28/10/2026"
     },
     {
@@ -159,6 +174,7 @@
       "sma200": "200 W-SMA Under -38.1% 🔥",
       "sma200_pct": -38.1,
       "is_under": true,
+      "rsi14_weekly": 30.9,
       "earnings": "N/A"
     },
     {
@@ -169,6 +185,7 @@
       "sma200": "200 W-SMA Above +23.4%",
       "sma200_pct": 23.4,
       "is_under": false,
+      "rsi14_weekly": 60.7,
       "earnings": "28/10/2026"
     },
     {
@@ -179,6 +196,7 @@
       "sma200": "200 W-SMA Above +91.8%",
       "sma200_pct": 91.8,
       "is_under": false,
+      "rsi14_weekly": 57.0,
       "earnings": "17/11/2026"
     },
     {
@@ -189,6 +207,7 @@
       "sma200": "200 W-SMA Under -28.8% 🔥",
       "sma200_pct": -28.8,
       "is_under": true,
+      "rsi14_weekly": 30.9,
       "earnings": "11/11/2026"
     },
     {
@@ -199,6 +218,7 @@
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
+      "rsi14_weekly": 52.4,
       "earnings": "03/11/2026"
     },
     {
@@ -209,6 +229,7 @@
       "sma200": "200 W-SMA Under -4.2% 🔥",
       "sma200_pct": -4.2,
       "is_under": true,
+      "rsi14_weekly": 45.3,
       "earnings": "29/10/2026"
     },
     {
@@ -219,6 +240,7 @@
       "sma200": "200 W-SMA Above +34.1%",
       "sma200_pct": 34.1,
       "is_under": false,
+      "rsi14_weekly": 54.2,
       "earnings": "N/A"
     },
     {
@@ -229,6 +251,7 @@
       "sma200": "200 W-SMA Above +31.1%",
       "sma200_pct": 31.1,
       "is_under": false,
+      "rsi14_weekly": 61.1,
       "earnings": "29/10/2026"
     },
     {
@@ -239,6 +262,7 @@
       "sma200": "200 W-SMA Above +26.5%",
       "sma200_pct": 26.5,
       "is_under": false,
+      "rsi14_weekly": 47.7,
       "earnings": "21/10/2026"
     },
     {
@@ -249,6 +273,7 @@
       "sma200": "200 W-SMA Above +33.7%",
       "sma200_pct": 33.7,
       "is_under": false,
+      "rsi14_weekly": 62.7,
       "earnings": "22/10/2026"
     }
   ],
@@ -479,6 +504,13 @@
     },
     {
       "ticker": "NVDA",
+      "title": "Dutch Bros and McDonald's Hit 52-Week Lows on the Same Day. Here's Why Only One Is a Buy Now.",
+      "summary": "Among these out-of-favor restaurant stocks, go with the one with the stronger value proposition.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/dutch-bros-mcdonalds-hit-52-180500609.html",
+      "date": "20:05"
+    },
+    {
+      "ticker": "NVDA",
       "title": "Rigetti Turned $10,000 Into Over $81,000 in 3 Years -- and It's Still 73% Off Its High. Here's Why I Still Wouldn't Touch It.",
       "summary": "Rigetti Computing has been very volatile over the past few years.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/rigetti-turned-10-000-over-175001485.html",
@@ -539,13 +571,6 @@
       "summary": "Apple is on track to do something great that it hasn't done since 2012.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-even-1-999-price-163700612.html",
       "date": "18:37"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Jensen Huang Just Announced Fantastic News for Nvidia Shareholders",
-      "summary": "Nvidia’s chief offers a new clue about future sales.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-just-announced-fantastic-163002960.html",
-      "date": "18:30"
     },
     {
       "ticker": "SPCX",
