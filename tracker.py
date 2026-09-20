@@ -28,15 +28,14 @@ def clean_val(val, fmt="{:.1f}%"):
     except Exception:
         return "N/A"
 
-def check_200_weekly_sma(ticker, current_price):
-    """Calcul de la 200 Weekly SMA avec gestion des erreurs."""
+def check_200_weekly_sma_from_hist(hist_daily, current_price):
+    """Calcul de la 200 Weekly SMA basé sur l'historique daily pré-chargé."""
     try:
-        hist_daily = ticker.history(period="5y", interval="1d", auto_adjust=False, back_adjust=False)
-        if not hist_daily.empty and len(hist_daily) >= 200:
-            hist_weekly = hist_daily['Close'].resample('W-FRI').last().dropna()
+        if hist_daily is not None and not hist_daily.empty and len(hist_daily) >= 200:
+            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
             if len(hist_weekly) >= 200:
                 sma_series = hist_weekly.rolling(window=200).mean()
-                sma_200 = sma_series.iloc[-1]
+                sma_200 = float(sma_series.iloc[-1])
                 if sma_200 > 0 and current_price > 0:
                     raw_pct = ((current_price - sma_200) / sma_200) * 100
                     pct = round(raw_pct, 1)
@@ -110,7 +109,6 @@ def get_annual_history(ticker, info):
 
     # 2. VALEURS HISTORIQUES
     try:
-        # Préférer income_stmt à financials (recommandé dans les récents yfinance)
         fin = getattr(ticker, 'income_stmt', None)
         if fin is None or fin.empty:
             fin = ticker.financials
@@ -137,7 +135,7 @@ def get_annual_history(ticker, info):
 
             all_years = sorted(data_by_year.keys(), reverse=True)
 
-            for yr in all_years[:4]:  # Prendre jusqu'à 4 années précédentes
+            for yr in all_years[:4]:
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
@@ -188,29 +186,45 @@ def generate_dashboard_data():
     now_ts = now_be.timestamp()
     cutoff_ts = now_ts - (72 * 3600 if now_be.weekday() == 0 else 24 * 3600)
 
-    print(f"📊 Mise à jour des données (vue 2026 TTM + Annuel) pour {len(TICKERS)} tickers...")
+    print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
+    
+    # 1. Requête groupée pour les historiques daily (SMA200)
+    batch_hist = {}
+    try:
+        download_data = yf.download(TICKERS, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
+        for symbol in TICKERS:
+            if len(TICKERS) > 1:
+                if symbol in download_data and 'Close' in download_data[symbol]:
+                    batch_hist[symbol] = download_data[symbol]['Close'].dropna()
+            else:
+                if 'Close' in download_data:
+                    batch_hist[symbol] = download_data['Close'].dropna()
+    except Exception as e:
+        print(f"⚠️ Erreur lors du téléchargement groupé yf.download: {e}")
+
+    # 2. Initialisation Tickers groupés
+    tickers_objs = yf.Tickers(" ".join(TICKERS))
 
     for symbol in TICKERS:
         try:
             print(f"   ➜ Traitement : {symbol}")
-            ticker = yf.Ticker(symbol)
+            ticker = tickers_objs.tickers.get(symbol) or yf.Ticker(symbol)
             info = {}
             try:
                 info = ticker.info or {}
             except Exception:
                 pass
 
-            # 1. PRIX & SMA 200 WEEKLY
+            # PRIX & SMA 200 WEEKLY
             price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
             
-            # Fallback si info ne fournit pas de prix
+            hist_close = batch_hist.get(symbol)
             if not price or price == 0.0:
                 fast_info = getattr(ticker, 'fast_info', {})
                 price = fast_info.get("last_price") or fast_info.get("previous_close")
             if not price or math.isnan(price):
-                hist = ticker.history(period="1d")
-                if not hist.empty:
-                    price = float(hist['Close'].iloc[-1])
+                if hist_close is not None and not hist_close.empty:
+                    price = float(hist_close.iloc[-1])
                 else:
                     price = 0.0
 
@@ -218,7 +232,7 @@ def generate_dashboard_data():
             change_pct = ((price - prev_close) / prev_close) * 100 if prev_close and prev_close > 0 else 0.0
             currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
 
-            sma200_str, sma200_pct = check_200_weekly_sma(ticker, price)
+            sma200_str, sma200_pct = check_200_weekly_sma_from_hist(hist_close, price)
 
             prices_data.append({
                 "ticker": symbol,
@@ -230,7 +244,7 @@ def generate_dashboard_data():
                 "earnings": get_next_earnings_date(ticker, belgium_tz)
             })
 
-            # 2. NEWS
+            # NEWS
             try:
                 news_list = ticker.news or []
                 for item in news_list:
@@ -258,7 +272,7 @@ def generate_dashboard_data():
             except Exception as e:
                 print(f"    ⚠️ Erreur news sur {symbol}: {e}")
 
-            # 3. HISTORIQUE ANNUEL (avec 2026 TTM)
+            # HISTORIQUE ANNUEL
             years, annual_history = get_annual_history(ticker, info)
 
             rev_growth = info.get('revenueGrowth')
