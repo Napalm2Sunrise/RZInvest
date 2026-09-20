@@ -40,12 +40,12 @@ def check_200_weekly_sma_from_hist(hist_daily, current_price):
                     raw_pct = ((current_price - sma_200) / sma_200) * 100
                     pct = round(raw_pct, 1)
                     if current_price < sma_200:
-                        return f"Under {pct}% 🔥", pct
+                        return f"200 W-SMA Under {pct}% 🔥", pct, True
                     else:
-                        return f"Above +{pct}%", pct
+                        return f"200 W-SMA Above +{pct}%", pct, False
     except Exception as e:
         print(f"    ⚠️ Erreur calcul SMA200: {e}")
-    return "N/A", None
+    return "N/A", None, False
 
 def get_next_earnings_date(ticker, belgium_tz):
     """Récupère la prochaine date de résultats."""
@@ -234,7 +234,7 @@ def generate_dashboard_data():
             change_pct = ((price - prev_close) / prev_close) * 100 if prev_close and prev_close > 0 else 0.0
             currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
 
-            sma200_str, sma200_pct = check_200_weekly_sma_from_hist(hist_close, price)
+            sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
 
             prices_data.append({
                 "ticker": symbol,
@@ -243,6 +243,7 @@ def generate_dashboard_data():
                 "currency": currency,
                 "sma200": sma200_str,
                 "sma200_pct": sma200_pct,
+                "is_under": is_under,
                 "earnings": get_next_earnings_date(ticker, belgium_tz)
             })
 
