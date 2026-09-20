@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Désactivation du cache du navigateur pour éviter l'affichage de données obsolètes -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <title>Trading Dashboard</title>
   <link rel="manifest" href="manifest.json">
 
@@ -243,7 +249,7 @@
 
     async function loadData() {
       try {
-        const res = await fetch('data.json?v=' + Date.now());
+        const res = await fetch('data.json?v=' + Date.now(), { cache: "no-store" });
         if (!res.ok) throw new Error('Impossible de charger data.json');
         globalData = await res.json();
         document.getElementById('update-time').innerText = "MàJ: " + (globalData.updated_at || "N/A");
