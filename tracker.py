@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import math
 import os
@@ -57,7 +57,6 @@ def calculate_rsi14_weekly(hist_daily):
                 gain = delta.where(delta > 0, 0.0)
                 loss = -delta.where(delta < 0, 0.0)
 
-                # Calcul des moyennes mobiles lissées (EMA / Wilder)
                 avg_gain = gain.ewm(alpha=1/14, adjust=False).mean()
                 avg_loss = loss.ewm(alpha=1/14, adjust=False).mean()
 
@@ -78,7 +77,6 @@ def calculate_ath_52w_pct(hist_daily, current_price):
     """Calcul du % d'écart entre le prix actuel et le plus haut des 52 dernières semaines."""
     try:
         if hist_daily is not None and not hist_daily.empty:
-            # 52 semaines ~ 252 jours boursiers
             last_52w = hist_daily.tail(252)
             ath_52w = float(last_52w.max())
             if ath_52w > 0 and current_price > 0:
@@ -88,25 +86,58 @@ def calculate_ath_52w_pct(hist_daily, current_price):
         print(f"    ⚠️ Erreur calcul ATH 52W: {e}")
     return "N/A"
 
-def get_next_earnings_date(ticker, belgium_tz):
-    """Récupère la prochaine date de résultats."""
+def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
+    """
+    Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
+    Retourne la prochaine date sous forme de texte (pour la section Prix) 
+    et une liste de publications détaillées.
+    """
+    earnings_list = []
+    next_earnings_str = "N/A"
+    now_date = datetime.now(belgium_tz).date()
+    cutoff_past_date = now_date - timedelta(days=30)
+    earnings_url = f"https://finance.yahoo.com/calendar/earnings?symbol={symbol}"
+
     try:
-        calendar = ticker.calendar
-        now = datetime.now(belgium_tz).date()
-        if isinstance(calendar, dict) and "Earnings Date" in calendar:
-            for d in calendar["Earnings Date"]:
-                d_date = d.date() if isinstance(d, datetime) else d
-                if d_date >= now:
-                    return d_date.strftime("%d/%m/%Y")
-        elif hasattr(calendar, 'get') and calendar.get("Earnings Date") is not None:
-            dates = calendar.get("Earnings Date")
-            for d in dates:
-                d_date = d.date() if isinstance(d, datetime) else d
-                if d_date >= now:
-                    return d_date.strftime("%d/%m/%Y")
-    except Exception:
-        pass
-    return "N/A"
+        dates_found = []
+        df_earnings = None
+        try:
+            df_earnings = ticker_obj.get_earnings_dates(limit=12)
+        except Exception:
+            pass
+
+        if df_earnings is not None and not df_earnings.empty:
+            for idx in df_earnings.index:
+                d_val = idx.date() if hasattr(idx, 'date') else idx
+                dates_found.append(d_val)
+        else:
+            calendar = ticker_obj.calendar
+            if isinstance(calendar, dict) and "Earnings Date" in calendar:
+                for d in calendar["Earnings Date"]:
+                    d_val = d.date() if isinstance(d, datetime) else d
+                    dates_found.append(d_val)
+
+        dates_found = sorted(list(set(dates_found)))
+
+        for d_date in dates_found:
+            if cutoff_past_date <= d_date:
+                is_past = d_date < now_date
+                earnings_list.append({
+                    "ticker": symbol,
+                    "date": d_date.strftime("%Y-%m-%d"),
+                    "date_formatted": d_date.strftime("%d/%m/%Y"),
+                    "is_past": is_past,
+                    "link": earnings_url
+                })
+
+        future_dates = [d for d in dates_found if d >= now_date]
+        if future_dates:
+            next_earnings_str = future_dates[0].strftime("%d/%m/%Y")
+
+    except Exception as e:
+        print(f"    ⚠️ Erreur récupération publications pour {symbol}: {e}")
+
+    return next_earnings_str, earnings_list
 
 def get_financial_item(df, possible_keys, col):
     """Helper pour extraire une ligne financière en testant plusieurs libellés possibles."""
@@ -134,7 +165,6 @@ def get_annual_history(ticker, info):
         "PEG": []
     }
 
-    # 1. VALEURS POUR L'ANNÉE EN COURS (TTM / ACTUELLES)
     rev_growth = info.get('revenueGrowth')
     fwd_pe = info.get('forwardPE') or info.get('trailingPE')
     ev_ebitda = info.get('enterpriseToEbitda')
@@ -149,7 +179,6 @@ def get_annual_history(ticker, info):
     history["ROE"].append(clean_val(roe * 100 if roe is not None else None, "{:.1f}%"))
     history["PEG"].append(clean_val(peg, "{:.2f}"))
 
-    # 2. VALEURS HISTORIQUES (Exclure l'année en cours et supérieures pour éviter le doublon avec TTM)
     try:
         fin = getattr(ticker, 'income_stmt', None)
         if fin is None or fin.empty:
@@ -175,14 +204,12 @@ def get_annual_history(ticker, info):
                     "equity": equity
                 }
 
-            # Filtrage : ne garder que les années STRICTEMENT antérieures à l'année courante
             past_years = [y for y in sorted(data_by_year.keys(), reverse=True) if y < current_year]
 
             for yr in past_years[:4]:
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
-                # Croissance CA YoY vs Année précédente
                 prev_yr = yr - 1
                 if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
                     rev_curr = item["revenue"]
@@ -195,21 +222,18 @@ def get_annual_history(ticker, info):
                 else:
                     history["Croit. CA."].append("N/A")
 
-                # Marge Nette %
                 if item["revenue"] and item["net_income"] and item["revenue"] > 0:
                     margin = (item["net_income"] / item["revenue"]) * 100
                     history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                 else:
                     history["Marge Net %"].append("N/A")
 
-                # ROE %
                 if item["net_income"] and item["equity"] and item["equity"] > 0:
                     roe_val = (item["net_income"] / item["equity"]) * 100
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
 
-                # Ratios non-disponibles dans l'historique gratuit
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
                 history["PEG"].append("N/A")
@@ -223,16 +247,15 @@ def generate_dashboard_data():
     prices_data = []
     news_data = []
     fundamentals_data = []
+    all_earnings_data = []
 
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
-    # MODIFICATION : Limiter strictement aux news publiées il y a moins de 24h
     cutoff_ts = now_ts - (24 * 3600)
 
     print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
     
-    # 1. Requête groupée pour les historiques daily (SMA200, RSI14 & ATH 52W)
     batch_hist = {}
     try:
         download_data = yf.download(TICKERS, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
@@ -246,7 +269,6 @@ def generate_dashboard_data():
     except Exception as e:
         print(f"⚠️ Erreur lors du téléchargement groupé yf.download: {e}")
 
-    # 2. Initialisation Tickers groupés
     tickers_objs = yf.Tickers(" ".join(TICKERS))
 
     for symbol in TICKERS:
@@ -259,7 +281,6 @@ def generate_dashboard_data():
             except Exception:
                 pass
 
-            # PRIX, SMA 200 WEEKLY, RSI 14 WEEKLY & ATH 52W
             price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
             
             hist_close = batch_hist.get(symbol)
@@ -279,6 +300,9 @@ def generate_dashboard_data():
             sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
             rsi14_w = calculate_rsi14_weekly(hist_close)
             ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
+            
+            next_pub_str, ticker_pubs = get_all_earnings_dates(ticker, symbol, belgium_tz)
+            all_earnings_data.extend(ticker_pubs)
 
             prices_data.append({
                 "ticker": symbol,
@@ -290,13 +314,12 @@ def generate_dashboard_data():
                 "is_under": is_under,
                 "rsi14_weekly": rsi14_w,
                 "ath_52w_pct": ath_52w_pct,
-                "earnings": get_next_earnings_date(ticker, belgium_tz)
+                "earnings": next_pub_str
             })
 
             # NEWS
             try:
                 news_list = ticker.news or []
-                # MODIFICATION : Limiter à 4 news max par ticker
                 ticker_news_count = 0
                 for item in news_list:
                     if ticker_news_count >= 3:
@@ -356,7 +379,8 @@ def generate_dashboard_data():
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
         "prices": prices_data,
         "news": news_data,
-        "fundamentals": fundamentals_data
+        "fundamentals": fundamentals_data,
+        "earnings": all_earnings_data
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
