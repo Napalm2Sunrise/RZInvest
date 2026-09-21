@@ -154,7 +154,7 @@
       margin-bottom: 10px;
       border: 1px solid #38bdf8;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      cursor: pointer; /* Indique clairement que l'infobulle est cliquable pour être fermée */
+      cursor: pointer;
     }
   </style>
 </head>
@@ -196,7 +196,7 @@
 
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
-    <!-- Zone d'affichage dynamique de l'info-bulle (cliquable directement pour fermer) -->
+    <!-- Zone d'affichage dynamique de l'info-bulle -->
     <div id="metric-tooltip" class="tooltip-box" onclick="hideTooltip()"></div>
 
     <div class="table-container">
@@ -364,20 +364,19 @@
       btn.classList.add('active');
     }
 
-    function renderAll() {
-      if(!globalData) return;
-
-      // Masquer l'infobulle au changement
-      hideTooltip();
-
-      // 1. News
+    function renderNews() {
       const newsCont = document.getElementById('news-container');
+      if (!newsCont) return;
       newsCont.innerHTML = '';
-      const filteredNews = selectedTicker === 'ALL' ? (globalData.news || []) : (globalData.news || []).filter(n => n.ticker === selectedTicker);
-      
-      if (filteredNews.length === 0) {
-        newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible pour ce ticker.</div>';
-      } else {
+
+      if (selectedTicker === 'ALL') {
+        // 1. VUE GLOBALE : Liste de news issues de yfinance
+        const filteredNews = globalData.news || [];
+        if (filteredNews.length === 0) {
+          newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible.</div>';
+          return;
+        }
+
         filteredNews.forEach(n => {
           newsCont.innerHTML += `
             <div class="card">
@@ -390,7 +389,42 @@
               ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
             </div>`;
         });
+      } else {
+        // 2. VUE D'UN TICKER UNIQUE : Intégration du Widget TradingView
+        newsCont.innerHTML = `
+          <div class="card" style="padding: 0; overflow: hidden; background: transparent; border: none;">
+            <div class="tradingview-widget-container" id="tv-news-widget" style="height: 550px; width: 100%;">
+              <div class="tradingview-widget-container__widget" style="height: 100%; width: 100%;"></div>
+            </div>
+          </div>`;
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-timeline.js';
+        script.async = true;
+        script.innerHTML = JSON.stringify({
+          "feedMode": "symbol",
+          "symbol": selectedTicker,
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "displayMode": "regular",
+          "width": "100%",
+          "height": "100%",
+          "locale": "fr"
+        });
+
+        document.getElementById('tv-news-widget').appendChild(script);
       }
+    }
+
+    function renderAll() {
+      if(!globalData) return;
+
+      // Masquer l'infobulle au changement
+      hideTooltip();
+
+      // 1. News
+      renderNews();
 
       // 2. Prices
       const priceCont = document.getElementById('prices-container');
