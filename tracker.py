@@ -10,9 +10,9 @@ import yfinance as yf
 # CONFIGURATION
 # ==============================================================================
 TICKERS = [
-    "AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AMKR", "ASML.AS",   
+    "AED.BR", "CPINV.BE", "HOMI.BR", "RET.BR", "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
     "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", 
-    "META", "MC.PA", "MSFT", "NVDA", "ONON", "SPCX", "SPGI", "SU.PA", 
+    "META", "MC.PA", "MSFT", "NVDA", "ONON", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
     "TTE.PA", "TSLA", "VRSN"
 ]
 
