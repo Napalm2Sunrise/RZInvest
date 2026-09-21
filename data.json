@@ -1,17 +1,17 @@
 {
-  "updated_at": "21/09/2026 à 12:31",
+  "updated_at": "21/09/2026 à 13:12",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.2,
-      "change": -0.61,
+      "price": 65.25,
+      "change": -0.53,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +1.2%",
+      "sma200_pct": 1.2,
       "is_under": false,
-      "rsi14_weekly": 39.4,
+      "rsi14_weekly": 39.2,
       "ath_52w_pct": -17.7,
-      "earnings": "17/02/2027"
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BE",
@@ -27,26 +27,26 @@
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.9,
-      "change": 0.34,
+      "price": 17.88,
+      "change": 0.22,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.4% 🔥",
-      "sma200_pct": -1.4,
+      "sma200": "200 W-SMA Under -1.5% 🔥",
+      "sma200_pct": -1.5,
       "is_under": true,
-      "rsi14_weekly": 39.2,
-      "ath_52w_pct": -11.4,
+      "rsi14_weekly": 39.3,
+      "ath_52w_pct": -11.5,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 64.5,
-      "change": -0.15,
+      "price": 64.7,
+      "change": 0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.6%",
-      "sma200_pct": 1.6,
+      "sma200": "200 W-SMA Above +1.9%",
+      "sma200_pct": 1.9,
       "is_under": false,
-      "rsi14_weekly": 42.4,
-      "ath_52w_pct": -9.9,
+      "rsi14_weekly": 43.2,
+      "ath_52w_pct": -9.6,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1491.2,
-      "change": 3.13,
+      "price": 1488.8,
+      "change": 2.96,
       "currency": "€",
-      "sma200": "200 W-SMA Above +79.4%",
-      "sma200_pct": 79.4,
+      "sma200": "200 W-SMA Above +79.0%",
+      "sma200_pct": 79.0,
       "is_under": false,
-      "rsi14_weekly": 55.4,
-      "ath_52w_pct": -13.4,
+      "rsi14_weekly": 55.7,
+      "ath_52w_pct": -13.5,
       "earnings": "14/10/2026"
     },
     {
@@ -219,13 +219,13 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 407.8,
-      "change": 1.24,
+      "price": 407.65,
+      "change": 1.2,
       "currency": "€",
       "sma200": "200 W-SMA Under -37.2% 🔥",
       "sma200_pct": -37.2,
       "is_under": true,
-      "rsi14_weekly": 31.6,
+      "rsi14_weekly": 32.7,
       "ath_52w_pct": -37.5,
       "earnings": "26/01/2027"
     },
@@ -267,13 +267,13 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1327.5,
-      "change": -0.3,
+      "price": 1328.0,
+      "change": -0.26,
       "currency": "€",
       "sma200": "200 W-SMA Under -34.2% 🔥",
       "sma200_pct": -34.2,
       "is_under": true,
-      "rsi14_weekly": 29.0,
+      "rsi14_weekly": 29.2,
       "ath_52w_pct": -41.0,
       "earnings": "11/02/2027"
     },
@@ -303,25 +303,25 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 295.95,
-      "change": 3.57,
+      "price": 295.05,
+      "change": 3.25,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.4%",
-      "sma200_pct": 38.4,
+      "sma200": "200 W-SMA Above +38.0%",
+      "sma200_pct": 38.0,
       "is_under": false,
-      "rsi14_weekly": 57.5,
-      "ath_52w_pct": -4.8,
+      "rsi14_weekly": 57.7,
+      "ath_52w_pct": -5.1,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TTE.PA",
-      "price": 79.12,
-      "change": -0.25,
+      "price": 79.15,
+      "change": -0.21,
       "currency": "€",
-      "sma200": "200 W-SMA Above +30.5%",
-      "sma200_pct": 30.5,
+      "sma200": "200 W-SMA Above +30.6%",
+      "sma200_pct": 30.6,
       "is_under": false,
-      "rsi14_weekly": 60.0,
+      "rsi14_weekly": 60.7,
       "ath_52w_pct": -2.3,
       "earnings": "29/10/2026"
     },
@@ -408,11 +408,32 @@
       "date": "2026-09-20T14:00:00+02:00"
     },
     {
+      "ticker": "GOOG",
+      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
+      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
+      "date": "2026-09-21T12:54:57+02:00"
+    },
+    {
+      "ticker": "GOOG",
+      "title": "Google fined 400 million euro for GDPR breach",
+      "summary": "The Data Protection Commission examined the lawfulness and fairness of its processing of location data and Google’s accountability obligations.",
+      "link": "https://finance.yahoo.com/news/google-fined-400-million-euro-103623026.html",
+      "date": "2026-09-21T12:36:23+02:00"
+    },
+    {
       "ticker": "META",
       "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
       "summary": "A state visit from Chinese leader Xi Jinping, conferences from Meta and Qualcomm, and a lot of FedSpeak form the last full week of September.",
       "link": "https://finance.yahoo.com/markets/article/trump-and-xi-dine-with-ai-titans-and-meta-takes-the-stage-what-to-watch-this-week-100000383.html",
       "date": "2026-09-21T12:00:00+02:00"
+    },
+    {
+      "ticker": "META",
+      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
+      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
+      "date": "2026-09-21T12:54:57+02:00"
     },
     {
       "ticker": "MSFT",
@@ -437,24 +458,24 @@
     },
     {
       "ticker": "NVDA",
-      "title": "2 Unstoppable Growth Stocks to Buy and Hold for the Next Decade",
-      "summary": "Apple and Amazon are two top growth stocks to own over the next decade.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/2-unstoppable-growth-stocks-buy-100500249.html",
-      "date": "2026-09-21T12:05:00+02:00"
+      "title": "Should You Buy UnitedHealth Group Stock Before Oct. 13?",
+      "summary": "The healthcare giant reports earnings next month.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/buy-unitedhealth-group-stock-oct-110125097.html",
+      "date": "2026-09-21T13:01:25+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Monster Beverage and Coca-Cola Beat the S&P 500 Over the Last 5 Years. Here's Whether the Next 5 Years Will Look the Same.",
-      "summary": "After looking at both companies, one seems better positioned to continue outperforming the market.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/monster-beverage-coca-cola-beat-095700981.html",
-      "date": "2026-09-21T11:57:00+02:00"
+      "title": "A Monthly Investment of Just $250 in This Vanguard ETF Could Turn Into a Mind-Boggling Sum in 30 Years",
+      "summary": "Investing in growth stocks can produce spectacular results over the long term.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/monthly-investment-just-250-vanguard-104300439.html",
+      "date": "2026-09-21T12:43:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "What Is Driving Bitcoin Higher Right Now",
-      "summary": "Demand for the coin is high, and it's coming from multiple sources.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/driving-bitcoin-higher-now-095300035.html",
-      "date": "2026-09-21T11:53:00+02:00"
+      "title": "This ETF Is Obliterating the S&P 500 and the Nasdaq-100 in 2026, but a Crash Might Be on the Horizon",
+      "summary": "Some of the top holdings in the First Trust Nasdaq Cybersecurity ETF are trading at unsustainably high valuations.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/etf-obliterating-p-500-nasdaq-103700130.html",
+      "date": "2026-09-21T12:37:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -465,6 +486,13 @@
     },
     {
       "ticker": "SPCX",
+      "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi sits down with model and author Maye Musk as she reflects on the pride she feels watching Elon Musk's SpaceX achieve extraordinary milestones.",
+      "link": "https://finance.yahoo.com/video/maye-musk-spacex-grit-behind-105052008.html",
+      "date": "2026-09-21T12:50:52+02:00"
+    },
+    {
+      "ticker": "SPCX",
       "title": "3 notable business takes that flew under the radar this week",
       "summary": "Inside the latest chatter from important business leaders.",
       "link": "https://finance.yahoo.com/markets/article/3-notable-business-takes-that-flew-under-the-radar-this-week-120000112.html",
@@ -472,17 +500,10 @@
     },
     {
       "ticker": "SPCX",
-      "title": "SpaceX and Tesla’s AI linkup is getting deeper. Here’s what Morgan Stanley sees",
-      "summary": "Investing.com -- Morgan Stanley said SpaceX and Tesla are deepening their technological and operational ties as both companies pursue physical AI, the application of artificial intelligence to the rea...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
-      "date": "2026-09-21T10:37:42+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
-      "summary": "Retail sentiment on SPY remained ‘bearish’, and moderated to ‘neutral’ on QQQ.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-dow-futures-083728168.html",
-      "date": "2026-09-21T10:37:28+02:00"
+      "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+      "summary": "Morgan Stanley has identified expanding technological and operational links between SpaceX (NASDAQ:SPCX) and Tesla (NASDAQ:TSLA), as the two Elon Musk-led companies pursue applications of artificial i...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-highlights-growing-ai-102603810.html",
+      "date": "2026-09-21T12:26:03+02:00"
     },
     {
       "ticker": "SPGI",
@@ -490,6 +511,13 @@
       "summary": "S&P Global (NYSE:SPGI) is seeing continued growth across its Market Intelligence, Ratings, Indices and Energy businesses, supported by commercial integration, artificial intelligence adoption and prod...",
       "link": "https://finance.yahoo.com/technology/ai/articles/p-global-highlights-ai-fueled-040200412.html",
       "date": "2026-09-21T06:02:00+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "title": "TotalEnergies partners with GIP for African oil and gas assets",
+      "summary": "Under the terms of the agreement, GIP will make a capital contribution of $1.8bn (£1.34bn).",
+      "link": "https://finance.yahoo.com/energy/articles/totalenergies-partners-gip-african-oil-103910968.html",
+      "date": "2026-09-21T12:39:10+02:00"
     },
     {
       "ticker": "TTE.PA",
@@ -507,17 +535,17 @@
     },
     {
       "ticker": "TSLA",
-      "title": "Tesla faces major trial for alleged bias against Black workers, after years of lawsuits",
-      "summary": "By Daniel Wiessner Sept 21 (Reuters) - A California agency's lawsuit accusing Tesla of allowing rampant race discrimination at its flagship assembly plant is set to go to trial on Monday, one of a",
-      "link": "https://finance.yahoo.com/news/tesla-faces-major-trial-alleged-100649614.html",
-      "date": "2026-09-21T12:20:25+02:00"
+      "title": "This Week In Electric Vehicles - Advancing Future Mobility at EV World 2026 Conference",
+      "summary": "The Electric Vehicles Exhibition and Conference 2026, \"EV World,\" has announced its executive conference agenda focused on advancing the next era of mobility. Hosted in Dubai, the event gathers indust...",
+      "link": "https://finance.yahoo.com/energy/articles/week-electric-vehicles-advancing-future-103942015.html",
+      "date": "2026-09-21T12:39:42+02:00"
     },
     {
       "ticker": "TSLA",
-      "title": "500 Tesla Semis Are Joining an Autonomous Trucking Fleet. At 94, an Iowa Trucker Is Still Behind the Wheel, and Social Security Is Still Keeping Score.",
-      "summary": "A 94-year-old trucker with nearly 5 million miles behind him is still punching the clock, and it turns out Social Security may not be done with his paycheck either. What happens to your benefits when ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/500-tesla-semis-joining-autonomous-100449297.html",
-      "date": "2026-09-21T12:04:49+02:00"
+      "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
+      "summary": "Morgan Stanley has identified expanding technological and operational links between SpaceX (NASDAQ:SPCX) and Tesla (NASDAQ:TSLA), as the two Elon Musk-led companies pursue applications of artificial i...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-highlights-growing-ai-102603810.html",
+      "date": "2026-09-21T12:26:03+02:00"
     }
   ],
   "fundamentals": [
@@ -568,7 +596,7 @@
         "ROE": [
           "12.2%",
           "6.7%",
-          "5.6%",
+          "5.7%",
           "0.7%",
           "10.1%"
         ],
@@ -659,9 +687,9 @@
         ],
         "ROE": [
           "11.2%",
-          "11.5%",
-          "16.7%",
-          "-3.4%",
+          "11.9%",
+          "17.9%",
+          "-3.5%",
           "14.0%"
         ],
         "PEG": [
@@ -714,8 +742,8 @@
         ],
         "ROE": [
           "9.8%",
-          "8.7%",
-          "10.5%",
+          "8.9%",
+          "10.9%",
           "16.5%"
         ],
         "PEG": [
@@ -772,9 +800,9 @@
         ],
         "ROE": [
           "-5.4%",
-          "-5.2%",
-          "-81.5%",
-          "-26.1%",
+          "-7.9%",
+          "-84.1%",
+          "-28.1%",
           "-36.0%"
         ],
         "PEG": [
@@ -832,7 +860,7 @@
         ],
         "ROE": [
           "10.2%",
-          "6.9%",
+          "7.2%",
           "2.9%",
           "1.5%",
           "2.4%"
@@ -892,9 +920,9 @@
         ],
         "ROE": [
           "12.5%",
-          "8.4%",
-          "8.5%",
-          "9.1%",
+          "8.7%",
+          "8.7%",
+          "9.4%",
           "20.9%"
         ],
         "PEG": [
@@ -909,7 +937,7 @@
     {
       "ticker": "AMZN",
       "rev_growth": "+19.6%",
-      "pe": "24.5x",
+      "pe": "24.4x",
       "ev": "17.0x",
       "roe": "30.6%",
       "peg": "1.51",
@@ -937,7 +965,7 @@
           "-0.5%"
         ],
         "Fwd P/E": [
-          "24.5x",
+          "24.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -952,9 +980,9 @@
         ],
         "ROE": [
           "30.6%",
-          "18.9%",
-          "20.7%",
-          "15.1%",
+          "22.3%",
+          "24.3%",
+          "17.5%",
           "-1.9%"
         ],
         "PEG": [
@@ -1012,9 +1040,9 @@
         ],
         "ROE": [
           "53.9%",
-          "49.0%",
-          "41.0%",
-          "58.3%",
+          "50.5%",
+          "47.4%",
+          "70.4%",
           "63.8%"
         ],
         "PEG": [
@@ -1072,9 +1100,9 @@
         ],
         "ROE": [
           "44.2%",
-          "28.4%",
-          "8.7%",
-          "58.7%",
+          "31.0%",
+          "12.9%",
+          "60.3%",
           "50.6%"
         ],
         "PEG": [
@@ -1132,9 +1160,9 @@
         ],
         "ROE": [
           "25.7%",
-          "11.0%",
-          "-8.8%",
-          "2.5%",
+          "13.8%",
+          "-9.3%",
+          "3.2%",
           "0.4%"
         ],
         "PEG": [
@@ -1194,7 +1222,7 @@
           "N/A",
           "N/A",
           "N/A",
-          "N/A",
+          "22573.7%",
           "109.9%"
         ],
         "PEG": [
@@ -1252,9 +1280,9 @@
         ],
         "ROE": [
           "16.2%",
-          "16.9%",
-          "18.1%",
-          "20.7%",
+          "18.6%",
+          "20.2%",
+          "23.3%",
           "23.6%"
         ],
         "PEG": [
@@ -1312,8 +1340,8 @@
         ],
         "ROE": [
           "10.9%",
-          "12.7%",
-          "16.5%",
+          "16.2%",
+          "17.8%",
           "18.3%",
           "N/A"
         ],
@@ -1372,9 +1400,9 @@
         ],
         "ROE": [
           "82.6%",
-          "43.7%",
-          "16.3%",
-          "-5.9%",
+          "47.1%",
+          "18.3%",
+          "-4.8%",
           "-25.7%"
         ],
         "PEG": [
@@ -1432,9 +1460,9 @@
         ],
         "ROE": [
           "48.7%",
-          "31.8%",
-          "30.8%",
-          "26.0%",
+          "35.7%",
+          "32.9%",
+          "27.4%",
           "23.4%"
         ],
         "PEG": [
@@ -1492,9 +1520,9 @@
         ],
         "ROE": [
           "17.4%",
-          "16.0%",
-          "14.1%",
-          "13.5%",
+          "16.7%",
+          "15.6%",
+          "14.8%",
           "12.0%"
         ],
         "PEG": [
@@ -1552,9 +1580,9 @@
         ],
         "ROE": [
           "29.8%",
-          "27.8%",
-          "34.1%",
-          "25.5%",
+          "30.2%",
+          "37.1%",
+          "28.0%",
           "18.5%"
         ],
         "PEG": [
@@ -1613,8 +1641,8 @@
         "ROE": [
           "16.6%",
           "16.1%",
-          "18.6%",
-          "24.9%",
+          "19.5%",
+          "26.1%",
           "25.6%"
         ],
         "PEG": [
@@ -1667,8 +1695,8 @@
         ],
         "ROE": [
           "34.0%",
-          "29.6%",
-          "32.8%",
+          "33.3%",
+          "37.1%",
           "35.1%"
         ],
         "PEG": [
@@ -1725,8 +1753,8 @@
         ],
         "ROE": [
           "117.2%",
-          "91.9%",
-          "69.2%",
+          "119.2%",
+          "91.5%",
           "19.8%",
           "N/A"
         ],
@@ -1785,9 +1813,9 @@
         ],
         "ROE": [
           "24.0%",
-          "12.5%",
-          "17.4%",
-          "7.4%",
+          "13.5%",
+          "19.6%",
+          "7.8%",
           "6.0%"
         ],
         "PEG": [
@@ -1845,9 +1873,9 @@
         ],
         "ROE": [
           "25.5%",
-          "24.0%",
-          "26.6%",
-          "28.4%",
+          "25.0%",
+          "28.3%",
+          "31.2%",
           "27.1%"
         ],
         "PEG": [
@@ -1900,7 +1928,7 @@
         ],
         "ROE": [
           "N/A",
-          "-11.9%",
+          "-14.7%",
           "3.1%",
           "N/A"
         ],
@@ -1958,9 +1986,9 @@
         ],
         "ROE": [
           "14.3%",
-          "14.4%",
-          "11.6%",
-          "7.7%",
+          "13.9%",
+          "11.4%",
+          "7.4%",
           "8.9%"
         ],
         "PEG": [
@@ -1975,7 +2003,7 @@
     {
       "ticker": "SU.PA",
       "rev_growth": "+9.8%",
-      "pe": "24.4x",
+      "pe": "24.3x",
       "ev": "20.8x",
       "roe": "18.6%",
       "peg": "1.52",
@@ -2003,7 +2031,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.4x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2018,9 +2046,9 @@
         ],
         "ROE": [
           "18.6%",
-          "17.2%",
-          "14.0%",
-          "15.1%",
+          "15.2%",
+          "15.0%",
+          "15.4%",
           "13.7%"
         ],
         "PEG": [
@@ -2078,9 +2106,9 @@
         ],
         "ROE": [
           "14.5%",
-          "11.4%",
+          "11.3%",
           "13.4%",
-          "18.3%",
+          "18.7%",
           "18.4%"
         ],
         "PEG": [
@@ -2138,9 +2166,9 @@
         ],
         "ROE": [
           "4.7%",
-          "4.6%",
-          "9.8%",
-          "23.9%",
+          "4.9%",
+          "10.5%",
+          "27.9%",
           "28.1%"
         ],
         "PEG": [
@@ -2214,13 +2242,6 @@
     }
   ],
   "earnings": [
-    {
-      "ticker": "AED.BR",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AED.BR"
-    },
     {
       "ticker": "RET.BR",
       "date": "2026-11-13",
