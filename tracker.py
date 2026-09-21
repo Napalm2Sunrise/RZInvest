@@ -89,8 +89,6 @@ def calculate_ath_52w_pct(hist_daily, current_price):
 def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
     """
     Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
-    Retourne la prochaine date sous forme de texte (pour la section Prix) 
-    et une liste de publications détaillées.
     """
     earnings_list = []
     next_earnings_str = "N/A"
@@ -140,7 +138,6 @@ def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
     return next_earnings_str, earnings_list
 
 def get_financial_item(df, possible_keys, col):
-    """Helper pour extraire une ligne financière en testant plusieurs libellés possibles."""
     if df is None or df.empty or col not in df.columns:
         return None
     for key in possible_keys:
@@ -151,9 +148,6 @@ def get_financial_item(df, possible_keys, col):
     return None
 
 def get_annual_history(ticker, info):
-    """
-    Construit la vue annuelle dynamique : Année en cours (TTM) + Années précédentes clôturées.
-    """
     current_year = datetime.now().year
     years_labels = [f"{current_year} (TTM)"]
     history = {
