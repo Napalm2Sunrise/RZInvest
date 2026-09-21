@@ -156,6 +156,17 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       cursor: pointer;
     }
+
+    /* Custom Container pour le Widget TradingView sur Mobile */
+    .tv-widget-box {
+      width: 100%;
+      height: 75vh;
+      min-height: 480px;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -370,7 +381,7 @@
       newsCont.innerHTML = '';
 
       if (selectedTicker === 'ALL') {
-        // 1. VUE GLOBALE : Liste de news issues de yfinance
+        // 1. VUE GLOBALE : Liste des cartes news via yfinance
         const filteredNews = globalData.news || [];
         if (filteredNews.length === 0) {
           newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible.</div>';
@@ -390,10 +401,10 @@
             </div>`;
         });
       } else {
-        // 2. VUE D'UN TICKER UNIQUE : Intégration du Widget TradingView
+        // 2. VUE D'UN TICKER UNIQUE : Widget TradingView optimisé pour Mobile
         newsCont.innerHTML = `
-          <div class="card" style="padding: 0; overflow: hidden; background: transparent; border: none;">
-            <div class="tradingview-widget-container" id="tv-news-widget" style="height: 550px; width: 100%;">
+          <div class="tv-widget-box">
+            <div class="tradingview-widget-container" id="tv-news-widget" style="height: 100%; width: 100%;">
               <div class="tradingview-widget-container__widget" style="height: 100%; width: 100%;"></div>
             </div>
           </div>`;
@@ -407,7 +418,7 @@
           "symbol": selectedTicker,
           "colorTheme": "dark",
           "isTransparent": true,
-          "displayMode": "regular",
+          "displayMode": "compact",
           "width": "100%",
           "height": "100%",
           "locale": "fr"
