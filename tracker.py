@@ -227,7 +227,8 @@ def generate_dashboard_data():
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
-    cutoff_ts = now_ts - (72 * 3600 if now_be.weekday() == 0 else 24 * 3600)
+    # MODIFICATION : Limiter strictement aux news publiées il y a moins de 24h
+    cutoff_ts = now_ts - (24 * 3600)
 
     print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
     
@@ -295,7 +296,12 @@ def generate_dashboard_data():
             # NEWS
             try:
                 news_list = ticker.news or []
+                # MODIFICATION : Limiter à 4 news max par ticker
+                ticker_news_count = 0
                 for item in news_list:
+                    if ticker_news_count >= 4:
+                        break
+
                     content = item.get("content", item)
                     title = content.get("title") or item.get("title", "")
                     summary = content.get("summary") or item.get("summary") or ""
@@ -315,9 +321,9 @@ def generate_dashboard_data():
                             "title": title,
                             "summary": summary[:200] + "..." if len(summary) > 200 else summary,
                             "link": link,
-                            # MODIFICATION ICI : On exporte la date complète en ISO pour permettre le formatage DD/MM/YYYY HH:mm en JS
                             "date": pub_dt.isoformat()
                         })
+                        ticker_news_count += 1
             except Exception as e:
                 print(f"    ⚠️ Erreur news sur {symbol}: {e}")
 
