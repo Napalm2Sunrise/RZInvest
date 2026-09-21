@@ -1,29 +1,29 @@
 {
-  "updated_at": "21/09/2026 à 14:16",
+  "updated_at": "21/09/2026 à 15:12",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.35,
-      "change": -0.38,
+      "price": 65.55,
+      "change": -0.08,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.3%",
-      "sma200_pct": 1.3,
+      "sma200": "200 W-SMA Above +1.6%",
+      "sma200_pct": 1.6,
       "is_under": false,
-      "rsi14_weekly": 39.4,
-      "ath_52w_pct": -17.5,
+      "rsi14_weekly": 39.8,
+      "ath_52w_pct": -17.3,
       "earnings": "N/A"
     },
     {
-      "ticker": "CPINV.BE",
-      "price": 0.0,
-      "change": 0.0,
+      "ticker": "CPINV.BR",
+      "price": 12.5,
+      "change": 0.81,
       "currency": "€",
-      "sma200": "N/A",
-      "sma200_pct": null,
-      "is_under": false,
-      "rsi14_weekly": "N/A",
-      "ath_52w_pct": "N/A",
-      "earnings": "N/A"
+      "sma200": "200 W-SMA Under -2.3% 🔥",
+      "sma200_pct": -2.3,
+      "is_under": true,
+      "rsi14_weekly": 50.5,
+      "ath_52w_pct": -10.2,
+      "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
@@ -39,14 +39,14 @@
     },
     {
       "ticker": "RET.BR",
-      "price": 64.5,
-      "change": -0.15,
+      "price": 64.6,
+      "change": 0.0,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.6%",
-      "sma200_pct": 1.6,
+      "sma200": "200 W-SMA Above +1.8%",
+      "sma200_pct": 1.8,
       "is_under": false,
-      "rsi14_weekly": 42.5,
-      "ath_52w_pct": -9.9,
+      "rsi14_weekly": 42.8,
+      "ath_52w_pct": -9.8,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1487.2,
-      "change": 2.85,
+      "price": 1483.2,
+      "change": 2.57,
       "currency": "€",
-      "sma200": "200 W-SMA Above +78.8%",
-      "sma200_pct": 78.8,
+      "sma200": "200 W-SMA Above +78.3%",
+      "sma200_pct": 78.3,
       "is_under": false,
-      "rsi14_weekly": 55.6,
-      "ath_52w_pct": -13.6,
+      "rsi14_weekly": 55.4,
+      "ath_52w_pct": -13.8,
       "earnings": "14/10/2026"
     },
     {
@@ -225,7 +225,7 @@
       "sma200": "200 W-SMA Under -37.2% 🔥",
       "sma200_pct": -37.2,
       "is_under": true,
-      "rsi14_weekly": 32.6,
+      "rsi14_weekly": 32.7,
       "ath_52w_pct": -37.5,
       "earnings": "26/01/2027"
     },
@@ -267,14 +267,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1329.0,
-      "change": -0.19,
+      "price": 1331.5,
+      "change": 0.0,
       "currency": "€",
-      "sma200": "200 W-SMA Under -34.1% 🔥",
-      "sma200_pct": -34.1,
+      "sma200": "200 W-SMA Under -34.0% 🔥",
+      "sma200_pct": -34.0,
       "is_under": true,
-      "rsi14_weekly": 29.2,
-      "ath_52w_pct": -40.9,
+      "rsi14_weekly": 29.4,
+      "ath_52w_pct": -40.8,
       "earnings": "11/02/2027"
     },
     {
@@ -303,26 +303,26 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 295.7,
-      "change": 3.48,
+      "price": 295.4,
+      "change": 3.38,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.3%",
-      "sma200_pct": 38.3,
+      "sma200": "200 W-SMA Above +38.1%",
+      "sma200_pct": 38.1,
       "is_under": false,
-      "rsi14_weekly": 58.0,
-      "ath_52w_pct": -4.9,
+      "rsi14_weekly": 57.9,
+      "ath_52w_pct": -5.0,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TTE.PA",
-      "price": 79.09,
-      "change": -0.29,
+      "price": 79.43,
+      "change": 0.14,
       "currency": "€",
-      "sma200": "200 W-SMA Above +30.5%",
-      "sma200_pct": 30.5,
+      "sma200": "200 W-SMA Above +31.0%",
+      "sma200_pct": 31.0,
       "is_under": false,
-      "rsi14_weekly": 60.5,
-      "ath_52w_pct": -2.4,
+      "rsi14_weekly": 61.1,
+      "ath_52w_pct": -2.0,
       "earnings": "29/10/2026"
     },
     {
@@ -353,59 +353,52 @@
   "news": [
     {
       "ticker": "AMD",
-      "title": "AMD's 8% Surge Hints at Something Bigger",
-      "summary": "Strong demand, tight supply and potential price increases are giving investors a new reason to watch the chipmaker",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
-      "date": "2026-09-21T14:14:30+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "title": "Stocks gain on AI optimism; lower oil helps bonds",
-      "summary": "By Amanda Cooper LONDON, Sept 21 (Reuters) - Global stocks rose on Monday, as evidence of booming AI demand lifted tech shares, and oil fell on reports that more supply was leaving the Gulf than",
-      "link": "https://finance.yahoo.com/markets/world-indices/articles/tech-leads-shares-higher-asia-004028094.html",
-      "date": "2026-09-21T13:54:59+02:00"
+      "title": "Can Cars And Data Centers Carry Qualcomm Stock Past Apple?",
+      "summary": "Qualcomm (QCOM) stock is up about 37% over the past six months, even after falling 21% over the past three. The case for the next leg rests outside phones, where management expects growth fast enough ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/cars-data-centers-carry-qualcomm-124305935.html",
+      "date": "2026-09-21T14:43:05+02:00"
     },
     {
       "ticker": "AMZN",
-      "title": "Here’s What to Expect From AI’s Two Biggest 2026 Spenders in 2027",
-      "summary": "Amazon and Alphabet are together pouring close to $400 billion into AI infrastructure this year, and the race to turn that mountain of spending into actual profit is about to get very interesting head...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/expect-ai-two-biggest-2026-110628014.html",
-      "date": "2026-09-21T13:06:28+02:00"
+      "title": "Oracle’s Co-CEOs Deliver Explosive Growth, but Stock Plunges 50% in Their First Year",
+      "summary": "Oracle's co-CEOs oversaw one of the fastest contract buildouts in enterprise software history, yet the stock cratered anyway. The question investors are wrestling with now cuts to the heart of the AI ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+      "date": "2026-09-21T15:05:35+02:00"
     },
     {
       "ticker": "AMZN",
-      "title": "2 Unstoppable Growth Stocks to Buy and Hold for the Next Decade",
-      "summary": "Apple and Amazon are two top growth stocks to own over the next decade.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/2-unstoppable-growth-stocks-buy-100500249.html",
-      "date": "2026-09-21T12:05:00+02:00"
+      "title": "We’re More Bullish on Amazon Than Wall Street Is. Here’s the Math.",
+      "summary": "Wall Street has a number on Amazon, and we think it's wrong. AWS is accelerating at its fastest pace in nearly five years, AI demand is outrunning supply, and our model tells a very different story ab...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/more-bullish-amazon-wall-street-130033984.html",
+      "date": "2026-09-21T15:00:33+02:00"
     },
     {
       "ticker": "AMZN",
-      "title": "Jeff Bezos's parents sank $245,573 of their retirement savings into Amazon after he told them they'd probably lose it",
-      "summary": "If Mike and Jackie Bezos never sold, that stake would have enjoyed a return of up to 12,000,000%.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezoss-parents-sank-245-100000600.html",
-      "date": "2026-09-21T12:00:00+02:00"
+      "title": "Worried About Hugging Face? Microsoft and Amazon Got Exposed Most Among Hyperscalers",
+      "summary": "The Hugging Face security incident hit two hyperscalers at the peak of their cloud momentum, and enterprise buyers are now forcing Microsoft and Amazon to answer uncomfortable questions about whether ...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/worried-hugging-face-microsoft-amazon-121222004.html",
+      "date": "2026-09-21T14:12:22+02:00"
     },
     {
       "ticker": "AVGO",
-      "title": "Credo Technology Crashed for 3 Months: This Wall Street Pro Says It’s About to Double",
-      "summary": "A fabless semiconductor company just posted 115% revenue growth, beat earnings, and raised guidance, yet the stock cratered 43% from its highs. One Wall Street analyst thinks the selloff created one o...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-crashed-3-months-115135647.html",
-      "date": "2026-09-21T13:51:35+02:00"
+      "title": "Marvell Technology Fell Hard Over 3 Months: It Has Momentum and a Wall Street Pro’s Confidence That 78% Gains are Coming",
+      "summary": "Marvell has dropped 20% in three months even as AI peers held steady, and one analyst sees that disconnect as the setup for gains that leave the Wall Street consensus looking timid.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-fell-hard-over-125348635.html",
+      "date": "2026-09-21T14:53:48+02:00"
     },
     {
       "ticker": "AVGO",
-      "title": "AI Chips Today - Einride NVIDIA Team Up for Autonomous Truck Expansion",
-      "summary": "Einride AB has announced a strategic collaboration with NVIDIA to enhance its autonomous trucking capabilities by integrating the NVIDIA DRIVE Hyperion platform into its operations. This collaboration...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/ai-chips-today-einride-nvidia-113717972.html",
-      "date": "2026-09-21T13:37:17+02:00"
+      "title": "Can Cars And Data Centers Carry Qualcomm Stock Past Apple?",
+      "summary": "Qualcomm (QCOM) stock is up about 37% over the past six months, even after falling 21% over the past three. The case for the next leg rests outside phones, where management expects growth fast enough ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/cars-data-centers-carry-qualcomm-124305935.html",
+      "date": "2026-09-21T14:43:05+02:00"
     },
     {
       "ticker": "AVGO",
-      "title": "“Our Targets Haven’t Changed”: Broadcom’s CEO Pushes Back on the AI Slowdown Scare",
-      "summary": "When Anthropic CEO Dario Amodei wrote a weekend essay proposing that the AI industry should deliberately restrict its pace of progress, few companies were more dependent on the market’s reaction than ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/targets-haven-t-changed-broadcom-112507800.html",
-      "date": "2026-09-21T13:25:07+02:00"
+      "title": "AMD vs. Broadcom: The AI Chip Race Is Big Enough for Both. Here's the Better Buy.",
+      "summary": "Broadcom looks like the better buy at the moment.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/amd-vs-broadcom-ai-chip-122000960.html",
+      "date": "2026-09-21T14:20:00+02:00"
     },
     {
       "ticker": "GEV",
@@ -430,24 +423,24 @@
     },
     {
       "ticker": "GOOG",
-      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
-      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
-      "date": "2026-09-21T13:17:59+02:00"
+      "title": "We’re More Bullish on Amazon Than Wall Street Is. Here’s the Math.",
+      "summary": "Wall Street has a number on Amazon, and we think it's wrong. AWS is accelerating at its fastest pace in nearly five years, AI demand is outrunning supply, and our model tells a very different story ab...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/more-bullish-amazon-wall-street-130033984.html",
+      "date": "2026-09-21T15:00:33+02:00"
     },
     {
       "ticker": "GOOG",
-      "title": "Here’s What to Expect From AI’s Two Biggest 2026 Spenders in 2027",
-      "summary": "Amazon and Alphabet are together pouring close to $400 billion into AI infrastructure this year, and the race to turn that mountain of spending into actual profit is about to get very interesting head...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/expect-ai-two-biggest-2026-110628014.html",
-      "date": "2026-09-21T13:06:28+02:00"
+      "title": "The Zacks Analyst Blog Highlights Microsoft, Amazon, Oracle and Alphabet",
+      "summary": "Microsoft's cloud momentum, expanding enterprise AI adoption and investment outlook support its stock after a 31.2% three-month surge.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-microsoft-130000455.html",
+      "date": "2026-09-21T15:00:00+02:00"
     },
     {
       "ticker": "GOOG",
-      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
-      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
-      "date": "2026-09-21T12:54:57+02:00"
+      "title": "Google Fined More Than €400 Million by Irish Regulator Over Location Data Privacy Breaches",
+      "summary": "Google (NASDAQ:GOOG) has been fined more than €400 million, equivalent to approximately £345 million, by Ireland’s Data Protection Commission (DPC) following an investigation into its handling of user...",
+      "link": "https://finance.yahoo.com/technology/articles/google-fined-more-400-million-124510237.html",
+      "date": "2026-09-21T14:45:10+02:00"
     },
     {
       "ticker": "META",
@@ -457,46 +450,53 @@
       "date": "2026-09-21T12:00:00+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "This Artificial Intelligence (AI) Stock Has Raised Its Dividend by Over 150% in 10 Years",
-      "summary": "Microsoft recently boosted its dividend, yet again.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/artificial-intelligence-ai-stock-raised-113254600.html",
-      "date": "2026-09-21T13:32:54+02:00"
+      "ticker": "META",
+      "title": "Wall St set for higher open as AI stocks rise, oil slides",
+      "summary": "By Johann M Cherian and Tharuniyaa Lakshmi Sept 21 (Reuters) - The main US stock indexes were on track to rise at the open on Monday, boosted by AI-led gains, as Treasury yields retreated and crude",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-rise-ai-115836672.html",
+      "date": "2026-09-21T14:57:17+02:00"
     },
     {
       "ticker": "MSFT",
-      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
-      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
-      "date": "2026-09-21T13:17:59+02:00"
+      "title": "Oracle’s Co-CEOs Deliver Explosive Growth, but Stock Plunges 50% in Their First Year",
+      "summary": "Oracle's co-CEOs oversaw one of the fastest contract buildouts in enterprise software history, yet the stock cratered anyway. The question investors are wrestling with now cuts to the heart of the AI ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+      "date": "2026-09-21T15:05:35+02:00"
     },
     {
       "ticker": "MSFT",
-      "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
-      "summary": "Microsoft (MSFT)-backed OpenAI is seeking a valuation above $1.2 trillion in new funding discussions",
-      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
-      "date": "2026-09-21T11:03:00+02:00"
+      "title": "Zacks Investment Ideas feature highlights: Intel, SK Hynix, Nvidia, Microsoft and Apple",
+      "summary": "Intel and SK Hynix heat up as a potential U.S. memory partnership draws attention, while AI demand and valuation widen the contrast.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-130200708.html",
+      "date": "2026-09-21T15:02:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "title": "We’re More Bullish on Amazon Than Wall Street Is. Here’s the Math.",
+      "summary": "Wall Street has a number on Amazon, and we think it's wrong. AWS is accelerating at its fastest pace in nearly five years, AI demand is outrunning supply, and our model tells a very different story ab...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/more-bullish-amazon-wall-street-130033984.html",
+      "date": "2026-09-21T15:00:33+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Big Tech's $300B AI Bet Hides a Risk Investors Can't Ignore",
-      "summary": "Billions in guarantees are helping finance data centers and AI chips, but investors may need to look beyond reported debt.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/big-techs-300b-ai-bet-121554134.html",
-      "date": "2026-09-21T14:15:54+02:00"
+      "title": "Oracle’s Co-CEOs Deliver Explosive Growth, but Stock Plunges 50% in Their First Year",
+      "summary": "Oracle's co-CEOs oversaw one of the fastest contract buildouts in enterprise software history, yet the stock cratered anyway. The question investors are wrestling with now cuts to the heart of the AI ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/oracle-co-ceos-deliver-explosive-130535126.html",
+      "date": "2026-09-21T15:05:35+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "AMD's 8% Surge Hints at Something Bigger",
-      "summary": "Strong demand, tight supply and potential price increases are giving investors a new reason to watch the chipmaker",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
-      "date": "2026-09-21T14:14:30+02:00"
+      "title": "Zacks Investment Ideas feature highlights: Intel, SK Hynix, Nvidia, Microsoft and Apple",
+      "summary": "Intel and SK Hynix heat up as a potential U.S. memory partnership draws attention, while AI demand and valuation widen the contrast.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-130200708.html",
+      "date": "2026-09-21T15:02:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "The Stock Market Looks More Expensive Than Ever Before Based on Certain Measures, and Warren Buffett's Timeless Advice Has Never Been More Valuable",
-      "summary": "Expensive stocks can be risky, but not uninvestable.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-looks-more-expensive-120500895.html",
-      "date": "2026-09-21T14:05:00+02:00"
+      "title": "Zacks Market Edge Highlights: ExxonMobil, JPMorgan Chase and NVIDIA",
+      "summary": "ExxonMobil, JPMorgan Chase and NVIDIA headline Zacks Market Edge's 500th episode, with earnings growth and market gains in focus.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-market-edge-highlights-exxonmobil-130200702.html",
+      "date": "2026-09-21T15:02:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -573,7 +573,7 @@
     {
       "ticker": "AED.BR",
       "rev_growth": "+104.3%",
-      "pe": "11.8x",
+      "pe": "11.9x",
       "ev": "28.8x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -601,7 +601,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.8x",
+          "11.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -631,33 +631,61 @@
       }
     },
     {
-      "ticker": "CPINV.BE",
-      "rev_growth": "N/A",
-      "pe": "N/A",
-      "ev": "N/A",
-      "roe": "N/A",
+      "ticker": "CPINV.BR",
+      "rev_growth": "+11.9%",
+      "pe": "11.4x",
+      "ev": "18.1x",
+      "roe": "9.4%",
       "peg": "N/A",
-      "net_margin": "N/A",
+      "net_margin": "77.4%",
       "quarters": [
-        "2026 (TTM)"
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
       ],
       "history": {
         "Croit. CA.": [
+          "+11.9%",
+          "+6.2%",
+          "+5.8%",
+          "+21.4%",
           "N/A"
         ],
         "Marge Net %": [
-          "N/A"
+          "77.4%",
+          "78.7%",
+          "36.4%",
+          "-8.6%",
+          "160.9%"
         ],
         "Fwd P/E": [
+          "11.4x",
+          "N/A",
+          "N/A",
+          "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
+          "18.1x",
+          "N/A",
+          "N/A",
+          "N/A",
           "N/A"
         ],
         "ROE": [
-          "N/A"
+          "9.4%",
+          "8.9%",
+          "4.1%",
+          "-1.0%",
+          "15.7%"
         ],
         "PEG": [
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A",
           "N/A"
         ]
       }
@@ -1018,7 +1046,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "28.8x",
+      "pe": "28.7x",
       "ev": "40.8x",
       "roe": "53.9%",
       "peg": "1.50",
@@ -1046,7 +1074,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "28.8x",
+          "28.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -2263,6 +2291,20 @@
     }
   ],
   "earnings": [
+    {
+      "ticker": "CPINV.BR",
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
+    },
+    {
+      "ticker": "CPINV.BR",
+      "date": "2026-11-04",
+      "date_formatted": "04/11/2026",
+      "is_past": false,
+      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
+    },
     {
       "ticker": "RET.BR",
       "date": "2026-11-13",
