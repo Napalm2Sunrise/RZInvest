@@ -1,10 +1,10 @@
 {
-  "updated_at": "21/09/2026 à 08:18",
+  "updated_at": "21/09/2026 à 09:14",
   "prices": [
     {
       "ticker": "AED.BR",
       "price": 65.6,
-      "change": -0.68,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +1.6%",
       "sma200_pct": 1.6,
@@ -28,7 +28,7 @@
     {
       "ticker": "HOMI.BR",
       "price": 17.84,
-      "change": -1.11,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -1.9% 🔥",
       "sma200_pct": -1.9,
@@ -40,7 +40,7 @@
     {
       "ticker": "RET.BR",
       "price": 64.6,
-      "change": -0.77,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +1.8%",
       "sma200_pct": 1.8,
@@ -64,7 +64,7 @@
     {
       "ticker": "ASML.AS",
       "price": 1446.0,
-      "change": 1.97,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +74.8%",
       "sma200_pct": 74.8,
@@ -184,7 +184,7 @@
     {
       "ticker": "MC.PA",
       "price": 402.8,
-      "change": -2.3,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.1% 🔥",
       "sma200_pct": -38.1,
@@ -256,7 +256,7 @@
     {
       "ticker": "SU.PA",
       "price": 285.75,
-      "change": -0.47,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +34.1%",
       "sma200_pct": 34.1,
@@ -268,7 +268,7 @@
     {
       "ticker": "TTE.PA",
       "price": 79.32,
-      "change": -0.39,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +31.1%",
       "sma200_pct": 31.1,
@@ -570,6 +570,13 @@
       "date": "14:33"
     },
     {
+      "ticker": "META",
+      "title": "Stocktwits Tech Watch: Trump-Xi Summit, AI Pacing Debate and Meta And YouTube Events In Focus This Week",
+      "summary": "CEO of OpenAI, Nvidia, and Microsoft, as well as Apple’s chairman Tim Cook, among others, would attend the state dinner with Chinese President Xi Jinping.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/stocktwits-tech-watch-trump-xi-064906622.html",
+      "date": "08:49"
+    },
+    {
       "ticker": "MC.PA",
       "title": "What does the EU have that the U.S. does not?",
       "summary": "Investing.com -- European assets may offer investors advantages that are being overlooked as markets remain heavily focused on U.S. technology leadership, according to Macquarie Global Strategy, which...",
@@ -683,6 +690,20 @@
     },
     {
       "ticker": "NVDA",
+      "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
+      "summary": "Robinhood appears to be rapidly stealing market share from one of the crypto sector's entrenched competitors.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/recent-moves-brilliant-heres-why-065000398.html",
+      "date": "08:50"
+    },
+    {
+      "ticker": "NVDA",
+      "title": "Billionaire Tim Draper Predicts Bitcoin Will Hit $250,000 Within 2 Years. Here's What Needs to Happen.",
+      "summary": "Could Bitcoin really triple in value within just 24 months?",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/billionaire-tim-draper-predicts-bitcoin-062000744.html",
+      "date": "08:20"
+    },
+    {
+      "ticker": "NVDA",
       "title": "Investing $150 per Month in This S&P 500 ETF Could Grow Into $300,000 Over 30 Years. Here's the Math.",
       "summary": "Stay consistent and let time do the heavy lifting for you.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/investing-150-per-month-p-055000112.html",
@@ -746,6 +767,13 @@
     },
     {
       "ticker": "SPCX",
+      "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
+      "summary": "Wedbush's Dan Ives says a Tesla-SpaceX merger has 80% odds by 2027, calling it a bid for the world's largest company.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-puts-tesla-spacex-062752394.html",
+      "date": "08:27"
+    },
+    {
+      "ticker": "SPCX",
       "title": "TSLA Stock Looks ‘Slightly Undervalued’ To This Analyst — But The Roadster Is Barely Part Of The Bull Case",
       "summary": "Morningstar expects only about 2,000 annual Roadster sales, versus nearly 1.8 million total Tesla deliveries in 2026.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-looks-slightly-undervalued-030139093.html",
@@ -799,13 +827,6 @@
       "summary": "Elon Musk just set a bandwidth target for Starlink's next satellite generation that would make today's network look primitive, and he put a deadline on when it rewrites global internet infrastructure.",
       "link": "https://finance.yahoo.com/technology/articles/elon-musk-predicts-starlink-satellites-155911318.html",
       "date": "17:59"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "This Analyst Has a $450 Price Target on SpaceX Stock. Does That Make it a Buy?",
-      "summary": "Significant optimism is already baked into SpaceX stock.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/analyst-450-price-target-spacex-152700401.html",
-      "date": "17:27"
     },
     {
       "ticker": "SPGI",
@@ -942,6 +963,13 @@
     },
     {
       "ticker": "TSLA",
+      "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
+      "summary": "Wedbush's Dan Ives says a Tesla-SpaceX merger has 80% odds by 2027, calling it a bid for the world's largest company.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-puts-tesla-spacex-062752394.html",
+      "date": "08:27"
+    },
+    {
+      "ticker": "TSLA",
       "title": "Tesla's Free Cash Flow Went Negative. It Still Has a $43.5 Billion Cash Cushion.",
       "summary": "The company's ability to fund an aggressive capital spending program might surprise some investors.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/teslas-free-cash-flow-went-052000206.html",
@@ -995,13 +1023,6 @@
       "summary": "A Florida car dealer family just threw a $60 million Paris wedding, and the fortune behind it traces back to a legal structure most Americans have never heard of that quietly turns local car lots into...",
       "link": "https://finance.yahoo.com/small-business/articles/florida-car-dealer-family-spent-091043721.html",
       "date": "11:10"
-    },
-    {
-      "ticker": "TSLA",
-      "title": "Elon Musk totaled a $1 million McLaren with Peter Thiel riding shotgun — and hadn't bought insurance",
-      "summary": "His last words before sending it: \"Watch this.\"",
-      "link": "https://finance.yahoo.com/small-business/articles/elon-musk-totaled-1-million-090000791.html",
-      "date": "11:00"
     }
   ],
   "fundamentals": [
