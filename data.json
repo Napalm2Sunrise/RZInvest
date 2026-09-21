@@ -1,16 +1,16 @@
 {
-  "updated_at": "21/09/2026 à 10:14",
+  "updated_at": "21/09/2026 à 11:14",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.2,
-      "change": -0.61,
+      "price": 65.0,
+      "change": -0.91,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +0.8%",
+      "sma200_pct": 0.8,
       "is_under": false,
-      "rsi14_weekly": 39.4,
-      "ath_52w_pct": -17.7,
+      "rsi14_weekly": 38.6,
+      "ath_52w_pct": -18.0,
       "earnings": "N/A"
     },
     {
@@ -27,27 +27,51 @@
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.9,
-      "change": 0.34,
+      "price": 17.92,
+      "change": 0.45,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.4% 🔥",
-      "sma200_pct": -1.4,
+      "sma200": "200 W-SMA Under -1.3% 🔥",
+      "sma200_pct": -1.3,
       "is_under": true,
-      "rsi14_weekly": 39.2,
-      "ath_52w_pct": -11.4,
+      "rsi14_weekly": 39.8,
+      "ath_52w_pct": -11.3,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 64.1,
-      "change": -0.77,
+      "price": 64.2,
+      "change": -0.62,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.0%",
-      "sma200_pct": 1.0,
+      "sma200": "200 W-SMA Above +1.1%",
+      "sma200_pct": 1.1,
       "is_under": false,
-      "rsi14_weekly": 41.3,
-      "ath_52w_pct": -10.5,
+      "rsi14_weekly": 41.6,
+      "ath_52w_pct": -10.3,
       "earnings": "13/11/2026"
+    },
+    {
+      "ticker": "AAOI",
+      "price": 105.17,
+      "change": 7.25,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +211.3%",
+      "sma200_pct": 211.3,
+      "is_under": false,
+      "rsi14_weekly": 46.6,
+      "ath_52w_pct": -52.9,
+      "earnings": "05/11/2026"
+    },
+    {
+      "ticker": "AMD",
+      "price": 559.82,
+      "change": 2.7,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +210.9%",
+      "sma200_pct": 210.9,
+      "is_under": false,
+      "rsi14_weekly": 65.7,
+      "ath_52w_pct": -3.6,
+      "earnings": "03/11/2026"
     },
     {
       "ticker": "AMKR",
@@ -62,15 +86,27 @@
       "earnings": "26/10/2026"
     },
     {
-      "ticker": "ASML.AS",
-      "price": 1485.6,
-      "change": 2.74,
-      "currency": "€",
-      "sma200": "200 W-SMA Above +78.7%",
-      "sma200_pct": 78.7,
+      "ticker": "AMZN",
+      "price": 253.71,
+      "change": 1.0,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +37.2%",
+      "sma200_pct": 37.2,
       "is_under": false,
-      "rsi14_weekly": 55.1,
-      "ath_52w_pct": -13.7,
+      "rsi14_weekly": 51.9,
+      "ath_52w_pct": -10.7,
+      "earnings": "29/10/2026"
+    },
+    {
+      "ticker": "ASML.AS",
+      "price": 1494.6,
+      "change": 3.36,
+      "currency": "€",
+      "sma200": "200 W-SMA Above +79.7%",
+      "sma200_pct": 79.7,
+      "is_under": false,
+      "rsi14_weekly": 56.1,
+      "ath_52w_pct": -13.2,
       "earnings": "14/10/2026"
     },
     {
@@ -183,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 403.6,
-      "change": 0.2,
+      "price": 406.1,
+      "change": 0.82,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.9% 🔥",
-      "sma200_pct": -37.9,
+      "sma200": "200 W-SMA Under -37.5% 🔥",
+      "sma200_pct": -37.5,
       "is_under": true,
-      "rsi14_weekly": 31.0,
-      "ath_52w_pct": -38.1,
+      "rsi14_weekly": 32.1,
+      "ath_52w_pct": -37.7,
       "earnings": "N/A"
     },
     {
@@ -230,6 +266,18 @@
       "earnings": "11/11/2026"
     },
     {
+      "ticker": "RMS.PA",
+      "price": 1315.5,
+      "change": -1.2,
+      "currency": "€",
+      "sma200": "200 W-SMA Under -34.8% 🔥",
+      "sma200_pct": -34.8,
+      "is_under": true,
+      "rsi14_weekly": 28.7,
+      "ath_52w_pct": -41.5,
+      "earnings": "N/A"
+    },
+    {
       "ticker": "SPCX",
       "price": 152.71,
       "change": -1.36,
@@ -255,26 +303,26 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 291.45,
-      "change": 1.99,
+      "price": 295.0,
+      "change": 3.24,
       "currency": "€",
-      "sma200": "200 W-SMA Above +36.3%",
-      "sma200_pct": 36.3,
+      "sma200": "200 W-SMA Above +37.9%",
+      "sma200_pct": 37.9,
       "is_under": false,
-      "rsi14_weekly": 56.0,
-      "ath_52w_pct": -6.3,
+      "rsi14_weekly": 57.7,
+      "ath_52w_pct": -5.1,
       "earnings": "N/A"
     },
     {
       "ticker": "TTE.PA",
-      "price": 79.07,
-      "change": -0.32,
+      "price": 79.35,
+      "change": 0.04,
       "currency": "€",
-      "sma200": "200 W-SMA Above +30.4%",
-      "sma200_pct": 30.4,
+      "sma200": "200 W-SMA Above +30.9%",
+      "sma200_pct": 30.9,
       "is_under": false,
-      "rsi14_weekly": 59.9,
-      "ath_52w_pct": -2.4,
+      "rsi14_weekly": 61.1,
+      "ath_52w_pct": -2.1,
       "earnings": "29/10/2026"
     },
     {
@@ -304,6 +352,27 @@
   ],
   "news": [
     {
+      "ticker": "AMD",
+      "title": "AMD Stock Jumped 8% Last Week. It Could Bring 325% More, Here’s How.",
+      "summary": "Key TakeawaysSelloff Reversal: AMD stock sank as much as 5. 6% on Monday, September 14 after AI industry leaders called for slower model development, then clawed back the loss and closed the week at $...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amd-stock-jumped-8-last-050609561.html",
+      "date": "2026-09-21T07:06:09+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "title": "If I Were in My 20s, I'd Buy These 2 Trillion-Dollar Stocks and Hold Them Forever",
+      "summary": "Buying a slice of America's largest technology giants can help young investors build a secure financial future.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-2-084400679.html",
+      "date": "2026-09-21T10:44:00+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "title": "Here’s Why Amazon's $220 Billion in Capital Spending Shouldn’t Worry Investors.",
+      "summary": "Tech giants are investing heavily in the AI infrastructure build-out.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/why-amazons-220-billion-capital-082501143.html",
+      "date": "2026-09-21T10:25:01+02:00"
+    },
+    {
       "ticker": "AVGO",
       "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
       "summary": "Jim Cramer watched what happened to Broadcom stock on September 14 and came to Mad Money that evening with a very specific read on the selloff.",
@@ -311,11 +380,11 @@
       "date": "2026-09-20T19:47:00+02:00"
     },
     {
-      "ticker": "AVGO",
-      "title": "3 Stocks Bound to Ignore The September Effect",
-      "summary": "The September Effect can sink stocks, but likely not these three.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-bound-ignore-september-082000613.html",
-      "date": "2026-09-20T10:20:00+02:00"
+      "ticker": "GEV",
+      "title": "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+      "summary": "It's important not to panic over the impact of rising rates on industrial stocks, not least because they are likely to affect different stocks in varied ways.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/higher-interest-rates-mean-caterpillar-085500295.html",
+      "date": "2026-09-21T10:55:00+02:00"
     },
     {
       "ticker": "GEV",
@@ -382,6 +451,13 @@
     },
     {
       "ticker": "MSFT",
+      "title": "If I Were in My 20s, I'd Buy These 2 Trillion-Dollar Stocks and Hold Them Forever",
+      "summary": "Buying a slice of America's largest technology giants can help young investors build a secure financial future.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-2-084400679.html",
+      "date": "2026-09-21T10:44:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
       "title": "NOK Stock Rises Overnight: Nokia’s EURO STOXX 50 Index Return On Monday Adds To AI-Fueled Momentum",
       "summary": "Nokia will rejoin the top Eurozone index a year after it was dropped.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/nok-stock-rises-overnight-nokia-052134028.html",
@@ -402,39 +478,32 @@
       "date": "2026-09-21T04:03:00+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "BofA cuts to the chase on AI data center demand",
-      "summary": "Andrew Obin’s team came back from a key Washington conference with a new risk investors need to watch.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/bofa-cuts-chase-ai-data-013700947.html",
-      "date": "2026-09-21T03:37:00+02:00"
+      "ticker": "NVDA",
+      "title": "Warren Buffett Just Released a Farewell Letter. It Contains the Most Devastating 4-Word Piece of Investment Advice I've Ever Heard.",
+      "summary": "The Oracle of Omaha has never stopped looking ahead.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-just-released-farewell-091100733.html",
+      "date": "2026-09-21T11:11:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Cerebras Shares Are Coming Out of Lockup in Waves. Here's the Date That Matters Most.",
-      "summary": "The waves of new supply get bigger from here, and the last one comes with a hard deadline.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/cerebras-shares-coming-lockup-waves-080101779.html",
-      "date": "2026-09-21T10:01:01+02:00"
+      "title": "Market Chatter: Microsoft-backed OpenAI Seeks Valuation Above $1.2 Trillion Despite Projected $278 Billion Cash Burn",
+      "summary": "Microsoft (MSFT)-backed OpenAI is seeking a valuation above $1.2 trillion in new funding discussions",
+      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-backed-openai-090300004.html",
+      "date": "2026-09-21T11:03:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Nvidia's CEO Huang says there's a ‘0% chance’ AI ends the world — 4 AI giants are sued over an alleged pact to slow it",
-      "summary": "Jensen Huang calls AI extinction warnings a doomsday narrative. Four subscribers say the companies that raised them made an illegal pact.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
-      "date": "2026-09-21T09:35:00+02:00"
+      "title": "What Higher Interest Rates Mean for Caterpillar, GE Vernova, and Vertiv",
+      "summary": "It's important not to panic over the impact of rising rates on industrial stocks, not least because they are likely to affect different stocks in varied ways.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/higher-interest-rates-mean-caterpillar-085500295.html",
+      "date": "2026-09-21T10:55:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Why I'm Still Not Buying The Trade Desk Stock After a 90% Drop",
-      "summary": "The stock trades near $14. The problem is what the business is guiding toward.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-im-still-not-buying-073301714.html",
-      "date": "2026-09-21T09:33:01+02:00"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
-      "summary": "Nvidia Corp. (NASDAQ:NVDA) CEO Jensen Huang says he would view paying billions of dollars in additional taxes as a privilege as California considers a one-time levy on the state’s wealthiest residents...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
-      "date": "2026-09-21T08:54:37+02:00"
+      "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+      "summary": "Retail sentiment on SPY remained ‘bearish’, and moderated to ‘neutral’ on QQQ.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-dow-futures-083728168.html",
+      "date": "2026-09-21T10:37:28+02:00"
     },
     {
       "ticker": "ONON",
@@ -452,24 +521,24 @@
     },
     {
       "ticker": "SPCX",
+      "title": "SpaceX and Tesla’s AI linkup is getting deeper. Here’s what Morgan Stanley sees",
+      "summary": "Investing.com -- Morgan Stanley said SpaceX and Tesla are deepening their technological and operational ties as both companies pursue physical AI, the application of artificial intelligence to the rea...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+      "date": "2026-09-21T10:37:42+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "Nasdaq, S&P 500, Dow Futures Rise Ahead Of Trump-Xi Summit This Week: NVDA, META, CRML, GLND, SPCX, RKLB, BE Stocks In Focus",
+      "summary": "Retail sentiment on SPY remained ‘bearish’, and moderated to ‘neutral’ on QQQ.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-dow-futures-083728168.html",
+      "date": "2026-09-21T10:37:28+02:00"
+    },
+    {
+      "ticker": "SPCX",
       "title": "Nvidia's CEO Huang says there's a ‘0% chance’ AI ends the world — 4 AI giants are sued over an alleged pact to slow it",
       "summary": "Jensen Huang calls AI extinction warnings a doomsday narrative. Four subscribers say the companies that raised them made an illegal pact.",
       "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
       "date": "2026-09-21T09:35:00+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
-      "summary": "Wedbush's Dan Ives says a Tesla-SpaceX merger has 80% odds by 2027, calling it a bid for the world's largest company.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-puts-tesla-spacex-062752394.html",
-      "date": "2026-09-21T08:27:52+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "TSLA Stock Looks ‘Slightly Undervalued’ To This Analyst — But The Roadster Is Barely Part Of The Bull Case",
-      "summary": "Morningstar expects only about 2,000 annual Roadster sales, versus nearly 1.8 million total Tesla deliveries in 2026.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-looks-slightly-undervalued-030139093.html",
-      "date": "2026-09-21T05:01:39+02:00"
     },
     {
       "ticker": "SPGI",
@@ -494,24 +563,24 @@
     },
     {
       "ticker": "TSLA",
+      "title": "Austin to San Antonio in Under 30 Minutes? Elon Musk Says Boring Company Is Working on 200+ MPH Tunnel to Beat Traffic",
+      "summary": "Elon Musk says The Boring Company is working on a high-speed tunnel between Austin and San Antonio that could cut travel times to less than 30 minutes. Speeds Above 200 MPH In a post on X, Musk shared...",
+      "link": "https://finance.yahoo.com/technology/articles/austin-san-antonio-under-30-083819216.html",
+      "date": "2026-09-21T10:38:19+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "title": "SpaceX and Tesla’s AI linkup is getting deeper. Here’s what Morgan Stanley sees",
+      "summary": "Investing.com -- Morgan Stanley said SpaceX and Tesla are deepening their technological and operational ties as both companies pursue physical AI, the application of artificial intelligence to the rea...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+      "date": "2026-09-21T10:37:42+02:00"
+    },
+    {
+      "ticker": "TSLA",
       "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
       "summary": "Wedbush's Dan Ives says a Tesla-SpaceX merger has 80% odds by 2027, calling it a bid for the world's largest company.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-puts-tesla-spacex-062752394.html",
       "date": "2026-09-21T08:27:52+02:00"
-    },
-    {
-      "ticker": "TSLA",
-      "title": "Tesla's Free Cash Flow Went Negative. It Still Has a $43.5 Billion Cash Cushion.",
-      "summary": "The company's ability to fund an aggressive capital spending program might surprise some investors.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/teslas-free-cash-flow-went-052000206.html",
-      "date": "2026-09-21T07:20:00+02:00"
-    },
-    {
-      "ticker": "TSLA",
-      "title": "TSLA Stock Looks ‘Slightly Undervalued’ To This Analyst — But The Roadster Is Barely Part Of The Bull Case",
-      "summary": "Morningstar expects only about 2,000 annual Roadster sales, versus nearly 1.8 million total Tesla deliveries in 2026.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-looks-slightly-undervalued-030139093.html",
-      "date": "2026-09-21T05:01:39+02:00"
     }
   ],
   "fundamentals": [
@@ -670,7 +739,7 @@
     {
       "ticker": "RET.BR",
       "rev_growth": "+1.6%",
-      "pe": "10.3x",
+      "pe": "10.4x",
       "ev": "15.4x",
       "roe": "9.8%",
       "peg": "N/A",
@@ -695,7 +764,7 @@
           "130.1%"
         ],
         "Fwd P/E": [
-          "10.3x",
+          "10.4x",
           "N/A",
           "N/A",
           "N/A"
@@ -713,6 +782,126 @@
           "16.5%"
         ],
         "PEG": [
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "AAOI",
+      "rev_growth": "+86.4%",
+      "pe": "22.9x",
+      "ev": "-270.8x",
+      "roe": "-5.4%",
+      "peg": "0.78",
+      "net_margin": "-9.6%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+86.4%",
+          "+82.8%",
+          "+14.6%",
+          "-2.3%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "-9.6%",
+          "-8.4%",
+          "-74.9%",
+          "-25.8%",
+          "-29.8%"
+        ],
+        "Fwd P/E": [
+          "22.9x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "-270.8x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "-5.4%",
+          "-5.2%",
+          "-81.5%",
+          "-26.1%",
+          "-36.0%"
+        ],
+        "PEG": [
+          "0.78",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "AMD",
+      "rev_growth": "+50.1%",
+      "pe": "36.0x",
+      "ev": "94.7x",
+      "roe": "10.2%",
+      "peg": "0.57",
+      "net_margin": "15.6%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+50.1%",
+          "+34.3%",
+          "+13.7%",
+          "-3.9%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "15.6%",
+          "12.5%",
+          "6.4%",
+          "3.8%",
+          "5.6%"
+        ],
+        "Fwd P/E": [
+          "36.0x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "94.7x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "10.2%",
+          "6.9%",
+          "2.9%",
+          "1.5%",
+          "2.4%"
+        ],
+        "PEG": [
+          "0.57",
           "N/A",
           "N/A",
           "N/A",
@@ -781,9 +970,69 @@
       }
     },
     {
+      "ticker": "AMZN",
+      "rev_growth": "+19.6%",
+      "pe": "24.5x",
+      "ev": "17.0x",
+      "roe": "30.6%",
+      "peg": "1.51",
+      "net_margin": "17.4%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+19.6%",
+          "+12.4%",
+          "+11.0%",
+          "+11.8%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "17.4%",
+          "10.8%",
+          "9.3%",
+          "5.3%",
+          "-0.5%"
+        ],
+        "Fwd P/E": [
+          "24.5x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "17.0x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "30.6%",
+          "18.9%",
+          "20.7%",
+          "15.1%",
+          "-1.9%"
+        ],
+        "PEG": [
+          "1.51",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "28.7x",
+      "pe": "28.9x",
       "ev": "40.8x",
       "roe": "53.9%",
       "peg": "1.50",
@@ -811,7 +1060,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "28.7x",
+          "28.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -1383,7 +1632,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.1x",
+      "pe": "16.2x",
       "ev": "11.2x",
       "roe": "16.6%",
       "peg": "1.48",
@@ -1411,7 +1660,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.1x",
+          "16.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -1614,6 +1863,66 @@
       }
     },
     {
+      "ticker": "RMS.PA",
+      "rev_growth": "+1.6%",
+      "pe": "26.0x",
+      "ev": "18.3x",
+      "roe": "25.5%",
+      "peg": "3.01",
+      "net_margin": "28.0%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+1.6%",
+          "+5.5%",
+          "+13.0%",
+          "+15.7%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "28.0%",
+          "28.3%",
+          "30.3%",
+          "32.1%",
+          "29.0%"
+        ],
+        "Fwd P/E": [
+          "26.0x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "18.3x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "25.5%",
+          "24.0%",
+          "26.6%",
+          "28.4%",
+          "27.1%"
+        ],
+        "PEG": [
+          "3.01",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "SPCX",
       "rev_growth": "+91.9%",
       "pe": "87.6x",
@@ -1729,7 +2038,7 @@
     {
       "ticker": "SU.PA",
       "rev_growth": "+9.8%",
-      "pe": "24.0x",
+      "pe": "24.3x",
       "ev": "20.8x",
       "roe": "18.6%",
       "peg": "1.52",
@@ -1757,7 +2066,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.0x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
