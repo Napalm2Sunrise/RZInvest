@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Désactivation du cache du navigateur pour éviter l'affichage de données obsolètes -->
+  <!-- Désactivation du cache du navigateur -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -27,8 +27,8 @@
     .last-update { font-size: 11px; color: #64748b; }
 
     /* Nav Tabs */
-    .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
-    .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; text-align: center; }
+    .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+    .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px 4px; border-radius: 8px; font-weight: 600; font-size: 12px; cursor: pointer; text-align: center; }
     .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
 
     /* Content Sections */
@@ -47,7 +47,7 @@
     .news-summary { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 10px; }
     .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
 
-    /* --- HARMONISATION DES BADGES / INDICATEURS --- */
+    /* Badges / Indicateurs */
     .badge-tag {
       display: inline-block;
       padding: 4px 8px;
@@ -58,7 +58,6 @@
       line-height: 1.2;
     }
 
-    /* Couleurs Unifiées */
     .badge-green { background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
     .badge-yellow { background: rgba(234, 179, 8, 0.18); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
     .badge-red { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
@@ -144,6 +143,7 @@
     <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
     <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
+    <button class="tab-btn" onclick="switchTab('earnings-sec', this)">📅 Pub.</button>
   </div>
 
   <!-- Menu déroulant Tickers -->
@@ -188,6 +188,11 @@
     </div>
   </div>
 
+  <!-- SECTION EARNINGS / PUBLICATIONS -->
+  <div id="earnings-sec" class="section">
+    <div id="earnings-container"></div>
+  </div>
+
   <script>
     if (window.Telegram && window.Telegram.WebApp) {
       try { window.Telegram.WebApp.expand(); } catch (e) {}
@@ -196,14 +201,11 @@
     let globalData = null;
     let selectedTicker = 'ALL';
 
-    // Formate la date au format belge (Europe/Brussels): DD/MM/YYYY HH:mm
     function formatBelgianDateTime(dateStr) {
       if (!dateStr || dateStr === 'N/A') return 'N/A';
       
       const d = new Date(dateStr);
-      // Si la chaîne fournie n'est pas une date complète interprétable par Date()
       if (isNaN(d.getTime())) {
-        // Si elle contient déjà une date ou uniquement l'heure (ex: "23:41"), on la renvoie telle quelle
         return dateStr;
       }
 
@@ -218,7 +220,6 @@
       }).format(d).replace(',', '');
     }
 
-    // Fonction de classification tricolore : Vert / Jaune / Rouge
     function getMetricBadgeClass(metricName, valStr) {
       if (!valStr || valStr === "N/A") return "badge-neutral";
       
@@ -343,14 +344,11 @@
         const changeNum = parseFloat(p.change) || 0;
         const isPos = changeNum >= 0;
         
-        // Recherche des données fondamentales pour le ticker
         const f = fundList.find(item => item.ticker === p.ticker) || {};
         
-        // 1. SMA 200 (Inversion des couleurs : Under en VERT, Above en ROUGE)
         const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
         const smaClass = isUnder ? 'badge-green' : 'badge-red';
 
-        // 2. RSI14 Weekly
         let rsiHtml = '';
         if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
           const rsiVal = parseFloat(p.rsi14_weekly);
@@ -362,7 +360,6 @@
           }
         }
 
-        // 3. ATH 52W
         let athHtml = '';
         if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
           const athVal = parseFloat(p.ath_52w_pct);
@@ -378,12 +375,10 @@
           }
         }
 
-        // 4. PEG
         const pegVal = f.peg || 'N/A';
         const pegClass = getMetricBadgeClass('peg', pegVal);
         const pegHtml = `<div><span class="badge-tag ${pegClass}">PEG ${pegVal}</span></div>`;
 
-        // 5. FWD P/E
         const peVal = f.pe || 'N/A';
         const peClass = getMetricBadgeClass('pe', peVal);
         const peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
@@ -410,6 +405,9 @@
 
       // 3. Fundamentals
       renderFundamentals();
+
+      // 4. Earnings / Publications
+      renderEarnings();
     }
 
     function renderFundamentals() {
@@ -420,7 +418,6 @@
       const fundList = globalData.fundamentals || [];
 
       if (selectedTicker !== 'ALL') {
-        // Vue filtrée sur un seul ticker
         const fund = fundList.find(f => f.ticker === selectedTicker);
 
         if (!fund || !fund.quarters || fund.quarters.length === 0) {
@@ -447,7 +444,6 @@
         });
 
       } else {
-        // Vue globale : Récupère tous les tickers depuis globalData.prices
         thead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
@@ -480,6 +476,69 @@
             </tr>`;
         });
       }
+    }
+
+    function renderEarnings() {
+      const container = document.getElementById('earnings-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const allEarnings = globalData.earnings || [];
+      const filtered = selectedTicker === 'ALL' 
+        ? allEarnings 
+        : allEarnings.filter(e => e.ticker === selectedTicker);
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune publication répertoriée.</div>';
+        return;
+      }
+
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      const past = filtered.filter(e => e.date < todayStr)
+                            .sort((a, b) => a.date.localeCompare(b.date));
+      
+      const future = filtered.filter(e => e.date >= todayStr)
+                              .sort((a, b) => a.date.localeCompare(b.date));
+
+      let html = '';
+
+      if (future.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 12px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
+        future.forEach(e => {
+          html += createEarningsCard(e);
+        });
+      }
+
+      if (past.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 20px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
+        past.forEach(e => {
+          html += createEarningsCard(e);
+        });
+      }
+
+      container.innerHTML = html;
+    }
+
+    function createEarningsCard(e) {
+      const isPast = e.is_past;
+      const badgeClass = isPast ? 'badge-neutral' : 'badge-green';
+      const statusLabel = isPast ? 'Passée' : 'À venir';
+
+      return `
+        <div class="card" style="${isPast ? 'opacity: 0.7;' : ''}">
+          <div class="card-header" style="margin-bottom: 4px;">
+            <span class="ticker-name">${e.ticker}</span>
+            <span class="badge-tag ${badgeClass}">${statusLabel}</span>
+          </div>
+          <div style="font-size: 14px; font-weight: 700; color: #f8fafc; margin-top: 4px;">
+            📅 Date : <span style="color: #38bdf8;">${e.date_formatted}</span>
+          </div>
+          <div style="margin-top: 8px;">
+            <a class="news-link" href="${e.link}" target="_blank">🔗 Synthèse des résultats sur Yahoo Finance →</a>
+          </div>
+        </div>
+      `;
     }
 
     loadData();
