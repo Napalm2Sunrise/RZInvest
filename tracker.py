@@ -138,16 +138,18 @@ def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
     return next_earnings_str, earnings_list
 
 def get_financial_item(df, possible_keys, col):
+    """Extrait une ligne spécifique du compte de résultat ou du bilan pour une colonne donnée."""
     if df is None or df.empty or col not in df.columns:
         return None
     for key in possible_keys:
         if key in df.index:
             val = df.loc[key, col]
-            if not math.isnan(val):
+            if val is not None and not math.isnan(val):
                 return float(val)
     return None
 
 def get_annual_history(ticker, info):
+    """Génère l'historique financier annuel avec calcul d'Average Equity pour le ROE (aligné Stock Analysis)."""
     current_year = datetime.now().year
     years_labels = [f"{current_year} (TTM)"]
     history = {
@@ -159,6 +161,7 @@ def get_annual_history(ticker, info):
         "PEG": []
     }
 
+    # Données TTM de départ
     rev_growth = info.get('revenueGrowth')
     fwd_pe = info.get('forwardPE') or info.get('trailingPE')
     ev_ebitda = info.get('enterpriseToEbitda')
@@ -204,6 +207,7 @@ def get_annual_history(ticker, info):
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
+                # 1. Croissance du Chiffre d'Affaires
                 prev_yr = yr - 1
                 if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
                     rev_curr = item["revenue"]
@@ -216,18 +220,31 @@ def get_annual_history(ticker, info):
                 else:
                     history["Croit. CA."].append("N/A")
 
+                # 2. Marge Nette
                 if item["revenue"] and item["net_income"] and item["revenue"] > 0:
                     margin = (item["net_income"] / item["revenue"]) * 100
                     history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                 else:
                     history["Marge Net %"].append("N/A")
 
-                if item["net_income"] and item["equity"] and item["equity"] > 0:
+                # 3. ROE basé sur l'Equity Moyenne (Methode Stock Analysis)
+                if item["net_income"] and prev_yr in data_by_year and data_by_year[prev_yr]["equity"] and item["equity"]:
+                    eq_end = item["equity"]
+                    eq_start = data_by_year[prev_yr]["equity"]
+                    avg_equity = (eq_end + eq_start) / 2.0
+                    if avg_equity > 0:
+                        roe_val = (item["net_income"] / avg_equity) * 100
+                        history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
+                    else:
+                        history["ROE"].append("N/A")
+                elif item["net_income"] and item["equity"] and item["equity"] > 0:
+                    # Fallback sur l'equity simple
                     roe_val = (item["net_income"] / item["equity"]) * 100
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
 
+                # Non disponibles sur les bilans historiques simples
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
                 history["PEG"].append("N/A")
