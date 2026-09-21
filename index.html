@@ -495,24 +495,28 @@
 
       const todayStr = new Date().toISOString().split('T')[0];
 
+      // Tri chronologique des publications passées (30 jours max), du plus ancien au plus récent
       const past = filtered.filter(e => e.date < todayStr)
                             .sort((a, b) => a.date.localeCompare(b.date));
       
+      // Tri chronologique des publications à venir, du plus proche au plus lointain
       const future = filtered.filter(e => e.date >= todayStr)
                               .sort((a, b) => a.date.localeCompare(b.date));
 
       let html = '';
 
-      if (future.length > 0) {
-        html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 12px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
-        future.forEach(e => {
+      // 1. Publications récentes déjà passées en PREMIER
+      if (past.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 12px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
+        past.forEach(e => {
           html += createEarningsCard(e);
         });
       }
 
-      if (past.length > 0) {
-        html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 20px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
-        past.forEach(e => {
+      // 2. Publications à venir juste en dessous
+      if (future.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 20px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
+        future.forEach(e => {
           html += createEarningsCard(e);
         });
       }
@@ -526,7 +530,7 @@
       const statusLabel = isPast ? 'Passée' : 'À venir';
 
       return `
-        <div class="card" style="${isPast ? 'opacity: 0.7;' : ''}">
+        <div class="card" style="${isPast ? 'opacity: 0.75;' : ''}">
           <div class="card-header" style="margin-bottom: 4px;">
             <span class="ticker-name">${e.ticker}</span>
             <span class="badge-tag ${badgeClass}">${statusLabel}</span>
