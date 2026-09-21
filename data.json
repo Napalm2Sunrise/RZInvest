@@ -1,16 +1,16 @@
 {
-  "updated_at": "21/09/2026 à 09:28",
+  "updated_at": "21/09/2026 à 10:14",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.75,
-      "change": 0.23,
+      "price": 65.2,
+      "change": -0.61,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.0%",
-      "sma200_pct": 2.0,
+      "sma200": "200 W-SMA Above +1.1%",
+      "sma200_pct": 1.1,
       "is_under": false,
-      "rsi14_weekly": 40.6,
-      "ath_52w_pct": -17.0,
+      "rsi14_weekly": 39.4,
+      "ath_52w_pct": -17.7,
       "earnings": "N/A"
     },
     {
@@ -27,26 +27,26 @@
     },
     {
       "ticker": "HOMI.BR",
-      "price": 18.0,
-      "change": 0.9,
+      "price": 17.9,
+      "change": 0.34,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.9% 🔥",
-      "sma200_pct": -0.9,
+      "sma200": "200 W-SMA Under -1.4% 🔥",
+      "sma200_pct": -1.4,
       "is_under": true,
-      "rsi14_weekly": 40.0,
-      "ath_52w_pct": -10.9,
+      "rsi14_weekly": 39.2,
+      "ath_52w_pct": -11.4,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 64.3,
-      "change": -0.46,
+      "price": 64.1,
+      "change": -0.77,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.3%",
-      "sma200_pct": 1.3,
+      "sma200": "200 W-SMA Above +1.0%",
+      "sma200_pct": 1.0,
       "is_under": false,
-      "rsi14_weekly": 41.8,
-      "ath_52w_pct": -10.2,
+      "rsi14_weekly": 41.3,
+      "ath_52w_pct": -10.5,
       "earnings": "13/11/2026"
     },
     {
@@ -63,14 +63,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1487.4,
-      "change": 2.86,
+      "price": 1485.6,
+      "change": 2.74,
       "currency": "€",
-      "sma200": "200 W-SMA Above +78.9%",
-      "sma200_pct": 78.9,
+      "sma200": "200 W-SMA Above +78.7%",
+      "sma200_pct": 78.7,
       "is_under": false,
-      "rsi14_weekly": 55.2,
-      "ath_52w_pct": -13.6,
+      "rsi14_weekly": 55.1,
+      "ath_52w_pct": -13.7,
       "earnings": "14/10/2026"
     },
     {
@@ -183,14 +183,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 401.8,
-      "change": -0.25,
+      "price": 403.6,
+      "change": 0.2,
       "currency": "€",
-      "sma200": "200 W-SMA Under -38.1% 🔥",
-      "sma200_pct": -38.1,
+      "sma200": "200 W-SMA Under -37.9% 🔥",
+      "sma200_pct": -37.9,
       "is_under": true,
-      "rsi14_weekly": 30.6,
-      "ath_52w_pct": -38.4,
+      "rsi14_weekly": 31.0,
+      "ath_52w_pct": -38.1,
       "earnings": "N/A"
     },
     {
@@ -255,26 +255,26 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 291.6,
-      "change": 2.05,
+      "price": 291.45,
+      "change": 1.99,
       "currency": "€",
-      "sma200": "200 W-SMA Above +36.4%",
-      "sma200_pct": 36.4,
+      "sma200": "200 W-SMA Above +36.3%",
+      "sma200_pct": 36.3,
       "is_under": false,
-      "rsi14_weekly": 56.1,
-      "ath_52w_pct": -6.2,
+      "rsi14_weekly": 56.0,
+      "ath_52w_pct": -6.3,
       "earnings": "N/A"
     },
     {
       "ticker": "TTE.PA",
-      "price": 78.6,
-      "change": -0.91,
+      "price": 79.07,
+      "change": -0.32,
       "currency": "€",
-      "sma200": "200 W-SMA Above +29.7%",
-      "sma200_pct": 29.7,
+      "sma200": "200 W-SMA Above +30.4%",
+      "sma200_pct": 30.4,
       "is_under": false,
-      "rsi14_weekly": 59.1,
-      "ath_52w_pct": -3.0,
+      "rsi14_weekly": 59.9,
+      "ath_52w_pct": -2.4,
       "earnings": "29/10/2026"
     },
     {
@@ -303,20 +303,6 @@
     }
   ],
   "news": [
-    {
-      "ticker": "ASML.AS",
-      "title": "Better Artificial Intelligence Stock: Arm Holdings vs. ASML",
-      "summary": "Arm trades at a 125x forward P/E versus ASML's 27.9x, yet both command premium valuations for their monopolistic positions in mobile and chip manufacturing, respectively.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/better-artificial-intelligence-stock-arm-015219848.html",
-      "date": "2026-09-21T03:52:19+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "title": "ASML (ASML) and Chip Giants like TSMC Plot a Bigger Canvas for Building AI Chips",
-      "summary": "On September 8, 2026, Reuters reported that ASML Holding N.V. (NASDAQ:ASML) plans to work with major customers. It includes Taiwan Semiconductor Manufacturing Company Limited (NYSE:TSM), Nvidia, Intel...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/asml-asml-chip-giants-tsmc-214129428.html",
-      "date": "2026-09-20T23:41:29+02:00"
-    },
     {
       "ticker": "AVGO",
       "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
@@ -353,13 +339,6 @@
       "date": "2026-09-20T17:43:31+02:00"
     },
     {
-      "ticker": "GEV",
-      "title": "How GE’s Vineyard Wind Truce and Engine Supply Deal Will Impact General Electric (GE) Investors",
-      "summary": "General Electric’s GE Vernova unit has resolved its legal dispute with Vineyard Wind, while GE Aerospace has addressed a GE9X engine durability issue and announced an US$11.75 billion acquisition of C...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vineyard-wind-truce-engine-080920257.html",
-      "date": "2026-09-20T10:09:20+02:00"
-    },
-    {
       "ticker": "GOOG",
       "title": "How small businesses should be deploying AI, according to Codie Sanchez",
       "summary": "Contrarian Thinking founder and CEO Codie Sanchez highlights the most direct way that small business owners should be utilizing AI to expand their customer base.",
@@ -386,6 +365,13 @@
       "summary": "Alphabet (NasdaqGS:GOOGL) unit Google DeepMind has been named in a new class-action lawsuit targeting leading AI labs. The complaint challenges an industry-funded safety oversight body that would coor...",
       "link": "https://finance.yahoo.com/technology/ai/articles/does-alphabet-googl-face-ai-021459890.html",
       "date": "2026-09-21T04:14:59+02:00"
+    },
+    {
+      "ticker": "META",
+      "title": "Meta Platforms (META) Faces A Privacy Probe In France",
+      "summary": "Meta Platforms (NasdaqGS:META) faces a French privacy probe into its AI-powered smart glasses following recent complaints about data collection. Regulators in France are examining whether the AI glass...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-faces-privacy-071221190.html",
+      "date": "2026-09-21T09:12:21+02:00"
     },
     {
       "ticker": "META",
@@ -424,31 +410,31 @@
     },
     {
       "ticker": "NVDA",
-      "title": "These Recent Moves Are Brilliant. Here's Why Robinhood Is the Most Important Player in Crypto Right Now.",
-      "summary": "Robinhood appears to be rapidly stealing market share from one of the crypto sector's entrenched competitors.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/recent-moves-brilliant-heres-why-065000398.html",
-      "date": "2026-09-21T08:50:00+02:00"
+      "title": "Cerebras Shares Are Coming Out of Lockup in Waves. Here's the Date That Matters Most.",
+      "summary": "The waves of new supply get bigger from here, and the last one comes with a hard deadline.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/cerebras-shares-coming-lockup-waves-080101779.html",
+      "date": "2026-09-21T10:01:01+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "What Is Sovereign AI? Inside Wall Street's Next Big AI Trade",
-      "summary": "Sovereign AI, keeping control of your own data, is becoming Wall Street's next big AI trade for Nvidia and Palantir.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/sovereign-ai-inside-wall-streets-064044091.html",
-      "date": "2026-09-21T08:40:44+02:00"
+      "title": "Nvidia's CEO Huang says there's a ‘0% chance’ AI ends the world — 4 AI giants are sued over an alleged pact to slow it",
+      "summary": "Jensen Huang calls AI extinction warnings a doomsday narrative. Four subscribers say the companies that raised them made an illegal pact.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+      "date": "2026-09-21T09:35:00+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Billionaire Tim Draper Predicts Bitcoin Will Hit $250,000 Within 2 Years. Here's What Needs to Happen.",
-      "summary": "Could Bitcoin really triple in value within just 24 months?",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/billionaire-tim-draper-predicts-bitcoin-062000744.html",
-      "date": "2026-09-21T08:20:00+02:00"
+      "title": "Why I'm Still Not Buying The Trade Desk Stock After a 90% Drop",
+      "summary": "The stock trades near $14. The problem is what the business is guiding toward.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/why-im-still-not-buying-073301714.html",
+      "date": "2026-09-21T09:33:01+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Investing $150 per Month in This S&P 500 ETF Could Grow Into $300,000 Over 30 Years. Here's the Math.",
-      "summary": "Stay consistent and let time do the heavy lifting for you.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/investing-150-per-month-p-055000112.html",
-      "date": "2026-09-21T07:50:00+02:00"
+      "title": "Jensen Huang Isn't 'Afraid' of Paying $8 Billion in California's Billionaire Tax: Nvidia CEO Says This Is What Scares Him Instead",
+      "summary": "Nvidia Corp. (NASDAQ:NVDA) CEO Jensen Huang says he would view paying billions of dollars in additional taxes as a privilege as California considers a one-time levy on the state’s wealthiest residents...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-isnt-afraid-paying-065437968.html",
+      "date": "2026-09-21T08:54:37+02:00"
     },
     {
       "ticker": "ONON",
@@ -466,6 +452,13 @@
     },
     {
       "ticker": "SPCX",
+      "title": "Nvidia's CEO Huang says there's a ‘0% chance’ AI ends the world — 4 AI giants are sued over an alleged pact to slow it",
+      "summary": "Jensen Huang calls AI extinction warnings a doomsday narrative. Four subscribers say the companies that raised them made an illegal pact.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-ceo-huang-says-theres-073500742.html",
+      "date": "2026-09-21T09:35:00+02:00"
+    },
+    {
+      "ticker": "SPCX",
       "title": "Dan Ives Puts Tesla-SpaceX Merger at 80% Odds: Will It Become the World's Biggest Company?",
       "summary": "Wedbush's Dan Ives says a Tesla-SpaceX merger has 80% odds by 2027, calling it a bid for the world's largest company.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/dan-ives-puts-tesla-spacex-062752394.html",
@@ -477,13 +470,6 @@
       "summary": "Morningstar expects only about 2,000 annual Roadster sales, versus nearly 1.8 million total Tesla deliveries in 2026.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-looks-slightly-undervalued-030139093.html",
       "date": "2026-09-21T05:01:39+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "One Vanguard ETF Is Betting Big on SpaceX, But Is 20% Too Big a Bet?",
-      "summary": "One Vanguard ETF's SpaceX stake jumped 85.2% in two months, pushing concentration risk toward levels investors can't ignore.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/one-vanguard-etf-betting-big-023903708.html",
-      "date": "2026-09-21T04:39:03+02:00"
     },
     {
       "ticker": "SPGI",
@@ -532,7 +518,7 @@
     {
       "ticker": "AED.BR",
       "rev_growth": "+104.3%",
-      "pe": "11.9x",
+      "pe": "11.8x",
       "ev": "28.8x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -560,7 +546,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.9x",
+          "11.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -624,7 +610,7 @@
     {
       "ticker": "HOMI.BR",
       "rev_growth": "+18.2%",
-      "pe": "14.4x",
+      "pe": "14.3x",
       "ev": "24.4x",
       "roe": "11.2%",
       "peg": "N/A",
@@ -652,7 +638,7 @@
           "175.8%"
         ],
         "Fwd P/E": [
-          "14.4x",
+          "14.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -684,7 +670,7 @@
     {
       "ticker": "RET.BR",
       "rev_growth": "+1.6%",
-      "pe": "10.4x",
+      "pe": "10.3x",
       "ev": "15.4x",
       "roe": "9.8%",
       "peg": "N/A",
@@ -709,7 +695,7 @@
           "130.1%"
         ],
         "Fwd P/E": [
-          "10.4x",
+          "10.3x",
           "N/A",
           "N/A",
           "N/A"
@@ -797,7 +783,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "28.8x",
+      "pe": "28.7x",
       "ev": "40.8x",
       "roe": "53.9%",
       "peg": "1.50",
@@ -825,7 +811,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "28.8x",
+          "28.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -1397,7 +1383,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.0x",
+      "pe": "16.1x",
       "ev": "11.2x",
       "roe": "16.6%",
       "peg": "1.48",
@@ -1425,7 +1411,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.0x",
+          "16.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -1803,7 +1789,7 @@
     {
       "ticker": "TTE.PA",
       "rev_growth": "+27.8%",
-      "pe": "8.8x",
+      "pe": "8.9x",
       "ev": "5.3x",
       "roe": "14.5%",
       "peg": "0.84",
@@ -1831,7 +1817,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.8x",
+          "8.9x",
           "N/A",
           "N/A",
           "N/A",
