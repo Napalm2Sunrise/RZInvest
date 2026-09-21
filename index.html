@@ -379,8 +379,12 @@
 
         if (data.status === 'ok' && data.items && data.items.length > 0) {
           newsCont.innerHTML = '';
-          data.items.slice(0, 8).forEach(item => {
-            // Nettoyage sommaire de la description HTML renvoyée par le RSS
+
+          // Tri explicite des articles du plus récent au plus ancien
+          const sortedItems = data.items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+          sortedItems.slice(0, 8).forEach(item => {
+            // Nettoyage de la description HTML renvoyée par le RSS
             const tmpDiv = document.createElement("DIV");
             tmpDiv.innerHTML = item.description || "";
             const cleanSummary = tmpDiv.textContent || tmpDiv.innerText || item.title;
@@ -431,7 +435,7 @@
             </div>`;
         });
       } else {
-        // 2. VUE D'UN TICKER UNIQUE : Chargement Google News RSS en temps réel
+        // 2. VUE D'UN TICKER UNIQUE : Chargement Google News RSS trié en temps réel
         fetchGoogleNewsForTicker(selectedTicker);
       }
     }
