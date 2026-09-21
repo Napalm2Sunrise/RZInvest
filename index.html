@@ -85,6 +85,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       -webkit-overflow-scrolling: touch;
+      position: relative;
     }
 
     .ratios-table {
@@ -103,6 +104,13 @@
       font-size: 11px;
       text-transform: uppercase;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .ratios-table th.clickable-metric {
+      cursor: pointer;
+      color: #38bdf8;
+      text-decoration: underline dotted;
     }
 
     .ratios-table td {
@@ -127,6 +135,25 @@
       left: 0;
       background: #1e293b;
       z-index: 1;
+    }
+
+    .ratios-table .ticker-cell.clickable-metric {
+      cursor: pointer;
+      text-decoration: underline dotted;
+    }
+
+    /* Style Info-bulle Modal / Popup */
+    .tooltip-box {
+      display: none;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      border: 1px solid #38bdf8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -168,18 +195,13 @@
 
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
+    <!-- Zone d'affichage dynamique de l'info-bulle -->
+    <div id="metric-tooltip" class="tooltip-box"></div>
+
     <div class="table-container">
       <table class="ratios-table">
         <thead id="ratios-thead">
-          <tr>
-            <th class="ticker-cell">Tickers</th>
-            <th>Croit. CA.</th>
-            <th>Fwd P/E</th>
-            <th>EV/EBITDA</th>
-            <th>ROE</th>
-            <th>PEG</th>
-            <th>Marge Net %</th>
-          </tr>
+          <!-- Injecté dynamiquement -->
         </thead>
         <tbody id="ratios-tbody">
           <!-- Injecté dynamiquement -->
@@ -200,6 +222,31 @@
 
     let globalData = null;
     let selectedTicker = 'ALL';
+
+    // Dictionnaire des définitions des métriques
+    const METRIC_DEFINITIONS = {
+      "Croit. CA.": "<b>Croissance du Chiffre d'Affaires :</b> Évolution des ventes sur 1 an. <br>• > 10% = Fort développement (Vert)<br>• < 0% = Déclin des ventes (Rouge)",
+      "Fwd P/E": "<b>Forward Price/Earnings (P/E) :</b> Ratio Cours/Bénéfice estimé sur les 12 prochains mois.<br>• < 20 = Attractif (Vert)<br>• > 35 = Valorisation élevée (Rouge)",
+      "EV/EBITDA": "<b>Valeur d'entreprise / EBITDA :</b> Mesure le prix de la société par rapport à sa rentabilité opérationnelle globale.<br>• < 12 = Raisonnable (Vert)<br>• > 22 = Cher (Rouge)",
+      "ROE": "<b>Return on Equity (Rentabilité des fonds propres) :</b> Capacité à générer du profit avec l'argent des actionnaires.<br>• > 15% = Très efficient (Vert)<br>• < 8% = Faible rentabilité (Rouge)",
+      "PEG": "<b>Price/Earnings-to-Growth :</b> P/E divisé par le taux de croissance des bénéfices.<br>• < 1.0 = Sous-évalué par rapport à sa croissance (Vert)<br>• > 2.0 = Surévalué (Rouge)",
+      "Marge Net %": "<b>Marge Nette :</b> Pourcentage de profit net généré pour chaque euro de chiffre d'affaires.<br>• > 15% = Excellente rentabilité (Vert)<br>• < 5% = Marge faible (Rouge)"
+    };
+
+    function showTooltip(metricKey) {
+      const box = document.getElementById('metric-tooltip');
+      const def = METRIC_DEFINITIONS[metricKey];
+      if (!def) return;
+
+      if (box.style.display === 'block' && box.getAttribute('data-active') === metricKey) {
+        box.style.display = 'none';
+        box.removeAttribute('data-active');
+      } else {
+        box.innerHTML = def + `<div style="margin-top:6px; font-size:10px; opacity:0.8; text-align:right;">(Cliquez à nouveau pour fermer)</div>`;
+        box.style.display = 'block';
+        box.setAttribute('data-active', metricKey);
+      }
+    }
 
     function formatBelgianDateTime(dateStr) {
       if (!dateStr || dateStr === 'N/A') return 'N/A';
@@ -311,6 +358,9 @@
 
     function renderAll() {
       if(!globalData) return;
+
+      // Masquer l'infobulle au changement
+      document.getElementById('metric-tooltip').style.display = 'none';
 
       // 1. News
       const newsCont = document.getElementById('news-container');
@@ -425,14 +475,14 @@
           return;
         }
 
-        let headHtml = `<tr><th class="ticker-cell">Métrique</th>`;
+        let headHtml = `<tr><th class="ticker-cell">Métrique ℹ️</th>`;
         fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
         headHtml += `</tr>`;
         thead.innerHTML = headHtml;
 
         const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
         metrics.forEach(m => {
-          let rowHtml = `<tr><td class="ticker-cell">${m}</td>`;
+          let rowHtml = `<tr><td class="ticker-cell clickable-metric" onclick="showTooltip('${m}')">${m} ℹ️</td>`;
           const vals = (fund.history && fund.history[m]) || [];
           fund.quarters.forEach((_, idx) => {
             const val = vals[idx] || 'N/A';
@@ -447,12 +497,12 @@
         thead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
-            <th>Croit. CA.</th>
-            <th>Fwd P/E</th>
-            <th>EV/EBITDA</th>
-            <th>ROE</th>
-            <th>PEG</th>
-            <th>Marge Net %</th>
+            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('EV/EBITDA')">EV/EBITDA ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('ROE')">ROE ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('PEG')">PEG ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net % ℹ️</th>
           </tr>`;
 
         const allTickers = (globalData.prices || []).map(p => p.ticker);
@@ -495,17 +545,14 @@
 
       const todayStr = new Date().toISOString().split('T')[0];
 
-      // Tri chronologique des publications passées (30 jours max), du plus ancien au plus récent
       const past = filtered.filter(e => e.date < todayStr)
                             .sort((a, b) => a.date.localeCompare(b.date));
       
-      // Tri chronologique des publications à venir, du plus proche au plus lointain
       const future = filtered.filter(e => e.date >= todayStr)
                               .sort((a, b) => a.date.localeCompare(b.date));
 
       let html = '';
 
-      // 1. Publications récentes déjà passées en PREMIER
       if (past.length > 0) {
         html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 12px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
         past.forEach(e => {
@@ -513,7 +560,6 @@
         });
       }
 
-      // 2. Publications à venir juste en dessous
       if (future.length > 0) {
         html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 20px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
         future.forEach(e => {
