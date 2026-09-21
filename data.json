@@ -1,5 +1,5 @@
 {
-  "updated_at": "21/09/2026 à 13:12",
+  "updated_at": "21/09/2026 à 13:32",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -39,14 +39,14 @@
     },
     {
       "ticker": "RET.BR",
-      "price": 64.7,
-      "change": 0.15,
+      "price": 64.5,
+      "change": -0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.9%",
-      "sma200_pct": 1.9,
+      "sma200": "200 W-SMA Above +1.6%",
+      "sma200_pct": 1.6,
       "is_under": false,
-      "rsi14_weekly": 43.2,
-      "ath_52w_pct": -9.6,
+      "rsi14_weekly": 42.5,
+      "ath_52w_pct": -9.9,
       "earnings": "13/11/2026"
     },
     {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1488.8,
-      "change": 2.96,
+      "price": 1488.6,
+      "change": 2.95,
       "currency": "€",
       "sma200": "200 W-SMA Above +79.0%",
       "sma200_pct": 79.0,
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 407.65,
-      "change": 1.2,
+      "price": 407.05,
+      "change": 1.06,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.2% 🔥",
-      "sma200_pct": -37.2,
+      "sma200": "200 W-SMA Under -37.3% 🔥",
+      "sma200_pct": -37.3,
       "is_under": true,
-      "rsi14_weekly": 32.7,
-      "ath_52w_pct": -37.5,
+      "rsi14_weekly": 32.4,
+      "ath_52w_pct": -37.6,
       "earnings": "26/01/2027"
     },
     {
@@ -267,8 +267,8 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1328.0,
-      "change": -0.26,
+      "price": 1328.5,
+      "change": -0.23,
       "currency": "€",
       "sma200": "200 W-SMA Under -34.2% 🔥",
       "sma200_pct": -34.2,
@@ -303,26 +303,26 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 295.05,
-      "change": 3.25,
+      "price": 294.9,
+      "change": 3.2,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.0%",
-      "sma200_pct": 38.0,
+      "sma200": "200 W-SMA Above +37.9%",
+      "sma200_pct": 37.9,
       "is_under": false,
       "rsi14_weekly": 57.7,
-      "ath_52w_pct": -5.1,
+      "ath_52w_pct": -5.2,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TTE.PA",
-      "price": 79.15,
-      "change": -0.21,
+      "price": 79.1,
+      "change": -0.28,
       "currency": "€",
-      "sma200": "200 W-SMA Above +30.6%",
-      "sma200_pct": 30.6,
+      "sma200": "200 W-SMA Above +30.5%",
+      "sma200_pct": 30.5,
       "is_under": false,
-      "rsi14_weekly": 60.7,
-      "ath_52w_pct": -2.3,
+      "rsi14_weekly": 60.6,
+      "ath_52w_pct": -2.4,
       "earnings": "29/10/2026"
     },
     {
@@ -353,6 +353,13 @@
   "news": [
     {
       "ticker": "AMZN",
+      "title": "Here’s What to Expect From AI’s Two Biggest 2026 Spenders in 2027",
+      "summary": "Amazon and Alphabet are together pouring close to $400 billion into AI infrastructure this year, and the race to turn that mountain of spending into actual profit is about to get very interesting head...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/expect-ai-two-biggest-2026-110628014.html",
+      "date": "2026-09-21T13:06:28+02:00"
+    },
+    {
+      "ticker": "AMZN",
       "title": "2 Unstoppable Growth Stocks to Buy and Hold for the Next Decade",
       "summary": "Apple and Amazon are two top growth stocks to own over the next decade.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/2-unstoppable-growth-stocks-buy-100500249.html",
@@ -364,13 +371,6 @@
       "summary": "If Mike and Jackie Bezos never sold, that stake would have enjoyed a return of up to 12,000,000%.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezoss-parents-sank-245-100000600.html",
       "date": "2026-09-21T12:00:00+02:00"
-    },
-    {
-      "ticker": "AMZN",
-      "title": "If I Were in My 20s, I'd Buy These 2 Trillion-Dollar Stocks and Hold Them Forever",
-      "summary": "Buying a slice of America's largest technology giants can help young investors build a secure financial future.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-2-084400679.html",
-      "date": "2026-09-21T10:44:00+02:00"
     },
     {
       "ticker": "AVGO",
@@ -409,17 +409,17 @@
     },
     {
       "ticker": "GOOG",
-      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
-      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
-      "date": "2026-09-21T12:54:57+02:00"
+      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
+      "date": "2026-09-21T13:17:59+02:00"
     },
     {
       "ticker": "GOOG",
-      "title": "Google fined 400 million euro for GDPR breach",
-      "summary": "The Data Protection Commission examined the lawfulness and fairness of its processing of location data and Google’s accountability obligations.",
-      "link": "https://finance.yahoo.com/news/google-fined-400-million-euro-103623026.html",
-      "date": "2026-09-21T12:36:23+02:00"
+      "title": "Here’s What to Expect From AI’s Two Biggest 2026 Spenders in 2027",
+      "summary": "Amazon and Alphabet are together pouring close to $400 billion into AI infrastructure this year, and the race to turn that mountain of spending into actual profit is about to get very interesting head...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/expect-ai-two-biggest-2026-110628014.html",
+      "date": "2026-09-21T13:06:28+02:00"
     },
     {
       "ticker": "META",
@@ -430,10 +430,24 @@
     },
     {
       "ticker": "META",
+      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
+      "date": "2026-09-21T13:17:59+02:00"
+    },
+    {
+      "ticker": "META",
       "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
       "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
       "date": "2026-09-21T12:54:57+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
+      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
+      "date": "2026-09-21T13:17:59+02:00"
     },
     {
       "ticker": "MSFT",
@@ -448,13 +462,6 @@
       "summary": "Buying a slice of America's largest technology giants can help young investors build a secure financial future.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-2-084400679.html",
       "date": "2026-09-21T10:44:00+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "title": "NOK Stock Rises Overnight: Nokia’s EURO STOXX 50 Index Return On Monday Adds To AI-Fueled Momentum",
-      "summary": "Nokia will rejoin the top Eurozone index a year after it was dropped.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nok-stock-rises-overnight-nokia-052134028.html",
-      "date": "2026-09-21T07:21:34+02:00"
     },
     {
       "ticker": "NVDA",
@@ -493,17 +500,17 @@
     },
     {
       "ticker": "SPCX",
-      "title": "3 notable business takes that flew under the radar this week",
-      "summary": "Inside the latest chatter from important business leaders.",
-      "link": "https://finance.yahoo.com/markets/article/3-notable-business-takes-that-flew-under-the-radar-this-week-120000112.html",
-      "date": "2026-09-20T14:00:00+02:00"
-    },
-    {
-      "ticker": "SPCX",
       "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
       "summary": "Morgan Stanley has identified expanding technological and operational links between SpaceX (NASDAQ:SPCX) and Tesla (NASDAQ:TSLA), as the two Elon Musk-led companies pursue applications of artificial i...",
       "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-highlights-growing-ai-102603810.html",
       "date": "2026-09-21T12:26:03+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "SpaceX and Tesla’s AI linkup is getting deeper. Here’s what Morgan Stanley sees",
+      "summary": "Investing.com -- Morgan Stanley said SpaceX and Tesla are deepening their technological and operational ties as both companies pursue physical AI, the application of artificial intelligence to the rea...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
+      "date": "2026-09-21T10:37:42+02:00"
     },
     {
       "ticker": "SPGI",
@@ -535,17 +542,17 @@
     },
     {
       "ticker": "TSLA",
+      "title": "Market Chatter: Tesla's Racial Discrimination Trial in California Begins Today",
+      "summary": "Tesla (TSLA) is facing a California civil rights trial over allegations that Black workers at its Fr",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tesla-apos-racial-110632807.html",
+      "date": "2026-09-21T13:06:32+02:00"
+    },
+    {
+      "ticker": "TSLA",
       "title": "This Week In Electric Vehicles - Advancing Future Mobility at EV World 2026 Conference",
       "summary": "The Electric Vehicles Exhibition and Conference 2026, \"EV World,\" has announced its executive conference agenda focused on advancing the next era of mobility. Hosted in Dubai, the event gathers indust...",
       "link": "https://finance.yahoo.com/energy/articles/week-electric-vehicles-advancing-future-103942015.html",
       "date": "2026-09-21T12:39:42+02:00"
-    },
-    {
-      "ticker": "TSLA",
-      "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
-      "summary": "Morgan Stanley has identified expanding technological and operational links between SpaceX (NASDAQ:SPCX) and Tesla (NASDAQ:TSLA), as the two Elon Musk-led companies pursue applications of artificial i...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-highlights-growing-ai-102603810.html",
-      "date": "2026-09-21T12:26:03+02:00"
     }
   ],
   "fundamentals": [
