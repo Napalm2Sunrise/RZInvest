@@ -1,16 +1,16 @@
 {
-  "updated_at": "21/09/2026 à 13:32",
+  "updated_at": "21/09/2026 à 14:16",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.25,
-      "change": -0.53,
+      "price": 65.35,
+      "change": -0.38,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.2%",
-      "sma200_pct": 1.2,
+      "sma200": "200 W-SMA Above +1.3%",
+      "sma200_pct": 1.3,
       "is_under": false,
-      "rsi14_weekly": 39.2,
-      "ath_52w_pct": -17.7,
+      "rsi14_weekly": 39.4,
+      "ath_52w_pct": -17.5,
       "earnings": "N/A"
     },
     {
@@ -27,14 +27,14 @@
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.88,
-      "change": 0.22,
+      "price": 17.92,
+      "change": 0.45,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.5% 🔥",
-      "sma200_pct": -1.5,
+      "sma200": "200 W-SMA Under -1.3% 🔥",
+      "sma200_pct": -1.3,
       "is_under": true,
-      "rsi14_weekly": 39.3,
-      "ath_52w_pct": -11.5,
+      "rsi14_weekly": 39.8,
+      "ath_52w_pct": -11.3,
       "earnings": "N/A"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1488.6,
-      "change": 2.95,
+      "price": 1487.2,
+      "change": 2.85,
       "currency": "€",
-      "sma200": "200 W-SMA Above +79.0%",
-      "sma200_pct": 79.0,
+      "sma200": "200 W-SMA Above +78.8%",
+      "sma200_pct": 78.8,
       "is_under": false,
-      "rsi14_weekly": 55.7,
-      "ath_52w_pct": -13.5,
+      "rsi14_weekly": 55.6,
+      "ath_52w_pct": -13.6,
       "earnings": "14/10/2026"
     },
     {
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 407.05,
-      "change": 1.06,
+      "price": 407.6,
+      "change": 1.19,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.3% 🔥",
-      "sma200_pct": -37.3,
+      "sma200": "200 W-SMA Under -37.2% 🔥",
+      "sma200_pct": -37.2,
       "is_under": true,
-      "rsi14_weekly": 32.4,
-      "ath_52w_pct": -37.6,
+      "rsi14_weekly": 32.6,
+      "ath_52w_pct": -37.5,
       "earnings": "26/01/2027"
     },
     {
@@ -267,14 +267,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1328.5,
-      "change": -0.23,
+      "price": 1329.0,
+      "change": -0.19,
       "currency": "€",
-      "sma200": "200 W-SMA Under -34.2% 🔥",
-      "sma200_pct": -34.2,
+      "sma200": "200 W-SMA Under -34.1% 🔥",
+      "sma200_pct": -34.1,
       "is_under": true,
       "rsi14_weekly": 29.2,
-      "ath_52w_pct": -41.0,
+      "ath_52w_pct": -40.9,
       "earnings": "11/02/2027"
     },
     {
@@ -303,25 +303,25 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 294.9,
-      "change": 3.2,
+      "price": 295.7,
+      "change": 3.48,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.9%",
-      "sma200_pct": 37.9,
+      "sma200": "200 W-SMA Above +38.3%",
+      "sma200_pct": 38.3,
       "is_under": false,
-      "rsi14_weekly": 57.7,
-      "ath_52w_pct": -5.2,
+      "rsi14_weekly": 58.0,
+      "ath_52w_pct": -4.9,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TTE.PA",
-      "price": 79.1,
-      "change": -0.28,
+      "price": 79.09,
+      "change": -0.29,
       "currency": "€",
       "sma200": "200 W-SMA Above +30.5%",
       "sma200_pct": 30.5,
       "is_under": false,
-      "rsi14_weekly": 60.6,
+      "rsi14_weekly": 60.5,
       "ath_52w_pct": -2.4,
       "earnings": "29/10/2026"
     },
@@ -352,6 +352,20 @@
   ],
   "news": [
     {
+      "ticker": "AMD",
+      "title": "AMD's 8% Surge Hints at Something Bigger",
+      "summary": "Strong demand, tight supply and potential price increases are giving investors a new reason to watch the chipmaker",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
+      "date": "2026-09-21T14:14:30+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "title": "Stocks gain on AI optimism; lower oil helps bonds",
+      "summary": "By Amanda Cooper LONDON, Sept 21 (Reuters) - Global stocks rose on Monday, as evidence of booming AI demand lifted tech shares, and oil fell on reports that more supply was leaving the Gulf than",
+      "link": "https://finance.yahoo.com/markets/world-indices/articles/tech-leads-shares-higher-asia-004028094.html",
+      "date": "2026-09-21T13:54:59+02:00"
+    },
+    {
       "ticker": "AMZN",
       "title": "Here’s What to Expect From AI’s Two Biggest 2026 Spenders in 2027",
       "summary": "Amazon and Alphabet are together pouring close to $400 billion into AI infrastructure this year, and the race to turn that mountain of spending into actual profit is about to get very interesting head...",
@@ -374,10 +388,24 @@
     },
     {
       "ticker": "AVGO",
-      "title": "Jim Cramer shares a strong verdict on Broadcom stock for investors",
-      "summary": "Jim Cramer watched what happened to Broadcom stock on September 14 and came to Mad Money that evening with a very specific read on the selloff.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-shares-strong-verdict-174700887.html",
-      "date": "2026-09-20T19:47:00+02:00"
+      "title": "Credo Technology Crashed for 3 Months: This Wall Street Pro Says It’s About to Double",
+      "summary": "A fabless semiconductor company just posted 115% revenue growth, beat earnings, and raised guidance, yet the stock cratered 43% from its highs. One Wall Street analyst thinks the selloff created one o...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-crashed-3-months-115135647.html",
+      "date": "2026-09-21T13:51:35+02:00"
+    },
+    {
+      "ticker": "AVGO",
+      "title": "AI Chips Today - Einride NVIDIA Team Up for Autonomous Truck Expansion",
+      "summary": "Einride AB has announced a strategic collaboration with NVIDIA to enhance its autonomous trucking capabilities by integrating the NVIDIA DRIVE Hyperion platform into its operations. This collaboration...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/ai-chips-today-einride-nvidia-113717972.html",
+      "date": "2026-09-21T13:37:17+02:00"
+    },
+    {
+      "ticker": "AVGO",
+      "title": "“Our Targets Haven’t Changed”: Broadcom’s CEO Pushes Back on the AI Slowdown Scare",
+      "summary": "When Anthropic CEO Dario Amodei wrote a weekend essay proposing that the AI industry should deliberately restrict its pace of progress, few companies were more dependent on the market’s reaction than ...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/targets-haven-t-changed-broadcom-112507800.html",
+      "date": "2026-09-21T13:25:07+02:00"
     },
     {
       "ticker": "GEV",
@@ -402,13 +430,6 @@
     },
     {
       "ticker": "GOOG",
-      "title": "How small businesses should be deploying AI, according to Codie Sanchez",
-      "summary": "Contrarian Thinking founder and CEO Codie Sanchez highlights the most direct way that small business owners should be utilizing AI to expand their customer base.",
-      "link": "https://finance.yahoo.com/video/small-businesses-deploying-ai-according-120000799.html",
-      "date": "2026-09-20T14:00:00+02:00"
-    },
-    {
-      "ticker": "GOOG",
       "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
       "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
@@ -422,6 +443,13 @@
       "date": "2026-09-21T13:06:28+02:00"
     },
     {
+      "ticker": "GOOG",
+      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
+      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
+      "date": "2026-09-21T12:54:57+02:00"
+    },
+    {
       "ticker": "META",
       "title": "Trump and Xi dine with AI titans and Meta takes the stage: What to watch this week",
       "summary": "A state visit from Chinese leader Xi Jinping, conferences from Meta and Qualcomm, and a lot of FedSpeak form the last full week of September.",
@@ -429,18 +457,11 @@
       "date": "2026-09-21T12:00:00+02:00"
     },
     {
-      "ticker": "META",
-      "title": "The Tech Selloff Is Only Strengthening My Belief In Alphabet",
-      "summary": "While most investors flee the tech selloff, one mega cap keeps pulling more capital in the opposite direction, and the reasoning has nothing to do with hoping for a rebound.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tech-selloff-only-strengthening-belief-111759381.html",
-      "date": "2026-09-21T13:17:59+02:00"
-    },
-    {
-      "ticker": "META",
-      "title": "“The Mag 7’s Market Cap Is Going to $100 Trillion. But One of Them Is Going Extinct.”",
-      "summary": "One veteran hedge fund manager believes the Magnificent 7 will grow into one of the most dominant forces in financial history, yet predicts that one or two of those companies will vanish entirely befo...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/mag-7-market-cap-going-105457973.html",
-      "date": "2026-09-21T12:54:57+02:00"
+      "ticker": "MSFT",
+      "title": "This Artificial Intelligence (AI) Stock Has Raised Its Dividend by Over 150% in 10 Years",
+      "summary": "Microsoft recently boosted its dividend, yet again.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/artificial-intelligence-ai-stock-raised-113254600.html",
+      "date": "2026-09-21T13:32:54+02:00"
     },
     {
       "ticker": "MSFT",
@@ -457,32 +478,25 @@
       "date": "2026-09-21T11:03:00+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "If I Were in My 20s, I'd Buy These 2 Trillion-Dollar Stocks and Hold Them Forever",
-      "summary": "Buying a slice of America's largest technology giants can help young investors build a secure financial future.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/were-20s-id-buy-2-084400679.html",
-      "date": "2026-09-21T10:44:00+02:00"
+      "ticker": "NVDA",
+      "title": "Big Tech's $300B AI Bet Hides a Risk Investors Can't Ignore",
+      "summary": "Billions in guarantees are helping finance data centers and AI chips, but investors may need to look beyond reported debt.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/big-techs-300b-ai-bet-121554134.html",
+      "date": "2026-09-21T14:15:54+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Should You Buy UnitedHealth Group Stock Before Oct. 13?",
-      "summary": "The healthcare giant reports earnings next month.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/buy-unitedhealth-group-stock-oct-110125097.html",
-      "date": "2026-09-21T13:01:25+02:00"
+      "title": "AMD's 8% Surge Hints at Something Bigger",
+      "summary": "Strong demand, tight supply and potential price increases are giving investors a new reason to watch the chipmaker",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amds-8-surge-hints-something-121430368.html",
+      "date": "2026-09-21T14:14:30+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "A Monthly Investment of Just $250 in This Vanguard ETF Could Turn Into a Mind-Boggling Sum in 30 Years",
-      "summary": "Investing in growth stocks can produce spectacular results over the long term.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/monthly-investment-just-250-vanguard-104300439.html",
-      "date": "2026-09-21T12:43:00+02:00"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "This ETF Is Obliterating the S&P 500 and the Nasdaq-100 in 2026, but a Crash Might Be on the Horizon",
-      "summary": "Some of the top holdings in the First Trust Nasdaq Cybersecurity ETF are trading at unsustainably high valuations.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/etf-obliterating-p-500-nasdaq-103700130.html",
-      "date": "2026-09-21T12:37:00+02:00"
+      "title": "The Stock Market Looks More Expensive Than Ever Before Based on Certain Measures, and Warren Buffett's Timeless Advice Has Never Been More Valuable",
+      "summary": "Expensive stocks can be risky, but not uninvestable.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/stock-market-looks-more-expensive-120500895.html",
+      "date": "2026-09-21T14:05:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -500,17 +514,17 @@
     },
     {
       "ticker": "SPCX",
-      "title": "Morgan Stanley Highlights Growing AI Collaboration Between SpaceX and Tesla",
-      "summary": "Morgan Stanley has identified expanding technological and operational links between SpaceX (NASDAQ:SPCX) and Tesla (NASDAQ:TSLA), as the two Elon Musk-led companies pursue applications of artificial i...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-highlights-growing-ai-102603810.html",
-      "date": "2026-09-21T12:26:03+02:00"
+      "title": "Maye Musk talks bankrolling Elon's first tech startup",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi sits down with model and author Maye Musk to discuss her incredible journey of escaping an abusive marriage and raising three highly successful children, inc...",
+      "link": "https://finance.yahoo.com/video/maye-musk-talks-bankrolling-elons-first-tech-startup-103203902.html",
+      "date": "2026-09-21T12:32:03+02:00"
     },
     {
       "ticker": "SPCX",
-      "title": "SpaceX and Tesla’s AI linkup is getting deeper. Here’s what Morgan Stanley sees",
-      "summary": "Investing.com -- Morgan Stanley said SpaceX and Tesla are deepening their technological and operational ties as both companies pursue physical AI, the application of artificial intelligence to the rea...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-tesla-ai-linkup-getting-083742284.html",
-      "date": "2026-09-21T10:37:42+02:00"
+      "title": "SpaceX's Bigger Nasdaq-100 Weight Is Triggering a Major Market Shift",
+      "summary": "A sharp increase in its index weighting could bring billions of dollars of passive demand as another major catalyst approaches.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/spacexs-bigger-nasdaq-100-weight-120730134.html",
+      "date": "2026-09-21T14:07:30+02:00"
     },
     {
       "ticker": "SPGI",
@@ -535,24 +549,24 @@
     },
     {
       "ticker": "TSLA",
-      "title": "3 notable business takes that flew under the radar this week",
-      "summary": "Inside the latest chatter from important business leaders.",
-      "link": "https://finance.yahoo.com/markets/article/3-notable-business-takes-that-flew-under-the-radar-this-week-120000112.html",
-      "date": "2026-09-20T14:00:00+02:00"
+      "title": "Musk Has a New Route for Texas and It's Underground",
+      "summary": "A proposed Austin-San Antonio route would put The Boring Company's tunneling technology on a much larger scale.",
+      "link": "https://finance.yahoo.com/technology/articles/musk-route-texas-underground-120844030.html",
+      "date": "2026-09-21T14:08:44+02:00"
     },
     {
       "ticker": "TSLA",
-      "title": "Market Chatter: Tesla's Racial Discrimination Trial in California Begins Today",
-      "summary": "Tesla (TSLA) is facing a California civil rights trial over allegations that Black workers at its Fr",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-tesla-apos-racial-110632807.html",
-      "date": "2026-09-21T13:06:32+02:00"
+      "title": "Prediction: Lucid Stock Could Double in 12 Months",
+      "summary": "Lucid has lost most of its value over the past year, but a new CEO, a Saudi factory, and a robotaxi deal with Bolt and Uber are rewriting the story. Our proprietary model sees a very different price 1...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-lucid-stock-could-double-120011402.html",
+      "date": "2026-09-21T14:00:11+02:00"
     },
     {
       "ticker": "TSLA",
-      "title": "This Week In Electric Vehicles - Advancing Future Mobility at EV World 2026 Conference",
-      "summary": "The Electric Vehicles Exhibition and Conference 2026, \"EV World,\" has announced its executive conference agenda focused on advancing the next era of mobility. Hosted in Dubai, the event gathers indust...",
-      "link": "https://finance.yahoo.com/energy/articles/week-electric-vehicles-advancing-future-103942015.html",
-      "date": "2026-09-21T12:39:42+02:00"
+      "title": "This Popular eVTOL Stock Could Still Turn $7,500 Into a Fortune",
+      "summary": "Joby is one of the most popular eVTOL stocks in the U.S. Can it really grow as big as Tesla?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/popular-evtol-stock-could-still-115000353.html",
+      "date": "2026-09-21T13:50:00+02:00"
     }
   ],
   "fundamentals": [
@@ -1837,7 +1851,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "26.2x",
+      "pe": "26.3x",
       "ev": "18.3x",
       "roe": "25.5%",
       "peg": "3.01",
@@ -1865,7 +1879,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.2x",
+          "26.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2254,203 +2268,203 @@
       "date": "2026-11-13",
       "date_formatted": "13/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=RET.BR"
+      "link": "https://finance.yahoo.com/quote/RET.BR/financials/"
     },
     {
       "ticker": "AAOI",
       "date": "2026-11-05",
       "date_formatted": "05/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AAOI"
+      "link": "https://finance.yahoo.com/quote/AAOI/financials/"
     },
     {
       "ticker": "AMD",
       "date": "2026-11-03",
       "date_formatted": "03/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AMD"
+      "link": "https://finance.yahoo.com/quote/AMD/financials/"
     },
     {
       "ticker": "AMKR",
       "date": "2026-10-26",
       "date_formatted": "26/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AMKR"
+      "link": "https://finance.yahoo.com/quote/AMKR/financials/"
     },
     {
       "ticker": "AMZN",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AMZN"
+      "link": "https://finance.yahoo.com/quote/AMZN/financials/"
     },
     {
       "ticker": "ASML.AS",
       "date": "2026-10-14",
       "date_formatted": "14/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=ASML.AS"
+      "link": "https://finance.yahoo.com/quote/ASML.AS/financials/"
     },
     {
       "ticker": "AVGO",
       "date": "2026-09-02",
       "date_formatted": "02/09/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AVGO"
+      "link": "https://finance.yahoo.com/quote/AVGO/financials/"
     },
     {
       "ticker": "AVGO",
       "date": "2026-12-09",
       "date_formatted": "09/12/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AVGO"
+      "link": "https://finance.yahoo.com/quote/AVGO/financials/"
     },
     {
       "ticker": "AYA.TO",
       "date": "2026-11-11",
       "date_formatted": "11/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=AYA.TO"
+      "link": "https://finance.yahoo.com/quote/AYA.TO/financials/"
     },
     {
       "ticker": "BKNG",
       "date": "2026-10-27",
       "date_formatted": "27/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=BKNG"
+      "link": "https://finance.yahoo.com/quote/BKNG/financials/"
     },
     {
       "ticker": "CPRT",
       "date": "2026-09-10",
       "date_formatted": "10/09/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=CPRT"
+      "link": "https://finance.yahoo.com/quote/CPRT/financials/"
     },
     {
       "ticker": "CPRT",
       "date": "2026-11-19",
       "date_formatted": "19/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=CPRT"
+      "link": "https://finance.yahoo.com/quote/CPRT/financials/"
     },
     {
       "ticker": "CSW",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=CSW"
+      "link": "https://finance.yahoo.com/quote/CSW/financials/"
     },
     {
       "ticker": "GEV",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=GEV"
+      "link": "https://finance.yahoo.com/quote/GEV/financials/"
     },
     {
       "ticker": "GOOG",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=GOOG"
+      "link": "https://finance.yahoo.com/quote/GOOG/financials/"
     },
     {
       "ticker": "ISRG",
       "date": "2026-10-20",
       "date_formatted": "20/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=ISRG"
+      "link": "https://finance.yahoo.com/quote/ISRG/financials/"
     },
     {
       "ticker": "META",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=META"
+      "link": "https://finance.yahoo.com/quote/META/financials/"
     },
     {
       "ticker": "MC.PA",
       "date": "2027-01-26",
       "date_formatted": "26/01/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=MC.PA"
+      "link": "https://finance.yahoo.com/quote/MC.PA/financials/"
     },
     {
       "ticker": "MSFT",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=MSFT"
+      "link": "https://finance.yahoo.com/quote/MSFT/financials/"
     },
     {
       "ticker": "NVDA",
       "date": "2026-08-26",
       "date_formatted": "26/08/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=NVDA"
+      "link": "https://finance.yahoo.com/quote/NVDA/financials/"
     },
     {
       "ticker": "NVDA",
       "date": "2026-11-17",
       "date_formatted": "17/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=NVDA"
+      "link": "https://finance.yahoo.com/quote/NVDA/financials/"
     },
     {
       "ticker": "ONON",
       "date": "2026-11-11",
       "date_formatted": "11/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=ONON"
+      "link": "https://finance.yahoo.com/quote/ONON/financials/"
     },
     {
       "ticker": "RMS.PA",
       "date": "2027-02-11",
       "date_formatted": "11/02/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=RMS.PA"
+      "link": "https://finance.yahoo.com/quote/RMS.PA/financials/"
     },
     {
       "ticker": "SPCX",
       "date": "2026-11-03",
       "date_formatted": "03/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=SPCX"
+      "link": "https://finance.yahoo.com/quote/SPCX/financials/"
     },
     {
       "ticker": "SPGI",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=SPGI"
+      "link": "https://finance.yahoo.com/quote/SPGI/financials/"
     },
     {
       "ticker": "SU.PA",
       "date": "2027-02-25",
       "date_formatted": "25/02/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=SU.PA"
+      "link": "https://finance.yahoo.com/quote/SU.PA/financials/"
     },
     {
       "ticker": "TTE.PA",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=TTE.PA"
+      "link": "https://finance.yahoo.com/quote/TTE.PA/financials/"
     },
     {
       "ticker": "TSLA",
       "date": "2026-10-21",
       "date_formatted": "21/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=TSLA"
+      "link": "https://finance.yahoo.com/quote/TSLA/financials/"
     },
     {
       "ticker": "VRSN",
       "date": "2026-10-22",
       "date_formatted": "22/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/calendar/earnings?symbol=VRSN"
+      "link": "https://finance.yahoo.com/quote/VRSN/financials/"
     }
   ]
 }
