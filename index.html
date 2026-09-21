@@ -154,6 +154,7 @@
       margin-bottom: 10px;
       border: 1px solid #38bdf8;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer; /* Indique clairement que l'infobulle est cliquable pour être fermée */
     }
   </style>
 </head>
@@ -195,8 +196,8 @@
 
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
-    <!-- Zone d'affichage dynamique de l'info-bulle -->
-    <div id="metric-tooltip" class="tooltip-box"></div>
+    <!-- Zone d'affichage dynamique de l'info-bulle (cliquable directement pour fermer) -->
+    <div id="metric-tooltip" class="tooltip-box" onclick="hideTooltip()"></div>
 
     <div class="table-container">
       <table class="ratios-table">
@@ -233,16 +234,23 @@
       "Marge Net %": "<b>Marge Nette :</b> Pourcentage de profit net généré pour chaque euro de chiffre d'affaires.<br>• > 15% = Excellente rentabilité (Vert)<br>• < 5% = Marge faible (Rouge)"
     };
 
+    function hideTooltip() {
+      const box = document.getElementById('metric-tooltip');
+      if (box) {
+        box.style.display = 'none';
+        box.removeAttribute('data-active');
+      }
+    }
+
     function showTooltip(metricKey) {
       const box = document.getElementById('metric-tooltip');
       const def = METRIC_DEFINITIONS[metricKey];
       if (!def) return;
 
       if (box.style.display === 'block' && box.getAttribute('data-active') === metricKey) {
-        box.style.display = 'none';
-        box.removeAttribute('data-active');
+        hideTooltip();
       } else {
-        box.innerHTML = def + `<div style="margin-top:6px; font-size:10px; opacity:0.8; text-align:right;">(Cliquez à nouveau pour fermer)</div>`;
+        box.innerHTML = def + `<div style="margin-top:6px; font-size:10px; opacity:0.85; text-align:right;">(Cliquez ici ou sur le ratio pour fermer)</div>`;
         box.style.display = 'block';
         box.setAttribute('data-active', metricKey);
       }
@@ -360,7 +368,7 @@
       if(!globalData) return;
 
       // Masquer l'infobulle au changement
-      document.getElementById('metric-tooltip').style.display = 'none';
+      hideTooltip();
 
       // 1. News
       const newsCont = document.getElementById('news-container');
