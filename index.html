@@ -196,6 +196,28 @@
     let globalData = null;
     let selectedTicker = 'ALL';
 
+    // Formate la date au format belge (Europe/Brussels): DD/MM/YYYY HH:mm
+    function formatBelgianDateTime(dateStr) {
+      if (!dateStr || dateStr === 'N/A') return 'N/A';
+      
+      const d = new Date(dateStr);
+      // Si la chaîne fournie n'est pas une date complète interprétable par Date()
+      if (isNaN(d.getTime())) {
+        // Si elle contient déjà une date ou uniquement l'heure (ex: "23:41"), on la renvoie telle quelle
+        return dateStr;
+      }
+
+      return new Intl.DateTimeFormat('fr-BE', {
+        timeZone: 'Europe/Brussels',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).format(d).replace(',', '');
+    }
+
     // Fonction de classification tricolore : Vert / Jaune / Rouge
     function getMetricBadgeClass(metricName, valStr) {
       if (!valStr || valStr === "N/A") return "badge-neutral";
@@ -302,7 +324,7 @@
             <div class="card">
               <div class="card-header">
                 <span class="ticker-name">${n.ticker}</span>
-                <span class="last-update">${n.date}</span>
+                <span class="last-update">${formatBelgianDateTime(n.date)}</span>
               </div>
               <div class="news-title">${n.title}</div>
               <div class="news-summary">${n.summary}</div>
