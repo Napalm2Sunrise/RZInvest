@@ -315,7 +315,8 @@ def generate_dashboard_data():
                             "title": title,
                             "summary": summary[:200] + "..." if len(summary) > 200 else summary,
                             "link": link,
-                            "date": pub_dt.strftime("%H:%M")
+                            # MODIFICATION ICI : On exporte la date complète en ISO pour permettre le formatage DD/MM/YYYY HH:mm en JS
+                            "date": pub_dt.isoformat()
                         })
             except Exception as e:
                 print(f"    ⚠️ Erreur news sur {symbol}: {e}")
