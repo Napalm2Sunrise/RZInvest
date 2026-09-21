@@ -299,7 +299,7 @@ def generate_dashboard_data():
                 # MODIFICATION : Limiter à 4 news max par ticker
                 ticker_news_count = 0
                 for item in news_list:
-                    if ticker_news_count >= 4:
+                    if ticker_news_count >= 3:
                         break
 
                     content = item.get("content", item)
