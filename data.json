@@ -1,15 +1,15 @@
 {
-  "updated_at": "22/09/2026 à 12:35",
+  "updated_at": "22/09/2026 à 13:12",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 66.0,
-      "change": 0.3,
+      "price": 66.05,
+      "change": 0.38,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.3%",
-      "sma200_pct": 2.3,
+      "sma200": "200 W-SMA Above +2.4%",
+      "sma200_pct": 2.4,
       "is_under": false,
-      "rsi14_weekly": 41.3,
+      "rsi14_weekly": 41.5,
       "ath_52w_pct": -16.7,
       "earnings": "N/A"
     },
@@ -27,26 +27,26 @@
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.86,
-      "change": -0.22,
+      "price": 17.78,
+      "change": -0.67,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.7% 🔥",
-      "sma200_pct": -1.7,
+      "sma200": "200 W-SMA Under -2.1% 🔥",
+      "sma200_pct": -2.1,
       "is_under": true,
-      "rsi14_weekly": 39.1,
-      "ath_52w_pct": -11.6,
+      "rsi14_weekly": 38.4,
+      "ath_52w_pct": -12.0,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 64.9,
-      "change": 0.0,
+      "price": 65.0,
+      "change": 0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.2%",
-      "sma200_pct": 2.2,
+      "sma200": "200 W-SMA Above +2.4%",
+      "sma200_pct": 2.4,
       "is_under": false,
-      "rsi14_weekly": 44.0,
-      "ath_52w_pct": -9.4,
+      "rsi14_weekly": 44.4,
+      "ath_52w_pct": -9.2,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1486.2,
-      "change": 0.32,
+      "price": 1492.0,
+      "change": 0.72,
       "currency": "€",
-      "sma200": "200 W-SMA Above +78.7%",
-      "sma200_pct": 78.7,
+      "sma200": "200 W-SMA Above +79.4%",
+      "sma200_pct": 79.4,
       "is_under": false,
-      "rsi14_weekly": 55.6,
-      "ath_52w_pct": -13.7,
+      "rsi14_weekly": 55.9,
+      "ath_52w_pct": -13.3,
       "earnings": "14/10/2026"
     },
     {
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 406.85,
-      "change": 0.33,
+      "price": 407.3,
+      "change": 0.44,
       "currency": "€",
       "sma200": "200 W-SMA Under -37.3% 🔥",
       "sma200_pct": -37.3,
       "is_under": true,
-      "rsi14_weekly": 32.4,
-      "ath_52w_pct": -37.6,
+      "rsi14_weekly": 32.5,
+      "ath_52w_pct": -37.5,
       "earnings": "26/01/2027"
     },
     {
@@ -285,7 +285,7 @@
       "sma200": "200 W-SMA Under -33.0% 🔥",
       "sma200_pct": -33.0,
       "is_under": true,
-      "rsi14_weekly": 31.3,
+      "rsi14_weekly": 31.2,
       "ath_52w_pct": -39.9,
       "earnings": "11/02/2027"
     },
@@ -321,7 +321,7 @@
       "sma200": "200 W-SMA Above +38.8%",
       "sma200_pct": 38.8,
       "is_under": false,
-      "rsi14_weekly": 58.4,
+      "rsi14_weekly": 58.3,
       "ath_52w_pct": -4.6,
       "earnings": "25/02/2027"
     },
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 77.46,
-      "change": -1.4,
+      "price": 77.55,
+      "change": -1.29,
       "currency": "€",
-      "sma200": "200 W-SMA Above +27.8%",
-      "sma200_pct": 27.8,
+      "sma200": "200 W-SMA Above +27.9%",
+      "sma200_pct": 27.9,
       "is_under": false,
-      "rsi14_weekly": 57.2,
-      "ath_52w_pct": -4.4,
+      "rsi14_weekly": 57.4,
+      "ath_52w_pct": -4.3,
       "earnings": "29/10/2026"
     },
     {
@@ -416,6 +416,13 @@
       "date": "2026-09-21T15:50:33+02:00"
     },
     {
+      "ticker": "AMD",
+      "title": "Morning Bid: As oil swoons, AI recharges",
+      "summary": "Sept 22 (Reuters) - The combination of a buzzy reception for Meta's new AI assistant Muse and softer oil prices was enough to give stocks a lift to start the week, with Mark Zuckerberg's firm surging ...",
+      "link": "https://finance.yahoo.com/news/morning-bid-oil-swoons-ai-103925671.html",
+      "date": "2026-09-22T12:39:25+02:00"
+    },
+    {
       "ticker": "AMKR",
       "title": "Is Amkor Technology (AMKR) Arizona Expansion A Turning Point For Its U.S. Growth?",
       "summary": "Amkor Technology (NasdaqGS:AMKR) announced phase 2 of its Arizona advanced packaging and test campus expansion, driven by strong customer demand. The enlarged site is set to operate as the first high ...",
@@ -442,6 +449,13 @@
       "summary": "Yahoo Finance Tech Editor Dan Howley joins Market Domination to discuss Meta (META) more than 10% intraday surge after Wells Fargo (WFC) raised its price target on the stock from $640 to $796. Meta al...",
       "link": "https://finance.yahoo.com/video/meta-stock-jumps-wells-fargo-195200224.html",
       "date": "2026-09-21T21:52:00+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "title": "Amazon, Alphabet, and Microsoft: 2 Cloud Giants I Am Buying in September and 1 I Am Avoiding",
+      "summary": "The cloud computing race is heating up.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-alphabet-microsoft-2-cloud-105000382.html",
+      "date": "2026-09-22T12:50:00+02:00"
     },
     {
       "ticker": "ASML.AS",
@@ -529,10 +543,10 @@
     },
     {
       "ticker": "GOOG",
-      "title": "Warren Buffett Just Stepped Down. These 2 AI Stocks Still Define Berkshire’s Portfolio",
-      "summary": "Warren Buffett formally stepped down as Berkshire Hathaway’s chairman on September 18, ending more than five decades in the job and handing the nonexecutive chairmanship to his son Howard Buffett. Gre...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/warren-buffett-just-stepped-down-073051631.html",
-      "date": "2026-09-22T09:30:51+02:00"
+      "title": "Amazon, Alphabet, and Microsoft: 2 Cloud Giants I Am Buying in September and 1 I Am Avoiding",
+      "summary": "The cloud computing race is heating up.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-alphabet-microsoft-2-cloud-105000382.html",
+      "date": "2026-09-22T12:50:00+02:00"
     },
     {
       "ticker": "ISRG",
@@ -557,10 +571,10 @@
     },
     {
       "ticker": "META",
-      "title": "Why Muse really just added billions to Meta's market cap and to Mark Zuckerberg's net worth",
-      "summary": "Why Muse is the new darling of Meta investors.",
-      "link": "https://finance.yahoo.com/markets/stocks/article/why-muse-really-just-added-billions-to-metas-market-cap-and-to-mark-zuckerbergs-net-worth-094853229.html",
-      "date": "2026-09-22T11:48:53+02:00"
+      "title": "Stock market today: Nasdaq, Dow and S&P 500 little changed as AI trade powers market",
+      "summary": "US stock futures steadied on Tuesday after confidence in artificial intelligence and falling oil prices spurred a rally on Wall Street.",
+      "link": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-september-22-nasdaq-dow-sp-500-080625961.html",
+      "date": "2026-09-22T10:06:25+02:00"
     },
     {
       "ticker": "META",
@@ -571,10 +585,10 @@
     },
     {
       "ticker": "META",
-      "title": "Analysis-From smart glasses to AI pins, privacy fears challenge tech's next big bet",
-      "summary": "By Aditya Soni and Kenneth Li SAN FRANCISCO/NEW YORK, Sept 22 (Reuters) - Companies betting AI devices will usher in a post-smartphone era are fueling privacy fears around the globe that could slow",
-      "link": "https://finance.yahoo.com/news/analysis-smart-glasses-ai-pins-100123150.html",
-      "date": "2026-09-22T12:08:28+02:00"
+      "title": "Morning Bid: As oil swoons, AI recharges",
+      "summary": "Sept 22 (Reuters) - The combination of a buzzy reception for Meta's new AI assistant Muse and softer oil prices was enough to give stocks a lift to start the week, with Mark Zuckerberg's firm surging ...",
+      "link": "https://finance.yahoo.com/news/morning-bid-oil-swoons-ai-103925671.html",
+      "date": "2026-09-22T12:39:25+02:00"
     },
     {
       "ticker": "MC.PA",
@@ -592,17 +606,24 @@
     },
     {
       "ticker": "MSFT",
+      "title": "Amazon, Alphabet, and Microsoft: 2 Cloud Giants I Am Buying in September and 1 I Am Avoiding",
+      "summary": "The cloud computing race is heating up.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-alphabet-microsoft-2-cloud-105000382.html",
+      "date": "2026-09-22T12:50:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
       "title": "Market Chatter: British Columbia Sues OpenAI Over Tumbler Ridge School Shooting",
       "summary": "OpenAI is facing a lawsuit from British Columbia in California over its alleged failure to notify la",
       "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-british-columbia-sues-085919729.html",
       "date": "2026-09-22T10:59:19+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "Microsoft's Biggest AI Customer Is Also Its Biggest Risk",
-      "summary": "One customer provided $24.1 billion of the software giant's revenue last fiscal year -- and that customer reportedly burns billions of dollars per quarter.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/microsofts-biggest-ai-customer-biggest-080701757.html",
-      "date": "2026-09-22T10:07:01+02:00"
+      "ticker": "NBIS",
+      "title": "Prediction: This Is What a $1,000 Investment in Nebius Group Will Be Worth by 2027",
+      "summary": "Nebius is one of the fastest-growing stocks in the market and makes for a great buy.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-1-000-investment-nebius-103500551.html",
+      "date": "2026-09-22T12:35:00+02:00"
     },
     {
       "ticker": "NBIS",
@@ -617,13 +638,6 @@
       "summary": "Rothschild Redburn just slapped Sell ratings on two of the hottest AI infrastructure plays in the market, and their reasoning cuts straight at the assumptions powering the entire neocloud trade. Here ...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/rothschild-redburn-downgrades-nebius-coreweave-185619271.html",
       "date": "2026-09-21T20:56:19+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "title": "Nebius Stock Is Down Over 20% From Its High. Is Now the Time to Buy?",
-      "summary": "The company generated monstrous growth in its most recent quarter and still possesses exciting opportunities due to artificial intelligence.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nebius-stock-down-over-20-161613970.html",
-      "date": "2026-09-21T18:16:13+02:00"
     },
     {
       "ticker": "NVDA",
@@ -676,17 +690,17 @@
     },
     {
       "ticker": "SPCX",
-      "title": "Maye Musk on SpaceX and the grit behind Elon Musk's evolution",
-      "summary": "Yahoo Finance Executive Editor Brian Sozzi sits down with model and author Maye Musk as she reflects on the pride she feels watching Elon Musk's SpaceX achieve extraordinary milestones.",
-      "link": "https://finance.yahoo.com/video/maye-musk-on-spacex-and-the-grit-behind-elon-musks-evolution-110000008.html",
-      "date": "2026-09-21T12:50:52+02:00"
-    },
-    {
-      "ticker": "SPCX",
       "title": "TSLA, SPCX, AAPL Could Be Next To ‘Rip’ After Meta’s Muse Rally, Analyst Says — Here Are The Catalysts",
       "summary": "Meta surged 11% as investors embraced its Muse AI agent, which surpassed 2.5 million downloads and briefly topped Apple’s U.S. App Store.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-spcx-aapl-could-next-060201110.html",
       "date": "2026-09-22T08:02:01+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "Elon Musk Says 'First Starship Launch to Orbit' Will Carry Starlink V3 Satellites in 7 Days",
+      "summary": "Space Exploration Technologies Corp. (NASDAQ:SPCX) CEO Elon Musk said Monday that SpaceX will deploy operational Starlink V3 satellites aboard Starship’s first orbital flight, now targeted for Sept. 2...",
+      "link": "https://finance.yahoo.com/technology/articles/elon-musk-says-first-starship-054406223.html",
+      "date": "2026-09-22T07:44:06+02:00"
     },
     {
       "ticker": "SPGI",
@@ -738,11 +752,11 @@
       "date": "2026-09-21T14:10:00+02:00"
     },
     {
-      "ticker": "TMO",
-      "title": "Mayo Clinic, Thermo Fisher partner to create Precure",
-      "summary": "The company will generate population-scale molecular data to inform development of diagnostics, therapies and other healthcare products.",
-      "link": "https://finance.yahoo.com/healthcare/articles/mayo-clinic-thermo-fisher-partner-110000419.html",
-      "date": "2026-09-21T13:00:00+02:00"
+      "ticker": "TTE.PA",
+      "title": "Galp (ENXTLS:GALP) Stock Still Looks Undervalued On Its 187% Five Year Run",
+      "summary": "Galp Energia SGPS has delivered a very strong 187.2% share price gain over the past 5 years, which puts a lot of weight on the question of whether its current price is properly supported by the cash t...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/galp-enxtls-galp-stock-still-032412067.html",
+      "date": "2026-09-22T05:24:12+02:00"
     },
     {
       "ticker": "TSLA",
@@ -1271,7 +1285,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "28.7x",
+      "pe": "28.8x",
       "ev": "41.8x",
       "roe": "53.9%",
       "peg": "1.50",
@@ -1299,7 +1313,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "28.7x",
+          "28.8x",
           "N/A",
           "N/A",
           "N/A",
