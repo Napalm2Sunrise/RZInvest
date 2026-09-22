@@ -1,22 +1,22 @@
 {
-  "updated_at": "22/09/2026 à 08:16",
+  "updated_at": "22/09/2026 à 09:13",
   "prices": [
     {
       "ticker": "AED.BR",
       "price": 65.8,
-      "change": 0.3,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +2.0%",
       "sma200_pct": 2.0,
       "is_under": false,
       "rsi14_weekly": 40.0,
       "ath_52w_pct": -17.0,
-      "earnings": "17/02/2027"
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "price": 12.54,
-      "change": 1.13,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -2.0% 🔥",
       "sma200_pct": -2.0,
@@ -28,7 +28,7 @@
     {
       "ticker": "HOMI.BR",
       "price": 17.9,
-      "change": 0.34,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -1.6% 🔥",
       "sma200_pct": -1.6,
@@ -40,7 +40,7 @@
     {
       "ticker": "RET.BR",
       "price": 64.9,
-      "change": 0.46,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +2.2%",
       "sma200_pct": 2.2,
@@ -220,7 +220,7 @@
     {
       "ticker": "MC.PA",
       "price": 405.5,
-      "change": 0.67,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -37.7% 🔥",
       "sma200_pct": -37.7,
@@ -268,7 +268,7 @@
     {
       "ticker": "RMS.PA",
       "price": 1344.0,
-      "change": 0.94,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -33.4% 🔥",
       "sma200_pct": -33.4,
@@ -304,7 +304,7 @@
     {
       "ticker": "SU.PA",
       "price": 295.0,
-      "change": 3.24,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +38.4%",
       "sma200_pct": 38.4,
@@ -316,7 +316,7 @@
     {
       "ticker": "TTE.PA",
       "price": 78.56,
-      "change": -0.96,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +29.8%",
       "sma200_pct": 29.8,
@@ -374,17 +374,17 @@
     },
     {
       "ticker": "AMD",
+      "title": "Astera Labs Stock Jumped 12% Yesterday. The Street Sees 14% More Upside, Here’s Why.",
+      "summary": "Key TakeawaysSector Rally: Astera Labs stock jumped 12% on Monday, September 21, closing at $341 as a broad semiconductor rally lifted AMD past a $1 trillion market cap and sent Intel up more than 13%...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/astera-labs-stock-jumped-12-061821239.html",
+      "date": "2026-09-22T08:18:21+02:00"
+    },
+    {
+      "ticker": "AMD",
       "title": "AMD joins trillion-dollar chipmaker club as AI demand surges",
       "summary": "AMD has become the latest trillion-dollar company, as the AI investment boom sends its shares soaring and data-centre demand fuels record growth.View on euronews",
       "link": "https://finance.yahoo.com/technology/articles/amd-joins-trillion-dollar-chipmaker-050048785.html",
       "date": "2026-09-22T07:00:48+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "title": "Why Did AMD, WBD, MRNA Stocks Surge To 52-Week Highs Today?",
-      "summary": "Advanced Micro Devices, Warner Bros. Discovery and Moderna stocks surged to annual highs amid a series of positive catalysts.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-did-amd-wbd-mrna-033924946.html",
-      "date": "2026-09-22T05:39:24+02:00"
     },
     {
       "ticker": "AMKR",
@@ -408,6 +408,20 @@
       "date": "2026-09-21T21:52:00+02:00"
     },
     {
+      "ticker": "AMZN",
+      "title": "Is Generac Holdings Inc. (GNRC) Stock a Top AI Infrastructure Play After $2.4 Billion Amazon Deal?",
+      "summary": "Generac Holdings Inc. (NYSE:GNRC) is gaining momentum in its efforts to evolve from a traditional generator manufacturer into a major power infrastructure supplier for the rapidly expanding data cente...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/generac-holdings-inc-gnrc-stock-064555046.html",
+      "date": "2026-09-22T08:45:55+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
+      "title": "Morphotonics raises €40M to expand its display tech into data centers",
+      "summary": "Deeptech company Morphotonics raises €40M from investors including 3M Ventures, Innovation Industries, BOM, and Invest-NL.",
+      "link": "https://finance.yahoo.com/technology/articles/morphotonics-raises-40m-expand-display-060000218.html",
+      "date": "2026-09-22T08:00:00+02:00"
+    },
+    {
       "ticker": "ASML.AS",
       "title": "Will AI Fears Destroy the Market?",
       "summary": "Over the past couple of weeks, several industry experts have been speaking out about the potential dangers of artificial intelligence. Our experts have been looking to answer the questions on everybod...",
@@ -423,6 +437,13 @@
     },
     {
       "ticker": "AVGO",
+      "title": "History Says a $1,000 Investment in Broadcom Will Be Worth This Much by 2028",
+      "summary": "Broadcom has incredible upside due to its impressive AI computing unit growth.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-1-000-investment-063500659.html",
+      "date": "2026-09-22T08:35:00+02:00"
+    },
+    {
+      "ticker": "AVGO",
       "title": "3 Stocks That Pay Dividends and Offer AI Exposure",
       "summary": "For those interested in getting paid with some AI exposure, Broadcom (AVGO), Vertiv (VRT), and Caterpillar (CAT) all fit the criteria.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-pay-dividends-offer-233800366.html",
@@ -434,13 +455,6 @@
       "summary": "If you own NVIDIA (NVDA) or Micron Technology (MU), you own the same idea: AI data centers want more chips and memory than the industry can supply. The two split from there. NVIDIA is putting its own ...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-micron-gets-paid-more-203122649.html",
       "date": "2026-09-21T22:31:22+02:00"
-    },
-    {
-      "ticker": "AVGO",
-      "title": "Prediction: This Data Center Stock Will Be the AI Supercycle's Biggest Winner -- and It's Not a Household Name",
-      "summary": "The demand for optical networking components is poised to boom, and Lumentum is one of the best ways to capitalize on this lucrative niche.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/prediction-data-center-stock-ai-193500091.html",
-      "date": "2026-09-21T21:35:00+02:00"
     },
     {
       "ticker": "GEV",
@@ -479,10 +493,10 @@
     },
     {
       "ticker": "GOOG",
-      "title": "Google Backs Nuclear Expansion at Georgia Power Plants",
-      "summary": "Google will support nuclear plant upgrades in Georgia that could add 96 MW of capacity and deliver projected customer savings.",
-      "link": "https://finance.yahoo.com/energy/articles/google-backs-nuclear-expansion-georgia-023155220.html",
-      "date": "2026-09-22T04:31:55+02:00"
+      "title": "Not Micron. Not Alphabet. Here's My Top Artificial Intelligence (AI) Stock Pick for the Next 3 Years.",
+      "summary": "Nvidia is in a great position to deliver incredible returns.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/not-micron-not-alphabet-heres-065000040.html",
+      "date": "2026-09-22T08:50:00+02:00"
     },
     {
       "ticker": "ISRG",
@@ -570,10 +584,10 @@
     },
     {
       "ticker": "NVDA",
-      "title": "AMD joins trillion-dollar chipmaker club as AI demand surges",
-      "summary": "AMD has become the latest trillion-dollar company, as the AI investment boom sends its shares soaring and data-centre demand fuels record growth.View on euronews",
-      "link": "https://finance.yahoo.com/technology/articles/amd-joins-trillion-dollar-chipmaker-050048785.html",
-      "date": "2026-09-22T07:00:48+02:00"
+      "title": "Not Micron. Not Alphabet. Here's My Top Artificial Intelligence (AI) Stock Pick for the Next 3 Years.",
+      "summary": "Nvidia is in a great position to deliver incredible returns.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/not-micron-not-alphabet-heres-065000040.html",
+      "date": "2026-09-22T08:50:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -1765,7 +1779,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.2x",
+      "pe": "16.3x",
       "ev": "11.3x",
       "roe": "16.6%",
       "peg": "1.48",
@@ -1793,7 +1807,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.2x",
+          "16.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2411,11 +2425,11 @@
   ],
   "earnings": [
     {
-      "ticker": "AED.BR",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AED.BR/financials/"
+      "ticker": "CPINV.BR",
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
     },
     {
       "ticker": "CPINV.BR",
