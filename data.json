@@ -1,52 +1,52 @@
 {
-  "updated_at": "22/09/2026 à 14:16",
+  "updated_at": "22/09/2026 à 15:13",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 66.15,
-      "change": 0.53,
+      "price": 66.2,
+      "change": 0.61,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.6%",
-      "sma200_pct": 2.6,
+      "sma200": "200 W-SMA Above +2.7%",
+      "sma200_pct": 2.7,
       "is_under": false,
-      "rsi14_weekly": 41.8,
+      "rsi14_weekly": 41.9,
       "ath_52w_pct": -16.5,
       "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
-      "price": 12.58,
-      "change": 0.32,
-      "currency": "€",
-      "sma200": "200 W-SMA Under -1.7% 🔥",
-      "sma200_pct": -1.7,
-      "is_under": true,
-      "rsi14_weekly": 51.8,
-      "ath_52w_pct": -9.6,
-      "earnings": "04/11/2026"
-    },
-    {
-      "ticker": "HOMI.BR",
-      "price": 17.84,
-      "change": -0.34,
+      "price": 12.56,
+      "change": 0.16,
       "currency": "€",
       "sma200": "200 W-SMA Under -1.8% 🔥",
       "sma200_pct": -1.8,
       "is_under": true,
-      "rsi14_weekly": 38.9,
-      "ath_52w_pct": -11.7,
+      "rsi14_weekly": 51.5,
+      "ath_52w_pct": -9.8,
+      "earnings": "04/11/2026"
+    },
+    {
+      "ticker": "HOMI.BR",
+      "price": 17.86,
+      "change": -0.22,
+      "currency": "€",
+      "sma200": "200 W-SMA Under -1.7% 🔥",
+      "sma200_pct": -1.7,
+      "is_under": true,
+      "rsi14_weekly": 39.1,
+      "ath_52w_pct": -11.6,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 65.2,
-      "change": 0.46,
+      "price": 64.9,
+      "change": 0.0,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.7%",
-      "sma200_pct": 2.7,
+      "sma200": "200 W-SMA Above +2.2%",
+      "sma200_pct": 2.2,
       "is_under": false,
-      "rsi14_weekly": 45.1,
-      "ath_52w_pct": -8.9,
+      "rsi14_weekly": 44.0,
+      "ath_52w_pct": -9.4,
       "earnings": "13/11/2026"
     },
     {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1482.8,
-      "change": 0.09,
+      "price": 1482.6,
+      "change": 0.08,
       "currency": "€",
       "sma200": "200 W-SMA Above +78.3%",
       "sma200_pct": 78.3,
@@ -219,13 +219,13 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 406.15,
-      "change": 0.16,
+      "price": 405.95,
+      "change": 0.11,
       "currency": "€",
       "sma200": "200 W-SMA Under -37.5% 🔥",
       "sma200_pct": -37.5,
       "is_under": true,
-      "rsi14_weekly": 32.2,
+      "rsi14_weekly": 32.0,
       "ath_52w_pct": -37.7,
       "earnings": "26/01/2027"
     },
@@ -279,14 +279,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1350.5,
-      "change": 0.48,
+      "price": 1355.5,
+      "change": 0.86,
       "currency": "€",
-      "sma200": "200 W-SMA Under -33.1% 🔥",
-      "sma200_pct": -33.1,
+      "sma200": "200 W-SMA Under -32.8% 🔥",
+      "sma200_pct": -32.8,
       "is_under": true,
-      "rsi14_weekly": 31.1,
-      "ath_52w_pct": -40.0,
+      "rsi14_weekly": 31.5,
+      "ath_52w_pct": -39.8,
       "earnings": "11/02/2027"
     },
     {
@@ -315,8 +315,8 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 295.5,
-      "change": 0.17,
+      "price": 295.6,
+      "change": 0.2,
       "currency": "€",
       "sma200": "200 W-SMA Above +38.2%",
       "sma200_pct": 38.2,
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 77.57,
-      "change": -1.26,
+      "price": 77.92,
+      "change": -0.81,
       "currency": "€",
-      "sma200": "200 W-SMA Above +28.0%",
-      "sma200_pct": 28.0,
+      "sma200": "200 W-SMA Above +28.5%",
+      "sma200_pct": 28.5,
       "is_under": false,
-      "rsi14_weekly": 57.4,
-      "ath_52w_pct": -4.3,
+      "rsi14_weekly": 58.0,
+      "ath_52w_pct": -3.8,
       "earnings": "29/10/2026"
     },
     {
@@ -403,10 +403,17 @@
     },
     {
       "ticker": "AMD",
-      "title": "Why AMD's new $1 trillion valuation makes perfect sense",
-      "summary": "AMD CEO Lisu Su has been crushing it at a chip company that almost went bust when she walked in the door as a top executive in 2012.",
-      "link": "https://finance.yahoo.com/markets/stocks/article/why-amds-new-1-trillion-valuation-makes-perfect-sense-093453726.html",
-      "date": "2026-09-22T11:34:53+02:00"
+      "title": "The return of the AI rally: What's fueling the latest push into tech?",
+      "summary": "Leading AI stocks ripped higher to kick off this trading week as investors pile back into Big Tech. The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley weigh in on the market breadth of the ...",
+      "link": "https://finance.yahoo.com/video/return-ai-rally-whats-fueling-125206390.html",
+      "date": "2026-09-22T14:52:06+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "title": "AMD stock soars to new record as semiconductors bounce: Chart of the Day",
+      "summary": "Shares of AMD, Arm and Intel all jumped as optimism over growing demand for CPUs sent chip stocks higher.",
+      "link": "https://finance.yahoo.com/markets/article/amd-stock-soars-to-new-record-as-semiconductors-bounce-chart-of-the-day-161627271.html",
+      "date": "2026-09-21T18:16:27+02:00"
     },
     {
       "ticker": "AMD",
@@ -414,6 +421,13 @@
       "summary": "Here's a check of the markets in the first few minutes of trading.",
       "link": "https://finance.yahoo.com/markets/article/tech-stocks-rise-bitcoin-rallies-as-treasury-yields-ease-alphacheck-135033093.html",
       "date": "2026-09-21T15:50:33+02:00"
+    },
+    {
+      "ticker": "AMKR",
+      "title": "Investors Heavily Search Amkor Technology, Inc. (AMKR): Here is What You Need to Know",
+      "summary": "Amkor Technology (AMKR) has received quite a bit of attention from Zacks.com users lately. Therefore, it is wise to be aware of the facts that can impact the stock's prospects.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-amkor-technology-130003668.html",
+      "date": "2026-09-22T15:00:03+02:00"
     },
     {
       "ticker": "AMKR",
@@ -430,13 +444,6 @@
       "date": "2026-09-21T15:40:03+02:00"
     },
     {
-      "ticker": "AMKR",
-      "title": "Amkor's AI and HPC Packaging Demand Grows: Can Growth Continue?",
-      "summary": "AMKR's AI and HPC packaging demand is climbing as data-center programs ramp, advanced packaging expands and Arizona investment rises to $12 billion.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amkors-ai-hpc-packaging-demand-130700257.html",
-      "date": "2026-09-21T15:07:00+02:00"
-    },
-    {
       "ticker": "AMZN",
       "title": "Meta stock jumps as Wells Fargo raises price target",
       "summary": "Yahoo Finance Tech Editor Dan Howley joins Market Domination to discuss Meta (META) more than 10% intraday surge after Wells Fargo (WFC) raised its price target on the stock from $640 to $796. Meta al...",
@@ -445,17 +452,17 @@
     },
     {
       "ticker": "AMZN",
-      "title": "Shopify Embraces Meta’s Muse Across All Stores as Amazon Blocks It – and the Merchant Landscape Splits in Two",
-      "summary": "The Three Errands That Failed On September 9, one day after Meta launched Muse, PYMNTS ran the agent through three basic consumer tasks: reordering toilet paper on Amazon, ordering a pizza from Domino...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/shopify-embraces-meta-muse-across-113401279.html",
-      "date": "2026-09-22T13:34:01+02:00"
+      "title": "Buy, Hold or Sell META Stock Ahead of Meta Connect 2026?",
+      "summary": "Meta Platform's Muse surge sets the stage for Connect 2026, as investors weigh fresh product catalysts against heavy AI spending, ad dependence and valuation.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/buy-hold-sell-meta-stock-125100835.html",
+      "date": "2026-09-22T14:51:00+02:00"
     },
     {
       "ticker": "AMZN",
-      "title": "Bitcoin hits an 8-month high — and sends a clear message about risk appetite right now",
-      "summary": "The lack of clarity around crypto’s regulatory framework hasn’t stopped bitcoin from surging, as investors haven’t abandoned hopes for clearer U.S. rules.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hits-8-month-high-105100042.html",
-      "date": "2026-09-22T12:51:00+02:00"
+      "title": "Shopify Spikes 7%, Meta Eases as Muse Agent Gains Shop Pay Checkout; Amazon Sits Out the Rally",
+      "summary": "Meta's Muse agent can now shop for you and check out on your behalf, but the company that quietly captured the transaction layer is not Meta. Here is why that detail is moving one stock sharply higher...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/shopify-spikes-7-meta-eases-124312301.html",
+      "date": "2026-09-22T14:43:12+02:00"
     },
     {
       "ticker": "ASML.AS",
@@ -480,24 +487,24 @@
     },
     {
       "ticker": "AVGO",
-      "title": "AMD Just Joined the $1 Trillion Club. Here's Why Investors Are Betting Big on the Chipmaker.",
-      "summary": "Investors are willing to pay more for AMD's future earnings.",
-      "link": "https://finance.yahoo.com/technology/articles/amd-just-joined-1-trillion-112501746.html",
-      "date": "2026-09-22T13:25:01+02:00"
+      "title": "Chip Trillionaires Club: Only One Clear Buy Among NVDA, AVGO, MU, AMD",
+      "summary": "NVIDIA stands out among four trillion-dollar chipmakers with broad AI hardware, networking and software strength as rivals face valuation and cycle risks.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/chip-trillionaires-club-only-one-124800270.html",
+      "date": "2026-09-22T14:48:00+02:00"
     },
     {
       "ticker": "AVGO",
-      "title": "History Says a $1,000 Investment in Broadcom Will Be Worth This Much by 2028",
-      "summary": "Broadcom has incredible upside due to its impressive AI computing unit growth.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/history-says-1-000-investment-063500659.html",
-      "date": "2026-09-22T08:35:00+02:00"
+      "title": "Prediction: Broadcom Will Be a $3 Trillion Company by the End of 2030",
+      "summary": "Management's own revenue forecasts could carry the stock there without a richer earnings multiple.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-broadcom-3-trillion-company-124601695.html",
+      "date": "2026-09-22T14:46:01+02:00"
     },
     {
       "ticker": "AVGO",
-      "title": "3 Stocks That Pay Dividends and Offer AI Exposure",
-      "summary": "For those interested in getting paid with some AI exposure, Broadcom (AVGO), Vertiv (VRT), and Caterpillar (CAT) all fit the criteria.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-pay-dividends-offer-233800366.html",
-      "date": "2026-09-22T01:38:00+02:00"
+      "title": "The Zacks Analyst Blog Highlights NVIDIA, Vertiv, Arista Networks, Broadcom and Hewlett Packard",
+      "summary": "Beyond NVIDIA, Vertiv and Arista Networks offer exposure to the AI data-center buildout through power, cooling and networking infrastructure.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-nvidia-122100575.html",
+      "date": "2026-09-22T14:21:00+02:00"
     },
     {
       "ticker": "CSW",
@@ -543,10 +550,10 @@
     },
     {
       "ticker": "GOOG",
-      "title": "Bitcoin hits an 8-month high — and sends a clear message about risk appetite right now",
-      "summary": "The lack of clarity around crypto’s regulatory framework hasn’t stopped bitcoin from surging, as investors haven’t abandoned hopes for clearer U.S. rules.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-hits-8-month-high-105100042.html",
-      "date": "2026-09-22T12:51:00+02:00"
+      "title": "Alphabet Inc. (GOOGL) is Attracting Investor Attention: Here is What You Should Know",
+      "summary": "Recently, Zacks.com users have been paying close attention to Alphabet (GOOGL). This makes it worthwhile to examine what the stock has in store.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-inc-googl-attracting-investor-130005253.html",
+      "date": "2026-09-22T15:00:05+02:00"
     },
     {
       "ticker": "ISRG",
@@ -571,24 +578,31 @@
     },
     {
       "ticker": "META",
-      "title": "Why Muse really just added billions to Meta's market cap and to Mark Zuckerberg's net worth",
+      "title": "Why Muse just added billions to Meta's market cap and to Mark Zuckerberg's net worth",
       "summary": "Why Muse is the new darling of Meta investors.",
-      "link": "https://finance.yahoo.com/markets/stocks/article/why-muse-really-just-added-billions-to-metas-market-cap-and-to-mark-zuckerbergs-net-worth-094853229.html",
+      "link": "https://finance.yahoo.com/markets/stocks/article/why-muse-just-added-billions-to-metas-market-cap-and-to-mark-zuckerbergs-net-worth-094853229.html",
       "date": "2026-09-22T11:48:53+02:00"
     },
     {
       "ticker": "META",
-      "title": "Meta stock jumps as Wells Fargo raises price target",
-      "summary": "Yahoo Finance Tech Editor Dan Howley joins Market Domination to discuss Meta (META) more than 10% intraday surge after Wells Fargo (WFC) raised its price target on the stock from $640 to $796. Meta al...",
-      "link": "https://finance.yahoo.com/video/meta-stock-jumps-wells-fargo-195200224.html",
-      "date": "2026-09-21T21:52:00+02:00"
+      "title": "Why AMD's new $1 trillion valuation makes perfect sense",
+      "summary": "AMD CEO Lisu Su has been crushing it at a chip company that almost went bust when she walked in the door as a top executive in 2012.",
+      "link": "https://finance.yahoo.com/markets/stocks/article/why-amds-new-1-trillion-valuation-makes-perfect-sense-093453726.html",
+      "date": "2026-09-22T11:34:53+02:00"
     },
     {
       "ticker": "META",
-      "title": "Shopify partners with Meta Muse for AI-powered checkout",
-      "summary": "Muse users will be able to browse Shopify merchants and complete purchases through Shop Pay, the platform's one-tap checkout service",
-      "link": "https://finance.yahoo.com/technology/ai/articles/shopify-partners-meta-muse-ai-115807895.html",
-      "date": "2026-09-22T13:58:07+02:00"
+      "title": "AMD stock soars to new record as semiconductors bounce: Chart of the Day",
+      "summary": "Shares of AMD, Arm and Intel all jumped as optimism over growing demand for CPUs sent chip stocks higher.",
+      "link": "https://finance.yahoo.com/markets/article/amd-stock-soars-to-new-record-as-semiconductors-bounce-chart-of-the-day-161627271.html",
+      "date": "2026-09-21T18:16:27+02:00"
+    },
+    {
+      "ticker": "MC.PA",
+      "title": "EXCLUSIVE: LVMH Names New Managing Director At Repossi",
+      "summary": "Matthieu Soudan spent eight years at Tag Heuer and was most recently head of strategic projects at Bulgari.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/exclusive-lvmh-names-managing-director-123000152.html",
+      "date": "2026-09-22T14:30:00+02:00"
     },
     {
       "ticker": "MC.PA",
@@ -606,38 +620,17 @@
     },
     {
       "ticker": "MSFT",
-      "title": "Microsoft Just Got a New Potential Boost for Azure",
-      "summary": "BNP Paribas sees room for higher Azure pricing and a potential SpaceX cloud deal, but the impact may take time.",
-      "link": "https://finance.yahoo.com/technology/articles/microsoft-just-got-potential-boost-121419004.html",
-      "date": "2026-09-22T14:14:19+02:00"
+      "title": "With new Macs, Apple aims to take on Microsoft, Nvidia in a rush to lower AI costs ",
+      "summary": "By Stephen Nellis SAN FRANCISCO, Sept 22 (Reuters) - When Apple's new desktop computers start shipping Tuesday, the company's executives will make an unusual pitch to corporate buyers: They are",
+      "link": "https://finance.yahoo.com/technology/ai/articles/macs-apple-aims-microsoft-nvidia-130118449.html",
+      "date": "2026-09-22T15:02:00+02:00"
     },
     {
       "ticker": "MSFT",
-      "title": "Amazon, Alphabet, and Microsoft: 2 Cloud Giants I Am Buying in September and 1 I Am Avoiding",
-      "summary": "The cloud computing race is heating up.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-alphabet-microsoft-2-cloud-105000382.html",
-      "date": "2026-09-22T12:50:00+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "title": "Prediction: This Is What a $1,000 Investment in Nebius Group Will Be Worth by 2027",
-      "summary": "Nebius is one of the fastest-growing stocks in the market and makes for a great buy.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-1-000-investment-nebius-103500551.html",
-      "date": "2026-09-22T12:35:00+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "title": "Better AI Data Center Stock: Nebius vs. CoreWeave",
-      "summary": "Which of these neocloud stocks is a better buy right now?",
-      "link": "https://finance.yahoo.com/technology/ai/articles/better-ai-data-center-stock-195000451.html",
-      "date": "2026-09-21T21:50:00+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "title": "Rothschild Redburn Downgrades Nebius, CoreWeave to Sell on Lower GPU Prices",
-      "summary": "Rothschild Redburn just slapped Sell ratings on two of the hottest AI infrastructure plays in the market, and their reasoning cuts straight at the assumptions powering the entire neocloud trade. Here ...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/rothschild-redburn-downgrades-nebius-coreweave-185619271.html",
-      "date": "2026-09-21T20:56:19+02:00"
+      "title": "AI May Be Ruined Data Centers",
+      "summary": "Wall Street is getting cold feet on data centers, and communities across America are pushing back hard against new construction. The technology powering the AI revolution may be colliding with limits ...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/ai-may-ruined-data-centers-123853350.html",
+      "date": "2026-09-22T14:38:53+02:00"
     },
     {
       "ticker": "NVDA",
@@ -725,6 +718,13 @@
     },
     {
       "ticker": "SU.PA",
+      "title": "Data Center Firm Accelevation, Backer Seek $720 Million in IPO",
+      "summary": "Accelevation Holdings Corp. and its backer Olympus Partners are seeking to raise as much as $720 million in the data center infrastructure company’s initial public offering.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/data-center-firm-accelevation-backer-112016784.html",
+      "date": "2026-09-22T13:20:16+02:00"
+    },
+    {
+      "ticker": "SU.PA",
       "title": "Schneider Electric (ENXTPA:SU) Could Be 9% Undervalued Following Lenovo Climate Week Tie Up",
       "summary": "Schneider Electric (ENXTPA:SU) is back in focus after joining Lenovo’s 360 Circle program. The company is bringing its Decarbonization Champion tools into a global IT partner network during Climate We...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/schneider-electric-enxtpa-su-could-011431178.html",
@@ -739,17 +739,17 @@
     },
     {
       "ticker": "TMO",
+      "title": "G2’s CFO says SaaS expos may become obsolete",
+      "summary": "Alex Bradley told CFO.com how AI is changing the software purchasing process and pulling many finance chiefs further into the buying process.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/g2-cfo-says-saas-expos-123631868.html",
+      "date": "2026-09-22T14:36:31+02:00"
+    },
+    {
+      "ticker": "TMO",
       "title": "3 Reasons to Sell TMO and 1 Stock to Buy Instead",
       "summary": "Thermo Fisher’s 36.4% return over the past six months has outpaced the S&P 500 by 20.1%, and its stock price has climbed to $652.30 per share. This was partly due to its solid quarterly results, and t...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-sell-tmo-1-203025798.html",
       "date": "2026-09-21T22:30:25+02:00"
-    },
-    {
-      "ticker": "TTE.PA",
-      "title": "Galp (ENXTLS:GALP) Stock Still Looks Undervalued On Its 187% Five Year Run",
-      "summary": "Galp Energia SGPS has delivered a very strong 187.2% share price gain over the past 5 years, which puts a lot of weight on the question of whether its current price is properly supported by the cash t...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/galp-enxtls-galp-stock-still-032412067.html",
-      "date": "2026-09-22T05:24:12+02:00"
     },
     {
       "ticker": "TSLA",
@@ -767,10 +767,10 @@
     },
     {
       "ticker": "TSLA",
-      "title": "Move Over, Tesla: This Robotics Stock Already Has Paying Customers",
-      "summary": "Symbotic is a robotics pure play, already in the commercialization stage.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/move-over-tesla-robotics-stock-120900012.html",
-      "date": "2026-09-22T14:09:00+02:00"
+      "title": "Tesla's top priority gets a cold splash of reality from China",
+      "summary": "Elon Musk’s $1 trillion pay package depends on Tesla getting this right.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/teslas-top-priority-gets-cold-130300303.html",
+      "date": "2026-09-22T15:03:00+02:00"
     },
     {
       "ticker": "VRSN",
@@ -781,6 +781,13 @@
     },
     {
       "ticker": "VRT",
+      "title": "The Zacks Analyst Blog Highlights NVIDIA, Vertiv, Arista Networks, Broadcom and Hewlett Packard",
+      "summary": "Beyond NVIDIA, Vertiv and Arista Networks offer exposure to the AI data-center buildout through power, cooling and networking infrastructure.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-nvidia-122100575.html",
+      "date": "2026-09-22T14:21:00+02:00"
+    },
+    {
+      "ticker": "VRT",
       "title": "Vertiv vs. Eaton: This AI Infrastructure Stock Is the Better Buy",
       "summary": "Two power and cooling giants are chasing the same AI boom. But which one offers the more direct way to play it?",
       "link": "https://finance.yahoo.com/technology/ai/articles/vertiv-vs-eaton-ai-infrastructure-120500903.html",
@@ -788,17 +795,10 @@
     },
     {
       "ticker": "VRT",
-      "title": "3 Stocks That Pay Dividends and Offer AI Exposure",
-      "summary": "For those interested in getting paid with some AI exposure, Broadcom (AVGO), Vertiv (VRT), and Caterpillar (CAT) all fit the criteria.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-pay-dividends-offer-233800366.html",
-      "date": "2026-09-22T01:38:00+02:00"
-    },
-    {
-      "ticker": "VRT",
-      "title": "Why Is Vertiv Stock Up Sharply Over The Past Year Yet Well Below Its Peak?",
-      "summary": "Vertiv (VRT) stock gained 75.9% over the past year, more than four times the S&P 500's 16.7% return. The company sells the power and cooling equipment that AI data centers depend on, and its sales and...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-vertiv-stock-sharply-over-202248626.html",
-      "date": "2026-09-21T22:22:48+02:00"
+      "title": "Data Center Firm Accelevation, Backer Seek $720 Million in IPO",
+      "summary": "Accelevation Holdings Corp. and its backer Olympus Partners are seeking to raise as much as $720 million in the data center infrastructure company’s initial public offering.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/data-center-firm-accelevation-backer-112016784.html",
+      "date": "2026-09-22T13:20:16+02:00"
     }
   ],
   "fundamentals": [
@@ -2171,7 +2171,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "26.7x",
+      "pe": "26.8x",
       "ev": "18.5x",
       "roe": "25.5%",
       "peg": "3.01",
@@ -2199,7 +2199,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.7x",
+          "26.8x",
           "N/A",
           "N/A",
           "N/A",
