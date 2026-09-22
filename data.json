@@ -1,52 +1,52 @@
 {
-  "updated_at": "22/09/2026 à 11:13",
+  "updated_at": "22/09/2026 à 12:14",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.75,
-      "change": -0.08,
+      "price": 65.95,
+      "change": 0.23,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.0%",
-      "sma200_pct": 2.0,
+      "sma200": "200 W-SMA Above +2.3%",
+      "sma200_pct": 2.3,
       "is_under": false,
-      "rsi14_weekly": 40.5,
-      "ath_52w_pct": -17.0,
+      "rsi14_weekly": 41.1,
+      "ath_52w_pct": -16.8,
       "earnings": "17/02/2027"
     },
     {
       "ticker": "CPINV.BR",
-      "price": 12.5,
-      "change": -0.32,
-      "currency": "€",
-      "sma200": "200 W-SMA Under -2.3% 🔥",
-      "sma200_pct": -2.3,
-      "is_under": true,
-      "rsi14_weekly": 50.5,
-      "ath_52w_pct": -10.2,
-      "earnings": "04/11/2026"
-    },
-    {
-      "ticker": "HOMI.BR",
-      "price": 17.78,
-      "change": -0.67,
+      "price": 12.52,
+      "change": -0.16,
       "currency": "€",
       "sma200": "200 W-SMA Under -2.1% 🔥",
       "sma200_pct": -2.1,
       "is_under": true,
-      "rsi14_weekly": 38.4,
-      "ath_52w_pct": -12.0,
+      "rsi14_weekly": 50.8,
+      "ath_52w_pct": -10.1,
+      "earnings": "04/11/2026"
+    },
+    {
+      "ticker": "HOMI.BR",
+      "price": 17.86,
+      "change": -0.22,
+      "currency": "€",
+      "sma200": "200 W-SMA Under -1.7% 🔥",
+      "sma200_pct": -1.7,
+      "is_under": true,
+      "rsi14_weekly": 39.1,
+      "ath_52w_pct": -11.6,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 64.9,
-      "change": 0.0,
+      "price": 65.0,
+      "change": 0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.2%",
-      "sma200_pct": 2.2,
+      "sma200": "200 W-SMA Above +2.4%",
+      "sma200_pct": 2.4,
       "is_under": false,
-      "rsi14_weekly": 44.0,
-      "ath_52w_pct": -9.4,
+      "rsi14_weekly": 44.4,
+      "ath_52w_pct": -9.2,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1483.2,
-      "change": 0.12,
+      "price": 1491.6,
+      "change": 0.69,
       "currency": "€",
-      "sma200": "200 W-SMA Above +78.3%",
-      "sma200_pct": 78.3,
+      "sma200": "200 W-SMA Above +79.3%",
+      "sma200_pct": 79.3,
       "is_under": false,
-      "rsi14_weekly": 55.4,
-      "ath_52w_pct": -13.8,
+      "rsi14_weekly": 55.9,
+      "ath_52w_pct": -13.3,
       "earnings": "14/10/2026"
     },
     {
@@ -219,11 +219,11 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 407.5,
-      "change": 0.49,
+      "price": 407.3,
+      "change": 0.44,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.2% 🔥",
-      "sma200_pct": -37.2,
+      "sma200": "200 W-SMA Under -37.3% 🔥",
+      "sma200_pct": -37.3,
       "is_under": true,
       "rsi14_weekly": 32.6,
       "ath_52w_pct": -37.5,
@@ -267,14 +267,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1355.0,
-      "change": 0.82,
+      "price": 1353.0,
+      "change": 0.67,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.8% 🔥",
-      "sma200_pct": -32.8,
+      "sma200": "200 W-SMA Under -32.9% 🔥",
+      "sma200_pct": -32.9,
       "is_under": true,
-      "rsi14_weekly": 31.6,
-      "ath_52w_pct": -39.8,
+      "rsi14_weekly": 31.3,
+      "ath_52w_pct": -39.9,
       "earnings": "11/02/2027"
     },
     {
@@ -303,26 +303,26 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 296.45,
-      "change": 0.49,
+      "price": 297.55,
+      "change": 0.86,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.6%",
-      "sma200_pct": 38.6,
+      "sma200": "200 W-SMA Above +39.1%",
+      "sma200_pct": 39.1,
       "is_under": false,
-      "rsi14_weekly": 58.3,
-      "ath_52w_pct": -4.7,
+      "rsi14_weekly": 58.6,
+      "ath_52w_pct": -4.3,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TTE.PA",
-      "price": 77.7,
-      "change": -1.09,
+      "price": 77.41,
+      "change": -1.46,
       "currency": "€",
-      "sma200": "200 W-SMA Above +28.2%",
-      "sma200_pct": 28.2,
+      "sma200": "200 W-SMA Above +27.7%",
+      "sma200_pct": 27.7,
       "is_under": false,
-      "rsi14_weekly": 57.4,
-      "ath_52w_pct": -4.1,
+      "rsi14_weekly": 56.9,
+      "ath_52w_pct": -4.5,
       "earnings": "29/10/2026"
     },
     {
@@ -367,24 +367,31 @@
     },
     {
       "ticker": "AMD",
+      "title": "Why AMD's new $1 trillion valuation makes perfect sense",
+      "summary": "AMD CEO Lisu Su has been crushing it at a chip company that almost went bust when she walked in the door as a top executive in 2012.",
+      "link": "https://finance.yahoo.com/markets/stocks/article/why-amds-new-1-trillion-valuation-makes-perfect-sense-093453726.html",
+      "date": "2026-09-22T11:34:53+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "title": "Tech stocks rise, Bitcoin rallies as Treasury yields ease: AlphaCheck",
+      "summary": "Here's a check of the markets in the first few minutes of trading.",
+      "link": "https://finance.yahoo.com/markets/article/tech-stocks-rise-bitcoin-rallies-as-treasury-yields-ease-alphacheck-135033093.html",
+      "date": "2026-09-21T15:50:33+02:00"
+    },
+    {
+      "ticker": "AMD",
       "title": "Tech stocks rise on renewed AI fever; higher oil, bond yields temper rally",
       "summary": "By Amanda Cooper LONDON, Sept 22 (Reuters) - Technology shares got a boost from a resurgence of optimism over AI on Tuesday, while the broader equity market struggled to make much headway as oil rose",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tech-rally-boosts-asian-stocks-021102067.html",
       "date": "2026-09-22T10:32:55+02:00"
     },
     {
-      "ticker": "AMD",
-      "title": "Nasdaq, S&P 500 Futures Pause After Record AI-Driven Rally: AMD, META, BABA, GME, HOOD, GRAB, VKTX Stocks In Focus",
-      "summary": "Retail sentiment on SPY and QQQ has moderated to ‘neutral’.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-pause-083218570.html",
-      "date": "2026-09-22T10:32:18+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "title": "Astera Labs Stock Jumped 12% Yesterday. The Street Sees 14% More Upside, Here’s Why.",
-      "summary": "Key TakeawaysSector Rally: Astera Labs stock jumped 12% on Monday, September 21, closing at $341 as a broad semiconductor rally lifted AMD past a $1 trillion market cap and sent Intel up more than 13%...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/astera-labs-stock-jumped-12-061821239.html",
-      "date": "2026-09-22T08:18:21+02:00"
+      "ticker": "AMKR",
+      "title": "Is Amkor Technology (AMKR) Arizona Expansion A Turning Point For Its U.S. Growth?",
+      "summary": "Amkor Technology (NasdaqGS:AMKR) announced phase 2 of its Arizona advanced packaging and test campus expansion, driven by strong customer demand. The enlarged site is set to operate as the first high ...",
+      "link": "https://finance.yahoo.com/technology/articles/amkor-technology-amkr-arizona-expansion-091446734.html",
+      "date": "2026-09-22T11:14:46+02:00"
     },
     {
       "ticker": "AMKR",
@@ -416,6 +423,13 @@
     },
     {
       "ticker": "ASML.AS",
+      "title": "3 AI Infrastructure Stocks Investors Should Watch As Data Center Spending Builds",
+      "summary": "AI and data-center spending now sit at the crossroads of higher rates, fragile growth and jumpy energy markets, which is exactly where big shifts in market leadership are often born. Investors focused...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-investors-091849195.html",
+      "date": "2026-09-22T11:18:49+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
       "title": "Morphotonics raises €40M to expand its display tech into data centers",
       "summary": "Deeptech company Morphotonics raises €40M from investors including 3M Ventures, Innovation Industries, BOM, and Invest-NL.",
       "link": "https://finance.yahoo.com/technology/articles/morphotonics-raises-40m-expand-display-060000218.html",
@@ -427,13 +441,6 @@
       "summary": "Over the past couple of weeks, several industry experts have been speaking out about the potential dangers of artificial intelligence. Our experts have been looking to answer the questions on everybod...",
       "link": "https://finance.yahoo.com/video/ai-fears-destroy-market-235153382.html",
       "date": "2026-09-22T01:51:53+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "title": "ASML (ASML) Surpasses Market Returns: Some Facts Worth Knowing",
-      "summary": "The latest trading day saw ASML (ASML) settling at $1, representing a +1.87% change from its previous close.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/asml-asml-surpasses-market-returns-214505850.html",
-      "date": "2026-09-21T23:45:05+02:00"
     },
     {
       "ticker": "AVGO",
@@ -455,6 +462,13 @@
       "summary": "If you own NVIDIA (NVDA) or Micron Technology (MU), you own the same idea: AI data centers want more chips and memory than the industry can supply. The two split from there. NVIDIA is putting its own ...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-micron-gets-paid-more-203122649.html",
       "date": "2026-09-21T22:31:22+02:00"
+    },
+    {
+      "ticker": "CSW",
+      "title": "1 Safe-and-Steady Stock to Own for Decades and 2 We Turn Down",
+      "summary": "A stock with low volatility can be reassuring, but it doesn’t always mean strong long-term performance. Investors who prioritize stability may miss out on higher-reward opportunities elsewhere.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/1-safe-steady-stock-own-090946221.html",
+      "date": "2026-09-22T11:09:46+02:00"
     },
     {
       "ticker": "GEV",
@@ -521,24 +535,24 @@
     },
     {
       "ticker": "META",
-      "title": "Stock market today: Nasdaq, Dow and S&P 500 little changed as AI trade powers market",
-      "summary": "US stock futures steadied on Tuesday after confidence in artificial intelligence and falling oil prices spurred a rally on Wall Street.",
-      "link": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-september-22-nasdaq-dow-sp-500-080625961.html",
-      "date": "2026-09-22T10:06:25+02:00"
+      "title": "Why Muse really just added billions to Meta's market cap and to Mark Zuckerberg's net worth",
+      "summary": "Why Muse is the new darling of Meta investors.",
+      "link": "https://finance.yahoo.com/markets/stocks/article/why-muse-really-just-added-billions-to-metas-market-cap-and-to-mark-zuckerbergs-net-worth-094853229.html",
+      "date": "2026-09-22T11:48:53+02:00"
     },
     {
       "ticker": "META",
-      "title": "AMD stock soars to new record as semiconductors bounce: Chart of the Day",
-      "summary": "Shares of AMD, Arm and Intel all jumped as optimism over growing demand for CPUs sent chip stocks higher.",
-      "link": "https://finance.yahoo.com/markets/article/amd-stock-soars-to-new-record-as-semiconductors-bounce-chart-of-the-day-161627271.html",
-      "date": "2026-09-21T18:16:27+02:00"
+      "title": "Tech stocks rise, Bitcoin rallies as Treasury yields ease: AlphaCheck",
+      "summary": "Here's a check of the markets in the first few minutes of trading.",
+      "link": "https://finance.yahoo.com/markets/article/tech-stocks-rise-bitcoin-rallies-as-treasury-yields-ease-alphacheck-135033093.html",
+      "date": "2026-09-21T15:50:33+02:00"
     },
     {
       "ticker": "META",
-      "title": "Stocks rise on AI buzz, oil prices cool",
-      "summary": "Stock markets climbed on Tuesday as the success of Meta's new AI agent and US-China talks on artificial intelligence fanned a tech-led rally.- AI race -\nUS and Chinese economic officials met in New Yo...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-rise-ai-buzz-drop-023748822.html",
-      "date": "2026-09-22T10:57:23+02:00"
+      "title": "Analysis-From smart glasses to AI pins, privacy fears challenge tech's next big bet",
+      "summary": "By Aditya Soni and Kenneth Li SAN FRANCISCO/NEW YORK, Sept 22 (Reuters) - Companies betting AI devices will usher in a post-smartphone era are fueling privacy fears around the globe that could slow",
+      "link": "https://finance.yahoo.com/news/analysis-smart-glasses-ai-pins-100123150.html",
+      "date": "2026-09-22T12:08:28+02:00"
     },
     {
       "ticker": "MC.PA",
@@ -570,24 +584,24 @@
     },
     {
       "ticker": "NVDA",
-      "title": "Could Nvidia's prospects in China shift following the Trump and Xi's meeting?",
-      "summary": "US President Trump and Chinese President Xi are set to meet this week at a summit to discuss AI, war in Iran, trade negotiations, and more. Yahoo Finance Executive Editor Brian Sozzi chats with Epistr...",
-      "link": "https://finance.yahoo.com/video/could-nvidias-prospects-china-shift-183517435.html",
-      "date": "2026-09-21T20:35:17+02:00"
+      "title": "Why AMD's new $1 trillion valuation makes perfect sense",
+      "summary": "AMD CEO Lisu Su has been crushing it at a chip company that almost went bust when she walked in the door as a top executive in 2012.",
+      "link": "https://finance.yahoo.com/markets/stocks/article/why-amds-new-1-trillion-valuation-makes-perfect-sense-093453726.html",
+      "date": "2026-09-22T11:34:53+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Bitcoin prices, Logan & Jake Paul, Jensen Huang talks human survival: 3 crazy market movers",
-      "summary": "Yahoo Finance Executive Editor Brian Sozzi outlines a few unexpected events driving markets this week. For a closer look, watch the video above.",
-      "link": "https://finance.yahoo.com/video/bitcoin-prices-logan-jake-paul-144153828.html",
-      "date": "2026-09-21T16:41:53+02:00"
+      "title": "Tech stocks today: Oura files IPO paperwork, Nvidia's Huang pushes back on AI doomsday talk",
+      "summary": "Tech stock news for the week of Sept. 21.",
+      "link": "https://finance.yahoo.com/technology/live/tech-stocks-today-oura-files-ipo-paperwork-nvidias-huang-pushes-back-on-ai-doomsday-talk-144918730.html",
+      "date": "2026-09-21T16:49:18+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Alibaba’s Zhenwu V900 Is China’s Answer to Nvidia’s Absence – and Export Controls Are the Reason It Exists",
-      "summary": "Alibaba’s Zhenwu V900, unveiled September 22 at the Apsara Conference in Hangzhou, arrives as a direct answer to a question US policy created: what happens when you cut the world’s second-largest econ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/alibaba-zhenwu-v900-china-answer-090729183.html",
-      "date": "2026-09-22T11:07:29+02:00"
+      "title": "Jensen Huang pushes back on AI extinction fears",
+      "summary": "In the debut episode of Sozzi Unleashed, Yahoo Finance Executive Editor Brian Sozzi dives into Nvidia CEO Jensen Huang’s pushback against claims that artificial intelligence could lead to human extinc...",
+      "link": "https://finance.yahoo.com/video/jensen-huang-pushes-back-ai-140400200.html",
+      "date": "2026-09-21T16:04:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -665,13 +679,6 @@
       "summary": "Schneider Electric’s latest research identifies potential energy savings of up to 22% in buildings and cooling water reductions exceeding 50% in modeled AI data centers, highlighting opportunities for...",
       "link": "https://finance.yahoo.com/energy/articles/schneider-electric-releases-ai-building-140539421.html",
       "date": "2026-09-21T16:05:39+02:00"
-    },
-    {
-      "ticker": "TTE.PA",
-      "title": "Galp (ENXTLS:GALP) Stock Still Looks Undervalued On Its 187% Five Year Run",
-      "summary": "Galp Energia SGPS has delivered a very strong 187.2% share price gain over the past 5 years, which puts a lot of weight on the question of whether its current price is properly supported by the cash t...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/galp-enxtls-galp-stock-still-032412067.html",
-      "date": "2026-09-22T05:24:12+02:00"
     },
     {
       "ticker": "TSLA",
@@ -1179,7 +1186,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "28.7x",
+      "pe": "28.8x",
       "ev": "41.8x",
       "roe": "53.9%",
       "peg": "1.50",
@@ -1207,7 +1214,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "28.7x",
+          "28.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2185,7 +2192,7 @@
     {
       "ticker": "SU.PA",
       "rev_growth": "+9.8%",
-      "pe": "24.4x",
+      "pe": "24.5x",
       "ev": "21.4x",
       "roe": "18.6%",
       "peg": "1.52",
@@ -2213,7 +2220,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.4x",
+          "24.5x",
           "N/A",
           "N/A",
           "N/A",
