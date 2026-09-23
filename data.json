@@ -1,17 +1,17 @@
 {
-  "updated_at": "23/09/2026 à 10:26",
+  "updated_at": "23/09/2026 à 11:13",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.85,
-      "change": -0.83,
+      "price": 65.9,
+      "change": -0.75,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.1%",
-      "sma200_pct": 2.1,
+      "sma200": "200 W-SMA Above +2.2%",
+      "sma200_pct": 2.2,
       "is_under": false,
-      "rsi14_weekly": 40.8,
-      "ath_52w_pct": -16.9,
-      "earnings": "N/A"
+      "rsi14_weekly": 41.0,
+      "ath_52w_pct": -16.8,
+      "earnings": "17/02/2027"
     },
     {
       "ticker": "CPINV.BR",
@@ -39,14 +39,14 @@
     },
     {
       "ticker": "RET.BR",
-      "price": 64.2,
-      "change": -1.23,
+      "price": 64.1,
+      "change": -1.38,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +1.0%",
+      "sma200_pct": 1.0,
       "is_under": false,
       "rsi14_weekly": 41.6,
-      "ath_52w_pct": -10.3,
+      "ath_52w_pct": -10.5,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1519.0,
-      "change": 0.77,
+      "price": 1509.6,
+      "change": 0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +82.6%",
-      "sma200_pct": 82.6,
+      "sma200": "200 W-SMA Above +81.5%",
+      "sma200_pct": 81.5,
       "is_under": false,
-      "rsi14_weekly": 57.5,
-      "ath_52w_pct": -11.8,
+      "rsi14_weekly": 57.0,
+      "ath_52w_pct": -12.3,
       "earnings": "14/10/2026"
     },
     {
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 404.85,
-      "change": 0.72,
+      "price": 402.5,
+      "change": 0.14,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.7% 🔥",
-      "sma200_pct": -37.7,
+      "sma200": "200 W-SMA Under -38.0% 🔥",
+      "sma200_pct": -38.0,
       "is_under": true,
-      "rsi14_weekly": 31.7,
-      "ath_52w_pct": -37.9,
+      "rsi14_weekly": 30.9,
+      "ath_52w_pct": -38.3,
       "earnings": "26/01/2027"
     },
     {
@@ -279,14 +279,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1361.5,
-      "change": 0.48,
+      "price": 1353.0,
+      "change": -0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.5% 🔥",
-      "sma200_pct": -32.5,
+      "sma200": "200 W-SMA Under -32.9% 🔥",
+      "sma200_pct": -32.9,
       "is_under": true,
-      "rsi14_weekly": 32.0,
-      "ath_52w_pct": -39.5,
+      "rsi14_weekly": 31.3,
+      "ath_52w_pct": -39.9,
       "earnings": "11/02/2027"
     },
     {
@@ -315,8 +315,8 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 296.6,
-      "change": 0.54,
+      "price": 296.7,
+      "change": 0.58,
       "currency": "€",
       "sma200": "200 W-SMA Above +38.7%",
       "sma200_pct": 38.7,
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 78.5,
-      "change": 0.45,
+      "price": 78.16,
+      "change": 0.01,
       "currency": "€",
-      "sma200": "200 W-SMA Above +29.5%",
-      "sma200_pct": 29.5,
+      "sma200": "200 W-SMA Above +28.9%",
+      "sma200_pct": 28.9,
       "is_under": false,
-      "rsi14_weekly": 59.3,
-      "ath_52w_pct": -3.1,
+      "rsi14_weekly": 58.6,
+      "ath_52w_pct": -3.5,
       "earnings": "29/10/2026"
     },
     {
@@ -451,25 +451,18 @@
       "date": "2026-09-22T15:18:11+02:00"
     },
     {
-      "ticker": "ASML.AS",
-      "title": "ASML vs. Intel: Which AI Chip Stock Is a Better Buy in 2026?",
-      "summary": "ASML commands a near-monopoly on essential chipmaking equipment with a 29% net margin and strong cash flow, while Intel navigates a turnaround with negative earnings and government ties.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/asml-vs-intel-ai-chip-235501657.html",
-      "date": "2026-09-23T01:55:01+02:00"
+      "ticker": "AVGO",
+      "title": "AVGO Stock Falls Premarket: China Reportedly Audits Broadcom’s Grip On State-Backed Data Centers",
+      "summary": "China’s push for domestic semiconductor infrastructure puts Broadcom’s position under scrutiny.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/avgo-stock-falls-premarket-china-082349963.html",
+      "date": "2026-09-23T10:23:49+02:00"
     },
     {
-      "ticker": "ASML.AS",
-      "title": "Market Chatter: ASML Executive Warns Europe Will Fall Behind in Chip Development Due to Lack of Investment",
-      "summary": "ASML (ASML) is not making sales of chipmaking machines in Europe due to a dearth of investment and c",
-      "link": "https://finance.yahoo.com/technology/articles/market-chatter-asml-executive-warns-140937923.html",
-      "date": "2026-09-22T16:09:37+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "title": "3 AI Infrastructure Stocks Investors Should Watch As Data Center Spending Builds",
-      "summary": "AI and data-center spending now sit at the crossroads of higher rates, fragile growth and jumpy energy markets, which is exactly where big shifts in market leadership are often born. Investors focused...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-investors-091849195.html",
-      "date": "2026-09-22T11:18:49+02:00"
+      "ticker": "AVGO",
+      "title": "Top 3 Grid Stocks To Watch In September 2026",
+      "summary": "The Federal Reserve’s latest rate hike has pushed borrowing costs higher, which puts even more pressure on aging energy infrastructure that cannot be upgraded cheaply. Capital is getting pricier while...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/top-3-grid-stocks-watch-081746937.html",
+      "date": "2026-09-23T10:17:46+02:00"
     },
     {
       "ticker": "AVGO",
@@ -479,27 +472,6 @@
       "date": "2026-09-23T10:11:12+02:00"
     },
     {
-      "ticker": "AVGO",
-      "title": "Elon Musk Is Going All In on Nvidia, but Are These Two Chip Stocks Better Buys?",
-      "summary": "The inference market is expected to grow faster than training, opening the door for AMD and Broadcom to outperform.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/elon-musk-going-nvidia-two-052000197.html",
-      "date": "2026-09-23T07:20:00+02:00"
-    },
-    {
-      "ticker": "AVGO",
-      "title": "Broadcom (AVGO) Is Up 7.4% After Massive Buybacks And AI Chip Deals With Hyperscalers - Has The Bull Case Changed?",
-      "summary": "In the past few weeks, Broadcom reported that it completed a multi-year share repurchase program totaling 41,000,000 shares for about US$10.93 billion, alongside launching a fixed-income exchange offe...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-7-4-massive-021343094.html",
-      "date": "2026-09-23T04:13:43+02:00"
-    },
-    {
-      "ticker": "BKNG",
-      "title": "Booking Holdings (BKNG) Stock Moves -2.55%: What You Should Know",
-      "summary": "Booking Holdings (BKNG) closed at $164.22 in the latest trading session, marking a -2.55% move from the prior day.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/booking-holdings-bkng-stock-moves-220007438.html",
-      "date": "2026-09-23T00:00:07+02:00"
-    },
-    {
       "ticker": "CPRT",
       "title": "Netflix downgraded, SanDisk initiated: Wall Street's top analyst calls",
       "summary": "Netflix downgraded, SanDisk initiated: Wall Street's top analyst calls",
@@ -507,11 +479,11 @@
       "date": "2026-09-22T15:44:53+02:00"
     },
     {
-      "ticker": "CSW",
-      "title": "1 Safe-and-Steady Stock to Own for Decades and 2 We Turn Down",
-      "summary": "A stock with low volatility can be reassuring, but it doesn’t always mean strong long-term performance. Investors who prioritize stability may miss out on higher-reward opportunities elsewhere.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/1-safe-steady-stock-own-090946221.html",
-      "date": "2026-09-22T11:09:46+02:00"
+      "ticker": "GEV",
+      "title": "Top 3 Grid Stocks To Watch In September 2026",
+      "summary": "The Federal Reserve’s latest rate hike has pushed borrowing costs higher, which puts even more pressure on aging energy infrastructure that cannot be upgraded cheaply. Capital is getting pricier while...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/top-3-grid-stocks-watch-081746937.html",
+      "date": "2026-09-23T10:17:46+02:00"
     },
     {
       "ticker": "GEV",
@@ -526,13 +498,6 @@
       "summary": "GE Vernova's backlog keeps exploding and its CEO says the company will be mostly sold out through 2030, yet most AI power investors are looking at entirely the wrong part of the supply chain.",
       "link": "https://finance.yahoo.com/energy/articles/ge-vernova-ai-energy-bottleneck-164454194.html",
       "date": "2026-09-22T18:44:54+02:00"
-    },
-    {
-      "ticker": "GEV",
-      "title": "This Week In Energy Transition - Wind Energy Boom Challenges and Opportunities Ahead",
-      "summary": "The global wind energy market is on track for significant expansion, aiming to reach around USD 287.9 billion by 2035, driven by increased demand for clean power, technological advancements, and subst...",
-      "link": "https://finance.yahoo.com/energy/articles/week-energy-transition-wind-energy-113702304.html",
-      "date": "2026-09-22T13:37:02+02:00"
     },
     {
       "ticker": "GOOG",
@@ -570,13 +535,6 @@
       "date": "2026-09-22T17:16:14+02:00"
     },
     {
-      "ticker": "ISRG",
-      "title": "1 S&P 500 Stock with Exciting Potential and 2 We Ignore",
-      "summary": "While the S&P 500 (^GSPC) includes industry leaders, not every stock in the index is a winner. Some companies are past their prime, weighed down by poor execution, weak financials, or structural headw...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/1-p-500-stock-exciting-083746812.html",
-      "date": "2026-09-22T10:37:46+02:00"
-    },
-    {
       "ticker": "META",
       "title": "Meta doesn't need the best AI model — it has something better: you.\n\nWhile OpenAI and Anthropic compete on raw model performance, Meta's new agent wins on data. They know what you want to buy before you do, and now they can finally act on it, cutting out the middlemen and becoming the marketplace itself.\n\nWould you actually use an AI agent that knows you this well?\n\nWatch the full episode, In The Loop, on Youtube.",
       "summary": "Meta doesn't need the best AI model — it has something better: you. While OpenAI and Anthropic compete on raw model performance, Meta's new agent wins on data. They know what you want to buy before yo...",
@@ -598,13 +556,6 @@
       "date": "2026-09-22T17:07:47+02:00"
     },
     {
-      "ticker": "MC.PA",
-      "title": "EXCLUSIVE: LVMH Names New Managing Director at Repossi",
-      "summary": "Matthieu Soudan spent eight years at Tag Heuer and was most recently head of strategic projects at Bulgari.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/exclusive-lvmh-names-managing-director-123000152.html",
-      "date": "2026-09-22T14:30:00+02:00"
-    },
-    {
       "ticker": "MSFT",
       "title": "Anthropic vs. OpenAI: Competition heats up with release of new AI models",
       "summary": "Anthropic (ANTH.PVT) unveiled its new Claude Opus 5.5 on Tuesday, the developer's latest AI model promising faster performance and lower costs for enterprise customers. Yahoo Finance Tech Editor Dan H...",
@@ -617,6 +568,13 @@
       "summary": "Yahoo Finance Executive Editor and host of Sozzi Unleashed, Brian Sozzi, tees up the stories making waves across the markets. The Magnificent 7 are back in focus as megacap tech stocks help push marke...",
       "link": "https://finance.yahoo.com/video/magnificent-7-back-meta-ai-140300865.html",
       "date": "2026-09-22T16:03:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "title": "Market Chatter: Microsoft Plans Larger Copilot Discounts for Large Customers",
+      "summary": "Microsoft (MSFT) is offering corporate customers discounts of 30% to 50% on Copilot AI subscriptions",
+      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-plans-larger-082408309.html",
+      "date": "2026-09-23T10:24:08+02:00"
     },
     {
       "ticker": "NBIS",
@@ -985,7 +943,7 @@
     {
       "ticker": "RET.BR",
       "rev_growth": "+1.6%",
-      "pe": "10.4x",
+      "pe": "10.3x",
       "ev": "15.5x",
       "roe": "9.8%",
       "peg": "N/A",
@@ -1010,7 +968,7 @@
           "130.1%"
         ],
         "Fwd P/E": [
-          "10.4x",
+          "10.3x",
           "N/A",
           "N/A",
           "N/A"
@@ -1278,7 +1236,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "29.4x",
+      "pe": "29.2x",
       "ev": "42.5x",
       "roe": "53.9%",
       "peg": "1.53",
@@ -1306,7 +1264,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "29.4x",
+          "29.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -1878,7 +1836,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.3x",
+      "pe": "16.2x",
       "ev": "11.2x",
       "roe": "16.6%",
       "peg": "1.49",
@@ -1906,7 +1864,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.3x",
+          "16.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2171,7 +2129,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "27.0x",
+      "pe": "26.8x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.04",
@@ -2199,7 +2157,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "27.0x",
+          "26.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2464,7 +2422,7 @@
     {
       "ticker": "TTE.PA",
       "rev_growth": "+27.8%",
-      "pe": "8.9x",
+      "pe": "8.8x",
       "ev": "5.2x",
       "roe": "14.5%",
       "peg": "0.81",
@@ -2492,7 +2450,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.9x",
+          "8.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2704,11 +2662,11 @@
   ],
   "earnings": [
     {
-      "ticker": "CPINV.BR",
-      "date": "2026-09-02",
-      "date_formatted": "02/09/2026",
-      "is_past": true,
-      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
+      "ticker": "AED.BR",
+      "date": "2027-02-17",
+      "date_formatted": "17/02/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/aed/financials/?p=quarterly"
     },
     {
       "ticker": "CPINV.BR",
