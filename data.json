@@ -1,52 +1,52 @@
 {
-  "updated_at": "23/09/2026 à 09:13",
+  "updated_at": "23/09/2026 à 10:14",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 66.4,
-      "change": 0.0,
+      "price": 66.0,
+      "change": -0.6,
       "currency": "€",
-      "sma200": "200 W-SMA Above +3.0%",
-      "sma200_pct": 3.0,
+      "sma200": "200 W-SMA Above +2.3%",
+      "sma200_pct": 2.3,
       "is_under": false,
-      "rsi14_weekly": 40.6,
-      "ath_52w_pct": -16.2,
+      "rsi14_weekly": 41.3,
+      "ath_52w_pct": -16.7,
       "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
-      "price": 12.46,
-      "change": 0.0,
+      "price": 12.4,
+      "change": -0.48,
       "currency": "€",
-      "sma200": "200 W-SMA Under -2.6% 🔥",
-      "sma200_pct": -2.6,
+      "sma200": "200 W-SMA Under -3.1% 🔥",
+      "sma200_pct": -3.1,
       "is_under": true,
-      "rsi14_weekly": 51.2,
-      "ath_52w_pct": -10.5,
+      "rsi14_weekly": 48.8,
+      "ath_52w_pct": -10.9,
       "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.94,
-      "change": 0.0,
+      "price": 17.88,
+      "change": -0.33,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.2% 🔥",
-      "sma200_pct": -1.2,
+      "sma200": "200 W-SMA Under -1.5% 🔥",
+      "sma200_pct": -1.5,
       "is_under": true,
-      "rsi14_weekly": 39.6,
-      "ath_52w_pct": -11.2,
+      "rsi14_weekly": 39.3,
+      "ath_52w_pct": -11.5,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
-      "price": 65.0,
-      "change": 0.0,
+      "price": 64.4,
+      "change": -0.92,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.4%",
-      "sma200_pct": 2.4,
+      "sma200": "200 W-SMA Above +1.4%",
+      "sma200_pct": 1.4,
       "is_under": false,
-      "rsi14_weekly": 44.0,
-      "ath_52w_pct": -9.2,
+      "rsi14_weekly": 42.2,
+      "ath_52w_pct": -10.1,
       "earnings": "13/11/2026"
     },
     {
@@ -99,14 +99,14 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1507.4,
-      "change": 0.0,
+      "price": 1518.4,
+      "change": 0.73,
       "currency": "€",
-      "sma200": "200 W-SMA Above +81.3%",
-      "sma200_pct": 81.3,
+      "sma200": "200 W-SMA Above +82.5%",
+      "sma200_pct": 82.5,
       "is_under": false,
-      "rsi14_weekly": 55.2,
-      "ath_52w_pct": -12.4,
+      "rsi14_weekly": 57.5,
+      "ath_52w_pct": -11.8,
       "earnings": "14/10/2026"
     },
     {
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 401.95,
-      "change": 0.0,
+      "price": 407.05,
+      "change": 1.27,
       "currency": "€",
-      "sma200": "200 W-SMA Under -38.1% 🔥",
-      "sma200_pct": -38.1,
+      "sma200": "200 W-SMA Under -37.3% 🔥",
+      "sma200_pct": -37.3,
       "is_under": true,
-      "rsi14_weekly": 31.9,
-      "ath_52w_pct": -38.4,
+      "rsi14_weekly": 32.4,
+      "ath_52w_pct": -37.6,
       "earnings": "26/01/2027"
     },
     {
@@ -279,14 +279,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1355.0,
-      "change": 0.0,
+      "price": 1367.0,
+      "change": 0.89,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.8% 🔥",
-      "sma200_pct": -32.8,
+      "sma200": "200 W-SMA Under -32.3% 🔥",
+      "sma200_pct": -32.3,
       "is_under": true,
-      "rsi14_weekly": 30.5,
-      "ath_52w_pct": -39.8,
+      "rsi14_weekly": 32.5,
+      "ath_52w_pct": -39.2,
       "earnings": "11/02/2027"
     },
     {
@@ -315,14 +315,14 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 295.0,
-      "change": 0.0,
+      "price": 296.5,
+      "change": 0.51,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.9%",
-      "sma200_pct": 37.9,
+      "sma200": "200 W-SMA Above +38.6%",
+      "sma200_pct": 38.6,
       "is_under": false,
-      "rsi14_weekly": 57.7,
-      "ath_52w_pct": -5.1,
+      "rsi14_weekly": 58.3,
+      "ath_52w_pct": -4.7,
       "earnings": "25/02/2027"
     },
     {
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 78.15,
-      "change": 0.0,
+      "price": 78.32,
+      "change": 0.22,
       "currency": "€",
-      "sma200": "200 W-SMA Above +28.9%",
-      "sma200_pct": 28.9,
+      "sma200": "200 W-SMA Above +29.2%",
+      "sma200_pct": 29.2,
       "is_under": false,
-      "rsi14_weekly": 59.4,
-      "ath_52w_pct": -3.5,
+      "rsi14_weekly": 58.9,
+      "ath_52w_pct": -3.3,
       "earnings": "29/10/2026"
     },
     {
@@ -407,13 +407,6 @@
       "summary": "Leading AI stocks ripped higher to kick off this trading week as investors pile back into Big Tech. The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley weigh in on the market breadth of the ...",
       "link": "https://finance.yahoo.com/video/return-ai-rally-whats-fueling-125206390.html",
       "date": "2026-09-22T14:52:06+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "title": "Elon Musk Is Going All In on Nvidia, but Are These Two Chip Stocks Better Buys?",
-      "summary": "The inference market is expected to grow faster than training, opening the door for AMD and Broadcom to outperform.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/elon-musk-going-nvidia-two-052000197.html",
-      "date": "2026-09-23T07:20:00+02:00"
     },
     {
       "ticker": "AMKR",
@@ -556,6 +549,13 @@
       "date": "2026-09-22T16:03:00+02:00"
     },
     {
+      "ticker": "GOOG",
+      "title": "Should You Forget Palantir and Buy These 3 Quantum Computing Stocks Instead?",
+      "summary": "These quantum computing stocks can appeal to investors in ways that Palantir can't.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/forget-palantir-buy-3-quantum-072200560.html",
+      "date": "2026-09-23T09:22:00+02:00"
+    },
+    {
       "ticker": "ISRG",
       "title": "2 Beaten-Down Stocks to Buy Before They Bounce Back",
       "summary": "The market may be underestimating these companies.",
@@ -619,13 +619,6 @@
       "date": "2026-09-22T16:03:00+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "Trump Made More Than 1,000 Trades In July Worth At Least $79M — One Industry Dominated His Transactions",
-      "summary": "U.S. President Donald Trump’s July trades were revealed in a disclosure by the Office of Government Ethics on Tuesday, with combined transactions totaling an estimated $79 million to $270 million.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-made-more-1-000-060748033.html",
-      "date": "2026-09-23T08:07:48+02:00"
-    },
-    {
       "ticker": "NBIS",
       "title": "NBIS Stock Extends Gains After 5-Day Winning Streak: Has It Bumped Up Inference Prices?",
       "summary": "AI infrastructure demand continues to drive pricing power across Nebius’ cloud business.",
@@ -648,10 +641,17 @@
     },
     {
       "ticker": "NVDA",
-      "title": "Should investors play AI bottlenecks over social media stocks?",
-      "summary": "Should investors bet more on the AI infrastructure bottlenecks than on other tech trends, such as social media? Today's Market Hang panel consists of Host Turney Duff, Yahoo Finance Executive Editor B...",
-      "link": "https://finance.yahoo.com/video/investors-play-ai-bottlenecks-over-173922161.html",
-      "date": "2026-09-22T19:39:22+02:00"
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures muted as oil falls, markets eye looming Trump-Xi meeting",
+      "summary": "After back-to-back Nasdaq record highs,  investors are monitoring US diplomatic efforts with Iran and China, as well as a recent rally in tech stocks.",
+      "link": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-23-dow-sp-500-nasdaq-080556640.html",
+      "date": "2026-09-23T10:05:56+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "title": "The Magnificent 7 are back: Meta’s AI bet leads the charge",
+      "summary": "Yahoo Finance Executive Editor and host of Sozzi Unleashed, Brian Sozzi, tees up the stories making waves across the markets. The Magnificent 7 are back in focus as megacap tech stocks help push marke...",
+      "link": "https://finance.yahoo.com/video/magnificent-7-back-meta-ai-140300865.html",
+      "date": "2026-09-22T16:03:00+02:00"
     },
     {
       "ticker": "NVDA",
@@ -659,13 +659,6 @@
       "summary": "Alibaba's (BABA) stock price is climbing premarket after it rolled out a new AI chip, the Zhenwu V900, pitting it against Nvidia chips as a powerful competitor. The 8:30 hosts, Julie Hyman, Pras Subra...",
       "link": "https://finance.yahoo.com/video/alibaba-rolls-touting-chinas-most-132329685.html",
       "date": "2026-09-22T15:23:29+02:00"
-    },
-    {
-      "ticker": "NVDA",
-      "title": "Own Realty Income By Sept. 30 to Qualify for Its Oct. 15 Dividend. Here's How Many Shares You'd Need for $1,251 in Yearly Dividends.",
-      "summary": "Regular dividend income can replace a weekly paycheck.",
-      "link": "https://finance.yahoo.com/real-estate/articles/own-realty-income-sept-30-065000380.html",
-      "date": "2026-09-23T08:50:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -781,10 +774,10 @@
     },
     {
       "ticker": "TSLA",
-      "title": "Trump Made More Than 1,000 Trades In July Worth At Least $79M — One Industry Dominated His Transactions",
-      "summary": "U.S. President Donald Trump’s July trades were revealed in a disclosure by the Office of Government Ethics on Tuesday, with combined transactions totaling an estimated $79 million to $270 million.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-made-more-1-000-060748033.html",
-      "date": "2026-09-23T08:07:48+02:00"
+      "title": "Elon Musk Ally Jason Calacanis Bets These 4 Autonomy Stocks Will Be Bought Within 2 Years — And Double His Money",
+      "summary": "Jason Calacanis bought small positions in WRD, PONY, LCID and RIVN, betting all four will be acquired within 24 months.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-ally-jason-calacanis-071753731.html",
+      "date": "2026-09-23T09:17:53+02:00"
     },
     {
       "ticker": "VRT",
@@ -812,7 +805,7 @@
     {
       "ticker": "AED.BR",
       "rev_growth": "+104.3%",
-      "pe": "12.0x",
+      "pe": "11.9x",
       "ev": "29.0x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -840,7 +833,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "12.0x",
+          "11.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -992,7 +985,7 @@
     {
       "ticker": "RET.BR",
       "rev_growth": "+1.6%",
-      "pe": "10.5x",
+      "pe": "10.4x",
       "ev": "15.5x",
       "roe": "9.8%",
       "peg": "N/A",
@@ -1017,7 +1010,7 @@
           "130.1%"
         ],
         "Fwd P/E": [
-          "10.5x",
+          "10.4x",
           "N/A",
           "N/A",
           "N/A"
@@ -1285,7 +1278,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "29.1x",
+      "pe": "29.4x",
       "ev": "42.5x",
       "roe": "53.9%",
       "peg": "1.53",
@@ -1313,7 +1306,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "29.1x",
+          "29.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -1885,7 +1878,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.2x",
+      "pe": "16.4x",
       "ev": "11.2x",
       "roe": "16.6%",
       "peg": "1.49",
@@ -1913,7 +1906,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.2x",
+          "16.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -2178,7 +2171,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "26.8x",
+      "pe": "27.1x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.04",
@@ -2206,7 +2199,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.8x",
+          "27.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2351,7 +2344,7 @@
     {
       "ticker": "SU.PA",
       "rev_growth": "+9.8%",
-      "pe": "24.3x",
+      "pe": "24.4x",
       "ev": "21.4x",
       "roe": "18.6%",
       "peg": "1.56",
@@ -2379,7 +2372,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.3x",
+          "24.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -2471,7 +2464,7 @@
     {
       "ticker": "TTE.PA",
       "rev_growth": "+27.8%",
-      "pe": "8.8x",
+      "pe": "8.9x",
       "ev": "5.2x",
       "roe": "14.5%",
       "peg": "0.81",
@@ -2499,7 +2492,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.8x",
+          "8.9x",
           "N/A",
           "N/A",
           "N/A",
