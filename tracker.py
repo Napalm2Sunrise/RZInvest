@@ -89,15 +89,16 @@ def calculate_ath_52w_pct(hist_daily, current_price):
 def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
     """
     Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
-    Lien directement orienté vers la synthèse financière de la valeur sur Yahoo Finance.
+    Lien directement orienté vers la synthèse trimestrielle sur Stock Analysis.
     """
     earnings_list = []
     next_earnings_str = "N/A"
     now_date = datetime.now(belgium_tz).date()
     cutoff_past_date = now_date - timedelta(days=30)
     
-    # Lien dynamique vers la page d'analyse financière du ticker
-    earnings_url = f"https://finance.yahoo.com/quote/{symbol}/financials/"
+    # Nettoyage du symbole pour Stock Analysis (ex: "TTE.PA" -> "tte", "CPRT" -> "cprt")
+    clean_ticker = symbol.split('.')[0].lower()
+    earnings_url = f"https://stockanalysis.com/stocks/{clean_ticker}/financials/?p=quarterly"
 
     try:
         dates_found = []
