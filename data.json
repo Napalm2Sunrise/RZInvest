@@ -1,16 +1,16 @@
 {
-  "updated_at": "23/09/2026 à 10:14",
+  "updated_at": "23/09/2026 à 10:26",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 66.0,
-      "change": -0.6,
+      "price": 65.85,
+      "change": -0.83,
       "currency": "€",
-      "sma200": "200 W-SMA Above +2.3%",
-      "sma200_pct": 2.3,
+      "sma200": "200 W-SMA Above +2.1%",
+      "sma200_pct": 2.1,
       "is_under": false,
-      "rsi14_weekly": 41.3,
-      "ath_52w_pct": -16.7,
+      "rsi14_weekly": 40.8,
+      "ath_52w_pct": -16.9,
       "earnings": "N/A"
     },
     {
@@ -39,14 +39,14 @@
     },
     {
       "ticker": "RET.BR",
-      "price": 64.4,
-      "change": -0.92,
+      "price": 64.2,
+      "change": -1.23,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.4%",
-      "sma200_pct": 1.4,
+      "sma200": "200 W-SMA Above +1.1%",
+      "sma200_pct": 1.1,
       "is_under": false,
-      "rsi14_weekly": 42.2,
-      "ath_52w_pct": -10.1,
+      "rsi14_weekly": 41.6,
+      "ath_52w_pct": -10.3,
       "earnings": "13/11/2026"
     },
     {
@@ -99,11 +99,11 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1518.4,
-      "change": 0.73,
+      "price": 1519.0,
+      "change": 0.77,
       "currency": "€",
-      "sma200": "200 W-SMA Above +82.5%",
-      "sma200_pct": 82.5,
+      "sma200": "200 W-SMA Above +82.6%",
+      "sma200_pct": 82.6,
       "is_under": false,
       "rsi14_weekly": 57.5,
       "ath_52w_pct": -11.8,
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 407.05,
-      "change": 1.27,
+      "price": 404.85,
+      "change": 0.72,
       "currency": "€",
-      "sma200": "200 W-SMA Under -37.3% 🔥",
-      "sma200_pct": -37.3,
+      "sma200": "200 W-SMA Under -37.7% 🔥",
+      "sma200_pct": -37.7,
       "is_under": true,
-      "rsi14_weekly": 32.4,
-      "ath_52w_pct": -37.6,
+      "rsi14_weekly": 31.7,
+      "ath_52w_pct": -37.9,
       "earnings": "26/01/2027"
     },
     {
@@ -279,14 +279,14 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1367.0,
-      "change": 0.89,
+      "price": 1361.5,
+      "change": 0.48,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.3% 🔥",
-      "sma200_pct": -32.3,
+      "sma200": "200 W-SMA Under -32.5% 🔥",
+      "sma200_pct": -32.5,
       "is_under": true,
-      "rsi14_weekly": 32.5,
-      "ath_52w_pct": -39.2,
+      "rsi14_weekly": 32.0,
+      "ath_52w_pct": -39.5,
       "earnings": "11/02/2027"
     },
     {
@@ -315,14 +315,14 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 296.5,
-      "change": 0.51,
+      "price": 296.6,
+      "change": 0.54,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.6%",
-      "sma200_pct": 38.6,
+      "sma200": "200 W-SMA Above +38.7%",
+      "sma200_pct": 38.7,
       "is_under": false,
       "rsi14_weekly": 58.3,
-      "ath_52w_pct": -4.7,
+      "ath_52w_pct": -4.6,
       "earnings": "25/02/2027"
     },
     {
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 78.32,
-      "change": 0.22,
+      "price": 78.5,
+      "change": 0.45,
       "currency": "€",
-      "sma200": "200 W-SMA Above +29.2%",
-      "sma200_pct": 29.2,
+      "sma200": "200 W-SMA Above +29.5%",
+      "sma200_pct": 29.5,
       "is_under": false,
-      "rsi14_weekly": 58.9,
-      "ath_52w_pct": -3.3,
+      "rsi14_weekly": 59.3,
+      "ath_52w_pct": -3.1,
       "earnings": "29/10/2026"
     },
     {
@@ -473,6 +473,13 @@
     },
     {
       "ticker": "AVGO",
+      "title": "Market Chatter: Anthropic Eyes Up to 1 GW of Data Center Capacity From Apollo-Backed Stream",
+      "summary": "Amazon-backed (AMZN) Anthropic is in early discussions to lease up to 1 gigawatt of data center capa",
+      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-anthropic-eyes-1-081112716.html",
+      "date": "2026-09-23T10:11:12+02:00"
+    },
+    {
+      "ticker": "AVGO",
       "title": "Elon Musk Is Going All In on Nvidia, but Are These Two Chip Stocks Better Buys?",
       "summary": "The inference market is expected to grow faster than training, opening the door for AMD and Broadcom to outperform.",
       "link": "https://finance.yahoo.com/technology/ai/articles/elon-musk-going-nvidia-two-052000197.html",
@@ -484,13 +491,6 @@
       "summary": "In the past few weeks, Broadcom reported that it completed a multi-year share repurchase program totaling 41,000,000 shares for about US$10.93 billion, alongside launching a fixed-income exchange offe...",
       "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-7-4-massive-021343094.html",
       "date": "2026-09-23T04:13:43+02:00"
-    },
-    {
-      "ticker": "AVGO",
-      "title": "Broadcom Just Named Its Next AI Customer. It Isn’t Google.",
-      "summary": "Anthropic is becoming a central driver of Broadcom’s AI growth story.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-just-named-next-ai-222044865.html",
-      "date": "2026-09-23T00:20:44+02:00"
     },
     {
       "ticker": "BKNG",
@@ -550,10 +550,10 @@
     },
     {
       "ticker": "GOOG",
-      "title": "Should You Forget Palantir and Buy These 3 Quantum Computing Stocks Instead?",
-      "summary": "These quantum computing stocks can appeal to investors in ways that Palantir can't.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/forget-palantir-buy-3-quantum-072200560.html",
-      "date": "2026-09-23T09:22:00+02:00"
+      "title": "Market Chatter: Anthropic Eyes Up to 1 GW of Data Center Capacity From Apollo-Backed Stream",
+      "summary": "Amazon-backed (AMZN) Anthropic is in early discussions to lease up to 1 gigawatt of data center capa",
+      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-anthropic-eyes-1-081112716.html",
+      "date": "2026-09-23T10:11:12+02:00"
     },
     {
       "ticker": "ISRG",
@@ -774,10 +774,10 @@
     },
     {
       "ticker": "TSLA",
-      "title": "Elon Musk Ally Jason Calacanis Bets These 4 Autonomy Stocks Will Be Bought Within 2 Years — And Double His Money",
-      "summary": "Jason Calacanis bought small positions in WRD, PONY, LCID and RIVN, betting all four will be acquired within 24 months.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-ally-jason-calacanis-071753731.html",
-      "date": "2026-09-23T09:17:53+02:00"
+      "title": "1 Industrials Stock with Impressive Fundamentals and 2 We Avoid",
+      "summary": "Even if they go mostly unnoticed, industrial businesses are the backbone of our country. Still, their generally high capital requirements expose them to the ups and downs of economic cycles, and the i...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/1-industrials-stock-impressive-fundamentals-081302641.html",
+      "date": "2026-09-23T10:13:02+02:00"
     },
     {
       "ticker": "VRT",
@@ -1878,7 +1878,7 @@
     {
       "ticker": "MC.PA",
       "rev_growth": "-2.9%",
-      "pe": "16.4x",
+      "pe": "16.3x",
       "ev": "11.2x",
       "roe": "16.6%",
       "peg": "1.49",
@@ -1906,7 +1906,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.4x",
+          "16.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2171,7 +2171,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "27.1x",
+      "pe": "27.0x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.04",
@@ -2199,7 +2199,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "27.1x",
+          "27.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2708,238 +2708,238 @@
       "date": "2026-09-02",
       "date_formatted": "02/09/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
+      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
     },
     {
       "ticker": "CPINV.BR",
       "date": "2026-11-04",
       "date_formatted": "04/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
+      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
     },
     {
       "ticker": "RET.BR",
       "date": "2026-11-13",
       "date_formatted": "13/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/RET.BR/financials/"
+      "link": "https://stockanalysis.com/stocks/ret/financials/?p=quarterly"
     },
     {
       "ticker": "AAOI",
       "date": "2026-11-05",
       "date_formatted": "05/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AAOI/financials/"
+      "link": "https://stockanalysis.com/stocks/aaoi/financials/?p=quarterly"
     },
     {
       "ticker": "AMD",
       "date": "2026-11-03",
       "date_formatted": "03/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AMD/financials/"
+      "link": "https://stockanalysis.com/stocks/amd/financials/?p=quarterly"
     },
     {
       "ticker": "AMKR",
       "date": "2026-10-26",
       "date_formatted": "26/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AMKR/financials/"
+      "link": "https://stockanalysis.com/stocks/amkr/financials/?p=quarterly"
     },
     {
       "ticker": "AMZN",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AMZN/financials/"
+      "link": "https://stockanalysis.com/stocks/amzn/financials/?p=quarterly"
     },
     {
       "ticker": "ASML.AS",
       "date": "2026-10-14",
       "date_formatted": "14/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/ASML.AS/financials/"
+      "link": "https://stockanalysis.com/stocks/asml/financials/?p=quarterly"
     },
     {
       "ticker": "AVGO",
       "date": "2026-09-02",
       "date_formatted": "02/09/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/quote/AVGO/financials/"
+      "link": "https://stockanalysis.com/stocks/avgo/financials/?p=quarterly"
     },
     {
       "ticker": "AVGO",
       "date": "2026-12-09",
       "date_formatted": "09/12/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AVGO/financials/"
+      "link": "https://stockanalysis.com/stocks/avgo/financials/?p=quarterly"
     },
     {
       "ticker": "AYA.TO",
       "date": "2026-11-11",
       "date_formatted": "11/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AYA.TO/financials/"
+      "link": "https://stockanalysis.com/stocks/aya/financials/?p=quarterly"
     },
     {
       "ticker": "BKNG",
       "date": "2026-10-27",
       "date_formatted": "27/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/BKNG/financials/"
+      "link": "https://stockanalysis.com/stocks/bkng/financials/?p=quarterly"
     },
     {
       "ticker": "CPRT",
       "date": "2026-09-10",
       "date_formatted": "10/09/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/quote/CPRT/financials/"
+      "link": "https://stockanalysis.com/stocks/cprt/financials/?p=quarterly"
     },
     {
       "ticker": "CPRT",
       "date": "2026-11-19",
       "date_formatted": "19/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/CPRT/financials/"
+      "link": "https://stockanalysis.com/stocks/cprt/financials/?p=quarterly"
     },
     {
       "ticker": "CSW",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/CSW/financials/"
+      "link": "https://stockanalysis.com/stocks/csw/financials/?p=quarterly"
     },
     {
       "ticker": "GEV",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/GEV/financials/"
+      "link": "https://stockanalysis.com/stocks/gev/financials/?p=quarterly"
     },
     {
       "ticker": "GOOG",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/GOOG/financials/"
+      "link": "https://stockanalysis.com/stocks/goog/financials/?p=quarterly"
     },
     {
       "ticker": "ISRG",
       "date": "2026-10-20",
       "date_formatted": "20/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/ISRG/financials/"
+      "link": "https://stockanalysis.com/stocks/isrg/financials/?p=quarterly"
     },
     {
       "ticker": "META",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/META/financials/"
+      "link": "https://stockanalysis.com/stocks/meta/financials/?p=quarterly"
     },
     {
       "ticker": "MC.PA",
       "date": "2027-01-26",
       "date_formatted": "26/01/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/MC.PA/financials/"
+      "link": "https://stockanalysis.com/stocks/mc/financials/?p=quarterly"
     },
     {
       "ticker": "MSFT",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/MSFT/financials/"
+      "link": "https://stockanalysis.com/stocks/msft/financials/?p=quarterly"
     },
     {
       "ticker": "NBIS",
       "date": "2026-11-10",
       "date_formatted": "10/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/NBIS/financials/"
+      "link": "https://stockanalysis.com/stocks/nbis/financials/?p=quarterly"
     },
     {
       "ticker": "NVDA",
       "date": "2026-08-26",
       "date_formatted": "26/08/2026",
       "is_past": true,
-      "link": "https://finance.yahoo.com/quote/NVDA/financials/"
+      "link": "https://stockanalysis.com/stocks/nvda/financials/?p=quarterly"
     },
     {
       "ticker": "NVDA",
       "date": "2026-11-17",
       "date_formatted": "17/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/NVDA/financials/"
+      "link": "https://stockanalysis.com/stocks/nvda/financials/?p=quarterly"
     },
     {
       "ticker": "ONON",
       "date": "2026-11-11",
       "date_formatted": "11/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/ONON/financials/"
+      "link": "https://stockanalysis.com/stocks/onon/financials/?p=quarterly"
     },
     {
       "ticker": "RMS.PA",
       "date": "2027-02-11",
       "date_formatted": "11/02/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/RMS.PA/financials/"
+      "link": "https://stockanalysis.com/stocks/rms/financials/?p=quarterly"
     },
     {
       "ticker": "SPCX",
       "date": "2026-11-03",
       "date_formatted": "03/11/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/SPCX/financials/"
+      "link": "https://stockanalysis.com/stocks/spcx/financials/?p=quarterly"
     },
     {
       "ticker": "SPGI",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/SPGI/financials/"
+      "link": "https://stockanalysis.com/stocks/spgi/financials/?p=quarterly"
     },
     {
       "ticker": "SU.PA",
       "date": "2027-02-25",
       "date_formatted": "25/02/2027",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/SU.PA/financials/"
+      "link": "https://stockanalysis.com/stocks/su/financials/?p=quarterly"
     },
     {
       "ticker": "TMO",
       "date": "2026-10-21",
       "date_formatted": "21/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/TMO/financials/"
+      "link": "https://stockanalysis.com/stocks/tmo/financials/?p=quarterly"
     },
     {
       "ticker": "TTE.PA",
       "date": "2026-10-29",
       "date_formatted": "29/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/TTE.PA/financials/"
+      "link": "https://stockanalysis.com/stocks/tte/financials/?p=quarterly"
     },
     {
       "ticker": "TSLA",
       "date": "2026-10-21",
       "date_formatted": "21/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/TSLA/financials/"
+      "link": "https://stockanalysis.com/stocks/tsla/financials/?p=quarterly"
     },
     {
       "ticker": "VRSN",
       "date": "2026-10-22",
       "date_formatted": "22/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/VRSN/financials/"
+      "link": "https://stockanalysis.com/stocks/vrsn/financials/?p=quarterly"
     },
     {
       "ticker": "VRT",
       "date": "2026-10-21",
       "date_formatted": "21/10/2026",
       "is_past": false,
-      "link": "https://finance.yahoo.com/quote/VRT/financials/"
+      "link": "https://stockanalysis.com/stocks/vrt/financials/?p=quarterly"
     }
   ]
 }
