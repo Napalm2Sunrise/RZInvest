@@ -1,22 +1,22 @@
 {
-  "updated_at": "23/09/2026 à 08:17",
+  "updated_at": "23/09/2026 à 09:13",
   "prices": [
     {
       "ticker": "AED.BR",
       "price": 66.4,
-      "change": 0.91,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +3.0%",
       "sma200_pct": 3.0,
       "is_under": false,
       "rsi14_weekly": 40.6,
       "ath_52w_pct": -16.2,
-      "earnings": "17/02/2027"
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "price": 12.46,
-      "change": -0.64,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -2.6% 🔥",
       "sma200_pct": -2.6,
@@ -28,7 +28,7 @@
     {
       "ticker": "HOMI.BR",
       "price": 17.94,
-      "change": 0.22,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -1.2% 🔥",
       "sma200_pct": -1.2,
@@ -40,7 +40,7 @@
     {
       "ticker": "RET.BR",
       "price": 65.0,
-      "change": 0.15,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +2.4%",
       "sma200_pct": 2.4,
@@ -100,7 +100,7 @@
     {
       "ticker": "ASML.AS",
       "price": 1507.4,
-      "change": 1.76,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +81.3%",
       "sma200_pct": 81.3,
@@ -220,7 +220,7 @@
     {
       "ticker": "MC.PA",
       "price": 401.95,
-      "change": -0.88,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.1% 🔥",
       "sma200_pct": -38.1,
@@ -280,7 +280,7 @@
     {
       "ticker": "RMS.PA",
       "price": 1355.0,
-      "change": 0.82,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -32.8% 🔥",
       "sma200_pct": -32.8,
@@ -340,7 +340,7 @@
     {
       "ticker": "TTE.PA",
       "price": 78.15,
-      "change": -0.52,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +28.9%",
       "sma200_pct": 28.9,
@@ -620,10 +620,10 @@
     },
     {
       "ticker": "MSFT",
-      "title": "“The New Clippy”: Benioff Uses Salesforce’s Biggest Product Launch in Years to Challenge Microsoft",
-      "summary": "Marc Benioff is never one to pass up a chance to take a jab at Microsoft Corporation (NASDAQ:MSFT), and Dreamforce 2026 was no different. The Salesforce CEO used the company’s flagship annual conferen...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/clippy-benioff-uses-salesforce-biggest-044653952.html",
-      "date": "2026-09-23T06:46:53+02:00"
+      "title": "Trump Made More Than 1,000 Trades In July Worth At Least $79M — One Industry Dominated His Transactions",
+      "summary": "U.S. President Donald Trump’s July trades were revealed in a disclosure by the Office of Government Ethics on Tuesday, with combined transactions totaling an estimated $79 million to $270 million.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-made-more-1-000-060748033.html",
+      "date": "2026-09-23T08:07:48+02:00"
     },
     {
       "ticker": "NBIS",
@@ -661,6 +661,13 @@
       "date": "2026-09-22T15:23:29+02:00"
     },
     {
+      "ticker": "NVDA",
+      "title": "Own Realty Income By Sept. 30 to Qualify for Its Oct. 15 Dividend. Here's How Many Shares You'd Need for $1,251 in Yearly Dividends.",
+      "summary": "Regular dividend income can replace a weekly paycheck.",
+      "link": "https://finance.yahoo.com/real-estate/articles/own-realty-income-sept-30-065000380.html",
+      "date": "2026-09-23T08:50:00+02:00"
+    },
+    {
       "ticker": "ONON",
       "title": "On Holding stock soaring on growth forecasts in new sports categories",
       "summary": "Shares of athletic apparel brand On Holding (ONON) are soaring in Tuesday's pre-market trading coming off the company's investor day. The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley asse...",
@@ -683,6 +690,13 @@
     },
     {
       "ticker": "SPCX",
+      "title": "Trump Made More Than 1,000 Trades In July Worth At Least $79M — One Industry Dominated His Transactions",
+      "summary": "U.S. President Donald Trump’s July trades were revealed in a disclosure by the Office of Government Ethics on Tuesday, with combined transactions totaling an estimated $79 million to $270 million.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-made-more-1-000-060748033.html",
+      "date": "2026-09-23T08:07:48+02:00"
+    },
+    {
+      "ticker": "SPCX",
       "title": "SPCX Stock Slips Overnight As Shotwell Files To Sell $52M In Shares — Trump’s SpaceX Trades Also Revealed",
       "summary": "A newly released disclosure showed accounts held on Trump’s behalf bought SpaceX shares on July 10 and sold some on July 17.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/spcx-stock-slips-overnight-shotwell-054134546.html",
@@ -694,13 +708,6 @@
       "summary": "The inference market is expected to grow faster than training, opening the door for AMD and Broadcom to outperform.",
       "link": "https://finance.yahoo.com/technology/ai/articles/elon-musk-going-nvidia-two-052000197.html",
       "date": "2026-09-23T07:20:00+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "SpaceX's First 100 Days Are in the Books. Here's the Report Card.",
-      "summary": "Here's what we've learned about Elon Musk's space company since its IPO.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/spacexs-first-100-days-books-045001470.html",
-      "date": "2026-09-23T06:50:01+02:00"
     },
     {
       "ticker": "SPGI",
@@ -774,10 +781,10 @@
     },
     {
       "ticker": "TSLA",
-      "title": "Gary Black Says Legacy Automakers Will Not License Tesla FSD, Instead Bet on In-House Self-Driving Efforts: ‘Inclined to Build’",
-      "summary": "Investor Gary Black says that legacy automakers such as General Motors Co. (NYSE:GM), Ford Motor Co. (NYSE:F) and others will not license Tesla Inc.‘s (NASDAQ:TSLA) Full Self-Driving (FSD) technology....",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/gary-black-says-legacy-automakers-051148151.html",
-      "date": "2026-09-23T07:11:48+02:00"
+      "title": "Trump Made More Than 1,000 Trades In July Worth At Least $79M — One Industry Dominated His Transactions",
+      "summary": "U.S. President Donald Trump’s July trades were revealed in a disclosure by the Office of Government Ethics on Tuesday, with combined transactions totaling an estimated $79 million to $270 million.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-made-more-1-000-060748033.html",
+      "date": "2026-09-23T08:07:48+02:00"
     },
     {
       "ticker": "VRT",
@@ -2704,11 +2711,11 @@
   ],
   "earnings": [
     {
-      "ticker": "AED.BR",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://finance.yahoo.com/quote/AED.BR/financials/"
+      "ticker": "CPINV.BR",
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://finance.yahoo.com/quote/CPINV.BR/financials/"
     },
     {
       "ticker": "CPINV.BR",
