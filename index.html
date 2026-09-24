@@ -1,439 +1,792 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Financier</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --success: #10b981;
-            --danger: #ef4444;
-            --neutral: #6b7280;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- Désactivation du cache du navigateur -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
-        body {
-            padding: 10px;
-            font-size: 0.9rem;
-        }
+  <title>Trading Dashboard</title>
+  <link rel="manifest" href="manifest.json">
 
-        .header-status {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.8rem;
-            color: var(--neutral);
-        }
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="icon" type="image/png" href="logo.png">
 
-        .filter-section {
-            background-color: #1e293b;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; padding: 16px; padding-bottom: 30px; }
+    
+    /* Splash Screen Overlay */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      background-color: #080c14;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+      padding-bottom: max(20px, env(safe-area-inset-bottom));
+      box-sizing: border-box;
+    }
 
-        .checkbox-group {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
+    #splash-screen img {
+      max-width: 100%;
+      max-height: 90%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
 
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin: 0;
-            cursor: pointer;
-        }
+    #splash-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-        nav button {
-            padding: 6px 12px;
-            font-size: 0.85rem;
-        }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+    .title { font-size: 18px; font-weight: 800; color: #38bdf8; }
+    .last-update { font-size: 11px; color: #64748b; }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
+    /* Category Filter Tabs (Multi-Select) */
+    .category-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+    .cat-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); padding: 10px 4px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; text-align: center; transition: all 0.2s ease; }
+    .cat-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; box-shadow: 0 0 10px rgba(2, 132, 199, 0.4); }
 
-        .card {
-            background-color: #1e293b;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-        }
+    /* Nav Tabs */
+    .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+    .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px 4px; border-radius: 8px; font-weight: 600; font-size: 12px; cursor: pointer; text-align: center; }
+    .tab-btn.active { background: #334155; color: #38bdf8; border-color: #38bdf8; font-weight: 700; }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
+    /* Content Sections */
+    .section { display: none; min-height: 300px; }
+    .section.active { display: block; }
 
-        .badge {
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: #fff;
-        }
+    /* Cards */
+    .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .ticker-name { font-weight: 800; font-size: 15px; color: #f8fafc; display: block; margin-bottom: 4px; }
+    .price-tag { font-weight: 700; font-size: 14px; }
+    .pos { color: #34d399; }
+    .neg { color: #f87171; }
 
-        .bg-green { background-color: var(--success); }
-        .bg-red { background-color: var(--danger); }
-        .bg-neutral { background-color: var(--neutral); }
+    .news-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #f1f5f9; line-height: 1.3; }
+    .news-summary { font-size: 12px; color: #94a3b8; line-height: 1.4; margin-bottom: 10px; }
+    .news-link { font-size: 12px; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-block; }
 
-        .metric-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-        }
+    /* Badges / Indicateurs */
+    .badge-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+      line-height: 1.2;
+    }
 
-        .table-container {
-            overflow-x: auto;
-        }
+    .badge-green { background: rgba(52, 211, 153, 0.18); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-yellow { background: rgba(234, 179, 8, 0.18); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
+    .badge-red { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-neutral { background: rgba(255, 255, 255, 0.05); color: #9ca3af; border: 1px solid rgba(255, 255, 255, 0.1); }
 
-        table th, table td {
-            font-size: 0.8rem;
-            padding: 8px;
-            text-align: center;
-        }
+    /* Controls & Selects */
+    .select-control {
+      width: 100%;
+      padding: 10px 14px;
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
 
-        .tooltip {
-            position: relative;
-            cursor: help;
-            border-bottom: 1px dotted var(--neutral);
-        }
+    /* Style du Tableau de Ratios */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
 
-        .ticker-btn {
-            background: none;
-            border: none;
-            color: #60a5fa;
-            text-decoration: underline;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .ratios-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+      white-space: nowrap;
+    }
 
-        .ticker-btn:hover {
-            color: #93c5fd;
-        }
+    .ratios-table th {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 12px 10px;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
 
-        .news-item {
-            border-bottom: 1px solid #334155;
-            padding: 8px 0;
-        }
+    .ratios-table th.clickable-metric {
+      cursor: pointer;
+      color: #38bdf8;
+      text-decoration: underline dotted;
+    }
 
-        .news-item a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .ratios-table td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      font-weight: 600;
+    }
 
-        .news-item a:hover {
-            text-decoration: underline;
-        }
+    .ratios-table tr:last-child td {
+      border-bottom: none;
+    }
 
-        .news-date {
-            font-size: 0.75rem;
-            color: var(--neutral);
-        }
-    </style>
+    .ratios-table tr:nth-child(even) {
+      background-color: rgba(15, 23, 42, 0.3);
+    }
+
+    .ratios-table .ticker-cell {
+      font-weight: 800;
+      color: #38bdf8;
+      position: sticky;
+      left: 0;
+      background: #1e293b;
+      z-index: 1;
+    }
+
+    .ratios-table .ticker-cell.clickable-metric {
+      cursor: pointer;
+      text-decoration: underline dotted;
+    }
+
+    /* Style Info-bulle Modal / Popup */
+    .tooltip-box {
+      display: none;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      border: 1px solid #38bdf8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .empty-msg {
+      color: #64748b;
+      font-size: 13px;
+      text-align: center;
+      padding: 30px 15px;
+      background: #1e293b;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.1);
+    }
+  </style>
 </head>
 <body>
 
-    <main class="container-fluid">
-        <div class="header-status">
-            <span><strong>Dashboard Financier</strong></span>
-            <span id="lastUpdate">MàJ: --</span>
-        </div>
+  <!-- Écran de chargement (Splash Screen) -->
+  <div id="splash-screen">
+    <img src="Screenplash.png" alt="Chargement...">
+  </div>
 
-        <!-- Section Filtres -->
-        <div class="filter-section">
-            <div class="checkbox-group">
-                <label><input type="checkbox" class="cat-checkbox" value="stock" checked onchange="applyFilters()"> Stocks</label>
-                <label><input type="checkbox" class="cat-checkbox" value="reit" checked onchange="applyFilters()"> REITs</label>
-                <label><input type="checkbox" class="cat-checkbox" value="crypto" checked onchange="applyFilters()"> Cryptos</label>
-            </div>
-            <div>
-                <select id="tickerFilter" onchange="applyFilters()">
-                    <option value="">Tous les tickers</option>
-                </select>
-            </div>
-        </div>
+  <div class="header">
+    <div>
+      <div class="title">Trading Hub</div>
+      <div class="last-update" id="update-time">Chargement...</div>
+    </div>
+  </div>
 
-        <!-- Navigation Onglets -->
-        <nav>
-            <ul style="width: 100%; display: flex; justify-content: space-around; padding: 0;">
-                <li><button class="tab-btn secondary" data-tab="news" onclick="switchTab('news')">News</button></li>
-                <li><button class="tab-btn contrast" data-tab="cours" onclick="switchTab('cours')">Cours</button></li>
-                <li><button class="tab-btn secondary" data-tab="ratios" onclick="switchTab('ratios')">Ratios</button></li>
-                <li><button class="tab-btn secondary" data-tab="pub" onclick="switchTab('pub')">Pub.</button></li>
-            </ul>
-        </nav>
+  <!-- CATÉGORIES (STOCKS, REITS, CRYPTO) - MULTI SELECT -->
+  <div class="category-tabs">
+    <button class="cat-btn active" id="cat-stock" onclick="toggleCategory('stock')">📈 Stocks</button>
+    <button class="cat-btn" id="cat-reit" onclick="toggleCategory('reit')">🏢 REITs</button>
+    <button class="cat-btn" id="cat-crypto" onclick="toggleCategory('crypto')">🪙 Crypto</button>
+  </div>
 
-        <!-- Contenu des Onglets -->
-        <div id="tab-news" class="tab-content" style="display:none;">
-            <div id="newsContainer">Chargement des actualités...</div>
-        </div>
+  <!-- ONGLETS DE NAVIGATION PRINCIPAUX -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
+    <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
+    <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
+    <button class="tab-btn" onclick="switchTab('earnings-sec', this)">📅 Pub.</button>
+  </div>
 
-        <div id="tab-cours" class="tab-content">
-            <div id="coursGrid" class="card-grid"></div>
-        </div>
+  <!-- Menu déroulant Tickers -->
+  <div style="margin: 15px 0;">
+    <label for="ticker-select" style="font-size: 13px; color: #94a3b8; margin-bottom: 5px; display: block;">
+      Sélectionner un ticker :
+    </label>
+    <select id="ticker-select" class="select-control" onchange="filterBySelect(this.value)">
+      <option value="ALL">TOUS LES TICKERS</option>
+    </select>
+  </div>
 
-        <div id="tab-ratios" class="tab-content" style="display:none;">
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ticker</th>
-                            <th><span class="tooltip" title="Price to Earnings futur (basé sur les estimations de bénéfices futurs)">Fwd P/E</span></th>
-                            <th><span class="tooltip" title="Enterprise Value / EBITDA (Valorisation globale / Cash-flow opérationnel)">EV/EBITDA</span></th>
-                            <th><span class="tooltip" title="Price/Earnings to Growth (Ratio P/E divisé par le taux de croissance)">PEG</span></th>
-                            <th><span class="tooltip" title="Return On Equity (Rendement des capitaux propres)">ROE (%)</span></th>
-                            <th>Marge Nette (Historique)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ratiosTableBody"></tbody>
-                </table>
-            </div>
-        </div>
+  <!-- SECTION NEWS -->
+  <div id="news-sec" class="section active">
+    <div id="news-container"></div>
+  </div>
 
-        <div id="tab-pub" class="tab-content" style="display:none;">
-            <div id="pubContainer">
-                <h5>Prochaines publications / Résultats récents</h5>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ticker</th>
-                                <th>Catégorie</th>
-                                <th>Dates de publication</th>
-                                <th>Lien externe</th>
-                            </tr>
-                        </thead>
-                        <tbody id="pubTableBody"></tbody>
-                    </table>
+  <!-- SECTION PRICES -->
+  <div id="prices-sec" class="section">
+    <div id="prices-container"></div>
+  </div>
+
+  <!-- SECTION FUNDAMENTALS (TABLEAU) -->
+  <div id="fund-sec" class="section">
+    <div id="metric-tooltip" class="tooltip-box" onclick="hideTooltip()"></div>
+    <div class="table-container" id="fund-table-container">
+      <table class="ratios-table">
+        <thead id="ratios-thead"></thead>
+        <tbody id="ratios-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION EARNINGS / PUBLICATIONS -->
+  <div id="earnings-sec" class="section">
+    <div id="earnings-container"></div>
+  </div>
+
+  <script>
+    if (window.Telegram && window.Telegram.WebApp) {
+      try { window.Telegram.WebApp.expand(); } catch (e) {}
+    }
+
+    let globalData = null;
+    let selectedTicker = 'ALL';
+    let activeCategories = ['stock']; // Défaut : 'stock' sélectionné seul
+    
+    const MIN_SPLASH_TIME = 1100;
+    const startTime = Date.now();
+
+    function hideSplashScreen() {
+      const splash = document.getElementById('splash-screen');
+      if (!splash) return;
+
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, MIN_SPLASH_TIME - elapsedTime);
+
+      setTimeout(() => {
+        splash.classList.add('hidden');
+      }, remainingTime);
+    }
+
+    const METRIC_DEFINITIONS = {
+      "Croit. CA.": "<b>Croissance du Chiffre d'Affaires :</b> Évolution des ventes sur 1 an. <br>• > 10% = Fort développement (Vert)<br>• < 0% = Déclin des ventes (Rouge)",
+      "Fwd P/E": "<b>Forward Price/Earnings (P/E) :</b> Ratio Cours/Bénéfice estimé sur les 12 prochains mois.<br>• < 20 = Attractif (Vert)<br>• > 35 = Valorisation élevée (Rouge)",
+      "EV/EBITDA": "<b>Valeur d'entreprise / EBITDA :</b> Mesure le prix de la société par rapport à sa rentabilité opérationnelle globale.<br>• < 12 = Raisonnable (Vert)<br>• > 22 = Cher (Rouge)",
+      "ROE": "<b>Return on Equity (Rentabilité des fonds propres) :</b> Capacité à générer du profit avec l'argent des actionnaires.<br>• > 15% = Très efficient (Vert)<br>• < 8% = Faible rentabilité (Rouge)",
+      "PEG": "<b>Price/Earnings-to-Growth :</b> P/E divisé par le taux de croissance des bénéfices.<br>• < 1.0 = Sous-évalué par rapport à sa croissance (Vert)<br>• > 2.0 = Surévalué (Rouge)",
+      "Marge Net %": "<b>Marge Nette :</b> Pourcentage de profit net généré pour chaque euro de chiffre d'affaires.<br>• > 15% = Excellente rentabilité (Vert)<br>• < 5% = Marge faible (Rouge)"
+    };
+
+    function hideTooltip() {
+      const box = document.getElementById('metric-tooltip');
+      if (box) {
+        box.style.display = 'none';
+        box.removeAttribute('data-active');
+      }
+    }
+
+    function showTooltip(metricKey) {
+      const box = document.getElementById('metric-tooltip');
+      const def = METRIC_DEFINITIONS[metricKey];
+      if (!def) return;
+
+      if (box.style.display === 'block' && box.getAttribute('data-active') === metricKey) {
+        hideTooltip();
+      } else {
+        box.innerHTML = def + `<div style="margin-top:6px; font-size:10px; opacity:0.85; text-align:right;">(Cliquez ici ou sur le ratio pour fermer)</div>`;
+        box.style.display = 'block';
+        box.setAttribute('data-active', metricKey);
+      }
+    }
+
+    function formatBelgianDateTime(dateStr) {
+      if (!dateStr || dateStr === 'N/A') return 'N/A';
+      
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) {
+        return dateStr;
+      }
+
+      return new Intl.DateTimeFormat('fr-BE', {
+        timeZone: 'Europe/Brussels',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).format(d).replace(',', '');
+    }
+
+    function getMetricBadgeClass(metricName, valStr) {
+      if (!valStr || valStr === "N/A") return "badge-neutral";
+      
+      let num = parseFloat(valStr.replace(/[^\d.-]/g, ''));
+      if (isNaN(num)) return "badge-neutral";
+
+      switch(metricName) {
+        case "Croit. CA.":
+        case "rev_growth":
+          if (num >= 10) return "badge-green";
+          if (num >= 0) return "badge-yellow";
+          return "badge-red";
+
+        case "Marge Net %":
+        case "net_margin":
+          if (num >= 15) return "badge-green";
+          if (num >= 5) return "badge-yellow";
+          return "badge-red";
+
+        case "ROE":
+        case "roe":
+          if (num >= 15) return "badge-green";
+          if (num >= 8) return "badge-yellow";
+          return "badge-red";
+
+        case "Fwd P/E":
+        case "pe":
+          if (num <= 20) return "badge-green";
+          if (num <= 35) return "badge-yellow";
+          return "badge-red";
+
+        case "EV/EBITDA":
+        case "ev":
+          if (num <= 12) return "badge-green";
+          if (num <= 22) return "badge-yellow";
+          return "badge-red";
+
+        case "PEG":
+        case "peg":
+          if (num <= 1.0) return "badge-green";
+          if (num <= 2.0) return "badge-yellow";
+          return "badge-red";
+
+        default:
+          return "badge-neutral";
+      }
+    }
+
+    function toggleCategory(cat) {
+      const index = activeCategories.indexOf(cat);
+      if (index > -1) {
+        // Ne permet pas de tout désélectionner
+        if (activeCategories.length > 1) {
+          activeCategories.splice(index, 1);
+        }
+      } else {
+        activeCategories.push(cat);
+      }
+
+      // Mettre à jour l'état visuel des boutons
+      document.getElementById('cat-stock').classList.toggle('active', activeCategories.includes('stock'));
+      document.getElementById('cat-reit').classList.toggle('active', activeCategories.includes('reit'));
+      document.getElementById('cat-crypto').classList.toggle('active', activeCategories.includes('crypto'));
+
+      selectedTicker = 'ALL';
+      buildFilters();
+      renderAll();
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch('data.json?v=' + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error('Impossible de charger data.json');
+        globalData = await res.json();
+        document.getElementById('update-time').innerText = "MàJ: " + (globalData.updated_at || "N/A");
+        
+        buildFilters();
+        await renderAll();
+      } catch (e) {
+        console.error(e);
+        document.getElementById('update-time').innerText = "Erreur de chargement data.json";
+      } finally {
+        hideSplashScreen();
+      }
+    }
+
+    function buildFilters() {
+      const select = document.getElementById('ticker-select');
+      if (!select || !globalData || !globalData.prices) return;
+
+      select.innerHTML = '<option value="ALL">TOUS LES TICKERS</option>';
+
+      const filtered = globalData.prices.filter(p => activeCategories.includes(p.category || 'stock'));
+
+      filtered.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.ticker;
+        option.textContent = p.ticker;
+        select.appendChild(option);
+      });
+    }
+
+    function filterBySelect(symbol) {
+      selectedTicker = symbol;
+      renderAll();
+    }
+
+    function switchTab(secId, btn) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(secId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    async function fetchGoogleNewsForTicker(symbol) {
+      const newsCont = document.getElementById('news-container');
+      newsCont.innerHTML = `<div style="color: #38bdf8; font-size: 13px; text-align: center; padding: 20px;">Chargement des actualités Google News pour ${symbol}...</div>`;
+
+      const cleanSymbol = symbol.split('-')[0].split('.')[0];
+      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(cleanSymbol + ' stock crypto action')}&hl=fr&gl=FR&ceid=FR:fr`;
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+          const sortedItems = data.items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+          const htmlCards = sortedItems.slice(0, 8).map(item => {
+            const tmpDiv = document.createElement("DIV");
+            tmpDiv.innerHTML = item.description || "";
+            const cleanSummary = tmpDiv.textContent || tmpDiv.innerText || item.title;
+
+            return `
+              <div class="card">
+                <div class="card-header">
+                  <span class="ticker-name">${symbol}</span>
+                  <span class="last-update">${formatBelgianDateTime(item.pubDate)}</span>
                 </div>
+                <div class="news-title">${item.title}</div>
+                <div class="news-summary">${cleanSummary.length > 180 ? cleanSummary.substring(0, 180) + '...' : cleanSummary}</div>
+                <a class="news-link" href="${item.link}" target="_blank">Lire l'article complet →</a>
+              </div>`;
+          }).join('');
+
+          newsCont.innerHTML = htmlCards;
+        } else {
+          newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente trouvée sur Google News pour ${symbol}.</div>`;
+        }
+      } catch (err) {
+        console.error("Erreur Google News RSS:", err);
+        newsCont.innerHTML = `<div style="color: #f87171; font-size: 13px; text-align: center; padding: 20px;">Impossible de charger Google News pour le moment.</div>`;
+      }
+    }
+
+    async function renderNews() {
+      const newsCont = document.getElementById('news-container');
+      if (!newsCont) return;
+
+      if (selectedTicker === 'ALL') {
+        const filteredNews = (globalData.news || []).filter(n => activeCategories.includes(n.category || 'stock'));
+        if (filteredNews.length === 0) {
+          newsCont.innerHTML = '<div class="empty-msg">Aucune actualité disponible pour cette sélection.</div>';
+          return;
+        }
+
+        const cards = filteredNews.map(n => `
+          <div class="card">
+            <div class="card-header">
+              <span class="ticker-name">${n.ticker}</span>
+              <span class="last-update">${formatBelgianDateTime(n.date)}</span>
             </div>
+            <div class="news-title">${n.title}</div>
+            <div class="news-summary">${n.summary}</div>
+            ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
+          </div>`).join('');
+
+        newsCont.innerHTML = cards;
+      } else {
+        await fetchGoogleNewsForTicker(selectedTicker);
+      }
+    }
+
+    async function renderAll() {
+      if(!globalData) return;
+
+      hideTooltip();
+
+      // 1. News
+      await renderNews();
+
+      // 2. Prices
+      const priceCont = document.getElementById('prices-container');
+      const allPrices = (globalData.prices || []).filter(p => activeCategories.includes(p.category || 'stock'));
+      const filteredPrices = selectedTicker === 'ALL' ? allPrices : allPrices.filter(p => p.ticker === selectedTicker);
+      const fundList = globalData.fundamentals || [];
+
+      if (filteredPrices.length === 0) {
+        priceCont.innerHTML = '<div class="empty-msg">Aucun cours disponible pour la sélection actuelle.</div>';
+      } else {
+        const pricesHtml = filteredPrices.map(p => {
+          const changeNum = parseFloat(p.change) || 0;
+          const isPos = changeNum >= 0;
+          const isCrypto = (p.category === 'crypto');
+          
+          const f = fundList.find(item => item.ticker === p.ticker) || {};
+          
+          const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
+          const smaClass = isUnder ? 'badge-green' : 'badge-red';
+
+          let rsiHtml = '';
+          if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
+            const rsiVal = parseFloat(p.rsi14_weekly);
+            if (!isNaN(rsiVal)) {
+              const isRsiExtreme = (rsiVal <= 30 || rsiVal >= 70);
+              const rsiClass = isRsiExtreme ? 'badge-green' : 'badge-red';
+              const fireEmoji = isRsiExtreme ? ' 🔥' : '';
+              rsiHtml = `<div><span class="badge-tag ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
+            }
+          }
+
+          let athHtml = '';
+          if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
+            const athVal = parseFloat(p.ath_52w_pct);
+            if (!isNaN(athVal)) {
+              let athClass = 'badge-red'; 
+              if (athVal <= -10) {
+                athClass = 'badge-green';
+              } else if (athVal <= 0) {
+                athClass = 'badge-yellow';
+              }
+              const sign = athVal > 0 ? '+' : '';
+              athHtml = `<div><span class="badge-tag ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
+            }
+          }
+
+          let pegHtml = '';
+          let peHtml = '';
+          if (!isCrypto) {
+            const pegVal = f.peg || 'N/A';
+            const pegClass = getMetricBadgeClass('peg', pegVal);
+            pegHtml = `<div><span class="badge-tag ${pegClass}">PEG ${pegVal}</span></div>`;
+
+            const peVal = f.pe || 'N/A';
+            const peClass = getMetricBadgeClass('pe', peVal);
+            peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
+          }
+
+          return `
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <span class="ticker-name">${p.ticker}</span>
+                  ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : ''}
+                  ${rsiHtml}
+                  ${athHtml}
+                  ${pegHtml}
+                  ${peHtml}
+                </div>
+                <div style="text-align:right">
+                  <div class="price-tag">${p.price} ${p.currency || ''}</div>
+                  <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${changeNum.toFixed(2)}%</div>
+                </div>
+              </div>
+              ${!isCrypto ? `<div style="font-size:11px; color:#94a3b8; margin-top:8px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>` : ''}
+            </div>`;
+        }).join('');
+
+        priceCont.innerHTML = pricesHtml;
+      }
+
+      // 3. Fundamentals
+      renderFundamentals();
+
+      // 4. Earnings / Publications
+      renderEarnings();
+    }
+
+    function renderFundamentals() {
+      const thead = document.getElementById('ratios-thead');
+      const tbody = document.getElementById('ratios-tbody');
+      const container = document.getElementById('fund-table-container');
+
+      tbody.innerHTML = '';
+
+      // Si uniquement des cryptos sélectionnées
+      const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+      if (nonCryptoActive.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        return;
+      } else {
+        container.innerHTML = `<table class="ratios-table"><thead id="ratios-thead"></thead><tbody id="ratios-tbody"></tbody></table>`;
+      }
+
+      const currentThead = document.getElementById('ratios-thead');
+      const currentTbody = document.getElementById('ratios-tbody');
+
+      // Filtrer les fondamentaux aux catégories d'actions/REITs actives uniquement
+      const fundList = (globalData.fundamentals || []).filter(f => nonCryptoActive.includes(f.category || 'stock'));
+
+      if (selectedTicker !== 'ALL') {
+        const fund = fundList.find(f => f.ticker === selectedTicker);
+
+        if (!fund || !fund.quarters || fund.quarters.length === 0) {
+          currentTbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
+          return;
+        }
+
+        let headHtml = `<tr><th class="ticker-cell">Métrique ℹ️</th>`;
+        fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
+        headHtml += `</tr>`;
+        currentThead.innerHTML = headHtml;
+
+        const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
+        let rowsHtml = '';
+        metrics.forEach(m => {
+          let rowHtml = `<tr><td class="ticker-cell clickable-metric" onclick="showTooltip('${m}')">${m} ℹ️</td>`;
+          const vals = (fund.history && fund.history[m]) || [];
+          fund.quarters.forEach((_, idx) => {
+            const val = vals[idx] || 'N/A';
+            const badgeClass = getMetricBadgeClass(m, val);
+            rowHtml += `<td><span class="badge-tag ${badgeClass}">${val}</span></td>`;
+          });
+          rowHtml += `</tr>`;
+          rowsHtml += rowHtml;
+        });
+        currentTbody.innerHTML = rowsHtml;
+
+      } else {
+        currentThead.innerHTML = `
+          <tr>
+            <th class="ticker-cell">Tickers</th>
+            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('EV/EBITDA')">EV/EBITDA ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('ROE')">ROE ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('PEG')">PEG ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net % ℹ️</th>
+          </tr>`;
+
+        // Récupère uniquement les tickers non-crypto correspondants aux filtres actifs
+        const activeTickers = (globalData.prices || [])
+          .filter(p => nonCryptoActive.includes(p.category || 'stock'))
+          .map(p => p.ticker);
+
+        if (activeTickers.length === 0) {
+          currentTbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
+          return;
+        }
+
+        const rowsHtml = activeTickers.map(ticker => {
+          const f = fundList.find(item => item.ticker === ticker) || {};
+          return `
+            <tr>
+              <td class="ticker-cell">${ticker}</td>
+              <td><span class="badge-tag ${getMetricBadgeClass('rev_growth', f.rev_growth)}">${f.rev_growth || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('pe', f.pe)}">${f.pe || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('ev', f.ev)}">${f.ev || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('roe', f.roe)}">${f.roe || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('peg', f.peg)}">${f.peg || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('net_margin', f.net_margin)}">${f.net_margin || 'N/A'}</span></td>
+            </tr>`;
+        }).join('');
+
+        currentTbody.innerHTML = rowsHtml;
+      }
+    }
+
+    function renderEarnings() {
+      const container = document.getElementById('earnings-container');
+      if (!container) return;
+
+      const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+      if (nonCryptoActive.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        return;
+      }
+
+      const allEarnings = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
+      const filtered = selectedTicker === 'ALL' 
+        ? allEarnings 
+        : allEarnings.filter(e => e.ticker === selectedTicker);
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Aucune publication répertoriée.</div>';
+        return;
+      }
+
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      const past = filtered.filter(e => e.date < todayStr)
+                           .sort((a, b) => a.date.localeCompare(b.date));
+      
+      const future = filtered.filter(e => e.date >= todayStr)
+                             .sort((a, b) => a.date.localeCompare(b.date));
+
+      let html = '';
+
+      if (past.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 12px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
+        past.forEach(e => {
+          html += createEarningsCard(e);
+        });
+      }
+
+      if (future.length > 0) {
+        html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 20px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
+        future.forEach(e => {
+          html += createEarningsCard(e);
+        });
+      }
+
+      container.innerHTML = html;
+    }
+
+    function createEarningsCard(e) {
+      const isPast = e.is_past;
+      const badgeClass = isPast ? 'badge-neutral' : 'badge-green';
+      const statusLabel = isPast ? 'Passée' : 'À venir';
+
+      return `
+        <div class="card" style="${isPast ? 'opacity: 0.75;' : ''}">
+          <div class="card-header" style="margin-bottom: 4px;">
+            <span class="ticker-name">${e.ticker}</span>
+            <span class="badge-tag ${badgeClass}">${statusLabel}</span>
+          </div>
+          <div style="font-size: 14px; font-weight: 700; color: #f8fafc; margin-top: 4px;">
+            📅 Date : <span style="color: #38bdf8;">${e.date_formatted}</span>
+          </div>
+          <div style="margin-top: 8px;">
+            <a class="news-link" href="${e.link}" target="_blank">🔗 Synthèse des résultats sur Stock Analysis →</a>
+          </div>
         </div>
+      `;
+    }
 
-    </main>
-
-    <script>
-        let allData = [];
-        let filteredData = [];
-        let currentTab = 'cours';
-
-        // Chargement initial
-        fetch('data.json')
-            .then(res => res.json())
-            .then(json => {
-                document.getElementById('lastUpdate').innerText = `MàJ: ${json.updated_at}`;
-                allData = json.data;
-                populateTickerDropdown();
-                applyFilters();
-            })
-            .catch(err => {
-                console.error("Erreur de chargement data.json:", err);
-                document.getElementById('coursGrid').innerHTML = "<p>Erreur lors du chargement des données.</p>";
-            });
-
-        function populateTickerDropdown() {
-            const select = document.getElementById('tickerFilter');
-            select.innerHTML = '<option value="">Tous les tickers</option>';
-            allData.forEach(item => {
-                const opt = document.createElement('option');
-                opt.value = item.ticker;
-                opt.innerText = item.ticker;
-                select.appendChild(opt);
-            });
-        }
-
-        function applyFilters() {
-            const selectedCats = Array.from(document.querySelectorAll('.cat-checkbox:checked')).map(cb => cb.value);
-            const selectedTicker = document.getElementById('tickerFilter').value;
-
-            filteredData = allData.filter(item => {
-                const matchesCat = selectedCats.length === 0 || selectedCats.includes(item.category);
-                const matchesTicker = !selectedTicker || item.ticker === selectedTicker;
-                return matchesCat && matchesTicker;
-            });
-
-            renderCurrentTab();
-        }
-
-        function switchTab(tabName) {
-            currentTab = tabName;
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                if (btn.dataset.tab === tabName) {
-                    btn.classList.remove('secondary');
-                    btn.classList.add('contrast');
-                } else {
-                    btn.classList.remove('contrast');
-                    btn.classList.add('secondary');
-                }
-            });
-
-            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-            document.getElementById(`tab-${tabName}`).style.display = 'block';
-
-            renderCurrentTab();
-        }
-
-        // Clic sur le ticker dans la table des Ratios : Sélectionne l'actif et reste dans l'onglet Ratios
-        function selectTickerFromTable(ticker) {
-            const tickerSelect = document.getElementById('tickerFilter');
-            if (tickerSelect) {
-                tickerSelect.value = ticker;
-                applyFilters(); // Maintient l'affichage sur 'ratios' mais filtre uniquement cet actif
-            }
-        }
-
-        function renderCurrentTab() {
-            if (currentTab === 'cours') renderCours();
-            else if (currentTab === 'ratios') renderRatios();
-            else if (currentTab === 'pub') renderPub();
-            else if (currentTab === 'news') renderNews();
-        }
-
-        function renderCours() {
-            const grid = document.getElementById('coursGrid');
-            grid.innerHTML = '';
-
-            filteredData.forEach(item => {
-                const changeClass = item.day_change_pct >= 0 ? 'bg-green' : 'bg-red';
-                const changeSign = item.day_change_pct >= 0 ? '+' : '';
-
-                const sma200Text = item.diff_sma200_pct !== null ? `${item.diff_sma200_pct >= 0 ? '+' : ''}${item.diff_sma200_pct.toFixed(2)}%` : 'N/A';
-                const rsiText = item.rsi_w !== null ? item.rsi_w.toFixed(1) : 'N/A';
-
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.innerHTML = `
-                    <div class="card-header">
-                        <span>${item.ticker}</span>
-                        <span class="badge ${changeClass}">${changeSign}${item.day_change_pct.toFixed(2)}%</span>
-                    </div>
-                    <div class="metric-row">
-                        <span>Prix:</span>
-                        <strong>${item.price.toFixed(2)} ${item.currency}</strong>
-                    </div>
-                    <div class="metric-row">
-                        <span>RSI 14W:</span>
-                        <span>${rsiText}</span>
-                    </div>
-                    <div class="metric-row">
-                        <span>SMA 200W:</span>
-                        <span>${sma200Text}</span>
-                    </div>
-                    <div class="metric-row">
-                        <span>Écart ATH 52W:</span>
-                        <span>${item.diff_ath_pct.toFixed(2)}%</span>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function renderRatios() {
-            const tbody = document.getElementById('ratiosTableBody');
-            tbody.innerHTML = '';
-
-            const ratioData = filteredData.filter(item => item.category !== 'crypto');
-
-            if (ratioData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="6">Aucune donnée disponible pour cette sélection.</td></tr>';
-                return;
-            }
-
-            ratioData.forEach(item => {
-                const finHistText = item.financials_hist && item.financials_hist.length > 0 
-                    ? item.financials_hist.map(f => `${f.year}: ${f.net_margin !== null ? f.net_margin.toFixed(1) + '%' : 'N/A'}`).join(' | ')
-                    : 'N/A';
-
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>
-                        <button class="ticker-btn" onclick="selectTickerFromTable('${item.ticker}')">
-                            ${item.ticker}
-                        </button>
-                    </td>
-                    <td>${item.fwd_pe ? item.fwd_pe.toFixed(2) : 'N/A'}</td>
-                    <td>${item.ev_ebitda ? item.ev_ebitda.toFixed(2) : 'N/A'}</td>
-                    <td>${item.peg_ratio ? item.peg_ratio.toFixed(2) : 'N/A'}</td>
-                    <td>${item.roe ? item.roe.toFixed(2) + '%' : 'N/A'}</td>
-                    <td style="font-size: 0.75rem;">${finHistText}</td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-
-        function renderPub() {
-            const tbody = document.getElementById('pubTableBody');
-            tbody.innerHTML = '';
-
-            const pubData = filteredData.filter(item => item.category !== 'crypto');
-
-            if (pubData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4">Aucune donnée de publication pour cette sélection.</td></tr>';
-                return;
-            }
-
-            pubData.forEach(item => {
-                const datesText = item.earnings_dates && item.earnings_dates.length > 0 ? item.earnings_dates.join(', ') : 'Non communiquée';
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><strong>${item.ticker}</strong></td>
-                    <td>${item.category.toUpperCase()}</td>
-                    <td>${datesText}</td>
-                    <td><a href="https://stockanalysis.com/stocks/${item.ticker.toLowerCase()}/financials/" target="_blank">Stock Analysis ↗</a></td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-
-        function renderNews() {
-            const container = document.getElementById('newsContainer');
-            const selectedTicker = document.getElementById('tickerFilter').value;
-
-            let query = " Bourse marché financier";
-            if (selectedTicker) {
-                query = ` ${selectedTicker} stock crypto market`;
-            }
-
-            const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=fr&gl=FR&ceid=FR:fr`;
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-            container.innerHTML = "Chargement des actualités...";
-
-            fetch(apiUrl)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'ok' && data.items.length > 0) {
-                        container.innerHTML = '';
-                        data.items.slice(0, 10).forEach(item => {
-                            const newsDiv = document.createElement('div');
-                            newsDiv.className = 'news-item';
-                            newsDiv.innerHTML = `
-                                <div><a href="${item.link}" target="_blank">${item.title}</a></div>
-                                <div class="news-date">${new Date(item.pubDate).toLocaleString('fr-FR')}</div>
-                            `;
-                            container.appendChild(newsDiv);
-                        });
-                    } else {
-                        container.innerHTML = "<p>Aucune actualité trouvée.</p>";
-                    }
-                })
-                .catch(() => {
-                    container.innerHTML = "<p>Impossible de charger le flux d'actualités.</p>";
-                });
-        }
-    </script>
+    loadData();
+  </script>
 </body>
 </html>
