@@ -39,10 +39,11 @@
       transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
     }
 
+    /* Image pleine page */
     #splash-screen img {
-      max-width: 80%;
-      max-height: 80%;
-      object-fit: contain;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover; /* Rempli tout l'écran en conservant le ratio */
     }
 
     #splash-screen.hidden {
