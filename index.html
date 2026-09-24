@@ -28,11 +28,11 @@
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0; /* Ancrage ferme pour empêcher les décalages au refresh */
+      bottom: 0;
       width: 100%;
       height: 100%;
-      height: 100dvh; /* S'adapte dynamiquement aux barres système des mobiles */
-      background-color: #080c14; /* Fond sombre assorti aux tons de l'image */
+      height: 100dvh;
+      background-color: #080c14;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,18 +40,17 @@
       opacity: 1;
       visibility: visible;
       transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-      padding-bottom: max(20px, env(safe-area-inset-bottom)); /* Marge de sécurité augmentée */
+      padding-bottom: max(20px, env(safe-area-inset-bottom));
       box-sizing: border-box;
     }
 
-    /* Image pleine page bien ajustée */
     #splash-screen img {
       max-width: 100%;
-      max-height: 90%; /* On garde 10% de marge de sécurité pour le logo en bas */
+      max-height: 90%;
       width: auto;
       height: auto;
-      object-fit: contain; /* Affiche 100% de l'image et du logo sans couper */
-      margin-bottom: 15px; /* Rehausse le logo vers le haut au chargement */
+      object-fit: contain;
+      margin-bottom: 15px;
     }
 
     #splash-screen.hidden {
@@ -60,14 +59,19 @@
       pointer-events: none;
     }
 
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
     .title { font-size: 18px; font-weight: 800; color: #38bdf8; }
     .last-update { font-size: 11px; color: #64748b; }
+
+    /* Category Filter Tabs (Multi-Select) */
+    .category-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+    .cat-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); padding: 10px 4px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; text-align: center; transition: all 0.2s ease; }
+    .cat-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; box-shadow: 0 0 10px rgba(2, 132, 199, 0.4); }
 
     /* Nav Tabs */
     .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
     .tab-btn { flex: 1; background: #1e293b; color: #94a3b8; border: 1px solid rgba(255,255,255,0.05); padding: 10px 4px; border-radius: 8px; font-weight: 600; font-size: 12px; cursor: pointer; text-align: center; }
-    .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
+    .tab-btn.active { background: #334155; color: #38bdf8; border-color: #38bdf8; font-weight: 700; }
 
     /* Content Sections */
     .section { display: none; min-height: 300px; }
@@ -194,6 +198,16 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       cursor: pointer;
     }
+
+    .empty-msg {
+      color: #64748b;
+      font-size: 13px;
+      text-align: center;
+      padding: 30px 15px;
+      background: #1e293b;
+      border-radius: 12px;
+      border: 1px dashed rgba(255,255,255,0.1);
+    }
   </style>
 </head>
 <body>
@@ -210,6 +224,14 @@
     </div>
   </div>
 
+  <!-- CATÉGORIES (STOCKS, REITS, CRYPTO) - MULTI SELECT -->
+  <div class="category-tabs">
+    <button class="cat-btn active" id="cat-stock" onclick="toggleCategory('stock')">📈 Stocks</button>
+    <button class="cat-btn" id="cat-reit" onclick="toggleCategory('reit')">🏢 REITs</button>
+    <button class="cat-btn" id="cat-crypto" onclick="toggleCategory('crypto')">🪙 Crypto</button>
+  </div>
+
+  <!-- ONGLETS DE NAVIGATION PRINCIPAUX -->
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
     <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
@@ -239,17 +261,11 @@
 
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
-    <!-- Zone d'affichage dynamique de l'info-bulle -->
     <div id="metric-tooltip" class="tooltip-box" onclick="hideTooltip()"></div>
-
-    <div class="table-container">
+    <div class="table-container" id="fund-table-container">
       <table class="ratios-table">
-        <thead id="ratios-thead">
-          <!-- Injecté dynamiquement -->
-        </thead>
-        <tbody id="ratios-tbody">
-          <!-- Injecté dynamiquement -->
-        </tbody>
+        <thead id="ratios-thead"></thead>
+        <tbody id="ratios-tbody"></tbody>
       </table>
     </div>
   </div>
@@ -266,8 +282,8 @@
 
     let globalData = null;
     let selectedTicker = 'ALL';
+    let activeCategories = ['stock']; // Défaut : 'stock' sélectionné seul
     
-    // Temps d'affichage minimal du splash screen en millisecondes (2500ms = 2.5s)
     const MIN_SPLASH_TIME = 1100;
     const startTime = Date.now();
 
@@ -283,7 +299,6 @@
       }, remainingTime);
     }
 
-    // Dictionnaire des définitions des métriques
     const METRIC_DEFINITIONS = {
       "Croit. CA.": "<b>Croissance du Chiffre d'Affaires :</b> Évolution des ventes sur 1 an. <br>• > 10% = Fort développement (Vert)<br>• < 0% = Déclin des ventes (Rouge)",
       "Fwd P/E": "<b>Forward Price/Earnings (P/E) :</b> Ratio Cours/Bénéfice estimé sur les 12 prochains mois.<br>• < 20 = Attractif (Vert)<br>• > 35 = Valorisation élevée (Rouge)",
@@ -382,6 +397,27 @@
       }
     }
 
+    function toggleCategory(cat) {
+      const index = activeCategories.indexOf(cat);
+      if (index > -1) {
+        // Ne permet pas de tout désélectionner
+        if (activeCategories.length > 1) {
+          activeCategories.splice(index, 1);
+        }
+      } else {
+        activeCategories.push(cat);
+      }
+
+      // Mettre à jour l'état visuel des boutons
+      document.getElementById('cat-stock').classList.toggle('active', activeCategories.includes('stock'));
+      document.getElementById('cat-reit').classList.toggle('active', activeCategories.includes('reit'));
+      document.getElementById('cat-crypto').classList.toggle('active', activeCategories.includes('crypto'));
+
+      selectedTicker = 'ALL';
+      buildFilters();
+      renderAll();
+    }
+
     async function loadData() {
       try {
         const res = await fetch('data.json?v=' + Date.now(), { cache: "no-store" });
@@ -405,7 +441,9 @@
 
       select.innerHTML = '<option value="ALL">TOUS LES TICKERS</option>';
 
-      globalData.prices.forEach(p => {
+      const filtered = globalData.prices.filter(p => activeCategories.includes(p.category || 'stock'));
+
+      filtered.forEach(p => {
         const option = document.createElement('option');
         option.value = p.ticker;
         option.textContent = p.ticker;
@@ -429,8 +467,8 @@
       const newsCont = document.getElementById('news-container');
       newsCont.innerHTML = `<div style="color: #38bdf8; font-size: 13px; text-align: center; padding: 20px;">Chargement des actualités Google News pour ${symbol}...</div>`;
 
-      const cleanSymbol = symbol.split('.')[0];
-      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(cleanSymbol + ' stock action')}&hl=fr&gl=FR&ceid=FR:fr`;
+      const cleanSymbol = symbol.split('-')[0].split('.')[0];
+      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(cleanSymbol + ' stock crypto action')}&hl=fr&gl=FR&ceid=FR:fr`;
       const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
       try {
@@ -459,7 +497,7 @@
 
           newsCont.innerHTML = htmlCards;
         } else {
-          newsCont.innerHTML = `<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité récente trouvée sur Google News pour ${symbol}.</div>`;
+          newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente trouvée sur Google News pour ${symbol}.</div>`;
         }
       } catch (err) {
         console.error("Erreur Google News RSS:", err);
@@ -472,9 +510,9 @@
       if (!newsCont) return;
 
       if (selectedTicker === 'ALL') {
-        const filteredNews = globalData.news || [];
+        const filteredNews = (globalData.news || []).filter(n => activeCategories.includes(n.category || 'stock'));
         if (filteredNews.length === 0) {
-          newsCont.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité disponible.</div>';
+          newsCont.innerHTML = '<div class="empty-msg">Aucune actualité disponible pour cette sélection.</div>';
           return;
         }
 
@@ -505,73 +543,83 @@
 
       // 2. Prices
       const priceCont = document.getElementById('prices-container');
-      const filteredPrices = selectedTicker === 'ALL' ? (globalData.prices || []) : (globalData.prices || []).filter(p => p.ticker === selectedTicker);
+      const allPrices = (globalData.prices || []).filter(p => activeCategories.includes(p.category || 'stock'));
+      const filteredPrices = selectedTicker === 'ALL' ? allPrices : allPrices.filter(p => p.ticker === selectedTicker);
       const fundList = globalData.fundamentals || [];
 
-      const pricesHtml = filteredPrices.map(p => {
-        const changeNum = parseFloat(p.change) || 0;
-        const isPos = changeNum >= 0;
-        
-        const f = fundList.find(item => item.ticker === p.ticker) || {};
-        
-        const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
-        const smaClass = isUnder ? 'badge-green' : 'badge-red';
+      if (filteredPrices.length === 0) {
+        priceCont.innerHTML = '<div class="empty-msg">Aucun cours disponible pour la sélection actuelle.</div>';
+      } else {
+        const pricesHtml = filteredPrices.map(p => {
+          const changeNum = parseFloat(p.change) || 0;
+          const isPos = changeNum >= 0;
+          const isCrypto = (p.category === 'crypto');
+          
+          const f = fundList.find(item => item.ticker === p.ticker) || {};
+          
+          const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
+          const smaClass = isUnder ? 'badge-green' : 'badge-red';
 
-        let rsiHtml = '';
-        if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
-          const rsiVal = parseFloat(p.rsi14_weekly);
-          if (!isNaN(rsiVal)) {
-            const isRsiExtreme = (rsiVal <= 30 || rsiVal >= 70);
-            const rsiClass = isRsiExtreme ? 'badge-green' : 'badge-red';
-            const fireEmoji = isRsiExtreme ? ' 🔥' : '';
-            rsiHtml = `<div><span class="badge-tag ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
-          }
-        }
-
-        let athHtml = '';
-        if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
-          const athVal = parseFloat(p.ath_52w_pct);
-          if (!isNaN(athVal)) {
-            let athClass = 'badge-red'; 
-            if (athVal <= -10) {
-              athClass = 'badge-green';
-            } else if (athVal <= 0) {
-              athClass = 'badge-yellow';
+          let rsiHtml = '';
+          if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
+            const rsiVal = parseFloat(p.rsi14_weekly);
+            if (!isNaN(rsiVal)) {
+              const isRsiExtreme = (rsiVal <= 30 || rsiVal >= 70);
+              const rsiClass = isRsiExtreme ? 'badge-green' : 'badge-red';
+              const fireEmoji = isRsiExtreme ? ' 🔥' : '';
+              rsiHtml = `<div><span class="badge-tag ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
             }
-            const sign = athVal > 0 ? '+' : '';
-            athHtml = `<div><span class="badge-tag ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
           }
-        }
 
-        const pegVal = f.peg || 'N/A';
-        const pegClass = getMetricBadgeClass('peg', pegVal);
-        const pegHtml = `<div><span class="badge-tag ${pegClass}">PEG ${pegVal}</span></div>`;
+          let athHtml = '';
+          if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
+            const athVal = parseFloat(p.ath_52w_pct);
+            if (!isNaN(athVal)) {
+              let athClass = 'badge-red'; 
+              if (athVal <= -10) {
+                athClass = 'badge-green';
+              } else if (athVal <= 0) {
+                athClass = 'badge-yellow';
+              }
+              const sign = athVal > 0 ? '+' : '';
+              athHtml = `<div><span class="badge-tag ${athClass}">ATH 52W ${sign}${Math.round(athVal)}%</span></div>`;
+            }
+          }
 
-        const peVal = f.pe || 'N/A';
-        const peClass = getMetricBadgeClass('pe', peVal);
-        const peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
+          let pegHtml = '';
+          let peHtml = '';
+          if (!isCrypto) {
+            const pegVal = f.peg || 'N/A';
+            const pegClass = getMetricBadgeClass('peg', pegVal);
+            pegHtml = `<div><span class="badge-tag ${pegClass}">PEG ${pegVal}</span></div>`;
 
-        return `
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <span class="ticker-name">${p.ticker}</span>
-                ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : ''}
-                ${rsiHtml}
-                ${athHtml}
-                ${pegHtml}
-                ${peHtml}
+            const peVal = f.pe || 'N/A';
+            const peClass = getMetricBadgeClass('pe', peVal);
+            peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
+          }
+
+          return `
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <span class="ticker-name">${p.ticker}</span>
+                  ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : ''}
+                  ${rsiHtml}
+                  ${athHtml}
+                  ${pegHtml}
+                  ${peHtml}
+                </div>
+                <div style="text-align:right">
+                  <div class="price-tag">${p.price} ${p.currency || ''}</div>
+                  <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${changeNum.toFixed(2)}%</div>
+                </div>
               </div>
-              <div style="text-align:right">
-                <div class="price-tag">${p.price} ${p.currency || ''}</div>
-                <div class="last-update ${isPos ? 'pos' : 'neg'}">${isPos ? '+' : ''}${changeNum.toFixed(2)}%</div>
-              </div>
-            </div>
-            <div style="font-size:11px; color:#94a3b8; margin-top:8px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>
-          </div>`;
-      }).join('');
+              ${!isCrypto ? `<div style="font-size:11px; color:#94a3b8; margin-top:8px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>` : ''}
+            </div>`;
+        }).join('');
 
-      priceCont.innerHTML = pricesHtml;
+        priceCont.innerHTML = pricesHtml;
+      }
 
       // 3. Fundamentals
       renderFundamentals();
@@ -583,22 +631,37 @@
     function renderFundamentals() {
       const thead = document.getElementById('ratios-thead');
       const tbody = document.getElementById('ratios-tbody');
+      const container = document.getElementById('fund-table-container');
 
       tbody.innerHTML = '';
-      const fundList = globalData.fundamentals || [];
+
+      // Si uniquement des cryptos sélectionnées
+      const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+      if (nonCryptoActive.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        return;
+      } else {
+        container.innerHTML = `<table class="ratios-table"><thead id="ratios-thead"></thead><tbody id="ratios-tbody"></tbody></table>`;
+      }
+
+      const currentThead = document.getElementById('ratios-thead');
+      const currentTbody = document.getElementById('ratios-tbody');
+
+      // Filtrer les fondamentaux aux catégories d'actions/REITs actives uniquement
+      const fundList = (globalData.fundamentals || []).filter(f => nonCryptoActive.includes(f.category || 'stock'));
 
       if (selectedTicker !== 'ALL') {
         const fund = fundList.find(f => f.ticker === selectedTicker);
 
         if (!fund || !fund.quarters || fund.quarters.length === 0) {
-          tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
+          currentTbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
           return;
         }
 
         let headHtml = `<tr><th class="ticker-cell">Métrique ℹ️</th>`;
         fund.quarters.forEach(q => { headHtml += `<th>${q}</th>`; });
         headHtml += `</tr>`;
-        thead.innerHTML = headHtml;
+        currentThead.innerHTML = headHtml;
 
         const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
         let rowsHtml = '';
@@ -613,10 +676,10 @@
           rowHtml += `</tr>`;
           rowsHtml += rowHtml;
         });
-        tbody.innerHTML = rowsHtml;
+        currentTbody.innerHTML = rowsHtml;
 
       } else {
-        thead.innerHTML = `
+        currentThead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
             <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️</th>
@@ -627,14 +690,17 @@
             <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net % ℹ️</th>
           </tr>`;
 
-        const allTickers = (globalData.prices || []).map(p => p.ticker);
+        // Récupère uniquement les tickers non-crypto correspondants aux filtres actifs
+        const activeTickers = (globalData.prices || [])
+          .filter(p => nonCryptoActive.includes(p.category || 'stock'))
+          .map(p => p.ticker);
 
-        if (allTickers.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
+        if (activeTickers.length === 0) {
+          currentTbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
           return;
         }
 
-        const rowsHtml = allTickers.map(ticker => {
+        const rowsHtml = activeTickers.map(ticker => {
           const f = fundList.find(item => item.ticker === ticker) || {};
           return `
             <tr>
@@ -648,7 +714,7 @@
             </tr>`;
         }).join('');
 
-        tbody.innerHTML = rowsHtml;
+        currentTbody.innerHTML = rowsHtml;
       }
     }
 
@@ -656,13 +722,19 @@
       const container = document.getElementById('earnings-container');
       if (!container) return;
 
-      const allEarnings = globalData.earnings || [];
+      const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+      if (nonCryptoActive.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        return;
+      }
+
+      const allEarnings = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
       const filtered = selectedTicker === 'ALL' 
         ? allEarnings 
         : allEarnings.filter(e => e.ticker === selectedTicker);
 
       if (filtered.length === 0) {
-        container.innerHTML = '<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune publication répertoriée.</div>';
+        container.innerHTML = '<div class="empty-msg">Aucune publication répertoriée.</div>';
         return;
       }
 
@@ -708,7 +780,7 @@
             📅 Date : <span style="color: #38bdf8;">${e.date_formatted}</span>
           </div>
           <div style="margin-top: 8px;">
-            <a class="news-link" href="${e.link}" target="_blank">🔗 Synthèse des résultats sur Yahoo Finance →</a>
+            <a class="news-link" href="${e.link}" target="_blank">🔗 Synthèse des résultats sur Stock Analysis →</a>
           </div>
         </div>
       `;
