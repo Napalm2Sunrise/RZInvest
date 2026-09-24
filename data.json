@@ -1,40 +1,40 @@
 {
-  "updated_at": "24/09/2026 à 17:14",
+  "updated_at": "24/09/2026 à 18:14",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.1,
-      "change": -0.53,
+      "price": 64.9,
+      "change": -0.84,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.0%",
-      "sma200_pct": 1.0,
+      "sma200": "200 W-SMA Above +0.6%",
+      "sma200_pct": 0.6,
       "is_under": false,
-      "rsi14_weekly": 38.9,
-      "ath_52w_pct": -17.9,
+      "rsi14_weekly": 38.4,
+      "ath_52w_pct": -18.1,
       "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
-      "price": 12.32,
-      "change": 0.0,
+      "price": 12.38,
+      "change": 0.49,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.7% 🔥",
-      "sma200_pct": -3.7,
+      "sma200": "200 W-SMA Under -3.2% 🔥",
+      "sma200_pct": -3.2,
       "is_under": true,
-      "rsi14_weekly": 47.5,
-      "ath_52w_pct": -11.5,
+      "rsi14_weekly": 48.4,
+      "ath_52w_pct": -11.1,
       "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
-      "price": 17.64,
-      "change": -1.01,
+      "price": 17.62,
+      "change": -1.12,
       "currency": "€",
-      "sma200": "200 W-SMA Under -2.9% 🔥",
-      "sma200_pct": -2.9,
+      "sma200": "200 W-SMA Under -3.0% 🔥",
+      "sma200_pct": -3.0,
       "is_under": true,
-      "rsi14_weekly": 37.5,
-      "ath_52w_pct": -12.7,
+      "rsi14_weekly": 37.3,
+      "ath_52w_pct": -12.8,
       "earnings": "N/A"
     },
     {
@@ -51,32 +51,32 @@
     },
     {
       "ticker": "AAOI",
-      "price": 98.9,
-      "change": -2.14,
+      "price": 99.21,
+      "change": -1.83,
       "currency": "$",
-      "sma200": "200 W-SMA Above +188.6%",
-      "sma200_pct": 188.6,
+      "sma200": "200 W-SMA Above +189.5%",
+      "sma200_pct": 189.5,
       "is_under": false,
       "rsi14_weekly": 44.9,
-      "ath_52w_pct": -55.7,
+      "ath_52w_pct": -55.5,
       "earnings": "05/11/2026"
     },
     {
       "ticker": "AMD",
-      "price": 612.41,
-      "change": -0.36,
+      "price": 611.68,
+      "change": -0.48,
       "currency": "$",
-      "sma200": "200 W-SMA Above +235.1%",
-      "sma200_pct": 235.1,
+      "sma200": "200 W-SMA Above +234.7%",
+      "sma200_pct": 234.7,
       "is_under": false,
-      "rsi14_weekly": 69.9,
-      "ath_52w_pct": -1.8,
+      "rsi14_weekly": 69.8,
+      "ath_52w_pct": -1.9,
       "earnings": "03/11/2026"
     },
     {
       "ticker": "AMKR",
-      "price": 51.92,
-      "change": -2.62,
+      "price": 51.9,
+      "change": -2.66,
       "currency": "$",
       "sma200": "200 W-SMA Above +55.1%",
       "sma200_pct": 55.1,
@@ -87,303 +87,339 @@
     },
     {
       "ticker": "AMZN",
-      "price": 245.99,
-      "change": -1.32,
+      "price": 246.41,
+      "change": -1.15,
       "currency": "$",
-      "sma200": "200 W-SMA Above +32.5%",
-      "sma200_pct": 32.5,
+      "sma200": "200 W-SMA Above +32.7%",
+      "sma200_pct": 32.7,
       "is_under": false,
-      "rsi14_weekly": 48.5,
-      "ath_52w_pct": -13.4,
+      "rsi14_weekly": 48.7,
+      "ath_52w_pct": -13.2,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "ASML.AS",
-      "price": 1508.6,
-      "change": -0.47,
+      "price": 1503.2,
+      "change": -0.83,
       "currency": "€",
-      "sma200": "200 W-SMA Above +81.4%",
-      "sma200_pct": 81.4,
+      "sma200": "200 W-SMA Above +80.7%",
+      "sma200_pct": 80.7,
       "is_under": false,
-      "rsi14_weekly": 56.9,
-      "ath_52w_pct": -12.4,
+      "rsi14_weekly": 56.6,
+      "ath_52w_pct": -12.7,
       "earnings": "14/10/2026"
     },
     {
       "ticker": "AVGO",
-      "price": 347.25,
-      "change": -2.18,
+      "price": 347.67,
+      "change": -2.06,
       "currency": "$",
-      "sma200": "200 W-SMA Above +69.8%",
-      "sma200_pct": 69.8,
+      "sma200": "200 W-SMA Above +70.0%",
+      "sma200_pct": 70.0,
       "is_under": false,
-      "rsi14_weekly": 44.4,
-      "ath_52w_pct": -27.9,
+      "rsi14_weekly": 44.5,
+      "ath_52w_pct": -27.8,
       "earnings": "09/12/2026"
     },
     {
       "ticker": "AYA.TO",
-      "price": 39.33,
-      "change": -0.98,
+      "price": 39.18,
+      "change": -1.36,
       "currency": "$",
-      "sma200": "200 W-SMA Above +164.4%",
-      "sma200_pct": 164.4,
+      "sma200": "200 W-SMA Above +163.5%",
+      "sma200_pct": 163.5,
       "is_under": false,
-      "rsi14_weekly": 65.9,
-      "ath_52w_pct": -4.7,
+      "rsi14_weekly": 65.6,
+      "ath_52w_pct": -5.1,
       "earnings": "11/11/2026"
     },
     {
       "ticker": "BKNG",
-      "price": 158.08,
-      "change": 1.4,
+      "price": 155.93,
+      "change": 0.02,
       "currency": "$",
-      "sma200": "200 W-SMA Under -2.2% 🔥",
-      "sma200_pct": -2.2,
+      "sma200": "200 W-SMA Under -3.5% 🔥",
+      "sma200_pct": -3.5,
       "is_under": true,
-      "rsi14_weekly": 38.2,
-      "ath_52w_pct": -29.1,
+      "rsi14_weekly": 37.5,
+      "ath_52w_pct": -30.1,
       "earnings": "27/10/2026"
     },
     {
       "ticker": "CPRT",
-      "price": 28.21,
-      "change": -2.27,
+      "price": 28.11,
+      "change": -2.62,
       "currency": "$",
-      "sma200": "200 W-SMA Under -37.6% 🔥",
-      "sma200_pct": -37.6,
+      "sma200": "200 W-SMA Under -37.8% 🔥",
+      "sma200_pct": -37.8,
       "is_under": true,
-      "rsi14_weekly": 37.3,
-      "ath_52w_pct": -38.4,
+      "rsi14_weekly": 37.1,
+      "ath_52w_pct": -38.6,
       "earnings": "19/11/2026"
     },
     {
       "ticker": "CSW",
-      "price": 293.57,
-      "change": -1.46,
+      "price": 292.57,
+      "change": -1.8,
       "currency": "$",
-      "sma200": "200 W-SMA Above +15.8%",
-      "sma200_pct": 15.8,
+      "sma200": "200 W-SMA Above +15.4%",
+      "sma200_pct": 15.4,
       "is_under": false,
-      "rsi14_weekly": 49.0,
-      "ath_52w_pct": -16.4,
+      "rsi14_weekly": 48.5,
+      "ath_52w_pct": -16.7,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "GEV",
-      "price": 940.71,
-      "change": -1.17,
+      "price": 947.72,
+      "change": -0.43,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 49.0,
-      "ath_52w_pct": -19.9,
+      "rsi14_weekly": 49.3,
+      "ath_52w_pct": -19.3,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "GOOG",
-      "price": 333.55,
-      "change": -0.43,
+      "price": 336.85,
+      "change": 0.56,
       "currency": "$",
-      "sma200": "200 W-SMA Above +69.0%",
-      "sma200_pct": 69.0,
+      "sma200": "200 W-SMA Above +70.7%",
+      "sma200_pct": 70.7,
       "is_under": false,
-      "rsi14_weekly": 48.2,
-      "ath_52w_pct": -16.4,
+      "rsi14_weekly": 49.1,
+      "ath_52w_pct": -15.6,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "ISRG",
-      "price": 401.94,
-      "change": 0.92,
+      "price": 401.52,
+      "change": 0.81,
       "currency": "$",
-      "sma200": "200 W-SMA Under -4.1% 🔥",
-      "sma200_pct": -4.1,
+      "sma200": "200 W-SMA Under -4.2% 🔥",
+      "sma200_pct": -4.2,
       "is_under": true,
-      "rsi14_weekly": 47.9,
-      "ath_52w_pct": -32.2,
+      "rsi14_weekly": 47.6,
+      "ath_52w_pct": -32.3,
       "earnings": "20/10/2026"
     },
     {
-      "ticker": "META",
-      "price": 764.78,
-      "change": 2.78,
+      "ticker": "JNJ",
+      "price": 270.18,
+      "change": 0.38,
       "currency": "$",
-      "sma200": "200 W-SMA Above +53.4%",
-      "sma200_pct": 53.4,
+      "sma200": "200 W-SMA Above +51.7%",
+      "sma200_pct": 51.7,
       "is_under": false,
-      "rsi14_weekly": 65.2,
-      "ath_52w_pct": -0.0,
+      "rsi14_weekly": 62.3,
+      "ath_52w_pct": -3.0,
+      "earnings": "13/10/2026"
+    },
+    {
+      "ticker": "META",
+      "price": 763.17,
+      "change": 2.56,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +53.1%",
+      "sma200_pct": 53.1,
+      "is_under": false,
+      "rsi14_weekly": 64.9,
+      "ath_52w_pct": 0.2,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "MC.PA",
-      "price": 397.48,
-      "change": 0.14,
+      "price": 397.1,
+      "change": 0.05,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.8% 🔥",
       "sma200_pct": -38.8,
       "is_under": true,
       "rsi14_weekly": 30.0,
-      "ath_52w_pct": -39.0,
+      "ath_52w_pct": -39.1,
       "earnings": "26/01/2027"
     },
     {
       "ticker": "MSFT",
-      "price": 493.02,
-      "change": -1.51,
+      "price": 494.48,
+      "change": -1.22,
       "currency": "$",
-      "sma200": "200 W-SMA Above +22.8%",
-      "sma200_pct": 22.8,
+      "sma200": "200 W-SMA Above +23.2%",
+      "sma200_pct": 23.2,
       "is_under": false,
-      "rsi14_weekly": 60.5,
-      "ath_52w_pct": -9.0,
+      "rsi14_weekly": 60.7,
+      "ath_52w_pct": -8.8,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "NBIS",
-      "price": 240.82,
-      "change": 6.27,
+      "price": 241.74,
+      "change": 6.68,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
       "rsi14_weekly": 58.5,
-      "ath_52w_pct": -16.0,
+      "ath_52w_pct": -15.7,
       "earnings": "10/11/2026"
     },
     {
       "ticker": "NVDA",
-      "price": 221.56,
-      "change": -1.75,
+      "price": 222.55,
+      "change": -1.31,
       "currency": "$",
-      "sma200": "200 W-SMA Above +89.5%",
-      "sma200_pct": 89.5,
+      "sma200": "200 W-SMA Above +90.3%",
+      "sma200_pct": 90.3,
       "is_under": false,
-      "rsi14_weekly": 56.7,
-      "ath_52w_pct": -6.0,
+      "rsi14_weekly": 57.0,
+      "ath_52w_pct": -5.6,
       "earnings": "17/11/2026"
     },
     {
       "ticker": "ONON",
-      "price": 29.82,
-      "change": -1.14,
+      "price": 29.87,
+      "change": -0.96,
       "currency": "$",
-      "sma200": "200 W-SMA Under -22.2% 🔥",
-      "sma200_pct": -22.2,
+      "sma200": "200 W-SMA Under -22.1% 🔥",
+      "sma200_pct": -22.1,
       "is_under": true,
-      "rsi14_weekly": 38.6,
-      "ath_52w_pct": -41.1,
+      "rsi14_weekly": 38.5,
+      "ath_52w_pct": -41.0,
       "earnings": "11/11/2026"
     },
     {
+      "ticker": "PG",
+      "price": 146.94,
+      "change": -0.31,
+      "currency": "$",
+      "sma200": "200 W-SMA Under -5.6% 🔥",
+      "sma200_pct": -5.6,
+      "is_under": true,
+      "rsi14_weekly": 49.7,
+      "ath_52w_pct": -12.1,
+      "earnings": "22/10/2026"
+    },
+    {
       "ticker": "RMS.PA",
-      "price": 1353.0,
-      "change": 0.26,
+      "price": 1354.5,
+      "change": 0.37,
       "currency": "€",
       "sma200": "200 W-SMA Under -32.9% 🔥",
       "sma200_pct": -32.9,
       "is_under": true,
-      "rsi14_weekly": 31.2,
-      "ath_52w_pct": -39.9,
+      "rsi14_weekly": 31.4,
+      "ath_52w_pct": -39.8,
       "earnings": "11/02/2027"
     },
     {
       "ticker": "SPCX",
-      "price": 147.32,
-      "change": -0.7,
+      "price": 147.93,
+      "change": -0.29,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 49.2,
-      "ath_52w_pct": -30.3,
+      "rsi14_weekly": 49.5,
+      "ath_52w_pct": -30.0,
       "earnings": "03/11/2026"
     },
     {
       "ticker": "SPGI",
-      "price": 402.26,
-      "change": -1.04,
+      "price": 401.18,
+      "change": -1.31,
       "currency": "$",
-      "sma200": "200 W-SMA Under -5.0% 🔥",
-      "sma200_pct": -5.0,
+      "sma200": "200 W-SMA Under -5.2% 🔥",
+      "sma200_pct": -5.2,
       "is_under": true,
-      "rsi14_weekly": 44.5,
-      "ath_52w_pct": -22.2,
+      "rsi14_weekly": 44.3,
+      "ath_52w_pct": -22.4,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "SU.PA",
-      "price": 289.95,
-      "change": -1.16,
+      "price": 289.8,
+      "change": -1.21,
       "currency": "€",
-      "sma200": "200 W-SMA Above +35.6%",
-      "sma200_pct": 35.6,
+      "sma200": "200 W-SMA Above +35.5%",
+      "sma200_pct": 35.5,
       "is_under": false,
-      "rsi14_weekly": 55.9,
+      "rsi14_weekly": 55.8,
       "ath_52w_pct": -6.8,
       "earnings": "25/02/2027"
     },
     {
       "ticker": "TMO",
-      "price": 672.12,
-      "change": 1.03,
+      "price": 669.4,
+      "change": 0.62,
       "currency": "$",
-      "sma200": "200 W-SMA Above +25.9%",
-      "sma200_pct": 25.9,
+      "sma200": "200 W-SMA Above +25.4%",
+      "sma200_pct": 25.4,
       "is_under": false,
-      "rsi14_weekly": 73.2,
-      "ath_52w_pct": -0.0,
+      "rsi14_weekly": 72.7,
+      "ath_52w_pct": 0.2,
       "earnings": "21/10/2026"
     },
     {
       "ticker": "TTE.PA",
-      "price": 81.0,
-      "change": 1.73,
+      "price": 81.05,
+      "change": 1.8,
       "currency": "€",
-      "sma200": "200 W-SMA Above +33.6%",
-      "sma200_pct": 33.6,
+      "sma200": "200 W-SMA Above +33.7%",
+      "sma200_pct": 33.7,
       "is_under": false,
-      "rsi14_weekly": 63.3,
+      "rsi14_weekly": 63.4,
       "ath_52w_pct": -0.0,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "TSLA",
-      "price": 376.31,
-      "change": -1.0,
+      "price": 376.72,
+      "change": -0.89,
       "currency": "$",
-      "sma200": "200 W-SMA Above +30.3%",
-      "sma200_pct": 30.3,
+      "sma200": "200 W-SMA Above +30.4%",
+      "sma200_pct": 30.4,
       "is_under": false,
-      "rsi14_weekly": 50.5,
-      "ath_52w_pct": -23.2,
+      "rsi14_weekly": 50.4,
+      "ath_52w_pct": -23.1,
       "earnings": "21/10/2026"
     },
     {
       "ticker": "VRSN",
-      "price": 296.8,
-      "change": 1.2,
+      "price": 293.67,
+      "change": 0.13,
       "currency": "$",
-      "sma200": "200 W-SMA Above +30.6%",
-      "sma200_pct": 30.6,
+      "sma200": "200 W-SMA Above +29.3%",
+      "sma200_pct": 29.3,
       "is_under": false,
-      "rsi14_weekly": 58.8,
-      "ath_52w_pct": -4.3,
+      "rsi14_weekly": 57.2,
+      "ath_52w_pct": -5.3,
       "earnings": "22/10/2026"
     },
     {
       "ticker": "VRT",
-      "price": 240.81,
-      "change": -3.21,
+      "price": 243.41,
+      "change": -2.16,
       "currency": "$",
-      "sma200": "200 W-SMA Above +107.0%",
-      "sma200_pct": 107.0,
+      "sma200": "200 W-SMA Above +109.2%",
+      "sma200_pct": 109.2,
       "is_under": false,
-      "rsi14_weekly": 43.8,
-      "ath_52w_pct": -36.0,
+      "rsi14_weekly": 44.0,
+      "ath_52w_pct": -35.3,
       "earnings": "21/10/2026"
+    },
+    {
+      "ticker": "VST",
+      "price": 137.29,
+      "change": -0.49,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +29.8%",
+      "sma200_pct": 29.8,
+      "is_under": false,
+      "rsi14_weekly": 42.5,
+      "ath_52w_pct": -34.9,
+      "earnings": "05/11/2026"
     }
   ],
   "news": [
@@ -396,17 +432,17 @@
     },
     {
       "ticker": "AMD",
-      "title": "Micron's Rally Looks Overdone Until You Price The Memory Shortage",
-      "summary": "Micron Technology (MU) stock has returned 552% over the past twelve months. At near $1,070 a share, has the price run ahead of the business? On the last twelve months of adjusted earnings, meaning nor...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/microns-rally-looks-overdone-until-135932745.html",
-      "date": "2026-09-24T15:59:32+02:00"
+      "title": "Bank of America Just Told Investors to Sell UPS, and the Reason Has Nothing to Do With Package Volume",
+      "summary": "Bank of America just cut UPS to sell, and the catalyst has nothing to do with shipping demand or Amazon competition. The real threat is a regulatory change that turns UPS's fastest, highest-volume lan...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/bank-america-just-told-investors-154930863.html",
+      "date": "2026-09-24T17:49:30+02:00"
     },
     {
       "ticker": "AMD",
-      "title": "NVIDIA's $279B Supply Commitments: Can These Secure Its Growth Runway?",
-      "summary": "NVDA's $279B supply commitments aim to support Blackwell and Vera Rubin production, but demand shifts and excess inventory remain key risks.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/nvidias-279b-supply-commitments-secure-134100685.html",
-      "date": "2026-09-24T15:41:00+02:00"
+      "title": "Meet the Market's Newest $1 Trillion Stock: 3 Things to Know Before Buying AMD",
+      "summary": "AMD shares have been on fire this year.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/meet-markets-newest-1-trillion-152000391.html",
+      "date": "2026-09-24T17:20:00+02:00"
     },
     {
       "ticker": "AMKR",
@@ -421,13 +457,6 @@
       "summary": "Here's what it's like to use Meta's Muse AI agent.",
       "link": "https://finance.yahoo.com/technology/article/metas-muse-is-an-impressively-capable-ai-agent-despite-some-hiccups-173310662.html",
       "date": "2026-09-23T19:33:10+02:00"
-    },
-    {
-      "ticker": "AMZN",
-      "title": "Welcome to the age of listening devices",
-      "summary": "Devices that can listen and record us are becoming more popular, raising privacy concerns.",
-      "link": "https://finance.yahoo.com/technology/article/welcome-to-the-age-of-listening-devices-144845987.html",
-      "date": "2026-09-24T16:48:45+02:00"
     },
     {
       "ticker": "AVGO",
@@ -508,17 +537,17 @@
     },
     {
       "ticker": "GOOG",
-      "title": "Meta Just Blew Past Wall Street’s $750 Target. Where Does It Go Now?",
-      "summary": "Meta just shattered Wall Street's consensus price target on the back of a 37% monthly surge, but with free cash flow collapsing 91% and capex ballooning toward $145 billion, the real debate is whether...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/meta-just-blew-past-wall-150037338.html",
-      "date": "2026-09-24T17:00:37+02:00"
+      "title": "Google to test custom AI chips in space on upcoming SpaceX mission",
+      "summary": "Investing.com -- Alphabet Inc's (NASDAQ:GOOGL) Google has officially launched Project Suncatcher, an ambitious orbital computing initiative aimed at deploying its proprietary artificial intelligence c...",
+      "link": "https://tech.yahoo.com/ai/gemini/articles/google-test-custom-ai-chips-154411415.html",
+      "date": "2026-09-24T17:44:11+02:00"
     },
     {
       "ticker": "GOOG",
-      "title": "4 Utility Stocks With Reliable Dividends and a Massive New Growth Engine",
-      "summary": "Data centers are quietly reshaping which utility stocks deserve a spot in an income portfolio, and four regulated electric companies just locked in contracts that could rewrite their dividend growth s...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/4-utility-stocks-reliable-dividends-145347928.html",
-      "date": "2026-09-24T16:53:47+02:00"
+      "title": "Does Palantir Stock Make Your Bad Market Days Worse?",
+      "summary": "Palantir Technologies (PLTR) stock has climbed 10.0% over the last five trading days, while the S&P 500 rose 2.0%. A run like that invites you to chase it. But one week is not the question. The questi...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/does-palantir-stock-bad-market-150909119.html",
+      "date": "2026-09-24T17:09:09+02:00"
     },
     {
       "ticker": "ISRG",
@@ -535,11 +564,25 @@
       "date": "2026-09-24T11:04:00+02:00"
     },
     {
-      "ticker": "ISRG",
-      "title": "Intuitive Surgical vs. Stryker: Which MedTech Stock Is the Better Buy Now?",
-      "summary": "ISRG's rapid procedure growth, expanding robotics ecosystem and recurring revenues highlight its growth path amid MedTech shifts.",
-      "link": "https://finance.yahoo.com/healthcare/articles/intuitive-surgical-vs-stryker-medtech-153100671.html",
-      "date": "2026-09-23T17:31:00+02:00"
+      "ticker": "JNJ",
+      "title": "Pfizer or AbbVie: Which Big Pharma Stock Is the Better Pick?",
+      "summary": "AbbVie and Pfizer are reshaping their growth strategies as new drugs, acquisitions, pipelines and patent challenges shape their outlooks.",
+      "link": "https://finance.yahoo.com/healthcare/articles/pfizer-abbvie-big-pharma-stock-144500724.html",
+      "date": "2026-09-24T16:45:00+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "title": "What J&J’s Spravato patent win could mean for psychedelic drugs",
+      "summary": "As more psychedelic drugs move toward market, developers are testing how far patent protection can extend around familiar compounds.",
+      "link": "https://finance.yahoo.com/healthcare/articles/j-j-spravato-patent-win-130000671.html",
+      "date": "2026-09-24T15:00:00+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "title": "Bristol Myers Squibb and Johnson & Johnson Both Face Challenges Ahead: Which Healthcare Stock Looks More Resilient Now?",
+      "summary": "Bristol Myers Squibb trades at a steep valuation discount, while Johnson & Johnson's stronger margins and lower debt offer stability. But patent cliffs and litigation risks complicate both cases.",
+      "link": "https://finance.yahoo.com/healthcare/articles/bristol-myers-squibb-johnson-johnson-115601836.html",
+      "date": "2026-09-24T13:56:01+02:00"
     },
     {
       "ticker": "META",
@@ -564,24 +607,31 @@
     },
     {
       "ticker": "MSFT",
-      "title": "Lovable’s annualized revenue crosses $600M as vibe coding takes off",
-      "summary": "Lovable co-foudner Fabian Hedin said that apps created on the platform are getting nearly a billion monthly views each month.",
-      "link": "https://finance.yahoo.com/technology/articles/lovable-annualized-revenue-crosses-600m-144325228.html",
-      "date": "2026-09-24T16:43:25+02:00"
+      "title": "Okta Agentic AI Security Opportunity Could Drive Platform Demand, RBC Says",
+      "summary": "Okta (OKTA) could see stronger demand for its identity platform as companies adopt tools to secure a",
+      "link": "https://finance.yahoo.com/technology/ai/articles/okta-agentic-ai-security-opportunity-153900886.html",
+      "date": "2026-09-24T17:39:00+02:00"
     },
     {
       "ticker": "MSFT",
-      "title": "Apple Price Prediction: Why Our Target Sits Above Wall Street’s",
-      "summary": "Wall Street has already written Apple off as a stock with nowhere left to go, but a fresh look at the numbers tells a very different story about where shares could head over the next 12 months.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/apple-price-prediction-why-target-140039767.html",
-      "date": "2026-09-24T16:00:39+02:00"
+      "title": "Microsoft's CEO calls for AI 'kill switch' as Nvidia's CEO says 'we have to shut the labs' if models can't be contained",
+      "summary": "Despite the caution, however, industry evangelists remain firmly behind AI.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/microsofts-ceo-calls-ai-kill-152000759.html",
+      "date": "2026-09-24T17:20:00+02:00"
     },
     {
-      "ticker": "MSFT",
-      "title": "Nvidia leads tech stocks lower as Treasury yields surge: AlphaCheck",
-      "summary": "Here's a check of the markets in the first few minutes of trading.",
-      "link": "https://finance.yahoo.com/markets/article/nvidia-leads-tech-stocks-lower-as-treasury-yields-surge-alphacheck-133744347.html",
-      "date": "2026-09-24T15:37:44+02:00"
+      "ticker": "NBIS",
+      "title": "Nebius Surges 6%, CoreWeave Treads Water as JPMorgan Upgrade Flags Rising Compute Pricing; IREN Slides 4%",
+      "summary": "A JPMorgan upgrade and surging compute prices should lift all AI infrastructure boats, yet Nebius, CoreWeave, and IREN are heading in three completely different directions Thursday, and the reason why...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nebius-surges-6-coreweave-treads-152956064.html",
+      "date": "2026-09-24T17:29:56+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "title": "CoreWeave, Nebius take Platinum in SemiAnalysis rankings while IREN rated ‘Underperforming’",
+      "summary": "SemiAnalysis reviewed 77 GPU cloud providers, testing managed clusters rather than data-center assets or credit quality. Its findings separate mature cloud operations from companies whose AI infrastru...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/coreweave-nebius-platinum-semianalysis-rankings-145036982.html",
+      "date": "2026-09-24T16:50:36+02:00"
     },
     {
       "ticker": "NBIS",
@@ -589,13 +639,6 @@
       "summary": "Short-term contracts at premium rates are lifting margins on new deals, the bank says",
       "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-wins-jpmorgan-upgrade-premium-141948746.html",
       "date": "2026-09-24T16:19:48+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "title": "BigBear.ai vs. Nebius Group: Which Specialized AI Stock Is a Better Buy in 2026?",
-      "summary": "BigBear.ai is winning sticky government contracts in a focused niche. Nebius is building AI cloud infrastructure that customers are lining up faster than it can provision. The scale of opportunity bet...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/bigbear-ai-vs-nebius-group-132114761.html",
-      "date": "2026-09-24T15:21:14+02:00"
     },
     {
       "ticker": "NVDA",
@@ -606,17 +649,17 @@
     },
     {
       "ticker": "NVDA",
-      "title": "Why Oracle Stock Just Dropped",
-      "summary": "Oracle's Project Jupiter could fail -- and it's not even Oracle's fault.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-oracle-stock-just-dropped-150629247.html",
-      "date": "2026-09-24T17:06:29+02:00"
+      "title": "Here's Why Viking Therapeutics Shares Slumped Today",
+      "summary": "It's been an eventful week for the weight-loss drug company, which continues to impress with its clinical data, and today's move isn't much to worry about.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/heres-why-viking-therapeutics-shares-155033384.html",
+      "date": "2026-09-24T17:50:33+02:00"
     },
     {
       "ticker": "NVDA",
-      "title": "Is Centrus Energy the Ultimate Pick-and-Shovel Play on the Nuclear Technology Boom?",
-      "summary": "Centrus is securing deals to supply the fuel powering the next generation of nuclear reactors.",
-      "link": "https://finance.yahoo.com/energy/articles/centrus-energy-ultimate-pick-shovel-150500233.html",
-      "date": "2026-09-24T17:05:00+02:00"
+      "title": "Warren Buffett Says \"Father Time Always Wins.\" History Says Investors Who Do This 1 Thing Will Win Out Anyway.",
+      "summary": "Warren Buffett recently penned his last letter to Berkshire Hathaway investors as Chairman.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-says-father-time-155000259.html",
+      "date": "2026-09-24T17:50:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -640,18 +683,39 @@
       "date": "2026-09-23T22:26:41+02:00"
     },
     {
-      "ticker": "SPCX",
-      "title": "Trump Bought SpaceX Stock Weeks After the IPO, Filing Shows",
-      "summary": "A federal disclosure quietly buried inside a batch of monthly trades reveals the president holds a stake in one of his administration's most powerful contractors, raising a question investors cannot y...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-bought-spacex-stock-weeks-132022132.html",
-      "date": "2026-09-24T15:20:22+02:00"
+      "ticker": "PG",
+      "title": "Procter & Gamble (PG): Buy, Sell, or Hold Post Q2 Earnings?",
+      "summary": "Procter & Gamble currently trades at $147.39 per share and has shown little upside over the past six months, posting a middling return of 3%. The stock also fell short of the S&P 500’s 18.4% gain duri...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/procter-gamble-pg-buy-sell-144058800.html",
+      "date": "2026-09-24T16:40:58+02:00"
+    },
+    {
+      "ticker": "PG",
+      "title": "3 Stocks With Pricing Power When Inflation And Rates Stay High",
+      "summary": "Bond yields are surging, oil is above $100, and rate expectations keep shifting, so the hunt is on for businesses that can still defend pricing and cash flows when money gets more expensive. This back...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-pricing-power-inflation-051636183.html",
+      "date": "2026-09-24T07:16:36+02:00"
     },
     {
       "ticker": "SPCX",
-      "title": "SpaceX Stock: Bull vs. Bear Scenarios",
-      "summary": "SpaceX is pursuing several revolutionary growth initiatives.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-bull-vs-bear-132000381.html",
-      "date": "2026-09-24T15:20:00+02:00"
+      "title": "SpaceX Lockup Expiry: Mizuho Reiterates ‘Outperform’ Rating As More Than 328M Shares Become Eligible For Trading",
+      "summary": "At SpaceX’s closing price on Wednesday, the newly eligible shares are worth about $48.7 billion.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-lockup-expiry-mizuho-reiterates-153149780.html",
+      "date": "2026-09-24T17:31:49+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "title": "Morgan Stanley says Tesla robotics strengthens SpaceX’s $300 AI case",
+      "summary": "Enterprise AI accounts for $165 of the bank’s SpaceX valuation, while rockets contribute only $8. The model depends on compute, connectivity and Tesla’s physical-AI capabilities.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/morgan-stanley-says-tesla-robotics-145838038.html",
+      "date": "2026-09-24T16:58:38+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "title": "Does Palantir Stock Make Your Bad Market Days Worse?",
+      "summary": "Palantir Technologies (PLTR) stock has climbed 10.0% over the last five trading days, while the S&P 500 rose 2.0%. A run like that invites you to chase it. But one week is not the question. The questi...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/does-palantir-stock-bad-market-150909119.html",
+      "date": "2026-09-24T17:09:09+02:00"
     },
     {
       "ticker": "SPGI",
@@ -666,13 +730,6 @@
       "summary": "A $10,000 holding in Joby Aviation (JOBY) a year ago is now worth about $3,940. The S&P 500 returned 16.5% over the same year. Even after that fall, Joby’s valuation reflects market expectations for e...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/now-time-joby-stock-124912091.html",
       "date": "2026-09-24T14:49:12+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "title": "What Would A Real Market Crash Do To Netflix Stock After This Fall?",
-      "summary": "Netflix (NFLX) stock trades near $71, about 43% below its high of the past year, and it lost 6.6% in the past week. The market did not fall with it: The S&P 500 returned 16.5% over the past twelve mon...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/real-market-crash-netflix-stock-115115006.html",
-      "date": "2026-09-24T13:51:15+02:00"
     },
     {
       "ticker": "SU.PA",
@@ -729,6 +786,20 @@
       "summary": "Whether you see them or not, industrials businesses play a crucial part in our daily activities. Still, their generally high capital requirements expose them to the ups and downs of economic cycles, a...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/2-industrials-stocks-keep-eye-085654665.html",
       "date": "2026-09-24T10:56:54+02:00"
+    },
+    {
+      "ticker": "VST",
+      "title": "Energy Transition Update - Fashion Industry Joins Forces For Renewable Energy Revolution",
+      "summary": "Levi Strauss & Co. and Marks & Spencer have collaboratively launched the Fashion Renewable Collaborative (FRC) with Schneider Electric, aiming to advance renewable electricity across the fashion indus...",
+      "link": "https://finance.yahoo.com/energy/articles/energy-transition-fashion-industry-joins-113702372.html",
+      "date": "2026-09-24T13:37:02+02:00"
+    },
+    {
+      "ticker": "VST",
+      "title": "Vistra Corp. (VST) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
+      "summary": "Vistra Corp. (VST) concluded the recent trading session at $137.97, signifying a -1.74% move from its prior day's close.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/vistra-corp-vst-sees-more-214506629.html",
+      "date": "2026-09-23T23:45:06+02:00"
     }
   ],
   "fundamentals": [
@@ -795,7 +866,7 @@
     {
       "ticker": "CPINV.BR",
       "rev_growth": "+11.9%",
-      "pe": "11.2x",
+      "pe": "11.3x",
       "ev": "18.1x",
       "roe": "9.4%",
       "peg": "N/A",
@@ -823,7 +894,7 @@
           "160.9%"
         ],
         "Fwd P/E": [
-          "11.2x",
+          "11.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -968,7 +1039,7 @@
     {
       "ticker": "AAOI",
       "rev_growth": "+86.4%",
-      "pe": "21.5x",
+      "pe": "21.6x",
       "ev": "-260.0x",
       "roe": "-5.4%",
       "peg": "0.78",
@@ -996,7 +1067,7 @@
           "-29.8%"
         ],
         "Fwd P/E": [
-          "21.5x",
+          "21.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -1208,7 +1279,7 @@
     {
       "ticker": "ASML.AS",
       "rev_growth": "+21.3%",
-      "pe": "29.2x",
+      "pe": "29.1x",
       "ev": "42.7x",
       "roe": "53.9%",
       "peg": "1.56",
@@ -1236,7 +1307,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "29.2x",
+          "29.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -1328,7 +1399,7 @@
     {
       "ticker": "AYA.TO",
       "rev_growth": "+150.7%",
-      "pe": "18.9x",
+      "pe": "18.8x",
       "ev": "27.1x",
       "roe": "25.7%",
       "peg": "N/A",
@@ -1356,7 +1427,7 @@
           "1.2%"
         ],
         "Fwd P/E": [
-          "18.9x",
+          "18.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -1388,7 +1459,7 @@
     {
       "ticker": "BKNG",
       "rev_growth": "+8.1%",
-      "pe": "12.8x",
+      "pe": "12.6x",
       "ev": "11.6x",
       "roe": "N/A",
       "peg": "0.61",
@@ -1416,7 +1487,7 @@
           "17.9%"
         ],
         "Fwd P/E": [
-          "12.8x",
+          "12.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -1508,7 +1579,7 @@
     {
       "ticker": "CSW",
       "rev_growth": "+33.0%",
-      "pe": "21.5x",
+      "pe": "21.4x",
       "ev": "20.0x",
       "roe": "10.9%",
       "peg": "2.53",
@@ -1536,7 +1607,7 @@
           "N/A"
         ],
         "Fwd P/E": [
-          "21.5x",
+          "21.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -1568,7 +1639,7 @@
     {
       "ticker": "GEV",
       "rev_growth": "+21.9%",
-      "pe": "37.4x",
+      "pe": "37.7x",
       "ev": "62.6x",
       "roe": "82.6%",
       "peg": "1.86",
@@ -1596,7 +1667,7 @@
           "-9.2%"
         ],
         "Fwd P/E": [
-          "37.4x",
+          "37.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -1628,7 +1699,7 @@
     {
       "ticker": "GOOG",
       "rev_growth": "+24.2%",
-      "pe": "22.4x",
+      "pe": "22.6x",
       "ev": "23.1x",
       "roe": "48.7%",
       "peg": "1.24",
@@ -1656,7 +1727,7 @@
           "21.2%"
         ],
         "Fwd P/E": [
-          "22.4x",
+          "22.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -1746,9 +1817,69 @@
       }
     },
     {
+      "ticker": "JNJ",
+      "rev_growth": "+6.6%",
+      "pe": "22.3x",
+      "ev": "19.4x",
+      "roe": "25.7%",
+      "peg": "2.82",
+      "net_margin": "21.5%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+6.6%",
+          "+6.0%",
+          "+4.3%",
+          "+6.5%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "21.5%",
+          "28.5%",
+          "15.8%",
+          "41.3%",
+          "22.4%"
+        ],
+        "Fwd P/E": [
+          "22.3x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "19.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "25.7%",
+          "35.0%",
+          "20.1%",
+          "48.3%",
+          "23.4%"
+        ],
+        "PEG": [
+          "2.82",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "META",
       "rev_growth": "+28.0%",
-      "pe": "21.9x",
+      "pe": "21.8x",
       "ev": "17.5x",
       "roe": "29.8%",
       "peg": "0.97",
@@ -1776,7 +1907,7 @@
           "19.9%"
         ],
         "Fwd P/E": [
-          "21.9x",
+          "21.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -1868,7 +1999,7 @@
     {
       "ticker": "MSFT",
       "rev_growth": "+17.7%",
-      "pe": "20.8x",
+      "pe": "20.9x",
       "ev": "19.4x",
       "roe": "34.0%",
       "peg": "1.62",
@@ -1893,7 +2024,7 @@
           "34.1%"
         ],
         "Fwd P/E": [
-          "20.8x",
+          "20.9x",
           "N/A",
           "N/A",
           "N/A"
@@ -1921,7 +2052,7 @@
     {
       "ticker": "NBIS",
       "rev_growth": "+454.0%",
-      "pe": "-68.9x",
+      "pe": "-73.5x",
       "ev": "249.1x",
       "roe": "0.6%",
       "peg": "0.55",
@@ -1949,7 +2080,7 @@
           "5523.0%"
         ],
         "Fwd P/E": [
-          "-68.9x",
+          "-73.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -1981,7 +2112,7 @@
     {
       "ticker": "NVDA",
       "rev_growth": "+105.9%",
-      "pe": "14.1x",
+      "pe": "14.2x",
       "ev": "26.9x",
       "roe": "117.2%",
       "peg": "0.49",
@@ -2009,7 +2140,7 @@
           "N/A"
         ],
         "Fwd P/E": [
-          "14.1x",
+          "14.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2041,7 +2172,7 @@
     {
       "ticker": "ONON",
       "rev_growth": "+13.5%",
-      "pe": "14.4x",
+      "pe": "14.5x",
       "ev": "19.2x",
       "roe": "24.0%",
       "peg": "0.48",
@@ -2069,7 +2200,7 @@
           "4.7%"
         ],
         "Fwd P/E": [
-          "14.4x",
+          "14.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -2099,9 +2230,62 @@
       }
     },
     {
+      "ticker": "PG",
+      "rev_growth": "+1.5%",
+      "pe": "19.9x",
+      "ev": "14.9x",
+      "roe": "30.3%",
+      "peg": "3.79",
+      "net_margin": "18.4%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+1.5%",
+          "+0.3%",
+          "+2.5%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "18.4%",
+          "19.0%",
+          "17.7%",
+          "17.9%"
+        ],
+        "Fwd P/E": [
+          "19.9x",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "14.9x",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "30.3%",
+          "31.2%",
+          "30.7%",
+          "31.3%"
+        ],
+        "PEG": [
+          "3.79",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "26.9x",
+      "pe": "26.8x",
       "ev": "18.6x",
       "roe": "25.5%",
       "peg": "3.06",
@@ -2129,7 +2313,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.9x",
+          "26.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2161,7 +2345,7 @@
     {
       "ticker": "SPCX",
       "rev_growth": "+91.9%",
-      "pe": "84.5x",
+      "pe": "84.9x",
       "ev": "653.0x",
       "roe": "N/A",
       "peg": "N/A",
@@ -2186,7 +2370,7 @@
           "-44.6%"
         ],
         "Fwd P/E": [
-          "84.5x",
+          "84.9x",
           "N/A",
           "N/A",
           "N/A"
@@ -2214,7 +2398,7 @@
     {
       "ticker": "SPGI",
       "rev_growth": "+10.4%",
-      "pe": "19.9x",
+      "pe": "19.8x",
       "ev": "16.8x",
       "roe": "14.3%",
       "peg": "1.92",
@@ -2242,7 +2426,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "19.9x",
+          "19.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2334,7 +2518,7 @@
     {
       "ticker": "TMO",
       "rev_growth": "+10.5%",
-      "pe": "24.4x",
+      "pe": "24.3x",
       "ev": "24.2x",
       "roe": "13.5%",
       "peg": "1.96",
@@ -2362,7 +2546,7 @@
           "15.5%"
         ],
         "Fwd P/E": [
-          "24.4x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2394,7 +2578,7 @@
     {
       "ticker": "TTE.PA",
       "rev_growth": "+27.8%",
-      "pe": "9.1x",
+      "pe": "9.2x",
       "ev": "5.3x",
       "roe": "14.5%",
       "peg": "0.80",
@@ -2422,7 +2606,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "9.1x",
+          "9.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2454,7 +2638,7 @@
     {
       "ticker": "TSLA",
       "rev_growth": "+25.5%",
-      "pe": "171.3x",
+      "pe": "171.2x",
       "ev": "137.1x",
       "roe": "4.7%",
       "peg": "4.53",
@@ -2482,7 +2666,7 @@
           "15.4%"
         ],
         "Fwd P/E": [
-          "171.3x",
+          "171.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2514,7 +2698,7 @@
     {
       "ticker": "VRSN",
       "rev_growth": "+6.0%",
-      "pe": "26.8x",
+      "pe": "26.5x",
       "ev": "23.4x",
       "roe": "N/A",
       "peg": "2.21",
@@ -2542,7 +2726,7 @@
           "47.3%"
         ],
         "Fwd P/E": [
-          "26.8x",
+          "26.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -2574,7 +2758,7 @@
     {
       "ticker": "VRT",
       "rev_growth": "+24.1%",
-      "pe": "26.4x",
+      "pe": "26.7x",
       "ev": "35.8x",
       "roe": "43.9%",
       "peg": "0.85",
@@ -2602,7 +2786,7 @@
           "1.3%"
         ],
         "Fwd P/E": [
-          "26.4x",
+          "26.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -2624,6 +2808,66 @@
         ],
         "PEG": [
           "0.85",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "VST",
+      "rev_growth": "-5.5%",
+      "pe": "13.2x",
+      "ev": "10.4x",
+      "roe": "43.0%",
+      "peg": "0.35",
+      "net_margin": "11.6%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "-5.5%",
+          "+3.0%",
+          "+16.5%",
+          "+7.7%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "11.6%",
+          "5.3%",
+          "15.4%",
+          "10.1%",
+          "-8.9%"
+        ],
+        "Fwd P/E": [
+          "13.2x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "10.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "43.0%",
+          "17.7%",
+          "48.9%",
+          "29.2%",
+          "-25.0%"
+        ],
+        "PEG": [
+          "0.35",
           "N/A",
           "N/A",
           "N/A",
@@ -2760,6 +3004,13 @@
       "link": "https://stockanalysis.com/stocks/isrg/financials/?p=quarterly"
     },
     {
+      "ticker": "JNJ",
+      "date": "2026-10-13",
+      "date_formatted": "13/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/jnj/financials/?p=quarterly"
+    },
+    {
       "ticker": "META",
       "date": "2026-10-28",
       "date_formatted": "28/10/2026",
@@ -2807,6 +3058,13 @@
       "date_formatted": "11/11/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/onon/financials/?p=quarterly"
+    },
+    {
+      "ticker": "PG",
+      "date": "2026-10-22",
+      "date_formatted": "22/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/pg/financials/?p=quarterly"
     },
     {
       "ticker": "RMS.PA",
@@ -2870,6 +3128,13 @@
       "date_formatted": "21/10/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/vrt/financials/?p=quarterly"
+    },
+    {
+      "ticker": "VST",
+      "date": "2026-11-05",
+      "date_formatted": "05/11/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/vst/financials/?p=quarterly"
     }
   ]
 }
