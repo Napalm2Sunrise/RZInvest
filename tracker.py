@@ -11,9 +11,9 @@ import yfinance as yf
 # ==============================================================================
 TICKERS = [
     "AED.BR", "CPINV.BR", "HOMI.BR", "RET.BR", "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
-    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", 
-    "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
-    "TMO", "TTE.PA", "TSLA", "VRSN", "VRT"
+    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", "JNJ", 
+    "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
+    "TMO", "TTE.PA", "TSLA", "VRSN", "VRT", "VST"
 ]
 
 def clean_val(val, fmt="{:.1f}%"):
