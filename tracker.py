@@ -1,439 +1,158 @@
+import pandas as pd
+import yfinance as yf
 from datetime import datetime, timedelta
 import json
-import math
-import os
-import time
-from zoneinfo import ZoneInfo
-import yfinance as yf
+import numpy as np
+import pytz
 
-# ==============================================================================
-# CONFIGURATION DES TICKERS PAR CATÉGORIE
-# ==============================================================================
-REITS_TICKERS = [
-    "AED.BR", "CPINV.BR", "HOMI.BR", "RET.BR"
-]
+# Liste des tickers par catégorie
+tickers_by_cat = {
+    'stock': ["GOOGL", "AMZN", "MSFT", "META", "BABA", "ASML", "SYK", "AYA.TO"],
+    'reit': ["CPINV.BR", "HOMI.BR", "O", "VICI", "WPC"],
+    'crypto': ["BTC-USD", "ETH-USD", "SOL-USD", "SUI20947-USD", "HYPE32196-USD"]
+}
 
-STOCKS_TICKERS = [
-    "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
-    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", "JNJ", 
-    "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
-    "TMO", "TTE.PA", "TSLA", "VRSN", "VRT", "VST"
-]
+# Fusion des tickers
+all_tickers = []
+for cat, t_list in tickers_by_cat.items():
+    all_tickers.extend(t_list)
 
-CRYPTO_TICKERS = [
-    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE-USD"
-]
+print("Téléchargement des données de marché...")
+# Téléchargement groupé de l'historique sur 5 ans (suffisant pour la SMA 200W)
+df_hist = yf.download(all_tickers, period="5y", interval="1d", group_by='ticker', auto_adjust=True)
 
-def clean_val(val, fmt="{:.1f}%"):
-    """Nettoie les valeurs NaN, None ou Inf."""
-    if val is None:
-        return "N/A"
-    try:
-        f_val = float(val)
-        if math.isnan(f_val) or math.isinf(f_val):
-            return "N/A"
-        return fmt.format(f_val)
-    except Exception:
-        return "N/A"
+def calculate_rsi(series, period=14):
+    delta = series.diff()
+    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
+    rs = gain / loss
+    return 100 - (100 / (1 + rs))
 
-def check_200_weekly_sma_from_hist(hist_daily, current_price):
-    """Calcul de la 200 Weekly SMA basé sur l'historique daily pré-chargé."""
-    try:
-        if hist_daily is not None and not hist_daily.empty and len(hist_daily) >= 200:
-            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
-            if len(hist_weekly) >= 200:
-                sma_series = hist_weekly.rolling(window=200).mean()
-                sma_200 = float(sma_series.iloc[-1])
-                if sma_200 > 0 and current_price > 0:
-                    raw_pct = ((current_price - sma_200) / sma_200) * 100
-                    pct = round(raw_pct, 1)
-                    if current_price < sma_200:
-                        return f"200 W-SMA Under {pct}% 🔥", pct, True
-                    else:
-                        return f"200 W-SMA Above +{pct}%", pct, False
-    except Exception as e:
-        print(f"    ⚠️ Erreur calcul SMA200: {e}")
-    return "N/A", None, False
+brussels_tz = pytz.timezone('Europe/Brussels')
+now = datetime.now(brussels_tz)
 
-def calculate_rsi14_weekly(hist_daily):
-    """Calcul du RSI 14 périodes sur bougies hebdomadaires."""
-    try:
-        if hist_daily is not None and not hist_daily.empty:
-            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
-            if len(hist_weekly) >= 15:
-                delta = hist_weekly.diff()
-                gain = delta.where(delta > 0, 0.0)
-                loss = -delta.where(delta < 0, 0.0)
+final_data = []
 
-                avg_gain = gain.ewm(alpha=1/14, adjust=False).mean()
-                avg_loss = loss.ewm(alpha=1/14, adjust=False).mean()
-
-                last_gain = avg_gain.iloc[-1]
-                last_loss = avg_loss.iloc[-1]
-
-                if last_loss == 0:
-                    return 100.0
-                
-                rs = last_gain / last_loss
-                rsi = 100 - (100 / (1 + rs))
-                return round(float(rsi), 1)
-    except Exception as e:
-        print(f"    ⚠️ Erreur calcul RSI14 Weekly: {e}")
-    return "N/A"
-
-def calculate_ath_52w_pct(hist_daily, current_price):
-    """Calcul du % d'écart entre le prix actuel et le plus haut des 52 dernières semaines."""
-    try:
-        if hist_daily is not None and not hist_daily.empty:
-            last_52w = hist_daily.tail(252)
-            ath_52w = float(last_52w.max())
-            if ath_52w > 0 and current_price > 0:
-                pct = ((current_price - ath_52w) / ath_52w) * 100
-                return round(pct, 1)
-    except Exception as e:
-        print(f"    ⚠️ Erreur calcul ATH 52W: {e}")
-    return "N/A"
-
-def get_all_earnings_dates(ticker_obj, symbol, belgium_tz, category):
-    """
-    Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
-    Ignoré pour la catégorie crypto.
-    """
-    if category == "crypto":
-        return "N/A", []
-
-    earnings_list = []
-    next_earnings_str = "N/A"
-    now_date = datetime.now(belgium_tz).date()
-    cutoff_past_date = now_date - timedelta(days=30)
-    
-    clean_ticker = symbol.split('.')[0].lower()
-    earnings_url = f"https://stockanalysis.com/stocks/{clean_ticker}/financials/?p=quarterly"
-
-    try:
-        dates_found = []
-        df_earnings = None
-        try:
-            df_earnings = ticker_obj.get_earnings_dates(limit=12)
-        except Exception:
-            pass
-
-        if df_earnings is not None and not df_earnings.empty:
-            for idx in df_earnings.index:
-                d_val = idx.date() if hasattr(idx, 'date') else idx
-                dates_found.append(d_val)
+for cat, t_list in tickers_by_cat.items():
+    for ticker in t_list:
+        print(f"Traitement de {ticker}...")
+        
+        # Récupération des données historiques du ticker
+        if len(all_tickers) > 1:
+            t_data = df_hist[ticker].dropna(how='all')
         else:
-            calendar = getattr(ticker_obj, 'calendar', None)
-            if isinstance(calendar, dict) and "Earnings Date" in calendar:
-                for d in calendar["Earnings Date"]:
-                    d_val = d.date() if isinstance(d, datetime) else d
-                    dates_found.append(d_val)
+            t_data = df_hist.dropna(how='all')
+            
+        if t_data.empty:
+            print(f"Aucune donnée pour {ticker}")
+            continue
 
-        dates_found = sorted(list(set(dates_found)))
+        close_prices = t_data['Close']
+        current_price = close_prices.iloc[-1]
+        
+        # Variation du jour
+        if len(close_prices) > 1:
+            prev_price = close_prices.iloc[-2]
+            day_change_pct = ((current_price - prev_price) / prev_price) * 100
+        else:
+            day_change_pct = 0.0
 
-        for d_date in dates_found:
-            if cutoff_past_date <= d_date:
-                is_past = d_date < now_date
-                earnings_list.append({
-                    "ticker": symbol,
-                    "category": category,
-                    "date": d_date.strftime("%Y-%m-%d"),
-                    "date_formatted": d_date.strftime("%d/%m/%Y"),
-                    "is_past": is_past,
-                    "link": earnings_url
-                })
+        # Données Hebdomadaires (W-FRI) pour SMA 200 et RSI 14
+        weekly_close = close_prices.resample('W-FRI').last().dropna()
+        
+        # SMA 200W
+        if len(weekly_close) >= 200:
+            sma200_w = weekly_close.rolling(window=200).mean().iloc[-1]
+            diff_sma200_pct = ((current_price - sma200_w) / sma200_w) * 100
+        else:
+            sma200_w = None
+            diff_sma200_pct = None
 
-        future_dates = [d for d in dates_found if d >= now_date]
-        if future_dates:
-            next_earnings_str = future_dates[0].strftime("%d/%m/%Y")
+        # RSI 14W
+        if len(weekly_close) >= 15:
+            rsi_series = calculate_rsi(weekly_close, period=14)
+            rsi_w = rsi_series.iloc[-1]
+        else:
+            rsi_w = None
 
-    except Exception as e:
-        print(f"    ⚠️ Erreur récupération publications pour {symbol}: {e}")
+        # ATH 52 Semaines
+        one_year_ago = close_prices.index[-1] - timedelta(days=365)
+        last_52w = close_prices[close_prices.index >= one_year_ago]
+        ath_52w = last_52w.max() if not last_52w.empty else current_price
+        diff_ath_pct = ((current_price - ath_52w) / ath_52w) * 100
 
-    return next_earnings_str, earnings_list
+        # Infos fondamentales
+        yf_obj = yf.Ticker(ticker)
+        info = yf_obj.info if hasattr(yf_obj, 'info') else {}
 
-def get_financial_item(df, possible_keys, col):
-    """Extrait une ligne spécifique du compte de résultat ou du bilan pour une colonne donnée."""
-    if df is None or df.empty or col not in df.columns:
-        return None
-    for key in possible_keys:
-        if key in df.index:
-            val = df.loc[key, col]
-            if val is not None and not math.isnan(val):
-                return float(val)
-    return None
+        currency = "€" if ticker.endswith(".BR") else "$"
 
-def get_annual_history(ticker, info, category):
-    """Génère l'historique financier annuel."""
-    if category == "crypto":
-        return [], {}
+        # Ratios
+        fwd_pe = info.get('forwardPE')
+        ev_ebitda = info.get('enterpriseToEbitda')
+        peg_ratio = info.get('pegRatio')
+        roe = info.get('returnOnEquity')
+        if roe is not None:
+            roe = roe * 100  # Conversion en %
 
-    current_year = datetime.now().year
-    years_labels = [f"{current_year} (TTM)"]
-    history = {
-        "Croit. CA.": [],
-        "Marge Net %": [],
-        "Fwd P/E": [],
-        "EV/EBITDA": [],
-        "ROE": [],
-        "PEG": []
-    }
-
-    rev_growth = info.get('revenueGrowth')
-    fwd_pe = info.get('forwardPE') or info.get('trailingPE')
-    ev_ebitda = info.get('enterpriseToEbitda')
-    roe = info.get('returnOnEquity')
-    peg = info.get('pegRatio')
-    profit_margin = info.get('profitMargins')
-
-    history["Croit. CA."].append(clean_val(rev_growth * 100 if rev_growth is not None else None, "{:+.1f}%"))
-    history["Marge Net %"].append(clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"))
-    history["Fwd P/E"].append(clean_val(fwd_pe, "{:.1f}x"))
-    history["EV/EBITDA"].append(clean_val(ev_ebitda, "{:.1f}x"))
-    history["ROE"].append(clean_val(roe * 100 if roe is not None else None, "{:.1f}%"))
-    history["PEG"].append(clean_val(peg, "{:.2f}"))
-
-    try:
-        fin = getattr(ticker, 'income_stmt', None)
-        if fin is None or fin.empty:
-            fin = ticker.financials
-
-        bs = getattr(ticker, 'balance_sheet', None)
-
-        if fin is not None and not fin.empty:
-            cols = list(fin.columns)
-            sorted_cols = sorted(cols, key=lambda c: c.year if hasattr(c, "year") else int(str(c)[:4]), reverse=True)
-
-            data_by_year = {}
-            for col in sorted_cols:
-                yr = col.year if hasattr(col, "year") else int(str(col)[:4])
-
-                rev = get_financial_item(fin, ['Total Revenue', 'Operating Revenue', 'Revenue'], col)
-                net_inc = get_financial_item(fin, ['Net Income', 'Net Income Common Stockholders', 'Net Income From Continuing Operation Net Minority Interest'], col)
-                equity = get_financial_item(bs, ['Stockholders Equity', 'Total Stockholder Equity', 'Common Stock Equity'], col)
-
-                data_by_year[yr] = {
-                    "revenue": rev,
-                    "net_income": net_inc,
-                    "equity": equity
-                }
-
-            past_years = [y for y in sorted(data_by_year.keys(), reverse=True) if y < current_year]
-
-            for yr in past_years[:4]:
-                years_labels.append(str(yr))
-                item = data_by_year[yr]
-
-                prev_yr = yr - 1
-                if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
-                    rev_curr = item["revenue"]
-                    rev_prev = data_by_year[prev_yr]["revenue"]
-                    if rev_curr and rev_prev and rev_prev > 0:
-                        growth = ((rev_curr - rev_prev) / rev_prev) * 100
-                        history["Croit. CA."].append(clean_val(growth, "{:+.1f}%"))
-                    else:
-                        history["Croit. CA."].append("N/A")
-                else:
-                    history["Croit. CA."].append("N/A")
-
-                if item["revenue"] and item["net_income"] and item["revenue"] > 0:
-                    margin = (item["net_income"] / item["revenue"]) * 100
-                    history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
-                else:
-                    history["Marge Net %"].append("N/A")
-
-                if item["net_income"] and prev_yr in data_by_year and data_by_year[prev_yr]["equity"] and item["equity"]:
-                    eq_end = item["equity"]
-                    eq_start = data_by_year[prev_yr]["equity"]
-                    avg_equity = (eq_end + eq_start) / 2.0
-                    if avg_equity > 0:
-                        roe_val = (item["net_income"] / avg_equity) * 100
-                        history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
-                    else:
-                        history["ROE"].append("N/A")
-                elif item["net_income"] and item["equity"] and item["equity"] > 0:
-                    roe_val = (item["net_income"] / item["equity"]) * 100
-                    history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
-                else:
-                    history["ROE"].append("N/A")
-
-                history["Fwd P/E"].append("N/A")
-                history["EV/EBITDA"].append("N/A")
-                history["PEG"].append("N/A")
-
-    except Exception as e:
-        print(f"    ⚠️ Erreur données annuelles : {e}")
-
-    return years_labels, history
-
-def generate_dashboard_data():
-    all_targets = []
-    category_map = {}
-
-    for t in REITS_TICKERS:
-        all_targets.append(t)
-        category_map[t] = "reit"
-
-    for t in STOCKS_TICKERS:
-        all_targets.append(t)
-        category_map[t] = "stock"
-
-    for t in CRYPTO_TICKERS:
-        all_targets.append(t)
-        category_map[t] = "crypto"
-
-    prices_data = []
-    news_data = []
-    fundamentals_data = []
-    all_earnings_data = []
-
-    belgium_tz = ZoneInfo("Europe/Brussels")
-    now_be = datetime.now(belgium_tz)
-    now_ts = now_be.timestamp()
-    cutoff_ts = now_ts - (24 * 3600)
-
-    print(f"📊 Téléchargement groupé pour {len(all_targets)} tickers...")
-    
-    batch_hist = {}
-    try:
-        download_data = yf.download(all_targets, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
-        for symbol in all_targets:
-            if len(all_targets) > 1:
-                if symbol in download_data and 'Close' in download_data[symbol]:
-                    batch_hist[symbol] = download_data[symbol]['Close'].dropna()
-            else:
-                if 'Close' in download_data:
-                    batch_hist[symbol] = download_data['Close'].dropna()
-    except Exception as e:
-        print(f"⚠️ Erreur lors du téléchargement groupé yf.download: {e}")
-
-    tickers_objs = yf.Tickers(" ".join(all_targets))
-
-    for symbol in all_targets:
+        # Historique Financier (Chiffre d'affaires & Marge nette)
+        financials_hist = []
         try:
-            cat = category_map[symbol]
-            print(f"   ➜ Traitement [{cat.upper()}] : {symbol}")
-            ticker = tickers_objs.tickers.get(symbol) or yf.Ticker(symbol)
-            info = {}
-            try:
-                info = ticker.info or {}
-            except Exception:
-                pass
-
-            price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
-            
-            hist_close = batch_hist.get(symbol)
-            if not price or price == 0.0:
-                fast_info = getattr(ticker, 'fast_info', {})
-                price = fast_info.get("last_price") or fast_info.get("previous_close")
-            if not price or math.isnan(price):
-                if hist_close is not None and not hist_close.empty:
-                    price = float(hist_close.iloc[-1])
-                else:
-                    price = 0.0
-
-            prev_close = info.get("previousClose") or price
-            change_pct = ((price - prev_close) / prev_close) * 100 if prev_close and prev_close > 0 else 0.0
-
-            if cat == "crypto":
-                currency = "$"
-            else:
-                currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
-
-            sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
-            rsi14_w = calculate_rsi14_weekly(hist_close)
-            ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
-            
-            next_pub_str, ticker_pubs = get_all_earnings_dates(ticker, symbol, belgium_tz, cat)
-            all_earnings_data.extend(ticker_pubs)
-
-            prices_data.append({
-                "ticker": symbol,
-                "category": cat,
-                "price": round(price, 2) if price else 0.0,
-                "change": round(change_pct, 2) if change_pct else 0.0,
-                "currency": currency,
-                "sma200": sma200_str,
-                "sma200_pct": sma200_pct,
-                "is_under": is_under,
-                "rsi14_weekly": rsi14_w,
-                "ath_52w_pct": ath_52w_pct,
-                "earnings": next_pub_str
-            })
-
-            # NEWS
-            try:
-                news_list = getattr(ticker, 'news', []) or []
-                ticker_news_count = 0
-                for item in news_list:
-                    if ticker_news_count >= 3:
-                        break
-
-                    content = item.get("content", item)
-                    title = content.get("title") or item.get("title", "")
-                    summary = content.get("summary") or item.get("summary") or ""
-                    pub_time = content.get("pubDate") or item.get("providerPublishTime", 0)
-
-                    if isinstance(pub_time, str):
-                        try:
-                            pub_time = datetime.fromisoformat(pub_time.replace("Z", "+00:00")).timestamp()
-                        except Exception:
-                            pub_time = now_ts
-
-                    if pub_time >= cutoff_ts:
-                        link = content.get("clickThroughUrl", {}).get("url") or item.get("link")
-                        pub_dt = datetime.fromtimestamp(pub_time, tz=belgium_tz)
-                        news_data.append({
-                            "ticker": symbol,
-                            "category": cat,
-                            "title": title,
-                            "summary": summary[:200] + "..." if len(summary) > 200 else summary,
-                            "link": link,
-                            "date": pub_dt.isoformat()
-                        })
-                        ticker_news_count += 1
-            except Exception as e:
-                print(f"    ⚠️ Erreur news sur {symbol}: {e}")
-
-            # HISTORIQUE ANNUEL / FONDAMENTAUX
-            if cat != "crypto":
-                years, annual_history = get_annual_history(ticker, info, cat)
-
-                rev_growth = info.get('revenueGrowth')
-                fwd_pe = info.get('forwardPE') or info.get('trailingPE')
-                ev_ebitda = info.get('enterpriseToEbitda')
-                roe = info.get('returnOnEquity')
-                peg = info.get('pegRatio')
-                profit_margin = info.get('profitMargins')
-
-                fundamentals_data.append({
-                    "ticker": symbol,
-                    "category": cat,
-                    "rev_growth": clean_val(rev_growth * 100 if rev_growth is not None else None, "{:+.1f}%"),
-                    "pe": clean_val(fwd_pe, "{:.1f}x"),
-                    "ev": clean_val(ev_ebitda, "{:.1f}x"),
-                    "roe": clean_val(roe * 100 if roe is not None else None, "{:.1f}%"),
-                    "peg": clean_val(peg, "{:.2f}"),
-                    "net_margin": clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"),
-                    "quarters": years,
-                    "history": annual_history
-                })
-
+            fin = yf_obj.financials
+            if fin is not None and not fin.empty:
+                cols = fin.columns[:4]  # 4 dernières années
+                for col in cols:
+                    year_str = str(col.year) if hasattr(col, 'year') else str(col)[:4]
+                    rev = fin.loc['Total Revenue', col] if 'Total Revenue' in fin.index else None
+                    net_inc = fin.loc['Net Income', col] if 'Net Income' in fin.index else None
+                    
+                    margin = (net_inc / rev * 100) if (rev and net_inc and rev != 0) else None
+                    
+                    financials_hist.append({
+                        'year': year_str,
+                        'revenue': float(rev) if rev and not np.isnan(rev) else None,
+                        'net_margin': float(margin) if margin and not np.isnan(margin) else None
+                    })
         except Exception as e:
-            print(f"⚠️ Erreur globale sur {symbol}: {e}")
+            print(f"Erreur lors de la récupération des financials pour {ticker}: {e}")
 
-    output = {
-        "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
-        "prices": prices_data,
-        "news": news_data,
-        "fundamentals": fundamentals_data,
-        "earnings": all_earnings_data
-    }
+        # Calendrier des Earnings (Pub.)
+        earnings_dates = []
+        try:
+            calendar = yf_obj.calendar
+            if calendar is not None:
+                if isinstance(calendar, dict) and 'Earnings Date' in calendar:
+                    earnings_dates = [d.strftime('%Y-%m-%d') for d in calendar['Earnings Date']]
+                elif isinstance(calendar, pd.DataFrame) and 'Earnings Date' in calendar.index:
+                    earnings_dates = [d.strftime('%Y-%m-%d') for d in calendar.loc['Earnings Date']]
+        except Exception as e:
+             print(f"Erreur lors de la récupération du calendrier pour {ticker}: {e}")
 
-    with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        final_data.append({
+            'ticker': ticker,
+            'category': cat,
+            'currency': currency,
+            'price': float(current_price),
+            'day_change_pct': float(day_change_pct),
+            'sma200_w': float(sma200_w) if sma200_w and not np.isnan(sma200_w) else None,
+            'diff_sma200_pct': float(diff_sma200_pct) if diff_sma200_pct and not np.isnan(diff_sma200_pct) else None,
+            'rsi_w': float(rsi_w) if rsi_w and not np.isnan(rsi_w) else None,
+            'ath_52w': float(ath_52w),
+            'diff_ath_pct': float(diff_ath_pct),
+            'fwd_pe': float(fwd_pe) if fwd_pe and not np.isnan(fwd_pe) else None,
+            'ev_ebitda': float(ev_ebitda) if ev_ebitda and not np.isnan(ev_ebitda) else None,
+            'peg_ratio': float(peg_ratio) if peg_ratio and not np.isnan(peg_ratio) else None,
+            'roe': float(roe) if roe and not np.isnan(roe) else None,
+            'financials_hist': financials_hist,
+            'earnings_dates': earnings_dates
+        })
 
-    print(f"\n✅ data.json généré avec succès avec toutes les données des {len(all_targets)} tickers !")
+output_json = {
+    'updated_at': now.strftime('%d/%m/%Y à %H:%M'),
+    'data': final_data
+}
 
-if __name__ == "__main__":
-    generate_dashboard_data()
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(output_json, f, ensure_ascii=False, indent=2)
+
+print("Export data.json terminé avec succès !")
