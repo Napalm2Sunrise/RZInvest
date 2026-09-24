@@ -7,13 +7,21 @@ from zoneinfo import ZoneInfo
 import yfinance as yf
 
 # ==============================================================================
-# CONFIGURATION
+# CONFIGURATION DES TICKERS PAR CATÉGORIE
 # ==============================================================================
-TICKERS = [
-    "AED.BR", "CPINV.BR", "HOMI.BR", "RET.BR", "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
+REITS_TICKERS = [
+    "AED.BR", "CPINV.BR", "HOMI.BR", "RET.BR"
+]
+
+STOCKS_TICKERS = [
+    "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
     "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", "JNJ", 
     "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
     "TMO", "TTE.PA", "TSLA", "VRSN", "VRT", "VST"
+]
+
+CRYPTO_TICKERS = [
+    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE-USD"
 ]
 
 def clean_val(val, fmt="{:.1f}%"):
@@ -86,17 +94,19 @@ def calculate_ath_52w_pct(hist_daily, current_price):
         print(f"    ⚠️ Erreur calcul ATH 52W: {e}")
     return "N/A"
 
-def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
+def get_all_earnings_dates(ticker_obj, symbol, belgium_tz, category):
     """
     Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
-    Lien directement orienté vers la synthèse trimestrielle sur Stock Analysis.
+    Ignoré pour la catégorie crypto.
     """
+    if category == "crypto":
+        return "N/A", []
+
     earnings_list = []
     next_earnings_str = "N/A"
     now_date = datetime.now(belgium_tz).date()
     cutoff_past_date = now_date - timedelta(days=30)
     
-    # Nettoyage du symbole pour Stock Analysis (ex: "TTE.PA" -> "tte", "CPRT" -> "cprt")
     clean_ticker = symbol.split('.')[0].lower()
     earnings_url = f"https://stockanalysis.com/stocks/{clean_ticker}/financials/?p=quarterly"
 
@@ -113,7 +123,7 @@ def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
                 d_val = idx.date() if hasattr(idx, 'date') else idx
                 dates_found.append(d_val)
         else:
-            calendar = ticker_obj.calendar
+            calendar = getattr(ticker_obj, 'calendar', None)
             if isinstance(calendar, dict) and "Earnings Date" in calendar:
                 for d in calendar["Earnings Date"]:
                     d_val = d.date() if isinstance(d, datetime) else d
@@ -126,6 +136,7 @@ def get_all_earnings_dates(ticker_obj, symbol, belgium_tz):
                 is_past = d_date < now_date
                 earnings_list.append({
                     "ticker": symbol,
+                    "category": category,
                     "date": d_date.strftime("%Y-%m-%d"),
                     "date_formatted": d_date.strftime("%d/%m/%Y"),
                     "is_past": is_past,
@@ -152,8 +163,11 @@ def get_financial_item(df, possible_keys, col):
                 return float(val)
     return None
 
-def get_annual_history(ticker, info):
-    """Génère l'historique financier annuel avec calcul d'Average Equity pour le ROE (aligné Stock Analysis)."""
+def get_annual_history(ticker, info, category):
+    """Génère l'historique financier annuel."""
+    if category == "crypto":
+        return [], {}
+
     current_year = datetime.now().year
     years_labels = [f"{current_year} (TTM)"]
     history = {
@@ -165,7 +179,6 @@ def get_annual_history(ticker, info):
         "PEG": []
     }
 
-    # Données TTM de départ
     rev_growth = info.get('revenueGrowth')
     fwd_pe = info.get('forwardPE') or info.get('trailingPE')
     ev_ebitda = info.get('enterpriseToEbitda')
@@ -211,7 +224,6 @@ def get_annual_history(ticker, info):
                 years_labels.append(str(yr))
                 item = data_by_year[yr]
 
-                # 1. Croissance du Chiffre d'Affaires
                 prev_yr = yr - 1
                 if prev_yr in data_by_year and data_by_year[prev_yr]["revenue"]:
                     rev_curr = item["revenue"]
@@ -224,14 +236,12 @@ def get_annual_history(ticker, info):
                 else:
                     history["Croit. CA."].append("N/A")
 
-                # 2. Marge Nette
                 if item["revenue"] and item["net_income"] and item["revenue"] > 0:
                     margin = (item["net_income"] / item["revenue"]) * 100
                     history["Marge Net %"].append(clean_val(margin, "{:.1f}%"))
                 else:
                     history["Marge Net %"].append("N/A")
 
-                # 3. ROE basé sur l'Equity Moyenne (Methode Stock Analysis)
                 if item["net_income"] and prev_yr in data_by_year and data_by_year[prev_yr]["equity"] and item["equity"]:
                     eq_end = item["equity"]
                     eq_start = data_by_year[prev_yr]["equity"]
@@ -242,13 +252,11 @@ def get_annual_history(ticker, info):
                     else:
                         history["ROE"].append("N/A")
                 elif item["net_income"] and item["equity"] and item["equity"] > 0:
-                    # Fallback sur l'equity simple
                     roe_val = (item["net_income"] / item["equity"]) * 100
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
 
-                # Non disponibles sur les bilans historiques simples
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
                 history["PEG"].append("N/A")
@@ -259,6 +267,21 @@ def get_annual_history(ticker, info):
     return years_labels, history
 
 def generate_dashboard_data():
+    all_targets = []
+    category_map = {}
+
+    for t in REITS_TICKERS:
+        all_targets.append(t)
+        category_map[t] = "reit"
+
+    for t in STOCKS_TICKERS:
+        all_targets.append(t)
+        category_map[t] = "stock"
+
+    for t in CRYPTO_TICKERS:
+        all_targets.append(t)
+        category_map[t] = "crypto"
+
     prices_data = []
     news_data = []
     fundamentals_data = []
@@ -269,13 +292,13 @@ def generate_dashboard_data():
     now_ts = now_be.timestamp()
     cutoff_ts = now_ts - (24 * 3600)
 
-    print(f"📊 Téléchargement groupé pour {len(TICKERS)} tickers...")
+    print(f"📊 Téléchargement groupé pour {len(all_targets)} tickers...")
     
     batch_hist = {}
     try:
-        download_data = yf.download(TICKERS, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
-        for symbol in TICKERS:
-            if len(TICKERS) > 1:
+        download_data = yf.download(all_targets, period="5y", interval="1d", group_by="ticker", auto_adjust=False, progress=False)
+        for symbol in all_targets:
+            if len(all_targets) > 1:
                 if symbol in download_data and 'Close' in download_data[symbol]:
                     batch_hist[symbol] = download_data[symbol]['Close'].dropna()
             else:
@@ -284,11 +307,12 @@ def generate_dashboard_data():
     except Exception as e:
         print(f"⚠️ Erreur lors du téléchargement groupé yf.download: {e}")
 
-    tickers_objs = yf.Tickers(" ".join(TICKERS))
+    tickers_objs = yf.Tickers(" ".join(all_targets))
 
-    for symbol in TICKERS:
+    for symbol in all_targets:
         try:
-            print(f"   ➜ Traitement : {symbol}")
+            cat = category_map[symbol]
+            print(f"   ➜ Traitement [{cat.upper()}] : {symbol}")
             ticker = tickers_objs.tickers.get(symbol) or yf.Ticker(symbol)
             info = {}
             try:
@@ -310,17 +334,22 @@ def generate_dashboard_data():
 
             prev_close = info.get("previousClose") or price
             change_pct = ((price - prev_close) / prev_close) * 100 if prev_close and prev_close > 0 else 0.0
-            currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
+
+            if cat == "crypto":
+                currency = "$"
+            else:
+                currency = "€" if any(symbol.endswith(ext) for ext in [".BR", ".BE", ".PA", ".AS"]) else "$"
 
             sma200_str, sma200_pct, is_under = check_200_weekly_sma_from_hist(hist_close, price)
             rsi14_w = calculate_rsi14_weekly(hist_close)
             ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
             
-            next_pub_str, ticker_pubs = get_all_earnings_dates(ticker, symbol, belgium_tz)
+            next_pub_str, ticker_pubs = get_all_earnings_dates(ticker, symbol, belgium_tz, cat)
             all_earnings_data.extend(ticker_pubs)
 
             prices_data.append({
                 "ticker": symbol,
+                "category": cat,
                 "price": round(price, 2) if price else 0.0,
                 "change": round(change_pct, 2) if change_pct else 0.0,
                 "currency": currency,
@@ -334,7 +363,7 @@ def generate_dashboard_data():
 
             # NEWS
             try:
-                news_list = ticker.news or []
+                news_list = getattr(ticker, 'news', []) or []
                 ticker_news_count = 0
                 for item in news_list:
                     if ticker_news_count >= 3:
@@ -356,6 +385,7 @@ def generate_dashboard_data():
                         pub_dt = datetime.fromtimestamp(pub_time, tz=belgium_tz)
                         news_data.append({
                             "ticker": symbol,
+                            "category": cat,
                             "title": title,
                             "summary": summary[:200] + "..." if len(summary) > 200 else summary,
                             "link": link,
@@ -365,27 +395,29 @@ def generate_dashboard_data():
             except Exception as e:
                 print(f"    ⚠️ Erreur news sur {symbol}: {e}")
 
-            # HISTORIQUE ANNUEL
-            years, annual_history = get_annual_history(ticker, info)
+            # HISTORIQUE ANNUEL / FONDAMENTAUX
+            if cat != "crypto":
+                years, annual_history = get_annual_history(ticker, info, cat)
 
-            rev_growth = info.get('revenueGrowth')
-            fwd_pe = info.get('forwardPE') or info.get('trailingPE')
-            ev_ebitda = info.get('enterpriseToEbitda')
-            roe = info.get('returnOnEquity')
-            peg = info.get('pegRatio')
-            profit_margin = info.get('profitMargins')
+                rev_growth = info.get('revenueGrowth')
+                fwd_pe = info.get('forwardPE') or info.get('trailingPE')
+                ev_ebitda = info.get('enterpriseToEbitda')
+                roe = info.get('returnOnEquity')
+                peg = info.get('pegRatio')
+                profit_margin = info.get('profitMargins')
 
-            fundamentals_data.append({
-                "ticker": symbol,
-                "rev_growth": clean_val(rev_growth * 100 if rev_growth is not None else None, "{:+.1f}%"),
-                "pe": clean_val(fwd_pe, "{:.1f}x"),
-                "ev": clean_val(ev_ebitda, "{:.1f}x"),
-                "roe": clean_val(roe * 100 if roe is not None else None, "{:.1f}%"),
-                "peg": clean_val(peg, "{:.2f}"),
-                "net_margin": clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"),
-                "quarters": years,
-                "history": annual_history
-            })
+                fundamentals_data.append({
+                    "ticker": symbol,
+                    "category": cat,
+                    "rev_growth": clean_val(rev_growth * 100 if rev_growth is not None else None, "{:+.1f}%"),
+                    "pe": clean_val(fwd_pe, "{:.1f}x"),
+                    "ev": clean_val(ev_ebitda, "{:.1f}x"),
+                    "roe": clean_val(roe * 100 if roe is not None else None, "{:.1f}%"),
+                    "peg": clean_val(peg, "{:.2f}"),
+                    "net_margin": clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"),
+                    "quarters": years,
+                    "history": annual_history
+                })
 
         except Exception as e:
             print(f"⚠️ Erreur globale sur {symbol}: {e}")
@@ -401,7 +433,7 @@ def generate_dashboard_data():
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ data.json généré avec succès avec toutes les données des {len(TICKERS)} tickers !")
+    print(f"\n✅ data.json généré avec succès avec toutes les données des {len(all_targets)} tickers !")
 
 if __name__ == "__main__":
     generate_dashboard_data()
