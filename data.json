@@ -1,16 +1,16 @@
 {
-  "updated_at": "24/09/2026 à 11:21",
+  "updated_at": "24/09/2026 à 11:30",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.2,
-      "change": -0.38,
+      "price": 65.05,
+      "change": -0.61,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +0.9%",
+      "sma200_pct": 0.9,
       "is_under": false,
-      "rsi14_weekly": 39.1,
-      "ath_52w_pct": -17.7,
+      "rsi14_weekly": 38.7,
+      "ath_52w_pct": -17.9,
       "earnings": "N/A"
     },
     {
@@ -39,14 +39,14 @@
     },
     {
       "ticker": "RET.BR",
-      "price": 63.9,
-      "change": 0.0,
+      "price": 64.0,
+      "change": 0.16,
       "currency": "€",
-      "sma200": "200 W-SMA Above +0.7%",
-      "sma200_pct": 0.7,
+      "sma200": "200 W-SMA Above +0.8%",
+      "sma200_pct": 0.8,
       "is_under": false,
-      "rsi14_weekly": 40.8,
-      "ath_52w_pct": -10.8,
+      "rsi14_weekly": 41.1,
+      "ath_52w_pct": -10.6,
       "earnings": "13/11/2026"
     },
     {
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1494.0,
-      "change": -1.44,
+      "price": 1493.4,
+      "change": -1.48,
       "currency": "€",
       "sma200": "200 W-SMA Above +79.6%",
       "sma200_pct": 79.6,
@@ -219,14 +219,14 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 397.4,
-      "change": 0.13,
+      "price": 397.55,
+      "change": 0.16,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.8% 🔥",
       "sma200_pct": -38.8,
       "is_under": true,
-      "rsi14_weekly": 30.0,
-      "ath_52w_pct": -39.1,
+      "rsi14_weekly": 30.1,
+      "ath_52w_pct": -39.0,
       "earnings": "26/01/2027"
     },
     {
@@ -279,11 +279,11 @@
     },
     {
       "ticker": "RMS.PA",
-      "price": 1338.5,
-      "change": -0.82,
+      "price": 1339.0,
+      "change": -0.78,
       "currency": "€",
-      "sma200": "200 W-SMA Under -33.7% 🔥",
-      "sma200_pct": -33.7,
+      "sma200": "200 W-SMA Under -33.6% 🔥",
+      "sma200_pct": -33.6,
       "is_under": true,
       "rsi14_weekly": 30.0,
       "ath_52w_pct": -40.5,
@@ -315,11 +315,11 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 294.75,
-      "change": 0.48,
+      "price": 294.85,
+      "change": 0.51,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.8%",
-      "sma200_pct": 37.8,
+      "sma200": "200 W-SMA Above +37.9%",
+      "sma200_pct": 37.9,
       "is_under": false,
       "rsi14_weekly": 57.7,
       "ath_52w_pct": -5.2,
@@ -339,14 +339,14 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 80.53,
-      "change": 1.14,
+      "price": 80.74,
+      "change": 1.41,
       "currency": "€",
-      "sma200": "200 W-SMA Above +32.8%",
-      "sma200_pct": 32.8,
+      "sma200": "200 W-SMA Above +33.2%",
+      "sma200_pct": 33.2,
       "is_under": false,
-      "rsi14_weekly": 62.6,
-      "ath_52w_pct": -0.6,
+      "rsi14_weekly": 63.0,
+      "ath_52w_pct": -0.3,
       "earnings": "29/10/2026"
     },
     {
@@ -438,17 +438,17 @@
     },
     {
       "ticker": "AMZN",
+      "title": "Update: Market Chatter: Anthropic, OpenEvidence Team Up to Expand Medical AI Globally",
+      "summary": "(Updates with Anthropic's response in the sixth paragraph) Amazon-backed (AMZN) Anthropic is prov",
+      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-anthropic-openevidence-team-092002557.html",
+      "date": "2026-09-24T11:20:02+02:00"
+    },
+    {
+      "ticker": "AMZN",
       "title": "Data Center Boom Pushes CRE Construction Costs Higher",
       "summary": "Data center demand is tightening labor and materials, pushing CRE construction costs higher as contractors face longer lead times.",
       "link": "https://finance.yahoo.com/real-estate/articles/data-center-boom-pushes-cre-044555245.html",
       "date": "2026-09-24T06:45:55+02:00"
-    },
-    {
-      "ticker": "AMZN",
-      "title": "MIT Explains What Happens When the Trillion-Dollar AI Bubble Bursts",
-      "summary": "MIT Technology Review explains what happens when the AI bubble bursts and why hyperscalers face a trillion-dollar reckoning.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/mit-explains-happens-trillion-dollar-025111636.html",
-      "date": "2026-09-24T04:51:11+02:00"
     },
     {
       "ticker": "AVGO",
@@ -648,17 +648,17 @@
     },
     {
       "ticker": "SPCX",
+      "title": "The Retail Investor Fleecing Marches On: Another 319 Million SpaceX Shares Unlock Today, Sept. 24",
+      "summary": "Nearly $49 billion in potential insider selling pressure could hit the tape today.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/retail-investor-fleecing-marches-another-092601506.html",
+      "date": "2026-09-24T11:26:01+02:00"
+    },
+    {
+      "ticker": "SPCX",
       "title": "6 Things to Know About Anthropic's Upcoming IPO",
       "summary": "Anthropic is planning to go public soon in a high-profile IPO.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/6-things-know-anthropics-upcoming-083300042.html",
       "date": "2026-09-24T10:33:00+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "title": "Nasdaq, S&P 500 Futures Slide As Treasury Yields, Trump-Xi Summit Keep Traders On Edge: META, GOOGL, SPCX, VKTX, SNAP, MCD, BB Stocks In Focus",
-      "summary": "Retail sentiment on Stocktwits for SPY and QQQ has improved to ‘bullish’.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-slide-082555072.html",
-      "date": "2026-09-24T10:25:55+02:00"
     },
     {
       "ticker": "SPGI",
@@ -735,7 +735,7 @@
     {
       "ticker": "AED.BR",
       "rev_growth": "+104.3%",
-      "pe": "11.9x",
+      "pe": "11.8x",
       "ev": "28.8x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -763,7 +763,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.9x",
+          "11.8x",
           "N/A",
           "N/A",
           "N/A",
