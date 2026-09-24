@@ -262,11 +262,13 @@
   <!-- SECTION FUNDAMENTALS (TABLEAU) -->
   <div id="fund-sec" class="section">
     <div id="metric-tooltip" class="tooltip-box" onclick="hideTooltip()"></div>
-    <div class="table-container" id="fund-table-container">
-      <table class="ratios-table">
-        <thead id="ratios-thead"></thead>
-        <tbody id="ratios-tbody"></tbody>
-      </table>
+    <div id="fund-content">
+      <div class="table-container" id="fund-table-container">
+        <table class="ratios-table">
+          <thead id="ratios-thead"></thead>
+          <tbody id="ratios-tbody"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -629,20 +631,25 @@
     }
 
     function renderFundamentals() {
-      const thead = document.getElementById('ratios-thead');
-      const tbody = document.getElementById('ratios-tbody');
-      const container = document.getElementById('fund-table-container');
+      const fundContent = document.getElementById('fund-content');
 
-      tbody.innerHTML = '';
-
-      // Si uniquement des cryptos sélectionnées
+      // Filtrer les catégories actives pour garder uniquement les actions / REITs
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+
+      // Si aucune catégorie non-crypto n'est sélectionnée, afficher "Not available for cryptos"
       if (nonCryptoActive.length === 0) {
-        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        fundContent.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
         return;
-      } else {
-        container.innerHTML = `<table class="ratios-table"><thead id="ratios-thead"></thead><tbody id="ratios-tbody"></tbody></table>`;
       }
+
+      // Reconstruire la structure du tableau
+      fundContent.innerHTML = `
+        <div class="table-container" id="fund-table-container">
+          <table class="ratios-table">
+            <thead id="ratios-thead"></thead>
+            <tbody id="ratios-tbody"></tbody>
+          </table>
+        </div>`;
 
       const currentThead = document.getElementById('ratios-thead');
       const currentTbody = document.getElementById('ratios-tbody');
@@ -722,7 +729,10 @@
       const container = document.getElementById('earnings-container');
       if (!container) return;
 
+      // Filtrer les catégories actives pour garder uniquement les actions / REITs
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
+
+      // Si uniquement des cryptos sont sélectionnées
       if (nonCryptoActive.length === 0) {
         container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
         return;
