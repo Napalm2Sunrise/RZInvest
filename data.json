@@ -1,16 +1,16 @@
 {
-  "updated_at": "24/09/2026 à 11:14",
+  "updated_at": "24/09/2026 à 11:21",
   "prices": [
     {
       "ticker": "AED.BR",
-      "price": 65.15,
-      "change": -0.46,
+      "price": 65.2,
+      "change": -0.38,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.0%",
-      "sma200_pct": 1.0,
+      "sma200": "200 W-SMA Above +1.1%",
+      "sma200_pct": 1.1,
       "is_under": false,
-      "rsi14_weekly": 39.0,
-      "ath_52w_pct": -17.8,
+      "rsi14_weekly": 39.1,
+      "ath_52w_pct": -17.7,
       "earnings": "N/A"
     },
     {
@@ -99,11 +99,11 @@
     },
     {
       "ticker": "ASML.AS",
-      "price": 1494.6,
-      "change": -1.4,
+      "price": 1494.0,
+      "change": -1.44,
       "currency": "€",
-      "sma200": "200 W-SMA Above +79.7%",
-      "sma200_pct": 79.7,
+      "sma200": "200 W-SMA Above +79.6%",
+      "sma200_pct": 79.6,
       "is_under": false,
       "rsi14_weekly": 56.0,
       "ath_52w_pct": -13.2,
@@ -219,13 +219,13 @@
     },
     {
       "ticker": "MC.PA",
-      "price": 397.2,
-      "change": 0.08,
+      "price": 397.4,
+      "change": 0.13,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.8% 🔥",
       "sma200_pct": -38.8,
       "is_under": true,
-      "rsi14_weekly": 30.1,
+      "rsi14_weekly": 30.0,
       "ath_52w_pct": -39.1,
       "earnings": "26/01/2027"
     },
@@ -315,14 +315,14 @@
     },
     {
       "ticker": "SU.PA",
-      "price": 293.55,
-      "change": 0.07,
+      "price": 294.75,
+      "change": 0.48,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.3%",
-      "sma200_pct": 37.3,
+      "sma200": "200 W-SMA Above +37.8%",
+      "sma200_pct": 37.8,
       "is_under": false,
-      "rsi14_weekly": 57.2,
-      "ath_52w_pct": -5.6,
+      "rsi14_weekly": 57.7,
+      "ath_52w_pct": -5.2,
       "earnings": "25/02/2027"
     },
     {
@@ -339,13 +339,13 @@
     },
     {
       "ticker": "TTE.PA",
-      "price": 80.51,
-      "change": 1.12,
+      "price": 80.53,
+      "change": 1.14,
       "currency": "€",
       "sma200": "200 W-SMA Above +32.8%",
       "sma200_pct": 32.8,
       "is_under": false,
-      "rsi14_weekly": 62.7,
+      "rsi14_weekly": 62.6,
       "ath_52w_pct": -0.6,
       "earnings": "29/10/2026"
     },
@@ -522,6 +522,13 @@
     },
     {
       "ticker": "ISRG",
+      "title": "Intuitive Surgical Stock Has Plunged 29% This Year. Is the Market Overreacting?",
+      "summary": "Wall Street thinks that this robotic surgical systems leader's sell-off is overdone.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-surgical-stock-plunged-29-090400035.html",
+      "date": "2026-09-24T11:04:00+02:00"
+    },
+    {
+      "ticker": "ISRG",
       "title": "Intuitive Surgical vs. Stryker: Which MedTech Stock Is the Better Buy Now?",
       "summary": "ISRG's rapid procedure growth, expanding robotics ecosystem and recurring revenues highlight its growth path amid MedTech shifts.",
       "link": "https://finance.yahoo.com/healthcare/articles/intuitive-surgical-vs-stryker-medtech-153100671.html",
@@ -557,17 +564,17 @@
     },
     {
       "ticker": "MSFT",
+      "title": "1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club",
+      "summary": "This tech giant's new artificial intelligence agent just whipped investors into a frenzy.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/1-unstoppable-stock-buy-joins-090600540.html",
+      "date": "2026-09-24T11:06:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
       "title": "Update: Market Chatter: Microsoft Plans Larger Copilot Discounts for Large Customers",
       "summary": "(Updates to add Microsoft's comment in the fifth paragraph.) Microsoft (MSFT) is offering corpora",
       "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-microsoft-plans-larger-075757183.html",
       "date": "2026-09-24T09:57:57+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "title": "MIT Explains What Happens When the Trillion-Dollar AI Bubble Bursts",
-      "summary": "MIT Technology Review explains what happens when the AI bubble bursts and why hyperscalers face a trillion-dollar reckoning.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/mit-explains-happens-trillion-dollar-025111636.html",
-      "date": "2026-09-24T04:51:11+02:00"
     },
     {
       "ticker": "NBIS",
@@ -728,7 +735,7 @@
     {
       "ticker": "AED.BR",
       "rev_growth": "+104.3%",
-      "pe": "11.8x",
+      "pe": "11.9x",
       "ev": "28.8x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -756,7 +763,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.8x",
+          "11.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -1914,7 +1921,7 @@
     {
       "ticker": "NBIS",
       "rev_growth": "+454.0%",
-      "pe": "-64.8x",
+      "pe": "-68.9x",
       "ev": "249.1x",
       "roe": "0.6%",
       "peg": "0.55",
@@ -1942,7 +1949,7 @@
           "5523.0%"
         ],
         "Fwd P/E": [
-          "-64.8x",
+          "-68.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -2094,7 +2101,7 @@
     {
       "ticker": "RMS.PA",
       "rev_growth": "+1.6%",
-      "pe": "26.6x",
+      "pe": "26.5x",
       "ev": "18.6x",
       "roe": "25.5%",
       "peg": "3.06",
@@ -2122,7 +2129,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.6x",
+          "26.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -2267,7 +2274,7 @@
     {
       "ticker": "SU.PA",
       "rev_growth": "+9.8%",
-      "pe": "24.2x",
+      "pe": "24.3x",
       "ev": "21.3x",
       "roe": "18.6%",
       "peg": "1.56",
@@ -2295,7 +2302,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.2x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
