@@ -21,7 +21,7 @@ STOCKS_TICKERS = [
 ]
 
 CRYPTO_TICKERS = [
-    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE-USD"
+    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE32196-USD"
 ]
 
 def clean_val(val, fmt="{:.1f}%"):
