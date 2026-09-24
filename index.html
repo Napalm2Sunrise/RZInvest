@@ -67,7 +67,7 @@
     .tab-btn.active { background: #0284c7; color: #ffffff; border-color: #38bdf8; }
 
     /* Content Sections */
-    .section { display: none; }
+    .section { display: none; min-height: 300px; }
     .section.active { display: block; }
 
     /* Cards */
@@ -387,7 +387,7 @@
         document.getElementById('update-time').innerText = "MàJ: " + (globalData.updated_at || "N/A");
         
         buildFilters();
-        renderAll();
+        await renderAll();
       } catch (e) {
         console.error(e);
         document.getElementById('update-time').innerText = "Erreur de chargement data.json";
@@ -435,16 +435,14 @@
         const data = await res.json();
 
         if (data.status === 'ok' && data.items && data.items.length > 0) {
-          newsCont.innerHTML = '';
-
           const sortedItems = data.items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-          sortedItems.slice(0, 8).forEach(item => {
+          const htmlCards = sortedItems.slice(0, 8).map(item => {
             const tmpDiv = document.createElement("DIV");
             tmpDiv.innerHTML = item.description || "";
             const cleanSummary = tmpDiv.textContent || tmpDiv.innerText || item.title;
 
-            newsCont.innerHTML += `
+            return `
               <div class="card">
                 <div class="card-header">
                   <span class="ticker-name">${symbol}</span>
@@ -454,7 +452,9 @@
                 <div class="news-summary">${cleanSummary.length > 180 ? cleanSummary.substring(0, 180) + '...' : cleanSummary}</div>
                 <a class="news-link" href="${item.link}" target="_blank">Lire l'article complet →</a>
               </div>`;
-          });
+          }).join('');
+
+          newsCont.innerHTML = htmlCards;
         } else {
           newsCont.innerHTML = `<div style="color: #64748b; font-size: 13px; text-align: center; padding: 20px;">Aucune actualité récente trouvée sur Google News pour ${symbol}.</div>`;
         }
@@ -464,10 +464,9 @@
       }
     }
 
-    function renderNews() {
+    async function renderNews() {
       const newsCont = document.getElementById('news-container');
       if (!newsCont) return;
-      newsCont.innerHTML = '';
 
       if (selectedTicker === 'ALL') {
         const filteredNews = globalData.news || [];
@@ -476,38 +475,37 @@
           return;
         }
 
-        filteredNews.forEach(n => {
-          newsCont.innerHTML += `
-            <div class="card">
-              <div class="card-header">
-                <span class="ticker-name">${n.ticker}</span>
-                <span class="last-update">${formatBelgianDateTime(n.date)}</span>
-              </div>
-              <div class="news-title">${n.title}</div>
-              <div class="news-summary">${n.summary}</div>
-              ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
-            </div>`;
-        });
+        const cards = filteredNews.map(n => `
+          <div class="card">
+            <div class="card-header">
+              <span class="ticker-name">${n.ticker}</span>
+              <span class="last-update">${formatBelgianDateTime(n.date)}</span>
+            </div>
+            <div class="news-title">${n.title}</div>
+            <div class="news-summary">${n.summary}</div>
+            ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
+          </div>`).join('');
+
+        newsCont.innerHTML = cards;
       } else {
-        fetchGoogleNewsForTicker(selectedTicker);
+        await fetchGoogleNewsForTicker(selectedTicker);
       }
     }
 
-    function renderAll() {
+    async function renderAll() {
       if(!globalData) return;
 
       hideTooltip();
 
       // 1. News
-      renderNews();
+      await renderNews();
 
       // 2. Prices
       const priceCont = document.getElementById('prices-container');
-      priceCont.innerHTML = '';
       const filteredPrices = selectedTicker === 'ALL' ? (globalData.prices || []) : (globalData.prices || []).filter(p => p.ticker === selectedTicker);
       const fundList = globalData.fundamentals || [];
 
-      filteredPrices.forEach(p => {
+      const pricesHtml = filteredPrices.map(p => {
         const changeNum = parseFloat(p.change) || 0;
         const isPos = changeNum >= 0;
         
@@ -550,7 +548,7 @@
         const peClass = getMetricBadgeClass('pe', peVal);
         const peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
 
-        priceCont.innerHTML += `
+        return `
           <div class="card">
             <div class="card-header">
               <div>
@@ -568,7 +566,9 @@
             </div>
             <div style="font-size:11px; color:#94a3b8; margin-top:8px;">📅 Prochaine pub. : <b>${p.earnings || 'N/A'}</b></div>
           </div>`;
-      });
+      }).join('');
+
+      priceCont.innerHTML = pricesHtml;
 
       // 3. Fundamentals
       renderFundamentals();
@@ -598,6 +598,7 @@
         thead.innerHTML = headHtml;
 
         const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
+        let rowsHtml = '';
         metrics.forEach(m => {
           let rowHtml = `<tr><td class="ticker-cell clickable-metric" onclick="showTooltip('${m}')">${m} ℹ️</td>`;
           const vals = (fund.history && fund.history[m]) || [];
@@ -607,8 +608,9 @@
             rowHtml += `<td><span class="badge-tag ${badgeClass}">${val}</span></td>`;
           });
           rowHtml += `</tr>`;
-          tbody.innerHTML += rowHtml;
+          rowsHtml += rowHtml;
         });
+        tbody.innerHTML = rowsHtml;
 
       } else {
         thead.innerHTML = `
@@ -629,9 +631,9 @@
           return;
         }
 
-        allTickers.forEach(ticker => {
+        const rowsHtml = allTickers.map(ticker => {
           const f = fundList.find(item => item.ticker === ticker) || {};
-          tbody.innerHTML += `
+          return `
             <tr>
               <td class="ticker-cell">${ticker}</td>
               <td><span class="badge-tag ${getMetricBadgeClass('rev_growth', f.rev_growth)}">${f.rev_growth || 'N/A'}</span></td>
@@ -641,14 +643,15 @@
               <td><span class="badge-tag ${getMetricBadgeClass('peg', f.peg)}">${f.peg || 'N/A'}</span></td>
               <td><span class="badge-tag ${getMetricBadgeClass('net_margin', f.net_margin)}">${f.net_margin || 'N/A'}</span></td>
             </tr>`;
-        });
+        }).join('');
+
+        tbody.innerHTML = rowsHtml;
       }
     }
 
     function renderEarnings() {
       const container = document.getElementById('earnings-container');
       if (!container) return;
-      container.innerHTML = '';
 
       const allEarnings = globalData.earnings || [];
       const filtered = selectedTicker === 'ALL' 
