@@ -1,5 +1,5 @@
 {
-  "updated_at": "25/09/2026 à 19:40",
+  "updated_at": "25/09/2026 à 19:47",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -54,13 +54,78 @@
       "earnings": "13/11/2026"
     },
     {
+      "ticker": "PLD",
+      "category": "reit",
+      "price": 133.34,
+      "change": -0.36,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +9.3%",
+      "sma200_pct": 9.3,
+      "is_under": false,
+      "rsi14_weekly": 42.3,
+      "ath_52w_pct": -11.1,
+      "earnings": "15/10/2026"
+    },
+    {
+      "ticker": "GMG.AX",
+      "category": "reit",
+      "price": 26.38,
+      "change": 0.69,
+      "currency": "$",
+      "sma200": "200 W-SMA Under -8.2% 🔥",
+      "sma200_pct": -8.2,
+      "is_under": true,
+      "rsi14_weekly": 38.5,
+      "ath_52w_pct": -23.5,
+      "earnings": "18/02/2027"
+    },
+    {
+      "ticker": "DLR",
+      "category": "reit",
+      "price": 179.67,
+      "change": -0.73,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +18.8%",
+      "sma200_pct": 18.8,
+      "is_under": false,
+      "rsi14_weekly": 46.6,
+      "ath_52w_pct": -11.9,
+      "earnings": "22/10/2026"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "price": 1021.93,
+      "change": -1.24,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +21.9%",
+      "sma200_pct": 21.9,
+      "is_under": false,
+      "rsi14_weekly": 49.9,
+      "ath_52w_pct": -8.4,
+      "earnings": "28/10/2026"
+    },
+    {
+      "ticker": "WELL",
+      "category": "reit",
+      "price": 230.69,
+      "change": -1.25,
+      "currency": "$",
+      "sma200": "200 W-SMA Above +71.4%",
+      "sma200_pct": 71.4,
+      "is_under": false,
+      "rsi14_weekly": 55.0,
+      "ath_52w_pct": -8.5,
+      "earnings": "26/10/2026"
+    },
+    {
       "ticker": "AAOI",
       "category": "stock",
-      "price": 102.48,
-      "change": 1.44,
+      "price": 102.35,
+      "change": 1.31,
       "currency": "$",
-      "sma200": "200 W-SMA Above +198.9%",
-      "sma200_pct": 198.9,
+      "sma200": "200 W-SMA Above +198.5%",
+      "sma200_pct": 198.5,
       "is_under": false,
       "rsi14_weekly": 45.8,
       "ath_52w_pct": -54.1,
@@ -69,40 +134,40 @@
     {
       "ticker": "AMD",
       "category": "stock",
-      "price": 629.52,
-      "change": 0.04,
+      "price": 629.48,
+      "change": 0.03,
       "currency": "$",
       "sma200": "200 W-SMA Above +244.3%",
       "sma200_pct": 244.3,
       "is_under": false,
       "rsi14_weekly": 71.0,
-      "ath_52w_pct": -0.0,
+      "ath_52w_pct": 0.0,
       "earnings": "03/11/2026"
     },
     {
       "ticker": "AMKR",
       "category": "stock",
-      "price": 53.56,
-      "change": 1.65,
+      "price": 53.55,
+      "change": 1.63,
       "currency": "$",
-      "sma200": "200 W-SMA Above +60.0%",
-      "sma200_pct": 60.0,
+      "sma200": "200 W-SMA Above +59.9%",
+      "sma200_pct": 59.9,
       "is_under": false,
       "rsi14_weekly": 47.3,
-      "ath_52w_pct": -42.7,
+      "ath_52w_pct": -42.8,
       "earnings": "26/10/2026"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "price": 250.14,
-      "change": 0.31,
+      "price": 250.03,
+      "change": 0.26,
       "currency": "$",
       "sma200": "200 W-SMA Above +34.7%",
       "sma200_pct": 34.7,
       "is_under": false,
-      "rsi14_weekly": 50.3,
-      "ath_52w_pct": -11.9,
+      "rsi14_weekly": 50.2,
+      "ath_52w_pct": -12.0,
       "earnings": "29/10/2026"
     },
     {
@@ -121,11 +186,11 @@
     {
       "ticker": "AVGO",
       "category": "stock",
-      "price": 353.23,
-      "change": 0.82,
+      "price": 352.89,
+      "change": 0.72,
       "currency": "$",
-      "sma200": "200 W-SMA Above +72.7%",
-      "sma200_pct": 72.7,
+      "sma200": "200 W-SMA Above +72.6%",
+      "sma200_pct": 72.6,
       "is_under": false,
       "rsi14_weekly": 45.5,
       "ath_52w_pct": -26.7,
@@ -134,8 +199,8 @@
     {
       "ticker": "AYA.TO",
       "category": "stock",
-      "price": 40.49,
-      "change": 2.34,
+      "price": 40.51,
+      "change": 2.36,
       "currency": "$",
       "sma200": "200 W-SMA Above +172.2%",
       "sma200_pct": 172.2,
@@ -147,86 +212,86 @@
     {
       "ticker": "BKNG",
       "category": "stock",
-      "price": 163.4,
-      "change": 3.81,
+      "price": 163.36,
+      "change": 3.78,
       "currency": "$",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +1.0%",
+      "sma200_pct": 1.0,
       "is_under": false,
-      "rsi14_weekly": 40.0,
-      "ath_52w_pct": -26.7,
+      "rsi14_weekly": 39.9,
+      "ath_52w_pct": -26.8,
       "earnings": "27/10/2026"
     },
     {
       "ticker": "CPRT",
       "category": "stock",
-      "price": 27.75,
-      "change": -1.03,
+      "price": 27.69,
+      "change": -1.25,
       "currency": "$",
-      "sma200": "200 W-SMA Under -38.6% 🔥",
-      "sma200_pct": -38.6,
+      "sma200": "200 W-SMA Under -38.7% 🔥",
+      "sma200_pct": -38.7,
       "is_under": true,
-      "rsi14_weekly": 36.3,
-      "ath_52w_pct": -39.4,
+      "rsi14_weekly": 36.2,
+      "ath_52w_pct": -39.5,
       "earnings": "19/11/2026"
     },
     {
       "ticker": "CSW",
       "category": "stock",
-      "price": 298.62,
-      "change": 1.42,
+      "price": 298.12,
+      "change": 1.25,
       "currency": "$",
-      "sma200": "200 W-SMA Above +17.8%",
-      "sma200_pct": 17.8,
+      "sma200": "200 W-SMA Above +17.6%",
+      "sma200_pct": 17.6,
       "is_under": false,
-      "rsi14_weekly": 50.6,
-      "ath_52w_pct": -15.0,
+      "rsi14_weekly": 50.5,
+      "ath_52w_pct": -15.1,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "GEV",
       "category": "stock",
-      "price": 952.79,
-      "change": -0.24,
+      "price": 952.18,
+      "change": -0.3,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
       "rsi14_weekly": 50.0,
-      "ath_52w_pct": -18.9,
+      "ath_52w_pct": -19.0,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "price": 341.09,
-      "change": 0.61,
+      "price": 340.87,
+      "change": 0.55,
       "currency": "$",
-      "sma200": "200 W-SMA Above +72.8%",
-      "sma200_pct": 72.8,
+      "sma200": "200 W-SMA Above +72.7%",
+      "sma200_pct": 72.7,
       "is_under": false,
       "rsi14_weekly": 50.6,
-      "ath_52w_pct": -14.5,
+      "ath_52w_pct": -14.6,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "ISRG",
       "category": "stock",
-      "price": 403.01,
-      "change": 0.87,
+      "price": 402.54,
+      "change": 0.75,
       "currency": "$",
-      "sma200": "200 W-SMA Under -3.8% 🔥",
-      "sma200_pct": -3.8,
+      "sma200": "200 W-SMA Under -4.0% 🔥",
+      "sma200_pct": -4.0,
       "is_under": true,
-      "rsi14_weekly": 48.0,
-      "ath_52w_pct": -32.0,
+      "rsi14_weekly": 47.9,
+      "ath_52w_pct": -32.1,
       "earnings": "20/10/2026"
     },
     {
       "ticker": "JNJ",
       "category": "stock",
-      "price": 269.85,
-      "change": -0.31,
+      "price": 269.86,
+      "change": -0.3,
       "currency": "$",
       "sma200": "200 W-SMA Above +51.5%",
       "sma200_pct": 51.5,
@@ -238,14 +303,14 @@
     {
       "ticker": "META",
       "category": "stock",
-      "price": 751.51,
-      "change": -3.35,
+      "price": 749.75,
+      "change": -3.58,
       "currency": "$",
-      "sma200": "200 W-SMA Above +50.7%",
-      "sma200_pct": 50.7,
+      "sma200": "200 W-SMA Above +50.4%",
+      "sma200_pct": 50.4,
       "is_under": false,
-      "rsi14_weekly": 64.2,
-      "ath_52w_pct": -3.4,
+      "rsi14_weekly": 64.1,
+      "ath_52w_pct": -3.6,
       "earnings": "28/10/2026"
     },
     {
@@ -264,11 +329,11 @@
     {
       "ticker": "MSFT",
       "category": "stock",
-      "price": 515.93,
-      "change": 3.61,
+      "price": 516.25,
+      "change": 3.68,
       "currency": "$",
-      "sma200": "200 W-SMA Above +28.5%",
-      "sma200_pct": 28.5,
+      "sma200": "200 W-SMA Above +28.6%",
+      "sma200_pct": 28.6,
       "is_under": false,
       "rsi14_weekly": 64.3,
       "ath_52w_pct": -4.8,
@@ -277,47 +342,47 @@
     {
       "ticker": "NBIS",
       "category": "stock",
-      "price": 238.91,
-      "change": -1.88,
+      "price": 238.46,
+      "change": -2.06,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 58.3,
-      "ath_52w_pct": -16.7,
+      "rsi14_weekly": 58.2,
+      "ath_52w_pct": -16.8,
       "earnings": "10/11/2026"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "price": 224.9,
-      "change": 0.14,
+      "price": 224.74,
+      "change": 0.07,
       "currency": "$",
-      "sma200": "200 W-SMA Above +92.3%",
-      "sma200_pct": 92.3,
+      "sma200": "200 W-SMA Above +92.2%",
+      "sma200_pct": 92.2,
       "is_under": false,
       "rsi14_weekly": 58.0,
-      "ath_52w_pct": -4.6,
+      "ath_52w_pct": -4.7,
       "earnings": "17/11/2026"
     },
     {
       "ticker": "ONON",
       "category": "stock",
-      "price": 30.16,
-      "change": -1.0,
+      "price": 30.23,
+      "change": -0.74,
       "currency": "$",
-      "sma200": "200 W-SMA Under -21.3% 🔥",
-      "sma200_pct": -21.3,
+      "sma200": "200 W-SMA Under -21.1% 🔥",
+      "sma200_pct": -21.1,
       "is_under": true,
-      "rsi14_weekly": 39.3,
-      "ath_52w_pct": -40.4,
+      "rsi14_weekly": 39.6,
+      "ath_52w_pct": -40.3,
       "earnings": "11/11/2026"
     },
     {
       "ticker": "PG",
       "category": "stock",
-      "price": 145.81,
-      "change": 0.09,
+      "price": 145.78,
+      "change": 0.07,
       "currency": "$",
       "sma200": "200 W-SMA Under -6.3% 🔥",
       "sma200_pct": -6.3,
@@ -342,27 +407,27 @@
     {
       "ticker": "SPCX",
       "category": "stock",
-      "price": 148.5,
-      "change": 0.32,
+      "price": 148.3,
+      "change": 0.18,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
       "rsi14_weekly": 49.8,
-      "ath_52w_pct": -29.7,
+      "ath_52w_pct": -29.8,
       "earnings": "03/11/2026"
     },
     {
       "ticker": "SPGI",
       "category": "stock",
-      "price": 403.81,
-      "change": 0.14,
+      "price": 403.17,
+      "change": -0.02,
       "currency": "$",
-      "sma200": "200 W-SMA Under -4.6% 🔥",
-      "sma200_pct": -4.6,
+      "sma200": "200 W-SMA Under -4.7% 🔥",
+      "sma200_pct": -4.7,
       "is_under": true,
       "rsi14_weekly": 44.8,
-      "ath_52w_pct": -21.9,
+      "ath_52w_pct": -22.0,
       "earnings": "29/10/2026"
     },
     {
@@ -381,14 +446,14 @@
     {
       "ticker": "TMO",
       "category": "stock",
-      "price": 671.62,
-      "change": -1.0,
+      "price": 669.97,
+      "change": -1.24,
       "currency": "$",
-      "sma200": "200 W-SMA Above +25.8%",
-      "sma200_pct": 25.8,
+      "sma200": "200 W-SMA Above +25.5%",
+      "sma200_pct": 25.5,
       "is_under": false,
-      "rsi14_weekly": 73.1,
-      "ath_52w_pct": -1.0,
+      "rsi14_weekly": 72.9,
+      "ath_52w_pct": -1.2,
       "earnings": "21/10/2026"
     },
     {
@@ -407,50 +472,50 @@
     {
       "ticker": "TSLA",
       "category": "stock",
-      "price": 372.99,
-      "change": -1.31,
+      "price": 372.89,
+      "change": -1.34,
       "currency": "$",
-      "sma200": "200 W-SMA Above +29.2%",
-      "sma200_pct": 29.2,
+      "sma200": "200 W-SMA Above +29.1%",
+      "sma200_pct": 29.1,
       "is_under": false,
-      "rsi14_weekly": 49.7,
+      "rsi14_weekly": 49.8,
       "ath_52w_pct": -23.9,
       "earnings": "21/10/2026"
     },
     {
       "ticker": "VRSN",
       "category": "stock",
-      "price": 290.03,
-      "change": -0.63,
+      "price": 289.0,
+      "change": -0.99,
       "currency": "$",
-      "sma200": "200 W-SMA Above +27.7%",
-      "sma200_pct": 27.7,
+      "sma200": "200 W-SMA Above +27.2%",
+      "sma200_pct": 27.2,
       "is_under": false,
-      "rsi14_weekly": 55.3,
-      "ath_52w_pct": -6.4,
+      "rsi14_weekly": 54.8,
+      "ath_52w_pct": -6.8,
       "earnings": "22/10/2026"
     },
     {
       "ticker": "VRT",
       "category": "stock",
-      "price": 251.34,
-      "change": 2.46,
+      "price": 251.76,
+      "change": 2.64,
       "currency": "$",
-      "sma200": "200 W-SMA Above +115.9%",
-      "sma200_pct": 115.9,
+      "sma200": "200 W-SMA Above +116.3%",
+      "sma200_pct": 116.3,
       "is_under": false,
-      "rsi14_weekly": 45.7,
-      "ath_52w_pct": -33.2,
+      "rsi14_weekly": 45.8,
+      "ath_52w_pct": -33.1,
       "earnings": "21/10/2026"
     },
     {
       "ticker": "VST",
       "category": "stock",
-      "price": 136.76,
-      "change": -0.86,
+      "price": 136.85,
+      "change": -0.79,
       "currency": "$",
-      "sma200": "200 W-SMA Above +29.3%",
-      "sma200_pct": 29.3,
+      "sma200": "200 W-SMA Above +29.4%",
+      "sma200_pct": 29.4,
       "is_under": false,
       "rsi14_weekly": 42.3,
       "ath_52w_pct": -35.1,
@@ -459,8 +524,8 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83777.35,
-      "change": -0.71,
+      "price": 83755.37,
+      "change": -0.74,
       "currency": "$",
       "sma200": "200 W-SMA Above +27.4%",
       "sma200_pct": 27.4,
@@ -472,21 +537,21 @@
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2686.14,
-      "change": -0.04,
+      "price": 2683.29,
+      "change": -0.15,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.8%",
-      "sma200_pct": 6.8,
+      "sma200": "200 W-SMA Above +6.7%",
+      "sma200_pct": 6.7,
       "is_under": false,
       "rsi14_weekly": 63.9,
-      "ath_52w_pct": -18.8,
+      "ath_52w_pct": -18.9,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 120.83,
-      "change": 3.26,
+      "price": 120.89,
+      "change": 3.32,
       "currency": "$",
       "sma200": "200 W-SMA Above +9.5%",
       "sma200_pct": 9.5,
@@ -498,18 +563,50 @@
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 91.28,
-      "change": -0.89,
+      "price": 91.37,
+      "change": -0.79,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 70.3,
-      "ath_52w_pct": -6.1,
+      "rsi14_weekly": 70.4,
+      "ath_52w_pct": -6.0,
       "earnings": "N/A"
     }
   ],
   "news": [
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "Prologis (PLD) Draws Fresh Fund Interest, Is The Stock Fully Valued?",
+      "summary": "Prologis (PLD) has drawn fresh attention after Massachusetts Financial Services Company and Dimensional Fund Advisors each disclosed holdings above 1% of the real estate operator, adding new context t...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prologis-pld-draws-fresh-fund-121135005.html",
+      "date": "2026-09-25T14:11:35+02:00"
+    },
+    {
+      "ticker": "DLR",
+      "category": "reit",
+      "title": "Digital Realty vs. Equinix: Which AI Data-Center REIT Is the Better Buy?",
+      "summary": "Digital Realty Trust, Inc. (NYSE:DLR) and Equinix, Inc. (NASDAQ:EQIX) own two of the hardest assets to replicate in the AI boom: powered, connected data-center capacity. Their stocks currently offer a...",
+      "link": "https://finance.yahoo.com/real-estate/articles/digital-realty-vs-equinix-ai-035955863.html",
+      "date": "2026-09-25T05:59:55+02:00"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "title": "Digital Realty vs. Equinix: Which AI Data-Center REIT Is the Better Buy?",
+      "summary": "Digital Realty Trust, Inc. (NYSE:DLR) and Equinix, Inc. (NASDAQ:EQIX) own two of the hardest assets to replicate in the AI boom: powered, connected data-center capacity. Their stocks currently offer a...",
+      "link": "https://finance.yahoo.com/real-estate/articles/digital-realty-vs-equinix-ai-035955863.html",
+      "date": "2026-09-25T05:59:55+02:00"
+    },
+    {
+      "ticker": "WELL",
+      "category": "reit",
+      "title": "Why Welltower Stock Topped the Market on Thursday",
+      "summary": "An analyst upgraded his recommendation on the specialty REIT.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/why-welltower-stock-topped-market-235247666.html",
+      "date": "2026-09-25T01:52:47+02:00"
+    },
     {
       "ticker": "AAOI",
       "category": "stock",
@@ -741,6 +838,14 @@
       "summary": "President Trump touted Thursday's long-awaited state dinner at the White House as a tough ticket, and while the Chinese business delegation was notably absent, the glittering event featured a wide arr...",
       "link": "https://finance.yahoo.com/markets/article/over-30-ceos-scored-an-invite-to-the-us-china-state-dinner--and-these-4-got-a-spot-at-the-head-table-134400923.html",
       "date": "2026-09-25T15:44:00+02:00"
+    },
+    {
+      "ticker": "ONON",
+      "category": "stock",
+      "title": "On Holding vs. Boot Barn: Which Footwear Stock Looks Better Placed?",
+      "summary": "ONON's DTC strength, Asia-Pacific momentum and apparel growth contrast with BOOT's store expansion, comparable sales gains and e-commerce growth.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/holding-vs-boot-barn-footwear-163300290.html",
+      "date": "2026-09-25T18:33:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -1206,10 +1311,308 @@
       }
     },
     {
+      "ticker": "PLD",
+      "category": "reit",
+      "rev_growth": "+12.3%",
+      "pe": "40.0x",
+      "ev": "24.4x",
+      "roe": "7.7%",
+      "peg": "116.49",
+      "net_margin": "43.6%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+12.3%",
+          "+7.2%",
+          "+2.2%",
+          "+34.3%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "43.6%",
+          "37.9%",
+          "45.5%",
+          "38.1%",
+          "56.3%"
+        ],
+        "Fwd P/E": [
+          "40.0x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "24.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "7.7%",
+          "6.2%",
+          "7.0%",
+          "5.7%",
+          "6.3%"
+        ],
+        "PEG": [
+          "116.49",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "GMG.AX",
+      "category": "reit",
+      "rev_growth": "+65.8%",
+      "pe": "16.6x",
+      "ev": "23.3x",
+      "roe": "11.5%",
+      "peg": "2.72",
+      "net_margin": "68.4%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+65.8%",
+          "+7.6%",
+          "-1.0%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "68.4%",
+          "80.6%",
+          "-5.1%",
+          "80.4%"
+        ],
+        "Fwd P/E": [
+          "16.6x",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "23.3x",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "11.5%",
+          "8.2%",
+          "-0.6%",
+          "8.7%"
+        ],
+        "PEG": [
+          "2.72",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "DLR",
+      "category": "reit",
+      "rev_growth": "+29.9%",
+      "pe": "65.0x",
+      "ev": "27.4x",
+      "roe": "2.9%",
+      "peg": "11.69",
+      "net_margin": "11.8%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+29.9%",
+          "+10.0%",
+          "+1.4%",
+          "+16.7%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "11.8%",
+          "21.4%",
+          "10.8%",
+          "17.3%",
+          "8.0%"
+        ],
+        "Fwd P/E": [
+          "65.0x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "27.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "2.9%",
+          "5.9%",
+          "3.0%",
+          "5.2%",
+          "2.1%"
+        ],
+        "PEG": [
+          "11.69",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "rev_growth": "+16.7%",
+      "pe": "54.9x",
+      "ev": "27.4x",
+      "roe": "10.7%",
+      "peg": "2.91",
+      "net_margin": "15.5%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+16.7%",
+          "+5.4%",
+          "+6.8%",
+          "+12.7%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "15.5%",
+          "14.6%",
+          "9.3%",
+          "11.8%",
+          "9.7%"
+        ],
+        "Fwd P/E": [
+          "54.9x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "27.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "10.7%",
+          "9.8%",
+          "6.3%",
+          "8.1%",
+          "6.1%"
+        ],
+        "PEG": [
+          "2.91",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
+      "ticker": "WELL",
+      "category": "reit",
+      "rev_growth": "+39.1%",
+      "pe": "72.5x",
+      "ev": "56.1x",
+      "roe": "3.8%",
+      "peg": "3.66",
+      "net_margin": "12.1%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+39.1%",
+          "+35.8%",
+          "+21.2%",
+          "+12.2%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "12.1%",
+          "8.8%",
+          "12.1%",
+          "5.2%",
+          "2.4%"
+        ],
+        "Fwd P/E": [
+          "72.5x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "56.1x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "3.8%",
+          "2.5%",
+          "3.3%",
+          "1.5%",
+          "0.7%"
+        ],
+        "PEG": [
+          "3.66",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "AAOI",
       "category": "stock",
       "rev_growth": "+86.4%",
-      "pe": "22.3x",
+      "pe": "22.2x",
       "ev": "-259.9x",
       "roe": "-5.4%",
       "peg": "0.78",
@@ -1237,7 +1640,7 @@
           "-29.8%"
         ],
         "Fwd P/E": [
-          "22.3x",
+          "22.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -1697,7 +2100,7 @@
       "ticker": "CPRT",
       "category": "stock",
       "rev_growth": "+2.4%",
-      "pe": "15.7x",
+      "pe": "15.6x",
       "ev": "11.5x",
       "roe": "16.2%",
       "peg": "2.76",
@@ -1725,7 +2128,7 @@
           "31.1%"
         ],
         "Fwd P/E": [
-          "15.7x",
+          "15.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -1758,7 +2161,7 @@
       "ticker": "CSW",
       "category": "stock",
       "rev_growth": "+33.0%",
-      "pe": "21.9x",
+      "pe": "21.8x",
       "ev": "19.8x",
       "roe": "10.9%",
       "peg": "2.53",
@@ -1786,7 +2189,7 @@
           "N/A"
         ],
         "Fwd P/E": [
-          "21.9x",
+          "21.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2063,7 +2466,7 @@
       "ticker": "META",
       "category": "stock",
       "rev_growth": "+28.0%",
-      "pe": "21.5x",
+      "pe": "21.4x",
       "ev": "18.3x",
       "roe": "29.8%",
       "peg": "1.03",
@@ -2091,7 +2494,7 @@
           "19.9%"
         ],
         "Fwd P/E": [
-          "21.5x",
+          "21.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -2239,7 +2642,7 @@
       "ticker": "NBIS",
       "category": "stock",
       "rev_growth": "+454.0%",
-      "pe": "-68.4x",
+      "pe": "-68.2x",
       "ev": "267.0x",
       "roe": "0.6%",
       "peg": "0.55",
@@ -2267,7 +2670,7 @@
           "5523.0%"
         ],
         "Fwd P/E": [
-          "-68.4x",
+          "-68.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2537,7 +2940,7 @@
       "ticker": "SPCX",
       "category": "stock",
       "rev_growth": "+91.9%",
-      "pe": "85.2x",
+      "pe": "85.1x",
       "ev": "651.6x",
       "roe": "N/A",
       "peg": "N/A",
@@ -2562,7 +2965,7 @@
           "-44.6%"
         ],
         "Fwd P/E": [
-          "85.2x",
+          "85.1x",
           "N/A",
           "N/A",
           "N/A"
@@ -2591,7 +2994,7 @@
       "ticker": "SPGI",
       "category": "stock",
       "rev_growth": "+10.4%",
-      "pe": "20.0x",
+      "pe": "19.9x",
       "ev": "16.7x",
       "roe": "14.3%",
       "peg": "1.93",
@@ -2619,7 +3022,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "20.0x",
+          "19.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -2713,7 +3116,7 @@
       "ticker": "TMO",
       "category": "stock",
       "rev_growth": "+10.5%",
-      "pe": "24.4x",
+      "pe": "24.3x",
       "ev": "24.7x",
       "roe": "13.5%",
       "peg": "2.02",
@@ -2741,7 +3144,7 @@
           "15.5%"
         ],
         "Fwd P/E": [
-          "24.4x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2835,7 +3238,7 @@
       "ticker": "TSLA",
       "category": "stock",
       "rev_growth": "+25.5%",
-      "pe": "169.8x",
+      "pe": "169.7x",
       "ev": "136.3x",
       "roe": "4.7%",
       "peg": "4.52",
@@ -2863,7 +3266,7 @@
           "15.4%"
         ],
         "Fwd P/E": [
-          "169.8x",
+          "169.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -2896,7 +3299,7 @@
       "ticker": "VRSN",
       "category": "stock",
       "rev_growth": "+6.0%",
-      "pe": "26.2x",
+      "pe": "26.1x",
       "ev": "23.3x",
       "roe": "N/A",
       "peg": "2.15",
@@ -2924,7 +3327,7 @@
           "47.3%"
         ],
         "Fwd P/E": [
-          "26.2x",
+          "26.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3100,6 +3503,46 @@
       "date_formatted": "13/11/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/ret/financials/?p=quarterly"
+    },
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "date": "2026-10-15",
+      "date_formatted": "15/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/pld/financials/?p=quarterly"
+    },
+    {
+      "ticker": "GMG.AX",
+      "category": "reit",
+      "date": "2027-02-18",
+      "date_formatted": "18/02/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/gmg/financials/?p=quarterly"
+    },
+    {
+      "ticker": "DLR",
+      "category": "reit",
+      "date": "2026-10-22",
+      "date_formatted": "22/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/dlr/financials/?p=quarterly"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "date": "2026-10-28",
+      "date_formatted": "28/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/eqix/financials/?p=quarterly"
+    },
+    {
+      "ticker": "WELL",
+      "category": "reit",
+      "date": "2026-10-26",
+      "date_formatted": "26/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/well/financials/?p=quarterly"
     },
     {
       "ticker": "AAOI",
