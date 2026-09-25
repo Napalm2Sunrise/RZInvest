@@ -1,24 +1,24 @@
 {
-  "updated_at": "25/09/2026 à 08:16",
+  "updated_at": "25/09/2026 à 09:13",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
       "price": 64.9,
-      "change": -0.84,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +0.6%",
       "sma200_pct": 0.6,
       "is_under": false,
       "rsi14_weekly": 39.6,
       "ath_52w_pct": -18.1,
-      "earnings": "17/02/2027"
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
       "price": 12.38,
-      "change": 0.49,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -3.2% 🔥",
       "sma200_pct": -3.2,
@@ -31,7 +31,7 @@
       "ticker": "HOMI.BR",
       "category": "reit",
       "price": 17.62,
-      "change": -1.12,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -3.0% 🔥",
       "sma200_pct": -3.0,
@@ -109,7 +109,7 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "price": 1503.2,
-      "change": -0.83,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +80.7%",
       "sma200_pct": 80.7,
@@ -252,7 +252,7 @@
       "ticker": "MC.PA",
       "category": "stock",
       "price": 397.1,
-      "change": 0.05,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.8% 🔥",
       "sma200_pct": -38.8,
@@ -330,7 +330,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "price": 1354.5,
-      "change": 0.37,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Under -32.9% 🔥",
       "sma200_pct": -32.9,
@@ -369,7 +369,7 @@
       "ticker": "SU.PA",
       "category": "stock",
       "price": 289.8,
-      "change": -1.21,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +35.5%",
       "sma200_pct": 35.5,
@@ -395,7 +395,7 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "price": 81.05,
-      "change": 1.8,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +33.7%",
       "sma200_pct": 33.7,
@@ -459,53 +459,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 84100.08,
-      "change": -0.33,
+      "price": 83807.03,
+      "change": -0.68,
       "currency": "$",
-      "sma200": "200 W-SMA Above +27.9%",
-      "sma200_pct": 27.9,
+      "sma200": "200 W-SMA Above +27.5%",
+      "sma200_pct": 27.5,
       "is_under": false,
-      "rsi14_weekly": 62.2,
-      "ath_52w_pct": -12.0,
+      "rsi14_weekly": 62.0,
+      "ath_52w_pct": -12.3,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2676.46,
-      "change": -0.4,
+      "price": 2670.95,
+      "change": -0.61,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.4%",
-      "sma200_pct": 6.4,
+      "sma200": "200 W-SMA Above +6.2%",
+      "sma200_pct": 6.2,
       "is_under": false,
-      "rsi14_weekly": 63.8,
-      "ath_52w_pct": -19.1,
+      "rsi14_weekly": 63.6,
+      "ath_52w_pct": -19.3,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 116.34,
-      "change": -0.57,
+      "price": 116.0,
+      "change": -0.86,
       "currency": "$",
-      "sma200": "200 W-SMA Above +5.4%",
-      "sma200_pct": 5.4,
+      "sma200": "200 W-SMA Above +5.1%",
+      "sma200_pct": 5.1,
       "is_under": false,
-      "rsi14_weekly": 64.8,
-      "ath_52w_pct": -19.7,
+      "rsi14_weekly": 64.7,
+      "ath_52w_pct": -19.9,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 92.02,
-      "change": -0.09,
+      "price": 92.12,
+      "change": 0.02,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 71.0,
-      "ath_52w_pct": -5.3,
+      "rsi14_weekly": 71.1,
+      "ath_52w_pct": -5.2,
       "earnings": "N/A"
     }
   ],
@@ -681,10 +681,10 @@
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "AMZN, META, GOOGL, MSFT, ORCL: Michael Burry Sounds Fresh Alarm On Big Tech’s AI Spending, Warns Of Massive Write-Offs In Two Years",
-      "summary": "Burry flags rising leverage, off-balance-sheet commitments and accounting practices as AI infrastructure spending accelerates.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amzn-meta-googl-msft-orcl-054658895.html",
-      "date": "2026-09-25T07:46:58+02:00"
+      "title": "Do Cloudflare’s (NET) New AI Crawler Controls Quietly Strengthen Its Data-Moat Narrative?",
+      "summary": "In September 2026, Cloudflare, Inc. launched new AI crawling controls, including a “Disallow AI Training” setting and an Accountable designation for AI crawlers, giving website owners granular control...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/cloudflare-net-ai-crawler-controls-060920372.html",
+      "date": "2026-09-25T08:09:20+02:00"
     },
     {
       "ticker": "ISRG",
@@ -785,10 +785,10 @@
     {
       "ticker": "MSFT",
       "category": "stock",
-      "title": "AMZN, META, GOOGL, MSFT, ORCL: Michael Burry Sounds Fresh Alarm On Big Tech’s AI Spending, Warns Of Massive Write-Offs In Two Years",
-      "summary": "Burry flags rising leverage, off-balance-sheet commitments and accounting practices as AI infrastructure spending accelerates.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amzn-meta-googl-msft-orcl-054658895.html",
-      "date": "2026-09-25T07:46:58+02:00"
+      "title": "Do Cloudflare’s (NET) New AI Crawler Controls Quietly Strengthen Its Data-Moat Narrative?",
+      "summary": "In September 2026, Cloudflare, Inc. launched new AI crawling controls, including a “Disallow AI Training” setting and an Accountable designation for AI crawlers, giving website owners granular control...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/cloudflare-net-ai-crawler-controls-060920372.html",
+      "date": "2026-09-25T08:09:20+02:00"
     },
     {
       "ticker": "NBIS",
@@ -825,18 +825,18 @@
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Meet the 6 Categories That Drove Costco’s 19.5% Digitally Enabled Sales Comps in Its Latest Quarter.",
-      "summary": "The growth figure was high, given how little the company hypes that channel.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/meet-6-categories-drove-costco-055428672.html",
-      "date": "2026-09-25T07:54:28+02:00"
+      "title": "Elastic Unveils AI-Era Metrics Platform, Claims Major Speed and Storage Gains",
+      "summary": "Elastic (NYSE:ESTC) outlined its new metrics offering during an observability-focused investor call, positioning the product as a faster and more storage-efficient way for customers to manage metrics ...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/elastic-unveils-ai-era-metrics-070206127.html",
+      "date": "2026-09-25T09:02:06+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Costco Just Showed Why It's a Better Buy Than Walmart",
-      "summary": "Costco delivered another strong earnings report, even as rivals like Walmart are seeing slowing revenue growth.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/costco-just-showed-why-better-055001241.html",
-      "date": "2026-09-25T07:50:01+02:00"
+      "title": "Where Will Robinhood Stock Be in 5 Years?",
+      "summary": "The trading platform continues to launch the finance products of the future.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/where-robinhood-stock-5-years-065000358.html",
+      "date": "2026-09-25T08:50:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -959,6 +959,14 @@
       "date": "2026-09-25T07:45:24+02:00"
     },
     {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "Tesla has begun ‘high volume’ production of semi truck, Musk says",
+      "summary": "Investing.com-- Tesla Inc (NASDAQ:TSLA) CEO Elon Musk said on Thursday it had begun “high volume production” of its electric semi truck at a new facility in Nevada, with the company targeting 50,000 u...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-begun-high-volume-production-031247063.html",
+      "date": "2026-09-25T05:12:47+02:00"
+    },
+    {
       "ticker": "VRT",
       "category": "stock",
       "title": "Ameresco, NN, FuelCell Energy, Vertiv, and Blue Bird Shares Plummet, What You Need To Know",
@@ -1025,10 +1033,10 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Anthony Scaramucci's son bets $350 million on a 'programmable future'",
-      "summary": "AJ Scaramucci, son of Wall Street financier Anthony Scaramucci, has taken Solari Capital out of stealth after deploying $350 million across AI and crypto.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/anthony-scaramuccis-son-bets-350-225724521.html",
-      "date": "2026-09-25T00:57:24+02:00"
+      "title": "Buy the Coin or the Crypto Treasury Stock? DWF Ventures Has a Verdict",
+      "summary": "DWF Ventures finds most crypto treasury stocks lag their tokens as ETFs erode the access premium that once drove demand.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/buy-coin-crypto-treasury-stock-061130125.html",
+      "date": "2026-09-25T08:11:30+02:00"
     },
     {
       "ticker": "ETH-USD",
@@ -1077,6 +1085,14 @@
       "summary": "Solana DEXs recorded about 208 million spot trades in the week ending Sept. 13, compared with roughly 190 million on the NYSE. Solana trailed Nasdaq ...",
       "link": "https://finance.yahoo.com/markets/crypto/articles/solana-just-beat-nyse-weekly-133715543.html",
       "date": "2026-09-24T15:37:15+02:00"
+    },
+    {
+      "ticker": "HYPE32196-USD",
+      "category": "crypto",
+      "title": "Buy the Coin or the Crypto Treasury Stock? DWF Ventures Has a Verdict",
+      "summary": "DWF Ventures finds most crypto treasury stocks lag their tokens as ETFs erode the access premium that once drove demand.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/buy-coin-crypto-treasury-stock-061130125.html",
+      "date": "2026-09-25T08:11:30+02:00"
     },
     {
       "ticker": "HYPE32196-USD",
@@ -2604,7 +2620,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "26.8x",
+      "pe": "26.9x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.07",
@@ -2632,7 +2648,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.8x",
+          "26.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -2902,7 +2918,7 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "rev_growth": "+27.8%",
-      "pe": "9.2x",
+      "pe": "9.1x",
       "ev": "5.4x",
       "roe": "14.5%",
       "peg": "0.82",
@@ -2930,7 +2946,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "9.2x",
+          "9.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2963,7 +2979,7 @@
       "ticker": "TSLA",
       "category": "stock",
       "rev_growth": "+25.5%",
-      "pe": "171.7x",
+      "pe": "172.0x",
       "ev": "136.3x",
       "roe": "4.7%",
       "peg": "4.54",
@@ -2991,7 +3007,7 @@
           "15.4%"
         ],
         "Fwd P/E": [
-          "171.7x",
+          "172.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -3206,12 +3222,12 @@
   ],
   "earnings": [
     {
-      "ticker": "AED.BR",
+      "ticker": "CPINV.BR",
       "category": "reit",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://stockanalysis.com/stocks/aed/financials/?p=quarterly"
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
     },
     {
       "ticker": "CPINV.BR",
