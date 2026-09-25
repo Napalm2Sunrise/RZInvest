@@ -1,30 +1,30 @@
 {
-  "updated_at": "25/09/2026 à 10:13",
+  "updated_at": "25/09/2026 à 11:13",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 65.2,
-      "change": 0.46,
+      "price": 65.3,
+      "change": 0.62,
       "currency": "€",
-      "sma200": "200 W-SMA Above +1.1%",
-      "sma200_pct": 1.1,
+      "sma200": "200 W-SMA Above +1.3%",
+      "sma200_pct": 1.3,
       "is_under": false,
-      "rsi14_weekly": 39.1,
-      "ath_52w_pct": -17.7,
+      "rsi14_weekly": 39.3,
+      "ath_52w_pct": -17.6,
       "earnings": "17/02/2027"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.38,
-      "change": 0.0,
+      "price": 12.42,
+      "change": 0.32,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.2% 🔥",
-      "sma200_pct": -3.2,
+      "sma200": "200 W-SMA Under -2.9% 🔥",
+      "sma200_pct": -2.9,
       "is_under": true,
-      "rsi14_weekly": 48.4,
-      "ath_52w_pct": -11.1,
+      "rsi14_weekly": 49.1,
+      "ath_52w_pct": -10.8,
       "earnings": "04/11/2026"
     },
     {
@@ -43,14 +43,14 @@
     {
       "ticker": "RET.BR",
       "category": "reit",
-      "price": 63.9,
-      "change": 0.0,
+      "price": 64.1,
+      "change": 0.31,
       "currency": "€",
-      "sma200": "200 W-SMA Above +0.7%",
-      "sma200_pct": 0.7,
+      "sma200": "200 W-SMA Above +1.0%",
+      "sma200_pct": 1.0,
       "is_under": false,
-      "rsi14_weekly": 40.8,
-      "ath_52w_pct": -10.8,
+      "rsi14_weekly": 41.3,
+      "ath_52w_pct": -10.5,
       "earnings": "13/11/2026"
     },
     {
@@ -108,14 +108,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1527.0,
-      "change": 1.58,
+      "price": 1541.6,
+      "change": 2.55,
       "currency": "€",
-      "sma200": "200 W-SMA Above +83.6%",
-      "sma200_pct": 83.6,
+      "sma200": "200 W-SMA Above +85.3%",
+      "sma200_pct": 85.3,
       "is_under": false,
-      "rsi14_weekly": 58.0,
-      "ath_52w_pct": -11.3,
+      "rsi14_weekly": 58.8,
+      "ath_52w_pct": -10.4,
       "earnings": "14/10/2026"
     },
     {
@@ -251,8 +251,8 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 398.2,
-      "change": 0.28,
+      "price": 398.3,
+      "change": 0.3,
       "currency": "€",
       "sma200": "200 W-SMA Under -38.7% 🔥",
       "sma200_pct": -38.7,
@@ -329,14 +329,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1354.0,
-      "change": -0.04,
+      "price": 1358.5,
+      "change": 0.3,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.9% 🔥",
-      "sma200_pct": -32.9,
+      "sma200": "200 W-SMA Under -32.7% 🔥",
+      "sma200_pct": -32.7,
       "is_under": true,
-      "rsi14_weekly": 31.4,
-      "ath_52w_pct": -39.8,
+      "rsi14_weekly": 31.8,
+      "ath_52w_pct": -39.6,
       "earnings": "11/02/2027"
     },
     {
@@ -368,14 +368,14 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 294.15,
-      "change": 1.5,
+      "price": 295.65,
+      "change": 2.02,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.5%",
-      "sma200_pct": 37.5,
+      "sma200": "200 W-SMA Above +38.2%",
+      "sma200_pct": 38.2,
       "is_under": false,
-      "rsi14_weekly": 57.4,
-      "ath_52w_pct": -5.4,
+      "rsi14_weekly": 58.0,
+      "ath_52w_pct": -4.9,
       "earnings": "25/02/2027"
     },
     {
@@ -394,14 +394,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 80.3,
-      "change": -0.93,
+      "price": 79.79,
+      "change": -1.55,
       "currency": "€",
-      "sma200": "200 W-SMA Above +32.4%",
-      "sma200_pct": 32.4,
+      "sma200": "200 W-SMA Above +31.6%",
+      "sma200_pct": 31.6,
       "is_under": false,
-      "rsi14_weekly": 62.4,
-      "ath_52w_pct": -0.9,
+      "rsi14_weekly": 61.5,
+      "ath_52w_pct": -1.6,
       "earnings": "29/10/2026"
     },
     {
@@ -459,53 +459,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 84113.36,
-      "change": -0.31,
+      "price": 84610.61,
+      "change": 0.28,
       "currency": "$",
-      "sma200": "200 W-SMA Above +27.9%",
-      "sma200_pct": 27.9,
+      "sma200": "200 W-SMA Above +28.7%",
+      "sma200_pct": 28.7,
       "is_under": false,
-      "rsi14_weekly": 62.2,
-      "ath_52w_pct": -11.6,
+      "rsi14_weekly": 62.7,
+      "ath_52w_pct": -11.0,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2678.18,
-      "change": -0.34,
+      "price": 2694.41,
+      "change": 0.26,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.5%",
-      "sma200_pct": 6.5,
+      "sma200": "200 W-SMA Above +7.1%",
+      "sma200_pct": 7.1,
       "is_under": false,
-      "rsi14_weekly": 63.8,
-      "ath_52w_pct": -19.1,
+      "rsi14_weekly": 64.2,
+      "ath_52w_pct": -18.6,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 116.58,
-      "change": -0.37,
+      "price": 117.52,
+      "change": 0.44,
       "currency": "$",
-      "sma200": "200 W-SMA Above +5.7%",
-      "sma200_pct": 5.7,
+      "sma200": "200 W-SMA Above +6.5%",
+      "sma200_pct": 6.5,
       "is_under": false,
-      "rsi14_weekly": 64.9,
-      "ath_52w_pct": -18.9,
+      "rsi14_weekly": 65.4,
+      "ath_52w_pct": -18.2,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 93.12,
-      "change": 1.11,
+      "price": 93.58,
+      "change": 1.61,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 71.6,
-      "ath_52w_pct": -4.2,
+      "rsi14_weekly": 71.8,
+      "ath_52w_pct": -3.7,
       "earnings": "N/A"
     }
   ],
@@ -537,6 +537,14 @@
     {
       "ticker": "AMD",
       "category": "stock",
+      "title": "Nasdaq, S&P 500 Futures Rise Despite Surging Treasury Yields: AMD, TSLA, SPCX, AKAM, BE Stocks In Focus",
+      "summary": "Retail sentiment on Stocktwits for SPY has turned ‘extremely bullish’, while it remained ‘bullish’ on QQQ.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-rise-082910505.html",
+      "date": "2026-09-25T10:29:10+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
       "title": "Stocktwits AI Roundup: Meta's Muse Lifts Chip Stocks, Anthropic's $11B Akamai Deal And Oracle's New Mexico Snag",
       "summary": "AI agents, infrastructure spending and data-center delays kept investors focused on the next phase of the AI buildout.",
       "link": "https://finance.yahoo.com/technology/ai/articles/stocktwits-ai-roundup-metas-muse-073256286.html",
@@ -549,14 +557,6 @@
       "summary": "Advanced Micro Devices, Inc. (NASDAQ:AMD) crossed $1 trillion in market value on September 21 after closing roughly 187% higher for 2026. NVIDIA Corporation (NASDAQ:NVDA) was worth about $5.45 trillio...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/amd-vs-nvidia-ai-stock-035909345.html",
       "date": "2026-09-25T05:59:09+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "AMD, INTC Stocks Extend Rally As Meta's Muse Fuels Bets On An AI-Agent CPU Boom",
-      "summary": "Agentic AI is reshaping expectations for chip infrastructure and CPU demand.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amd-intc-stocks-extend-rally-033005684.html",
-      "date": "2026-09-25T05:30:05+02:00"
     },
     {
       "ticker": "AMKR",
@@ -581,30 +581,6 @@
       "summary": "Burry flags rising leverage, off-balance-sheet commitments and accounting practices as AI infrastructure spending accelerates.",
       "link": "https://finance.yahoo.com/technology/ai/articles/amzn-meta-googl-msft-orcl-054658895.html",
       "date": "2026-09-25T07:46:58+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "category": "stock",
-      "title": "ASML vs. Applied Materials: Which AI Chip-Equipment Stock Is the Better Buy?",
-      "summary": "ASML Holding N.V. (NASDAQ:ASML) and Applied Materials, Inc. (NASDAQ:AMAT) sell different tools, but both compete for the same investor dollar tied to semiconductor capital spending. ASML trades around...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/asml-vs-applied-materials-ai-040717818.html",
-      "date": "2026-09-25T06:07:17+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "category": "stock",
-      "title": "Is Taiwan Semiconductor (TSM) Stock a Better Bet than ASML Holding (ASML) as Advanced Chipmaking Accelerates?",
-      "summary": "On September 8, Taiwan Semiconductor Manufacturing Company Limited (NYSE:TSM) and ASML Holding N.V. (NASDAQ:ASML) announced a collaborative industry initiative to transition the semiconductor sector t...",
-      "link": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-tsm-stock-better-210504814.html",
-      "date": "2026-09-24T23:05:04+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "category": "stock",
-      "title": "ASML Drops 1.8% as $400 Million High-NA Tools Reach More Fabs",
-      "summary": "Customer adoption strengthens ASML's monopoly while shifting attention toward throughput, installation schedules and manufacturing returns.",
-      "link": "https://finance.yahoo.com/technology/articles/asml-drops-1-8-400-191825215.html",
-      "date": "2026-09-24T21:18:25+02:00"
     },
     {
       "ticker": "AVGO",
@@ -681,10 +657,10 @@
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Stocktwits Space Race Weekly: Why RKLB, FLY, RDW And PL Are Outpacing SPCX",
-      "summary": "RKLB rose 14% this week after its 96th Electron launch, a bullish Cantor call, an ARK purchase and shareholder approval of its Iridium deal.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/stocktwits-space-race-weekly-why-075837848.html",
-      "date": "2026-09-25T09:58:37+02:00"
+      "title": "SPCX Stock Climbs Premarket As Musk Teases 3 Nvidia Chip Waves — Google Books SpaceX Ride For Orbital AI Test",
+      "summary": "Musk expects 220,000 more GB300 chips online next week, another 220,000 in November and a possible third wave in late December.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spcx-stock-climbs-premarket-musk-080410561.html",
+      "date": "2026-09-25T10:04:10+02:00"
     },
     {
       "ticker": "ISRG",
@@ -701,14 +677,6 @@
       "summary": "AI adoption is reshaping medical devices, with ISRG, TEM and TMO leveraging AI to advance precision medicine and drug development.",
       "link": "https://finance.yahoo.com/healthcare/articles/buy-3-ai-powered-medical-102200254.html",
       "date": "2026-09-24T12:22:00+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Intuitive Surgical Stock Has Plunged 29% This Year. Is the Market Overreacting?",
-      "summary": "Wall Street thinks that this robotic surgical systems leader's sell-off is overdone.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-surgical-stock-plunged-29-090400035.html",
-      "date": "2026-09-24T11:04:00+02:00"
     },
     {
       "ticker": "JNJ",
@@ -825,18 +793,18 @@
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Is SpaceX Stock a Buy, Sell, or Hold Right Now? Here's What I'm Doing.",
-      "summary": "There are reasons to both buy and sell SpaceX stock.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-buy-sell-hold-080500647.html",
-      "date": "2026-09-25T10:05:00+02:00"
+      "title": "Warren Buffett Is Saying Farewell With a Sobering 4-Word Message for Investors",
+      "summary": "Buffett's investing career is a master class on building wealth in the stock market.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffett-saying-farewell-sobering-090500910.html",
+      "date": "2026-09-25T11:05:00+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Prediction: Adobe Stock Trades Back Above $350 Before 2030",
-      "summary": "Getting back there takes roughly a 12% annualized gain -- less than the earnings growth the company is already guiding for this year.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-adobe-stock-trades-back-080101486.html",
-      "date": "2026-09-25T10:01:01+02:00"
+      "title": "Even With Rising Treasury Yields, I'd Still Rather Buy This Unstoppable Dividend Stock for Passive Income.",
+      "summary": "Target has become a high-yielding growth-and-income stock.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/even-rising-treasury-yields-id-085000805.html",
+      "date": "2026-09-25T10:50:00+02:00"
     },
     {
       "ticker": "ONON",
@@ -857,6 +825,14 @@
     {
       "ticker": "SPCX",
       "category": "stock",
+      "title": "Nasdaq, S&P 500 Futures Rise Despite Surging Treasury Yields: AMD, TSLA, SPCX, AKAM, BE Stocks In Focus",
+      "summary": "Retail sentiment on Stocktwits for SPY has turned ‘extremely bullish’, while it remained ‘bullish’ on QQQ.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-rise-082910505.html",
+      "date": "2026-09-25T10:29:10+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
       "title": "Is SpaceX Stock a Buy, Sell, or Hold Right Now? Here's What I'm Doing.",
       "summary": "There are reasons to both buy and sell SpaceX stock.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-buy-sell-hold-080500647.html",
@@ -865,18 +841,10 @@
     {
       "ticker": "SPCX",
       "category": "stock",
-      "title": "Stocktwits Space Race Weekly: Why RKLB, FLY, RDW And PL Are Outpacing SPCX",
-      "summary": "RKLB rose 14% this week after its 96th Electron launch, a bullish Cantor call, an ARK purchase and shareholder approval of its Iridium deal.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/stocktwits-space-race-weekly-why-075837848.html",
-      "date": "2026-09-25T09:58:37+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "Musk says Colossus 2 data center plans to ramp up Nvidia AI chips by year-end",
-      "summary": "Investing.com-- Elon Musk said early Friday that SpaceXAI plans to roughly double the amount of advanced Nvidia chips used by its Colossus 2 data center by the end of the year.",
-      "link": "https://tech.yahoo.com/ai/articles/musk-says-colossus-2-data-070435700.html",
-      "date": "2026-09-25T09:04:35+02:00"
+      "title": "SPCX Stock Climbs Premarket As Musk Teases 3 Nvidia Chip Waves — Google Books SpaceX Ride For Orbital AI Test",
+      "summary": "Musk expects 220,000 more GB300 chips online next week, another 220,000 in November and a possible third wave in late December.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spcx-stock-climbs-premarket-musk-080410561.html",
+      "date": "2026-09-25T10:04:10+02:00"
     },
     {
       "ticker": "SPGI",
@@ -961,6 +929,14 @@
     {
       "ticker": "TSLA",
       "category": "stock",
+      "title": "Nasdaq, S&P 500 Futures Rise Despite Surging Treasury Yields: AMD, TSLA, SPCX, AKAM, BE Stocks In Focus",
+      "summary": "Retail sentiment on Stocktwits for SPY has turned ‘extremely bullish’, while it remained ‘bullish’ on QQQ.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-p-500-futures-rise-082910505.html",
+      "date": "2026-09-25T10:29:10+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
       "title": "TSLA Stock Climbs Overnight: Roadster Teaser Stokes SpaceX Buzz — Musk Calls New Semi A ‘Game-Changer’",
       "summary": "Tesla influencers spotted what appeared to be part of a SpaceX logo and a front light bar in a new Roadster teaser.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-climbs-overnight-roadster-054524806.html",
@@ -1041,10 +1017,10 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Bitcoin pauses near $84k with focus on rate jitters, Bitget hack",
-      "summary": "Investing.com-- Bitcoin moved little on Friday amid pressure from surging Treasury yields, while cryptocurrency markets also watched for the fallout of a major hack targeting exchange Bitget.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-pauses-near-84k-focus-072726007.html",
-      "date": "2026-09-25T09:27:26+02:00"
+      "title": "Coinbase CEO: Did Bitcoin Bottom Out on July 1? Here’s Why He’s Optimistic About the Next Two Years",
+      "summary": "Coinbase CEO Brian Armstrong pinpointed an exact date and price as Bitcoin's cycle bottom, and the market has since moved in his favor. But his reasoning rests on shaky ground, and the key levels trad...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/coinbase-ceo-did-bitcoin-bottom-085805847.html",
+      "date": "2026-09-25T10:58:05+02:00"
     },
     {
       "ticker": "ETH-USD",
@@ -1597,7 +1573,7 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+21.3%",
-      "pe": "29.5x",
+      "pe": "29.8x",
       "ev": "42.4x",
       "roe": "53.9%",
       "peg": "1.57",
@@ -1625,7 +1601,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "29.5x",
+          "29.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2620,7 +2596,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "26.8x",
+      "pe": "26.9x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.07",
@@ -2648,7 +2624,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.8x",
+          "26.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -2796,7 +2772,7 @@
       "ticker": "SU.PA",
       "category": "stock",
       "rev_growth": "+9.8%",
-      "pe": "24.2x",
+      "pe": "24.3x",
       "ev": "21.1x",
       "roe": "18.6%",
       "peg": "1.56",
@@ -2824,7 +2800,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.2x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2918,7 +2894,7 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "rev_growth": "+27.8%",
-      "pe": "9.1x",
+      "pe": "9.0x",
       "ev": "5.4x",
       "roe": "14.5%",
       "peg": "0.82",
@@ -2946,7 +2922,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "9.1x",
+          "9.0x",
           "N/A",
           "N/A",
           "N/A",
