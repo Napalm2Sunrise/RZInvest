@@ -546,10 +546,6 @@
       document.getElementById(secId).classList.add('active');
       btn.classList.add('active');
 
-      // L'onglet Price vient de devenir visible : on (re)construit le widget
-      // TradingView maintenant, une fois que le conteneur a sa vraie hauteur
-      // (top/bottom appliqués), sinon le widget se fige avec une hauteur trop
-      // petite et laisse un vide en bas de l'écran.
       if (secId === 'price-tv-sec') {
         requestAnimationFrame(() => {
           renderPriceTV();
@@ -633,10 +629,6 @@
       const tvContainer = document.getElementById('price-tv-container');
       if (!tvContainer || !tvSection) return;
 
-      // IMPORTANT : on ne (re)construit le widget que si son onglet est
-      // actuellement affiché. S'il est caché (display:none), le conteneur
-      // fait 0px de hauteur et le script TradingView fige alors une hauteur
-      // trop petite pour le widget (d'où le vide en bas de l'écran).
       if (!tvSection.classList.contains('active')) return;
 
       const allPrices = globalData.prices || [];
@@ -902,23 +894,41 @@
         return;
       }
 
-      const filteredPrices = getSortedFilteredPrices().filter(p => p.category !== 'crypto');
+      const allEarnings = globalData.earnings || [];
 
-      if (filteredPrices.length === 0) {
-        earnCont.innerHTML = '<div class="empty-msg">Aucune publication à venir pour cette sélection.</div>';
+      // Filtrer par catégories actives et par ticker si sélectionné
+      let filteredEarnings = allEarnings.filter(e => nonCryptoActive.includes(e.category || 'stock'));
+
+      if (selectedTicker !== 'ALL') {
+        filteredEarnings = filteredEarnings.filter(e => e.ticker === selectedTicker);
+      }
+
+      if (filteredEarnings.length === 0) {
+        earnCont.innerHTML = '<div class="empty-msg">Aucune publication récente ou à venir pour cette sélection.</div>';
         return;
       }
 
-      const earnCards = filteredPrices.map(p => `
-        <div class="card">
-          <div class="card-header">
-            <span class="ticker-name">${p.ticker}</span>
-            <span class="last-update">Publication</span>
-          </div>
-          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
-            📅 ${p.earnings || 'Date non disponible'}
-          </div>
-        </div>`).join('');
+      // Tri chronologique croissant : Passées (-30j) puis À venir
+      filteredEarnings.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      const earnCards = filteredEarnings.map(e => {
+        const isPast = e.is_past;
+        const statusBadge = isPast 
+          ? `<span class="badge-tag badge-neutral">Publication passée</span>`
+          : `<span class="badge-tag badge-green">À venir</span>`;
+
+        return `
+          <div class="card">
+            <div class="card-header">
+              <span class="ticker-name">${e.ticker}</span>
+              ${statusBadge}
+            </div>
+            <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
+              📅 ${e.date_formatted || e.date}
+            </div>
+            ${e.link ? `<div style="margin-top: 8px;"><a class="news-link" href="${e.link}" target="_blank">Voir l'historique financier →</a></div>` : ''}
+          </div>`;
+      }).join('');
 
       earnCont.innerHTML = earnCards;
     }
