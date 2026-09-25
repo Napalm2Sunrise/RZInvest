@@ -77,6 +77,20 @@
     .section { display: none; min-height: 300px; }
     .section.active { display: block; }
 
+    /* Correction spécifique pour la section Price (Full Screen / Dynamic Height) */
+    #price-tv-sec.active {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 220px);
+      min-height: 500px;
+    }
+
+    #price-tv-container {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+    }
+
     /* Cards */
     .card { background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
     .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
@@ -585,7 +599,7 @@
       }
     }
 
-    /* WIDGET TRADINGVIEW UNIQUE ET ULTRA-RAPIDE (MARKET OVERVIEW) */
+    /* WIDGET TRADINGVIEW UNIQUE AVEC TAILLE ADAPTATIVE À L'ÉCRAN */
     function renderPriceTV() {
       const tvContainer = document.getElementById('price-tv-container');
       if (!tvContainer) return;
@@ -629,10 +643,13 @@
 
       const wrapper = document.createElement('div');
       wrapper.className = 'tradingview-widget-container';
-      wrapper.style.height = '500px';
+      wrapper.style.width = '100%';
+      wrapper.style.height = '100%';
 
       const widgetInner = document.createElement('div');
       widgetInner.className = 'tradingview-widget-container__widget';
+      widgetInner.style.width = '100%';
+      widgetInner.style.height = '100%';
       wrapper.appendChild(widgetInner);
 
       const script = document.createElement('script');
