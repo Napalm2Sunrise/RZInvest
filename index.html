@@ -184,12 +184,13 @@
       text-decoration: underline dotted;
     }
 
-    /* TradingView Widgets Container */
-    .tv-widget-wrapper {
-      margin-bottom: 12px;
-      border-radius: 12px;
+    /* TradingView Ticker Compact Widget Wrapper */
+    .tv-ticker-wrapper {
+      margin-bottom: 6px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 48px;
     }
 
     /* Style Info-bulle Modal / Popup */
@@ -263,7 +264,7 @@
     <div id="news-container"></div>
   </div>
 
-  <!-- SECTION PRICE (TRADINGVIEW WIDGETS) -->
+  <!-- SECTION PRICE (TRADINGVIEW TICKER WIDGETS COMPACTS) -->
   <div id="price-tv-sec" class="section">
     <div id="price-tv-container"></div>
   </div>
@@ -611,11 +612,11 @@
       items.forEach((item, index) => {
         const tvSymbol = getTradingViewSymbol(item.ticker);
         const wrapper = document.createElement('div');
-        wrapper.className = 'tv-widget-wrapper';
+        wrapper.className = 'tv-ticker-wrapper';
 
         const widgetContainer = document.createElement('div');
-        widgetContainer.className = `tradingview-widget-container`;
-        widgetContainer.id = `tv-widget-${index}`;
+        widgetContainer.className = 'tradingview-widget-container';
+        widgetContainer.id = `tv-ticker-${index}`;
 
         const widgetInner = document.createElement('div');
         widgetInner.className = 'tradingview-widget-container__widget';
@@ -623,13 +624,18 @@
 
         const script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js';
+        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-tickers.js';
         script.async = true;
         script.text = JSON.stringify({
-          "symbol": tvSymbol,
-          "width": "100%",
-          "colorTheme": "dark",
+          "symbols": [
+            {
+              "proName": tvSymbol,
+              "title": item.ticker
+            }
+          ],
           "isTransparent": false,
+          "showSymbolLogo": true,
+          "colorTheme": "dark",
           "locale": "fr"
         });
 
@@ -647,7 +653,7 @@
       // 1. News
       await renderNews();
 
-      // 2. Price (TradingView)
+      // 2. Price (TradingView Tickers compacts)
       renderPriceTV();
 
       // 3. Prices
