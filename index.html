@@ -35,6 +35,7 @@
       padding-bottom: 0;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
     
     /* Splash Screen Overlay */
@@ -78,21 +79,24 @@
     .section { display: none; }
     .section.active { display: block; flex: 1; }
 
-    /* CORRECTION DU PADDING ET DE LA HAUTEUR DU TRADINGVIEW WIDGET */
+    /* FIX PWA / WEB APP MOBILE POUR TRADINGVIEW */
     #price-tv-sec.active {
-      display: flex !important;
-      flex-direction: column !important;
-      height: calc(100dvh - 180px) !important;
-      width: 100% !important;
-      margin-bottom: 0;
-      padding-bottom: env(safe-area-inset-bottom);
+      display: block !important;
+      position: absolute !important;
+      top: 155px !important;
+      left: 12px !important;
+      right: 12px !important;
+      bottom: max(12px, env(safe-area-inset-bottom)) !important;
+      height: auto !important;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
       overflow: hidden !important;
     }
 
     #price-tv-container {
       width: 100% !important;
       height: 100% !important;
-      flex: 1 1 auto !important;
       position: relative !important;
     }
 
@@ -105,8 +109,8 @@
       min-height: 100% !important;
       max-height: 100% !important;
       position: absolute !important;
-      top: 0;
-      left: 0;
+      top: 0 !important;
+      left: 0 !important;
     }
 
     /* Cards */
