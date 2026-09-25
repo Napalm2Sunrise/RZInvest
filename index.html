@@ -184,6 +184,14 @@
       text-decoration: underline dotted;
     }
 
+    /* TradingView Widgets Container */
+    .tv-widget-wrapper {
+      margin-bottom: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
     /* Style Info-bulle Modal / Popup */
     .tooltip-box {
       display: none;
@@ -234,6 +242,7 @@
   <!-- ONGLETS DE NAVIGATION PRINCIPAUX -->
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
+    <button class="tab-btn" onclick="switchTab('price-tv-sec', this)">💵 Price</button>
     <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
     <button class="tab-btn" onclick="switchTab('earnings-sec', this)">📅 Pub.</button>
@@ -252,6 +261,11 @@
   <!-- SECTION NEWS -->
   <div id="news-sec" class="section active">
     <div id="news-container"></div>
+  </div>
+
+  <!-- SECTION PRICE (TRADINGVIEW WIDGETS) -->
+  <div id="price-tv-sec" class="section">
+    <div id="price-tv-container"></div>
   </div>
 
   <!-- SECTION PRICES -->
@@ -288,6 +302,34 @@
     
     const MIN_SPLASH_TIME = 1100;
     const startTime = Date.now();
+
+    // Mappage des symboles vers TradingView
+    const TRADINGVIEW_SYMBOL_MAP = {
+      // REITs
+      "AED.BR": "EBR:AED",
+      "CPINV.BR": "EBR:CPINV",
+      "HOMI.BR": "EBR:HOMI",
+      "RET.BR": "EBR:RET",
+      // Stocks
+      "ASML.AS": "EURONEXT:ASML",
+      "AYA.TO": "TSX:AYA",
+      "MC.PA": "EURONEXT:MC",
+      "RMS.PA": "EURONEXT:RMS",
+      "SU.PA": "EURONEXT:SU",
+      "TTE.PA": "EURONEXT:TTE",
+      // Cryptos
+      "BTC-USD": "BINANCE:BTCUSDT",
+      "ETH-USD": "BINANCE:ETHUSDT",
+      "SOL-USD": "BINANCE:SOLUSDT",
+      "HYPE32196-USD": "MEXC:HYPEUSDT"
+    };
+
+    function getTradingViewSymbol(ticker) {
+      if (TRADINGVIEW_SYMBOL_MAP[ticker]) {
+        return TRADINGVIEW_SYMBOL_MAP[ticker];
+      }
+      return ticker.replace('-', '');
+    }
 
     function hideSplashScreen() {
       const splash = document.getElementById('splash-screen');
@@ -437,15 +479,33 @@
       }
     }
 
+    function getSortedFilteredPrices() {
+      if (!globalData || !globalData.prices) return [];
+      
+      const categoryOrder = ['stock', 'reit', 'crypto'];
+      const activeCatsInOrder = categoryOrder.filter(c => activeCategories.includes(c));
+
+      let result = [];
+      activeCatsInOrder.forEach(cat => {
+        const items = globalData.prices.filter(p => (p.category || 'stock') === cat);
+        result = result.concat(items);
+      });
+
+      if (selectedTicker !== 'ALL') {
+        result = result.filter(p => p.ticker === selectedTicker);
+      }
+
+      return result;
+    }
+
     function buildFilters() {
       const select = document.getElementById('ticker-select');
       if (!select || !globalData || !globalData.prices) return;
 
       select.innerHTML = '<option value="ALL">TOUS LES TICKERS</option>';
 
-      const filtered = globalData.prices.filter(p => activeCategories.includes(p.category || 'stock'));
-
-      filtered.forEach(p => {
+      const sortedPrices = getSortedFilteredPrices();
+      sortedPrices.forEach(p => {
         const option = document.createElement('option');
         option.value = p.ticker;
         option.textContent = p.ticker;
@@ -535,6 +595,50 @@
       }
     }
 
+    function renderPriceTV() {
+      const tvContainer = document.getElementById('price-tv-container');
+      if (!tvContainer) return;
+
+      const items = getSortedFilteredPrices();
+
+      if (items.length === 0) {
+        tvContainer.innerHTML = '<div class="empty-msg">Aucun widget disponible pour la sélection actuelle.</div>';
+        return;
+      }
+
+      tvContainer.innerHTML = '';
+
+      items.forEach((item, index) => {
+        const tvSymbol = getTradingViewSymbol(item.ticker);
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tv-widget-wrapper';
+
+        const widgetContainer = document.createElement('div');
+        widgetContainer.className = `tradingview-widget-container`;
+        widgetContainer.id = `tv-widget-${index}`;
+
+        const widgetInner = document.createElement('div');
+        widgetInner.className = 'tradingview-widget-container__widget';
+        widgetContainer.appendChild(widgetInner);
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js';
+        script.async = true;
+        script.text = JSON.stringify({
+          "symbol": tvSymbol,
+          "width": "100%",
+          "colorTheme": "dark",
+          "isTransparent": false,
+          "locale": "fr"
+        });
+
+        widgetContainer.appendChild(script);
+        wrapper.appendChild(widgetContainer);
+        tvContainer.appendChild(wrapper);
+      });
+    }
+
     async function renderAll() {
       if(!globalData) return;
 
@@ -543,10 +647,12 @@
       // 1. News
       await renderNews();
 
-      // 2. Prices
+      // 2. Price (TradingView)
+      renderPriceTV();
+
+      // 3. Prices
       const priceCont = document.getElementById('prices-container');
-      const allPrices = (globalData.prices || []).filter(p => activeCategories.includes(p.category || 'stock'));
-      const filteredPrices = selectedTicker === 'ALL' ? allPrices : allPrices.filter(p => p.ticker === selectedTicker);
+      const filteredPrices = getSortedFilteredPrices();
       const fundList = globalData.fundamentals || [];
 
       if (filteredPrices.length === 0) {
@@ -623,10 +729,10 @@
         priceCont.innerHTML = pricesHtml;
       }
 
-      // 3. Fundamentals
+      // 4. Fundamentals
       renderFundamentals();
 
-      // 4. Earnings / Publications
+      // 5. Earnings / Publications
       renderEarnings();
     }
 
@@ -698,9 +804,8 @@
           </tr>`;
 
         // Récupère uniquement les tickers non-crypto correspondants aux filtres actifs
-        const activeTickers = (globalData.prices || [])
-          .filter(p => nonCryptoActive.includes(p.category || 'stock'))
-          .map(p => p.ticker);
+        const sortedPrices = getSortedFilteredPrices().filter(p => p.category !== 'crypto');
+        const activeTickers = sortedPrices.map(p => p.ticker);
 
         if (activeTickers.length === 0) {
           currentTbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
