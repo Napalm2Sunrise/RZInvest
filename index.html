@@ -184,15 +184,6 @@
       text-decoration: underline dotted;
     }
 
-    /* TradingView Ticker Compact Widget Wrapper */
-    .tv-ticker-wrapper {
-      margin-bottom: 6px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      min-height: 48px;
-    }
-
     /* Style Info-bulle Modal / Popup */
     .tooltip-box {
       display: none;
@@ -264,7 +255,7 @@
     <div id="news-container"></div>
   </div>
 
-  <!-- SECTION PRICE (TRADINGVIEW TICKER WIDGETS COMPACTS) -->
+  <!-- SECTION PRICE (TRADINGVIEW MARKET OVERVIEW UNIQUE) -->
   <div id="price-tv-sec" class="section">
     <div id="price-tv-container"></div>
   </div>
@@ -445,7 +436,6 @@
     function toggleCategory(cat) {
       const index = activeCategories.indexOf(cat);
       if (index > -1) {
-        // Ne permet pas de tout désélectionner
         if (activeCategories.length > 1) {
           activeCategories.splice(index, 1);
         }
@@ -453,7 +443,6 @@
         activeCategories.push(cat);
       }
 
-      // Mettre à jour l'état visuel des boutons
       document.getElementById('cat-stock').classList.toggle('active', activeCategories.includes('stock'));
       document.getElementById('cat-reit').classList.toggle('active', activeCategories.includes('reit'));
       document.getElementById('cat-crypto').classList.toggle('active', activeCategories.includes('crypto'));
@@ -596,53 +585,76 @@
       }
     }
 
+    /* WIDGET TRADINGVIEW UNIQUE ET ULTRA-RAPIDE (MARKET OVERVIEW) */
     function renderPriceTV() {
       const tvContainer = document.getElementById('price-tv-container');
       if (!tvContainer) return;
 
-      const items = getSortedFilteredPrices();
+      const allPrices = globalData.prices || [];
+      let stockSymbols = [];
+      let reitSymbols = [];
+      let cryptoSymbols = [];
 
-      if (items.length === 0) {
-        tvContainer.innerHTML = '<div class="empty-msg">Aucun widget disponible pour la sélection actuelle.</div>';
+      if (selectedTicker === 'ALL') {
+        stockSymbols = allPrices.filter(p => (p.category || 'stock') === 'stock').map(p => ({ s: getTradingViewSymbol(p.ticker), d: p.ticker }));
+        reitSymbols = allPrices.filter(p => p.category === 'reit').map(p => ({ s: getTradingViewSymbol(p.ticker), d: p.ticker }));
+        cryptoSymbols = allPrices.filter(p => p.category === 'crypto').map(p => ({ s: getTradingViewSymbol(p.ticker), d: p.ticker }));
+      } else {
+        const item = allPrices.find(p => p.ticker === selectedTicker);
+        if (item) {
+          const symObj = { s: getTradingViewSymbol(item.ticker), d: item.ticker };
+          if (item.category === 'reit') reitSymbols.push(symObj);
+          else if (item.category === 'crypto') cryptoSymbols.push(symObj);
+          else stockSymbols.push(symObj);
+        }
+      }
+
+      const tabs = [];
+      if (activeCategories.includes('stock') && stockSymbols.length > 0) {
+        tabs.push({ title: "Stocks", symbols: stockSymbols });
+      }
+      if (activeCategories.includes('reit') && reitSymbols.length > 0) {
+        tabs.push({ title: "REITs", symbols: reitSymbols });
+      }
+      if (activeCategories.includes('crypto') && cryptoSymbols.length > 0) {
+        tabs.push({ title: "Crypto", symbols: cryptoSymbols });
+      }
+
+      if (tabs.length === 0) {
+        tvContainer.innerHTML = '<div class="empty-msg">Aucun symbole à afficher pour cette sélection.</div>';
         return;
       }
 
       tvContainer.innerHTML = '';
 
-      items.forEach((item, index) => {
-        const tvSymbol = getTradingViewSymbol(item.ticker);
-        const wrapper = document.createElement('div');
-        wrapper.className = 'tv-ticker-wrapper';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'tradingview-widget-container';
+      wrapper.style.height = '500px';
 
-        const widgetContainer = document.createElement('div');
-        widgetContainer.className = 'tradingview-widget-container';
-        widgetContainer.id = `tv-ticker-${index}`;
+      const widgetInner = document.createElement('div');
+      widgetInner.className = 'tradingview-widget-container__widget';
+      wrapper.appendChild(widgetInner);
 
-        const widgetInner = document.createElement('div');
-        widgetInner.className = 'tradingview-widget-container__widget';
-        widgetContainer.appendChild(widgetInner);
-
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-tickers.js';
-        script.async = true;
-        script.text = JSON.stringify({
-          "symbols": [
-            {
-              "proName": tvSymbol,
-              "title": item.ticker
-            }
-          ],
-          "isTransparent": false,
-          "showSymbolLogo": true,
-          "colorTheme": "dark",
-          "locale": "fr"
-        });
-
-        widgetContainer.appendChild(script);
-        wrapper.appendChild(widgetContainer);
-        tvContainer.appendChild(wrapper);
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
+      script.async = true;
+      script.text = JSON.stringify({
+        "colorTheme": "dark",
+        "dateRange": "1D",
+        "showChart": false,
+        "locale": "fr",
+        "largeChartUrl": "",
+        "isTransparent": false,
+        "showSymbolLogo": true,
+        "showFloatingTooltip": false,
+        "width": "100%",
+        "height": "100%",
+        "tabs": tabs
       });
+
+      wrapper.appendChild(script);
+      tvContainer.appendChild(wrapper);
     }
 
     async function renderAll() {
@@ -653,7 +665,7 @@
       // 1. News
       await renderNews();
 
-      // 2. Price (TradingView Tickers compacts)
+      // 2. Price (TradingView Market Overview)
       renderPriceTV();
 
       // 3. Prices
@@ -745,16 +757,13 @@
     function renderFundamentals() {
       const fundContent = document.getElementById('fund-content');
 
-      // Filtrer les catégories actives pour garder uniquement les actions / REITs
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
 
-      // Si aucune catégorie non-crypto n'est sélectionnée, afficher "Not available for cryptos"
       if (nonCryptoActive.length === 0) {
-        fundContent.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        fundContent.innerHTML = '<div class="empty-msg">Non disponible pour les cryptomonnaies</div>';
         return;
       }
 
-      // Reconstruire la structure du tableau
       fundContent.innerHTML = `
         <div class="table-container" id="fund-table-container">
           <table class="ratios-table">
@@ -766,7 +775,6 @@
       const currentThead = document.getElementById('ratios-thead');
       const currentTbody = document.getElementById('ratios-tbody');
 
-      // Filtrer les fondamentaux aux catégories d'actions/REITs actives uniquement
       const fundList = (globalData.fundamentals || []).filter(f => nonCryptoActive.includes(f.category || 'stock'));
 
       if (selectedTicker !== 'ALL') {
@@ -809,7 +817,6 @@
             <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net % ℹ️</th>
           </tr>`;
 
-        // Récupère uniquement les tickers non-crypto correspondants aux filtres actifs
         const sortedPrices = getSortedFilteredPrices().filter(p => p.category !== 'crypto');
         const activeTickers = sortedPrices.map(p => p.ticker);
 
@@ -840,74 +847,39 @@
       const container = document.getElementById('earnings-container');
       if (!container) return;
 
-      // Filtrer les catégories actives pour garder uniquement les actions / REITs
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
 
-      // Si uniquement des cryptos sont sélectionnées
       if (nonCryptoActive.length === 0) {
-        container.innerHTML = '<div class="empty-msg">Not available for cryptos</div>';
+        container.innerHTML = '<div class="empty-msg">Non disponible pour les cryptomonnaies</div>';
         return;
       }
 
-      const allEarnings = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
-      const filtered = selectedTicker === 'ALL' 
-        ? allEarnings 
-        : allEarnings.filter(e => e.ticker === selectedTicker);
+      let earningsList = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
 
-      if (filtered.length === 0) {
-        container.innerHTML = '<div class="empty-msg">Aucune publication répertoriée.</div>';
+      if (selectedTicker !== 'ALL') {
+        earningsList = earningsList.filter(e => e.ticker === selectedTicker);
+      }
+
+      if (earningsList.length === 0) {
+        container.innerHTML = '<div class="empty-msg">Aucune date de publication disponible pour cette sélection.</div>';
         return;
       }
 
-      const todayStr = new Date().toISOString().split('T')[0];
-
-      const past = filtered.filter(e => e.date < todayStr)
-                           .sort((a, b) => a.date.localeCompare(b.date));
-      
-      const future = filtered.filter(e => e.date >= todayStr)
-                             .sort((a, b) => a.date.localeCompare(b.date));
-
-      let html = '';
-
-      if (past.length > 0) {
-        html += '<div style="font-size: 13px; font-weight: 700; color: #64748b; margin: 12px 0 8px 0;">✅ DÉJÀ PASSÉES (30 derniers jours)</div>';
-        past.forEach(e => {
-          html += createEarningsCard(e);
-        });
-      }
-
-      if (future.length > 0) {
-        html += '<div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin: 20px 0 8px 0;">🔔 À VENIR (Ordre chronologique)</div>';
-        future.forEach(e => {
-          html += createEarningsCard(e);
-        });
-      }
-
-      container.innerHTML = html;
-    }
-
-    function createEarningsCard(e) {
-      const isPast = e.is_past;
-      const badgeClass = isPast ? 'badge-neutral' : 'badge-green';
-      const statusLabel = isPast ? 'Passée' : 'À venir';
-
-      return `
-        <div class="card" style="${isPast ? 'opacity: 0.75;' : ''}">
-          <div class="card-header" style="margin-bottom: 4px;">
+      const cardsHtml = earningsList.map(e => `
+        <div class="card">
+          <div class="card-header">
             <span class="ticker-name">${e.ticker}</span>
-            <span class="badge-tag ${badgeClass}">${statusLabel}</span>
+            <span class="badge-tag badge-neutral">${e.date || 'N/A'}</span>
           </div>
-          <div style="font-size: 14px; font-weight: 700; color: #f8fafc; margin-top: 4px;">
-            📅 Date : <span style="color: #38bdf8;">${e.date_formatted}</span>
+          <div style="font-size: 13px; color: #94a3b8; margin-top: 6px;">
+            Événement : <strong style="color: #f1f5f9;">${e.event || 'Publication des résultats'}</strong>
           </div>
-          <div style="margin-top: 8px;">
-            <a class="news-link" href="${e.link}" target="_blank">🔗 Synthèse des résultats sur Stock Analysis →</a>
-          </div>
-        </div>
-      `;
+        </div>`).join('');
+
+      container.innerHTML = cardsHtml;
     }
 
-    loadData();
+    window.addEventListener('DOMContentLoaded', loadData);
   </script>
 </body>
 </html>
