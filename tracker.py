@@ -422,6 +422,9 @@ def generate_dashboard_data():
         except Exception as e:
             print(f"⚠️ Erreur globale sur {symbol}: {e}")
 
+    # Tri chronologique des publications (passées puis à venir)
+    all_earnings_data.sort(key=lambda x: x["date"])
+
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
         "prices": prices_data,
