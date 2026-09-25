@@ -78,31 +78,35 @@
     .section { display: none; }
     .section.active { display: block; flex: 1; }
 
-    /* FIX CRUCIAL POUR LE WIDGET TRADINGVIEW */
+    /* CORRECTION DU PADDING ET DE LA HAUTEUR DU TRADINGVIEW WIDGET */
     #price-tv-sec.active {
-      display: flex;
-      flex-direction: column;
-      /* On calcule la hauteur totale de l'écran moins le menu supérieur */
-      height: calc(100dvh - 180px);
-      width: 100%;
+      display: flex !important;
+      flex-direction: column !important;
+      height: calc(100dvh - 180px) !important;
+      width: 100% !important;
       margin-bottom: 0;
       padding-bottom: env(safe-area-inset-bottom);
+      overflow: hidden !important;
     }
 
     #price-tv-container {
-      width: 100%;
-      height: 100%;
-      flex: 1;
-      position: relative;
+      width: 100% !important;
+      height: 100% !important;
+      flex: 1 1 auto !important;
+      position: relative !important;
     }
 
-    /* Force l'iframe TradingView à remplir tout son conteneur */
+    /* Force absolue sur l'iframe et ses conteneurs enfants injectés par TradingView */
     #price-tv-container iframe, 
     #price-tv-container .tradingview-widget-container,
     #price-tv-container .tradingview-widget-container__widget {
       width: 100% !important;
       height: 100% !important;
       min-height: 100% !important;
+      max-height: 100% !important;
+      position: absolute !important;
+      top: 0;
+      left: 0;
     }
 
     /* Cards */
@@ -867,41 +871,38 @@
     }
 
     function renderEarnings() {
-      const container = document.getElementById('earnings-container');
-      if (!container) return;
+      const earnCont = document.getElementById('earnings-container');
+      if (!earnCont) return;
 
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
 
       if (nonCryptoActive.length === 0) {
-        container.innerHTML = '<div class="empty-msg">Non disponible pour les cryptomonnaies</div>';
+        earnCont.innerHTML = '<div class="empty-msg">Non disponible pour les cryptomonnaies</div>';
         return;
       }
 
-      let earningsList = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
+      const filteredPrices = getSortedFilteredPrices().filter(p => p.category !== 'crypto');
 
-      if (selectedTicker !== 'ALL') {
-        earningsList = earningsList.filter(e => e.ticker === selectedTicker);
-      }
-
-      if (earningsList.length === 0) {
-        container.innerHTML = '<div class="empty-msg">Aucune date de publication disponible pour cette sélection.</div>';
+      if (filteredPrices.length === 0) {
+        earnCont.innerHTML = '<div class="empty-msg">Aucune publication à venir pour cette sélection.</div>';
         return;
       }
 
-      const cardsHtml = earningsList.map(e => `
+      const earnCards = filteredPrices.map(p => `
         <div class="card">
           <div class="card-header">
-            <span class="ticker-name">${e.ticker}</span>
-            <span class="badge-tag badge-neutral">${e.date || 'N/A'}</span>
+            <span class="ticker-name">${p.ticker}</span>
+            <span class="last-update">Publication</span>
           </div>
-          <div style="font-size: 13px; color: #94a3b8; margin-top: 6px;">
-            Événement : <strong style="color: #f1f5f9;">${e.event || 'Publication des résultats'}</strong>
+          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
+            📅 ${p.earnings || 'Date non disponible'}
           </div>
         </div>`).join('');
 
-      container.innerHTML = cardsHtml;
+      earnCont.innerHTML = earnCards;
     }
 
+    // Chargement initial
     window.addEventListener('DOMContentLoaded', loadData);
   </script>
 </body>
