@@ -545,6 +545,16 @@
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById(secId).classList.add('active');
       btn.classList.add('active');
+
+      // L'onglet Price vient de devenir visible : on (re)construit le widget
+      // TradingView maintenant, une fois que le conteneur a sa vraie hauteur
+      // (top/bottom appliqués), sinon le widget se fige avec une hauteur trop
+      // petite et laisse un vide en bas de l'écran.
+      if (secId === 'price-tv-sec') {
+        requestAnimationFrame(() => {
+          renderPriceTV();
+        });
+      }
     }
 
     async function fetchGoogleNewsForTicker(symbol) {
@@ -619,8 +629,15 @@
 
     /* RENDER DE TRADINGVIEW PLEIN ÉCRAN DYNAMIQUE */
     function renderPriceTV() {
+      const tvSection = document.getElementById('price-tv-sec');
       const tvContainer = document.getElementById('price-tv-container');
-      if (!tvContainer) return;
+      if (!tvContainer || !tvSection) return;
+
+      // IMPORTANT : on ne (re)construit le widget que si son onglet est
+      // actuellement affiché. S'il est caché (display:none), le conteneur
+      // fait 0px de hauteur et le script TradingView fige alors une hauteur
+      // trop petite pour le widget (d'où le vide en bas de l'écran).
+      if (!tvSection.classList.contains('active')) return;
 
       const allPrices = globalData.prices || [];
       let stockSymbols = [];
