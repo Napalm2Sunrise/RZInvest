@@ -15,13 +15,13 @@ REITS_TICKERS = [
 
 STOCKS_TICKERS = [
     "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
-    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "ISRG", "JNJ", 
+    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "GRAB", "ISRG", "JNJ", 
     "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
-    "TMO", "TTE.PA", "TSLA", "VRSN", "VRT", "VST"
+    "TMO", "TTE.PA", "TSLA", "UBER", "VRSN", "VRT", "VST"
 ]
 
 CRYPTO_TICKERS = [
-    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE32196-USD"
+    "BTC-USD", "ETH-USD", "SOL-USD", "HYPE32196-USD", "PUMP-USD", "AAVE-USD", "LINK-USD"
 ]
 
 def clean_val(val, fmt="{:.1f}%"):
