@@ -1,5 +1,5 @@
 {
-  "updated_at": "27/09/2026 à 20:28",
+  "updated_at": "28/09/2026 à 08:18",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -69,14 +69,14 @@
     {
       "ticker": "GMG.AX",
       "category": "reit",
-      "price": 26.38,
-      "change": 0.69,
+      "price": 26.31,
+      "change": -0.27,
       "currency": "$",
-      "sma200": "200 W-SMA Under -8.2% 🔥",
-      "sma200_pct": -8.2,
+      "sma200": "200 W-SMA Under -8.6% 🔥",
+      "sma200_pct": -8.6,
       "is_under": true,
-      "rsi14_weekly": 38.5,
-      "ath_52w_pct": -23.5,
+      "rsi14_weekly": 38.2,
+      "ath_52w_pct": -23.7,
       "earnings": "18/02/2027"
     },
     {
@@ -550,53 +550,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 84722.5,
-      "change": 0.35,
+      "price": 83168.25,
+      "change": -1.53,
       "currency": "$",
-      "sma200": "200 W-SMA Above +28.2%",
-      "sma200_pct": 28.2,
+      "sma200": "200 W-SMA Above +25.9%",
+      "sma200_pct": 25.9,
       "is_under": false,
-      "rsi14_weekly": 62.8,
-      "ath_52w_pct": -8.5,
+      "rsi14_weekly": 60.9,
+      "ath_52w_pct": -10.1,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2696.69,
-      "change": 0.04,
+      "price": 2649.81,
+      "change": -1.41,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.9%",
-      "sma200_pct": 6.9,
+      "sma200": "200 W-SMA Above +5.1%",
+      "sma200_pct": 5.1,
       "is_under": false,
-      "rsi14_weekly": 64.2,
-      "ath_52w_pct": -15.4,
+      "rsi14_weekly": 62.5,
+      "ath_52w_pct": -16.8,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 122.89,
-      "change": 1.2,
+      "price": 118.99,
+      "change": -2.51,
       "currency": "$",
-      "sma200": "200 W-SMA Above +10.8%",
-      "sma200_pct": 10.8,
+      "sma200": "200 W-SMA Above +7.3%",
+      "sma200_pct": 7.3,
       "is_under": false,
-      "rsi14_weekly": 67.5,
-      "ath_52w_pct": -7.8,
+      "rsi14_weekly": 64.7,
+      "ath_52w_pct": -10.8,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 91.99,
-      "change": -0.57,
+      "price": 88.86,
+      "change": -3.09,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 71.0,
-      "ath_52w_pct": -5.3,
+      "rsi14_weekly": 67.9,
+      "ath_52w_pct": -8.6,
       "earnings": "N/A"
     },
     {
@@ -615,54 +615,62 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 155.65,
-      "change": 0.01,
+      "price": 149.6,
+      "change": -3.42,
       "currency": "$",
-      "sma200": "200 W-SMA Above +11.1%",
-      "sma200_pct": 11.1,
+      "sma200": "200 W-SMA Above +6.8%",
+      "sma200_pct": 6.8,
       "is_under": false,
-      "rsi14_weekly": 65.5,
-      "ath_52w_pct": -5.0,
+      "rsi14_weekly": 63.1,
+      "ath_52w_pct": -8.7,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.16,
-      "change": 0.06,
+      "price": 13.84,
+      "change": -1.39,
       "currency": "$",
-      "sma200": "200 W-SMA Above +11.5%",
-      "sma200_pct": 11.5,
+      "sma200": "200 W-SMA Above +8.9%",
+      "sma200_pct": 8.9,
       "is_under": false,
-      "rsi14_weekly": 70.3,
-      "ath_52w_pct": -0.0,
+      "rsi14_weekly": 69.0,
+      "ath_52w_pct": -2.2,
       "earnings": "N/A"
     }
   ],
   "news": [
     {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "Intel CEO Lip-Bu Tan Has Incredible News for AMD Stock Investors",
-      "summary": "The demand for Intel's server CPUs is exceeding supply by a big margin.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/intel-ceo-lip-bu-tan-152301599.html",
-      "date": "2026-09-27T17:23:01+02:00"
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "Seattle tower across from Amazon sold for $12.5M after a $97M deal in 2019. Where smart real estate money is going now",
+      "summary": "A 20-story tower across from Amazon's Seattle headquarters just sold for 87% less than its 2019 valuation, but that doesn't sound the alarm on real estate as an asset class.",
+      "link": "https://finance.yahoo.com/real-estate/articles/seattle-tower-across-amazon-sold-010000009.html",
+      "date": "2026-09-28T03:00:00+02:00"
     },
     {
       "ticker": "AMD",
       "category": "stock",
-      "title": "AMD Just Hit $1 Trillion After A Blistering 194% Surge YTD — Beth Kindig Says The ‘Dark Horse’ Still Has Room To Run",
-      "summary": "Kindig said AMD is now entering a new phase as it seeks to expand its position in the AI accelerator market dominated by Nvidia.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amd-just-hit-1-trillion-140602169.html",
-      "date": "2026-09-27T16:06:02+02:00"
+      "title": "Why Did AMD, HPE, MRNA Stocks Surge To 52-Week Highs Last Week?",
+      "summary": "Investors rewarded companies with strong artificial intelligence demand, enterprise infrastructure, and drug development.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/why-did-amd-hpe-mrna-044757616.html",
+      "date": "2026-09-28T06:47:57+02:00"
     },
     {
       "ticker": "AMD",
       "category": "stock",
-      "title": "Riot Platforms Is Quietly Spending Its Bitcoin — Here’s Why That Matters",
-      "summary": "Key TakeawaysBitcoin mining generated about 92% of Riot’s segment revenue in Q2 2025. By Q2 2026, that share had fallen to about 65%, as mining revenue dropped 19% year over year to $113.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/riot-platforms-quietly-spending-bitcoin-082952769.html",
-      "date": "2026-09-27T10:29:52+02:00"
+      "title": "TSMC 2nm wafer capacity to exceed earlier estimates, EDN reports",
+      "summary": "Investing.com-- Taiwan Semiconductor Manufacturing Co (TW:2330) is accelerating the expansion of its advanced 2-nanometre manufacturing capacity as strong demand from artificial intelligence and high-...",
+      "link": "https://finance.yahoo.com/technology/articles/tsmc-2nm-wafer-capacity-exceed-030730906.html",
+      "date": "2026-09-28T05:07:30+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "AMD Stock And 2 US AI Infrastructure Plays Investors Are Watching",
+      "summary": "AI headlines have moved from product launches to power and politics, as the White House courts Anthropic while courts label it a supply chain risk. That mix of access and anxiety is where pricing gaps...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/amd-stock-2-us-ai-020830560.html",
+      "date": "2026-09-28T04:08:30+02:00"
     },
     {
       "ticker": "AMZN",
@@ -675,18 +683,18 @@
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Is Amazon Stock a Buy, Hold, or Sell Below $250?",
-      "summary": "AWS is accelerating at its fastest pace in 18 quarters and sitting on nearly half a trillion dollars in contracted backlog, yet analyst earnings estimates for 2027 fall below 2026. Something in that m...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stock-buy-hold-sell-181526568.html",
-      "date": "2026-09-27T20:15:26+02:00"
+      "title": "Seattle tower across from Amazon sold for $12.5M after a $97M deal in 2019. Where smart real estate money is going now",
+      "summary": "A 20-story tower across from Amazon's Seattle headquarters just sold for 87% less than its 2019 valuation, but that doesn't sound the alarm on real estate as an asset class.",
+      "link": "https://finance.yahoo.com/real-estate/articles/seattle-tower-across-amazon-sold-010000009.html",
+      "date": "2026-09-28T03:00:00+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "AI’s $10 Trillion Buildout Will Reach 3.6% of GDP. Who’s Going to Pay for It?",
-      "summary": "Big Tech is funneling nearly $200 billion into AI infrastructure every single quarter, a share of the economy larger than the entire railroad expansion. But the balance sheets tell a more complicated ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/ai-10-trillion-buildout-reach-175151308.html",
-      "date": "2026-09-27T19:51:51+02:00"
+      "title": "Amazon (AMZN) Calls for AI Safeguards Without a Slowdown. Can AWS Benefit?",
+      "summary": "On September 17, 2026, Reuters reported that Amazon.com, Inc. (NASDAQ:AMZN) weighed in on the artificial intelligence safety debate, telling Reuters that AI models “should be released when they’re rea...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/amazon-amzn-calls-ai-safeguards-004125272.html",
+      "date": "2026-09-28T02:41:25+02:00"
     },
     {
       "ticker": "ASML.AS",
@@ -695,14 +703,6 @@
       "summary": "TSMC is booking capacity it cannot build fast enough, and a $60 billion capital bet suggests management sees something the market has not yet priced in. Here is what the numbers reveal about how far t...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/price-prediction-tsmc-could-reach-160021255.html",
       "date": "2026-09-27T18:00:21+02:00"
-    },
-    {
-      "ticker": "ASML.AS",
-      "category": "stock",
-      "title": "ASML (ENXTAM:ASML) Stock Could Be Undervalued Following Fresh AI Demand News",
-      "summary": "ASML Holding has ridden a powerful semiconductor and AI equipment cycle, which leaves investors asking whether the current share price is still grounded in its earnings profile. With the stock now ref...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/asml-enxtam-asml-stock-could-230814920.html",
-      "date": "2026-09-27T01:08:14+02:00"
     },
     {
       "ticker": "AVGO",
@@ -723,10 +723,18 @@
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "Broadcom Stock Is Back Where It Ended 2025, but Its Earnings Are About 43% Higher. Is It a Buy?",
-      "summary": "The chip designer's AI forecast has only risen since the stock peaked in June. Has the sell-off gone too far?",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stock-back-where-ended-070301799.html",
-      "date": "2026-09-27T09:03:01+02:00"
+      "title": "Analysts Keep Hiking Broadcom Price Targets, But AVGO Is Flat - Shorting AVGO Puts Is an Attractive Play",
+      "summary": "Analysts keep raising their price targets on chip maker Broadcom (AVGO) since the Sept. 2 release of its fiscal Q3 results. One attractive play is to sell cash-secured out-of-the-money AVGO puts.",
+      "link": "https://finance.yahoo.com/markets/options/articles/analysts-keep-hiking-broadcom-price-140002924.html",
+      "date": "2026-09-27T16:00:02+02:00"
+    },
+    {
+      "ticker": "GEV",
+      "category": "stock",
+      "title": "X-Energy vs. GE Vernova: Is the New IPO the Better Buy?",
+      "summary": "Both companies develop next-generation nuclear reactors, but one stock may offer greater upside.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/x-energy-vs-ge-vernova-025000431.html",
+      "date": "2026-09-28T04:50:00+02:00"
     },
     {
       "ticker": "GEV",
@@ -755,18 +763,26 @@
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "AI’s $10 Trillion Buildout Will Reach 3.6% of GDP. Who’s Going to Pay for It?",
-      "summary": "Big Tech is funneling nearly $200 billion into AI infrastructure every single quarter, a share of the economy larger than the entire railroad expansion. But the balance sheets tell a more complicated ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/ai-10-trillion-buildout-reach-175151308.html",
-      "date": "2026-09-27T19:51:51+02:00"
+      "title": "Nvidia, Micron, Alphabet, Oracle and Adobe are part of Zacks Earnings Preview",
+      "summary": "Nvidia, Micron and Alphabet headline a broad-based Q3 earnings outlook, while Oracle and Adobe kick off the season with early results.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-micron-alphabet-oracle-adobe-050100697.html",
+      "date": "2026-09-28T07:01:00+02:00"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Michael Burry sends a stark warning to Big Tech stock investors",
-      "summary": "Michael Burry just went through five balance sheets and came back with a warning nobody on Wall Street wants to hear.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-sends-stark-warning-173300477.html",
-      "date": "2026-09-27T19:33:00+02:00"
+      "title": "META, GOOGL, NVDA, BB, SPCX: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
+      "summary": "Tech stocks drew strong attention last week as Meta advanced on AI agents, Nvidia looks to benefit from China chip demand, and BlackBerry posted strong QNX results.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/meta-googl-nvda-bb-spcx-013812151.html",
+      "date": "2026-09-28T03:38:12+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "Gilead or Johnson & Johnson: Is Faster Growth Better than Greater Diversification?",
+      "summary": "Gilead Sciences, Inc. (NASDAQ:GILD) and Johnson & Johnson (NYSE:JNJ) offer investors two very different versions of pharmaceutical growth. Gilead is expanding faster, powered by an HIV franchise that ...",
+      "link": "https://finance.yahoo.com/healthcare/articles/gilead-johnson-johnson-faster-growth-231245830.html",
+      "date": "2026-09-28T01:12:45+02:00"
     },
     {
       "ticker": "META",
@@ -775,6 +791,22 @@
       "summary": "Meta went from an AI laggard to a leader in the course of a week.",
       "link": "https://finance.yahoo.com/markets/article/out-of-nowhere-came-muse-wall-street-weighs-in-on-metas-ai-catch-up-moment-131134524.html",
       "date": "2026-09-27T15:11:34+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "Does Meta (META)’s Advertising Scale Make Brief Outages Financially Irrelevant?",
+      "summary": "Outages at Meta Platforms, Inc. (NASDAQ:META)’s platforms don’t usually move the stock, but they do tend to raise the same question each time they recur. On September 20, Reuters reported that Faceboo...",
+      "link": "https://finance.yahoo.com/media-advertising/articles/does-meta-meta-advertising-scale-015812951.html",
+      "date": "2026-09-28T03:58:12+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "META, GOOGL, NVDA, BB, SPCX: Why Retail Traders Couldn’t Take Their Eyes Off These Stocks Last Week",
+      "summary": "Tech stocks drew strong attention last week as Meta advanced on AI agents, Nvidia looks to benefit from China chip demand, and BlackBerry posted strong QNX results.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/meta-googl-nvda-bb-spcx-013812151.html",
+      "date": "2026-09-28T03:38:12+02:00"
     },
     {
       "ticker": "MSFT",
@@ -787,42 +819,50 @@
     {
       "ticker": "MSFT",
       "category": "stock",
-      "title": "AI’s $10 Trillion Buildout Will Reach 3.6% of GDP. Who’s Going to Pay for It?",
-      "summary": "Big Tech is funneling nearly $200 billion into AI infrastructure every single quarter, a share of the economy larger than the entire railroad expansion. But the balance sheets tell a more complicated ...",
-      "link": "https://finance.yahoo.com/technology/ai/articles/ai-10-trillion-buildout-reach-175151308.html",
-      "date": "2026-09-27T19:51:51+02:00"
+      "title": "Microsoft Corporation (MSFT) Wants AI to Do More. Can Customers Keep Up?",
+      "summary": "On September 25, Microsoft Corporation (NASDAQ:MSFT) announced a comprehensive overhaul of its Copilot ecosystem, introducing a central workspace structure consisting of Home, Code, and Autopilot. Hom...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-corporation-msft-wants-ai-035156310.html",
+      "date": "2026-09-28T05:51:56+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "Bill Gates warns AI global framework talks harder than Cold War-era nuclear negotiations",
+      "summary": "Microsoft founder Bill Gates has warned that getting countries to agree on a global framework for AI could be more difficult than Cold War-era negotiations to restrict nuclear weapons.  In an intervie...",
+      "link": "https://finance.yahoo.com/news/bill-gates-warns-ai-global-014000975.html",
+      "date": "2026-09-28T03:40:00+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "category": "stock",
+      "title": "Nebius Is Raising the Price of Its AI Compute on Oct. 1. Here's What That Says About the Shortage.",
+      "summary": "Why would a cloud company in the middle of a huge build-out charge more for the chips anybody can rent by the hour?",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nebius-raising-price-ai-compute-235801614.html",
+      "date": "2026-09-28T01:58:01+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Nvidia (NVDA) Stock Could Trade At A Discount Despite Its 10x Run",
-      "summary": "NVIDIA Corporation has become one of the defining stocks of the AI buildout, and the latest question for investors is whether its current price can be explained by the cash flows its chips and softwar...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-could-trade-180708684.html",
-      "date": "2026-09-27T20:07:08+02:00"
+      "title": "Gorilla Technology Targets $500M Revenue as Asia AI GPU Deployments Accelerate",
+      "summary": "Gorilla Technology Group (NASDAQ:GRRR) executives said the company is expanding from its traditional software and cybersecurity operations into AI infrastructure, GPU-as-a-service and sovereign AI pro...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/gorilla-technology-targets-500m-revenue-060158413.html",
+      "date": "2026-09-28T08:01:58+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Lululemon (LULU) Stock Is 80% Below Its All-Time High: 1 Metric That Shows How Bearish Wall Street Has Become.",
-      "summary": "Once a high-flying stock posting huge returns, this premium apparel brand has fallen out of favor.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/lululemon-lulu-stock-80-below-180500773.html",
-      "date": "2026-09-27T20:05:00+02:00"
+      "title": "If You'd Invested $10,000 in Tesla (TSLA) 10 Years Ago, Here's How Much You'd Have Today",
+      "summary": "Despite trading 24% off its peak, this business has been a huge moneymaker for its early shareholders.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/youd-invested-10-000-tesla-052000969.html",
+      "date": "2026-09-28T07:20:00+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Is VOO Near an All-Time High a Better Buy Than Lululemon Stock Trading Under $105 Per Share?",
-      "summary": "Value investors might lean toward the apparel stock, but that's a risky proposition.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/voo-near-time-high-better-173800540.html",
-      "date": "2026-09-27T19:38:00+02:00"
-    },
-    {
-      "ticker": "ONON",
-      "category": "stock",
-      "title": "On Holding (ONON) Is Up 9.9% After Buyback, Mbappé Deal And Board Move - Has The Bull Case Changed?",
-      "summary": "On Holding AG recently appointed Electronic Arts executive Laura Miele as Lead Independent Director, reiterated its 2026 earnings guidance, and authorized a share repurchase program of up to US$1,000....",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/holding-onon-9-9-buyback-061141025.html",
-      "date": "2026-09-27T08:11:41+02:00"
+      "title": "Nvidia, Micron, Alphabet, Oracle and Adobe are part of Zacks Earnings Preview",
+      "summary": "Nvidia, Micron and Alphabet headline a broad-based Q3 earnings outlook, while Oracle and Adobe kick off the season with early results.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-micron-alphabet-oracle-adobe-050100697.html",
+      "date": "2026-09-28T07:01:00+02:00"
     },
     {
       "ticker": "PG",
@@ -833,6 +873,30 @@
       "date": "2026-09-27T14:00:09+02:00"
     },
     {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Planet Labs (PL) vs. SpaceX: Can New Space Exploration (SPCX) Support Long-Term Growth?",
+      "summary": "Planet Labs PBC (NYSE:PL) announced on September 25 that its Pelican-12 satellite has arrived at Cape Canaveral Space Force Station in Florida ahead of its launch aboard Space Exploration Technologies...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/planet-labs-pl-vs-spacex-035631653.html",
+      "date": "2026-09-28T05:56:31+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Billionaire investor makes stunning $15 trillion Musk call",
+      "summary": "Longtime Musk backer sees an unexpected AI opportunity emerging",
+      "link": "https://finance.yahoo.com/technology/ai/articles/billionaire-investor-makes-stunning-15-031700980.html",
+      "date": "2026-09-28T05:17:00+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "S&P Global Expands into Onchain Finance with OpenZeppelin Deal",
+      "summary": "S&P Global Inc. (NYSE:SPGI) has agreed to acquire OpenZeppelin, a provider of smart-contract security infrastructure for onchain finance. OpenZeppelin’s Contracts library underpins more than $37 trill...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/p-global-expands-onchain-finance-201624952.html",
+      "date": "2026-09-27T22:16:24+02:00"
+    },
+    {
       "ticker": "SPGI",
       "category": "stock",
       "title": "Bond Volatility Has Charles Schwab Stock And MarketAxess In Focus",
@@ -841,28 +905,100 @@
       "date": "2026-09-27T11:09:07+02:00"
     },
     {
-      "ticker": "BTC-USD",
-      "category": "crypto",
-      "title": "Is It Too Late to Buy XRP After a 42% Rally in Two Months?",
-      "summary": "XRP just posted one of crypto's sharpest two-month runs, but late buyers face a tricky setup with key support and resistance levels closing in on both sides.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/too-buy-xrp-42-rally-162450782.html",
-      "date": "2026-09-27T18:24:50+02:00"
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Pfizer vs. Thermo Fisher: Which Healthcare Turnaround has More Upside?",
+      "summary": "Pfizer Inc. (NYSE:PFE) and Thermo Fisher Scientific Inc. (NYSE:TMO) are both trying to put difficult post-pandemic periods behind them, but their recoveries look very different. Thermo Fisher is benef...",
+      "link": "https://finance.yahoo.com/healthcare/articles/pfizer-vs-thermo-fisher-healthcare-225147227.html",
+      "date": "2026-09-28T00:51:47+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "category": "stock",
+      "title": "HSBC sets new Chevron price target amid Iran tensions",
+      "summary": "HSBC cites Chevron’s oil sensitivity and low Middle East exposure as reasons for a new price target.",
+      "link": "https://finance.yahoo.com/energy/articles/hsbc-sets-chevron-price-target-233700233.html",
+      "date": "2026-09-28T01:37:00+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "If You'd Invested $10,000 in Tesla (TSLA) 10 Years Ago, Here's How Much You'd Have Today",
+      "summary": "Despite trading 24% off its peak, this business has been a huge moneymaker for its early shareholders.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/youd-invested-10-000-tesla-052000969.html",
+      "date": "2026-09-28T07:20:00+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "Tesla (TSLA) is Expanding Beyond Passenger Cars. Can it Unlock Another Growth Engine?",
+      "summary": "On September 25, Tesla, Inc. (NASDAQ:TSLA) officially began customer deliveries of its long-delayed Semi electric truck following a launch event at its Sparks, Nevada facility. The milestone marks Tes...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-expanding-beyond-passenger-040648208.html",
+      "date": "2026-09-28T06:06:48+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "Billionaire investor makes stunning $15 trillion Musk call",
+      "summary": "Longtime Musk backer sees an unexpected AI opportunity emerging",
+      "link": "https://finance.yahoo.com/technology/ai/articles/billionaire-investor-makes-stunning-15-031700980.html",
+      "date": "2026-09-28T05:17:00+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Can Costco (COST) and Uber (UBER) Make Warehouse Delivery Economically Attractive?",
+      "summary": "Costco Wholesale Corporation (NASDAQ:COST) has spent years resisting the idea that its warehouse model needs a delivery layer, and that resistance is easing fast. The company recently expanded its Ube...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/costco-cost-uber-uber-warehouse-014003044.html",
+      "date": "2026-09-28T03:40:03+02:00"
+    },
+    {
+      "ticker": "VRT",
+      "category": "stock",
+      "title": "Western Digital Stock Is Just One Of 3 Top AI Infrastructure Picks",
+      "summary": "The AI boom is now reshaping bond markets, with long term yields hitting levels last seen in the mid 2000s as heavy spending on AI infrastructure meets higher interest rates. That mix is draining chea...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/western-digital-stock-just-one-010948739.html",
+      "date": "2026-09-28T03:09:48+02:00"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Hyperliquid vs Solana: Which Has More Upside by 2030?",
-      "summary": "Hyperliquid has exploded while Solana stumbles, but hidden token supply and insider unlocks could flip the entire picture before 2030 even arrives.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/hyperliquid-vs-solana-more-upside-161555774.html",
-      "date": "2026-09-27T18:15:55+02:00"
+      "title": "Cipher Digital (CIFR) Extends Barber Lake Deal to $9 Billion and 300 MW",
+      "summary": "Cipher Digital (NasdaqGS:CIFR) agreed a 10-year, US$5.2b extension to its Fluidstack contract at Barber Lake, announced in late September 2026. The Fluidstack term at Barber Lake now runs 20 years in ...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/cipher-digital-cifr-extends-barber-001501326.html",
+      "date": "2026-09-28T02:15:01+02:00"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Grant Cardone Says Commercial Real Estate Faces Historic Crash - Sees Bitcoin As A 'Complementary Asset'",
-      "summary": "Real estate investor Grant Cardone said 5-year borrowing costs are 6.4%, pressuring property values as $1 trillion in commercial loans mature in six months.",
-      "link": "https://finance.yahoo.com/real-estate/articles/grant-cardone-says-commercial-real-153801606.html",
-      "date": "2026-09-27T17:38:01+02:00"
+      "title": "Strategy (MSTR) Proposes Daily Dividends On Four Preferred Shares",
+      "summary": "MicroStrategy (NasdaqGS:MSTR) has proposed shifting its four US-listed preferred shares to a daily dividend payment schedule. The plan covers preferred tickers STRF, STRC, STRK, and STRD, with dividen...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/strategy-mstr-proposes-daily-dividends-221020022.html",
+      "date": "2026-09-28T00:10:20+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "Is XRP a Good Investment Right Now at $1.54?",
+      "summary": "XRP has clawed back 54% from its summer lows, but resistance keeps capping every rally while its 2026 losses outpace every other major crypto. Before buying at current prices, there are key levels tha...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/xrp-good-investment-now-1-204253936.html",
+      "date": "2026-09-27T22:42:53+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Can Arbitrum Reach $1? What It Would Take, and Why Ethereum Could Decide It",
+      "summary": "Arbitrum just staged a stunning rally from near record lows, but the real question is whether one blockchain project holds the key to its next move and whether that project is even healthy enough to h...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/arbitrum-reach-1-why-ethereum-205030516.html",
+      "date": "2026-09-27T22:50:30+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Is XRP a Good Investment Right Now at $1.54?",
+      "summary": "XRP has clawed back 54% from its summer lows, but resistance keeps capping every rally while its 2026 losses outpace every other major crypto. Before buying at current prices, there are key levels tha...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/xrp-good-investment-now-1-204253936.html",
+      "date": "2026-09-27T22:42:53+02:00"
     },
     {
       "ticker": "ETH-USD",
@@ -873,20 +1009,12 @@
       "date": "2026-09-27T18:24:50+02:00"
     },
     {
-      "ticker": "ETH-USD",
+      "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Bitcoin vs Ethereum: Which Gets Back to Its All-Time High First?",
-      "summary": "Bitcoin and Ethereum are both racing to reclaim their all-time highs, but the gap each coin must close tells very different stories about which one gets there first.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-vs-ethereum-gets-back-145758926.html",
-      "date": "2026-09-27T16:57:58+02:00"
-    },
-    {
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "title": "Ethereum Has Beaten Bitcoin for Three Months. Is the Flippening Trade Back?",
-      "summary": "Ethereum has crushed Bitcoin for three straight months, and traders are dusting off one of crypto's most controversial predictions. But the numbers behind the flippening tell a far more complicated st...",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/ethereum-beaten-bitcoin-three-months-144820502.html",
-      "date": "2026-09-27T16:48:20+02:00"
+      "title": "Is XRP a Good Investment Right Now at $1.54?",
+      "summary": "XRP has clawed back 54% from its summer lows, but resistance keeps capping every rally while its 2026 losses outpace every other major crypto. Before buying at current prices, there are key levels tha...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/xrp-good-investment-now-1-204253936.html",
+      "date": "2026-09-27T22:42:53+02:00"
     },
     {
       "ticker": "SOL-USD",
@@ -905,12 +1033,12 @@
       "date": "2026-09-27T18:15:55+02:00"
     },
     {
-      "ticker": "SOL-USD",
+      "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "title": "Solana News: Ex-Binance and Polygon Execs Join the Solana Foundation",
-      "summary": "In Solana news, the Solana Foundation recently announced the hiring of Rachel Conlan, former Chief Marketing Officer at Binance, as Chief Strategy Officer, and Jamal Raees, a veteran from Polygon Labs...",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/solana-news-ex-binance-polygon-153000667.html",
-      "date": "2026-09-27T17:30:00+02:00"
+      "title": "How Investing in This Altcoin Could Make You a Millionaire",
+      "summary": "Hyperliquid is up big in 2026. But how much longer can it sustain this momentum?",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/investing-altcoin-could-millionaire-013500534.html",
+      "date": "2026-09-28T03:35:00+02:00"
     },
     {
       "ticker": "HYPE32196-USD",
@@ -927,14 +1055,6 @@
       "summary": "Binance slapped its high-risk Seed Tag on Hyperliquid despite HYPE ranking among the top twelve cryptocurrencies by market cap, and the listing immediately triggered a price drop as whale wallets star...",
       "link": "https://finance.yahoo.com/markets/crypto/articles/binance-high-risk-seed-tag-113057051.html",
       "date": "2026-09-27T13:30:57+02:00"
-    },
-    {
-      "ticker": "HYPE32196-USD",
-      "category": "crypto",
-      "title": "What Changed for Hyperliquid ETFs in September?",
-      "summary": "Hyperliquid's spot ETFs ballooned to $502 million in September, yet the investors actually putting money in were heading for the exits. Find out who stepped in to fill that gap and what it signals for...",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/changed-hyperliquid-etfs-september-183744829.html",
-      "date": "2026-09-26T20:37:44+02:00"
     },
     {
       "ticker": "LINK-USD",
@@ -1248,7 +1368,7 @@
       "ticker": "GMG.AX",
       "category": "reit",
       "rev_growth": "+65.8%",
-      "pe": "16.6x",
+      "pe": "16.5x",
       "ev": "23.3x",
       "roe": "11.5%",
       "peg": "2.72",
@@ -1273,7 +1393,7 @@
           "80.4%"
         ],
         "Fwd P/E": [
-          "16.6x",
+          "16.5x",
           "N/A",
           "N/A",
           "N/A"
@@ -2156,7 +2276,7 @@
       "ticker": "GOOG",
       "category": "stock",
       "rev_growth": "+24.2%",
-      "pe": "22.9x",
+      "pe": "22.6x",
       "ev": "23.5x",
       "roe": "48.7%",
       "peg": "1.22",
@@ -2184,7 +2304,7 @@
           "21.2%"
         ],
         "Fwd P/E": [
-          "22.9x",
+          "22.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -2698,7 +2818,7 @@
       "ticker": "ONON",
       "category": "stock",
       "rev_growth": "+13.5%",
-      "pe": "14.6x",
+      "pe": "14.7x",
       "ev": "19.0x",
       "roe": "24.0%",
       "peg": "0.48",
@@ -2726,7 +2846,7 @@
           "4.7%"
         ],
         "Fwd P/E": [
-          "14.6x",
+          "14.7x",
           "N/A",
           "N/A",
           "N/A",
