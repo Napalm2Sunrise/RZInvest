@@ -1,30 +1,30 @@
 {
-  "updated_at": "29/09/2026 à 13:13",
+  "updated_at": "29/09/2026 à 13:30",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 64.25,
-      "change": 0.08,
+      "price": 64.2,
+      "change": 0.0,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.3% 🔥",
-      "sma200_pct": -0.3,
+      "sma200": "200 W-SMA Under -0.4% 🔥",
+      "sma200_pct": -0.4,
       "is_under": true,
-      "rsi14_weekly": 37.1,
-      "ath_52w_pct": -18.9,
+      "rsi14_weekly": 37.0,
+      "ath_52w_pct": -19.0,
       "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.3,
-      "change": 0.82,
+      "price": 12.34,
+      "change": 1.15,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.8% 🔥",
-      "sma200_pct": -3.8,
+      "sma200": "200 W-SMA Under -3.5% 🔥",
+      "sma200_pct": -3.5,
       "is_under": true,
-      "rsi14_weekly": 47.3,
-      "ath_52w_pct": -11.6,
+      "rsi14_weekly": 48.0,
+      "ath_52w_pct": -11.4,
       "earnings": "04/11/2026"
     },
     {
@@ -43,14 +43,14 @@
     {
       "ticker": "RET.BR",
       "category": "reit",
-      "price": 63.2,
-      "change": -0.47,
+      "price": 63.1,
+      "change": -0.63,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.5% 🔥",
-      "sma200_pct": -0.5,
+      "sma200": "200 W-SMA Under -0.6% 🔥",
+      "sma200_pct": -0.6,
       "is_under": true,
-      "rsi14_weekly": 38.9,
-      "ath_52w_pct": -11.7,
+      "rsi14_weekly": 38.6,
+      "ath_52w_pct": -11.9,
       "earnings": "13/11/2026"
     },
     {
@@ -173,14 +173,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1593.6,
-      "change": 3.68,
+      "price": 1592.0,
+      "change": 3.58,
       "currency": "€",
-      "sma200": "200 W-SMA Above +90.4%",
-      "sma200_pct": 90.4,
+      "sma200": "200 W-SMA Above +90.2%",
+      "sma200_pct": 90.2,
       "is_under": false,
       "rsi14_weekly": 61.7,
-      "ath_52w_pct": -7.4,
+      "ath_52w_pct": -7.5,
       "earnings": "14/10/2026"
     },
     {
@@ -329,14 +329,14 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 398.1,
-      "change": -0.18,
+      "price": 396.95,
+      "change": -0.46,
       "currency": "€",
-      "sma200": "200 W-SMA Under -38.5% 🔥",
-      "sma200_pct": -38.5,
+      "sma200": "200 W-SMA Under -38.7% 🔥",
+      "sma200_pct": -38.7,
       "is_under": true,
-      "rsi14_weekly": 30.4,
-      "ath_52w_pct": -39.0,
+      "rsi14_weekly": 30.0,
+      "ath_52w_pct": -39.1,
       "earnings": "26/01/2027"
     },
     {
@@ -392,6 +392,19 @@
       "earnings": "11/11/2026"
     },
     {
+      "ticker": "PEP",
+      "category": "stock",
+      "price": 128.5,
+      "change": -0.1,
+      "currency": "$",
+      "sma200": "200 W-SMA Under -19.9% 🔥",
+      "sma200_pct": -19.9,
+      "is_under": true,
+      "rsi14_weekly": 32.0,
+      "ath_52w_pct": -24.6,
+      "earnings": "08/10/2026"
+    },
+    {
       "ticker": "PG",
       "category": "stock",
       "price": 149.03,
@@ -407,14 +420,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1376.5,
-      "change": -0.36,
+      "price": 1372.0,
+      "change": -0.69,
       "currency": "€",
-      "sma200": "200 W-SMA Under -31.8% 🔥",
-      "sma200_pct": -31.8,
+      "sma200": "200 W-SMA Under -32.0% 🔥",
+      "sma200_pct": -32.0,
       "is_under": true,
-      "rsi14_weekly": 33.4,
-      "ath_52w_pct": -38.8,
+      "rsi14_weekly": 33.1,
+      "ath_52w_pct": -39.0,
       "earnings": "11/02/2027"
     },
     {
@@ -446,13 +459,13 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 299.9,
-      "change": 3.24,
+      "price": 299.85,
+      "change": 3.22,
       "currency": "€",
       "sma200": "200 W-SMA Above +39.7%",
       "sma200_pct": 39.7,
       "is_under": false,
-      "rsi14_weekly": 59.6,
+      "rsi14_weekly": 59.7,
       "ath_52w_pct": -3.6,
       "earnings": "25/02/2027"
     },
@@ -472,14 +485,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 78.49,
-      "change": -1.89,
+      "price": 78.29,
+      "change": -2.14,
       "currency": "€",
-      "sma200": "200 W-SMA Above +29.3%",
-      "sma200_pct": 29.3,
+      "sma200": "200 W-SMA Above +28.9%",
+      "sma200_pct": 28.9,
       "is_under": false,
-      "rsi14_weekly": 58.6,
-      "ath_52w_pct": -3.2,
+      "rsi14_weekly": 58.2,
+      "ath_52w_pct": -3.4,
       "earnings": "29/10/2026"
     },
     {
@@ -550,53 +563,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83969.79,
-      "change": 0.58,
+      "price": 84075.57,
+      "change": 0.7,
       "currency": "$",
-      "sma200": "200 W-SMA Above +27.1%",
-      "sma200_pct": 27.1,
+      "sma200": "200 W-SMA Above +27.2%",
+      "sma200_pct": 27.2,
       "is_under": false,
-      "rsi14_weekly": 62.1,
-      "ath_52w_pct": -6.2,
+      "rsi14_weekly": 62.2,
+      "ath_52w_pct": -6.1,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2715.72,
-      "change": 1.05,
+      "price": 2719.7,
+      "change": 1.19,
       "currency": "$",
-      "sma200": "200 W-SMA Above +7.7%",
-      "sma200_pct": 7.7,
+      "sma200": "200 W-SMA Above +7.8%",
+      "sma200_pct": 7.8,
       "is_under": false,
-      "rsi14_weekly": 64.7,
-      "ath_52w_pct": -10.1,
+      "rsi14_weekly": 64.8,
+      "ath_52w_pct": -10.0,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 119.2,
-      "change": 0.31,
+      "price": 119.39,
+      "change": 0.47,
       "currency": "$",
-      "sma200": "200 W-SMA Above +7.5%",
-      "sma200_pct": 7.5,
+      "sma200": "200 W-SMA Above +7.7%",
+      "sma200_pct": 7.7,
       "is_under": false,
       "rsi14_weekly": 65.0,
-      "ath_52w_pct": -7.9,
+      "ath_52w_pct": -7.7,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 88.26,
-      "change": 0.84,
+      "price": 88.53,
+      "change": 1.15,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 67.4,
-      "ath_52w_pct": -9.2,
+      "rsi14_weekly": 67.5,
+      "ath_52w_pct": -8.9,
       "earnings": "N/A"
     },
     {
@@ -615,27 +628,27 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 166.77,
-      "change": 11.69,
+      "price": 170.08,
+      "change": 13.91,
       "currency": "$",
-      "sma200": "200 W-SMA Above +18.9%",
-      "sma200_pct": 18.9,
+      "sma200": "200 W-SMA Above +21.3%",
+      "sma200_pct": 21.3,
       "is_under": false,
-      "rsi14_weekly": 68.3,
-      "ath_52w_pct": -0.3,
+      "rsi14_weekly": 68.9,
+      "ath_52w_pct": 0.1,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 15.34,
-      "change": -0.68,
+      "price": 15.37,
+      "change": -0.52,
       "currency": "$",
-      "sma200": "200 W-SMA Above +20.7%",
-      "sma200_pct": 20.7,
+      "sma200": "200 W-SMA Above +20.9%",
+      "sma200_pct": 20.9,
       "is_under": false,
       "rsi14_weekly": 73.6,
-      "ath_52w_pct": -0.6,
+      "ath_52w_pct": -0.5,
       "earnings": "N/A"
     }
   ],
@@ -2451,6 +2464,67 @@
       }
     },
     {
+      "ticker": "PEP",
+      "category": "stock",
+      "rev_growth": "+6.4%",
+      "pe": "14.4x",
+      "ev": "11.5x",
+      "roe": "51.5%",
+      "peg": "1.32",
+      "net_margin": "10.8%",
+      "quarters": [
+        "2026 (TTM)",
+        "2025",
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "history": {
+        "Croit. CA.": [
+          "+6.4%",
+          "+2.3%",
+          "+0.4%",
+          "+5.9%",
+          "N/A"
+        ],
+        "Marge Net %": [
+          "10.8%",
+          "8.8%",
+          "10.4%",
+          "9.9%",
+          "10.3%"
+        ],
+        "Fwd P/E": [
+          "14.4x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "EV/EBITDA": [
+          "11.5x",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        "ROE": [
+          "51.5%",
+          "42.9%",
+          "52.4%",
+          "50.9%",
+          "52.0%"
+        ],
+        "PEG": [
+          "1.32",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
+        ]
+      }
+    },
+    {
       "ticker": "PG",
       "category": "stock",
       "rev_growth": "+1.5%",
@@ -2508,7 +2582,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "27.4x",
+      "pe": "27.3x",
       "ev": "19.1x",
       "roe": "25.5%",
       "peg": "3.07",
@@ -2536,7 +2610,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "27.4x",
+          "27.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -3193,6 +3267,14 @@
       "date_formatted": "10/09/2026",
       "is_past": true,
       "link": "https://stockanalysis.com/stocks/cprt/financials/?p=quarterly"
+    },
+    {
+      "ticker": "PEP",
+      "category": "stock",
+      "date": "2026-10-08",
+      "date_formatted": "08/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/pep/financials/?p=quarterly"
     },
     {
       "ticker": "JNJ",
