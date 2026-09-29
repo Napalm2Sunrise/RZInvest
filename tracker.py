@@ -16,7 +16,7 @@ REITS_TICKERS = [
 STOCKS_TICKERS = [
     "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
     "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GEV", "GOOG", "GRAB", "ISRG", "JNJ", 
-    "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
+    "META", "MC.PA", "MSFT", "NBIS", "NVDA", "ONON", "PEP", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
     "TMO", "TTE.PA", "TSLA", "UBER", "VRSN", "VRT", "VST"
 ]
 
