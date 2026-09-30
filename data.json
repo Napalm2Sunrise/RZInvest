@@ -1,56 +1,56 @@
 {
-  "updated_at": "30/09/2026 à 11:14",
+  "updated_at": "30/09/2026 à 12:14",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 64.55,
-      "change": 0.31,
+      "price": 64.28,
+      "change": -0.12,
       "currency": "€",
-      "sma200": "200 W-SMA Above +0.2%",
-      "sma200_pct": 0.2,
-      "is_under": false,
-      "rsi14_weekly": 37.8,
-      "ath_52w_pct": -18.5,
-      "earnings": "17/02/2027"
+      "sma200": "200 W-SMA Under -0.2% 🔥",
+      "sma200_pct": -0.2,
+      "is_under": true,
+      "rsi14_weekly": 37.1,
+      "ath_52w_pct": -18.9,
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.34,
-      "change": -0.32,
+      "price": 12.3,
+      "change": -0.65,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.5% 🔥",
-      "sma200_pct": -3.5,
+      "sma200": "200 W-SMA Under -3.8% 🔥",
+      "sma200_pct": -3.8,
       "is_under": true,
-      "rsi14_weekly": 48.0,
-      "ath_52w_pct": -11.4,
+      "rsi14_weekly": 47.3,
+      "ath_52w_pct": -11.6,
       "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
       "category": "reit",
-      "price": 17.82,
-      "change": 0.79,
+      "price": 17.72,
+      "change": 0.23,
       "currency": "€",
-      "sma200": "200 W-SMA Under -1.7% 🔥",
-      "sma200_pct": -1.7,
+      "sma200": "200 W-SMA Under -2.3% 🔥",
+      "sma200_pct": -2.3,
       "is_under": true,
-      "rsi14_weekly": 39.9,
-      "ath_52w_pct": -11.8,
+      "rsi14_weekly": 38.8,
+      "ath_52w_pct": -12.3,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
       "category": "reit",
-      "price": 63.4,
-      "change": -0.31,
+      "price": 63.0,
+      "change": -0.94,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.2% 🔥",
-      "sma200_pct": -0.2,
+      "sma200": "200 W-SMA Under -0.8% 🔥",
+      "sma200_pct": -0.8,
       "is_under": true,
-      "rsi14_weekly": 39.4,
-      "ath_52w_pct": -11.5,
+      "rsi14_weekly": 38.3,
+      "ath_52w_pct": -12.0,
       "earnings": "13/11/2026"
     },
     {
@@ -173,14 +173,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1616.4,
-      "change": 0.95,
+      "price": 1607.6,
+      "change": 0.4,
       "currency": "€",
-      "sma200": "200 W-SMA Above +93.1%",
-      "sma200_pct": 93.1,
+      "sma200": "200 W-SMA Above +92.1%",
+      "sma200_pct": 92.1,
       "is_under": false,
-      "rsi14_weekly": 63.0,
-      "ath_52w_pct": -6.1,
+      "rsi14_weekly": 62.4,
+      "ath_52w_pct": -6.6,
       "earnings": "14/10/2026"
     },
     {
@@ -329,14 +329,14 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 394.5,
-      "change": -0.03,
+      "price": 393.55,
+      "change": -0.27,
       "currency": "€",
-      "sma200": "200 W-SMA Under -39.1% 🔥",
-      "sma200_pct": -39.1,
+      "sma200": "200 W-SMA Under -39.2% 🔥",
+      "sma200_pct": -39.2,
       "is_under": true,
-      "rsi14_weekly": 29.6,
-      "ath_52w_pct": -39.5,
+      "rsi14_weekly": 29.4,
+      "ath_52w_pct": -39.6,
       "earnings": "26/01/2027"
     },
     {
@@ -420,14 +420,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1357.0,
-      "change": 0.33,
+      "price": 1354.5,
+      "change": 0.15,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.7% 🔥",
-      "sma200_pct": -32.7,
+      "sma200": "200 W-SMA Under -32.8% 🔥",
+      "sma200_pct": -32.8,
       "is_under": true,
-      "rsi14_weekly": 31.7,
-      "ath_52w_pct": -39.7,
+      "rsi14_weekly": 31.4,
+      "ath_52w_pct": -39.8,
       "earnings": "11/02/2027"
     },
     {
@@ -459,14 +459,14 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 294.8,
-      "change": -0.52,
+      "price": 293.7,
+      "change": -0.89,
       "currency": "€",
-      "sma200": "200 W-SMA Above +37.4%",
-      "sma200_pct": 37.4,
+      "sma200": "200 W-SMA Above +36.9%",
+      "sma200_pct": 36.9,
       "is_under": false,
-      "rsi14_weekly": 57.8,
-      "ath_52w_pct": -5.2,
+      "rsi14_weekly": 57.4,
+      "ath_52w_pct": -5.6,
       "earnings": "25/02/2027"
     },
     {
@@ -485,14 +485,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 76.18,
-      "change": -1.32,
+      "price": 76.31,
+      "change": -1.15,
       "currency": "€",
-      "sma200": "200 W-SMA Above +25.5%",
-      "sma200_pct": 25.5,
+      "sma200": "200 W-SMA Above +25.7%",
+      "sma200_pct": 25.7,
       "is_under": false,
-      "rsi14_weekly": 54.0,
-      "ath_52w_pct": -6.0,
+      "rsi14_weekly": 54.3,
+      "ath_52w_pct": -5.8,
       "earnings": "29/10/2026"
     },
     {
@@ -563,53 +563,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83254.5,
-      "change": -0.44,
+      "price": 83674.02,
+      "change": 0.06,
       "currency": "$",
-      "sma200": "200 W-SMA Above +26.0%",
-      "sma200_pct": 26.0,
+      "sma200": "200 W-SMA Above +26.6%",
+      "sma200_pct": 26.6,
       "is_under": false,
-      "rsi14_weekly": 61.0,
-      "ath_52w_pct": -7.0,
+      "rsi14_weekly": 61.7,
+      "ath_52w_pct": -6.5,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2677.53,
-      "change": 0.03,
+      "price": 2687.92,
+      "change": 0.42,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.2%",
-      "sma200_pct": 6.2,
+      "sma200": "200 W-SMA Above +6.6%",
+      "sma200_pct": 6.6,
       "is_under": false,
-      "rsi14_weekly": 63.5,
-      "ath_52w_pct": -11.4,
+      "rsi14_weekly": 64.1,
+      "ath_52w_pct": -11.1,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 118.66,
-      "change": -0.33,
+      "price": 119.26,
+      "change": 0.17,
       "currency": "$",
-      "sma200": "200 W-SMA Above +7.0%",
-      "sma200_pct": 7.0,
+      "sma200": "200 W-SMA Above +7.6%",
+      "sma200_pct": 7.6,
       "is_under": false,
-      "rsi14_weekly": 64.4,
-      "ath_52w_pct": -7.5,
+      "rsi14_weekly": 65.0,
+      "ath_52w_pct": -7.0,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 86.33,
-      "change": 0.37,
+      "price": 86.35,
+      "change": 0.39,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
       "rsi14_weekly": 65.6,
-      "ath_52w_pct": -11.2,
+      "ath_52w_pct": -11.1,
       "earnings": "N/A"
     },
     {
@@ -628,27 +628,27 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 160.47,
-      "change": -2.87,
+      "price": 160.6,
+      "change": -2.79,
       "currency": "$",
-      "sma200": "200 W-SMA Above +14.5%",
-      "sma200_pct": 14.5,
+      "sma200": "200 W-SMA Above +14.6%",
+      "sma200_pct": 14.6,
       "is_under": false,
-      "rsi14_weekly": 66.7,
-      "ath_52w_pct": -2.9,
+      "rsi14_weekly": 66.8,
+      "ath_52w_pct": -2.8,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.34,
-      "change": -1.8,
+      "price": 14.35,
+      "change": -1.67,
       "currency": "$",
-      "sma200": "200 W-SMA Above +12.8%",
-      "sma200_pct": 12.8,
+      "sma200": "200 W-SMA Above +12.9%",
+      "sma200_pct": 12.9,
       "is_under": false,
-      "rsi14_weekly": 70.8,
-      "ath_52w_pct": -7.2,
+      "rsi14_weekly": 70.9,
+      "ath_52w_pct": -7.0,
       "earnings": "N/A"
     }
   ],
@@ -712,26 +712,10 @@
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "These 3 AI Stocks Are Poised to Be Big Winners from Amazon's Choice to Block Meta's Muse",
-      "summary": "Amazon may have backed out of a tremendous opportunity, and these three AI stocks are set to benefit from it.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/3-ai-stocks-poised-big-075000889.html",
-      "date": "2026-09-30T09:50:00+02:00"
-    },
-    {
-      "ticker": "AMZN",
-      "category": "stock",
-      "title": "Amazon (AMZN) and Apple (AAPL) Must Face a UK Class Action Over Marketplace Sales",
-      "summary": "Amazon.com, Inc. (NASDAQ:AMZN) and Apple Inc. (NASDAQ:AAPL) were told on September 28 that part of a consumer class action against them can proceed, after a ruling by Britain’s Competition Appeal Trib...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-apple-aapl-must-060818438.html",
-      "date": "2026-09-30T08:08:18+02:00"
-    },
-    {
-      "ticker": "AMZN",
-      "category": "stock",
-      "title": "SPCX CEO Elon Musk Warns Delta Will ‘Lose A Lot Of Customers’ Over Starlink Snub — Even as Rival United Already Has 600+ Jets Connected",
-      "summary": "Space Exploration Technologies Corp. CEO Elon Musk warned that Delta Air Lines Inc. could lose business by not offering Starlink internet on its flights. Starlink Snub By Delta? In a post on X on Mond...",
-      "link": "https://finance.yahoo.com/technology/articles/spcx-ceo-elon-musk-warns-013006834.html",
-      "date": "2026-09-30T03:30:06+02:00"
+      "title": "Market Chatter: Alibaba's AliExpress Tests VIP Program for High-Spending Customers",
+      "summary": "Alibaba Group's (BABA) AliExpress is testing an invitation-only VIP program for high-spending custom",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-alibaba-apos-aliexpress-092210179.html",
+      "date": "2026-09-30T11:22:10+02:00"
     },
     {
       "ticker": "ASML.AS",
@@ -782,14 +766,6 @@
       "date": "2026-09-30T05:11:14+02:00"
     },
     {
-      "ticker": "CPRT",
-      "category": "stock",
-      "title": "1 Cash-Producing Stock to Keep an Eye On and 2 Facing Challenges",
-      "summary": "A company that generates cash isn’t automatically a winner. Some businesses stockpile cash but fail to reinvest wisely, limiting their ability to expand.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-keep-091901511.html",
-      "date": "2026-09-29T11:19:01+02:00"
-    },
-    {
       "ticker": "GEV",
       "category": "stock",
       "title": "1 Cash-Heavy Stock with Exciting Potential and 2 We Turn Down",
@@ -824,10 +800,18 @@
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Zacks Investment Ideas feature highlights: Advanced Micro Devices, Micron, Nebius, Alphabet, Meta Platform and Apple",
-      "summary": "META's Muse is reshaping the agentic AI race with massive distribution, user data and a free offering.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/zacks-investment-ideas-feature-highlights-061700846.html",
-      "date": "2026-09-30T08:17:00+02:00"
+      "title": "AI in America has a huge 1.7 million job shortage problem",
+      "summary": "Got skilled workers?",
+      "link": "https://finance.yahoo.com/technology/article/ai-in-america-has-a-huge-17-million-job-shortage-problem-100847922.html",
+      "date": "2026-09-30T12:08:47+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Intuitive Surgical (ISRG) Stock Looks Fairly Valued Following Strong Q2 Results",
+      "summary": "Intuitive Surgical has delivered a 43.1% gain over the past three years, even as the stock has been weaker more recently. This puts fresh focus on whether the current US$412.18 share price is properly...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/intuitive-surgical-isrg-stock-looks-090845585.html",
+      "date": "2026-09-30T11:08:45+02:00"
     },
     {
       "ticker": "ISRG",
@@ -844,14 +828,6 @@
       "summary": "Look at the breakdown of Intuitive Surgical's revenue streams—Instruments and Accessories alone generate roughly 60% of the top line on a per-procedure basis. That tight link between surgery volume an...",
       "link": "https://finance.yahoo.com/markets/stocks/articles/really-understand-isrg-stocks-risk-192658023.html",
       "date": "2026-09-29T21:26:58+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Here is What to Know Beyond Why Intuitive Surgical, Inc. (ISRG) is a Trending Stock",
-      "summary": "Zacks.com users have recently been watching Intuitive Surgical (ISRG) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-intuitive-surgical-120002819.html",
-      "date": "2026-09-29T14:00:02+02:00"
     },
     {
       "ticker": "JNJ",
@@ -888,18 +864,18 @@
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Are Meta, AMD, and Micron to thank for the September rally?",
-      "summary": "Yahoo Finance Executive Editor Brian Sozzi takes a closer look at how Big Tech companies like Meta Platforms (META), Advanced Micro Devices (AMD), and Micron Technology (MU) may be running the late Se...",
-      "link": "https://finance.yahoo.com/video/are-meta-amd-and-micron-to-thank-for-the-september-rally-143000810.html",
-      "date": "2026-09-29T16:30:00+02:00"
+      "title": "OpenAI debuts Dots AI agents in challenge to Meta's popular Muse agent",
+      "summary": "OpenAI debuted its Dots AI agent at its DevDay 2026.",
+      "link": "https://finance.yahoo.com/technology/article/openai-debuts-dots-ai-agents-in-challenge-to-metas-popular-muse-agent-174616593.html",
+      "date": "2026-09-29T19:46:16+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Is it time to buy the dip on tech?",
-      "summary": "Turney Duff chats with Barron's associate editor Al Root, Kelly Intelligence founder and CEO Kevin Kelly, and Cleo Capital managing director Sarah Kunst about whether it's time to buy the dip on tech ...",
-      "link": "https://finance.yahoo.com/video/time-buy-dip-tech-120000592.html",
-      "date": "2026-09-29T14:00:00+02:00"
+      "title": "A closer look at Anthropic's 2025 losses, Dan Ives discusses AI safety risks",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi takes on the biggest stories as the trading day kicks off, weighing in on Anthropic's (ANTH.PVT) leaked IPO prospectus and Advanced Micro Devices' (AMD) deal...",
+      "link": "https://finance.yahoo.com/video/closer-look-anthropics-2025-losses-141434926.html",
+      "date": "2026-09-29T16:14:34+02:00"
     },
     {
       "ticker": "MC.PA",
@@ -908,6 +884,14 @@
       "summary": "The partnership will bring Sephora shop-in-shops to 100 M&S locations across high streets and retail parks nationwide.",
       "link": "https://finance.yahoo.com/media-advertising/articles/m-teams-sephora-shop-shop-135653606.html",
       "date": "2026-09-29T15:56:53+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "AI in America has a huge 1.7 million job shortage problem",
+      "summary": "Got skilled workers?",
+      "link": "https://finance.yahoo.com/technology/article/ai-in-america-has-a-huge-17-million-job-shortage-problem-100847922.html",
+      "date": "2026-09-30T12:08:47+02:00"
     },
     {
       "ticker": "MSFT",
@@ -924,14 +908,6 @@
       "summary": "CEO Satya Nadella transformed Microsoft into a cloud business; now he's betting hundreds of billions on it.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-grown-roughly-14-083400982.html",
       "date": "2026-09-30T10:34:00+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "MongoDB (MDB) Is Down 21.2% After CEO Desai’s Sudden Exit to Join Meta Platforms",
-      "summary": "In late September 2026, MongoDB, Inc. announced that CEO and President Chirantan “CJ” Desai resigned to take a senior role at Meta Platforms, with longtime former chief Dev Ittycheria returning as int...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/mongodb-mdb-down-21-2-060617608.html",
-      "date": "2026-09-30T08:06:17+02:00"
     },
     {
       "ticker": "NBIS",
@@ -976,18 +952,18 @@
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Dan Ives: Physical AI is the 'holy grail' for Nvidia",
-      "summary": "Yorkville Ives Partner and Senior Managing Director Dan Ives joins Yahoo Finance Executive Editor Brian Sozzi to discuss Nvidia's (NVDA) future and how more spending will come with the expansion of ph...",
-      "link": "https://finance.yahoo.com/video/dan-ives-physical-ai-is-the-holy-grail-for-nvidia-143722023.html",
-      "date": "2026-09-29T16:37:22+02:00"
+      "title": "'This is a problem': The pope counters Jensen Huang on AI safety",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi reacts to Pope Leo XIV responding to Nvidia (NVDA) CEO Jensen Huang's stance on AI safety.",
+      "link": "https://finance.yahoo.com/video/problem-pope-counters-jensen-huang-144918914.html",
+      "date": "2026-09-29T16:49:18+02:00"
     },
     {
       "ticker": "PEP",
       "category": "stock",
-      "title": "Why PepsiCo just got hit with a downgrade despite the stock trading at a 52-week low",
-      "summary": "JPM with the hot take on PEP.",
-      "link": "https://finance.yahoo.com/markets/stocks/article/why-pepsico-just-got-hit-with-a-downgrade-despite-the-stock-trading-at-a-52-week-low-094331873.html",
-      "date": "2026-09-29T11:43:31+02:00"
+      "title": "Pepsi Just Extended Its Dividend Streak Again. Here's the Annual Income on $10,000.",
+      "summary": "A 4% hike in July brings the stock's forward yield to 4.6%.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/pepsi-just-extended-dividend-streak-095700317.html",
+      "date": "2026-09-30T11:57:00+02:00"
     },
     {
       "ticker": "PEP",
@@ -1120,18 +1096,18 @@
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Why Are Nasdaq Futures Rising Premarket? MU, TSLA, CAPR, VNDA, ASTS, HOOD, BA Stocks In Focus",
-      "summary": "On Stocktwits, retail sentiment toward SPY and QQQ stayed ‘bullish.’",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-nasdaq-futures-rising-premarket-082953927.html",
-      "date": "2026-09-30T10:29:53+02:00"
+      "title": "How Tesla Semi could add billions to the EV maker's financials",
+      "summary": "It could add up for the Semi.",
+      "link": "https://finance.yahoo.com/markets/stocks/article/how-tesla-semi-could-add-billions-to-the-ev-makers-financials-131419347.html",
+      "date": "2026-09-29T15:14:19+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Zacks Investment Ideas feature highlights: Tesla",
-      "summary": "TSLA's Roadster delay takes a back seat as robotaxi growth, Cybercab production and FSD adoption reshape its story.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-054600634.html",
-      "date": "2026-09-30T07:46:00+02:00"
+      "title": "AI companies just signed a White House accord -- this is all that tech people are talking about after it",
+      "summary": "Eyes on tech penmanship.",
+      "link": "https://finance.yahoo.com/technology/article/ai-companies-just-signed-a-white-house-accord----this-is-all-that-tech-people-are-talking-about-after-it-095852998.html",
+      "date": "2026-09-30T11:58:52+02:00"
     },
     {
       "ticker": "UBER",
@@ -1156,6 +1132,14 @@
       "summary": "Shopify's revenue growth rate outpaces Uber's, yet their absolute scale gap has held steady over eight quarters.",
       "link": "https://finance.yahoo.com/markets/stocks/articles/ubers-total-revenue-trounces-shopifys-190701823.html",
       "date": "2026-09-29T21:07:01+02:00"
+    },
+    {
+      "ticker": "VRSN",
+      "category": "stock",
+      "title": "Warren Buffett's Successor, Greg Abel, Has Over $42 Billion of Berkshire Hathaway's Capital Invested in 3 Virtual Monopolies",
+      "summary": "Amid a year of big changes for Berkshire Hathaway, the search for value and businesses with sustainable competitive edges remains the same.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffetts-successor-greg-abel-092601870.html",
+      "date": "2026-09-30T11:26:01+02:00"
     },
     {
       "ticker": "VRSN",
@@ -1208,18 +1192,18 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Ethereum ETFs Snap 7-Day Inflow Streak as Bitcoin Funds Keep Buying",
-      "summary": "Ethereum ETFs posted a $2.81 million outflow on September 29, ending a 7-day inflow run as ETH slid 3.32% over 7 days.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/ethereum-etfs-snap-7-day-073134394.html",
-      "date": "2026-09-30T09:31:34+02:00"
+      "title": "How Much of Your Portfolio Should Actually Be in Crypto?",
+      "summary": "Crypto bulls and cautious savers rarely agree, but financial experts like Clark Howard and the Ramsey hosts have carved out surprisingly similar rules for when and how much to invest. The answer depen...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/much-portfolio-actually-crypto-100011206.html",
+      "date": "2026-09-30T12:00:11+02:00"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "Will BlackRock Launch an XRP ETF?",
-      "summary": "BlackRock runs the biggest Bitcoin and Ethereum ETFs in the US, yet it skipped every XRP filing deadline while seven rivals already hold billions in the asset. The reason behind that decision could re...",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/blackrock-launch-xrp-etf-072551075.html",
-      "date": "2026-09-30T09:25:51+02:00"
+      "title": "British Bitcoin Treasury Gets Green Light for UK's First BTC-Backed Preferred Stock",
+      "summary": "The Smarter Web shareholders approved MORE preferred shares, followed by FCA prospectus approval and the IPO launch. The offering targets £15 million- £ 25 million, ...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/british-bitcoin-treasury-gets-green-094715978.html",
+      "date": "2026-09-30T11:47:15+02:00"
     },
     {
       "ticker": "ETH-USD",
@@ -1232,18 +1216,26 @@
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "title": "Ethereum ETFs Snap 7-Day Inflow Streak as Bitcoin Funds Keep Buying",
-      "summary": "Ethereum ETFs posted a $2.81 million outflow on September 29, ending a 7-day inflow run as ETH slid 3.32% over 7 days.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/ethereum-etfs-snap-7-day-073134394.html",
-      "date": "2026-09-30T09:31:34+02:00"
+      "title": "How Much of Your Portfolio Should Actually Be in Crypto?",
+      "summary": "Crypto bulls and cautious savers rarely agree, but financial experts like Clark Howard and the Ramsey hosts have carved out surprisingly similar rules for when and how much to invest. The answer depen...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/much-portfolio-actually-crypto-100011206.html",
+      "date": "2026-09-30T12:00:11+02:00"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "title": "Will BlackRock Launch an XRP ETF?",
-      "summary": "BlackRock runs the biggest Bitcoin and Ethereum ETFs in the US, yet it skipped every XRP filing deadline while seven rivals already hold billions in the asset. The reason behind that decision could re...",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/blackrock-launch-xrp-etf-072551075.html",
-      "date": "2026-09-30T09:25:51+02:00"
+      "title": "Tom Lee Says ETH Could Top $10,000 In The Next 12 Months, Calls Arthur Hayes' Year-End Target 'Conservative'",
+      "summary": "Tom Lee said crypto treasury companies could ramp up buying over the next 12 to 18 months, potentially tightening ETH supply.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/tom-lee-says-eth-could-095641303.html",
+      "date": "2026-09-30T11:56:41+02:00"
+    },
+    {
+      "ticker": "SOL-USD",
+      "category": "crypto",
+      "title": "How Much of Your Portfolio Should Actually Be in Crypto?",
+      "summary": "Crypto bulls and cautious savers rarely agree, but financial experts like Clark Howard and the Ramsey hosts have carved out surprisingly similar rules for when and how much to invest. The answer depen...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/much-portfolio-actually-crypto-100011206.html",
+      "date": "2026-09-30T12:00:11+02:00"
     },
     {
       "ticker": "SOL-USD",
@@ -1260,14 +1252,6 @@
       "summary": "Bitcoin, Ethereum, XRP, and Solana have all taken significant hits over the past year, leaving long-term investors wondering which one has the fundamentals to survive the next decade and actually grow...",
       "link": "https://finance.yahoo.com/markets/crypto/articles/best-crypto-buy-hold-10-071810133.html",
       "date": "2026-09-30T09:18:10+02:00"
-    },
-    {
-      "ticker": "SOL-USD",
-      "category": "crypto",
-      "title": "Chainlink vs Solana: Which Is the Better Buy After Chainlink’s 96% Quarter?",
-      "summary": "Chainlink just outpaced Solana by a wide margin this quarter, but momentum alone does not crown a winner when one asset is seven times smaller and still sitting 71% below its peak.",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/chainlink-vs-solana-better-buy-070024291.html",
-      "date": "2026-09-30T09:00:24+02:00"
     },
     {
       "ticker": "HYPE32196-USD",
@@ -1437,7 +1421,7 @@
       "ticker": "HOMI.BR",
       "category": "reit",
       "rev_growth": "+18.2%",
-      "pe": "14.1x",
+      "pe": "14.0x",
       "ev": "24.3x",
       "roe": "11.2%",
       "peg": "N/A",
@@ -1465,7 +1449,7 @@
           "175.8%"
         ],
         "Fwd P/E": [
-          "14.1x",
+          "14.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2094,7 +2078,7 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+21.3%",
-      "pe": "31.3x",
+      "pe": "31.1x",
       "ev": "45.2x",
       "roe": "53.9%",
       "peg": "1.07",
@@ -2122,7 +2106,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "31.3x",
+          "31.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2765,7 +2749,7 @@
       "ticker": "META",
       "category": "stock",
       "rev_growth": "+28.0%",
-      "pe": "21.1x",
+      "pe": "21.2x",
       "ev": "17.4x",
       "roe": "29.8%",
       "peg": "0.95",
@@ -2793,7 +2777,7 @@
           "19.9%"
         ],
         "Fwd P/E": [
-          "21.1x",
+          "21.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2826,7 +2810,7 @@
       "ticker": "MC.PA",
       "category": "stock",
       "rev_growth": "-2.9%",
-      "pe": "15.9x",
+      "pe": "16.0x",
       "ev": "11.0x",
       "roe": "16.6%",
       "peg": "1.51",
@@ -2854,7 +2838,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "15.9x",
+          "16.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -3239,7 +3223,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "27.0x",
+      "pe": "27.2x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.15",
@@ -3267,7 +3251,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "27.0x",
+          "27.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -3415,7 +3399,7 @@
       "ticker": "SU.PA",
       "category": "stock",
       "rev_growth": "+9.8%",
-      "pe": "24.3x",
+      "pe": "24.2x",
       "ev": "21.5x",
       "roe": "18.6%",
       "peg": "1.54",
@@ -3443,7 +3427,7 @@
           "10.2%"
         ],
         "Fwd P/E": [
-          "24.3x",
+          "24.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -3781,7 +3765,7 @@
       "ticker": "VRT",
       "category": "stock",
       "rev_growth": "+24.1%",
-      "pe": "27.2x",
+      "pe": "27.1x",
       "ev": "35.8x",
       "roe": "43.9%",
       "peg": "0.82",
@@ -3809,7 +3793,7 @@
           "1.3%"
         ],
         "Fwd P/E": [
-          "27.2x",
+          "27.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3901,6 +3885,14 @@
     }
   ],
   "earnings": [
+    {
+      "ticker": "CPINV.BR",
+      "category": "reit",
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
+    },
     {
       "ticker": "AVGO",
       "category": "stock",
@@ -4228,14 +4220,6 @@
       "date_formatted": "11/02/2027",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/rms/financials/?p=quarterly"
-    },
-    {
-      "ticker": "AED.BR",
-      "category": "reit",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://stockanalysis.com/stocks/aed/financials/?p=quarterly"
     },
     {
       "ticker": "GMG.AX",
