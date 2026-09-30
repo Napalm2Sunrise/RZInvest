@@ -1,5 +1,5 @@
 {
-  "updated_at": "29/09/2026 à 22:14",
+  "updated_at": "30/09/2026 à 08:17",
   "prices": [
     {
       "ticker": "AED.BR",
@@ -10,7 +10,7 @@
       "sma200": "200 W-SMA Under -0.1% 🔥",
       "sma200_pct": -0.1,
       "is_under": true,
-      "rsi14_weekly": 37.3,
+      "rsi14_weekly": 37.0,
       "ath_52w_pct": -18.8,
       "earnings": "17/02/2027"
     },
@@ -23,7 +23,7 @@
       "sma200": "200 W-SMA Under -3.1% 🔥",
       "sma200_pct": -3.1,
       "is_under": true,
-      "rsi14_weekly": 48.7,
+      "rsi14_weekly": 45.5,
       "ath_52w_pct": -11.1,
       "earnings": "04/11/2026"
     },
@@ -36,7 +36,7 @@
       "sma200": "200 W-SMA Under -2.5% 🔥",
       "sma200_pct": -2.5,
       "is_under": true,
-      "rsi14_weekly": 38.4,
+      "rsi14_weekly": 36.8,
       "ath_52w_pct": -12.5,
       "earnings": "N/A"
     },
@@ -49,15 +49,15 @@
       "sma200": "200 W-SMA Above +0.2%",
       "sma200_pct": 0.2,
       "is_under": false,
-      "rsi14_weekly": 40.0,
+      "rsi14_weekly": 39.7,
       "ath_52w_pct": -11.2,
       "earnings": "13/11/2026"
     },
     {
       "ticker": "PLD",
       "category": "reit",
-      "price": 132.62,
-      "change": 0.14,
+      "price": 132.61,
+      "change": 0.13,
       "currency": "$",
       "sma200": "200 W-SMA Above +8.6%",
       "sma200_pct": 8.6,
@@ -69,14 +69,14 @@
     {
       "ticker": "GMG.AX",
       "category": "reit",
-      "price": 26.17,
-      "change": -0.49,
+      "price": 27.23,
+      "change": 4.07,
       "currency": "$",
-      "sma200": "200 W-SMA Under -9.1% 🔥",
-      "sma200_pct": -9.1,
+      "sma200": "200 W-SMA Under -5.4% 🔥",
+      "sma200_pct": -5.4,
       "is_under": true,
-      "rsi14_weekly": 37.8,
-      "ath_52w_pct": -24.1,
+      "rsi14_weekly": 43.0,
+      "ath_52w_pct": -21.1,
       "earnings": "18/02/2027"
     },
     {
@@ -176,10 +176,10 @@
       "price": 1601.2,
       "change": 4.18,
       "currency": "€",
-      "sma200": "200 W-SMA Above +91.3%",
-      "sma200_pct": 91.3,
+      "sma200": "200 W-SMA Above +91.4%",
+      "sma200_pct": 91.4,
       "is_under": false,
-      "rsi14_weekly": 62.1,
+      "rsi14_weekly": 58.6,
       "ath_52w_pct": -7.0,
       "earnings": "14/10/2026"
     },
@@ -244,7 +244,7 @@
       "sma200": "200 W-SMA Above +15.5%",
       "sma200_pct": 15.5,
       "is_under": false,
-      "rsi14_weekly": 49.2,
+      "rsi14_weekly": 49.1,
       "ath_52w_pct": -16.4,
       "earnings": "29/10/2026"
     },
@@ -335,7 +335,7 @@
       "sma200": "200 W-SMA Under -39.1% 🔥",
       "sma200_pct": -39.1,
       "is_under": true,
-      "rsi14_weekly": 29.6,
+      "rsi14_weekly": 30.7,
       "ath_52w_pct": -39.5,
       "earnings": "26/01/2027"
     },
@@ -413,7 +413,7 @@
       "sma200": "200 W-SMA Under -4.7% 🔥",
       "sma200_pct": -4.7,
       "is_under": true,
-      "rsi14_weekly": 52.3,
+      "rsi14_weekly": 52.2,
       "ath_52w_pct": -11.3,
       "earnings": "22/10/2026"
     },
@@ -426,7 +426,7 @@
       "sma200": "200 W-SMA Under -32.9% 🔥",
       "sma200_pct": -32.9,
       "is_under": true,
-      "rsi14_weekly": 31.2,
+      "rsi14_weekly": 33.9,
       "ath_52w_pct": -39.9,
       "earnings": "11/02/2027"
     },
@@ -454,7 +454,7 @@
       "is_under": true,
       "rsi14_weekly": 42.1,
       "ath_52w_pct": -24.1,
-      "earnings": "29/10/2026"
+      "earnings": "27/10/2026"
     },
     {
       "ticker": "SU.PA",
@@ -465,7 +465,7 @@
       "sma200": "200 W-SMA Above +38.1%",
       "sma200_pct": 38.1,
       "is_under": false,
-      "rsi14_weekly": 58.3,
+      "rsi14_weekly": 56.0,
       "ath_52w_pct": -4.7,
       "earnings": "25/02/2027"
     },
@@ -479,7 +479,7 @@
       "sma200_pct": 27.2,
       "is_under": false,
       "rsi14_weekly": 74.0,
-      "ath_52w_pct": -0.0,
+      "ath_52w_pct": 0.0,
       "earnings": "21/10/2026"
     },
     {
@@ -491,7 +491,7 @@
       "sma200": "200 W-SMA Above +28.6%",
       "sma200_pct": 28.6,
       "is_under": false,
-      "rsi14_weekly": 57.8,
+      "rsi14_weekly": 62.0,
       "ath_52w_pct": -3.6,
       "earnings": "29/10/2026"
     },
@@ -558,58 +558,58 @@
       "is_under": false,
       "rsi14_weekly": 44.4,
       "ath_52w_pct": -33.2,
-      "earnings": "05/11/2026"
+      "earnings": "06/11/2026"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83523.12,
-      "change": 0.04,
+      "price": 83124.95,
+      "change": -0.6,
       "currency": "$",
-      "sma200": "200 W-SMA Above +26.4%",
-      "sma200_pct": 26.4,
+      "sma200": "200 W-SMA Above +25.8%",
+      "sma200_pct": 25.8,
       "is_under": false,
-      "rsi14_weekly": 61.4,
-      "ath_52w_pct": -6.7,
+      "rsi14_weekly": 60.8,
+      "ath_52w_pct": -7.1,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2689.53,
-      "change": 0.07,
+      "price": 2665.52,
+      "change": -0.42,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.6%",
-      "sma200_pct": 6.6,
+      "sma200": "200 W-SMA Above +5.7%",
+      "sma200_pct": 5.7,
       "is_under": false,
-      "rsi14_weekly": 64.0,
-      "ath_52w_pct": -11.0,
+      "rsi14_weekly": 63.1,
+      "ath_52w_pct": -11.8,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 118.85,
-      "change": 0.01,
+      "price": 118.67,
+      "change": -0.33,
       "currency": "$",
-      "sma200": "200 W-SMA Above +7.2%",
-      "sma200_pct": 7.2,
+      "sma200": "200 W-SMA Above +7.0%",
+      "sma200_pct": 7.0,
       "is_under": false,
-      "rsi14_weekly": 64.6,
-      "ath_52w_pct": -8.1,
+      "rsi14_weekly": 64.5,
+      "ath_52w_pct": -8.3,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 85.28,
-      "change": -2.56,
+      "price": 85.83,
+      "change": -0.21,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 64.6,
-      "ath_52w_pct": -12.2,
+      "rsi14_weekly": 65.1,
+      "ath_52w_pct": -11.7,
       "earnings": "N/A"
     },
     {
@@ -628,27 +628,27 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 165.89,
-      "change": 11.1,
+      "price": 161.9,
+      "change": -2.01,
       "currency": "$",
-      "sma200": "200 W-SMA Above +18.3%",
-      "sma200_pct": 18.3,
+      "sma200": "200 W-SMA Above +15.5%",
+      "sma200_pct": 15.5,
       "is_under": false,
-      "rsi14_weekly": 67.9,
-      "ath_52w_pct": 0.2,
+      "rsi14_weekly": 67.1,
+      "ath_52w_pct": -0.2,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.66,
-      "change": -5.11,
+      "price": 14.36,
+      "change": -1.66,
       "currency": "$",
-      "sma200": "200 W-SMA Above +15.3%",
-      "sma200_pct": 15.3,
+      "sma200": "200 W-SMA Above +12.9%",
+      "sma200_pct": 12.9,
       "is_under": false,
-      "rsi14_weekly": 71.7,
-      "ath_52w_pct": -5.1,
+      "rsi14_weekly": 70.9,
+      "ath_52w_pct": -7.0,
       "earnings": "N/A"
     }
   ],
@@ -720,7 +720,7 @@
       "category": "reit",
       "rev_growth": "+11.9%",
       "pe": "11.1x",
-      "ev": "18.0x",
+      "ev": "18.1x",
       "roe": "9.4%",
       "peg": "N/A",
       "net_margin": "77.4%",
@@ -754,7 +754,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "18.0x",
+          "18.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -781,7 +781,7 @@
       "category": "reit",
       "rev_growth": "+18.2%",
       "pe": "14.0x",
-      "ev": "24.2x",
+      "ev": "24.3x",
       "roe": "11.2%",
       "peg": "N/A",
       "net_margin": "122.4%",
@@ -815,7 +815,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "24.2x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -896,7 +896,7 @@
       "category": "reit",
       "rev_growth": "+12.3%",
       "pe": "39.8x",
-      "ev": "24.2x",
+      "ev": "24.3x",
       "roe": "7.7%",
       "peg": "115.29",
       "net_margin": "43.6%",
@@ -930,7 +930,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "24.2x",
+          "24.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -956,7 +956,7 @@
       "ticker": "GMG.AX",
       "category": "reit",
       "rev_growth": "+65.8%",
-      "pe": "16.5x",
+      "pe": "17.1x",
       "ev": "23.1x",
       "roe": "11.5%",
       "peg": "2.72",
@@ -981,7 +981,7 @@
           "80.4%"
         ],
         "Fwd P/E": [
-          "16.5x",
+          "17.1x",
           "N/A",
           "N/A",
           "N/A"
@@ -1011,7 +1011,7 @@
       "category": "reit",
       "rev_growth": "+29.9%",
       "pe": "63.9x",
-      "ev": "27.0x",
+      "ev": "26.9x",
       "roe": "2.9%",
       "peg": "11.45",
       "net_margin": "11.8%",
@@ -1045,7 +1045,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "27.0x",
+          "26.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -1072,7 +1072,7 @@
       "category": "reit",
       "rev_growth": "+16.7%",
       "pe": "54.5x",
-      "ev": "26.9x",
+      "ev": "27.0x",
       "roe": "10.7%",
       "peg": "2.85",
       "net_margin": "15.5%",
@@ -1106,7 +1106,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "26.9x",
+          "27.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -1133,7 +1133,7 @@
       "category": "reit",
       "rev_growth": "+39.1%",
       "pe": "73.2x",
-      "ev": "56.0x",
+      "ev": "55.9x",
       "roe": "3.8%",
       "peg": "3.66",
       "net_margin": "12.1%",
@@ -1167,7 +1167,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "56.0x",
+          "55.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -1194,7 +1194,7 @@
       "category": "stock",
       "rev_growth": "+86.4%",
       "pe": "21.9x",
-      "ev": "-248.8x",
+      "ev": "-259.0x",
       "roe": "-5.4%",
       "peg": "0.78",
       "net_margin": "-9.6%",
@@ -1228,7 +1228,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "-248.8x",
+          "-259.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -1255,7 +1255,7 @@
       "category": "stock",
       "rev_growth": "+50.1%",
       "pe": "39.0x",
-      "ev": "102.9x",
+      "ev": "102.8x",
       "roe": "10.2%",
       "peg": "0.62",
       "net_margin": "15.6%",
@@ -1289,7 +1289,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "102.9x",
+          "102.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -1316,7 +1316,7 @@
       "category": "stock",
       "rev_growth": "+25.6%",
       "pe": "19.3x",
-      "ev": "10.1x",
+      "ev": "10.3x",
       "roe": "12.5%",
       "peg": "0.76",
       "net_margin": "7.4%",
@@ -1350,7 +1350,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "10.1x",
+          "10.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -1438,7 +1438,7 @@
       "category": "stock",
       "rev_growth": "+21.3%",
       "pe": "31.0x",
-      "ev": "43.4x",
+      "ev": "45.2x",
       "roe": "53.9%",
       "peg": "1.07",
       "net_margin": "30.1%",
@@ -1472,7 +1472,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "43.4x",
+          "45.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -1499,7 +1499,7 @@
       "category": "stock",
       "rev_growth": "+85.5%",
       "pe": "18.3x",
-      "ev": "32.6x",
+      "ev": "33.1x",
       "roe": "44.2%",
       "peg": "0.35",
       "net_margin": "42.9%",
@@ -1533,7 +1533,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "32.6x",
+          "33.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -1560,7 +1560,7 @@
       "category": "stock",
       "rev_growth": "+150.7%",
       "pe": "19.2x",
-      "ev": "25.7x",
+      "ev": "26.3x",
       "roe": "25.7%",
       "peg": "N/A",
       "net_margin": "32.8%",
@@ -1594,7 +1594,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "25.7x",
+          "26.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -1621,7 +1621,7 @@
       "category": "stock",
       "rev_growth": "+8.1%",
       "pe": "13.1x",
-      "ev": "12.2x",
+      "ev": "12.1x",
       "roe": "N/A",
       "peg": "0.90",
       "net_margin": "25.5%",
@@ -1655,7 +1655,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "12.2x",
+          "12.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -1682,7 +1682,7 @@
       "category": "stock",
       "rev_growth": "+2.4%",
       "pe": "15.5x",
-      "ev": "11.1x",
+      "ev": "11.0x",
       "roe": "16.2%",
       "peg": "2.68",
       "net_margin": "31.8%",
@@ -1716,7 +1716,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.1x",
+          "11.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -1743,7 +1743,7 @@
       "category": "stock",
       "rev_growth": "+33.0%",
       "pe": "21.5x",
-      "ev": "19.9x",
+      "ev": "19.8x",
       "roe": "10.9%",
       "peg": "2.53",
       "net_margin": "10.3%",
@@ -1777,7 +1777,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "19.9x",
+          "19.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -1804,9 +1804,9 @@
       "category": "stock",
       "rev_growth": "+21.9%",
       "pe": "38.3x",
-      "ev": "62.4x",
+      "ev": "63.3x",
       "roe": "82.6%",
-      "peg": "1.87",
+      "peg": "1.86",
       "net_margin": "23.0%",
       "quarters": [
         "2026 (TTM)",
@@ -1838,7 +1838,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "62.4x",
+          "63.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -1852,7 +1852,7 @@
           "-25.7%"
         ],
         "PEG": [
-          "1.87",
+          "1.86",
           "N/A",
           "N/A",
           "N/A",
@@ -1865,7 +1865,7 @@
       "category": "stock",
       "rev_growth": "+24.2%",
       "pe": "22.4x",
-      "ev": "23.4x",
+      "ev": "23.2x",
       "roe": "48.7%",
       "peg": "1.21",
       "net_margin": "54.8%",
@@ -1899,7 +1899,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "23.4x",
+          "23.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -1926,7 +1926,7 @@
       "category": "stock",
       "rev_growth": "+21.9%",
       "pe": "22.9x",
-      "ev": "25.0x",
+      "ev": "25.3x",
       "roe": "7.7%",
       "peg": "0.64",
       "net_margin": "16.0%",
@@ -1960,7 +1960,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "25.0x",
+          "25.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -1987,7 +1987,7 @@
       "category": "stock",
       "rev_growth": "+18.5%",
       "pe": "34.1x",
-      "ev": "33.8x",
+      "ev": "33.6x",
       "roe": "17.4%",
       "peg": "1.93",
       "net_margin": "28.4%",
@@ -2021,7 +2021,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "33.8x",
+          "33.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -2048,7 +2048,7 @@
       "category": "stock",
       "rev_growth": "+6.6%",
       "pe": "22.0x",
-      "ev": "19.6x",
+      "ev": "19.3x",
       "roe": "25.7%",
       "peg": "2.85",
       "net_margin": "21.5%",
@@ -2082,7 +2082,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "19.6x",
+          "19.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2109,7 +2109,7 @@
       "category": "stock",
       "rev_growth": "+28.0%",
       "pe": "21.1x",
-      "ev": "16.8x",
+      "ev": "17.4x",
       "roe": "29.8%",
       "peg": "0.95",
       "net_margin": "29.8%",
@@ -2143,7 +2143,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "16.8x",
+          "17.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -2170,7 +2170,7 @@
       "category": "stock",
       "rev_growth": "-2.9%",
       "pe": "15.9x",
-      "ev": "11.1x",
+      "ev": "11.0x",
       "roe": "16.6%",
       "peg": "1.51",
       "net_margin": "13.7%",
@@ -2204,7 +2204,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.1x",
+          "11.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2285,7 +2285,7 @@
       "category": "stock",
       "rev_growth": "+454.0%",
       "pe": "-67.9x",
-      "ev": "254.7x",
+      "ev": "260.5x",
       "roe": "0.6%",
       "peg": "0.54",
       "net_margin": "3.1%",
@@ -2319,7 +2319,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "254.7x",
+          "260.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -2346,7 +2346,7 @@
       "category": "stock",
       "rev_growth": "+105.9%",
       "pe": "14.5x",
-      "ev": "27.3x",
+      "ev": "27.1x",
       "roe": "117.2%",
       "peg": "0.48",
       "net_margin": "63.7%",
@@ -2380,7 +2380,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "27.3x",
+          "27.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2407,7 +2407,7 @@
       "category": "stock",
       "rev_growth": "+13.5%",
       "pe": "14.4x",
-      "ev": "19.1x",
+      "ev": "18.8x",
       "roe": "24.0%",
       "peg": "0.48",
       "net_margin": "12.3%",
@@ -2441,7 +2441,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "19.1x",
+          "18.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -2468,7 +2468,7 @@
       "category": "stock",
       "rev_growth": "+6.4%",
       "pe": "14.4x",
-      "ev": "11.5x",
+      "ev": "11.6x",
       "roe": "51.5%",
       "peg": "1.32",
       "net_margin": "10.8%",
@@ -2502,7 +2502,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.5x",
+          "11.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -2583,7 +2583,7 @@
       "category": "stock",
       "rev_growth": "+1.6%",
       "pe": "26.9x",
-      "ev": "19.1x",
+      "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.15",
       "net_margin": "28.0%",
@@ -2617,7 +2617,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "19.1x",
+          "18.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -2644,7 +2644,7 @@
       "category": "stock",
       "rev_growth": "+91.9%",
       "pe": "85.6x",
-      "ev": "640.1x",
+      "ev": "657.0x",
       "roe": "N/A",
       "peg": "N/A",
       "net_margin": "-35.7%",
@@ -2674,7 +2674,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "640.1x",
+          "657.0x",
           "N/A",
           "N/A",
           "N/A"
@@ -2698,7 +2698,7 @@
       "category": "stock",
       "rev_growth": "+10.4%",
       "pe": "19.4x",
-      "ev": "16.4x",
+      "ev": "16.3x",
       "roe": "14.3%",
       "peg": "1.89",
       "net_margin": "30.5%",
@@ -2732,7 +2732,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "16.4x",
+          "16.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -2759,7 +2759,7 @@
       "category": "stock",
       "rev_growth": "+9.8%",
       "pe": "24.4x",
-      "ev": "21.1x",
+      "ev": "21.5x",
       "roe": "18.6%",
       "peg": "1.54",
       "net_margin": "11.3%",
@@ -2793,7 +2793,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "21.1x",
+          "21.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -2881,7 +2881,7 @@
       "category": "stock",
       "rev_growth": "+27.8%",
       "pe": "8.5x",
-      "ev": "5.3x",
+      "ev": "5.2x",
       "roe": "14.5%",
       "peg": "0.82",
       "net_margin": "9.1%",
@@ -2915,7 +2915,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "5.3x",
+          "5.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2942,7 +2942,7 @@
       "category": "stock",
       "rev_growth": "+25.5%",
       "pe": "163.1x",
-      "ev": "128.8x",
+      "ev": "127.1x",
       "roe": "4.7%",
       "peg": "4.27",
       "net_margin": "3.7%",
@@ -2976,7 +2976,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "128.8x",
+          "127.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3003,7 +3003,7 @@
       "category": "stock",
       "rev_growth": "+12.2%",
       "pe": "15.7x",
-      "ev": "20.0x",
+      "ev": "20.4x",
       "roe": "37.2%",
       "peg": "5.81",
       "net_margin": "17.3%",
@@ -3037,7 +3037,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "20.0x",
+          "20.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3064,7 +3064,7 @@
       "category": "stock",
       "rev_growth": "+6.0%",
       "pe": "25.3x",
-      "ev": "22.6x",
+      "ev": "22.4x",
       "roe": "N/A",
       "peg": "2.08",
       "net_margin": "49.8%",
@@ -3098,7 +3098,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "22.6x",
+          "22.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3125,9 +3125,9 @@
       "category": "stock",
       "rev_growth": "+24.1%",
       "pe": "27.2x",
-      "ev": "35.2x",
+      "ev": "35.8x",
       "roe": "43.9%",
-      "peg": "0.85",
+      "peg": "0.82",
       "net_margin": "15.1%",
       "quarters": [
         "2026 (TTM)",
@@ -3159,7 +3159,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "35.2x",
+          "35.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -3173,7 +3173,7 @@
           "5.3%"
         ],
         "PEG": [
-          "0.85",
+          "0.82",
           "N/A",
           "N/A",
           "N/A",
@@ -3186,7 +3186,7 @@
       "category": "stock",
       "rev_growth": "-5.5%",
       "pe": "13.6x",
-      "ev": "10.4x",
+      "ev": "10.5x",
       "roe": "43.0%",
       "peg": "0.34",
       "net_margin": "11.6%",
@@ -3220,7 +3220,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "10.4x",
+          "10.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -3373,6 +3373,14 @@
       "link": "https://stockanalysis.com/stocks/bkng/financials/?p=quarterly"
     },
     {
+      "ticker": "SPGI",
+      "category": "stock",
+      "date": "2026-10-27",
+      "date_formatted": "27/10/2026",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/spgi/financials/?p=quarterly"
+    },
+    {
       "ticker": "EQIX",
       "category": "reit",
       "date": "2026-10-28",
@@ -3427,14 +3435,6 @@
       "date_formatted": "29/10/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/csw/financials/?p=quarterly"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "date": "2026-10-29",
-      "date_formatted": "29/10/2026",
-      "is_past": false,
-      "link": "https://stockanalysis.com/stocks/spgi/financials/?p=quarterly"
     },
     {
       "ticker": "TTE.PA",
@@ -3495,8 +3495,8 @@
     {
       "ticker": "VST",
       "category": "stock",
-      "date": "2026-11-05",
-      "date_formatted": "05/11/2026",
+      "date": "2026-11-06",
+      "date_formatted": "06/11/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/vst/financials/?p=quarterly"
     },
