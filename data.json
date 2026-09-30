@@ -1,55 +1,55 @@
 {
-  "updated_at": "30/09/2026 à 08:17",
+  "updated_at": "30/09/2026 à 09:15",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 64.35,
-      "change": 0.23,
+      "price": 64.6,
+      "change": 0.39,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.1% 🔥",
-      "sma200_pct": -0.1,
-      "is_under": true,
-      "rsi14_weekly": 37.0,
-      "ath_52w_pct": -18.8,
-      "earnings": "17/02/2027"
+      "sma200": "200 W-SMA Above +0.3%",
+      "sma200_pct": 0.3,
+      "is_under": false,
+      "rsi14_weekly": 38.0,
+      "ath_52w_pct": -18.5,
+      "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.38,
-      "change": 1.48,
+      "price": 12.36,
+      "change": -0.16,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.1% 🔥",
-      "sma200_pct": -3.1,
+      "sma200": "200 W-SMA Under -3.3% 🔥",
+      "sma200_pct": -3.3,
       "is_under": true,
-      "rsi14_weekly": 45.5,
-      "ath_52w_pct": -11.1,
+      "rsi14_weekly": 48.4,
+      "ath_52w_pct": -11.2,
       "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
       "category": "reit",
-      "price": 17.68,
-      "change": 0.8,
+      "price": 17.7,
+      "change": 0.11,
       "currency": "€",
-      "sma200": "200 W-SMA Under -2.5% 🔥",
-      "sma200_pct": -2.5,
+      "sma200": "200 W-SMA Under -2.4% 🔥",
+      "sma200_pct": -2.4,
       "is_under": true,
-      "rsi14_weekly": 36.8,
-      "ath_52w_pct": -12.5,
+      "rsi14_weekly": 38.6,
+      "ath_52w_pct": -12.4,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
       "category": "reit",
       "price": 63.6,
-      "change": 0.16,
+      "change": 0.0,
       "currency": "€",
       "sma200": "200 W-SMA Above +0.2%",
       "sma200_pct": 0.2,
       "is_under": false,
-      "rsi14_weekly": 39.7,
+      "rsi14_weekly": 40.0,
       "ath_52w_pct": -11.2,
       "earnings": "13/11/2026"
     },
@@ -69,14 +69,14 @@
     {
       "ticker": "GMG.AX",
       "category": "reit",
-      "price": 27.23,
-      "change": 4.07,
+      "price": 27.18,
+      "change": 3.86,
       "currency": "$",
-      "sma200": "200 W-SMA Under -5.4% 🔥",
-      "sma200_pct": -5.4,
+      "sma200": "200 W-SMA Under -5.6% 🔥",
+      "sma200_pct": -5.6,
       "is_under": true,
-      "rsi14_weekly": 43.0,
-      "ath_52w_pct": -21.1,
+      "rsi14_weekly": 42.7,
+      "ath_52w_pct": -21.2,
       "earnings": "18/02/2027"
     },
     {
@@ -173,14 +173,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1601.2,
-      "change": 4.18,
+      "price": 1608.0,
+      "change": 0.42,
       "currency": "€",
-      "sma200": "200 W-SMA Above +91.4%",
-      "sma200_pct": 91.4,
+      "sma200": "200 W-SMA Above +92.1%",
+      "sma200_pct": 92.1,
       "is_under": false,
-      "rsi14_weekly": 58.6,
-      "ath_52w_pct": -7.0,
+      "rsi14_weekly": 62.4,
+      "ath_52w_pct": -6.6,
       "earnings": "14/10/2026"
     },
     {
@@ -329,14 +329,14 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 394.6,
-      "change": -1.05,
+      "price": 394.95,
+      "change": 0.09,
       "currency": "€",
-      "sma200": "200 W-SMA Under -39.1% 🔥",
-      "sma200_pct": -39.1,
+      "sma200": "200 W-SMA Under -39.0% 🔥",
+      "sma200_pct": -39.0,
       "is_under": true,
-      "rsi14_weekly": 30.7,
-      "ath_52w_pct": -39.5,
+      "rsi14_weekly": 29.7,
+      "ath_52w_pct": -39.4,
       "earnings": "26/01/2027"
     },
     {
@@ -420,14 +420,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1352.5,
-      "change": -2.1,
+      "price": 1350.0,
+      "change": -0.18,
       "currency": "€",
-      "sma200": "200 W-SMA Under -32.9% 🔥",
-      "sma200_pct": -32.9,
+      "sma200": "200 W-SMA Under -33.1% 🔥",
+      "sma200_pct": -33.1,
       "is_under": true,
-      "rsi14_weekly": 33.9,
-      "ath_52w_pct": -39.9,
+      "rsi14_weekly": 31.1,
+      "ath_52w_pct": -40.0,
       "earnings": "11/02/2027"
     },
     {
@@ -459,14 +459,14 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 296.35,
-      "change": 2.01,
+      "price": 296.55,
+      "change": 0.07,
       "currency": "€",
-      "sma200": "200 W-SMA Above +38.1%",
-      "sma200_pct": 38.1,
+      "sma200": "200 W-SMA Above +38.2%",
+      "sma200_pct": 38.2,
       "is_under": false,
-      "rsi14_weekly": 56.0,
-      "ath_52w_pct": -4.7,
+      "rsi14_weekly": 58.4,
+      "ath_52w_pct": -4.6,
       "earnings": "25/02/2027"
     },
     {
@@ -485,14 +485,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 78.1,
-      "change": -2.38,
+      "price": 77.05,
+      "change": -0.19,
       "currency": "€",
-      "sma200": "200 W-SMA Above +28.6%",
-      "sma200_pct": 28.6,
+      "sma200": "200 W-SMA Above +26.9%",
+      "sma200_pct": 26.9,
       "is_under": false,
-      "rsi14_weekly": 62.0,
-      "ath_52w_pct": -3.6,
+      "rsi14_weekly": 55.7,
+      "ath_52w_pct": -4.9,
       "earnings": "29/10/2026"
     },
     {
@@ -563,53 +563,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83124.95,
-      "change": -0.6,
+      "price": 83044.68,
+      "change": -0.69,
       "currency": "$",
-      "sma200": "200 W-SMA Above +25.8%",
-      "sma200_pct": 25.8,
+      "sma200": "200 W-SMA Above +25.7%",
+      "sma200_pct": 25.7,
       "is_under": false,
-      "rsi14_weekly": 60.8,
-      "ath_52w_pct": -7.1,
+      "rsi14_weekly": 60.7,
+      "ath_52w_pct": -7.2,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2665.52,
-      "change": -0.42,
+      "price": 2663.43,
+      "change": -0.5,
       "currency": "$",
-      "sma200": "200 W-SMA Above +5.7%",
-      "sma200_pct": 5.7,
+      "sma200": "200 W-SMA Above +5.6%",
+      "sma200_pct": 5.6,
       "is_under": false,
-      "rsi14_weekly": 63.1,
-      "ath_52w_pct": -11.8,
+      "rsi14_weekly": 62.9,
+      "ath_52w_pct": -11.9,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 118.67,
-      "change": -0.33,
+      "price": 118.05,
+      "change": -0.85,
       "currency": "$",
-      "sma200": "200 W-SMA Above +7.0%",
-      "sma200_pct": 7.0,
+      "sma200": "200 W-SMA Above +6.5%",
+      "sma200_pct": 6.5,
       "is_under": false,
-      "rsi14_weekly": 64.5,
-      "ath_52w_pct": -8.3,
+      "rsi14_weekly": 64.0,
+      "ath_52w_pct": -8.0,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 85.83,
-      "change": -0.21,
+      "price": 85.49,
+      "change": -0.61,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 65.1,
-      "ath_52w_pct": -11.7,
+      "rsi14_weekly": 64.8,
+      "ath_52w_pct": -12.0,
       "earnings": "N/A"
     },
     {
@@ -628,31 +628,672 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 161.9,
-      "change": -2.01,
+      "price": 159.08,
+      "change": -3.71,
       "currency": "$",
-      "sma200": "200 W-SMA Above +15.5%",
-      "sma200_pct": 15.5,
+      "sma200": "200 W-SMA Above +13.5%",
+      "sma200_pct": 13.5,
       "is_under": false,
-      "rsi14_weekly": 67.1,
-      "ath_52w_pct": -0.2,
+      "rsi14_weekly": 66.3,
+      "ath_52w_pct": -3.7,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.36,
-      "change": -1.66,
+      "price": 14.29,
+      "change": -2.11,
       "currency": "$",
-      "sma200": "200 W-SMA Above +12.9%",
-      "sma200_pct": 12.9,
+      "sma200": "200 W-SMA Above +12.4%",
+      "sma200_pct": 12.4,
       "is_under": false,
-      "rsi14_weekly": 70.9,
-      "ath_52w_pct": -7.0,
+      "rsi14_weekly": 70.6,
+      "ath_52w_pct": -7.5,
       "earnings": "N/A"
     }
   ],
-  "news": [],
+  "news": [
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "What to Expect From Prologis’ Q3 2026 Earnings Report",
+      "summary": "Prologis is set to report its Q3 earnings next month, with analysts expecting single-digit year-over-year EPS growth.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/expect-prologis-q3-2026-earnings-131326190.html",
+      "date": "2026-09-29T15:13:26+02:00"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "title": "Equinix (EQIX) Stock Still Looks Undervalued After A 51% Run",
+      "summary": "Equinix has delivered a strong multi‑year share price run, helped by growing attention on data centers and AI infrastructure. This now raises a sharper question for investors about how much of its fut...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/equinix-eqix-stock-still-looks-200534584.html",
+      "date": "2026-09-29T22:05:34+02:00"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "title": "Equinix (EQIX) is a Top Dividend Stock Right Now: Should You Buy?",
+      "summary": "Dividends are one of the best benefits to being a shareholder, but finding a great dividend stock is no easy task. Does Equinix (EQIX) have what it takes? Let's find out.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/equinix-eqix-top-dividend-stock-144503767.html",
+      "date": "2026-09-29T16:45:03+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "Are Meta, AMD, and Micron to thank for the September rally?",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi takes a closer look at how Big Tech companies like Meta Platforms (META), Advanced Micro Devices (AMD), and Micron Technology (MU) may be running the late Se...",
+      "link": "https://finance.yahoo.com/video/are-meta-amd-and-micron-to-thank-for-the-september-rally-143000810.html",
+      "date": "2026-09-29T16:30:00+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure — SPCX, TGT, AAPL, MU, NTAP In Focus",
+      "summary": "30-year Treasury yields are at their highest level since 2002.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-dow-extend-losses-223008654.html",
+      "date": "2026-09-30T00:30:08+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "AMD takes on Nvidia with aggressive $8.2 billion bet on AI’s next era",
+      "summary": "The AI systems that matter most a decade from now may not be the ones that can just read text and generate language.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/amd-takes-nvidia-aggressive-8-220700242.html",
+      "date": "2026-09-30T00:07:00+02:00"
+    },
+    {
+      "ticker": "AMKR",
+      "category": "stock",
+      "title": "Amkor Technology (AMKR) Advances While Market Declines: Some Information for Investors",
+      "summary": "Amkor Technology (AMKR) closed the most recent trading day at $54.14, moving +1.81% from the previous trading session.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amkor-technology-amkr-advances-while-205002078.html",
+      "date": "2026-09-29T22:50:02+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "category": "stock",
+      "title": "Amazon (AMZN) and Apple (AAPL) Must Face a UK Class Action Over Marketplace Sales",
+      "summary": "Amazon.com, Inc. (NASDAQ:AMZN) and Apple Inc. (NASDAQ:AAPL) were told on September 28 that part of a consumer class action against them can proceed, after a ruling by Britain’s Competition Appeal Trib...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-amzn-apple-aapl-must-060818438.html",
+      "date": "2026-09-30T08:08:18+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "category": "stock",
+      "title": "SPCX CEO Elon Musk Warns Delta Will ‘Lose A Lot Of Customers’ Over Starlink Snub — Even as Rival United Already Has 600+ Jets Connected",
+      "summary": "Space Exploration Technologies Corp. CEO Elon Musk warned that Delta Air Lines Inc. could lose business by not offering Starlink internet on its flights. Starlink Snub By Delta? In a post on X on Mond...",
+      "link": "https://finance.yahoo.com/technology/articles/spcx-ceo-elon-musk-warns-013006834.html",
+      "date": "2026-09-30T03:30:06+02:00"
+    },
+    {
+      "ticker": "AMZN",
+      "category": "stock",
+      "title": "How much AMZN stock does Amazon’s founder Jeff Bezos actually own?",
+      "summary": "Bezos’ stake in AMZN is worth more than $219 billion as of September 2026—but his ownership has changed dramatically over the past three decades.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/much-amzn-stock-does-amazon-011405388.html",
+      "date": "2026-09-30T03:14:05+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
+      "category": "stock",
+      "title": "UBS names top European chip stocks to watch ahead of Q3 2026 earnings season",
+      "summary": "Investing.com -- UBS analyst Francois-Xavier Bouvignies maintains a constructive outlook on European semiconductor stocks heading into third-quarter 2026 earnings, favoring companies with clear market...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/ubs-names-top-european-chip-193056238.html",
+      "date": "2026-09-29T21:30:56+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
+      "category": "stock",
+      "title": "ASML Stock Surges 3.8% as AI Rebound Returns to Lithography",
+      "summary": "Stronger semiconductor positioning helps sentiment, but orders must convert into recognized system revenue.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/asml-stock-surges-3-8-184836110.html",
+      "date": "2026-09-29T20:48:36+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
+      "category": "stock",
+      "title": "European Equities Traded in the US as American Depositary Receipts Lower in Tuesday Trading",
+      "summary": "European equities traded in the US as American depositary receipts were lower on Tuesday morning, de",
+      "link": "https://finance.yahoo.com/markets/world-indices/articles/european-equities-traded-us-american-150744626.html",
+      "date": "2026-09-29T17:07:44+02:00"
+    },
+    {
+      "ticker": "AVGO",
+      "category": "stock",
+      "title": "3 Undervalued Stocks Trading At Least 24% Below Fair Value",
+      "summary": "When US Treasury yields sit at a 25 year high and risk free income looks tempting, investors start questioning why they should bother with equities at all. That doubt can create mispricing in solid bu...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/3-undervalued-stocks-trading-least-031114578.html",
+      "date": "2026-09-30T05:11:14+02:00"
+    },
+    {
+      "ticker": "AVGO",
+      "category": "stock",
+      "title": "S&P 500, Dow Extend Losses From Elevated Yield Pressure — SPCX, TGT, AAPL, MU, NTAP In Focus",
+      "summary": "30-year Treasury yields are at their highest level since 2002.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-dow-extend-losses-223008654.html",
+      "date": "2026-09-30T00:30:08+02:00"
+    },
+    {
+      "ticker": "AVGO",
+      "category": "stock",
+      "title": "3 Dividend ETFs for a 40-Year Retirement. One Has Paid Every Quarter Since 2005",
+      "summary": "A 40-year retirement puts two demands on an income portfolio that most dividend funds only half-answer, and choosing the wrong ETF can mean watching your real purchasing power quietly erode while the ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/3-dividend-etfs-40-retirement-220128098.html",
+      "date": "2026-09-30T00:01:28+02:00"
+    },
+    {
+      "ticker": "CPRT",
+      "category": "stock",
+      "title": "1 Cash-Producing Stock to Keep an Eye On and 2 Facing Challenges",
+      "summary": "A company that generates cash isn’t automatically a winner. Some businesses stockpile cash but fail to reinvest wisely, limiting their ability to expand.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/1-cash-producing-stock-keep-091901511.html",
+      "date": "2026-09-29T11:19:01+02:00"
+    },
+    {
+      "ticker": "GEV",
+      "category": "stock",
+      "title": "GE Vernova (GEV) Gains As Market Dips: What You Should Know",
+      "summary": "In the closing of the recent trading day, GE Vernova (GEV) stood at $962.49, denoting a +1.34% move from the preceding trading day.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-gev-gains-market-210003190.html",
+      "date": "2026-09-29T23:00:03+02:00"
+    },
+    {
+      "ticker": "GOOG",
+      "category": "stock",
+      "title": "What we know about Trump's meeting with Alex Karp, Jensen Huang, & other AI leaders",
+      "summary": "President Trump met with several AI leaders at the White House on Tuesday, including Nvidia (NVDA) CEO Jensen Huang and Anthropic (ANTH.PVT) CEO Dario Amodei. Yahoo Finance Washington Correspondent Be...",
+      "link": "https://finance.yahoo.com/video/know-trumps-meeting-alex-karp-194043343.html",
+      "date": "2026-09-29T21:40:43+02:00"
+    },
+    {
+      "ticker": "GOOG",
+      "category": "stock",
+      "title": "A closer look at Anthropic's 2025 losses, Dan Ives discusses AI safety risks",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi takes on the biggest stories as the trading day kicks off, weighing in on Anthropic's (ANTH.PVT) leaked IPO prospectus and Advanced Micro Devices' (AMD) deal...",
+      "link": "https://finance.yahoo.com/video/closer-look-anthropics-2025-losses-141434926.html",
+      "date": "2026-09-29T16:14:34+02:00"
+    },
+    {
+      "ticker": "GOOG",
+      "category": "stock",
+      "title": "Walmart (WMT) Tests AI Shopping In India Through Its Flipkart Business",
+      "summary": "Walmart (NasdaqGS:WMT) is part of a new Google pilot that lets Indian shoppers buy from Flipkart using Gemini and AI Mode. The test allows Flipkart products to be discovered and purchased directly ins...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/walmart-wmt-tests-ai-shopping-050751981.html",
+      "date": "2026-09-30T07:07:51+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Top Stock Reports for Visa, Intuitive Surgical & Williams Companies",
+      "summary": "Visa, Intuitive Surgical and Williams Companies headline today's research, with growth opportunities balanced by margin, valuation and execution risks.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-visa-intuitive-193800600.html",
+      "date": "2026-09-29T21:38:00+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Do You Really Understand ISRG Stock's Risk?",
+      "summary": "Look at the breakdown of Intuitive Surgical's revenue streams—Instruments and Accessories alone generate roughly 60% of the top line on a per-procedure basis. That tight link between surgery volume an...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/really-understand-isrg-stocks-risk-192658023.html",
+      "date": "2026-09-29T21:26:58+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Here is What to Know Beyond Why Intuitive Surgical, Inc. (ISRG) is a Trending Stock",
+      "summary": "Zacks.com users have recently been watching Intuitive Surgical (ISRG) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-intuitive-surgical-120002819.html",
+      "date": "2026-09-29T14:00:02+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "Johnson & Johnson (JNJ) Shares In Focus After New Adolescent gMG Data",
+      "summary": "Johnson & Johnson (NYSE:JNJ) reported new long term IMAAVY data in generalized myasthenia gravis, including adolescent outcomes. The company said adolescents with gMG on IMAAVY showed sustained diseas...",
+      "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-jnj-shares-focus-011008420.html",
+      "date": "2026-09-30T03:10:08+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "Johnson & Johnson (JNJ) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
+      "summary": "In the latest trading session, Johnson & Johnson (JNJ) closed at $267.66, marking a -1.58% move from the previous day.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-sees-more-204504518.html",
+      "date": "2026-09-29T22:45:04+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "Do You Really Understand ISRG Stock's Risk?",
+      "summary": "Look at the breakdown of Intuitive Surgical's revenue streams—Instruments and Accessories alone generate roughly 60% of the top line on a per-procedure basis. That tight link between surgery volume an...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/really-understand-isrg-stocks-risk-192658023.html",
+      "date": "2026-09-29T21:26:58+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "What we know about Trump's meeting with Alex Karp, Jensen Huang, & other AI leaders",
+      "summary": "President Trump met with several AI leaders at the White House on Tuesday, including Nvidia (NVDA) CEO Jensen Huang and Anthropic (ANTH.PVT) CEO Dario Amodei. Yahoo Finance Washington Correspondent Be...",
+      "link": "https://finance.yahoo.com/video/know-trumps-meeting-alex-karp-194043343.html",
+      "date": "2026-09-29T21:40:43+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "Why AMD's World Labs deal just turned up the heat in the AI chip race",
+      "summary": "Yahoo Finance Executive Editor and Sozzi Unleashed host Brian Sozzi breaks down why AMD (AMD)is acquiring World Labs in a deal valued at $8.2 billion. As part of the deal, World Labs co-founder Fei-Fe...",
+      "link": "https://finance.yahoo.com/video/why-amds-world-labs-deal-142400010.html",
+      "date": "2026-09-29T16:24:00+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "MongoDB (MDB) Is Down 21.2% After CEO Desai’s Sudden Exit to Join Meta Platforms",
+      "summary": "In late September 2026, MongoDB, Inc. announced that CEO and President Chirantan “CJ” Desai resigned to take a senior role at Meta Platforms, with longtime former chief Dev Ittycheria returning as int...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/mongodb-mdb-down-21-2-060617608.html",
+      "date": "2026-09-30T08:06:17+02:00"
+    },
+    {
+      "ticker": "MC.PA",
+      "category": "stock",
+      "title": "M&S teams up with Sephora on shop-in-shop beauty launch",
+      "summary": "The partnership will bring Sephora shop-in-shops to 100 M&S locations across high streets and retail parks nationwide.",
+      "link": "https://finance.yahoo.com/media-advertising/articles/m-teams-sephora-shop-shop-135653606.html",
+      "date": "2026-09-29T15:56:53+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "MongoDB (MDB) Is Down 21.2% After CEO Desai’s Sudden Exit to Join Meta Platforms",
+      "summary": "In late September 2026, MongoDB, Inc. announced that CEO and President Chirantan “CJ” Desai resigned to take a senior role at Meta Platforms, with longtime former chief Dev Ittycheria returning as int...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/mongodb-mdb-down-21-2-060617608.html",
+      "date": "2026-09-30T08:06:17+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "S&P 500 investors may have more tech exposure than they think: Here's how one wealth manager mitigates concentration risk",
+      "summary": "Kenny Polcari says investors using market-weighted S&P 500 funds should examine their technology concentration before adding more tech-focused ETFs or buying the next pullback.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/p-500-investors-may-more-002107367.html",
+      "date": "2026-09-30T02:21:07+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "Bill Gates Says We May Have To ‘Suffer A Few Of The Negatives’ For People To Take The AI Warning Seriously — Compares Threat To An Alien Invasion",
+      "summary": "Artificial intelligence doesn’t exactly come with an emergency brake. Microsoft co-founder Bill Gates thinks the world may have to experience something go seriously wrong before it takes the technolog...",
+      "link": "https://www.yahoo.com/news/us/articles/bill-gates-says-may-suffer-230006029.html",
+      "date": "2026-09-30T01:00:06+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "category": "stock",
+      "title": "Innodata vs. Nebius Group N.V.: Which AI Stock Is a Better Buy in 2026?",
+      "summary": "Innodata offers profitable data engineering with zero debt, while Nebius scales infrastructure at massive cash burn, a fundamental choice between profitability and growth.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/innodata-vs-nebius-group-n-213701506.html",
+      "date": "2026-09-29T23:37:01+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "category": "stock",
+      "title": "Michael Burry just named who can't afford an AI crash, and his bearish bets tell a different story",
+      "summary": "The famous housing short seller’s warning points to one force that could keep AI stocks propped up for now.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-just-named-cant-202300040.html",
+      "date": "2026-09-29T22:23:00+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "category": "stock",
+      "title": "Why Muse is Winning the Agentic AI Race",
+      "summary": "While heavyweights like OpenAI and Anthropic continue to push technological boundaries, Meta's global reach, data, and pricing power give it an edge.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/why-muse-winning-agentic-ai-190700974.html",
+      "date": "2026-09-29T21:07:00+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "How Nvidia is tackling the AI safety problem",
+      "summary": "Ben Bajarin, Creative Strategies CEO and Principal Analyst, discusses Nvidia's (NVDA) AI safety software and breaks down how the new platform works amid rising AI safety concerns.",
+      "link": "https://finance.yahoo.com/video/nvidia-tackling-ai-safety-problem-200500655.html",
+      "date": "2026-09-29T22:05:00+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "Nvidia has built a Sentry to watch over AI agents that act up",
+      "summary": "In The Loop host Ejaaz Ahamadeen discusses Nvidia's (NVDA) new plans to use its Sentry chip to monitor and quarantine AI agents that go rogue. This comes in the wake of major data breaches and reports...",
+      "link": "https://finance.yahoo.com/video/nvidia-built-sentry-watch-over-143528070.html",
+      "date": "2026-09-29T16:35:28+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "Jensen Huang and other AI leaders to meet with Trump & lawmakers today",
+      "summary": "President Trump is meeting with several AI leaders on Tuesday at the White House, including Nvidia (NVDA) CEO Jensen Huang and Anthropic (ANTH.PVT) CEO Dario Amodei. These AI leaders will also be meet...",
+      "link": "https://finance.yahoo.com/video/jensen-huang-other-ai-leaders-135851155.html",
+      "date": "2026-09-29T15:58:51+02:00"
+    },
+    {
+      "ticker": "PEP",
+      "category": "stock",
+      "title": "PepsiCo Just Got a 19% Price-Target Cut Ahead of Earnings",
+      "summary": "J.P. Morgan downgraded PepsiCo as weakness in its North American snack business threatens to keep pressure on growth estimates.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-just-got-19-price-190841754.html",
+      "date": "2026-09-29T21:08:41+02:00"
+    },
+    {
+      "ticker": "PEP",
+      "category": "stock",
+      "title": "Pepsi vs. Coke: This Is How Much You Could Make by 2031",
+      "summary": "Coke is outpacing Pepsi by a wide margin this year, but one projected scenario shows the losing stock actually protecting your money better by 2031. The answer depends entirely on how much downside yo...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/pepsi-vs-coke-much-could-183453677.html",
+      "date": "2026-09-29T20:34:53+02:00"
+    },
+    {
+      "ticker": "PEP",
+      "category": "stock",
+      "title": "Netflix upgraded, PepsiCo downgraded: Wall Street's top analyst calls",
+      "summary": "Netflix upgraded, PepsiCo downgraded: Wall Street's top analyst calls",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/netflix-upgraded-carvana-downgraded-wall-135411903.html",
+      "date": "2026-09-29T15:52:32+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "How Thorne’s brand platform led to a $3.8B P&G deal — and what’s next",
+      "summary": "Chief Growth Officer Mary Beech details how work with brand consultancy Redscout turned consumer insights into campaigns and a communication style.",
+      "link": "https://finance.yahoo.com/media-advertising/articles/thorne-brand-platform-led-3-170000673.html",
+      "date": "2026-09-29T19:00:00+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "Kimberly-Clark Pays Out Almost Everything It Earns. Can the Dividend Survive the Kenvue Deal?",
+      "summary": "Kimberly-Clark has raised its dividend through every recession of the past two decades, but a $48.7 billion acquisition and free cash flow that already fell short of last year's dividend payment put t...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/kimberly-clark-pays-almost-everything-154958759.html",
+      "date": "2026-09-29T17:49:58+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "I'd Put $1,000 Into Each of These 3 Dividend Stocks and Lose the Password",
+      "summary": "On a $3,000 combined investment, these Dividend Kings would pay $79 in income over the next year.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/id-put-1-000-3-152000733.html",
+      "date": "2026-09-29T17:20:00+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "What we know about Trump's meeting with Alex Karp, Jensen Huang, & other AI leaders",
+      "summary": "President Trump met with several AI leaders at the White House on Tuesday, including Nvidia (NVDA) CEO Jensen Huang and Anthropic (ANTH.PVT) CEO Dario Amodei. Yahoo Finance Washington Correspondent Be...",
+      "link": "https://finance.yahoo.com/video/know-trumps-meeting-alex-karp-194043343.html",
+      "date": "2026-09-29T21:40:43+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "'Vegas Strip in 1955': Dan Ives on Anthropic’s trillion-dollar future",
+      "summary": "Yorkville Ives Partner and Senior Managing Director Dan Ives joins Yahoo Finance Executive Editor Brian Sozzi to discuss Anthropic's (ANTH.PVT) IPO prospectus getting leaked and why underwriting its $...",
+      "link": "https://finance.yahoo.com/video/vegas-strip-in-1955-dan-ives-on-anthropics-trillion-dollar-future-142242412.html",
+      "date": "2026-09-29T16:22:42+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Is it time to buy the dip on tech?",
+      "summary": "Turney Duff chats with Barron's associate editor Al Root, Kelly Intelligence founder and CEO Kevin Kelly, and Cleo Capital managing director Sarah Kunst about whether it's time to buy the dip on tech ...",
+      "link": "https://finance.yahoo.com/video/time-buy-dip-tech-120000592.html",
+      "date": "2026-09-29T14:00:00+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "What Could Surprise Cisco Stock Investors On The Upside?",
+      "summary": "Cisco Systems (CSCO) stock returned 62% over the past 12 months (as of Ssptember 28, 2026). After that run, you pay 31.8 times its past year's earnings, against 22.1 for the S&P 500. At that price, th...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/could-surprise-cisco-stock-investors-220812554.html",
+      "date": "2026-09-30T00:08:12+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "Should You Buy The Dip In MongoDB Stock?",
+      "summary": "MongoDB (MDB) stock has fallen 26% from its late-August high. Over the past month it lost 24%, while the S&P 500 slipped just 0.5%. When a stock falls that fast, many investors want to buy while the p...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/buy-dip-mongodb-stock-215931106.html",
+      "date": "2026-09-29T23:59:31+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "Is ExxonMobil Stock Increasing Your Market Risk?",
+      "summary": "You hold ExxonMobil (XOM) alongside index funds, and in the last five sessions, the stock rose 2.7% as the S&P 500 fell 1.0%. You already own the market's risk through those funds, so a large ExxonMob...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-stock-increasing-market-risk-215118428.html",
+      "date": "2026-09-29T23:51:18+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Levi’s, Marks & Spencer launch renewable energy initiative for fashion suppliers",
+      "summary": "The apparel giants launched the “Fashion Renewable Collective” in collaboration with Schneider Electric to help suppliers across fashion supply chains adopt renewable electricity at scale.",
+      "link": "https://finance.yahoo.com/energy/articles/levi-marks-spencer-launch-renewable-165816443.html",
+      "date": "2026-09-29T18:58:16+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "category": "stock",
+      "title": "TotalEnergies (ENXTPA:TTE) Backs Absheron And Ima Gas Projects In New Africa Push",
+      "summary": "TotalEnergies (ENXTPA:TTE) has approved Final Investment Decisions for the Absheron gas field in Azerbaijan and the Ima gas field in Nigeria. Both Absheron and Ima are planned with low emission design...",
+      "link": "https://finance.yahoo.com/energy/articles/totalenergies-enxtpa-tte-backs-absheron-010818295.html",
+      "date": "2026-09-30T03:08:18+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "category": "stock",
+      "title": "TotalEnergies' Business Update Reflected Continued Cash Flow Growth, RBC Says",
+      "summary": "TotalEnergies' (TTE) update delivered what many had expected, continued cash flow growth driven by a",
+      "link": "https://finance.yahoo.com/energy/articles/totalenergies-apos-business-reflected-continued-155528464.html",
+      "date": "2026-09-29T17:55:28+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "category": "stock",
+      "title": "Are Oils-Energy Stocks Lagging  Cenovus Energy (CVE) This Year?",
+      "summary": "Here is how Cenovus Energy (CVE) and TotalEnergies SE Sponsored ADR (TTE) have performed compared to their sector so far this year.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/oils-energy-stocks-lagging-cenovus-124004174.html",
+      "date": "2026-09-29T14:40:04+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "What we know about Trump's meeting with Alex Karp, Jensen Huang, & other AI leaders",
+      "summary": "President Trump met with several AI leaders at the White House on Tuesday, including Nvidia (NVDA) CEO Jensen Huang and Anthropic (ANTH.PVT) CEO Dario Amodei. Yahoo Finance Washington Correspondent Be...",
+      "link": "https://finance.yahoo.com/video/know-trumps-meeting-alex-karp-194043343.html",
+      "date": "2026-09-29T21:40:43+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "Zacks Investment Ideas feature highlights: Tesla",
+      "summary": "TSLA's Roadster delay takes a back seat as robotaxi growth, Cybercab production and FSD adoption reshape its story.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/zacks-investment-ideas-feature-highlights-054600634.html",
+      "date": "2026-09-30T07:46:00+02:00"
+    },
+    {
+      "ticker": "TSLA",
+      "category": "stock",
+      "title": "TSLA Stock Eyes Red September: Cathie Wood Buys Ahead Of Q3 Update As Tesla Bear Flags Funding Pressure",
+      "summary": "Investor and influencer Sawyer Merritt highlighted Tesla’s costly factory ambitions, while Fitch expects several years of negative free cash flow and rising leverage.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/tsla-stock-eyes-red-september-053328280.html",
+      "date": "2026-09-30T07:33:28+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "What consumer confidence really says about the K-shaped economy",
+      "summary": "Turney Duff chats with the Market Hang panel featuring RBC Capital Markets Head of Derivatives Strategy Amy Wu Silverman, SlateStone Wealth Partner and Chief Market Strategist Kenny Polcari, Puck Foun...",
+      "link": "https://finance.yahoo.com/video/consumer-confidence-really-says-k-185200438.html",
+      "date": "2026-09-29T20:52:00+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Rivian Eyes Late-Year Autonomy Rollout as R2 Production Ramp Takes Center Stage",
+      "summary": "Rivian Automotive (NASDAQ:RIVN) executives said the company is focused on ramping production of its R2 midsize SUV while advancing its in-house autonomy platform toward an initial point-to-point drivi...",
+      "link": "https://finance.yahoo.com/technology/ai/articles/rivian-eyes-autonomy-rollout-r2-220246148.html",
+      "date": "2026-09-30T00:02:46+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Uber's Total Revenue Trounces Shopify's, but Shopify Is Delivering Blistering Growth. Here's the Next Catalyst to Watch.",
+      "summary": "Shopify's revenue growth rate outpaces Uber's, yet their absolute scale gap has held steady over eight quarters.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/ubers-total-revenue-trounces-shopifys-190701823.html",
+      "date": "2026-09-29T21:07:01+02:00"
+    },
+    {
+      "ticker": "VRSN",
+      "category": "stock",
+      "title": "VeriSign's CEO Dumps 3,300 Shares for $979,000 in a Discretionary Transaction",
+      "summary": "The provider of internet infrastructure and domain name registration services reported a notable insider stock sale.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/verisigns-ceo-dumps-3-300-041209893.html",
+      "date": "2026-09-30T06:12:09+02:00"
+    },
+    {
+      "ticker": "VST",
+      "category": "stock",
+      "title": "Vistra Corp. (VST) Gains As Market Dips: What You Should Know",
+      "summary": "Vistra Corp. (VST) closed at $140.82 in the latest trading session, marking a +2.03% move from the prior day.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/vistra-corp-vst-gains-market-204505195.html",
+      "date": "2026-09-29T22:45:05+02:00"
+    },
+    {
+      "ticker": "VST",
+      "category": "stock",
+      "title": "3 Stocks to Buy Now Before Wall Street Catches On",
+      "summary": "The AI infrastructure trade has quietly shifted away from chips toward two scarce resources that hyperscalers cannot conjure fast enough, and three under-the-radar companies control the chokepoints.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-buy-now-wall-150053004.html",
+      "date": "2026-09-29T17:00:53+02:00"
+    },
+    {
+      "ticker": "VST",
+      "category": "stock",
+      "title": "Constellation Energy vs. Vistra: Nuclear's Two Biggest AI Bets, and why I'm Picking One.",
+      "summary": "AI is driving power demand. Constellation and Vistra both sell nuclear power to Big Tech, but one trades at a lower valuation. See which fits you.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/constellation-energy-vs-vistra-nuclears-131002473.html",
+      "date": "2026-09-29T15:10:02+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "The Dollar Is Having Its Best Month Since June, and Bitcoin Hasn't Blinked Yet",
+      "summary": "The dollar index is on pace for its best month since June, yet Bitcoin has gained 6% in September ahead of October.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/dollar-having-best-month-since-053737354.html",
+      "date": "2026-09-30T07:37:37+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "Kinross Gold Raises Shareholder Returns as Great Bear Targets 2029 First Pour",
+      "summary": "Kinross Gold (NYSE:KGC) outlined changes to its production and cost outlook, an increased shareholder-return framework and progress at its Great Bear development project during a discussion with CIBC ...",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/kinross-gold-raises-shareholder-returns-030204690.html",
+      "date": "2026-09-30T05:02:04+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "‘I’m never selling’: I’m 47 and buy bitcoin with every dollar I earn. Am I crazy?",
+      "summary": "“When my paycheck lands, it takes a detour through bitcoin.”",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/m-never-selling-m-47-101500397.html",
+      "date": "2026-09-30T02:30:00+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Rapper Kanye West makes major ETH move to Binance after 11 months",
+      "summary": "A Kanye West-linked wallet has moved ETH to Binance after nearly a year, while the address still holds about $26.7 million in crypto.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/rapper-kanye-west-makes-major-222117639.html",
+      "date": "2026-09-30T00:21:17+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Cardano vs Ethereum: Which Smart Contract Platform Wins by 2030?",
+      "summary": "Cardano has surged faster than Ethereum recently, yet Ethereum dwarfs it by nearly every measure that matters for long-term growth. One of these platforms looks far stronger heading into 2030, and the...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/cardano-vs-ethereum-smart-contract-221018289.html",
+      "date": "2026-09-30T00:10:18+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "ARK Invest CEO Democratizes Access to OpenAI and Anthropic Through Blockchain Fund—But There’s a Catch",
+      "summary": "Cathie Wood just moved a fund holding OpenAI and Anthropic stakes onto the Ethereum blockchain, promising to democratize access to private AI giants. A closer look at the fine print reveals a structur...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/ark-invest-ceo-democratizes-access-175044803.html",
+      "date": "2026-09-29T19:50:44+02:00"
+    },
+    {
+      "ticker": "SOL-USD",
+      "category": "crypto",
+      "title": "Chainlink vs Solana: Which Is the Better Buy After Chainlink’s 96% Quarter?",
+      "summary": "Chainlink (CRYPTO: LINK) has seen an impressive boost, nearly doubling in value with a 96% gain over the past three months. By comparison, Solana (CRYPTO: SOL) has also performed well, rising about 67...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/chainlink-vs-solana-better-buy-070024291.html",
+      "date": "2026-09-30T09:00:24+02:00"
+    },
+    {
+      "ticker": "SOL-USD",
+      "category": "crypto",
+      "title": "Cathie Wood increases stake in surging crypto ETF",
+      "summary": "Cathie Wood’s ARK Invest buys more shares of the 3iQ Solana Staking ETF.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/cathie-wood-increases-stake-surging-182502856.html",
+      "date": "2026-09-29T20:25:02+02:00"
+    },
+    {
+      "ticker": "SOL-USD",
+      "category": "crypto",
+      "title": "Is Altcoin Season Coming in 2026? What Bitcoin Dominance at 58.3% Says",
+      "summary": "Bitcoin still holds the lion's share of the crypto market, yet some altcoins have already posted triple-digit gains without any fanfare. Whether that momentum spreads to the broader market depends on ...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/altcoin-season-coming-2026-bitcoin-150007095.html",
+      "date": "2026-09-29T17:00:07+02:00"
+    },
+    {
+      "ticker": "HYPE32196-USD",
+      "category": "crypto",
+      "title": "Hyperliquid Whales Just Sold $22 Million. Who Is Buying HYPE Below Its $94 High?",
+      "summary": "Two Hyperliquid whales just pushed $22 million toward the exits, yet HYPE keeps trading near $88 with surprisingly stubborn demand. Figuring out who is absorbing that pressure reveals something unexpe...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/hyperliquid-whales-just-sold-22-110007300.html",
+      "date": "2026-09-29T13:00:07+02:00"
+    },
+    {
+      "ticker": "AAVE-USD",
+      "category": "crypto",
+      "title": "Rapper Kanye West makes major ETH move to Binance after 11 months",
+      "summary": "A Kanye West-linked wallet has moved ETH to Binance after nearly a year, while the address still holds about $26.7 million in crypto.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/rapper-kanye-west-makes-major-222117639.html",
+      "date": "2026-09-30T00:21:17+02:00"
+    },
+    {
+      "ticker": "LINK-USD",
+      "category": "crypto",
+      "title": "Chainlink vs Solana: Which Is the Better Buy After Chainlink’s 96% Quarter?",
+      "summary": "Chainlink (CRYPTO: LINK) has seen an impressive boost, nearly doubling in value with a 96% gain over the past three months. By comparison, Solana (CRYPTO: SOL) has also performed well, rising about 67...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/chainlink-vs-solana-better-buy-070024291.html",
+      "date": "2026-09-30T09:00:24+02:00"
+    },
+    {
+      "ticker": "LINK-USD",
+      "category": "crypto",
+      "title": "Is Altcoin Season Coming in 2026? What Bitcoin Dominance at 58.3% Says",
+      "summary": "Bitcoin still holds the lion's share of the crypto market, yet some altcoins have already posted triple-digit gains without any fanfare. Whether that momentum spreads to the broader market depends on ...",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/altcoin-season-coming-2026-bitcoin-150007095.html",
+      "date": "2026-09-29T17:00:07+02:00"
+    },
+    {
+      "ticker": "LINK-USD",
+      "category": "crypto",
+      "title": "How Will Chainlink’s CCIP 2.0 Upgrade Impact LINK Price?",
+      "summary": "Chainlink launched CCIP 2.0 as LINK tests a key $15 resistance level. Here’s what the upgrade means and where price could go next.",
+      "link": "https://finance.yahoo.com/markets/crypto/articles/chainlink-ccip-2-0-upgrade-131119300.html",
+      "date": "2026-09-29T15:11:19+02:00"
+    }
+  ],
   "fundamentals": [
     {
       "ticker": "AED.BR",
@@ -1437,7 +2078,7 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+21.3%",
-      "pe": "31.0x",
+      "pe": "31.1x",
       "ev": "45.2x",
       "roe": "53.9%",
       "peg": "1.07",
@@ -1465,7 +2106,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "31.0x",
+          "31.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2169,7 +2810,7 @@
       "ticker": "MC.PA",
       "category": "stock",
       "rev_growth": "-2.9%",
-      "pe": "15.9x",
+      "pe": "16.0x",
       "ev": "11.0x",
       "roe": "16.6%",
       "peg": "1.51",
@@ -2197,7 +2838,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "15.9x",
+          "16.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2582,7 +3223,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "26.9x",
+      "pe": "27.1x",
       "ev": "18.7x",
       "roe": "25.5%",
       "peg": "3.15",
@@ -2610,7 +3251,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.9x",
+          "27.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -2880,7 +3521,7 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "rev_growth": "+27.8%",
-      "pe": "8.5x",
+      "pe": "8.4x",
       "ev": "5.2x",
       "roe": "14.5%",
       "peg": "0.82",
@@ -2908,7 +3549,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.5x",
+          "8.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3124,7 +3765,7 @@
       "ticker": "VRT",
       "category": "stock",
       "rev_growth": "+24.1%",
-      "pe": "27.2x",
+      "pe": "27.1x",
       "ev": "35.8x",
       "roe": "43.9%",
       "peg": "0.82",
@@ -3152,7 +3793,7 @@
           "1.3%"
         ],
         "Fwd P/E": [
-          "27.2x",
+          "27.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3244,6 +3885,14 @@
     }
   ],
   "earnings": [
+    {
+      "ticker": "CPINV.BR",
+      "category": "reit",
+      "date": "2026-09-02",
+      "date_formatted": "02/09/2026",
+      "is_past": true,
+      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
+    },
     {
       "ticker": "AVGO",
       "category": "stock",
@@ -3571,14 +4220,6 @@
       "date_formatted": "11/02/2027",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/rms/financials/?p=quarterly"
-    },
-    {
-      "ticker": "AED.BR",
-      "category": "reit",
-      "date": "2027-02-17",
-      "date_formatted": "17/02/2027",
-      "is_past": false,
-      "link": "https://stockanalysis.com/stocks/aed/financials/?p=quarterly"
     },
     {
       "ticker": "GMG.AX",
