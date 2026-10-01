@@ -1,30 +1,30 @@
 {
-  "updated_at": "01/10/2026 à 11:15",
+  "updated_at": "01/10/2026 à 12:15",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 62.45,
-      "change": -2.12,
+      "price": 62.3,
+      "change": -2.35,
       "currency": "€",
-      "sma200": "200 W-SMA Under -3.1% 🔥",
-      "sma200_pct": -3.1,
+      "sma200": "200 W-SMA Under -3.3% 🔥",
+      "sma200_pct": -3.3,
       "is_under": true,
-      "rsi14_weekly": 33.7,
-      "ath_52w_pct": -21.2,
-      "earnings": "N/A"
+      "rsi14_weekly": 33.4,
+      "ath_52w_pct": -21.4,
+      "earnings": "17/02/2027"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.06,
-      "change": -1.47,
+      "price": 12.04,
+      "change": -1.63,
       "currency": "€",
-      "sma200": "200 W-SMA Under -5.6% 🔥",
-      "sma200_pct": -5.6,
+      "sma200": "200 W-SMA Under -5.8% 🔥",
+      "sma200_pct": -5.8,
       "is_under": true,
-      "rsi14_weekly": 43.4,
-      "ath_52w_pct": -13.4,
+      "rsi14_weekly": 43.1,
+      "ath_52w_pct": -13.5,
       "earnings": "04/11/2026"
     },
     {
@@ -173,14 +173,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1599.4,
-      "change": 0.16,
+      "price": 1603.8,
+      "change": 0.44,
       "currency": "€",
-      "sma200": "200 W-SMA Above +91.1%",
-      "sma200_pct": 91.1,
+      "sma200": "200 W-SMA Above +91.6%",
+      "sma200_pct": 91.6,
       "is_under": false,
-      "rsi14_weekly": 62.0,
-      "ath_52w_pct": -7.1,
+      "rsi14_weekly": 62.2,
+      "ath_52w_pct": -6.8,
       "earnings": "14/10/2026"
     },
     {
@@ -247,19 +247,6 @@
       "rsi14_weekly": 47.3,
       "ath_52w_pct": -18.0,
       "earnings": "29/10/2026"
-    },
-    {
-      "ticker": "GEV",
-      "category": "stock",
-      "price": 950.49,
-      "change": -1.25,
-      "currency": "$",
-      "sma200": "N/A",
-      "sma200_pct": null,
-      "is_under": false,
-      "rsi14_weekly": 49.8,
-      "ath_52w_pct": -19.1,
-      "earnings": "28/10/2026"
     },
     {
       "ticker": "GOOG",
@@ -329,14 +316,14 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 383.2,
-      "change": -1.74,
+      "price": 382.95,
+      "change": -1.81,
       "currency": "€",
-      "sma200": "200 W-SMA Under -40.8% 🔥",
-      "sma200_pct": -40.8,
+      "sma200": "200 W-SMA Under -40.9% 🔥",
+      "sma200_pct": -40.9,
       "is_under": true,
       "rsi14_weekly": 27.9,
-      "ath_52w_pct": -41.2,
+      "ath_52w_pct": -41.3,
       "earnings": "26/01/2027"
     },
     {
@@ -420,14 +407,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1312.5,
-      "change": -1.8,
+      "price": 1306.5,
+      "change": -2.24,
       "currency": "€",
-      "sma200": "200 W-SMA Under -34.9% 🔥",
-      "sma200_pct": -34.9,
+      "sma200": "200 W-SMA Under -35.2% 🔥",
+      "sma200_pct": -35.2,
       "is_under": true,
-      "rsi14_weekly": 29.3,
-      "ath_52w_pct": -41.7,
+      "rsi14_weekly": 29.1,
+      "ath_52w_pct": -41.9,
       "earnings": "11/02/2027"
     },
     {
@@ -459,13 +446,13 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 291.4,
-      "change": -0.21,
+      "price": 291.35,
+      "change": -0.22,
       "currency": "€",
       "sma200": "200 W-SMA Above +35.8%",
       "sma200_pct": 35.8,
       "is_under": false,
-      "rsi14_weekly": 56.4,
+      "rsi14_weekly": 56.3,
       "ath_52w_pct": -6.3,
       "earnings": "25/02/2027"
     },
@@ -485,14 +472,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 74.38,
-      "change": -1.74,
+      "price": 74.51,
+      "change": -1.57,
       "currency": "€",
-      "sma200": "200 W-SMA Above +22.5%",
-      "sma200_pct": 22.5,
+      "sma200": "200 W-SMA Above +22.7%",
+      "sma200_pct": 22.7,
       "is_under": false,
-      "rsi14_weekly": 51.0,
-      "ath_52w_pct": -8.2,
+      "rsi14_weekly": 51.3,
+      "ath_52w_pct": -8.1,
       "earnings": "29/10/2026"
     },
     {
@@ -563,53 +550,53 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 83655.29,
-      "change": 0.11,
+      "price": 83560.73,
+      "change": -0.01,
       "currency": "$",
-      "sma200": "200 W-SMA Above +26.6%",
-      "sma200_pct": 26.6,
+      "sma200": "200 W-SMA Above +26.5%",
+      "sma200_pct": 26.5,
       "is_under": false,
       "rsi14_weekly": 61.6,
-      "ath_52w_pct": -6.5,
+      "ath_52w_pct": -6.6,
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2687.62,
-      "change": 0.12,
+      "price": 2682.47,
+      "change": -0.07,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.6%",
-      "sma200_pct": 6.6,
+      "sma200": "200 W-SMA Above +6.4%",
+      "sma200_pct": 6.4,
       "is_under": false,
-      "rsi14_weekly": 64.0,
-      "ath_52w_pct": -11.1,
+      "rsi14_weekly": 63.9,
+      "ath_52w_pct": -11.2,
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 117.78,
-      "change": -0.19,
+      "price": 117.33,
+      "change": -0.57,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.2%",
-      "sma200_pct": 6.2,
+      "sma200": "200 W-SMA Above +5.8%",
+      "sma200_pct": 5.8,
       "is_under": false,
-      "rsi14_weekly": 63.8,
-      "ath_52w_pct": -7.5,
+      "rsi14_weekly": 63.6,
+      "ath_52w_pct": -7.9,
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 89.3,
-      "change": -1.75,
+      "price": 88.76,
+      "change": -2.34,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 68.3,
-      "ath_52w_pct": -8.1,
+      "rsi14_weekly": 67.9,
+      "ath_52w_pct": -8.7,
       "earnings": "N/A"
     },
     {
@@ -628,27 +615,27 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 164.78,
-      "change": 3.39,
+      "price": 163.82,
+      "change": 2.79,
       "currency": "$",
-      "sma200": "200 W-SMA Above +17.5%",
-      "sma200_pct": 17.5,
+      "sma200": "200 W-SMA Above +16.8%",
+      "sma200_pct": 16.8,
       "is_under": false,
-      "rsi14_weekly": 67.7,
-      "ath_52w_pct": -0.3,
+      "rsi14_weekly": 67.5,
+      "ath_52w_pct": -0.8,
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.28,
-      "change": -0.57,
+      "price": 14.23,
+      "change": -0.88,
       "currency": "$",
-      "sma200": "200 W-SMA Above +12.3%",
-      "sma200_pct": 12.3,
+      "sma200": "200 W-SMA Above +12.0%",
+      "sma200_pct": 12.0,
       "is_under": false,
-      "rsi14_weekly": 70.6,
-      "ath_52w_pct": -7.5,
+      "rsi14_weekly": 70.5,
+      "ath_52w_pct": -7.8,
       "earnings": "N/A"
     }
   ],
@@ -758,44 +745,12 @@
       "date": "2026-09-30T22:01:47+02:00"
     },
     {
-      "ticker": "GEV",
+      "ticker": "BKNG",
       "category": "stock",
-      "title": "GE Vernova (GEV) Secures NRC Permit For New Reactor Design",
-      "summary": "GE Vernova (NYSE:GEV) and Hitachi have secured a construction permit from the US Nuclear Regulatory Commission for a new reactor design. The permit allows the partners to begin licensed construction a...",
-      "link": "https://finance.yahoo.com/energy/articles/ge-vernova-gev-secures-nrc-201009594.html",
-      "date": "2026-09-30T22:10:09+02:00"
-    },
-    {
-      "ticker": "GEV",
-      "category": "stock",
-      "title": "GE Vernova Stocks Slip as Data Centers Choose Faster Turbines",
-      "summary": "Crusoe ordered 29 aeroderivative units, while smaller turbines can carry materially higher generation costs.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/ge-vernova-stocks-slip-data-174915714.html",
-      "date": "2026-09-30T19:49:15+02:00"
-    },
-    {
-      "ticker": "GEV",
-      "category": "stock",
-      "title": "Here is What to Know Beyond Why GE Vernova Inc. (GEV) is a Trending Stock",
-      "summary": "Zacks.com users have recently been watching GE Vernova (GEV) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-ge-vernova-120005281.html",
-      "date": "2026-09-30T14:00:05+02:00"
-    },
-    {
-      "ticker": "GOOG",
-      "category": "stock",
-      "title": "AI companies just signed a White House accord, and tech folks can't get enough of the signatures",
-      "summary": "Users on X locked in on the signatures of top tech executives on a White House AI \"constitution.\"",
-      "link": "https://finance.yahoo.com/technology/article/ai-companies-just-signed-a-white-house-accord-and-tech-folks-cant-get-enough-of-the-signatures-095852998.html",
-      "date": "2026-09-30T11:58:52+02:00"
-    },
-    {
-      "ticker": "GOOG",
-      "category": "stock",
-      "title": "AI in America has a huge 1.7 million job shortage problem",
-      "summary": "Got skilled workers?",
-      "link": "https://finance.yahoo.com/technology/article/ai-in-america-has-a-huge-17-million-job-shortage-problem-100847922.html",
-      "date": "2026-09-30T12:08:47+02:00"
+      "title": "2 Profitable Stocks to Research Further and 1 We Avoid",
+      "summary": "Even if a company is profitable, it doesn’t always mean it’s a great investment. Some struggle to maintain growth, face looming threats, or fail to reinvest wisely, limiting their future potential.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-profitable-stocks-research-further-091707168.html",
+      "date": "2026-10-01T11:17:07+02:00"
     },
     {
       "ticker": "GOOG",
@@ -840,26 +795,18 @@
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Meta counted Mark Zuckerberg’s $4.1B stock payout as research pay to claim a $355M tax break — and the IRS wants it back",
-      "summary": "Meta says Zuckerberg was writing code when he got his options in 2005. The IRS says only his work from 2008 to 2010 counts, and $355 million rides on who's right.",
-      "link": "https://finance.yahoo.com/economy/policy/articles/meta-counted-mark-zuckerberg-4-040500231.html",
-      "date": "2026-10-01T06:05:00+02:00"
+      "title": "OpenAI's Dots connect to 4,000 apps and never sleep",
+      "summary": "OpenAI just unveiled Dots: an always-on AI assistant with 4,000+ tools that might just be the closest thing yet to Tony Stark's \"Jarvis.\" In The Loop host Ejaaz Ahamadeen explains how Dots stacks up a...",
+      "link": "https://finance.yahoo.com/video/openais-dots-connect-4-000-110000304.html",
+      "date": "2026-09-30T13:00:00+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Meta reportedly calls its AI data centers ‘pilot models’ — its research tax credits jumped from $700M to $3.9B",
-      "summary": "The company appears to have netted the most from that credit among all publicly traded companies.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/meta-reportedly-calls-ai-data-035500665.html",
-      "date": "2026-10-01T05:55:00+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "AI in America has a huge 1.7 million job shortage problem",
-      "summary": "Got skilled workers?",
-      "link": "https://finance.yahoo.com/technology/article/ai-in-america-has-a-huge-17-million-job-shortage-problem-100847922.html",
-      "date": "2026-09-30T12:08:47+02:00"
+      "title": "Meta counted Mark Zuckerberg’s $4.1B stock payout as research pay to claim a $355M tax break — and the IRS wants it back",
+      "summary": "Meta says Zuckerberg was writing code when he got his options in 2005. The IRS says only his work from 2008 to 2010 counts, and $355 million rides on who's right.",
+      "link": "https://finance.yahoo.com/economy/policy/articles/meta-counted-mark-zuckerberg-4-040500231.html",
+      "date": "2026-10-01T06:05:00+02:00"
     },
     {
       "ticker": "NVDA",
@@ -872,18 +819,18 @@
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Meta reportedly calls its AI data centers ‘pilot models’ — its research tax credits jumped from $700M to $3.9B",
-      "summary": "The company appears to have netted the most from that credit among all publicly traded companies.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/meta-reportedly-calls-ai-data-035500665.html",
-      "date": "2026-10-01T05:55:00+02:00"
+      "title": "How Micron's earnings results could impact chip ETFs",
+      "summary": "The 8:30 Hosts Julie Hyman, Pras Subramanian, and Jake Conley discuss the health of memory exchange-traded funds (ETFs) and how Micron's (MU) quarterly earnings results will factor in.",
+      "link": "https://finance.yahoo.com/video/microns-earnings-results-could-impact-133632512.html",
+      "date": "2026-09-30T15:36:32+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Forget Waiting Three Months for SPY’s Dividend. Invesco’s High-Dividend Fund Pays Every Month",
-      "summary": "Monthly bills don't care about quarterly dividend schedules, and one S&P 500 ETF built its entire identity around solving that mismatch. But the convenience of a monthly paycheck comes with a cost tha...",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/forget-waiting-three-months-spy-230629592.html",
-      "date": "2026-10-01T01:06:29+02:00"
+      "title": "Meta reportedly calls its AI data centers ‘pilot models’ — its research tax credits jumped from $700M to $3.9B",
+      "summary": "The company appears to have netted the most from that credit among all publicly traded companies.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/meta-reportedly-calls-ai-data-035500665.html",
+      "date": "2026-10-01T05:55:00+02:00"
     },
     {
       "ticker": "PEP",
@@ -1038,14 +985,6 @@
       "date": "2026-09-30T20:12:51+02:00"
     },
     {
-      "ticker": "VRSN",
-      "category": "stock",
-      "title": "Warren Buffett's Successor, Greg Abel, Has Over $42 Billion of Berkshire Hathaway's Capital Invested in 3 Virtual Monopolies",
-      "summary": "Amid a year of big changes for Berkshire Hathaway, the search for value and businesses with sustainable competitive edges remains the same.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffetts-successor-greg-abel-092601870.html",
-      "date": "2026-09-30T11:26:01+02:00"
-    },
-    {
       "ticker": "VRT",
       "category": "stock",
       "title": "Should You Think About Vertiv Differently Now?",
@@ -1163,7 +1102,7 @@
       "ticker": "AED.BR",
       "category": "reit",
       "rev_growth": "+104.3%",
-      "pe": "11.4x",
+      "pe": "11.3x",
       "ev": "28.4x",
       "roe": "12.2%",
       "peg": "N/A",
@@ -1191,7 +1130,7 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.4x",
+          "11.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -1942,7 +1881,7 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+21.3%",
-      "pe": "30.9x",
+      "pe": "31.0x",
       "ev": "45.1x",
       "roe": "53.9%",
       "peg": "1.12",
@@ -1970,7 +1909,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "30.9x",
+          "31.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2187,7 +2126,7 @@
       "category": "stock",
       "rev_growth": "+2.4%",
       "pe": "15.6x",
-      "ev": "11.1x",
+      "ev": "11.2x",
       "roe": "16.2%",
       "peg": "2.67",
       "net_margin": "31.8%",
@@ -2221,7 +2160,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.1x",
+          "11.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -2297,67 +2236,6 @@
         ],
         "PEG": [
           "2.53",
-          "N/A",
-          "N/A",
-          "N/A",
-          "N/A"
-        ]
-      }
-    },
-    {
-      "ticker": "GEV",
-      "category": "stock",
-      "rev_growth": "+21.9%",
-      "pe": "37.8x",
-      "ev": "62.5x",
-      "roe": "82.6%",
-      "peg": "1.88",
-      "net_margin": "23.0%",
-      "quarters": [
-        "2026 (TTM)",
-        "2025",
-        "2024",
-        "2023",
-        "2022"
-      ],
-      "history": {
-        "Croit. CA.": [
-          "+21.9%",
-          "+9.0%",
-          "+5.1%",
-          "+12.1%",
-          "N/A"
-        ],
-        "Marge Net %": [
-          "23.0%",
-          "12.8%",
-          "4.4%",
-          "-1.3%",
-          "-9.2%"
-        ],
-        "Fwd P/E": [
-          "37.8x",
-          "N/A",
-          "N/A",
-          "N/A",
-          "N/A"
-        ],
-        "EV/EBITDA": [
-          "62.5x",
-          "N/A",
-          "N/A",
-          "N/A",
-          "N/A"
-        ],
-        "ROE": [
-          "82.6%",
-          "47.1%",
-          "18.3%",
-          "-4.8%",
-          "-25.7%"
-        ],
-        "PEG": [
-          "1.88",
           "N/A",
           "N/A",
           "N/A",
@@ -2674,7 +2552,7 @@
       "ticker": "MC.PA",
       "category": "stock",
       "rev_growth": "-2.9%",
-      "pe": "15.6x",
+      "pe": "15.4x",
       "ev": "10.9x",
       "roe": "16.6%",
       "peg": "1.53",
@@ -2702,7 +2580,7 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "15.6x",
+          "15.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3087,7 +2965,7 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "26.4x",
+      "pe": "26.0x",
       "ev": "18.4x",
       "roe": "25.5%",
       "peg": "3.08",
@@ -3115,7 +2993,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "26.4x",
+          "26.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -3385,7 +3263,7 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "rev_growth": "+27.8%",
-      "pe": "8.0x",
+      "pe": "8.1x",
       "ev": "5.1x",
       "roe": "14.5%",
       "peg": "0.80",
@@ -3413,7 +3291,7 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.0x",
+          "8.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3629,7 +3507,7 @@
       "ticker": "VRT",
       "category": "stock",
       "rev_growth": "+24.1%",
-      "pe": "26.3x",
+      "pe": "26.5x",
       "ev": "34.8x",
       "roe": "43.9%",
       "peg": "0.81",
@@ -3657,7 +3535,7 @@
           "1.3%"
         ],
         "Fwd P/E": [
-          "26.3x",
+          "26.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -3749,14 +3627,6 @@
     }
   ],
   "earnings": [
-    {
-      "ticker": "CPINV.BR",
-      "category": "reit",
-      "date": "2026-09-02",
-      "date_formatted": "02/09/2026",
-      "is_past": true,
-      "link": "https://stockanalysis.com/stocks/cpinv/financials/?p=quarterly"
-    },
     {
       "ticker": "AVGO",
       "category": "stock",
@@ -3900,14 +3770,6 @@
       "date_formatted": "28/10/2026",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/eqix/financials/?p=quarterly"
-    },
-    {
-      "ticker": "GEV",
-      "category": "stock",
-      "date": "2026-10-28",
-      "date_formatted": "28/10/2026",
-      "is_past": false,
-      "link": "https://stockanalysis.com/stocks/gev/financials/?p=quarterly"
     },
     {
       "ticker": "GOOG",
@@ -4084,6 +3946,14 @@
       "date_formatted": "11/02/2027",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/rms/financials/?p=quarterly"
+    },
+    {
+      "ticker": "AED.BR",
+      "category": "reit",
+      "date": "2027-02-17",
+      "date_formatted": "17/02/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/aed/financials/?p=quarterly"
     },
     {
       "ticker": "GMG.AX",
