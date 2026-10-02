@@ -9,7 +9,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <title>Trading Dashboard</title>
+  <title>RZI</title>
   <link rel="manifest" href="manifest.json">
 
   <!-- Favicon -->
@@ -255,7 +255,7 @@
 
   <div class="header">
     <div>
-      <div class="title">Trading Hub</div>
+      <div class="title">RZInvest</div>
       <div class="last-update" id="update-time">Chargement...</div>
     </div>
   </div>
@@ -271,7 +271,7 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('news-sec', this)">📰 News</button>
     <button class="tab-btn" onclick="switchTab('price-tv-sec', this)">💵 Price</button>
-    <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 Cours</button>
+    <button class="tab-btn" onclick="switchTab('prices-sec', this)">📈 KPI</button>
     <button class="tab-btn" onclick="switchTab('fund-sec', this)">📊 Ratios</button>
     <button class="tab-btn" onclick="switchTab('earnings-sec', this)">📅 Pub.</button>
   </div>
@@ -296,7 +296,7 @@
     <div id="price-tv-container"></div>
   </div>
 
-  <!-- SECTION PRICES -->
+  <!-- SECTION KPI (ANCIENNEMENT PRICES) -->
   <div id="prices-sec" class="section">
     <div id="prices-container"></div>
   </div>
@@ -457,7 +457,7 @@
         case "PEG":
         case "peg":
           if (num <= 1.0) return "badge-green";
-          if (num <= 2.0) return "badge-yellow";
+          if (num <= 2.0) return "badge-red";
           return "badge-red";
 
         default:
@@ -708,7 +708,7 @@
       // 2. Price (TradingView Market Overview)
       renderPriceTV();
 
-      // 3. Prices
+      // 3. KPI (ex-Prices)
       const priceCont = document.getElementById('prices-container');
       const filteredPrices = getSortedFilteredPrices();
       const fundList = globalData.fundamentals || [];
@@ -723,20 +723,37 @@
           
           const f = fundList.find(item => item.ticker === p.ticker) || {};
           
+          // --- GESTION 200 W-SMA ---
           const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
-          const smaClass = isUnder ? 'badge-green' : 'badge-red';
+          const smaPct = p.sma200_pct !== undefined && p.sma200_pct !== null ? parseFloat(p.sma200_pct) : null;
+          
+          let smaClass = 'badge-red';
+          if (isUnder) {
+            smaClass = 'badge-green';
+          } else if (smaPct !== null && smaPct >= 0 && smaPct <= 15) {
+            smaClass = 'badge-yellow';
+          }
 
+          // --- GESTION RSI14-W ---
           let rsiHtml = '';
           if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
             const rsiVal = parseFloat(p.rsi14_weekly);
             if (!isNaN(rsiVal)) {
-              const isRsiExtreme = (rsiVal <= 30 || rsiVal >= 70);
-              const rsiClass = isRsiExtreme ? 'badge-green' : 'badge-red';
-              const fireEmoji = isRsiExtreme ? ' 🔥' : '';
+              let rsiClass = 'badge-neutral';
+              let fireEmoji = '';
+
+              if (rsiVal <= 30 || rsiVal >= 70) {
+                rsiClass = 'badge-green';
+                fireEmoji = ' 🔥';
+              } else if ((rsiVal > 30 && rsiVal <= 35) || (rsiVal >= 65 && rsiVal < 70)) {
+                rsiClass = 'badge-yellow';
+              }
+
               rsiHtml = `<div><span class="badge-tag ${rsiClass}">RSI14-W ${Math.round(rsiVal)}${fireEmoji}</span></div>`;
             }
           }
 
+          // --- GESTION ATH 52W ---
           let athHtml = '';
           if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
             const athVal = parseFloat(p.ath_52w_pct);
@@ -849,7 +866,7 @@
         currentThead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
-            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️️</th>
             <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('EV/EBITDA')">EV/EBITDA ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('ROE')">ROE ℹ️</th>
