@@ -1,17 +1,23 @@
 {
-  "updated_at": "02/10/2026 à 12:13",
+  "updated_at": "02/10/2026 à 12:55",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 61.45,
-      "change": -1.05,
+      "price": 61.6,
+      "change": -0.81,
       "currency": "€",
-      "sma200": "200 W-SMA Under -4.6% 🔥",
-      "sma200_pct": -4.6,
+      "sma200": "200 W-SMA Under -4.4% 🔥",
+      "sma200_pct": -4.4,
       "is_under": true,
-      "rsi14_weekly": 32.0,
-      "ath_52w_pct": -22.5,
+      "rsi14_weekly": 32.2,
+      "ath_52w_pct": -22.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +8.2%",
+      "ma_cross_pct": 8.2,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 5.8,
       "earnings": "17/02/2027"
     },
     {
@@ -25,32 +31,50 @@
       "is_under": true,
       "rsi14_weekly": 42.5,
       "ath_52w_pct": -13.8,
+      "ma_cross_str": "Bearish Cross (50/200W) -3.5%",
+      "ma_cross_pct": -3.5,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.1,
       "earnings": "04/11/2026"
     },
     {
       "ticker": "HOMI.BR",
       "category": "reit",
-      "price": 17.28,
-      "change": 0.23,
+      "price": 17.14,
+      "change": -0.58,
       "currency": "€",
-      "sma200": "200 W-SMA Under -4.7% 🔥",
-      "sma200_pct": -4.7,
+      "sma200": "200 W-SMA Under -5.4% 🔥",
+      "sma200_pct": -5.4,
       "is_under": true,
-      "rsi14_weekly": 35.1,
-      "ath_52w_pct": -14.5,
+      "rsi14_weekly": 34.2,
+      "ath_52w_pct": -15.1,
+      "ma_cross_str": "Bullish Cross (50/200W) +3.9%",
+      "ma_cross_pct": 3.9,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 6.3,
       "earnings": "N/A"
     },
     {
       "ticker": "RET.BR",
       "category": "reit",
-      "price": 62.2,
-      "change": 0.0,
+      "price": 62.1,
+      "change": -0.16,
       "currency": "€",
-      "sma200": "200 W-SMA Under -2.0% 🔥",
-      "sma200_pct": -2.0,
+      "sma200": "200 W-SMA Under -2.2% 🔥",
+      "sma200_pct": -2.2,
       "is_under": true,
-      "rsi14_weekly": 36.3,
-      "ath_52w_pct": -13.1,
+      "rsi14_weekly": 36.1,
+      "ath_52w_pct": -13.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +4.1%",
+      "ma_cross_pct": 4.1,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 5.6,
       "earnings": "13/11/2026"
     },
     {
@@ -64,6 +88,12 @@
       "is_under": false,
       "rsi14_weekly": 36.8,
       "ath_52w_pct": -14.6,
+      "ma_cross_str": "Bullish Cross (50/200W) +11.5%",
+      "ma_cross_pct": 11.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 4.3,
       "earnings": "15/10/2026"
     },
     {
@@ -77,6 +107,12 @@
       "is_under": true,
       "rsi14_weekly": 37.0,
       "ath_52w_pct": -24.9,
+      "ma_cross_str": "Bullish Cross (50/200W) +2.2%",
+      "ma_cross_pct": 2.2,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 5.6,
       "earnings": "18/02/2027"
     },
     {
@@ -90,6 +126,12 @@
       "is_under": false,
       "rsi14_weekly": 44.8,
       "ath_52w_pct": -13.4,
+      "ma_cross_str": "Bullish Cross (50/200W) +17.8%",
+      "ma_cross_pct": 17.8,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 5.7,
       "earnings": "29/10/2026"
     },
     {
@@ -103,6 +145,12 @@
       "is_under": false,
       "rsi14_weekly": 48.7,
       "ath_52w_pct": -9.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +13.8%",
+      "ma_cross_pct": 13.8,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.8,
       "earnings": "28/10/2026"
     },
     {
@@ -116,6 +164,12 @@
       "is_under": false,
       "rsi14_weekly": 52.1,
       "ath_52w_pct": -10.0,
+      "ma_cross_str": "Bullish Cross (50/200W) +55.7%",
+      "ma_cross_pct": 55.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 1.7,
       "earnings": "26/10/2026"
     },
     {
@@ -129,6 +183,12 @@
       "is_under": false,
       "rsi14_weekly": 47.6,
       "ath_52w_pct": -51.9,
+      "ma_cross_str": "Bullish Cross (50/200W) +172.9%",
+      "ma_cross_pct": 172.9,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": -9.7,
       "earnings": "05/11/2026"
     },
     {
@@ -142,6 +202,12 @@
       "is_under": false,
       "rsi14_weekly": 68.7,
       "ath_52w_pct": -2.4,
+      "ma_cross_str": "Bullish Cross (50/200W) +90.6%",
+      "ma_cross_pct": 90.6,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 0.9,
       "earnings": "03/11/2026"
     },
     {
@@ -155,6 +221,12 @@
       "is_under": false,
       "rsi14_weekly": 46.9,
       "ath_52w_pct": -43.5,
+      "ma_cross_str": "Bullish Cross (50/200W) +59.7%",
+      "ma_cross_pct": 59.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": -2.9,
       "earnings": "26/10/2026"
     },
     {
@@ -168,19 +240,31 @@
       "is_under": false,
       "rsi14_weekly": 49.4,
       "ath_52w_pct": -12.6,
+      "ma_cross_str": "Bullish Cross (50/200W) +28.7%",
+      "ma_cross_pct": 28.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 0.1,
       "earnings": "29/10/2026"
     },
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1635.4,
-      "change": 2.4,
+      "price": 1637.6,
+      "change": 2.54,
       "currency": "€",
-      "sma200": "200 W-SMA Above +95.4%",
-      "sma200_pct": 95.4,
+      "sma200": "200 W-SMA Above +95.6%",
+      "sma200_pct": 95.6,
       "is_under": false,
       "rsi14_weekly": 63.8,
-      "ath_52w_pct": -5.0,
+      "ath_52w_pct": -4.9,
+      "ma_cross_str": "Bullish Cross (50/200W) +51.3%",
+      "ma_cross_pct": 51.3,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 1.3,
       "earnings": "14/10/2026"
     },
     {
@@ -194,6 +278,12 @@
       "is_under": false,
       "rsi14_weekly": 43.6,
       "ath_52w_pct": -28.6,
+      "ma_cross_str": "Bullish Cross (50/200W) +77.7%",
+      "ma_cross_pct": 77.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 1.9,
       "earnings": "09/12/2026"
     },
     {
@@ -207,6 +297,12 @@
       "is_under": false,
       "rsi14_weekly": 63.1,
       "ath_52w_pct": -10.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +70.5%",
+      "ma_cross_pct": 70.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 1.1,
       "earnings": "11/11/2026"
     },
     {
@@ -220,6 +316,12 @@
       "is_under": true,
       "rsi14_weekly": 38.8,
       "ath_52w_pct": -27.0,
+      "ma_cross_str": "Bullish Cross (50/200W) +14.6%",
+      "ma_cross_pct": 14.6,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 6.2,
       "earnings": "27/10/2026"
     },
     {
@@ -233,6 +335,12 @@
       "is_under": true,
       "rsi14_weekly": 35.3,
       "ath_52w_pct": -40.4,
+      "ma_cross_str": "Bearish Cross (50/200W) -23.2%",
+      "ma_cross_pct": -23.2,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 3.5,
       "earnings": "19/11/2026"
     },
     {
@@ -246,6 +354,12 @@
       "is_under": false,
       "rsi14_weekly": 48.6,
       "ath_52w_pct": -16.8,
+      "ma_cross_str": "Bullish Cross (50/200W) +13.4%",
+      "ma_cross_pct": 13.4,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 1.5,
       "earnings": "29/10/2026"
     },
     {
@@ -259,6 +373,12 @@
       "is_under": false,
       "rsi14_weekly": 48.5,
       "ath_52w_pct": -16.1,
+      "ma_cross_str": "Bullish Cross (50/200W) +66.2%",
+      "ma_cross_pct": 66.2,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 0.6,
       "earnings": "28/10/2026"
     },
     {
@@ -272,6 +392,12 @@
       "is_under": true,
       "rsi14_weekly": 40.7,
       "ath_52w_pct": -51.2,
+      "ma_cross_str": "Bullish Cross (50/200W) +3.8%",
+      "ma_cross_pct": 3.8,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.9,
       "earnings": "03/11/2026"
     },
     {
@@ -285,6 +411,12 @@
       "is_under": true,
       "rsi14_weekly": 47.6,
       "ath_52w_pct": -32.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +10.5%",
+      "ma_cross_pct": 10.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 1.8,
       "earnings": "20/10/2026"
     },
     {
@@ -298,6 +430,12 @@
       "is_under": false,
       "rsi14_weekly": 54.2,
       "ath_52w_pct": -7.1,
+      "ma_cross_str": "Bullish Cross (50/200W) +31.5%",
+      "ma_cross_pct": 31.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 2.7,
       "earnings": "13/10/2026"
     },
     {
@@ -311,19 +449,31 @@
       "is_under": false,
       "rsi14_weekly": 60.8,
       "ath_52w_pct": -6.6,
+      "ma_cross_str": "Bullish Cross (50/200W) +25.5%",
+      "ma_cross_pct": 25.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 1.2,
       "earnings": "28/10/2026"
     },
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 380.8,
-      "change": 0.34,
+      "price": 381.5,
+      "change": 0.53,
       "currency": "€",
-      "sma200": "200 W-SMA Under -41.2% 🔥",
-      "sma200_pct": -41.2,
+      "sma200": "200 W-SMA Under -41.1% 🔥",
+      "sma200_pct": -41.1,
       "is_under": true,
-      "rsi14_weekly": 27.5,
-      "ath_52w_pct": -41.6,
+      "rsi14_weekly": 27.6,
+      "ath_52w_pct": -41.5,
+      "ma_cross_str": "Bearish Cross (50/200W) -20.2%",
+      "ma_cross_pct": -20.2,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 6.1,
       "earnings": "26/01/2027"
     },
     {
@@ -337,6 +487,12 @@
       "is_under": false,
       "rsi14_weekly": 63.4,
       "ath_52w_pct": -5.4,
+      "ma_cross_str": "Bullish Cross (50/200W) +10.2%",
+      "ma_cross_pct": 10.2,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 0.4,
       "earnings": "28/10/2026"
     },
     {
@@ -350,6 +506,12 @@
       "is_under": false,
       "rsi14_weekly": 56.9,
       "ath_52w_pct": -19.0,
+      "ma_cross_str": "N/A",
+      "ma_cross_pct": null,
+      "ma_cross_type": "neutral",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": -16.3,
       "earnings": "10/11/2026"
     },
     {
@@ -363,6 +525,12 @@
       "is_under": false,
       "rsi14_weekly": 60.4,
       "ath_52w_pct": -2.1,
+      "ma_cross_str": "Bullish Cross (50/200W) +67.8%",
+      "ma_cross_pct": 67.8,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 0.8,
       "earnings": "17/11/2026"
     },
     {
@@ -376,6 +544,12 @@
       "is_under": true,
       "rsi14_weekly": 39.6,
       "ath_52w_pct": -40.4,
+      "ma_cross_str": "Bullish Cross (50/200W) +0.8%",
+      "ma_cross_pct": 0.8,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 2.9,
       "earnings": "11/11/2026"
     },
     {
@@ -389,6 +563,12 @@
       "is_under": true,
       "rsi14_weekly": 29.7,
       "ath_52w_pct": -26.3,
+      "ma_cross_str": "Bearish Cross (50/200W) -8.2%",
+      "ma_cross_pct": -8.2,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 4.6,
       "earnings": "08/10/2026"
     },
     {
@@ -402,19 +582,31 @@
       "is_under": true,
       "rsi14_weekly": 44.4,
       "ath_52w_pct": -13.9,
+      "ma_cross_str": "Bearish Cross (50/200W) -5.0%",
+      "ma_cross_pct": -5.0,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 4.0,
       "earnings": "22/10/2026"
     },
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1300.0,
-      "change": -0.12,
+      "price": 1306.0,
+      "change": 0.35,
       "currency": "€",
-      "sma200": "200 W-SMA Under -35.5% 🔥",
-      "sma200_pct": -35.5,
+      "sma200": "200 W-SMA Under -35.2% 🔥",
+      "sma200_pct": -35.2,
       "is_under": true,
-      "rsi14_weekly": 28.9,
-      "ath_52w_pct": -42.2,
+      "rsi14_weekly": 29.1,
+      "ath_52w_pct": -42.0,
+      "ma_cross_str": "Bearish Cross (50/200W) -10.5%",
+      "ma_cross_pct": -10.5,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.6,
       "earnings": "11/02/2027"
     },
     {
@@ -428,6 +620,12 @@
       "is_under": false,
       "rsi14_weekly": 49.6,
       "ath_52w_pct": -30.0,
+      "ma_cross_str": "N/A",
+      "ma_cross_pct": null,
+      "ma_cross_type": "neutral",
+      "macd_w_str": "N/A",
+      "macd_w_type": "neutral",
+      "fcf_yield": -0.7,
       "earnings": "03/11/2026"
     },
     {
@@ -441,19 +639,31 @@
       "is_under": true,
       "rsi14_weekly": 41.1,
       "ath_52w_pct": -24.9,
+      "ma_cross_str": "Bullish Cross (50/200W) +1.9%",
+      "ma_cross_pct": 1.9,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 4.8,
       "earnings": "27/10/2026"
     },
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 299.9,
-      "change": 2.49,
+      "price": 300.2,
+      "change": 2.6,
       "currency": "€",
-      "sma200": "200 W-SMA Above +39.7%",
-      "sma200_pct": 39.7,
+      "sma200": "200 W-SMA Above +39.9%",
+      "sma200_pct": 39.9,
       "is_under": false,
-      "rsi14_weekly": 59.6,
-      "ath_52w_pct": -3.6,
+      "rsi14_weekly": 59.7,
+      "ath_52w_pct": -3.5,
+      "ma_cross_str": "Bullish Cross (50/200W) +22.0%",
+      "ma_cross_pct": 22.0,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.2,
       "earnings": "25/02/2027"
     },
     {
@@ -467,19 +677,31 @@
       "is_under": false,
       "rsi14_weekly": 67.1,
       "ath_52w_pct": -4.0,
+      "ma_cross_str": "Bullish Cross (50/200W) +2.5%",
+      "ma_cross_pct": 2.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 2.6,
       "earnings": "21/10/2026"
     },
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 74.02,
-      "change": -0.66,
+      "price": 74.35,
+      "change": -0.21,
       "currency": "€",
-      "sma200": "200 W-SMA Above +21.9%",
-      "sma200_pct": 21.9,
+      "sma200": "200 W-SMA Above +22.5%",
+      "sma200_pct": 22.5,
       "is_under": false,
-      "rsi14_weekly": 50.4,
-      "ath_52w_pct": -8.7,
+      "rsi14_weekly": 50.9,
+      "ath_52w_pct": -8.3,
+      "ma_cross_str": "Bullish Cross (50/200W) +13.1%",
+      "ma_cross_pct": 13.1,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 8.2,
       "earnings": "29/10/2026"
     },
     {
@@ -493,6 +715,12 @@
       "is_under": false,
       "rsi14_weekly": 45.5,
       "ath_52w_pct": -27.7,
+      "ma_cross_str": "Bullish Cross (50/200W) +37.7%",
+      "ma_cross_pct": 37.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": 0.3,
       "earnings": "21/10/2026"
     },
     {
@@ -506,6 +734,12 @@
       "is_under": false,
       "rsi14_weekly": 40.4,
       "ath_52w_pct": -32.2,
+      "ma_cross_str": "Bullish Cross (50/200W) +15.7%",
+      "ma_cross_pct": 15.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 5.2,
       "earnings": "03/11/2026"
     },
     {
@@ -519,6 +753,12 @@
       "is_under": false,
       "rsi14_weekly": 53.8,
       "ath_52w_pct": -7.5,
+      "ma_cross_str": "Bullish Cross (50/200W) +15.7%",
+      "ma_cross_pct": 15.7,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 3.2,
       "earnings": "22/10/2026"
     },
     {
@@ -532,6 +772,12 @@
       "is_under": false,
       "rsi14_weekly": 44.8,
       "ath_52w_pct": -34.6,
+      "ma_cross_str": "Bullish Cross (50/200W) +112.5%",
+      "ma_cross_pct": 112.5,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 2.8,
       "earnings": "21/10/2026"
     },
     {
@@ -545,58 +791,88 @@
       "is_under": false,
       "rsi14_weekly": 43.8,
       "ath_52w_pct": -33.7,
+      "ma_cross_str": "Bullish Cross (50/200W) +49.3%",
+      "ma_cross_pct": 49.3,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bearish",
+      "macd_w_type": "bearish",
+      "fcf_yield": 0.1,
       "earnings": "06/11/2026"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 86338.09,
-      "change": 1.75,
+      "price": 86328.26,
+      "change": 1.74,
       "currency": "$",
       "sma200": "200 W-SMA Above +30.6%",
       "sma200_pct": 30.6,
       "is_under": false,
       "rsi14_weekly": 64.2,
       "ath_52w_pct": -3.2,
+      "ma_cross_str": "Bullish Cross (50/200W) +17.6%",
+      "ma_cross_pct": 17.6,
+      "ma_cross_type": "bullish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2743.85,
-      "change": 1.41,
+      "price": 2743.99,
+      "change": 1.42,
       "currency": "$",
       "sma200": "200 W-SMA Above +8.8%",
       "sma200_pct": 8.8,
       "is_under": false,
       "rsi14_weekly": 65.3,
       "ath_52w_pct": -9.2,
+      "ma_cross_str": "Bearish Cross (50/200W) -4.2%",
+      "ma_cross_pct": -4.2,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 121.61,
-      "change": 2.71,
+      "price": 122.0,
+      "change": 3.04,
       "currency": "$",
-      "sma200": "200 W-SMA Above +9.7%",
-      "sma200_pct": 9.7,
+      "sma200": "200 W-SMA Above +10.0%",
+      "sma200_pct": 10.0,
       "is_under": false,
-      "rsi14_weekly": 66.9,
-      "ath_52w_pct": -4.3,
+      "rsi14_weekly": 67.2,
+      "ath_52w_pct": -4.0,
+      "ma_cross_str": "Bearish Cross (50/200W) -7.4%",
+      "ma_cross_pct": -7.4,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 90.34,
-      "change": 3.02,
+      "price": 91.01,
+      "change": 3.78,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 69.4,
-      "ath_52w_pct": -7.0,
+      "rsi14_weekly": 70.0,
+      "ath_52w_pct": -6.4,
+      "ma_cross_str": "N/A",
+      "ma_cross_pct": null,
+      "ma_cross_type": "neutral",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
@@ -610,32 +886,50 @@
       "is_under": false,
       "rsi14_weekly": "N/A",
       "ath_52w_pct": "N/A",
+      "ma_cross_str": "N/A",
+      "ma_cross_pct": null,
+      "ma_cross_type": "neutral",
+      "macd_w_str": "N/A",
+      "macd_w_type": "neutral",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 185.15,
-      "change": 7.89,
+      "price": 184.47,
+      "change": 7.49,
       "currency": "$",
-      "sma200": "200 W-SMA Above +32.0%",
-      "sma200_pct": 32.0,
+      "sma200": "200 W-SMA Above +31.5%",
+      "sma200_pct": 31.5,
       "is_under": false,
-      "rsi14_weekly": 71.9,
-      "ath_52w_pct": -0.2,
+      "rsi14_weekly": 71.8,
+      "ath_52w_pct": -0.3,
+      "ma_cross_str": "Bearish Cross (50/200W) -9.6%",
+      "ma_cross_pct": -9.6,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     },
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 14.35,
-      "change": -0.27,
+      "price": 14.41,
+      "change": 0.17,
       "currency": "$",
-      "sma200": "200 W-SMA Above +12.9%",
-      "sma200_pct": 12.9,
+      "sma200": "200 W-SMA Above +13.4%",
+      "sma200_pct": 13.4,
       "is_under": false,
-      "rsi14_weekly": 70.8,
-      "ath_52w_pct": -7.1,
+      "rsi14_weekly": 71.0,
+      "ath_52w_pct": -6.7,
+      "ma_cross_str": "Bearish Cross (50/200W) -15.7%",
+      "ma_cross_pct": -15.7,
+      "ma_cross_type": "bearish",
+      "macd_w_str": "MACD-W Bullish",
+      "macd_w_type": "bullish",
+      "fcf_yield": "N/A",
       "earnings": "N/A"
     }
   ],
@@ -650,6 +944,7 @@
       "roe": "12.2%",
       "peg": "N/A",
       "net_margin": "132.0%",
+      "fcf_yield": "5.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -699,6 +994,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "5.8%",
+          "4.3%",
+          "2.0%",
+          "-0.6%",
+          "-1.8%"
         ]
       }
     },
@@ -711,6 +1013,7 @@
       "roe": "9.4%",
       "peg": "N/A",
       "net_margin": "77.4%",
+      "fcf_yield": "3.1%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -760,6 +1063,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.1%",
+          "11.2%",
+          "11.1%",
+          "11.6%",
+          "7.6%"
         ]
       }
     },
@@ -767,11 +1077,12 @@
       "ticker": "HOMI.BR",
       "category": "reit",
       "rev_growth": "+18.2%",
-      "pe": "13.7x",
+      "pe": "13.6x",
       "ev": "24.1x",
       "roe": "11.2%",
       "peg": "N/A",
       "net_margin": "122.4%",
+      "fcf_yield": "6.3%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -795,7 +1106,7 @@
           "175.8%"
         ],
         "Fwd P/E": [
-          "13.7x",
+          "13.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -821,6 +1132,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "6.3%",
+          "5.3%",
+          "4.5%",
+          "-2.3%",
+          "-2.5%"
         ]
       }
     },
@@ -833,6 +1151,7 @@
       "roe": "9.8%",
       "peg": "N/A",
       "net_margin": "85.9%",
+      "fcf_yield": "5.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -875,6 +1194,12 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "5.6%",
+          "12.3%",
+          "7.7%",
+          "9.7%"
         ]
       }
     },
@@ -887,6 +1212,7 @@
       "roe": "7.7%",
       "peg": "113.03",
       "net_margin": "43.6%",
+      "fcf_yield": "4.3%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -936,6 +1262,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "4.3%",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
         ]
       }
     },
@@ -948,6 +1281,7 @@
       "roe": "11.5%",
       "peg": "2.72",
       "net_margin": "68.4%",
+      "fcf_yield": "5.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -990,6 +1324,12 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "5.6%",
+          "N/A",
+          "N/A",
+          "N/A"
         ]
       }
     },
@@ -1002,6 +1342,7 @@
       "roe": "2.9%",
       "peg": "11.34",
       "net_margin": "11.8%",
+      "fcf_yield": "5.7%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1051,6 +1392,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "5.7%",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
         ]
       }
     },
@@ -1063,6 +1411,7 @@
       "roe": "10.7%",
       "peg": "2.85",
       "net_margin": "15.5%",
+      "fcf_yield": "3.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1112,6 +1461,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.8%",
+          "-0.4%",
+          "0.2%",
+          "0.4%",
+          "0.7%"
         ]
       }
     },
@@ -1124,6 +1480,7 @@
       "roe": "3.8%",
       "peg": "3.66",
       "net_margin": "12.1%",
+      "fcf_yield": "1.7%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1173,6 +1530,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.7%",
+          "1.7%",
+          "1.3%",
+          "0.9%",
+          "0.8%"
         ]
       }
     },
@@ -1185,6 +1549,7 @@
       "roe": "-5.4%",
       "peg": "0.78",
       "net_margin": "-9.6%",
+      "fcf_yield": "-9.7%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1234,6 +1599,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "-9.7%",
+          "-3.9%",
+          "-1.2%",
+          "-0.2%",
+          "-0.2%"
         ]
       }
     },
@@ -1246,6 +1618,7 @@
       "roe": "10.2%",
       "peg": "0.62",
       "net_margin": "15.6%",
+      "fcf_yield": "0.9%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1295,6 +1668,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.9%",
+          "0.7%",
+          "0.2%",
+          "0.1%",
+          "0.3%"
         ]
       }
     },
@@ -1307,6 +1687,7 @@
       "roe": "12.5%",
       "peg": "0.76",
       "net_margin": "7.4%",
+      "fcf_yield": "-2.9%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1356,6 +1737,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "-2.9%",
+          "1.5%",
+          "2.6%",
+          "4.0%",
+          "1.5%"
         ]
       }
     },
@@ -1368,6 +1756,7 @@
       "roe": "30.6%",
       "peg": "1.48",
       "net_margin": "17.4%",
+      "fcf_yield": "0.1%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1417,6 +1806,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.1%",
+          "0.3%",
+          "1.2%",
+          "1.2%",
+          "-0.6%"
         ]
       }
     },
@@ -1424,11 +1820,12 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+21.3%",
-      "pe": "31.6x",
+      "pe": "31.7x",
       "ev": "45.1x",
       "roe": "53.9%",
       "peg": "1.11",
       "net_margin": "30.1%",
+      "fcf_yield": "1.3%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1452,7 +1849,7 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "31.6x",
+          "31.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -1478,6 +1875,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.3%",
+          "N/A",
+          "N/A",
+          "N/A",
+          "N/A"
         ]
       }
     },
@@ -1490,6 +1894,7 @@
       "roe": "44.2%",
       "peg": "0.35",
       "net_margin": "42.9%",
+      "fcf_yield": "1.9%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1539,6 +1944,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.9%",
+          "1.6%",
+          "1.2%",
+          "1.1%",
+          "1.0%"
         ]
       }
     },
@@ -1551,6 +1963,7 @@
       "roe": "25.7%",
       "peg": "N/A",
       "net_margin": "32.8%",
+      "fcf_yield": "1.1%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1600,6 +2013,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.1%",
+          "-0.1%",
+          "-1.8%",
+          "-1.8%",
+          "-0.6%"
         ]
       }
     },
@@ -1612,6 +2032,7 @@
       "roe": "N/A",
       "peg": "0.89",
       "net_margin": "25.5%",
+      "fcf_yield": "6.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1661,6 +2082,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "6.2%",
+          "7.3%",
+          "6.4%",
+          "5.6%",
+          "5.0%"
         ]
       }
     },
@@ -1673,6 +2101,7 @@
       "roe": "16.2%",
       "peg": "2.68",
       "net_margin": "31.8%",
+      "fcf_yield": "3.5%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1722,6 +2151,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.5%",
+          "4.9%",
+          "3.8%",
+          "3.4%",
+          "3.3%"
         ]
       }
     },
@@ -1734,6 +2170,7 @@
       "roe": "10.9%",
       "peg": "2.53",
       "net_margin": "10.3%",
+      "fcf_yield": "1.5%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1783,6 +2220,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.5%",
+          "3.2%",
+          "3.1%",
+          "2.3%",
+          "N/A"
         ]
       }
     },
@@ -1795,6 +2239,7 @@
       "roe": "48.7%",
       "peg": "1.22",
       "net_margin": "54.8%",
+      "fcf_yield": "0.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1844,6 +2289,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.6%",
+          "1.8%",
+          "1.8%",
+          "1.7%",
+          "1.5%"
         ]
       }
     },
@@ -1856,6 +2308,7 @@
       "roe": "7.7%",
       "peg": "0.65",
       "net_margin": "16.0%",
+      "fcf_yield": "3.9%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1905,6 +2358,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.9%",
+          "-0.3%",
+          "5.8%",
+          "-0.0%",
+          "-6.8%"
         ]
       }
     },
@@ -1917,6 +2377,7 @@
       "roe": "17.4%",
       "peg": "1.89",
       "net_margin": "28.4%",
+      "fcf_yield": "1.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -1966,6 +2427,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.8%",
+          "1.7%",
+          "0.9%",
+          "0.5%",
+          "0.7%"
         ]
       }
     },
@@ -1978,6 +2446,7 @@
       "roe": "25.7%",
       "peg": "2.78",
       "net_margin": "21.5%",
+      "fcf_yield": "2.7%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2027,6 +2496,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "2.7%",
+          "3.1%",
+          "2.9%",
+          "2.9%",
+          "2.8%"
         ]
       }
     },
@@ -2039,6 +2515,7 @@
       "roe": "29.8%",
       "peg": "0.96",
       "net_margin": "29.8%",
+      "fcf_yield": "1.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2088,6 +2565,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "1.2%",
+          "2.5%",
+          "2.9%",
+          "2.4%",
+          "1.0%"
         ]
       }
     },
@@ -2100,6 +2584,7 @@
       "roe": "16.6%",
       "peg": "1.76",
       "net_margin": "13.7%",
+      "fcf_yield": "6.1%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2149,6 +2634,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "6.1%",
+          "7.6%",
+          "7.1%",
+          "5.6%",
+          "6.8%"
         ]
       }
     },
@@ -2161,6 +2653,7 @@
       "roe": "34.0%",
       "peg": "1.67",
       "net_margin": "40.3%",
+      "fcf_yield": "0.4%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2203,6 +2696,12 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.4%",
+          "1.9%",
+          "1.9%",
+          "1.6%"
         ]
       }
     },
@@ -2215,6 +2714,7 @@
       "roe": "0.6%",
       "peg": "0.54",
       "net_margin": "3.1%",
+      "fcf_yield": "-16.3%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2264,6 +2764,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "-16.3%",
+          "-6.2%",
+          "-1.0%",
+          "1.3%",
+          "1.2%"
         ]
       }
     },
@@ -2276,6 +2783,7 @@
       "roe": "117.2%",
       "peg": "0.48",
       "net_margin": "63.7%",
+      "fcf_yield": "0.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2325,6 +2833,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.8%",
+          "1.1%",
+          "0.5%",
+          "0.1%",
+          "N/A"
         ]
       }
     },
@@ -2337,6 +2852,7 @@
       "roe": "24.0%",
       "peg": "0.47",
       "net_margin": "12.3%",
+      "fcf_yield": "2.9%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2386,6 +2902,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "2.9%",
+          "2.8%",
+          "4.4%",
+          "1.8%",
+          "-3.1%"
         ]
       }
     },
@@ -2398,6 +2921,7 @@
       "roe": "51.5%",
       "peg": "1.30",
       "net_margin": "10.8%",
+      "fcf_yield": "4.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2447,6 +2971,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "4.6%",
+          "4.5%",
+          "4.2%",
+          "4.6%",
+          "3.3%"
         ]
       }
     },
@@ -2459,6 +2990,7 @@
       "roe": "30.3%",
       "peg": "3.72",
       "net_margin": "18.4%",
+      "fcf_yield": "4.0%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2501,6 +3033,12 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "4.0%",
+          "4.2%",
+          "4.9%",
+          "4.1%"
         ]
       }
     },
@@ -2508,11 +3046,12 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "25.8x",
+      "pe": "26.0x",
       "ev": "17.9x",
       "roe": "25.5%",
       "peg": "3.04",
       "net_margin": "28.0%",
+      "fcf_yield": "3.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2536,7 +3075,7 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "25.8x",
+          "26.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -2562,6 +3101,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.6%",
+          "3.1%",
+          "3.0%",
+          "2.5%",
+          "2.7%"
         ]
       }
     },
@@ -2574,6 +3120,7 @@
       "roe": "N/A",
       "peg": "N/A",
       "net_margin": "-35.7%",
+      "fcf_yield": "-0.7%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2616,6 +3163,12 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "-0.7%",
+          "-0.7%",
+          "-0.3%",
+          "0.0%"
         ]
       }
     },
@@ -2628,6 +3181,7 @@
       "roe": "14.3%",
       "peg": "1.89",
       "net_margin": "30.5%",
+      "fcf_yield": "4.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2677,6 +3231,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "4.8%",
+          "4.8%",
+          "4.9%",
+          "3.1%",
+          "2.2%"
         ]
       }
     },
@@ -2689,6 +3250,7 @@
       "roe": "18.6%",
       "peg": "1.55",
       "net_margin": "11.3%",
+      "fcf_yield": "3.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2738,6 +3300,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.2%",
+          "2.7%",
+          "2.5%",
+          "2.7%",
+          "1.9%"
         ]
       }
     },
@@ -2750,6 +3319,7 @@
       "roe": "13.5%",
       "peg": "2.01",
       "net_margin": "15.0%",
+      "fcf_yield": "2.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2799,6 +3369,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "2.6%",
+          "2.6%",
+          "3.0%",
+          "2.9%",
+          "2.9%"
         ]
       }
     },
@@ -2811,6 +3388,7 @@
       "roe": "14.5%",
       "peg": "0.78",
       "net_margin": "9.1%",
+      "fcf_yield": "8.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2860,6 +3438,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "8.2%",
+          "6.3%",
+          "9.7%",
+          "14.0%",
+          "19.3%"
         ]
       }
     },
@@ -2872,6 +3457,7 @@
       "roe": "4.7%",
       "peg": "4.24",
       "net_margin": "3.7%",
+      "fcf_yield": "0.3%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2921,6 +3507,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.3%",
+          "0.4%",
+          "0.3%",
+          "0.3%",
+          "0.5%"
         ]
       }
     },
@@ -2933,6 +3526,7 @@
       "roe": "37.2%",
       "peg": "5.84",
       "net_margin": "17.3%",
+      "fcf_yield": "5.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -2982,6 +3576,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "5.2%",
+          "7.0%",
+          "5.0%",
+          "2.4%",
+          "0.3%"
         ]
       }
     },
@@ -2994,6 +3595,7 @@
       "roe": "N/A",
       "peg": "2.08",
       "net_margin": "49.8%",
+      "fcf_yield": "3.2%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -3043,6 +3645,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "3.2%",
+          "4.1%",
+          "3.4%",
+          "3.1%",
+          "3.1%"
         ]
       }
     },
@@ -3055,6 +3664,7 @@
       "roe": "43.9%",
       "peg": "0.81",
       "net_margin": "15.1%",
+      "fcf_yield": "2.8%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -3104,6 +3714,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "2.8%",
+          "2.0%",
+          "1.2%",
+          "0.8%",
+          "-0.3%"
         ]
       }
     },
@@ -3116,6 +3733,7 @@
       "roe": "43.0%",
       "peg": "0.35",
       "net_margin": "11.6%",
+      "fcf_yield": "0.1%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -3165,6 +3783,13 @@
           "N/A",
           "N/A",
           "N/A"
+        ],
+        "FCF Yield %": [
+          "0.1%",
+          "2.8%",
+          "5.3%",
+          "8.1%",
+          "-1.7%"
         ]
       }
     }
