@@ -100,7 +100,6 @@
       position: relative !important;
     }
 
-    /* Force absolue sur l'iframe et ses conteneurs enfants injectés par TradingView */
     #price-tv-container iframe, 
     #price-tv-container .tradingview-widget-container,
     #price-tv-container .tradingview-widget-container__widget {
@@ -296,7 +295,7 @@
     <div id="price-tv-container"></div>
   </div>
 
-  <!-- SECTION KPI (ANCIENNEMENT PRICES) -->
+  <!-- SECTION KPI -->
   <div id="prices-sec" class="section">
     <div id="prices-container"></div>
   </div>
@@ -371,9 +370,10 @@
       "Croit. CA.": "<b>Croissance du Chiffre d'Affaires :</b> Évolution des ventes sur 1 an. <br>• > 10% = Fort développement (Vert)<br>• < 0% = Déclin des ventes (Rouge)",
       "Fwd P/E": "<b>Forward Price/Earnings (P/E) :</b> Ratio Cours/Bénéfice estimé sur les 12 prochains mois.<br>• < 20 = Attractif (Vert)<br>• > 35 = Valorisation élevée (Rouge)",
       "EV/EBITDA": "<b>Valeur d'entreprise / EBITDA :</b> Mesure le prix de la société par rapport à sa rentabilité opérationnelle globale.<br>• < 12 = Raisonnable (Vert)<br>• > 22 = Cher (Rouge)",
-      "ROE": "<b>Return on Equity (Rentabilité des fonds propres) :</b> Capacité à générer du profit avec l'argent des actionnaires.<br>• > 15% = Très efficient (Vert)<br>• < 8% = Faible rentabilité (Rouge)",
+      "ROE": "<b>Return on Equity :</b> Capacité à générer du profit avec l'argent des actionnaires.<br>• > 15% = Très efficient (Vert)<br>• < 8% = Faible rentabilité (Rouge)",
       "PEG": "<b>Price/Earnings-to-Growth :</b> P/E divisé par le taux de croissance des bénéfices.<br>• < 1.0 = Sous-évalué par rapport à sa croissance (Vert)<br>• > 2.0 = Surévalué (Rouge)",
-      "Marge Net %": "<b>Marge Nette :</b> Pourcentage de profit net généré pour chaque euro de chiffre d'affaires.<br>• > 15% = Excellente rentabilité (Vert)<br>• < 5% = Marge faible (Rouge)"
+      "Marge Net %": "<b>Marge Nette :</b> Pourcentage de profit net généré pour chaque euro de chiffre d'affaires.<br>• > 15% = Excellente rentabilité (Vert)<br>• < 5% = Marge faible (Rouge)",
+      "FCF Yield %": "<b>Free Cash Flow Yield :</b> Flux de trésorerie disponible par rapport à la capitalisation boursière.<br>• > 5% = Très sain / Générateur de cash (Vert)<br>• 0 à 5% = Moyen (Jaune)<br>• < 0% = Négatif / Brûle du cash (Rouge)"
     };
 
     function hideTooltip() {
@@ -458,6 +458,12 @@
         case "peg":
           if (num <= 1.0) return "badge-green";
           if (num <= 2.0) return "badge-red";
+          return "badge-red";
+
+        case "FCF Yield %":
+        case "fcf_yield":
+          if (num >= 5.0) return "badge-green";
+          if (num >= 0.0) return "badge-yellow";
           return "badge-red";
 
         default:
@@ -623,7 +629,6 @@
       }
     }
 
-    /* RENDER DE TRADINGVIEW PLEIN ÉCRAN DYNAMIQUE */
     function renderPriceTV() {
       const tvSection = document.getElementById('price-tv-sec');
       const tvContainer = document.getElementById('price-tv-container');
@@ -708,7 +713,7 @@
       // 2. Price (TradingView Market Overview)
       renderPriceTV();
 
-      // 3. KPI (ex-Prices)
+      // 3. KPI
       const priceCont = document.getElementById('prices-container');
       const filteredPrices = getSortedFilteredPrices();
       const fundList = globalData.fundamentals || [];
@@ -723,7 +728,7 @@
           
           const f = fundList.find(item => item.ticker === p.ticker) || {};
           
-          // --- GESTION 200 W-SMA ---
+          // 1. 200 W-SMA
           const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
           const smaPct = p.sma200_pct !== undefined && p.sma200_pct !== null ? parseFloat(p.sma200_pct) : null;
           
@@ -733,8 +738,9 @@
           } else if (smaPct !== null && smaPct >= 0 && smaPct <= 15) {
             smaClass = 'badge-yellow';
           }
+          const sma200Html = p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : '';
 
-          // --- GESTION RSI14-W ---
+          // 2. RSI14
           let rsiHtml = '';
           if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
             const rsiVal = parseFloat(p.rsi14_weekly);
@@ -753,7 +759,7 @@
             }
           }
 
-          // --- GESTION ATH 52W ---
+          // 3. ATH 52W
           let athHtml = '';
           if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
             const athVal = parseFloat(p.ath_52w_pct);
@@ -769,8 +775,34 @@
             }
           }
 
+          // 4. CROSS 50/200W
+          let crossHtml = '';
+          if (p.ma_cross_str && p.ma_cross_str !== 'N/A') {
+            let crossClass = 'badge-neutral';
+            if (p.ma_cross_type === 'bearish') {
+              crossClass = 'badge-red';
+            } else if (p.ma_cross_pct !== null && p.ma_cross_pct !== undefined) {
+              const cPct = parseFloat(p.ma_cross_pct);
+              if (cPct >= 0 && cPct <= 5) {
+                crossClass = 'badge-green';
+              } else if (cPct > 5) {
+                crossClass = 'badge-yellow';
+              }
+            }
+            crossHtml = `<div><span class="badge-tag ${crossClass}">${p.ma_cross_str}</span></div>`;
+          }
+
+          // 5. MACD-W
+          let macdHtml = '';
+          if (p.macd_w_str && p.macd_w_str !== 'N/A') {
+            let macdClass = (p.macd_w_type === 'bullish') ? 'badge-green' : 'badge-red';
+            macdHtml = `<div><span class="badge-tag ${macdClass}">${p.macd_w_str}</span></div>`;
+          }
+
+          // 6. PEG & 7. FWD P/E & 8. FCF Yield %
           let pegHtml = '';
           let peHtml = '';
+          let fcfHtml = '';
           if (!isCrypto) {
             const pegVal = f.peg || 'N/A';
             const pegClass = getMetricBadgeClass('peg', pegVal);
@@ -779,6 +811,10 @@
             const peVal = f.pe || 'N/A';
             const peClass = getMetricBadgeClass('pe', peVal);
             peHtml = `<div><span class="badge-tag ${peClass}">FWD P/E ${peVal}</span></div>`;
+
+            const fcfVal = (p.fcf_yield !== undefined && p.fcf_yield !== null && p.fcf_yield !== 'N/A') ? p.fcf_yield + '%' : (f.fcf_yield || 'N/A');
+            const fcfClass = getMetricBadgeClass('FCF Yield %', fcfVal);
+            fcfHtml = `<div><span class="badge-tag ${fcfClass}">FCF Yield ${fcfVal}</span></div>`;
           }
 
           return `
@@ -786,11 +822,14 @@
               <div class="card-header">
                 <div>
                   <span class="ticker-name">${p.ticker}</span>
-                  ${p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : ''}
+                  ${sma200Html}
                   ${rsiHtml}
                   ${athHtml}
+                  ${crossHtml}
+                  ${macdHtml}
                   ${pegHtml}
                   ${peHtml}
+                  ${fcfHtml}
                 </div>
                 <div style="text-align:right">
                   <div class="price-tag">${p.price} ${p.currency || ''}</div>
@@ -838,7 +877,7 @@
         const fund = fundList.find(f => f.ticker === selectedTicker);
 
         if (!fund || !fund.quarters || fund.quarters.length === 0) {
-          currentTbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
+          currentTbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding: 20px; color: #64748b;">Données fondamentales indisponibles pour ${selectedTicker}.</td></tr>`;
           return;
         }
 
@@ -847,7 +886,7 @@
         headHtml += `</tr>`;
         currentThead.innerHTML = headHtml;
 
-        const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG"];
+        const metrics = ["Croit. CA.", "Marge Net %", "Fwd P/E", "EV/EBITDA", "ROE", "PEG", "FCF Yield %"];
         let rowsHtml = '';
         metrics.forEach(m => {
           let rowHtml = `<tr><td class="ticker-cell clickable-metric" onclick="showTooltip('${m}')">${m} ℹ️</td>`;
@@ -866,19 +905,20 @@
         currentThead.innerHTML = `
           <tr>
             <th class="ticker-cell">Tickers</th>
-            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ️️</th>
-            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ</th>
+            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️️</th>
             <th class="clickable-metric" onclick="showTooltip('EV/EBITDA')">EV/EBITDA ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('ROE')">ROE ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('PEG')">PEG ℹ️</th>
-            <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net % ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('Marge Net %')">Marge Net ℹ️</th>
+            <th class="clickable-metric" onclick="showTooltip('FCF Yield %')">FCF Yield ℹ️</th>
           </tr>`;
 
         const sortedPrices = getSortedFilteredPrices().filter(p => p.category !== 'crypto');
         const activeTickers = sortedPrices.map(p => p.ticker);
 
         if (activeTickers.length === 0) {
-          currentTbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
+          currentTbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding: 20px; color: #64748b;">Aucune donnée disponible.</td></tr>';
           return;
         }
 
@@ -893,6 +933,7 @@
               <td><span class="badge-tag ${getMetricBadgeClass('roe', f.roe)}">${f.roe || 'N/A'}</span></td>
               <td><span class="badge-tag ${getMetricBadgeClass('peg', f.peg)}">${f.peg || 'N/A'}</span></td>
               <td><span class="badge-tag ${getMetricBadgeClass('net_margin', f.net_margin)}">${f.net_margin || 'N/A'}</span></td>
+              <td><span class="badge-tag ${getMetricBadgeClass('FCF Yield %', f.fcf_yield)}">${f.fcf_yield || 'N/A'}</span></td>
             </tr>`;
         }).join('');
 
@@ -913,7 +954,6 @@
 
       const allEarnings = globalData.earnings || [];
 
-      // Filtrer par catégories actives et par ticker si sélectionné
       let filteredEarnings = allEarnings.filter(e => nonCryptoActive.includes(e.category || 'stock'));
 
       if (selectedTicker !== 'ALL') {
@@ -925,7 +965,6 @@
         return;
       }
 
-      // Tri chronologique croissant : Passées (-30j) puis À venir
       filteredEarnings.sort((a, b) => new Date(a.date) - new Date(b.date));
 
       const earnCards = filteredEarnings.map(e => {
