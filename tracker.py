@@ -55,6 +55,47 @@ def check_200_weekly_sma_from_hist(hist_daily, current_price):
         print(f"    ⚠️ Erreur calcul SMA200: {e}")
     return "N/A", None, False
 
+def calculate_ma_cross_weekly(hist_daily):
+    """Calcul du Cross 50W / 200W SMA et du % d'écart entre la 50W et 200W."""
+    try:
+        if hist_daily is not None and not hist_daily.empty:
+            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
+            if len(hist_weekly) >= 200:
+                sma_50 = float(hist_weekly.rolling(window=50).mean().iloc[-1])
+                sma_200 = float(hist_weekly.rolling(window=200).mean().iloc[-1])
+                
+                if sma_50 > 0 and sma_200 > 0:
+                    diff_pct = round(((sma_50 - sma_200) / sma_200) * 100, 1)
+                    if sma_50 >= sma_200:
+                        return f"Bullish Cross (50/200W) +{diff_pct}%", diff_pct, "bullish"
+                    else:
+                        return f"Bearish Cross (50/200W) {diff_pct}%", diff_pct, "bearish"
+    except Exception as e:
+        print(f"    ⚠️ Erreur calcul MA Cross: {e}")
+    return "N/A", None, "neutral"
+
+def calculate_macd_weekly(hist_daily):
+    """Calcul du MACD Hebdomadaire (12, 26, 9)."""
+    try:
+        if hist_daily is not None and not hist_daily.empty:
+            hist_weekly = hist_daily.resample('W-FRI').last().dropna()
+            if len(hist_weekly) >= 35:
+                ema12 = hist_weekly.ewm(span=12, adjust=False).mean()
+                ema26 = hist_weekly.ewm(span=26, adjust=False).mean()
+                macd_line = ema12 - ema26
+                signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+                last_macd = float(macd_line.iloc[-1])
+                last_signal = float(signal_line.iloc[-1])
+
+                if last_macd >= last_signal:
+                    return "MACD-W Bullish", "bullish"
+                else:
+                    return "MACD-W Bearish", "bearish"
+    except Exception as e:
+        print(f"    ⚠️ Erreur calcul MACD-W: {e}")
+    return "N/A", "neutral"
+
 def calculate_rsi14_weekly(hist_daily):
     """Calcul du RSI 14 périodes sur bougies hebdomadaires."""
     try:
@@ -94,11 +135,30 @@ def calculate_ath_52w_pct(hist_daily, current_price):
         print(f"    ⚠️ Erreur calcul ATH 52W: {e}")
     return "N/A"
 
+def calculate_fcf_yield(ticker, info):
+    """Calcul du Free Cash Flow Yield % (FCF / Market Cap)."""
+    try:
+        fcf = info.get('freeCashflow')
+        market_cap = info.get('marketCap')
+        
+        if fcf is None or market_cap is None or market_cap <= 0:
+            cf = getattr(ticker, 'cashflow', None)
+            if cf is not None and not cf.empty:
+                col = cf.columns[0]
+                ocf = get_financial_item(cf, ['Operating Cash Flow', 'Total Cash From Operating Activities'], col)
+                capex = get_financial_item(cf, ['Capital Expenditure', 'Capital Expenditures'], col)
+                if ocf is not None and capex is not None:
+                    fcf = ocf + capex  # capex est généralement négatif dans les ETs
+
+        if fcf is not None and market_cap and market_cap > 0:
+            yield_pct = (fcf / market_cap) * 100
+            return round(yield_pct, 1)
+    except Exception as e:
+        print(f"    ⚠️ Erreur calcul FCF Yield: {e}")
+    return "N/A"
+
 def get_all_earnings_dates(ticker_obj, symbol, belgium_tz, category):
-    """
-    Récupère toutes les dates de résultats (passées de moins de 30 jours et à venir).
-    Ignoré pour la catégorie crypto.
-    """
+    """Récupère toutes les dates de résultats."""
     if category == "crypto":
         return "N/A", []
 
@@ -153,7 +213,7 @@ def get_all_earnings_dates(ticker_obj, symbol, belgium_tz, category):
     return next_earnings_str, earnings_list
 
 def get_financial_item(df, possible_keys, col):
-    """Extrait une ligne spécifique du compte de résultat ou du bilan pour une colonne donnée."""
+    """Extrait une ligne spécifique du compte de résultat ou du bilan/cashflow."""
     if df is None or df.empty or col not in df.columns:
         return None
     for key in possible_keys:
@@ -176,7 +236,8 @@ def get_annual_history(ticker, info, category):
         "Fwd P/E": [],
         "EV/EBITDA": [],
         "ROE": [],
-        "PEG": []
+        "PEG": [],
+        "FCF Yield %": []
     }
 
     rev_growth = info.get('revenueGrowth')
@@ -185,6 +246,7 @@ def get_annual_history(ticker, info, category):
     roe = info.get('returnOnEquity')
     peg = info.get('pegRatio')
     profit_margin = info.get('profitMargins')
+    fcf_yield_ttm = calculate_fcf_yield(ticker, info)
 
     history["Croit. CA."].append(clean_val(rev_growth * 100 if rev_growth is not None else None, "{:+.1f}%"))
     history["Marge Net %"].append(clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"))
@@ -192,6 +254,7 @@ def get_annual_history(ticker, info, category):
     history["EV/EBITDA"].append(clean_val(ev_ebitda, "{:.1f}x"))
     history["ROE"].append(clean_val(roe * 100 if roe is not None else None, "{:.1f}%"))
     history["PEG"].append(clean_val(peg, "{:.2f}"))
+    history["FCF Yield %"].append(clean_val(fcf_yield_ttm, "{:.1f}%"))
 
     try:
         fin = getattr(ticker, 'income_stmt', None)
@@ -199,6 +262,7 @@ def get_annual_history(ticker, info, category):
             fin = ticker.financials
 
         bs = getattr(ticker, 'balance_sheet', None)
+        cf = getattr(ticker, 'cashflow', None)
 
         if fin is not None and not fin.empty:
             cols = list(fin.columns)
@@ -211,11 +275,18 @@ def get_annual_history(ticker, info, category):
                 rev = get_financial_item(fin, ['Total Revenue', 'Operating Revenue', 'Revenue'], col)
                 net_inc = get_financial_item(fin, ['Net Income', 'Net Income Common Stockholders', 'Net Income From Continuing Operation Net Minority Interest'], col)
                 equity = get_financial_item(bs, ['Stockholders Equity', 'Total Stockholder Equity', 'Common Stock Equity'], col)
+                
+                ocf = get_financial_item(cf, ['Operating Cash Flow', 'Total Cash From Operating Activities'], col)
+                capex = get_financial_item(cf, ['Capital Expenditure', 'Capital Expenditures'], col)
+                fcf_val = None
+                if ocf is not None and capex is not None:
+                    fcf_val = ocf + capex
 
                 data_by_year[yr] = {
                     "revenue": rev,
                     "net_income": net_inc,
-                    "equity": equity
+                    "equity": equity,
+                    "fcf": fcf_val
                 }
 
             past_years = [y for y in sorted(data_by_year.keys(), reverse=True) if y < current_year]
@@ -256,6 +327,13 @@ def get_annual_history(ticker, info, category):
                     history["ROE"].append(clean_val(roe_val, "{:.1f}%"))
                 else:
                     history["ROE"].append("N/A")
+
+                mcap = info.get('marketCap')
+                if item["fcf"] is not None and mcap and mcap > 0:
+                    fy = (item["fcf"] / mcap) * 100
+                    history["FCF Yield %"].append(clean_val(fy, "{:.1f}%"))
+                else:
+                    history["FCF Yield %"].append("N/A")
 
                 history["Fwd P/E"].append("N/A")
                 history["EV/EBITDA"].append("N/A")
@@ -344,6 +422,11 @@ def generate_dashboard_data():
             rsi14_w = calculate_rsi14_weekly(hist_close)
             ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
             
+            # MA Cross & MACD-W
+            ma_cross_str, ma_cross_pct, ma_cross_type = calculate_ma_cross_weekly(hist_close)
+            macd_w_str, macd_w_type = calculate_macd_weekly(hist_close)
+            fcf_yield_val = calculate_fcf_yield(ticker, info)
+            
             next_pub_str, ticker_pubs = get_all_earnings_dates(ticker, symbol, belgium_tz, cat)
             all_earnings_data.extend(ticker_pubs)
 
@@ -358,6 +441,12 @@ def generate_dashboard_data():
                 "is_under": is_under,
                 "rsi14_weekly": rsi14_w,
                 "ath_52w_pct": ath_52w_pct,
+                "ma_cross_str": ma_cross_str,
+                "ma_cross_pct": ma_cross_pct,
+                "ma_cross_type": ma_cross_type,
+                "macd_w_str": macd_w_str,
+                "macd_w_type": macd_w_type,
+                "fcf_yield": fcf_yield_val,
                 "earnings": next_pub_str
             })
 
@@ -415,6 +504,7 @@ def generate_dashboard_data():
                     "roe": clean_val(roe * 100 if roe is not None else None, "{:.1f}%"),
                     "peg": clean_val(peg, "{:.2f}"),
                     "net_margin": clean_val(profit_margin * 100 if profit_margin is not None else None, "{:.1f}%"),
+                    "fcf_yield": clean_val(fcf_yield_val, "{:.1f}%"),
                     "quarters": years,
                     "history": annual_history
                 })
@@ -422,7 +512,6 @@ def generate_dashboard_data():
         except Exception as e:
             print(f"⚠️ Erreur globale sur {symbol}: {e}")
 
-    # Tri chronologique des publications (passées puis à venir)
     all_earnings_data.sort(key=lambda x: x["date"])
 
     output = {
