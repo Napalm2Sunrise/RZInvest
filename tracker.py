@@ -148,7 +148,7 @@ def calculate_fcf_yield(ticker, info):
                 ocf = get_financial_item(cf, ['Operating Cash Flow', 'Total Cash From Operating Activities'], col)
                 capex = get_financial_item(cf, ['Capital Expenditure', 'Capital Expenditures'], col)
                 if ocf is not None and capex is not None:
-                    fcf = ocf + capex  # capex est généralement négatif dans les ETs
+                    fcf = ocf + capex  # capex est généralement négatif
 
         if fcf is not None and market_cap and market_cap > 0:
             yield_pct = (fcf / market_cap) * 100
@@ -368,7 +368,9 @@ def generate_dashboard_data():
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
-    cutoff_ts = now_ts - (24 * 3600)
+    
+    # Élargi à 7 jours (au lieu de 24h) pour s'assurer d'avoir toujours des news en stock dans data.json
+    cutoff_ts = now_ts - (7 * 24 * 3600)
 
     print(f"📊 Téléchargement groupé pour {len(all_targets)} tickers...")
     
@@ -422,7 +424,6 @@ def generate_dashboard_data():
             rsi14_w = calculate_rsi14_weekly(hist_close)
             ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
             
-            # MA Cross & MACD-W
             ma_cross_str, ma_cross_pct, ma_cross_type = calculate_ma_cross_weekly(hist_close)
             macd_w_str, macd_w_type = calculate_macd_weekly(hist_close)
             fcf_yield_val = calculate_fcf_yield(ticker, info)
