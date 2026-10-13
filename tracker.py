@@ -1,9 +1,14 @@
 from datetime import datetime, timedelta
+from email.utils import parsedate_to_datetime
+from urllib.parse import quote_plus
 import json
 import math
 import os
+import re
 import time
+import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
+import requests
 import yfinance as yf
 
 # ==============================================================================
@@ -23,6 +28,158 @@ STOCKS_TICKERS = [
 CRYPTO_TICKERS = [
     "BTC-USD", "ETH-USD", "SOL-USD", "HYPE32196-USD", "PUMP-USD", "AAVE-USD", "LINK-USD"
 ]
+
+# ==============================================================================
+# CONFIGURATION DES NEWS
+# ==============================================================================
+NEWS_MAX_AGE_DAYS = 7        # fenêtre de fraîcheur des news (avant : 24h => trop strict)
+MAX_NEWS_PER_TICKER = 6      # nombre max de news conservées par ticker dans data.json
+GOOGLE_NEWS_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; RZInvestBot/1.0)"}
+
+# Noms utilisés pour les recherches Google News (un symbole seul est trop ambigu : "PG", "SU", "RET"...)
+TICKER_NAMES = {
+    # REITs
+    "AED.BR": "Aedifica", "CPINV.BR": "Care Property Invest", "HOMI.BR": "Home Invest Belgium",
+    "RET.BR": "Retail Estates", "PLD": "Prologis", "GMG.AX": "Goodman Group",
+    "DLR": "Digital Realty", "EQIX": "Equinix", "WELL": "Welltower",
+    # Stocks
+    "AAOI": "Applied Optoelectronics", "AMD": "AMD", "AMKR": "Amkor Technology", "AMZN": "Amazon",
+    "ASML.AS": "ASML", "AVGO": "Broadcom", "AYA.TO": "Aya Gold & Silver", "BKNG": "Booking Holdings",
+    "CPRT": "Copart", "CSW": "CSW Industrials", "GOOG": "Alphabet Google", "GRAB": "Grab Holdings",
+    "ISRG": "Intuitive Surgical", "JNJ": "Johnson & Johnson", "META": "Meta Platforms",
+    "MC.PA": "LVMH", "MSFT": "Microsoft", "NBIS": "Nebius", "NVDA": "Nvidia", "ONON": "On Holding",
+    "PEP": "PepsiCo", "PG": "Procter & Gamble", "RMS.PA": "Hermès", "SPGI": "S&P Global",
+    "SU.PA": "Schneider Electric", "TMO": "Thermo Fisher", "TTE.PA": "TotalEnergies", "TSLA": "Tesla",
+    "UBER": "Uber", "VRSN": "VeriSign", "VRT": "Vertiv", "VST": "Vistra",
+    # Crypto
+    "BTC-USD": "Bitcoin", "ETH-USD": "Ethereum", "SOL-USD": "Solana",
+    "HYPE32196-USD": "Hyperliquid", "PUMP-USD": "Pump.fun", "AAVE-USD": "Aave", "LINK-USD": "Chainlink",
+}
+
+def get_search_name(symbol, info):
+    """Nom utilisé pour la recherche de news (dictionnaire > yfinance > symbole)."""
+    name = TICKER_NAMES.get(symbol)
+    if name:
+        return name
+    name = info.get("shortName") or info.get("longName") or symbol.split('.')[0].split('-')[0]
+    name = re.sub(r"\b(Inc|Corp|Corporation|Ltd|PLC|SA|NV|Co)\b\.?,?", "", name, flags=re.I)
+    return name.strip(" ,.") or symbol
+
+def _fetch_google_news_feed(query, hl, gl, ceid, cutoff_ts):
+    """Lit un flux RSS Google News (côté serveur : pas de CORS, pas de proxy tiers)."""
+    url = f"https://news.google.com/rss/search?q={quote_plus(query)}&hl={hl}&gl={gl}&ceid={ceid}"
+    items = []
+    try:
+        resp = requests.get(url, headers=GOOGLE_NEWS_HEADERS, timeout=15)
+        resp.raise_for_status()
+        root = ET.fromstring(resp.content)
+        for it in root.iter("item"):
+            title = (it.findtext("title") or "").strip()
+            link = (it.findtext("link") or "").strip()
+            pub = it.findtext("pubDate")
+            src_el = it.find("source")
+            source = (src_el.text or "").strip() if src_el is not None and src_el.text else ""
+            if not title or not link or not pub:
+                continue
+            try:
+                ts = parsedate_to_datetime(pub).timestamp()
+            except Exception:
+                continue
+            if ts < cutoff_ts:
+                continue
+            suffix = f" - {source}"
+            if source and title.endswith(suffix):
+                title = title[:-len(suffix)].strip()
+            items.append({"title": title, "link": link, "source": source, "_ts": ts})
+    except Exception as e:
+        print(f"    ⚠️ Erreur Google News RSS ({query}): {e}")
+    return items
+
+def fetch_google_news_for_ticker(search_name, cat, cutoff_ts):
+    """Google News FR d'abord, puis EN en complément si peu de résultats."""
+    days = NEWS_MAX_AGE_DAYS
+    if cat == "crypto":
+        q_fr = f'"{search_name}" crypto when:{days}d'
+        q_en = f'"{search_name}" crypto when:{days}d'
+    else:
+        q_fr = f'"{search_name}" (bourse OR action OR résultats OR stock) when:{days}d'
+        q_en = f'"{search_name}" (stock OR shares OR earnings) when:{days}d'
+
+    items = _fetch_google_news_feed(q_fr, "fr", "FR", "FR:fr", cutoff_ts)
+    if len(items) < 3:
+        items += _fetch_google_news_feed(q_en, "en-US", "US", "US:en", cutoff_ts)
+    time.sleep(0.3)  # politesse envers Google
+    return items
+
+def fetch_yahoo_news(ticker, symbol, cutoff_ts):
+    """News Yahoo Finance via yfinance (avec repli sur yf.Search)."""
+    items = []
+    raw = []
+    try:
+        raw = ticker.news or []
+    except Exception as e:
+        print(f"    ⚠️ Erreur ticker.news sur {symbol}: {e}")
+    if not raw:
+        try:
+            raw = yf.Search(symbol, news_count=10).news or []
+        except Exception:
+            raw = []
+
+    for item in raw:
+        try:
+            content = item.get("content", item) or item
+            title = content.get("title") or item.get("title", "")
+            summary = content.get("summary") or item.get("summary") or ""
+            pub_time = content.get("pubDate") or item.get("providerPublishTime")
+
+            if isinstance(pub_time, str):
+                try:
+                    pub_time = datetime.fromisoformat(pub_time.replace("Z", "+00:00")).timestamp()
+                except Exception:
+                    pub_time = None
+            if not pub_time or not title or pub_time < cutoff_ts:
+                continue
+
+            link = (
+                (content.get("clickThroughUrl") or {}).get("url")
+                or (content.get("canonicalUrl") or {}).get("url")
+                or item.get("link")
+            )
+            provider = (content.get("provider") or {}).get("displayName") or item.get("publisher") or ""
+            if not summary and provider:
+                summary = f"Source : {provider}"
+            items.append({"title": title, "summary": summary, "link": link, "source": provider, "_ts": float(pub_time)})
+        except Exception:
+            continue
+    return items
+
+def build_ticker_news(symbol, cat, ticker, info, cutoff_ts, tz):
+    """Fusionne Yahoo + Google News, dédoublonne, trie par date et formate pour data.json."""
+    search_name = get_search_name(symbol, info)
+    merged = fetch_yahoo_news(ticker, symbol, cutoff_ts) + fetch_google_news_for_ticker(search_name, cat, cutoff_ts)
+
+    seen = set()
+    unique = []
+    for n in sorted(merged, key=lambda x: x["_ts"], reverse=True):
+        key = re.sub(r"[^a-z0-9]", "", n["title"].lower())[:60]
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(n)
+
+    result = []
+    for n in unique[:MAX_NEWS_PER_TICKER]:
+        summary = n.get("summary") or (f"Source : {n['source']}" if n.get("source") else "")
+        summary = summary[:200] + "..." if len(summary) > 200 else summary
+        result.append({
+            "ticker": symbol,
+            "category": cat,
+            "title": n["title"],
+            "summary": summary,
+            "link": n.get("link"),
+            "date": datetime.fromtimestamp(n["_ts"], tz=tz).isoformat()
+        })
+    return result
 
 def clean_val(val, fmt="{:.1f}%"):
     """Nettoie les valeurs NaN, None ou Inf."""
@@ -148,7 +305,7 @@ def calculate_fcf_yield(ticker, info):
                 ocf = get_financial_item(cf, ['Operating Cash Flow', 'Total Cash From Operating Activities'], col)
                 capex = get_financial_item(cf, ['Capital Expenditure', 'Capital Expenditures'], col)
                 if ocf is not None and capex is not None:
-                    fcf = ocf + capex
+                    fcf = ocf + capex  # capex est généralement négatif dans les ETs
 
         if fcf is not None and market_cap and market_cap > 0:
             yield_pct = (fcf / market_cap) * 100
@@ -368,9 +525,7 @@ def generate_dashboard_data():
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
-    
-    # Élargi à 14 jours pour collecter un maximum d'actualités par ticker dans le JSON
-    cutoff_ts = now_ts - (14 * 24 * 3600)
+    cutoff_ts = now_ts - (NEWS_MAX_AGE_DAYS * 24 * 3600)
 
     print(f"📊 Téléchargement groupé pour {len(all_targets)} tickers...")
     
@@ -424,6 +579,7 @@ def generate_dashboard_data():
             rsi14_w = calculate_rsi14_weekly(hist_close)
             ath_52w_pct = calculate_ath_52w_pct(hist_close, price)
             
+            # MA Cross & MACD-W
             ma_cross_str, ma_cross_pct, ma_cross_type = calculate_ma_cross_weekly(hist_close)
             macd_w_str, macd_w_type = calculate_macd_weekly(hist_close)
             fcf_yield_val = calculate_fcf_yield(ticker, info)
@@ -451,37 +607,11 @@ def generate_dashboard_data():
                 "earnings": next_pub_str
             })
 
-            # NEWS
+            # NEWS (Yahoo Finance + Google News, fenêtre de NEWS_MAX_AGE_DAYS jours)
             try:
-                news_list = getattr(ticker, 'news', []) or []
-                ticker_news_count = 0
-                for item in news_list:
-                    if ticker_news_count >= 5: # On récupère jusqu'à 5 actus par ticker
-                        break
-
-                    content = item.get("content", item)
-                    title = content.get("title") or item.get("title", "")
-                    summary = content.get("summary") or item.get("summary") or ""
-                    pub_time = content.get("pubDate") or item.get("providerPublishTime", 0)
-
-                    if isinstance(pub_time, str):
-                        try:
-                            pub_time = datetime.fromisoformat(pub_time.replace("Z", "+00:00")).timestamp()
-                        except Exception:
-                            pub_time = now_ts
-
-                    if pub_time >= cutoff_ts:
-                        link = content.get("clickThroughUrl", {}).get("url") or item.get("link")
-                        pub_dt = datetime.fromtimestamp(pub_time, tz=belgium_tz)
-                        news_data.append({
-                            "ticker": symbol,
-                            "category": cat,
-                            "title": title,
-                            "summary": summary[:200] + "..." if len(summary) > 200 else summary,
-                            "link": link,
-                            "date": pub_dt.isoformat()
-                        })
-                        ticker_news_count += 1
+                ticker_news = build_ticker_news(symbol, cat, ticker, info, cutoff_ts, belgium_tz)
+                news_data.extend(ticker_news)
+                print(f"      📰 {len(ticker_news)} news")
             except Exception as e:
                 print(f"    ⚠️ Erreur news sur {symbol}: {e}")
 
@@ -514,8 +644,6 @@ def generate_dashboard_data():
             print(f"⚠️ Erreur globale sur {symbol}: {e}")
 
     all_earnings_data.sort(key=lambda x: x["date"])
-    # Tri des news par date décroissante
-    news_data.sort(key=lambda x: x["date"], reverse=True)
 
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
