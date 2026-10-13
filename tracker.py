@@ -148,7 +148,7 @@ def calculate_fcf_yield(ticker, info):
                 ocf = get_financial_item(cf, ['Operating Cash Flow', 'Total Cash From Operating Activities'], col)
                 capex = get_financial_item(cf, ['Capital Expenditure', 'Capital Expenditures'], col)
                 if ocf is not None and capex is not None:
-                    fcf = ocf + capex  # capex est généralement négatif
+                    fcf = ocf + capex
 
         if fcf is not None and market_cap and market_cap > 0:
             yield_pct = (fcf / market_cap) * 100
@@ -369,8 +369,8 @@ def generate_dashboard_data():
     now_be = datetime.now(belgium_tz)
     now_ts = now_be.timestamp()
     
-    # Élargi à 7 jours (au lieu de 24h) pour s'assurer d'avoir toujours des news en stock dans data.json
-    cutoff_ts = now_ts - (7 * 24 * 3600)
+    # Élargi à 14 jours pour collecter un maximum d'actualités par ticker dans le JSON
+    cutoff_ts = now_ts - (14 * 24 * 3600)
 
     print(f"📊 Téléchargement groupé pour {len(all_targets)} tickers...")
     
@@ -456,7 +456,7 @@ def generate_dashboard_data():
                 news_list = getattr(ticker, 'news', []) or []
                 ticker_news_count = 0
                 for item in news_list:
-                    if ticker_news_count >= 3:
+                    if ticker_news_count >= 5: # On récupère jusqu'à 5 actus par ticker
                         break
 
                     content = item.get("content", item)
@@ -514,6 +514,8 @@ def generate_dashboard_data():
             print(f"⚠️ Erreur globale sur {symbol}: {e}")
 
     all_earnings_data.sort(key=lambda x: x["date"])
+    # Tri des news par date décroissante
+    news_data.sort(key=lambda x: x["date"], reverse=True)
 
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
