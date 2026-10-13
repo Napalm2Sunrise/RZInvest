@@ -559,92 +559,37 @@
       }
     }
 
-    async function fetchGoogleNewsForTicker(symbol) {
-      const newsCont = document.getElementById('news-container');
-      newsCont.innerHTML = `<div style="color: #38bdf8; font-size: 13px; text-align: center; padding: 20px;">Chargement des actualités pour ${symbol}...</div>`;
-
-      const cleanSymbol = symbol.split('-')[0].split('.')[0];
-      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(cleanSymbol + ' stock crypto action finance')}&hl=fr&gl=FR&ceid=FR:fr`;
-      
-      // Utilisation d'un proxy open-source fiable (AllOrigins) pour parser le flux XML Google News sans blocage CORS ni limite stricte
-      const apiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
-
-      try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        
-        if (data && data.contents) {
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(data.contents, "text/xml");
-          const items = xmlDoc.querySelectorAll("item");
-
-          if (items && items.length > 0) {
-            let htmlCards = "";
-            let count = 0;
-
-            items.forEach((item) => {
-              if (count >= 8) return;
-              const title = item.querySelector("title") ? item.querySelector("title").textContent : "Actualité financière";
-              const link = item.querySelector("link") ? item.querySelector("link").textContent : "#";
-              const pubDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : new Date();
-              const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
-
-              const tmpDiv = document.createElement("DIV");
-              tmpDiv.innerHTML = description;
-              const cleanSummary = tmpDiv.textContent || tmpDiv.innerText || title;
-
-              htmlCards += `
-                <div class="card">
-                  <div class="card-header">
-                    <span class="ticker-name">${symbol}</span>
-                    <span class="last-update">${formatBelgianDateTime(pubDate)}</span>
-                  </div>
-                  <div class="news-title">${title}</div>
-                  <div class="news-summary">${cleanSummary.length > 180 ? cleanSummary.substring(0, 180) + '...' : cleanSummary}</div>
-                  <a class="news-link" href="${link}" target="_blank">Lire l'article complet →</a>
-                </div>`;
-              count++;
-            });
-
-            if (htmlCards !== "") {
-              newsCont.innerHTML = htmlCards;
-              return;
-            }
-          }
-        }
-        newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente trouvée pour ${symbol}.</div>`;
-      } catch (err) {
-        console.error("Erreur chargement actus:", err);
-        newsCont.innerHTML = `<div style="color: #f87171; font-size: 13px; text-align: center; padding: 20px;">Impossible de charger les actualités pour le moment.</div>`;
-      }
-    }
-
     async function renderNews() {
       const newsCont = document.getElementById('news-container');
-      if (!newsCont) return;
+      if (!newsCont || !globalData || !globalData.news) return;
 
+      let filteredNews = globalData.news;
+
+      // Filtrage par catégorie si on est sur "ALL"
       if (selectedTicker === 'ALL') {
-        const filteredNews = (globalData.news || []).filter(n => activeCategories.includes(n.category || 'stock'));
-        if (filteredNews.length === 0) {
-          newsCont.innerHTML = '<div class="empty-msg">Aucune actualité disponible pour cette sélection.</div>';
-          return;
-        }
-
-        const cards = filteredNews.map(n => `
-          <div class="card">
-            <div class="card-header">
-              <span class="ticker-name">${n.ticker}</span>
-              <span class="last-update">${formatBelgianDateTime(n.date)}</span>
-            </div>
-            <div class="news-title">${n.title}</div>
-            <div class="news-summary">${n.summary}</div>
-            ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
-          </div>`).join('');
-
-        newsCont.innerHTML = cards;
+        filteredNews = filteredNews.filter(n => activeCategories.includes(n.category || 'stock'));
       } else {
-        await fetchGoogleNewsForTicker(selectedTicker);
+        // Filtrage direct sur le ticker sélectionné dans le data.json pré-chargé
+        filteredNews = filteredNews.filter(n => n.ticker === selectedTicker);
       }
+
+      if (filteredNews.length === 0) {
+        newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente disponible pour ${selectedTicker === 'ALL' ? 'cette sélection' : selectedTicker}.</div>`;
+        return;
+      }
+
+      const cards = filteredNews.map(n => `
+        <div class="card">
+          <div class="card-header">
+            <span class="ticker-name">${n.ticker}</span>
+            <span class="last-update">${formatBelgianDateTime(n.date)}</span>
+          </div>
+          <div class="news-title">${n.title}</div>
+          <div class="news-summary">${n.summary}</div>
+          ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
+        </div>`).join('');
+
+      newsCont.innerHTML = cards;
     }
 
     function renderPriceTV() {
@@ -726,7 +671,7 @@
       hideTooltip();
 
       // 1. News
-      await renderNews();
+      renderNews();
 
       // 2. Price (TradingView Market Overview)
       renderPriceTV();
