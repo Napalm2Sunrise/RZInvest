@@ -559,37 +559,120 @@
       }
     }
 
-    async function renderNews() {
-      const newsCont = document.getElementById('news-container');
-      if (!newsCont || !globalData || !globalData.news) return;
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
 
-      let filteredNews = globalData.news;
+    function safeUrl(url) {
+      return /^https?:\/\//i.test(url || '') ? escapeHtml(url) : '';
+    }
 
-      // Filtrage par catégorie si on est sur "ALL"
-      if (selectedTicker === 'ALL') {
-        filteredNews = filteredNews.filter(n => activeCategories.includes(n.category || 'stock'));
-      } else {
-        // Filtrage direct sur le ticker sélectionné dans le data.json pré-chargé
-        filteredNews = filteredNews.filter(n => n.ticker === selectedTicker);
+    function buildNewsCard(n) {
+      const url = safeUrl(n.link);
+      return `
+        <div class="card">
+          <div class="card-header">
+            <span class="ticker-name">${escapeHtml(n.ticker)}</span>
+            <span class="last-update">${formatBelgianDateTime(n.date)}</span>
+          </div>
+          <div class="news-title">${escapeHtml(n.title)}</div>
+          ${n.summary ? `<div class="news-summary">${escapeHtml(n.summary)}</div>` : ''}
+          ${url ? `<a class="news-link" href="${url}" target="_blank" rel="noopener">Lire l'article complet →</a>` : ''}
+        </div>`;
+    }
+
+    // Repli côté navigateur : uniquement si data.json ne contient aucune news pour ce ticker
+    async function fetchGoogleNewsFallback(symbol) {
+      const base = symbol.split('-')[0].split('.')[0];
+      const isCrypto = symbol.endsWith('-USD');
+      const query = `${base} ${isCrypto ? 'crypto' : 'stock'} when:7d`;
+      const rssUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=fr&gl=FR&ceid=FR:fr`;
+
+      // Tentative 1 : rss2json
+      try {
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
+        const data = await res.json();
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+          return data.items.map(i => ({
+            ticker: symbol,
+            title: i.title,
+            summary: '',
+            link: i.link,
+            date: i.pubDate
+          }));
+        }
+      } catch (e) {
+        console.warn('rss2json indisponible:', e);
       }
 
-      if (filteredNews.length === 0) {
-        newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente disponible pour ${selectedTicker === 'ALL' ? 'cette sélection' : selectedTicker}.</div>`;
+      // Tentative 2 : proxy CORS + lecture XML
+      try {
+        const res = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`);
+        const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
+        const items = Array.from(xml.querySelectorAll('item')).map(i => ({
+          ticker: symbol,
+          title: i.querySelector('title')?.textContent || '',
+          summary: i.querySelector('source')?.textContent ? 'Source : ' + i.querySelector('source').textContent : '',
+          link: i.querySelector('link')?.textContent || '',
+          date: i.querySelector('pubDate')?.textContent || ''
+        })).filter(i => i.title);
+        if (items.length > 0) return items;
+      } catch (e) {
+        console.warn('allorigins indisponible:', e);
+      }
+
+      return [];
+    }
+
+    async function renderNews() {
+      const newsCont = document.getElementById('news-container');
+      if (!newsCont) return;
+
+      const allNews = (globalData.news || []).slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      // --- Vue "TOUS LES TICKERS" : max 3 news par ticker, triées par date ---
+      if (selectedTicker === 'ALL') {
+        const perTicker = {};
+        const filteredNews = allNews
+          .filter(n => activeCategories.includes(n.category || 'stock'))
+          .filter(n => {
+            perTicker[n.ticker] = (perTicker[n.ticker] || 0) + 1;
+            return perTicker[n.ticker] <= 3;
+          });
+
+        if (filteredNews.length === 0) {
+          newsCont.innerHTML = '<div class="empty-msg">Aucune actualité disponible pour cette sélection.</div>';
+          return;
+        }
+        newsCont.innerHTML = filteredNews.map(buildNewsCard).join('');
         return;
       }
 
-      const cards = filteredNews.map(n => `
-        <div class="card">
-          <div class="card-header">
-            <span class="ticker-name">${n.ticker}</span>
-            <span class="last-update">${formatBelgianDateTime(n.date)}</span>
-          </div>
-          <div class="news-title">${n.title}</div>
-          <div class="news-summary">${n.summary}</div>
-          ${n.link ? `<a class="news-link" href="${n.link}" target="_blank">Lire l'article complet →</a>` : ''}
-        </div>`).join('');
+      // --- Vue d'un ticker : on utilise d'abord les news de data.json ---
+      const tickerNews = allNews.filter(n => n.ticker === selectedTicker);
+      if (tickerNews.length > 0) {
+        newsCont.innerHTML = tickerNews.map(buildNewsCard).join('');
+        return;
+      }
 
-      newsCont.innerHTML = cards;
+      // --- Sinon : repli Google News depuis le navigateur ---
+      const requestedTicker = selectedTicker;
+      newsCont.innerHTML = `<div style="color: #38bdf8; font-size: 13px; text-align: center; padding: 20px;">Chargement des actualités pour ${escapeHtml(requestedTicker)}...</div>`;
+      const fallbackNews = await fetchGoogleNewsFallback(requestedTicker);
+
+      if (requestedTicker !== selectedTicker) return; // l'utilisateur a changé de ticker entre-temps
+
+      if (fallbackNews.length > 0) {
+        fallbackNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+        newsCont.innerHTML = fallbackNews.slice(0, 8).map(buildNewsCard).join('');
+      } else {
+        newsCont.innerHTML = `<div class="empty-msg">Aucune actualité récente trouvée pour ${escapeHtml(requestedTicker)}.</div>`;
+      }
     }
 
     function renderPriceTV() {
@@ -671,7 +754,7 @@
       hideTooltip();
 
       // 1. News
-      renderNews();
+      await renderNews();
 
       // 2. Price (TradingView Market Overview)
       renderPriceTV();
@@ -691,6 +774,7 @@
           
           const f = fundList.find(item => item.ticker === p.ticker) || {};
           
+          // 1. 200 W-SMA
           const isUnder = p.is_under !== undefined ? p.is_under : (p.sma200 && p.sma200.includes('Under'));
           const smaPct = p.sma200_pct !== undefined && p.sma200_pct !== null ? parseFloat(p.sma200_pct) : null;
           
@@ -702,6 +786,7 @@
           }
           const sma200Html = p.sma200 && p.sma200 !== 'N/A' ? `<div><span class="badge-tag ${smaClass}">${p.sma200}</span></div>` : '';
 
+          // 2. RSI14
           let rsiHtml = '';
           if (p.rsi14_weekly !== undefined && p.rsi14_weekly !== null && p.rsi14_weekly !== 'N/A') {
             const rsiVal = parseFloat(p.rsi14_weekly);
@@ -720,6 +805,7 @@
             }
           }
 
+          // 3. ATH 52W
           let athHtml = '';
           if (p.ath_52w_pct !== undefined && p.ath_52w_pct !== null && p.ath_52w_pct !== 'N/A') {
             const athVal = parseFloat(p.ath_52w_pct);
@@ -735,6 +821,7 @@
             }
           }
 
+          // 4. CROSS 50/200W
           let crossHtml = '';
           if (p.ma_cross_str && p.ma_cross_str !== 'N/A') {
             let crossClass = 'badge-neutral';
@@ -751,12 +838,14 @@
             crossHtml = `<div><span class="badge-tag ${crossClass}">${p.ma_cross_str}</span></div>`;
           }
 
+          // 5. MACD-W
           let macdHtml = '';
           if (p.macd_w_str && p.macd_w_str !== 'N/A') {
             let macdClass = (p.macd_w_type === 'bullish') ? 'badge-green' : 'badge-red';
             macdHtml = `<div><span class="badge-tag ${macdClass}">${p.macd_w_str}</span></div>`;
           }
 
+          // 6. PEG & 7. FWD P/E & 8. FCF Yield %
           let pegHtml = '';
           let peHtml = '';
           let fcfHtml = '';
@@ -863,7 +952,7 @@
           <tr>
             <th class="ticker-cell">Tickers</th>
             <th class="clickable-metric" onclick="showTooltip('Croit. CA.')">Croit. CA. ℹ</th>
-            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ</th>
+            <th class="clickable-metric" onclick="showTooltip('Fwd P/E')">Fwd P/E ℹ️️</th>
             <th class="clickable-metric" onclick="showTooltip('EV/EBITDA')">EV/EBITDA ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('ROE')">ROE ℹ️</th>
             <th class="clickable-metric" onclick="showTooltip('PEG')">PEG ℹ️</th>
