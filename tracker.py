@@ -15,7 +15,7 @@ import yfinance as yf
 # CONFIGURATION DES TICKERS PAR CATÉGORIE
 # ==============================================================================
 REITS_TICKERS = [
-    "AED.BR", "CPINV.BR", "HOMI.BR", "RET.BR", "PLD", "GMG.AX", "DLR", "EQIX", "WELL"
+    "AED.BR", "CPINV.BR", "HOMI.BR", "WDP.BR", "PLD", "GMG.AX", "DLR", "EQIX", "WELL"
 ]
 
 STOCKS_TICKERS = [
