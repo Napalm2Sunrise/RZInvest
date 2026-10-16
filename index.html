@@ -234,6 +234,18 @@
       cursor: pointer;
     }
 
+    /* Publications macro (FED, CPI, Core CPI, PCE, PPI) */
+    .card-macro { border-left: 3px solid #a78bfa; }
+    .macro-tag { background: rgba(167, 139, 250, 0.18); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .macro-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+    .macro-table th { text-align: left; color: #64748b; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 4px 6px; }
+    .macro-table td { padding: 6px; border-top: 1px solid rgba(255, 255, 255, 0.06); font-weight: 600; color: #e2e8f0; }
+    .macro-table th:nth-child(n+2), .macro-table td:nth-child(n+2) { text-align: right; }
+    .macro-table .badge-tag { margin-top: 0; }
+    .macro-na { color: #64748b; font-weight: 600; }
+    .macro-pending { color: #94a3b8; font-size: 11px; font-weight: 600; }
+    .macro-legend { font-size: 10px; color: #64748b; line-height: 1.5; margin-bottom: 10px; }
+
     .empty-msg {
       color: #64748b;
       font-size: 13px;
@@ -987,52 +999,137 @@
       }
     }
 
+    // Dernier nombre d'une chaîne ("+0.3%" -> 0.3 ; "3.50–3.75%" -> 3.75)
+    function lastNumber(str) {
+      if (str === null || str === undefined) return null;
+      const m = String(str).match(/-?\d+(?:\.\d+)?/g);
+      return m ? parseFloat(m[m.length - 1]) : null;
+    }
+
+    // Résultat vs consensus : au-dessus = plus "chaud" / hawkish (rouge), en dessous = plus "froid" (vert)
+    function getMacroResultStyle(expected, actual) {
+      const e = lastNumber(expected);
+      const a = lastNumber(actual);
+      if (e === null || a === null) return { cls: 'badge-neutral', arrow: '' };
+      if (a > e) return { cls: 'badge-red', arrow: '▲ ' };
+      if (a < e) return { cls: 'badge-green', arrow: '▼ ' };
+      return { cls: 'badge-yellow', arrow: '= ' };
+    }
+
+    function buildMacroCard(m) {
+      const statusBadge = m.is_past
+        ? `<span class="badge-tag badge-neutral">Publication passée</span>`
+        : `<span class="badge-tag badge-green">À venir</span>`;
+
+      const rows = (m.metrics || []).map(mt => {
+        const exp = mt.expected || null;
+        const act = mt.actual || null;
+
+        const expHtml = exp
+          ? `<span class="badge-tag badge-neutral">${escapeHtml(exp)}</span>`
+          : `<span class="macro-na">N/A</span>`;
+
+        let actHtml;
+        if (act) {
+          const st = getMacroResultStyle(exp, act);
+          actHtml = `<span class="badge-tag ${st.cls}">${st.arrow}${escapeHtml(act)}</span>`;
+        } else if (m.is_past) {
+          actHtml = `<span class="macro-na">N/A</span>`;
+        } else {
+          actHtml = `<span class="macro-pending">⏳ À publier</span>`;
+        }
+
+        return `
+          <tr>
+            <td>${escapeHtml(mt.label)}</td>
+            <td>${expHtml}</td>
+            <td>${actHtml}</td>
+          </tr>`;
+      }).join('');
+
+      const url = safeUrl(m.link);
+      return `
+        <div class="card card-macro">
+          <div class="card-header">
+            <span class="ticker-name">${escapeHtml(m.icon || '🏛️')} ${escapeHtml(m.name)}</span>
+            ${statusBadge}
+          </div>
+          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
+            📅 ${escapeHtml(m.date_formatted || m.date)}${m.time_be ? ` · 🕐 ${escapeHtml(m.time_be)} <span style="font-size:11px; color:#94a3b8; font-weight:600;">(Bruxelles)</span>` : ''}
+          </div>
+          ${m.ref_month ? `<div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Données de ${escapeHtml(m.ref_month)}</div>` : ''}
+          <table class="macro-table">
+            <thead>
+              <tr><th>Indicateur</th><th>Expected</th><th>Results</th></tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+          ${url ? `<div style="margin-top: 8px;"><a class="news-link" href="${url}" target="_blank" rel="noopener">Source officielle →</a></div>` : ''}
+        </div>`;
+    }
+
+    function buildEarningCard(e) {
+      const isPast = e.is_past;
+      const statusBadge = isPast
+        ? `<span class="badge-tag badge-neutral">Publication passée</span>`
+        : `<span class="badge-tag badge-green">À venir</span>`;
+
+      return `
+        <div class="card">
+          <div class="card-header">
+            <span class="ticker-name">${e.ticker}</span>
+            ${statusBadge}
+          </div>
+          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
+            📅 ${e.date_formatted || e.date}
+          </div>
+          ${e.link ? `<div style="margin-top: 8px;"><a class="news-link" href="${e.link}" target="_blank">Voir l'historique financier →</a></div>` : ''}
+        </div>`;
+    }
+
     function renderEarnings() {
       const earnCont = document.getElementById('earnings-container');
       if (!earnCont) return;
 
       const nonCryptoActive = activeCategories.filter(c => c !== 'crypto');
 
-      if (nonCryptoActive.length === 0) {
-        earnCont.innerHTML = '<div class="empty-msg">Non disponible pour les cryptomonnaies</div>';
-        return;
+      // Publications macro : TOUJOURS affichées (indépendantes des catégories et du ticker sélectionnés)
+      const macroItems = (globalData.macro || []).map(m => ({
+        type: 'macro', data: m, sortDate: m.date || '', sortTime: m.time_be || '00:00'
+      }));
+
+      // Publications d'entreprises : dépendent de la sélection (stocks / REITs / crypto + ticker)
+      let earningItems = [];
+      if (nonCryptoActive.length > 0) {
+        let filteredEarnings = (globalData.earnings || []).filter(e => nonCryptoActive.includes(e.category || 'stock'));
+        if (selectedTicker !== 'ALL') {
+          filteredEarnings = filteredEarnings.filter(e => e.ticker === selectedTicker);
+        }
+        earningItems = filteredEarnings.map(e => ({
+          type: 'earning', data: e, sortDate: e.date || '', sortTime: '99:99'
+        }));
       }
 
-      const allEarnings = globalData.earnings || [];
+      const items = macroItems.concat(earningItems);
 
-      let filteredEarnings = allEarnings.filter(e => nonCryptoActive.includes(e.category || 'stock'));
-
-      if (selectedTicker !== 'ALL') {
-        filteredEarnings = filteredEarnings.filter(e => e.ticker === selectedTicker);
-      }
-
-      if (filteredEarnings.length === 0) {
+      if (items.length === 0) {
         earnCont.innerHTML = '<div class="empty-msg">Aucune publication récente ou à venir pour cette sélection.</div>';
         return;
       }
 
-      filteredEarnings.sort((a, b) => new Date(a.date) - new Date(b.date));
+      // Même règle pour tout : les publications passées d'abord, puis celles à venir (ordre chronologique)
+      items.sort((a, b) => a.sortDate.localeCompare(b.sortDate) || a.sortTime.localeCompare(b.sortTime));
 
-      const earnCards = filteredEarnings.map(e => {
-        const isPast = e.is_past;
-        const statusBadge = isPast 
-          ? `<span class="badge-tag badge-neutral">Publication passée</span>`
-          : `<span class="badge-tag badge-green">À venir</span>`;
+      let html = '';
+      if (macroItems.length > 0) {
+        html += `<div class="macro-legend">🏛️ Publications macro toujours affichées. Results vs Expected : <span class="neg">▲ au-dessus</span> du consensus · <span class="pos">▼ en dessous</span> · <span style="color:#facc15">= en ligne</span>.</div>`;
+      }
+      if (nonCryptoActive.length === 0) {
+        html += '<div class="macro-legend">Publications d\'entreprises indisponibles pour les cryptomonnaies : seules les publications macro sont affichées.</div>';
+      }
 
-        return `
-          <div class="card">
-            <div class="card-header">
-              <span class="ticker-name">${e.ticker}</span>
-              ${statusBadge}
-            </div>
-            <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">
-              📅 ${e.date_formatted || e.date}
-            </div>
-            ${e.link ? `<div style="margin-top: 8px;"><a class="news-link" href="${e.link}" target="_blank">Voir l'historique financier →</a></div>` : ''}
-          </div>`;
-      }).join('');
-
-      earnCont.innerHTML = earnCards;
+      html += items.map(it => it.type === 'macro' ? buildMacroCard(it.data) : buildEarningCard(it.data)).join('');
+      earnCont.innerHTML = html;
     }
 
     // Chargement initial
