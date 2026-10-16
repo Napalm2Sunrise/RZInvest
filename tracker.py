@@ -20,7 +20,7 @@ REITS_TICKERS = [
 
 STOCKS_TICKERS = [
     "AAOI", "AMD", "AMKR", "AMZN", "ASML.AS",   
-    "AVGO", "AYA.TO", "BKNG", "CPRT", "CSW", "GOOG", "GRAB", "ISRG", "JNJ", 
+    "AVGO", "AYA.TO", "BKNG", "CPRT", "CRWV", "CSW", "GOOG", "GRAB", "ISRG", "JNJ", 
     "META", "MC.PA", "MSFT", "MU", "NBIS", "NVDA", "ONON", "PEP", "PG", "RMS.PA", "SPCX", "SPGI", "SU.PA", 
     "TMO", "TTE.PA", "TSLA", "UBER", "VRSN", "VRT", "VST"
 ]
@@ -501,6 +501,311 @@ def get_annual_history(ticker, info, category):
 
     return years_labels, history
 
+# ==============================================================================
+# PUBLICATIONS MACRO (FED, CPI, CORE CPI, PCE, PPI) - TOUJOURS AFFICHÉES
+# ==============================================================================
+# Dates officielles : BLS (CPI, PPI), BEA (PCE), Federal Reserve (FOMC).
+# Format : (date de publication "AAAA-MM-JJ", mois de référence "AAAA-MM").
+# Pour le FOMC, la date est celle de la décision (2e jour de la réunion).
+# ➜ À compléter chaque année quand les agences publient leur nouveau calendrier.
+MACRO_PAST_DAYS = 30   # même règle que les résultats d'entreprises : 30 jours d'historique
+NY_TZ = ZoneInfo("America/New_York")
+MACRO_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; RZInvestBot/1.0)"}
+
+# Résultats (Results) : séries publiques FRED, sans clé API
+FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}&cosd=2024-01-01"
+# Attentes (Expected) : calendriers économiques (Finnhub si ton plan l'autorise, sinon flux Forex Factory)
+FINNHUB_ECON_URL = "https://finnhub.io/api/v1/calendar/economic"
+FF_CALENDAR_URLS = [
+    "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+    "https://nfs.faireconomy.media/ff_calendar_nextweek.json",
+]
+
+FOMC_RELEASES = [
+    ("2026-01-28", None), ("2026-03-18", None), ("2026-04-29", None), ("2026-06-17", None),
+    ("2026-07-29", None), ("2026-09-16", None), ("2026-10-28", None), ("2026-12-09", None),
+]
+
+CPI_RELEASES = [
+    ("2026-01-13", "2025-12"), ("2026-02-13", "2026-01"), ("2026-03-11", "2026-02"),
+    ("2026-04-10", "2026-03"), ("2026-05-12", "2026-04"), ("2026-06-10", "2026-05"),
+    ("2026-07-14", "2026-06"), ("2026-08-12", "2026-07"), ("2026-09-11", "2026-08"),
+    ("2026-10-14", "2026-09"), ("2026-11-10", "2026-10"), ("2026-12-10", "2026-11"),
+]
+
+PPI_RELEASES = [
+    ("2026-01-14", "2025-11"), ("2026-01-30", "2025-12"), ("2026-02-27", "2026-01"),
+    ("2026-03-18", "2026-02"), ("2026-04-14", "2026-03"), ("2026-05-13", "2026-04"),
+    ("2026-06-11", "2026-05"), ("2026-07-15", "2026-06"), ("2026-08-13", "2026-07"),
+    ("2026-09-10", "2026-08"), ("2026-10-15", "2026-09"), ("2026-11-13", "2026-10"),
+    ("2026-12-15", "2026-11"),
+]
+
+PCE_RELEASES = [
+    ("2026-02-20", "2025-12"), ("2026-03-13", "2026-01"), ("2026-04-09", "2026-02"),
+    ("2026-04-30", "2026-03"), ("2026-05-28", "2026-04"), ("2026-06-25", "2026-05"),
+    ("2026-07-30", "2026-06"), ("2026-08-26", "2026-07"), ("2026-09-30", "2026-08"),
+    ("2026-10-29", "2026-09"), ("2026-11-25", "2026-10"),
+    # Décembre 2026 (données de novembre) : date BEA à ajouter dès qu'elle est confirmée
+]
+
+# "match" = regex (fullmatch, minuscules) appliquée au titre de l'événement dans les calendriers externes.
+# "series" = série FRED utilisée pour calculer le résultat (NSA pour les variations annuelles CPI/PPI, comme le BLS).
+MACRO_EVENTS = [
+    {
+        "key": "FOMC", "name": "Réunion FED (FOMC)", "icon": "🏛️", "time_et": (14, 0),
+        "link": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "releases": FOMC_RELEASES,
+        "metrics": [
+            {"label": "Taux directeur (fourchette)", "kind": "fed",
+             "match": r"federal funds rate|fed interest rate decision|interest rate decision"},
+        ],
+    },
+    {
+        "key": "CPI", "name": "CPI (US)", "icon": "🛒", "time_et": (8, 30),
+        "link": "https://www.bls.gov/cpi/", "releases": CPI_RELEASES,
+        "metrics": [
+            {"label": "CPI YoY", "kind": "yoy", "series": "CPIAUCNS",
+             "match": r"cpi y/y|cpi yoy|inflation rate yoy"},
+            {"label": "CPI MoM", "kind": "mom", "series": "CPIAUCSL",
+             "match": r"cpi m/m|cpi mom|inflation rate mom"},
+        ],
+    },
+    {
+        "key": "CORE_CPI", "name": "Core CPI (US)", "icon": "🎯", "time_et": (8, 30),
+        "link": "https://www.bls.gov/cpi/", "releases": CPI_RELEASES,
+        "metrics": [
+            {"label": "Core CPI YoY", "kind": "yoy", "series": "CPILFENS",
+             "match": r"core cpi y/y|core cpi yoy|core inflation rate yoy"},
+            {"label": "Core CPI MoM", "kind": "mom", "series": "CPILFESL",
+             "match": r"core cpi m/m|core cpi mom|core inflation rate mom"},
+        ],
+    },
+    {
+        "key": "PCE", "name": "PCE (US)", "icon": "💳", "time_et": (8, 30),
+        "link": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+        "releases": PCE_RELEASES,
+        "metrics": [
+            {"label": "PCE YoY", "kind": "yoy", "series": "PCEPI",
+             "match": r"pce price index y/y|pce price index yoy|pce prices? yoy|pce y/y"},
+            {"label": "PCE MoM", "kind": "mom", "series": "PCEPI",
+             "match": r"pce price index m/m|pce price index mom|pce prices? mom|pce m/m"},
+            {"label": "Core PCE YoY", "kind": "yoy", "series": "PCEPILFE",
+             "match": r"core pce price index y/y|core pce price index yoy|core pce prices? yoy|core pce y/y"},
+            {"label": "Core PCE MoM", "kind": "mom", "series": "PCEPILFE",
+             "match": r"core pce price index m/m|core pce price index mom|core pce prices? mom|core pce m/m"},
+        ],
+    },
+    {
+        "key": "PPI", "name": "PPI (US)", "icon": "🏭", "time_et": (8, 30),
+        "link": "https://www.bls.gov/ppi/", "releases": PPI_RELEASES,
+        "metrics": [
+            {"label": "PPI YoY", "kind": "yoy", "series": "WPUFD4",
+             "match": r"ppi y/y|ppi yoy|producer price index yoy"},
+            {"label": "PPI MoM", "kind": "mom", "series": "PPIFIS",
+             "match": r"ppi m/m|ppi mom|producer price index mom"},
+        ],
+    },
+]
+
+def _to_float(val):
+    """Convertit '0.3%', 0.3, '3.75%' ... en float (None si vide ou illisible)."""
+    if val is None:
+        return None
+    if isinstance(val, (int, float)):
+        return None if math.isnan(val) else float(val)
+    m = re.search(r"-?\d+(?:\.\d+)?", str(val).replace(",", "."))
+    return float(m.group()) if m else None
+
+def format_macro_value(kind, value):
+    """Formate une valeur macro pour l'affichage."""
+    if value is None:
+        return None
+    if kind == "fed":
+        # La fourchette de la Fed fait toujours 25 points de base : on affiche borne basse – borne haute
+        return f"{value - 0.25:.2f}–{value:.2f}%"
+    value = round(value, 1)
+    if value == 0:
+        value = 0.0  # évite "-0.0%"
+    return f"{value:+.1f}%"
+
+def fetch_fred_series(series, cache):
+    """Télécharge une série FRED (CSV public, sans clé) -> {'AAAA-MM-JJ': valeur}."""
+    if series in cache:
+        return cache[series]
+    data = {}
+    try:
+        resp = requests.get(FRED_CSV_URL.format(series=series), headers=MACRO_HEADERS, timeout=20)
+        resp.raise_for_status()
+        for line in resp.text.strip().splitlines()[1:]:
+            parts = line.split(",")
+            if len(parts) < 2:
+                continue
+            d, v = parts[0].strip(), parts[1].strip()
+            if not v or v == ".":
+                continue
+            try:
+                data[d] = float(v)
+            except ValueError:
+                continue
+    except Exception as e:
+        print(f"    ⚠️ Erreur FRED ({series}): {e}")
+    cache[series] = data
+    return data
+
+def compute_macro_actual(metric, ref_month, release_date, cache):
+    """Calcule le résultat publié (YoY / MoM / taux Fed) à partir des séries FRED."""
+    kind = metric["kind"]
+
+    if kind == "fed":
+        upper = fetch_fred_series("DFEDTARU", cache)
+        lower = fetch_fred_series("DFEDTARL", cache)
+        # La Fed annonce à 14h00 ET pour une application le lendemain : on lit la fourchette en vigueur après la décision
+        for offset in range(1, 5):
+            d = (release_date + timedelta(days=offset)).strftime("%Y-%m-%d")
+            if d in upper and d in lower:
+                return format_macro_value("fed", upper[d])
+        return None
+
+    if not ref_month:
+        return None
+    values = fetch_fred_series(metric["series"], cache)
+    y, m = int(ref_month[:4]), int(ref_month[5:7])
+    current = values.get(f"{y}-{m:02d}-01")
+    if current is None:
+        return None
+    if kind == "mom":
+        py, pm = (y, m - 1) if m > 1 else (y - 1, 12)
+        base = values.get(f"{py}-{pm:02d}-01")
+    else:
+        base = values.get(f"{y - 1}-{m:02d}-01")
+    if not base:
+        return None
+    return format_macro_value(kind, (current / base - 1) * 100)
+
+def fetch_external_macro_calendar():
+    """Calendriers économiques US (Finnhub puis Forex Factory) -> liste normalisée {date, title, expected, actual}."""
+    events = []
+
+    # 1) Finnhub (si la clé existe ET que le plan donne accès au calendrier économique)
+    finnhub_key = os.environ.get("FINNHUB_API_KEY")
+    if finnhub_key:
+        try:
+            resp = requests.get(FINNHUB_ECON_URL, params={"token": finnhub_key}, headers=MACRO_HEADERS, timeout=20)
+            if resp.status_code in (401, 403):
+                print("    ℹ️ Calendrier économique Finnhub non accessible avec cette clé (plan premium) : ignoré")
+            else:
+                resp.raise_for_status()
+                for it in (resp.json().get("economicCalendar") or []):
+                    if str(it.get("country", "")).upper() != "US":
+                        continue
+                    t = str(it.get("time") or "")
+                    try:
+                        dt_utc = datetime.strptime(t[:19], "%Y-%m-%d %H:%M:%S").replace(tzinfo=ZoneInfo("UTC"))
+                        d = dt_utc.astimezone(NY_TZ).strftime("%Y-%m-%d")
+                    except Exception:
+                        d = t[:10]
+                    events.append({
+                        "date": d,
+                        "title": str(it.get("event") or "").strip().lower(),
+                        "expected": _to_float(it.get("estimate")),
+                        "actual": _to_float(it.get("actual")),
+                    })
+        except Exception as e:
+            print(f"    ⚠️ Erreur calendrier Finnhub: {e}")
+
+    # 2) Forex Factory (semaine en cours + suivante, gratuit)
+    for url in FF_CALENDAR_URLS:
+        try:
+            resp = requests.get(url, headers=MACRO_HEADERS, timeout=20)
+            resp.raise_for_status()
+            for it in resp.json():
+                if it.get("country") != "USD":
+                    continue
+                events.append({
+                    "date": str(it.get("date") or "")[:10],   # déjà exprimée en heure de New York
+                    "title": str(it.get("title") or "").strip().lower(),
+                    "expected": _to_float(it.get("forecast")),
+                    "actual": _to_float(it.get("actual")),
+                })
+        except Exception as e:
+            print(f"    ⚠️ Erreur calendrier Forex Factory ({url.rsplit('/', 1)[-1]}): {e}")
+
+    return events
+
+def lookup_external(external, date_str, pattern):
+    """Cherche dans les calendriers externes l'événement correspondant (même jour + titre)."""
+    first_match = None
+    for e in external:
+        if e["date"] != date_str or not re.fullmatch(pattern, e["title"]):
+            continue
+        if e["expected"] is not None:
+            return e
+        if first_match is None:
+            first_match = e
+    return first_match
+
+def build_macro_events(now_be, prev_macro, belgium_tz):
+    """Construit la liste des publications macro (passées sur 30 jours + à venir) avec Expected / Results."""
+    now_date = now_be.date()
+    cutoff_date = now_date - timedelta(days=MACRO_PAST_DAYS)
+
+    # Valeurs déjà connues (data.json précédent) : on ne perd jamais un Expected / Results déjà capturé
+    prev_index = {}
+    for ev in (prev_macro or []):
+        prev_index[(ev.get("key"), ev.get("date"))] = {m.get("label"): m for m in ev.get("metrics", [])}
+
+    fred_cache = {}
+    external = fetch_external_macro_calendar()
+    events = []
+
+    for cfg in MACRO_EVENTS:
+        for date_str, ref_month in cfg["releases"]:
+            rel_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+            if rel_date < cutoff_date:
+                continue
+
+            hh, mm = cfg["time_et"]
+            release_dt = datetime(rel_date.year, rel_date.month, rel_date.day, hh, mm, tzinfo=NY_TZ).astimezone(belgium_tz)
+            released = now_be >= release_dt
+            old_metrics = prev_index.get((cfg["key"], date_str), {})
+
+            metrics_out = []
+            for metric in cfg["metrics"]:
+                old = old_metrics.get(metric["label"], {})
+                hit = lookup_external(external, date_str, metric["match"])
+
+                # EXPECTED : mis à jour jusqu'à la publication, figé ensuite
+                expected = old.get("expected")
+                if hit and hit["expected"] is not None and (not released or expected is None):
+                    expected = format_macro_value(metric["kind"], hit["expected"])
+
+                # RESULTS : figé dès qu'il est capturé (1re valeur publiée)
+                actual = old.get("actual")
+                if actual is None and released:
+                    actual = compute_macro_actual(metric, ref_month, rel_date, fred_cache)
+                    if actual is None and hit and hit["actual"] is not None:
+                        actual = format_macro_value(metric["kind"], hit["actual"])
+
+                metrics_out.append({"label": metric["label"], "expected": expected, "actual": actual})
+
+            has_actual = any(m["actual"] is not None for m in metrics_out)
+            events.append({
+                "key": cfg["key"],
+                "name": cfg["name"],
+                "icon": cfg["icon"],
+                "date": date_str,
+                "date_formatted": rel_date.strftime("%d/%m/%Y"),
+                "time_be": release_dt.strftime("%H:%M"),
+                "is_past": bool(released or has_actual),
+                "ref_month": f"{ref_month[5:7]}/{ref_month[:4]}" if ref_month else None,
+                "metrics": metrics_out,
+                "link": cfg["link"],
+            })
+
+    events.sort(key=lambda x: (x["date"], x["time_be"]))
+    return events
+
 def generate_dashboard_data():
     all_targets = []
     category_map = {}
@@ -521,6 +826,14 @@ def generate_dashboard_data():
     news_data = []
     fundamentals_data = []
     all_earnings_data = []
+
+    # Publications macro déjà présentes dans le data.json précédent
+    prev_macro = []
+    try:
+        with open("data.json", "r", encoding="utf-8") as f:
+            prev_macro = json.load(f).get("macro", []) or []
+    except Exception:
+        prev_macro = []
 
     belgium_tz = ZoneInfo("Europe/Brussels")
     now_be = datetime.now(belgium_tz)
@@ -645,12 +958,22 @@ def generate_dashboard_data():
 
     all_earnings_data.sort(key=lambda x: x["date"])
 
+    # PUBLICATIONS MACRO (FED, CPI, CORE CPI, PCE, PPI) - indépendantes des catégories / tickers
+    try:
+        print("🏛️ Calcul des publications macro (FED, CPI, Core CPI, PCE, PPI)...")
+        macro_data = build_macro_events(now_be, prev_macro, belgium_tz)
+        print(f"   ➜ {len(macro_data)} publications macro")
+    except Exception as e:
+        print(f"⚠️ Erreur publications macro: {e}")
+        macro_data = prev_macro
+
     output = {
         "updated_at": now_be.strftime("%d/%m/%Y à %H:%M"),
         "prices": prices_data,
         "news": news_data,
         "fundamentals": fundamentals_data,
-        "earnings": all_earnings_data
+        "earnings": all_earnings_data,
+        "macro": macro_data
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
