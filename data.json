@@ -1,36 +1,36 @@
 {
-  "updated_at": "20/10/2026 à 22:19",
+  "updated_at": "21/10/2026 à 12:06",
   "prices": [
     {
       "ticker": "AED.BR",
       "category": "reit",
-      "price": 62.85,
-      "change": 0.8,
+      "price": 63.6,
+      "change": 1.19,
       "currency": "€",
-      "sma200": "200 W-SMA Under -2.2% 🔥",
-      "sma200_pct": -2.2,
+      "sma200": "200 W-SMA Under -1.0% 🔥",
+      "sma200_pct": -1.0,
       "is_under": true,
-      "rsi14_weekly": 37.9,
-      "ath_52w_pct": -20.7,
+      "rsi14_weekly": 40.1,
+      "ath_52w_pct": -19.7,
       "ma_cross_str": "Bullish Cross (50/200W) +8.3%",
       "ma_cross_pct": 8.3,
       "ma_cross_type": "bullish",
       "macd_w_str": "MACD-W Bearish",
       "macd_w_type": "bearish",
-      "fcf_yield": 5.7,
+      "fcf_yield": 5.6,
       "earnings": "N/A"
     },
     {
       "ticker": "CPINV.BR",
       "category": "reit",
-      "price": 12.18,
-      "change": 0.66,
+      "price": 12.3,
+      "change": 0.99,
       "currency": "€",
-      "sma200": "200 W-SMA Under -4.5% 🔥",
-      "sma200_pct": -4.5,
+      "sma200": "200 W-SMA Under -3.6% 🔥",
+      "sma200_pct": -3.6,
       "is_under": true,
-      "rsi14_weekly": 45.9,
-      "ath_52w_pct": -12.5,
+      "rsi14_weekly": 48.2,
+      "ath_52w_pct": -11.6,
       "ma_cross_str": "Bearish Cross (50/200W) -3.0%",
       "ma_cross_pct": -3.0,
       "ma_cross_type": "bearish",
@@ -42,14 +42,14 @@
     {
       "ticker": "HOMI.BR",
       "category": "reit",
-      "price": 17.94,
-      "change": 0.79,
+      "price": 17.9,
+      "change": -0.22,
       "currency": "€",
-      "sma200": "200 W-SMA Under -0.7% 🔥",
-      "sma200_pct": -0.7,
+      "sma200": "200 W-SMA Under -0.9% 🔥",
+      "sma200_pct": -0.9,
       "is_under": true,
-      "rsi14_weekly": 42.7,
-      "ath_52w_pct": -11.2,
+      "rsi14_weekly": 42.3,
+      "ath_52w_pct": -11.4,
       "ma_cross_str": "Bullish Cross (50/200W) +3.9%",
       "ma_cross_pct": 3.9,
       "ma_cross_type": "bullish",
@@ -61,14 +61,14 @@
     {
       "ticker": "WDP.BR",
       "category": "reit",
-      "price": 19.23,
-      "change": 0.94,
+      "price": 19.36,
+      "change": 0.68,
       "currency": "€",
-      "sma200": "200 W-SMA Under -18.9% 🔥",
-      "sma200_pct": -18.9,
+      "sma200": "200 W-SMA Under -18.3% 🔥",
+      "sma200_pct": -18.3,
       "is_under": true,
-      "rsi14_weekly": 34.1,
-      "ath_52w_pct": -26.2,
+      "rsi14_weekly": 34.8,
+      "ath_52w_pct": -25.7,
       "ma_cross_str": "Bearish Cross (50/200W) -6.2%",
       "ma_cross_pct": -6.2,
       "ma_cross_type": "bearish",
@@ -99,20 +99,20 @@
     {
       "ticker": "GMG.AX",
       "category": "reit",
-      "price": 26.51,
-      "change": 0.88,
+      "price": 25.92,
+      "change": -2.23,
       "currency": "$",
-      "sma200": "200 W-SMA Under -8.3% 🔥",
-      "sma200_pct": -8.3,
+      "sma200": "200 W-SMA Under -10.4% 🔥",
+      "sma200_pct": -10.4,
       "is_under": true,
-      "rsi14_weekly": 41.4,
-      "ath_52w_pct": -22.8,
+      "rsi14_weekly": 39.1,
+      "ath_52w_pct": -24.5,
       "ma_cross_str": "Bullish Cross (50/200W) +0.5%",
       "ma_cross_pct": 0.5,
       "ma_cross_type": "bullish",
       "macd_w_str": "MACD-W Bearish",
       "macd_w_type": "bearish",
-      "fcf_yield": 5.5,
+      "fcf_yield": 5.6,
       "earnings": "18/02/2027"
     },
     {
@@ -251,14 +251,14 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
-      "price": 1455.4,
-      "change": -2.71,
+      "price": 1473.6,
+      "change": 1.25,
       "currency": "€",
-      "sma200": "200 W-SMA Above +70.9%",
-      "sma200_pct": 70.9,
+      "sma200": "200 W-SMA Above +73.0%",
+      "sma200_pct": 73.0,
       "is_under": false,
-      "rsi14_weekly": 50.4,
-      "ath_52w_pct": -15.5,
+      "rsi14_weekly": 51.5,
+      "ath_52w_pct": -14.4,
       "ma_cross_str": "Bullish Cross (50/200W) +53.1%",
       "ma_cross_pct": 53.1,
       "ma_cross_type": "bullish",
@@ -435,8 +435,8 @@
       "ma_cross_type": "bullish",
       "macd_w_str": "MACD-W Bullish",
       "macd_w_type": "bullish",
-      "fcf_yield": 1.7,
-      "earnings": "20/10/2026"
+      "fcf_yield": 1.6,
+      "earnings": "21/01/2027"
     },
     {
       "ticker": "JNJ",
@@ -498,21 +498,21 @@
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "price": 386.75,
-      "change": -0.83,
+      "price": 387.7,
+      "change": 0.25,
       "currency": "€",
-      "sma200": "200 W-SMA Under -39.9% 🔥",
-      "sma200_pct": -39.9,
+      "sma200": "200 W-SMA Under -39.7% 🔥",
+      "sma200_pct": -39.7,
       "is_under": true,
-      "rsi14_weekly": 32.4,
-      "ath_52w_pct": -40.7,
+      "rsi14_weekly": 32.5,
+      "ath_52w_pct": -40.5,
       "ma_cross_str": "Bearish Cross (50/200W) -21.7%",
       "ma_cross_pct": -21.7,
       "ma_cross_type": "bearish",
       "macd_w_str": "MACD-W Bearish",
       "macd_w_type": "bearish",
-      "fcf_yield": 6.1,
-      "earnings": "N/A"
+      "fcf_yield": 6.0,
+      "earnings": "26/01/2027"
     },
     {
       "ticker": "MSFT",
@@ -626,7 +626,7 @@
       "macd_w_str": "MACD-W Bearish",
       "macd_w_type": "bearish",
       "fcf_yield": 5.0,
-      "earnings": "N/A"
+      "earnings": "02/02/2027"
     },
     {
       "ticker": "PG",
@@ -650,14 +650,14 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "price": 1339.0,
-      "change": 0.15,
+      "price": 1345.5,
+      "change": 0.49,
       "currency": "€",
-      "sma200": "200 W-SMA Under -33.5% 🔥",
-      "sma200_pct": -33.5,
+      "sma200": "200 W-SMA Under -33.2% 🔥",
+      "sma200_pct": -33.2,
       "is_under": true,
-      "rsi14_weekly": 33.7,
-      "ath_52w_pct": -40.2,
+      "rsi14_weekly": 34.1,
+      "ath_52w_pct": -39.9,
       "ma_cross_str": "Bearish Cross (50/200W) -12.8%",
       "ma_cross_pct": -12.8,
       "ma_cross_type": "bearish",
@@ -683,7 +683,7 @@
       "macd_w_str": "N/A",
       "macd_w_type": "neutral",
       "fcf_yield": -0.7,
-      "earnings": "20/10/2026"
+      "earnings": "09/02/2027"
     },
     {
       "ticker": "SPGI",
@@ -707,14 +707,14 @@
     {
       "ticker": "SU.PA",
       "category": "stock",
-      "price": 244.3,
-      "change": -3.29,
+      "price": 245.5,
+      "change": 0.49,
       "currency": "€",
-      "sma200": "200 W-SMA Above +12.9%",
-      "sma200_pct": 12.9,
+      "sma200": "200 W-SMA Above +13.4%",
+      "sma200_pct": 13.4,
       "is_under": false,
-      "rsi14_weekly": 39.0,
-      "ath_52w_pct": -21.4,
+      "rsi14_weekly": 39.4,
+      "ath_52w_pct": -21.1,
       "ma_cross_str": "Bullish Cross (50/200W) +21.3%",
       "ma_cross_pct": 21.3,
       "ma_cross_type": "bullish",
@@ -745,20 +745,20 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "price": 79.94,
-      "change": -0.73,
+      "price": 80.78,
+      "change": 1.05,
       "currency": "€",
-      "sma200": "200 W-SMA Above +31.0%",
-      "sma200_pct": 31.0,
+      "sma200": "200 W-SMA Above +32.3%",
+      "sma200_pct": 32.3,
       "is_under": false,
-      "rsi14_weekly": 58.4,
-      "ath_52w_pct": -1.4,
+      "rsi14_weekly": 60.0,
+      "ath_52w_pct": -0.3,
       "ma_cross_str": "Bullish Cross (50/200W) +15.1%",
       "ma_cross_pct": 15.1,
       "ma_cross_type": "bullish",
       "macd_w_str": "MACD-W Bullish",
       "macd_w_type": "bullish",
-      "fcf_yield": 7.7,
+      "fcf_yield": 7.6,
       "earnings": "29/10/2026"
     },
     {
@@ -859,14 +859,14 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "price": 82499.19,
-      "change": 0.8,
+      "price": 83313.75,
+      "change": 0.45,
       "currency": "$",
-      "sma200": "200 W-SMA Above +23.0%",
-      "sma200_pct": 23.0,
+      "sma200": "200 W-SMA Above +24.2%",
+      "sma200_pct": 24.2,
       "is_under": false,
-      "rsi14_weekly": 59.1,
-      "ath_52w_pct": -4.7,
+      "rsi14_weekly": 59.9,
+      "ath_52w_pct": -3.8,
       "ma_cross_str": "Bullish Cross (50/200W) +13.6%",
       "ma_cross_pct": 13.6,
       "ma_cross_type": "bullish",
@@ -878,14 +878,14 @@
     {
       "ticker": "ETH-USD",
       "category": "crypto",
-      "price": 2433.7,
-      "change": 1.19,
+      "price": 2450.05,
+      "change": 0.14,
       "currency": "$",
-      "sma200": "200 W-SMA Under -4.2% 🔥",
-      "sma200_pct": -4.2,
+      "sma200": "200 W-SMA Under -3.6% 🔥",
+      "sma200_pct": -3.6,
       "is_under": true,
-      "rsi14_weekly": 54.3,
-      "ath_52w_pct": -12.3,
+      "rsi14_weekly": 54.7,
+      "ath_52w_pct": -11.8,
       "ma_cross_str": "Bearish Cross (50/200W) -8.0%",
       "ma_cross_pct": -8.0,
       "ma_cross_type": "bearish",
@@ -897,14 +897,14 @@
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "price": 105.83,
-      "change": 0.86,
+      "price": 106.27,
+      "change": -0.14,
       "currency": "$",
-      "sma200": "200 W-SMA Under -5.8% 🔥",
-      "sma200_pct": -5.8,
+      "sma200": "200 W-SMA Under -5.4% 🔥",
+      "sma200_pct": -5.4,
       "is_under": true,
-      "rsi14_weekly": 55.1,
-      "ath_52w_pct": -13.3,
+      "rsi14_weekly": 55.2,
+      "ath_52w_pct": -12.9,
       "ma_cross_str": "Bearish Cross (50/200W) -12.6%",
       "ma_cross_pct": -12.6,
       "ma_cross_type": "bearish",
@@ -916,14 +916,14 @@
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "price": 80.19,
-      "change": 1.3,
+      "price": 81.08,
+      "change": 0.92,
       "currency": "$",
       "sma200": "N/A",
       "sma200_pct": null,
       "is_under": false,
-      "rsi14_weekly": 59.8,
-      "ath_52w_pct": -17.5,
+      "rsi14_weekly": 60.3,
+      "ath_52w_pct": -16.6,
       "ma_cross_str": "N/A",
       "ma_cross_pct": null,
       "ma_cross_type": "neutral",
@@ -954,14 +954,14 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "price": 151.52,
-      "change": 1.51,
+      "price": 154.76,
+      "change": 0.18,
       "currency": "$",
-      "sma200": "200 W-SMA Above +6.9%",
-      "sma200_pct": 6.9,
+      "sma200": "200 W-SMA Above +9.1%",
+      "sma200_pct": 9.1,
       "is_under": false,
-      "rsi14_weekly": 58.7,
-      "ath_52w_pct": -17.8,
+      "rsi14_weekly": 60.0,
+      "ath_52w_pct": -16.0,
       "ma_cross_str": "Bearish Cross (50/200W) -13.3%",
       "ma_cross_pct": -13.3,
       "ma_cross_type": "bearish",
@@ -973,16 +973,16 @@
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "price": 12.19,
-      "change": 1.22,
+      "price": 12.32,
+      "change": -0.01,
       "currency": "$",
-      "sma200": "200 W-SMA Under -4.8% 🔥",
-      "sma200_pct": -4.8,
+      "sma200": "200 W-SMA Under -3.8% 🔥",
+      "sma200_pct": -3.8,
       "is_under": true,
-      "rsi14_weekly": 57.4,
-      "ath_52w_pct": -21.1,
-      "ma_cross_str": "Bearish Cross (50/200W) -18.5%",
-      "ma_cross_pct": -18.5,
+      "rsi14_weekly": 58.2,
+      "ath_52w_pct": -20.2,
+      "ma_cross_str": "Bearish Cross (50/200W) -18.4%",
+      "ma_cross_pct": -18.4,
       "ma_cross_type": "bearish",
       "macd_w_str": "MACD-W Bullish",
       "macd_w_type": "bullish",
@@ -991,6 +991,14 @@
     }
   ],
   "news": [
+    {
+      "ticker": "AED.BR",
+      "category": "reit",
+      "title": "Jefferies cuts target for Aedifica stock to EUR 67.00",
+      "summary": "Source : AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQaWp3eWJUd1FKbWtMbkg0UVp0Q2tHUjd5NVhLLXBqYzk4LTI4ZVhiSFhISlA2bVFRWlR3cTdVRUI2a3JMcXBnZzh4QjJ4ekVtX2Y4NHowUUNRcFhyZC10ckxtR1hybWtLeEg2Y2dkUnNuN0Fhb3FfZE42MXN5WVFrUmtITkREaG5pV2hXS3hOLThlaWVmd2FacVpjMm4xLXY0QjlnWXpzTE9YU2dIWnl2aC1sREN6VGs?oc=5",
+      "date": "2026-10-21T10:58:32+02:00"
+    },
     {
       "ticker": "AED.BR",
       "category": "reit",
@@ -1032,14 +1040,6 @@
       "date": "2026-10-19T10:32:20+02:00"
     },
     {
-      "ticker": "AED.BR",
-      "category": "reit",
-      "title": "Aedifica stock has interim statement due November 18, 2026 ahead of Xetra open",
-      "summary": "Source : ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWFRWSHNCblBKODdfazhhcEtKNF8xRHBRWHNPTFUxQzZVNi1wc2QwUXB2alN0VXhvYmxFOHNkU2pBQXF3UVNmd1l4YXJHT3RNUU1XQnY4UEdZZ3ZmSmZRczVhU2VSWExKcHl0a0tXZVB3bGdFSkxhNHFac2NTS0paVnFpeWxWX19NazBHZDh6Y0FEMU8yZUtTUkVrVWVOZF94dzZPc0tvLVVQa2NkYjJaQ2hOR1p2ZXQ0YW96cGVTV2NMaG1iOGNFTHBn?oc=5",
-      "date": "2026-10-19T08:11:31+02:00"
-    },
-    {
       "ticker": "HOMI.BR",
       "category": "reit",
       "title": "Home Invest Belgium SA (H5V0.SG) Analyst Insights, Price Targets & Recommendations - Yahoo Finance",
@@ -1059,7 +1059,7 @@
       "ticker": "WDP.BR",
       "category": "reit",
       "title": "Fusion Argan-WDP : le commissaire juge équitable la parité de 3 actions WDP pour 1 action Argan",
-      "summary": "Source : Idéal Investisseur",
+      "summary": "Source : Ideal Investisseur",
       "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQQTB2VjAtT3lOa3VGazhzTHV1cVVjQVNSZFZLWldzY3VZVVJMTm9RRnVacExmZU1nT3NVazJNR09xS19YWjZaVmQ4dG5VMmhKREExcmJodUR5YV93VkM3WnBQa3REQlZNbV9qcnBneGNiak5IaEd0bW11d2JkS1NGVjhQNVRCNU45Sjk2blRLdGF0NUFUdklvMEVRU3hLdlFPZE5sY25BM0diSmJQbUFHMU00T210T1RyajFNMU16TWt3a1dQZk5vRDR2T0ZEdmtQQm5OUk5vRnk4Ry1Ca25jQmVn?oc=5",
       "date": "2026-10-20T09:16:00+02:00"
     },
@@ -1067,9 +1067,9 @@
       "ticker": "WDP.BR",
       "category": "reit",
       "title": "ARGAN : Mise à disposition du rapport du commissaire à la fusion",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYUdwWFJrQkVnZVR1SHpHcGYzUGIzTGhGaDBRWnZKQmN5WFVaMGVFYW5IeC1hbEl6cnp2d1ktd1NMUDR2eHJRTTdDQzZOUE5NLXJHYlJUbDVWRDNkaDdnX295Umg4TFowMjhXZmIzRlBxOTF5cW9CU192dFh0ZzF4Sl9BajlzdlcyZUF5US13bFFlbnA2ZV9Id1VMaHRwYjdBU0pmOWgyM2RpUHJmbkR5M0pJMHpybnlDSXFyeTByb1A?oc=5",
-      "date": "2026-10-20T08:01:04+02:00"
+      "summary": "Source : Yahoo Finance France",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSWlRTXRPNTktQmNTWUtuYjNfWXBwd2RWektNcmRmZkxiZFUyX2xsME03S2djVmE0VllMUGdMbWdYSXRWdW5Gdk1Yd1pCNWpRLWc1VUZlYUVQZkJwVEx4S3NkZmpoOUxPQlRHREFrb19DZTFvZHhhZGIzX2Flck5wSFNhbFVOVzAyVlZjVUp5UG9wb2J3LUlB?oc=5",
+      "date": "2026-10-20T01:00:00+02:00"
     },
     {
       "ticker": "WDP.BR",
@@ -1078,6 +1078,30 @@
       "summary": "Source : Investing.com France",
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPeE1hbUVhVGxuaDE4NC1oV3Z4S3VIRGtKSi1zWUpkQUtsczZXWjNTY2FFdnczRHlBb3B2UkJDUVBQaW05UEFrTXJrOTNVLTQwaVpfZVJyTks3LXFsMzdRSjVocVhlYWdJbzRfWDRuUjZ0c3hZVWFLMnpyZFRsajdHcEduMDdYbVpqRHVWeEwtd1E0MFlyY1h6QUZfMGtyc2lid3o2WHl4SXVhN2VYRHkwTHpFTDlYQWd2M3U5R1FmVnV2Y3FCVmc?oc=5",
       "date": "2026-10-15T08:42:00+02:00"
+    },
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "Raymond James Upgrades Prologis to Outperform, Price Target is $163",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/raymond-james-upgrades-prologis-outperform-092040271.html",
+      "date": "2026-10-21T11:20:40+02:00"
+    },
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "Dimensional Fund Advisors Ltd. : Form 8.3 - PROLOGIS INC - Ordinary Shares",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/dimensional-fund-advisors-ltd-form-082200748.html",
+      "date": "2026-10-21T10:22:00+02:00"
+    },
+    {
+      "ticker": "PLD",
+      "category": "reit",
+      "title": "Prologis (PLD) Stock Gets Fair Value Trim As Analysts Rework Growth And Cost Assumptions",
+      "summary": "Source : Simply Wall St.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/prologis-pld-stock-gets-fair-002238767.html",
+      "date": "2026-10-21T02:22:38+02:00"
     },
     {
       "ticker": "PLD",
@@ -1104,28 +1128,12 @@
       "date": "2026-10-20T13:05:32+02:00"
     },
     {
-      "ticker": "PLD",
+      "ticker": "GMG.AX",
       "category": "reit",
-      "title": "Dimensional Fund Advisors Ltd. : Form 8.3 - PROLOGIS INC - Ordinary Shares",
-      "summary": "Source : GlobeNewswire",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/dimensional-fund-advisors-ltd-form-100600853.html",
-      "date": "2026-10-20T12:06:00+02:00"
-    },
-    {
-      "ticker": "PLD",
-      "category": "reit",
-      "title": "Miscellaneous funds de ChinaAmc Prologis Logistics Closed Infrastructure REIT – SZSE:180306",
-      "summary": "Source : TradingView",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQRTFKdVBpck41V3JuZjMwMTFwUEctQzl5T3ZEV2NwdUJpeXN3S1RvM1NERkc4Z3ZEWV96d3NBMVU5aTdxRzBZQWN4c0IwemhWWXhyUnU0ZE0tTUZGejhTNkVjNlliUFRveFhOTmdQbHVWZ21tTzNKV1Z1WE1JTDB1alpZdWNLZw?oc=5",
-      "date": "2026-10-18T09:16:46+02:00"
-    },
-    {
-      "ticker": "PLD",
-      "category": "reit",
-      "title": "BMO réduit son objectif de cours sur Prologis en raison de décalages",
-      "summary": "Source : Investing.com France",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPT0pHRmlVcE1KVmFPcnZUWW9OWW1acFFBQTViSlRRaHN0eXVmWVNyOWtzelJhYVFyOUw2c0g5RW9zWDdpNDhTN2FsdWpyc3IwV2lqWTlCbVNWZDBtR0hxcjF4aGtiRXlEdHhRa1k3ZUUzTWVCLXNFYVhJczdabGwtRWE2cTRpSTBUX1hRRk5oLTBGTFByUkdNYlhQWXFfeGFEVnppM3lEcGFsWnUtTWdBcGd2SlR3cUx1c1VDWEdnUEdXcEpGamc?oc=5",
-      "date": "2026-10-16T16:35:00+02:00"
+      "title": "Altarea: Objectif de Cours et Consensus des Analystes | ALTA | FR0000033219",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBzMC1iRzlLaGtmOXQ2Z2kwRk9COVpycTRGaGZYXzBzMV9vN3pPekNWUHluYWZ2cjRpbFZ5MnAzMzVxNlBZN0tqUEpDX2RxMXNOMVBaSkVuZ1ozNjVoS2tSQzVWWDluX2c5TC1oTlgtcHk?oc=5",
+      "date": "2026-10-16T17:55:00+02:00"
     },
     {
       "ticker": "GMG.AX",
@@ -1133,14 +1141,6 @@
       "title": "Klépierre: Objectif de Cours et Consensus des Analystes | LI | FR0000121964",
       "summary": "Source : Zonebourse",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE42Rmhpb2FwOFg0WDdFdWhVM3ZUN29HRi15RkVMNzREV2p5NU8zM0k5b1VlVnFrMkZaS05SQzI3THpUQ0JqNVU1aWk1VmJvWmdqdlhoclhWTTNZeFllYk1TZklsWlJ6NUNFQ3B2VENnTzdmZUE?oc=5",
-      "date": "2026-10-16T17:55:00+02:00"
-    },
-    {
-      "ticker": "GMG.AX",
-      "category": "reit",
-      "title": "Altarea: Objectif de Cours et Consensus des Analystes | ALTA | FR0000033219",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBzMC1iRzlLaGtmOXQ2Z2kwRk9COVpycTRGaGZYXzBzMV9vN3pPekNWUHluYWZ2cjRpbFZ5MnAzMzVxNlBZN0tqUEpDX2RxMXNOMVBaSkVuZ1ozNjVoS2tSQzVWWDluX2c5TC1oTlgtcHk?oc=5",
       "date": "2026-10-16T17:55:00+02:00"
     },
     {
@@ -1158,6 +1158,14 @@
       "summary": "Source : Zonebourse Suisse",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxORUFXbXJRX1JXWWNwR0RUeDctSTQ1aDQ4djZOT3duaGw4dFZhRkpmeXhzU1VfY0VGMEVrYW5BSVY5Z3Y4Qm1FbnRua0dyZ3FLQlQwVEMydG9kZzlEZXFrOGItaDNxRVpKZExyckFtMUQtTTNjalc1N2FxQk9ickxjTnpteEM0R21iQ241OWlR?oc=5",
       "date": "2026-10-16T16:31:30+02:00"
+    },
+    {
+      "ticker": "DLR",
+      "category": "reit",
+      "title": "Les actions NextDC chutent de 42% à leur plus bas niveau en neuf ans",
+      "summary": "Source : Yahoo Finance France",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQYmh1TXJlSzdPZGpEV2ZnR1BjeWpnWU05TGtFT2YwVFlhYWlWUUZ4enRveU9QREllVUs1N0Y3TElsY1F0Y0lYX1YwWjE4akt6YWx4c1BqbThPMjJTQkVJSUVMc2RZNTBaRUJBTmFPaEc1eFk4ODltcXR4U0RVR1VEc1hPZzVvcGxQN01GcGxXUEY?oc=5",
+      "date": "2026-10-20T20:02:00+02:00"
     },
     {
       "ticker": "DLR",
@@ -1200,12 +1208,28 @@
       "date": "2026-10-16T22:00:02+02:00"
     },
     {
-      "ticker": "DLR",
+      "ticker": "EQIX",
       "category": "reit",
-      "title": "Equinix, Inc.: Objectif de Cours et Consensus des Analystes | EQIX | US29444U7000",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9xSmZ3NWQ0VkdzVUdfLS0yaUpjSnlxY3NXbGJnNUJGaFl1YlYyUUFYLXVVZGR4cDMxTHJhbWp6UGlEYlFIOWxwam50LWJkYy01Q19sTHhpSU55aEJWTkZoeTFVd1dLWjNjd2RSRE4taXBXbmd0dTZENTdVNA?oc=5",
-      "date": "2026-10-16T22:00:00+02:00"
+      "title": "Equinix (EQIX) Expected to Post Quarterly Earnings on Wednesday",
+      "summary": "Source : MarketBeat",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPV1pmMWh5M043Vm9ucEh4aUs3OTdWcDhFOVIwZ1BsRTlUWmNjeFhWdUNuT0Z5LWtEOGllSURhRnUxcW9QZlQ1NlcwQXpjcU9tS3BHOS00c2NlVmpMRV9WUHU3NUVEcjBveEtsQ0dmRGxteGhHTHZMQ0Z4bE5mM1NIYzRrVVhFOFU4bFNabWVOUTZQOGpIN2VicENoa1lUQUZ6c09BX1prZ3J6SjhaRnNDTHFXdzg2Vm9TOFhVTllVS0RzZw?oc=5",
+      "date": "2026-10-21T11:37:40+02:00"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "title": "Guggenheim keeps Equinix stock Buy rated at USD 1,235.00",
+      "summary": "Source : AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaERJaFEwNjNjOERUMGtFR0plRDhVNDNtVFBBZkdJeGpJRy0wSU5WUmdvSnhUSVVHOXdKeHh6b2tjb2NyTWl1c3BVd0dnel9KVnpUUURQU3BfM0pIVFZVTjQ4a3V6V0JfN3dfeTQ2MmM1QWVQYllPN3o4bHI4NGFubE0tb3UycWx3bDJ4VkJ2QkZfbHQyZFBGcVNtTmUxNFZDVHRKZGd1djJJQVc2TXYtZlpqbjd1RFp1N0Zn?oc=5",
+      "date": "2026-10-21T10:51:01+02:00"
+    },
+    {
+      "ticker": "EQIX",
+      "category": "reit",
+      "title": "Equinix Inc. stock gets Guggenheim Buy reiteration pre-market",
+      "summary": "Source : AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdVlrLVV1M2NobnJzeHctVmx1LXhlMmtQZVZFT1d6eWVNbHVTUDdqdFI1akVMT2ljTGZzMWs4VVZnUEVReXh0aVJFVmNmSjIyc19Jby1YbHY2YlRDNUpCeW5OSVBpWW5LODlpX05MWG9XXzZZS0dhNEd2LXVZcFdXRTdQMjdwYURNdFQ0bV9yMGNralBIN2hFV0VzQURaUVE5M0RoQ252WkxBMjRuQ3U2dTVIaVlOaW1MT1E?oc=5",
+      "date": "2026-10-21T08:12:57+02:00"
     },
     {
       "ticker": "EQIX",
@@ -1218,42 +1242,42 @@
     {
       "ticker": "EQIX",
       "category": "reit",
-      "title": "Equinix stock: Jefferies cuts target for Equinix stock to USD 1,300.00",
-      "summary": "Source : ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPWU4wWDQyT3RZOEtoamNxcjFhelN6aUtmQk5DdXBPYVNPSXpiVHlkVjRjN093SnlVQnhXaThFMGVNcFZxSXlVUDRuaENTVnBmdGZTWEp6U2xvZ0dZbkpEeDlQeVV3dzZ5WXFiSnhuS1duREE2b2gzRy1qdEJvTV93MW1TMEFSSWcySV9YSlItTkNrZFNBREdHUmROa2FtMVlYV2dTM1lWTVo3eWxxc0NVUXkyS25IaVl1WXY5TkpHX0tXbzBwRmo2UVFsSDQ?oc=5",
-      "date": "2026-10-20T17:23:00+02:00"
+      "title": "Georgia electric cooperative plans 50-MW home battery deployment",
+      "summary": "Source : Utility Dive",
+      "link": "https://finance.yahoo.com/energy/articles/georgia-electric-cooperative-plans-50-165827531.html",
+      "date": "2026-10-20T18:58:27+02:00"
     },
     {
       "ticker": "EQIX",
       "category": "reit",
-      "title": "Equinix (NASDAQ:EQIX) Stock Keeps \"Buy\" Rating at Guggenheim",
-      "summary": "Source : MarketBeat",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVEZBcFp0b3k1eVJDSWtLTkJmMDdVUlA5bXZFdEpzN191Z1VNd0Z0YzNVb0JxUFpTNURwQkxPT21WbU9BVUFVbjlLSUU5U1p6cGI1Sno4ZGNJRnhLTmZXa2pRZ3dldGo5MXFPUmlJaEJmcnBzTnNoUW90M0JaZnVPSkN0SmdjTzBNZGlmNHJGNzFjWmQyTGRISkc1UzNWeEh3NXVYVktleG05SGlSWTB5bg?oc=5",
-      "date": "2026-10-20T15:14:36+02:00"
+      "title": "Equinix, Inc. (EQIX) Stock Price, News, Quote & History",
+      "summary": "Source : Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5LTVA2TVhWNlJYXzNQQVlrNnBoSDZ5VHI0ZFpfMTNYTW1hYzc0R3JlRHBVWVViMEpDaGl2NUFzQXV1Z0lfY2t4NVJuMGFvQ2p3aFE?oc=5",
+      "date": "2026-10-20T18:50:04+02:00"
     },
     {
-      "ticker": "EQIX",
+      "ticker": "WELL",
       "category": "reit",
-      "title": "Equinix, Inc. $EQIX Shares Purchased by Sumitomo Mitsui DS Asset Management Company Ltd",
-      "summary": "Source : MarketBeat",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNeDN0TnJCbTAyX1dqeVpQQXF6UFZUdzU5WmVFVG9nMUN6WU5Oc0ppZzNSZ1hyMW9DamZ2UUZsdVVKSDR1RDJRWkEzSF9CQjZDMFNpcUxMQ1cyWDJoWlBpcDhqcE5OajNQRnA4XzJWNk4xLXdWVVJmLWo0V19BUmtESDluZ0h3UW1rRUN5M0VHTFJubmR6N2NsRm5fd3dxM01xSWJsdmFZQk8wNVNOajN4QS1lWHJ0LS0zTUlqU0EwMzBGU3Bmb1lrSFE0aGZJWGkzTXdpZHpObHItWVhWSHc?oc=5",
-      "date": "2026-10-20T13:54:04+02:00"
+      "title": "Wells Fargo lifts target for Welltower stock to USD 268",
+      "summary": "Source : AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOelQzb0R6NGJ2Y0R0eXBqOGJZaXB0Y2YyWGxhWGxidDFLbDJoMTNHSElndUpMTDVzV3ctMVB2RnhQNnMwSExpdUVaR2JIQnJjaFByMnpDODVqUnlRWnY0RzE5ZFRiMjhudGxycmRnUmdBX1lhaFA5M1NNMTRKV1hmMDQyOElWT3B1MlFiYzhVZjhBU05BZ3RwNXd4U3BJLXNNR1ZUZDZPUlBGb2xrQ2F0Vnhzc09pVXdTSWc?oc=5",
+      "date": "2026-10-21T10:41:01+02:00"
     },
     {
-      "ticker": "EQIX",
+      "ticker": "WELL",
       "category": "reit",
-      "title": "Jefferies cuts Equinix target to USD 1,300 for Equinix stock",
-      "summary": "Source : ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNYkE2cDdxeUhtZnlYNUVlQXlydEJ5aGJSdXpDWkZJenRxVkRJU3ZvNlZneTkwMjBlQUhoLVRVRWloTFV4alZWRlc2dFJOeUE2WlF6dUNWWFdORE1KUGxiVDJhTl9YczI4ZUR5MFJFRGl6V1F3YTMwWmYwTzlnSGVEVjczdEFWc3pOSHZ5RnN2cWFtMGF0LXlTS1lHOEM1RWkxYVdXNFRVOXFzdVRCd2JiR3pEMlVPb015anVjVGstNWU?oc=5",
-      "date": "2026-10-20T11:46:19+02:00"
+      "title": "Welltower Inc. stock underperforms Tuesday when compared to competitors despite daily gains",
+      "summary": "Source : MarketWatch",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQeHY1MXhERnBHZm1jTjhvM3JIRkhIcDJjbHpxcEZhbHI2MmNqR1hnYUI3RXdNeGgtNHhqTEtyUlVRRFN3OExRbHJBUHlST0x6b052MXFVZVJnWTN5LWMzSWFadmdUeXVrN01EbURJUFc5VkJZZTFwU01uVzZ5WDJBZXphRkxyWlJXSFcyQkZWVHFoRnU2U0xSdWRaY2RfQWlLMkdoeDRVYURJRHBnMmFfSWJjMUhkcDJKTEVIN3FZdngzd3pTX2liS1hfVUJjdldBcjJlcXZRU3ZBaTk2NWRjWWgxaVdYMTVYQXRyMDRyZlZxeHpBQld5d0dTdnM?oc=5",
+      "date": "2026-10-20T22:35:00+02:00"
     },
     {
-      "ticker": "EQIX",
+      "ticker": "WELL",
       "category": "reit",
-      "title": "Equinix, Inc. (REIT) (EQIX) stock price, news, quote and history",
-      "summary": "Source : Yahoo Finance UK",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBvRmxMTDhZNGdpLXFCeFlHa0hxeDdtVmJfd3lqRFNaSS1rQmI5dFB1VFg3WmpPblJNeEdjMnY4enk1WGQ4cTVnZGt1cU1tdE1zcXc?oc=5",
-      "date": "2026-10-19T23:53:21+02:00"
+      "title": "Eat Well Investment Group Names New CFO Following Patrick Dunn's Resignation",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/eat-well-investment-group-names-202529829.html",
+      "date": "2026-10-20T22:25:29+02:00"
     },
     {
       "ticker": "WELL",
@@ -1266,42 +1290,26 @@
     {
       "ticker": "WELL",
       "category": "reit",
+      "title": "Welltower (NYSE:WELL) Share Price, Forecast & Analysis",
+      "summary": "Source : Stocks Down Under",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1KLWNtcUdmWmN5V2hJOFhIWENDYUdvYmlPNWsyd0ZmbHZxSHQtdlF4QU9qMm5YUUpQWTk5ZDFucHhWXzZkNW1Ob3R3aWx6aUROcHMtdVlYcXgzdw?oc=5",
+      "date": "2026-10-20T21:21:20+02:00"
+    },
+    {
+      "ticker": "WELL",
+      "category": "reit",
       "title": "Why Ecopetrol (EC) Might be Well Poised for a Surge",
       "summary": "Source : Zacks",
       "link": "https://finance.yahoo.com/markets/stocks/articles/why-ecopetrol-ec-might-well-152002044.html",
       "date": "2026-10-20T17:20:02+02:00"
     },
     {
-      "ticker": "WELL",
-      "category": "reit",
-      "title": "Rehearsals Launches Human Behavior Bench With Google DeepMind and Kaggle to Measure How Well AI Models Understand Humanity",
-      "summary": "Source : ACCESS Newswire",
-      "link": "https://finance.yahoo.com/technology/ai/articles/rehearsals-launches-human-behavior-bench-150500065.html",
-      "date": "2026-10-20T17:05:00+02:00"
-    },
-    {
-      "ticker": "WELL",
-      "category": "reit",
-      "title": "Night Shift Jobs for Night Owls: 15 Options That Pay Well",
-      "summary": "Source : The Penny Hoarder",
-      "link": "https://finance.yahoo.com/small-business/articles/night-shift-jobs-night-owls-132400295.html",
-      "date": "2026-10-20T15:24:00+02:00"
-    },
-    {
-      "ticker": "WELL",
-      "category": "reit",
-      "title": "iShares Select U.S. REIT ETF (ICF) Sells Welltower and Equinix on Oct. 16",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/real-estate/articles/ishares-select-u-reit-etf-110532574.html",
-      "date": "2026-10-20T13:05:32+02:00"
-    },
-    {
-      "ticker": "WELL",
-      "category": "reit",
-      "title": "What iShares U.S. Real Estate ETF (IYR) Sold: Welltower Leads on Oct. 16",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/real-estate/articles/ishares-u-real-estate-etf-110522109.html",
-      "date": "2026-10-20T13:05:22+02:00"
+      "ticker": "AAOI",
+      "category": "stock",
+      "title": "Pourquoi l’action Credo Technology est-elle en hausse aujourd’hui ?",
+      "summary": "Source : Investing.com France",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZy1Vd19iYVJzZ2JIMUhFWVVXRTYwdkRtcGpxU3Nyalp6Q0NVeWUwa0V6QUFtblMyQUZ3cmRaUlZYXzMwM3NORWVVcTF2dzc4RnNMODFsYVRqSzZFUW5BbHRKOEpFUHZFZVctMkVmYVFwem9BbVQ1R3lNd0lLcEk4NGtzNS1qeXpwWmRmQ1l0OFl1TmtjT2pKZDRzaFY1aXRYZkFmVDlSRVVkWW1tZEF2UkFMMmluT0ZQYlRxcW03d3ktZw?oc=5",
+      "date": "2026-10-21T10:21:00+02:00"
     },
     {
       "ticker": "AAOI",
@@ -1344,60 +1352,52 @@
       "date": "2026-10-19T19:05:10+02:00"
     },
     {
-      "ticker": "AAOI",
+      "ticker": "AMD",
       "category": "stock",
-      "title": "Nine Public Companies Object to OKX-ICE Tokenized Stock Plans",
-      "summary": "Source : CryptoProwl",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/nine-public-companies-object-okx-162900002.html",
-      "date": "2026-10-19T18:29:00+02:00"
+      "title": "Generative Bionics to build Europe's largest Physical AI Data Factory and advance European humanoid sovereignty with AMD AI infrastructure",
+      "summary": "Source : PR Newswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/generative-bionics-build-europes-largest-100000187.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
       "ticker": "AMD",
       "category": "stock",
-      "title": "Trump Dumped Micron, Up 338% in a Year. The Memory Cycle Decides Who’s Right",
-      "summary": "Source : TIKR",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/trump-dumped-micron-338-memory-185330077.html",
-      "date": "2026-10-20T20:53:30+02:00"
+      "title": "Advanced Micro Devices et Vultr accroissent leur capacité de calcul dédiée à l’intelligence artificielle en Inde",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaTVWNy0zSG1WV054dndmWURyUDdPcUdQaXZQUERWektyZkJsLWsyNkMxRDloT3hkcUZoZ3FvSGJIQTY2V2txVkVxR1ZGUzZSTk83UU5sUVpXNmhsVnd0Q2V5YWdQTmNjWmVIT2NiUmhkbzNqMGRFRGNQZjZlSDgzTllIdGFJTnJPQ1VQY2l3WjhMRks5bEdncno5WnUyemNoZUxvVXNFTVhvdDFoeGRYYnV0Q2MxS0RQa0VpQzF3TDNxN1Axdl9oVDlvUnBYM25YcmFHMGJxa2xhN1pSUG5RTlBudTYzc3R5RTBZT1BRSGQ?oc=5",
+      "date": "2026-10-21T10:03:47+02:00"
     },
     {
       "ticker": "AMD",
       "category": "stock",
-      "title": "SpaceX, GE Aerospace, Micron, GM, CoreWeave, Braze, and More Stocks That Explain Today’s Market",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/141e2ad6-95bc-3e0c-9567-dff77bb4d64f/spacex%2C-ge-aerospace%2C-micron%2C.html",
-      "date": "2026-10-20T20:51:00+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "Not Even Rumors of a Big China Chip Purchase Can Lift Nvidia Stock",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/80cbc8ec-aaa7-3785-849b-f4bbd56ee635/not-even-rumors-of-a-big.html",
-      "date": "2026-10-20T20:41:00+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "AMD Faces Key Test as AI Server Demand Surges",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amd-faces-key-test-ai-171816475.html",
-      "date": "2026-10-20T19:18:16+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "Chip stocks shrug off a scary morning, but history says the shakeout isn't over",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/article/chip-stocks-shrug-off-a-scary-morning-but-history-says-the-shakeout-isnt-over-154222842.html",
-      "date": "2026-10-20T17:42:22+02:00"
-    },
-    {
-      "ticker": "AMD",
-      "category": "stock",
-      "title": "Advanced Micro Devices Server CPU Demand Seen Driving Q3 Upside, Wedbush Says",
+      "title": "Advanced Micro Devices, Vultr Expand AI Computing Capacity in India",
       "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-server-cpu-152319975.html",
-      "date": "2026-10-20T17:23:19+02:00"
+      "link": "https://finance.yahoo.com/technology/ai/articles/advanced-micro-devices-vultr-expand-080212348.html",
+      "date": "2026-10-21T10:02:12+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "Cathie Wood's Ark Invest Grew Its Portfolio to $15.4 Billion Last Quarter, With Tesla, AMD, and a New SpaceX Stake Making Up About 18% of ARKK Assets. Is Her Concentrated Bet Paying Off?",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/cathie-woods-ark-invest-grew-062000254.html",
+      "date": "2026-10-21T08:20:00+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "Vultr and AMD Expand Global Collaboration with New AI Infrastructure in India",
+      "summary": "Source : Business Wire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/vultr-amd-expand-global-collaboration-053000713.html",
+      "date": "2026-10-21T07:30:00+02:00"
+    },
+    {
+      "ticker": "AMD",
+      "category": "stock",
+      "title": "OpenAI Is Reportedly Raising $30 Billion. Which Chip Stock Gains the Most?",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/technology/ai/articles/openai-reportedly-raising-30-billion-231312958.html",
+      "date": "2026-10-21T01:13:12+02:00"
     },
     {
       "ticker": "AMKR",
@@ -1450,50 +1450,50 @@
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Amazon Stock Costs More Than the Market. I'd Still Buy It for the Next 5 Years.",
+      "title": "2 Brilliant Stocks to Buy Now and Hold Forever",
       "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stock-costs-more-market-200701099.html",
-      "date": "2026-10-20T22:07:01+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-brilliant-stocks-buy-now-100000784.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "3M Stocks Rise 5.3% With $6 Billion Amazon Milestone and Dilution in Focus",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/3m-stocks-rise-5-3-195142376.html",
-      "date": "2026-10-20T21:51:42+02:00"
+      "title": "Ken Fisher and Jim Cramer Like This Bank Stock. Is It a Buy After Earnings?",
+      "summary": "Source : Insider Monkey",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/ken-fisher-jim-cramer-bank-094622063.html",
+      "date": "2026-10-21T11:46:22+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Amazon stockpiles Nvidia AI hardware ahead of power availability -Business Insider",
-      "summary": "Source : Investing.com",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amazon-stockpiles-nvidia-ai-hardware-194615746.html",
-      "date": "2026-10-20T21:46:15+02:00"
+      "title": "UK Outdoor Structures Market Report 2026 - Consumer and Home Category Data | Price-Led Demand and Omnichannel Shopping Signal Retail Growth Opportunities",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/real-estate/articles/uk-outdoor-structures-market-report-093300386.html",
+      "date": "2026-10-21T11:33:00+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Amazon’s $350 target rests on an AI bet beyond the cloud",
-      "summary": "Source : TheStreet",
-      "link": "https://finance.yahoo.com/technology/ai/articles/amazon-350-target-rests-ai-193700460.html",
-      "date": "2026-10-20T21:37:00+02:00"
+      "title": "IBM Has a Chance to Rewrite Its Narrative. Can Earnings Spark a Comeback?",
+      "summary": "Source : Barrons.com",
+      "link": "https://finance.yahoo.com/m/a0d7d835-5df2-3366-bdd4-4acf3f300a8f/ibm-has-a-chance-to-rewrite.html",
+      "date": "2026-10-21T10:15:00+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Market Chatter: Amazon is Buying More Nvidia AI Hardware Than It Can Power Up",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/technology/ai/articles/market-chatter-amazon-buying-more-192912711.html",
-      "date": "2026-10-20T21:29:12+02:00"
+      "title": "SpaceX Can't Find Spare Nvidia, Google or Amazon Chips Despite Billions to Spend, Strategist Terms It 'Pretty Insane'",
+      "summary": "Source : Benzinga",
+      "link": "https://finance.yahoo.com/technology/ai/articles/spacex-cant-spare-nvidia-google-041409215.html",
+      "date": "2026-10-21T06:14:09+02:00"
     },
     {
       "ticker": "AMZN",
       "category": "stock",
-      "title": "Amazon Plans to Hire 300,000 Holiday Workers, Raising Its Target by 20%",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-plans-hire-300-000-192330904.html",
-      "date": "2026-10-20T21:23:30+02:00"
+      "title": "What Is The Case For Waiting On CoreWeave Stock?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/case-waiting-coreweave-stock-022011727.html",
+      "date": "2026-10-21T04:20:11+02:00"
     },
     {
       "ticker": "ASML.AS",
@@ -1530,66 +1530,74 @@
     {
       "ticker": "ASML.AS",
       "category": "stock",
+      "title": "Les actions de Besi reculent après des informations selon lesquelles ASML développerait un produit concurrent de liaison hybride",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPdGdVUm1lRDhzbXd2M1F1MFlpeHdRUFV1b1pDblB6WmdoZkJ5QkhIVGhKSVJ0a2F5dk5zUVRUbHlsUTYzVlctdUNqUnZfM0ZHNU43d2xYNFZnTFZBU09wcEtieDhNUndCRDM2NGVyNTgzMkx5VnJuWXpiM2FmVG5FXzZpaUIzeTlZVjY1M0NMaXZvNWE5aGxHcGx5eE1Wb1h6ZDllY0ZEUV84cUpzUk9lWkl2VVMwaFZJRWNKYjdzNzNLcTRTQlFuZW5fR2JnTVlzUEdTXzlycE5JRFRLRTN1ODh5el9uU1NqcHBISjlvcGVOUkU?oc=5",
+      "date": "2026-10-16T12:54:55+02:00"
+    },
+    {
+      "ticker": "ASML.AS",
+      "category": "stock",
       "title": "Les perspectives « à guichets fermés » d'ASML obligent les investisseurs à regarder au-delà de la demande",
       "summary": "Source : Boursorama",
       "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPQUYtVFIwSnFYUHZCaGpPTlAwUzhkem5CWjlZVUYyYnNpRmEyRk5pUzl0bUMxZ2x2UmJMQS1UT3VzY1dPUXZSdkhzc3RKM2JzaVVPa1ZHZHZVZ1hObHpJY1NEOWNNTVQyblJQQjgtaXAtT0l5OE1MSzRRUHpNT3dSX05rS21nSjVpT216WklQQzJkblhuYVFTT0x2ZkRfLXZubW9XdktkU3ladE1lOVhwaV95ODd2dDdrRjBMaEloUzR0dEJVSVRDUHVDOGtOcXBTUURoaWd1SlN4Z1ExSUtKWFl2V3FqWUNGSXJPYTN1dm1ISjlTZGN5eG1CdVEzNDBtX1lpZXlVdHVjeDjSAZACQVVfeXFMTkt4MGhGN3ppNXJzWTBtRUdhMHdIMFBub0VwUWF2Q0Nra3AyU29RVEg3cV9GZnNKOU9BbVIzNHpsNmQ0d01sa3lRRFdFcTdGdTdMWFZpM0hQaHVGSTRvQ2lsQWNTZk9CTDZ0UFNZMG1hTVMxU0hwZGxlbktRR2djZDJlUzFtMnJhNUM3d3VqTXJxRVl4TS1Pc1B0Y2RBVUgtQkc1QTFvX1BIWHFpWm5DWHRPS1JCQ2J4N1hLOE1zdXJISnBfVGZrVUFrUG1PcUlaSFVYRVVWc1VOYks4aVQ3SUxNWkdfbU4wMWpnbU5RUVQ2d1FnUk1NTmZ5SDFKcFVtbHRDNWVoSzBTUEI1VndlMHU?oc=5",
       "date": "2026-10-15T19:29:00+02:00"
     },
     {
-      "ticker": "ASML.AS",
+      "ticker": "AVGO",
       "category": "stock",
-      "title": "Que faire d’ASML, Campari, Generali, Metso, Moncler, Richemont ou Roche ? Le Figaro Bourse passe en revue ses conseils sur 31 actions européennes et américaines",
-      "summary": "Source : Le Figaro Bourse",
-      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQUDZlNGdENUtZYkJIZnE0NzZTb0FCSzhTT25EcU00ck56bVc0NjBQMmFBVllLbFBXZW1aOFZiSnRXZW54QU1JU1cyNmpSZ0NuZlQ1OE5OdlJDNVdaOENQbHVvYU5VVFBsY3RsQTQ0UEpuU2JlY2FvVkRPMHJtOVJyVlZwVWJuck04Vk5NWmFFWVBjVlNwUDRvcTY2VDkyaXlncFE4QkV4NU5CbU9CdXUxWUUzVl9Qa1B2aE9IcjNEZkwxcEstM29yN0p5QUFZamhhX2p1Sk5WVDZWTmZyTnhoLXZ0RnBuYkpKakJnZ1VqTndKSU92b193aW1PWXNhdEZaYW9WUjFpMDdNSkdsOFBXS1BaVElTOEQ5djBnLUJta3RWM3pibzJ5eGdvdw?oc=5",
-      "date": "2026-10-15T17:52:43+02:00"
+      "title": "BROADCOM RG finit à l'équilibre",
+      "summary": "Source : Boursier.com",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVlQ1TnU3elcwZjY0ck9LTGxqMzZYMzhZQmpGaGlqcHhtSkNaUUt0ZzFhN1Z3TGJ6VDVNdlc5VXZ5bXVjTzFuRXlZZ01Oa1B3QWhESnpqUnp3d2FQQTZ3SkFwZ2ctYjBWeWZXdzVtM21faThsdm5mVHp3NHlxS3hBZFNMV09mVllmS2c?oc=5",
+      "date": "2026-10-20T22:22:30+02:00"
     },
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "Broadcom Lands Major 10-Year Cloud Deal With Japanese Telecom Giant",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/technology/ai/articles/broadcom-lands-major-10-cloud-194258548.html",
-      "date": "2026-10-20T21:42:58+02:00"
+      "title": "FedEx s'appuiera sur Broadcom pour son infrastructure informatique",
+      "summary": "Source : Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPQURuWURiZk5abkdqcVFuNUJsVnljdThIYkRNZlQ1NHJqSEdSN2w5M2t4LWV2STlhbjV0SVhhQ3Zwa0Y1bEs4b1N5UUxEQ3pqUXBhSnBfVVdoYURpMHZmY1JYejN2VDRQYWJ1alRpZnY2d015bE5TbFg3Zjd1M3VvaDd1WWNFbGItVHV5OER5Yk1rZlRtYWFMZk93U3FtYzNRdkxfNDlGa0VsSl81NmwzOENYZzZ3SUtwNG1tOE5CbW5JeEo5WXlEakQ3YzJob0ZCUzBxQTY4STFjUS1qZURrQlpB0gHiAUFVX3lxTE9BRG5ZRGJmTlpuR2pxUW41QmxWeWN1OEhiRE1mVDU0cmpIR1I3bDkza3gtZXZJOWFuNXRJWGFDdnBrRjVsSzhvU3lRTERDempRcGFKcF9VV2hhRGkwdmZjUlh6M3ZUNFBhYnVqVGlmdjZ3TXlsTlNsWDdmN3UzdW9oN3VZY0VsYi1UdXk4RHliTWtmVG1hYUxmT3dTcW1jM1F2TF80OUZrRWxKXzU2bDM4Q1hnNndJS3A0bW04TkJtbkl4SjlZeURqRDdjMmhvRkJTMHFBNjhJMWNRLWplRGtCWkE?oc=5",
+      "date": "2026-10-20T16:23:00+02:00"
     },
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "Apple Bets $100 Million on U.S. Titanium Supply for Its Next iPhones",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/technology/articles/apple-bets-100-million-u-192245655.html",
-      "date": "2026-10-20T21:22:45+02:00"
+      "title": "Wall Street ouvre en baisse, l'IA, le pétrole et les résultats pèsent",
+      "summary": "Source : Investir Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQWk9zZTFIQnZYR3FaWTF5RVkzS0NNMngzT2M4Mm9RZW5Rb3F1c2xucUkzcEVtOW1GelM4SlNXNWVCSWdfYktXSmI5RWhkclZTX2U3c1pZN2o3d2RhM2hSX2tELU1wY3czSU5QcU0yVktLS2RwZVVkRTk2RXBfVkJnOWsxc2xOZkx1MUI1cjlHclBHS2ZTMU5LQjVDVkVvMG9DbzRWam54TWt5R3hyd2VxdjJFUllUbkFCckdJUS1IeURXYmxYT0oyeFlqSTZPbm9valhv?oc=5",
+      "date": "2026-10-20T15:43:31+02:00"
     },
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "3 Artificial Intelligence (AI) Stocks That Look Like Great Buys Right Now",
-      "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/technology/ai/articles/3-artificial-intelligence-ai-stocks-190502789.html",
-      "date": "2026-10-20T21:05:02+02:00"
+      "title": "Broadcom signe un accord pour continuer à soutenir les opérations mondiales de FedEx",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQnlTLXhMSzhqMFJSTFdEZGJ0eEdHYzJHNTdMWmRDX2t0WDBBVG4xemFmSzNPcmdMTm9qN0JzZVN1TFFqZW9zbk1VTFgyWFNGTjB2QjQzZFR2djhMVlV1dHhiVzd4R0Q2dVM3dkFvWmRfb2w3cFlOeXJoLW9kWTBuRTZKUEhhUTdyLS1uUnlyWGNjZndQWWtBMHRlWDJpdTN3dEhwbHhTcEluc2FjMTJSTUE1ekNoY0EtTFZ5bnA2SlByU2F1WkRzVmdfU05ORm1peXJ2Um5QRWlycWZ6?oc=5",
+      "date": "2026-10-20T15:29:59+02:00"
     },
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "3 Great AI Stocks To Own In October 2026",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/3-great-ai-stocks-own-170953509.html",
-      "date": "2026-10-20T19:09:53+02:00"
+      "title": "ROI – La Fed éternue, mais les marchés émergents n’attrapent pas encore froid : McGeever",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOSEx5RFV3eGoxSjR5WFRHNzJUZmxMWFMzZlNxZlhDTTM3SEtEU1ZTZUNRMW5od0l1aVpaalFzTUZtMzdVTmZ3Q0gxLUNVelh0TTBEY05QV2J0OGFEMWVPZlJidDFXQTE4ZmZNclMyYnhxend3Q3BlVWFlTmV3a01sVVFEaXZwNTg5Q2VraTlKNXJ5T3E3QXRteU1pQkE3a1UxaHktVDZKTWl1UnFibGNzN2FsT3ZZWjZkWkVoVk9UeUszZ3pWbjJMSHdueklTNWtmaHBGdzNrcGtENURzRGc?oc=5",
+      "date": "2026-10-20T15:01:53+02:00"
     },
     {
       "ticker": "AVGO",
       "category": "stock",
-      "title": "Broadcom Stocks Fall Although Docomo Commits to a 10-Year Cloud Agreement",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-fall-although-docomo-165746158.html",
-      "date": "2026-10-20T18:57:46+02:00"
+      "title": "Broadcom et NTT DOCOMO signent un contrat de services cloud privés d’une durée de 10 ans",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOOVgzenN3Rk13MlVRX1g0MDczM012QUpLQU9rb2pDSWMwV1I1eXpkNEhneE5heE14UTJsTk1zMUpQb1Z4akppa0puT1FJQjJQRjQyTUhvMW1JcHNQZHFBMGw3V0F6RHdMVEszUXVzRTB1RXVGZkFlcG5UUThDZlg0TnM4Yy1WZmNnRDVpV2xYQzNBVHhTaXo0MG5TbVhGR19UaDluUzNLQnZ5RjBjUFpYMTVTQzJZcWcyRUM5R3RraFdVVG5falZLRXBhV1FnYUt4M0FEd1RnTmNESXVIUzdPOUU3OA?oc=5",
+      "date": "2026-10-20T10:09:17+02:00"
     },
     {
-      "ticker": "AVGO",
+      "ticker": "AYA.TO",
       "category": "stock",
-      "title": "Photonic Integrated Circuit (PIC) - Global Strategic Business Report: Capitalize on 19.7% CAGR to US$5.5 Billion by 2030 as Broadcom, Intel, Ciena, Infinera and Acacia Reshape the Market",
-      "summary": "Source : GlobeNewswire",
-      "link": "https://finance.yahoo.com/technology/articles/photonic-integrated-circuit-pic-global-154700122.html",
-      "date": "2026-10-20T17:47:00+02:00"
+      "title": "Sentiment partagé sur l'or à 4 200 dollars : Jefferies voit 5 000 dollars en 2027 - Actualités et statistiques",
+      "summary": "Source : IndexBox",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUTZpU1Y1U0JieDEwTmYzdTBWQV85TmJnR2NqdnZ5dTJWdF9SOWpjVlFXaUVRZjVSS2x1aFVWNUtmOVRxN3NYNmRzWFpUY0l3US1IbnhIOEVIWEg1YmQ3M1RQTDhaVnNZMXFqekRlTFBwQzV6Y1hkdElJdlN6U3Y0am0tZjNmYkRfX0l6aXFfUjBndUJyMzUzOGVYdm40Nlp3?oc=5",
+      "date": "2026-10-19T15:50:44+02:00"
     },
     {
       "ticker": "AYA.TO",
@@ -1632,12 +1640,20 @@
       "date": "2026-10-14T13:50:51+02:00"
     },
     {
-      "ticker": "AYA.TO",
+      "ticker": "BKNG",
       "category": "stock",
-      "title": "En seulement trois trimestres, Aya Gold and Silver dépasse le cap de 5 millions d’onces d’argent",
-      "summary": "Source : Medias24",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPSDRaNC1mbHE5U2x1ZTlaZzVET1BNQi15UWpaUWNtbF9IaTZLN2htaG0ySmEzN0dKSENPZFpGb05IUjJwNHJyYVJFOHpQRDRnUkJNM1REZDloZWw1R2hrZzRhNWtTVjRoYVZVRVEwRzhxcDdVR2FZR2tQb1JDZHpwZkdnTzBZaXRXanJCa0tIc3U2WnNrNlVld3ZYU2NEdFFfQWVMLUE3U1FqbHlUSzMzOGlrTkd4MTJzSVlTV1dwT1ZrWXhycEN3X2F0M2FGWWs?oc=5",
-      "date": "2026-10-14T13:45:00+02:00"
+      "title": "Agoda Serves Up Pickleball Getaways across Asia",
+      "summary": "Source : PR Newswire",
+      "link": "https://finance.yahoo.com/small-business/articles/agoda-serves-pickleball-getaways-across-035300745.html",
+      "date": "2026-10-21T05:53:00+02:00"
+    },
+    {
+      "ticker": "BKNG",
+      "category": "stock",
+      "title": "What Changed In Airbnb's Story?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/changed-airbnbs-story-202332679.html",
+      "date": "2026-10-20T22:23:32+02:00"
     },
     {
       "ticker": "BKNG",
@@ -1672,26 +1688,10 @@
       "date": "2026-10-19T22:22:30+02:00"
     },
     {
-      "ticker": "BKNG",
-      "category": "stock",
-      "title": "2 Internet Stocks Worth Your Attention and 1 Facing Headwinds",
-      "summary": "Source : StockStory",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/2-internet-stocks-worth-attention-112055432.html",
-      "date": "2026-10-19T13:20:55+02:00"
-    },
-    {
-      "ticker": "BKNG",
-      "category": "stock",
-      "title": "Jefferies Adjusts Price Target on Booking Holdings to $185 From $200",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jefferies-adjusts-price-target-booking-092809292.html",
-      "date": "2026-10-19T11:28:09+02:00"
-    },
-    {
       "ticker": "CPRT",
       "category": "stock",
       "title": "MarketBeat reports USD 37.80 consensus target for Copart stock",
-      "summary": "Source : ad-hoc-news.de",
+      "summary": "Source : AD HOC NEWS",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZXhFWENiQlg3eDgyY2dzUUo2d095VDQ2Vl9NWUF5N1R2RjlhMjVkM0ozREcxV3poS1hKWmhNeTZSUV9aZ1gxRFZOWmN3bi1obnJDVFhGeDhXRmNlSUNqYVpNclA4X1JqMTJyTjZKVVhMbEVqUE1BUXgycGs4ajZDdjVjNG96RDEteFVMalg2V2xmMHJkZE1tem5UZ3hVOXdNOWdKZFZiUHJacVlmOVdjMlB2aUZTb0hicjFfOWhn?oc=5",
       "date": "2026-10-20T19:11:56+02:00"
     },
@@ -1731,41 +1731,25 @@
       "ticker": "CPRT",
       "category": "stock",
       "title": "Copart, la croissance envoyée à la casse",
-      "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPNWZOeGJfSE9jaDVWSjRDY0lycEd3elZybUphT0FvR0pYOTlJWG9kUEQ4RGZHOTJLVHNld0ZYeGtYb3RJd1hjdjZXN002QkFpTEJwWlNkUUNqY1VNV3ZjWjFVeWV4bEJSYjRIaE1MdTg0YUdGV2FtcF9FNThQOTNxNWJJSFBFbk1iWU9aaldzQ0VIQ1J4VUdhWUdEbFhXMlZP?oc=5",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckVZQmtfVjNySWZNZmd4MDRyYTZpTG9qbmdqbjQ2LU1RWVBMTHNJTFZwMzZNaE5KWWhsSUdfR01TYXdNT2tEMmxjUld6OVh0ZlRUc1AtcmhJTEY5RUZJV2hITi1BOWdJSlNQVEoxaXA0WlE2akt0LVMtMkQxbGdKTmcwcFl5NFMwT2poNUxRTmVNa2g0bU9mQnktaXJLWFlseWc?oc=5",
       "date": "2026-10-20T11:38:36+02:00"
     },
     {
       "ticker": "CRWV",
       "category": "stock",
-      "title": "AI Stocks: SpaceX 2027 Data Center Expansion Could Be Game Changer",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/e47e6de4-e781-3181-adf7-c5685c0abf10/ai-stocks%3A-spacex-2027-data.html",
-      "date": "2026-10-20T22:02:28+02:00"
+      "title": "European Ecosystem Builds World’s Most Efficient AI Factories With NVIDIA DSX",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/european-ecosystem-builds-world-most-093500135.html",
+      "date": "2026-10-21T11:35:00+02:00"
     },
     {
       "ticker": "CRWV",
       "category": "stock",
-      "title": "CoreWeave Stocks Fall 5.8% as HSBC Keeps Its Bearish AI Cloud Stance",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-stocks-fall-5-8-192922446.html",
-      "date": "2026-10-20T21:29:22+02:00"
-    },
-    {
-      "ticker": "CRWV",
-      "category": "stock",
-      "title": "'Big Short' Trader Danny Moses Calls CoreWeave the WeWork of AI",
-      "summary": "Source : Benzinga Prediction Markets",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/big-short-trader-danny-moses-191235156.html",
-      "date": "2026-10-20T21:12:35+02:00"
-    },
-    {
-      "ticker": "CRWV",
-      "category": "stock",
-      "title": "SpaceX, GE Aerospace, Micron, GM, CoreWeave, Braze, and More Stocks That Explain Today’s Market",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/141e2ad6-95bc-3e0c-9567-dff77bb4d64f/spacex%2C-ge-aerospace%2C-micron%2C.html",
-      "date": "2026-10-20T20:51:00+02:00"
+      "title": "2 Nasdaq-100 Stocks to Buy Before They Soar 105% and 130%, According to Wall Street",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-nasdaq-100-stocks-buy-090802909.html",
+      "date": "2026-10-21T11:08:02+02:00"
     },
     {
       "ticker": "CRWV",
@@ -1773,21 +1757,37 @@
       "title": "Meta Q3 earnings to test Wall Street's stomach for AI spending",
       "summary": "Source : Yahoo Finance",
       "link": "https://finance.yahoo.com/technology/article/meta-q3-earnings-to-test-wall-streets-stomach-for-ai-spending-184105375.html",
-      "date": "2026-10-20T20:41:05+02:00"
+      "date": "2026-10-21T10:51:58+02:00"
     },
     {
       "ticker": "CRWV",
       "category": "stock",
-      "title": "CoreWeave Stock Rebounds Following Rating Upgrade After Massive Weekly Selloff",
-      "summary": "Source : TIKR.com",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQ09kdU9RaEhWRy1VeU52RUI2LWxrb1pfUlphUDJTNDZrZlRmOUJvV3RVZk43bkJLdmMwMmZPSVMwdW9fbWNOc2hSY1lLcDZQcmRVTXZmeTNHVXZEazNXVm5uZExrQ01FS3FCemhtckMzcnZvT1pQcGRmNXcySXZIWFJ0T2toREE?oc=5",
-      "date": "2026-10-20T20:33:45+02:00"
+      "title": "Nasdaq Futures Rise Premarket As SpaceX AI Boom Lifts Chip Stocks: SMCI, TSLA, META, IBM, CRWV, NFLX, BE In Focus",
+      "summary": "Source : Stocktwits",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-rise-premarket-spacex-084106939.html",
+      "date": "2026-10-21T10:41:06+02:00"
+    },
+    {
+      "ticker": "CRWV",
+      "category": "stock",
+      "title": "If I Could Only Buy 1 Artificial Intelligence (AI) Semiconductor Stock to Buy Before 2027, It Would Be This One",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/technology/ai/articles/could-only-buy-1-artificial-073400623.html",
+      "date": "2026-10-21T09:34:00+02:00"
+    },
+    {
+      "ticker": "CRWV",
+      "category": "stock",
+      "title": "Nvidia in talks to invest in Firmus Grid after scrapped IPO- The Information",
+      "summary": "Source : Investing.com",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-talks-invest-firmus-grid-051839349.html",
+      "date": "2026-10-21T07:18:39+02:00"
     },
     {
       "ticker": "CSW",
       "category": "stock",
       "title": "CSW sets October 29 results date for CSW Industrials stock",
-      "summary": "Source : ad-hoc-news.de",
+      "summary": "Source : AD HOC NEWS",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMTlZcUdSTFVkQ0RpWWZjWlpFWlhkV2hBNFVJeHJ6SG90Y3FoVl9EUHlMbmxHeGtpX3NhQTIzY0ZJV19sMDdUVXVUV0IwY1o5VmZENnFZWUVFbHY2ZDZZbzNfRjNFMm9OT09yTnhvQmV5YjNxNWZGZDc1RkxHVFJuM1JvZ3NGSFlDS2JvSTZQY2liRVZzLTlIdkpXb092ZXk3YmJtcVhCLXZKdi1Oc25aODFkTjNFWFRv?oc=5",
       "date": "2026-10-20T21:37:03+02:00"
     },
@@ -1834,50 +1834,58 @@
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "AI Stocks: SpaceX 2027 Data Center Expansion Could Be Game Changer",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/e47e6de4-e781-3181-adf7-c5685c0abf10/ai-stocks%3A-spacex-2027-data.html",
-      "date": "2026-10-20T22:02:28+02:00"
+      "title": "Netflix co-CEO Ted Sarandos reveals two problems that have nothing to do with YouTube dominance and that don't have easy fixes",
+      "summary": "Source : Yahoo Finance",
+      "link": "https://finance.yahoo.com/markets/stocks/article/netflix-co-ceo-ted-sarandos-reveals-two-problems-that-have-nothing-to-do-with-youtube-dominance-and-that-dont-have-easy-fixes-100111830.html",
+      "date": "2026-10-21T12:01:11+02:00"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Stock Market Today: Dow Pops, Oil Falls On U.S.-Iran Hopes; Hasbro Rockets, Toys With An Entry (Live Coverage)",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/f3498525-5b31-3702-9e4b-aa8f358f4086/stock-market-today%3A-dow-pops%2C.html",
-      "date": "2026-10-20T21:46:38+02:00"
+      "title": "Trump says Google now kisses 'his a--,' thanks to the power he holds in his second term as president",
+      "summary": "Source : Moneywise",
+      "link": "https://finance.yahoo.com/technology/articles/trump-says-google-now-kisses-100000424.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Alphabet's Google Cloud Says London Region Outage Disrupted Services After Power Event",
+      "title": "Meta and Google are about to have a consumer AI showdown",
+      "summary": "Source : Yahoo Finance",
+      "link": "https://finance.yahoo.com/technology/article/meta-and-google-are-about-to-have-a-consumer-ai-showdown-100000834.html",
+      "date": "2026-10-21T12:00:00+02:00"
+    },
+    {
+      "ticker": "GOOG",
+      "category": "stock",
+      "title": "Alphabet's Google Adds Personal Intelligence to Gemini on Android Auto",
       "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/technology/articles/alphabet-apos-google-cloud-says-193809919.html",
-      "date": "2026-10-20T21:38:09+02:00"
+      "link": "https://finance.yahoo.com/technology/ai/articles/alphabet-apos-google-adds-personal-094451565.html",
+      "date": "2026-10-21T11:44:51+02:00"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Nvidia Faces a New Threat as Amazon Targets Its Biggest AI Advantage",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-faces-threat-amazon-targets-192057005.html",
-      "date": "2026-10-20T21:20:57+02:00"
+      "title": "Warren Buffett's Successor, Greg Abel, Just Went Shopping in the Tech Sector Again!",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/warren-buffetts-successor-greg-abel-092602749.html",
+      "date": "2026-10-21T11:26:02+02:00"
     },
     {
       "ticker": "GOOG",
       "category": "stock",
-      "title": "Alphabet Stock And 2 More Undervalued Stocks To Watch",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stock-2-more-undervalued-191209109.html",
-      "date": "2026-10-20T21:12:09+02:00"
+      "title": "Document AI Market Size, Share, Trends, and Global Forecast to 2031 | Document AI Market Forecasts Growth from $17.51 Billion (2026) to $35.34 Billion by 2031, Profiling Google, Microsoft, IBM, ABBYY & 40 Other Key Players",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/document-ai-market-size-share-091200021.html",
+      "date": "2026-10-21T11:12:00+02:00"
     },
     {
-      "ticker": "GOOG",
+      "ticker": "GRAB",
       "category": "stock",
-      "title": "What to Watch for in SpaceX’s Earnings Report",
-      "summary": "Source : The Wall Street Journal",
-      "link": "https://finance.yahoo.com/m/7d4d71fb-a75d-3ce1-bbec-db3cf8285faa/what-to-watch-for-in-spacex%E2%80%99s.html",
-      "date": "2026-10-20T21:05:48+02:00"
+      "title": "Grab's Planned Foodpanda Taiwan Deal Blocked by Regulator Over Competition Concerns",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/economy/policy/articles/grab-apos-planned-foodpanda-taiwan-093618819.html",
+      "date": "2026-10-21T11:36:18+02:00"
     },
     {
       "ticker": "GRAB",
@@ -1920,108 +1928,116 @@
       "date": "2026-10-19T23:00:03+02:00"
     },
     {
-      "ticker": "GRAB",
-      "category": "stock",
-      "title": "Grab Holdings Limited : Opinion positive de Barclays",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNRnpsSWl4WUR6R19QZ1VDa3AxODFFbElNcnBaaktkRVFvOUM0NF96YzI4dGYxV185cDFEVXlHVTN4YjFDSVlVZHFoX0x3eGZ6NDB6cFgtY3M3clVxSlBKRnFNbmxLQnA3T3lHdlhLSkJTM29lUm5wZXFadnZQOGR1VHd1OWxPZFY1ZUxkWXdhN0pVNTUtS2Juc0xTeFR2Qm51Q090NkdXWnNMb2toTjJCaQ?oc=5",
-      "date": "2026-10-19T17:42:04+02:00"
-    },
-    {
       "ticker": "ISRG",
       "category": "stock",
-      "title": "Le BPA de Intuitive Surgical a dépassé les attentes de 0,35$, le CA a surpassé les prévisions",
+      "title": "Pourquoi l’action Intuitive Surgical chute-t-elle aujourd’hui ?",
       "summary": "Source : Investing.com France",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYUs4NTJrMEo1OTR0VEFsMHNaYktRTTdaSU1qMHY0cDQzRFNka3FDX084b0lMYnVpamZRVUgwb2VqYlRnMjhwUUpDcm9ManRCRGFCUDc1bkNaT203czFGTUpZWVBIWUFkZC0yWmtIdjFocEVuUEZudnd6TGtxNkp5Qm10NzZ0SllwRmVPY3JoY05HTjdXb2RDZ3JOZ09ZZlRjc2VBamt5bFFZRDdqSzdTdGNqVjFEYWRSTlpZV0lvZkFPRGd0eUNNVF9lU3ZJZ0cwMmRXQw?oc=5",
-      "date": "2026-10-20T22:10:00+02:00"
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNldMOWd2Q205MU4tYk1Zam9PUnRsbDVBeXhVV3RYRnRwOE1rWkdVb2QwUTRjQUFMeldFelRaYmFLcWdfQmxUWVRDX0RqTmdkcFFLU1Fnb3AycDhNaG9DRmZ1eEJfSmxZRjN1eFdpd2ZJTU5aSTE2NnVDS1VGU1NsV2JwRUF5UkZha0NnVU5iOEw0SjRlMnRqNnE1bXdGRjRkUnhvemVjdTNuLXFUVEpoSVFGcWlpaDRHQy1J?oc=5",
+      "date": "2026-10-21T11:58:00+02:00"
     },
     {
       "ticker": "ISRG",
       "category": "stock",
-      "title": "Intuitive Announces Third Quarter Earnings",
+      "title": "Intuitive Surgical recule après avoir revu à la baisse ses prévisions de croissance concernant les interventio",
+      "summary": "Source : Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNWk8ybzcwTmUxLWZiSjdMWmtaSGp6TVJMLVRpZmhfUEdzZU00b1prbWVGVkJCMTIzc0U1aTBVVS1ISDNKbk1aNW15ZmV4ckd2bWJUeGpNX0IxaWdMamRiYzBocEl2eHg5VWJtZjBGYmp2YWdCVERDODVfcmFOZHFGRVZWQV9sUjRST3hZMjd4X29NV3RHVG5nc21WTGk1YnFSbncyR1JiNUxTYVhlVGFfbDBpQXB1WEYtTHRvM2tEaEdPUUFtd0RZY00wZ3FtZEhzSlVHT3ZGcFJjcFpRVVprTWlINVJDeE5fMkdnX1FmcG50TjNXbzFoYnVqUUxIZm9IUkViYzRRWF9DdW95UHJPWlNyYWphaC04b0VEeXEyb0xoWUJLTGfSAasCQVVfeXFMTjdjSzhSenRPS3FwQ2FiTC1FZ1NfRTZLaWMxX2xUSkN6VGFNejVjeEU5ellCMHFDdjRWeUNoR0VqMWxiQ2RGb2x4SnZhTUdJRHBBamFGRnNldkJFd3VXX3pNQXF4TDlCX3ljdDR2bEdlVldRRWVxejA5dXF0YV9zWE1MdjJJaWZpT1pvcWQ1MnRZWGxPVHFfbVZmdVJ5MUZtcFVrX0VIY3lId0V2LWtQS1B4X0tRQkMtTlc0VEpCdDFSZHJwSnlCX3d0MHFPVGhzV1pQMHBFYk4wbkRaRF9qMHotT2VpVmRuRjRDel8xeEFBSmF5Qm5lQUNlYS1PM0N6dmRMVERDYUEtTE1tdGc1ZE1DME85a0ljaGRzZ1ZiUzE0eUpGazB6OG92Yjg?oc=5",
+      "date": "2026-10-21T11:52:09+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Raymond James Adjusts Price Target on Intuitive Surgical to $480 From $483",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/raymond-james-adjusts-price-target-093144463.html",
+      "date": "2026-10-21T11:31:44+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Raymond James abaisse son objectif de cours sur Intuitive Surgical",
+      "summary": "Source : Investing.com France",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1FxcF9vejk1TnpIZjBqbzllZVZjRzNHTHNQenFyMWN5Z3NuTGg3a0pzbDZwWmdfZUdIM3I0UnVvUXZKdklxM2dJbmxkd1FyS3pBdXZYaGhWa1Z6YkhXSUY4WXBHSjFSMXltemVNaUlOOEZlSHB4QzNLSjZ2V29jcW0wcXRXSHkyXzBTdTdLUE10VTlabm9Va3RPN0FYaDFpYTFQX1lHZE1zNUxQdUg0eTZlSzZ4V2xDT1pQNEVfWUl2VzQ?oc=5",
+      "date": "2026-10-21T10:34:00+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Intuitive Surgical décroche à Wall Street",
+      "summary": "Source : Boursier.com",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZVU4MkNkeTZnSjF1a0pnYjdXZUFwWXBLODJibWxDZ2JhaDh0UjJuSGhaZ0xHU3ZMUzhqT2xmUFgxSjA2bzdCY1NpNnpJN3k5d19Kci1tYTRGekIzSTQzZ1NQV0lEZzBUdGJyRzV0dFFUOElndmNQMW05ZnRYYmh5dHY5U3B0OWdmU1hOcndKWTNxVlNUdzM4UXo1V2hwZlVRQnU4bA?oc=5",
+      "date": "2026-10-21T09:24:00+02:00"
+    },
+    {
+      "ticker": "ISRG",
+      "category": "stock",
+      "title": "Intuitive Surgical Sinks 7% on U.S. Slowdown: “Lowest We’ve Seen Since COVID”",
+      "summary": "Source : TIKR.com",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZXJZV3dCX1JaTTVSam9vZHljYTlvWm5DNE0wZzljU2hBZDd6eEZPd0hfMU9hZWJNMnZKZDVCUjlPaDZVWXlyZTMwUVBIZFI2LUhwQmJ0MS1xdHlKcHNEZHpTSnUzSU1UcXZCNVNrQThaS2s2a1pyMWZ3djJmWm9pUXpKVVFOcjRwZHd4Qk1LZzkta29tTlpBcUtTandHT2tWZmphbFlPbnM3RGFydTN3NjlUdw?oc=5",
+      "date": "2026-10-21T09:18:53+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "Global Medical Devices Market Size, Share, and Growth Forecast to 2031 | Aging Populations Push the Global Medical Devices Market Toward $818 Billion",
       "summary": "Source : GlobeNewswire",
-      "link": "https://finance.yahoo.com/healthcare/articles/intuitive-announces-third-quarter-earnings-200500018.html",
-      "date": "2026-10-20T22:05:00+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Intuitive Surgical (ISRG): Does Leasing Make Growth More Durable or More Capital Intensive?",
-      "summary": "Source : Insider Monkey",
-      "link": "https://finance.yahoo.com/healthcare/articles/intuitive-surgical-isrg-does-leasing-163427134.html",
-      "date": "2026-10-20T18:34:27+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Pre-Markets Down, Housing Remains at Recessionary Levels",
-      "summary": "Source : Zacks",
-      "link": "https://finance.yahoo.com/real-estate/articles/pre-markets-down-housing-remains-133000134.html",
-      "date": "2026-10-20T15:30:00+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Why ISRG Is Lowering Instrument Costs Despite Strong Profitability",
-      "summary": "Source : Zacks",
-      "link": "https://finance.yahoo.com/healthcare/articles/why-isrg-lowering-instrument-costs-130000060.html",
-      "date": "2026-10-20T15:00:00+02:00"
-    },
-    {
-      "ticker": "ISRG",
-      "category": "stock",
-      "title": "Stocks Mostly Down Pre-Bell as Earnings Take Center Stage",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/stocks-mostly-down-pre-bell-111504437.html",
-      "date": "2026-10-20T13:15:04+02:00"
+      "link": "https://finance.yahoo.com/healthcare/articles/global-medical-devices-market-size-090300658.html",
+      "date": "2026-10-21T11:03:00+02:00"
     },
     {
       "ticker": "JNJ",
       "category": "stock",
-      "title": "Abbott Laboratories Earnings Ahead: What Past Reactions Say About The Stock",
+      "title": "Global Life Science Market Report 2026: Size, Trends and Forecast to 2030 | Secure $200.6B AI and Precision Medicine Upside with Johnson & Johnson, Roche, Pfizer, and AstraZeneca",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/global-life-science-market-report-081200861.html",
+      "date": "2026-10-21T10:12:00+02:00"
+    },
+    {
+      "ticker": "JNJ",
+      "category": "stock",
+      "title": "What Happens To Merck Stock If Keytruda Sales Stop Growing?",
       "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/abbott-laboratories-earnings-ahead-past-173900557.html",
-      "date": "2026-10-20T19:39:00+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/happens-merck-stock-keytruda-sales-022034330.html",
+      "date": "2026-10-21T04:20:34+02:00"
     },
     {
       "ticker": "JNJ",
       "category": "stock",
-      "title": "TD Cowen maintient sa recommandation sur Johnson & Johnson grâce à Shockwave",
-      "summary": "Source : Investing.com France",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbkoyUUFGcVQ1ajJfaWdaYi1PcFBtNGpYS3pJczY4RkZZRmNfZGRCVGVBMHFuQlpmLU0tUEtEeDVCaS16M05TM0ZrNDVmcjRrOWswYWZUcXlyZkdUTi0zOExSUVN0QWxUTTlwaWxscm40TTdPR3RTYUtmWWFOVnpiQV9MRU01NTBOdUVvM2FNX1BtZUVMRFV2ZFptZzBILTNNQlk5d0Z4dVBRODBDclM5T0hqUFNBOFFTTnpFbzhzcDUzSXd3Y0otMjhaTGlxdTA?oc=5",
-      "date": "2026-10-20T18:57:00+02:00"
+      "title": "Should Becton Dickinson Stock Holders Look At Boston Scientific Instead?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/becton-dickinson-stock-holders-look-230526907.html",
+      "date": "2026-10-21T01:05:26+02:00"
     },
     {
       "ticker": "JNJ",
       "category": "stock",
-      "title": "Johnson & Johnson (JNJ): Are Its Medical Device Deals Paying Off?",
-      "summary": "Source : Insider Monkey",
-      "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-jnj-medical-device-163832582.html",
-      "date": "2026-10-20T18:38:32+02:00"
+      "title": "Dow outperforms as Wall Street rises, healthcare stocks lead gains ",
+      "summary": "Source : Reuters",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/wall-st-set-lower-open-130804295.html",
+      "date": "2026-10-20T23:14:15+02:00"
     },
     {
       "ticker": "JNJ",
       "category": "stock",
-      "title": "Rapport’s novel oral drug posts Phase II bipolar win",
-      "summary": "Source : Clinical Trials Arena",
-      "link": "https://finance.yahoo.com/news/rapport-novel-oral-drug-posts-163131968.html",
-      "date": "2026-10-20T18:31:31+02:00"
+      "title": "2 Dividend Stocks Crushing the Market in 2026 (and Which Ones Can Keep Going)",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-dividend-stocks-crushing-market-210000816.html",
+      "date": "2026-10-20T23:00:00+02:00"
     },
     {
-      "ticker": "JNJ",
+      "ticker": "KO",
       "category": "stock",
-      "title": "Johnson & Johnson (JNJ) Debuts New Coronary Catheter In The U.S.",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-jnj-debuts-coronary-161339721.html",
-      "date": "2026-10-20T18:13:39+02:00"
+      "title": "How Coca-Cola Got Burned With a $5 Billion Bet on Costa Coffee",
+      "summary": "Source : Bloomberg",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-got-burned-5-043005480.html",
+      "date": "2026-10-21T06:30:05+02:00"
     },
     {
-      "ticker": "JNJ",
+      "ticker": "KO",
       "category": "stock",
-      "title": "Alvotech's Manufacturing Progress, Simponi Launch Potential Support Recovery, UBS Says",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/healthcare/articles/alvotech-apos-manufacturing-progress-simponi-161148918.html",
-      "date": "2026-10-20T18:11:48+02:00"
+      "title": "A 67-Year-Old Swapped JEPQ for SCHD in a $1.32 Million Portfolio. Here’s What Happened to His $8,750 Monthly Paycheck",
+      "summary": "Source : 24/7 Wall St.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/67-old-swapped-jepq-schd-213228844.html",
+      "date": "2026-10-20T23:32:28+02:00"
     },
     {
       "ticker": "KO",
@@ -2056,68 +2072,68 @@
       "date": "2026-10-20T19:32:41+02:00"
     },
     {
-      "ticker": "KO",
-      "category": "stock",
-      "title": "What Is Coca-Cola (KO) Rethinking In Its Coffee Business?",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-rethinking-coffee-171155294.html",
-      "date": "2026-10-20T19:11:55+02:00"
-    },
-    {
-      "ticker": "KO",
-      "category": "stock",
-      "title": "Berkshire Hathaway Stock Nears a Record. It’s the Ultimate Anti-AI Play.",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/cee72bee-0505-347d-b1c6-a8a92a8b7e0c/berkshire-hathaway-stock.html",
-      "date": "2026-10-20T18:51:00+02:00"
-    },
-    {
       "ticker": "META",
       "category": "stock",
-      "title": "Earnings live updates: All eyes on Musk and Meta as Q3 earnings rev up",
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as earnings roll in, SpaceX stock surges",
       "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/earnings-live-updates-all-eyes-on-musk-and-meta-as-q3-earnings-roll-on-134152191.html",
-      "date": "2026-10-20T22:16:47+02:00"
+      "link": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-21-dow-sp-500-nasdaq-100000105.html",
+      "date": "2026-10-21T12:00:36+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Small Stocks Lead the Pack in Broad Market Rally",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/461d4e27-dffd-3c14-9021-3deeba7b82d6/small-stocks-lead-the-pack-in.html",
-      "date": "2026-10-20T22:05:21+02:00"
-    },
-    {
-      "ticker": "META",
-      "category": "stock",
-      "title": "Stock market today: Dow, S&P 500 rise, Nasdaq slips as investors await SpaceX, Netflix earnings",
+      "title": "Meta and Google are about to have a consumer AI showdown",
       "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/stock-market-today-dow-rises-sp-500-nasdaq-climb-as-dip-buying-resumes-165236471.html",
-      "date": "2026-10-20T22:02:58+02:00"
+      "link": "https://finance.yahoo.com/technology/article/meta-and-google-are-about-to-have-a-consumer-ai-showdown-100000834.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "AI Stocks: SpaceX 2027 Data Center Expansion Could Be Game Changer",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/e47e6de4-e781-3181-adf7-c5685c0abf10/ai-stocks%3A-spacex-2027-data.html",
-      "date": "2026-10-20T22:02:28+02:00"
+      "title": "Mark Zuckerberg Will Announce Muse on Meta Glasses Soon? Crypto Bettors Say Don't Hold Your Breath",
+      "summary": "Source : Benzinga Prediction Markets",
+      "link": "https://finance.yahoo.com/technology/ai/articles/mark-zuckerberg-announce-muse-meta-092807914.html",
+      "date": "2026-10-21T11:28:07+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Sector Update: Tech Stocks Mixed Late Afternoon",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-mixed-afternoon-194226083.html",
-      "date": "2026-10-20T21:42:26+02:00"
+      "title": "Cloudbeds integrates Meta’s Muse AI agent to drive hotel bookings",
+      "summary": "Source : Hotel Management Network",
+      "link": "https://finance.yahoo.com/news/cloudbeds-integrates-meta-muse-ai-092611945.html",
+      "date": "2026-10-21T11:26:11+02:00"
     },
     {
       "ticker": "META",
       "category": "stock",
-      "title": "Sector Update: Tech",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-191930866.html",
-      "date": "2026-10-20T21:19:30+02:00"
+      "title": "Stocks eke out modest gains thanks to earnings cheer",
+      "summary": "Source : Reuters",
+      "link": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-climb-strong-earnings-021016665.html",
+      "date": "2026-10-21T11:09:09+02:00"
+    },
+    {
+      "ticker": "META",
+      "category": "stock",
+      "title": "Meta Q3 earnings to test Wall Street's stomach for AI spending",
+      "summary": "Source : Yahoo Finance",
+      "link": "https://finance.yahoo.com/technology/article/meta-q3-earnings-to-test-wall-streets-stomach-for-ai-spending-184105375.html",
+      "date": "2026-10-21T10:51:58+02:00"
+    },
+    {
+      "ticker": "MC.PA",
+      "category": "stock",
+      "title": "«Le consommateur chinois est passé du YOLO à YONO»",
+      "summary": "Source : Bilan",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYm5oekJzZTh3czg5VTFNc0F1VXVDUTVxWU1PcDVkNXUtZFJwSGpSZ3llNkVLMGlqQ3dfU1dqVW9jc2UySmJld0xrVl90UzI3RHVXLXpDZkpDQTVQR3c3V1o4SHJUN3RUd0c5dTNpRHBzZDFSYTRvZ3FXRXFmNHh3aA?oc=5",
+      "date": "2026-10-21T10:32:09+02:00"
+    },
+    {
+      "ticker": "MC.PA",
+      "category": "stock",
+      "title": "LVMH : BNP Paribas reste neutre avec un objectif de cours réduit de 470 à 465 EUR.",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZzdLLVk2UjZuUlVncEdGeUthTDlRR0R6VWMyZWRMbGZTVkliUWRDdFBrdW1hSlRLWjM5ZUpMNmIxc1JRMS10d1dDWjU0VVRUZXJwakEzTUpRUUVSLVROYzJwVUk5WmtkQXI4MTNHV0ZhVVNidmdNZXZ0alVReVJTc2FUVks0V3I2SUZ4ODhJUUZKQmMwbEhjeVh3R1Ntam5jZjZockV4NmRXOW1XLUVrb0tjek5qVk5QZXJaRXFJM2xvajZCNk1JT05Rc01YU2M2M3NZUlBR?oc=5",
+      "date": "2026-10-21T08:46:19+02:00"
     },
     {
       "ticker": "MC.PA",
@@ -2139,129 +2155,145 @@
       "ticker": "MC.PA",
       "category": "stock",
       "title": "L'action LVMH proche de son plus bas de 6 ans, -21,5 % sur le trimestre",
-      "summary": "Source : Idéal Investisseur",
+      "summary": "Source : Ideal Investisseur",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUFdlNl9NY0lyRWR2LTdwYi1wRkJZMzMweUtYQm8zUHFOZXN0d3hRZ2NXWHVLa3JvNlhBTklJdGFGMFNUd1NsWFUybGdOd0tjSWRNTHM0LXlhamgyMEZ0XzEwNmhKN1gzTjhseTVvREVWR2plbElDQjlpNW52aExSUWlqZVVvaHVsRWNES2dXRHEzMVlYQWd4LTIwaW1IRFFJWjZLRWlsRXBUcG1feWxUOXJmellFU1d0Rnc4cg?oc=5",
       "date": "2026-10-20T16:07:00+02:00"
     },
     {
       "ticker": "MC.PA",
       "category": "stock",
-      "title": "Lvmh faisons le point",
-      "summary": "Source : ABC Bourse",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9VTUhXSkF2MFBaUkNsQ1JvcUdNX254SHlQM19MWFhMaklCcTFjNXhnU04xRGtNYVZ5RmJhc25zR3ZlUTVzbHd4WkpMeUM0algyMWZtSnhqSW4zMnktMF9ZVFlnSnc3S1d1VXFrM2JtaXZiZjQ?oc=5",
-      "date": "2026-10-20T11:25:56+02:00"
+      "title": "Le luxe a perdu de son éclat, les analystes se montrent sélectifs",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTVBfcFpsSEZJN1lZT05Kdm9SREdZOVJRSjZHelpVbHh5YkRPUEx3bHdOMG9IVWtMLXk4RFJGZDFaQWlfeWlDY2NiM3BDcXFmMldpS1NoWVVZNmQ2Sk1pbUtkclVVQXpfaERYZW1SVE81RG1xbDIxcFlsTFJRMHphN2t1TnJDYzA2SEt3LVdtbG9IZk1JdndWNFRoZXVKcEU2bzB5WkN2aVpFVDlENkRRTTVPeDBPajNwUFZjckxzTmhSQ0U?oc=5",
+      "date": "2026-10-20T12:11:09+02:00"
     },
     {
-      "ticker": "MC.PA",
+      "ticker": "MSFT",
       "category": "stock",
-      "title": "LVMH lâche 1,76%",
-      "summary": "Source : Boursier.com",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeGlfZndzOTN3d1cwMFBfalJsMTVrdVc4MzB1OGNRX1lDRi10YWR2X3NXRFp5QjBpc1FnZE5SX2ZnWk5CcjhWNzdKWTFYOTlQNnR2RkcxdXlBYm1qbW9fT0JfNFh1RU03NTMzQTU4VWozSGpZRjd4YlRUcmhWcXpSZjdR?oc=5",
-      "date": "2026-10-19T17:42:45+02:00"
+      "title": "Evergreen’s Lyra Technology Group Acquires Dutch Managed Service Provider Lantack",
+      "summary": "Source : Business Wire",
+      "link": "https://finance.yahoo.com/technology/articles/evergreen-lyra-technology-group-acquires-100000417.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
-      "ticker": "MC.PA",
+      "ticker": "MSFT",
       "category": "stock",
-      "title": "LVMH : Bernstein optimiste sur le dossier",
+      "title": "NVIDIA Launches OpenShell Reference Architecture for Safe AI Agents",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-launches-openshell-reference-architecture-094800780.html",
+      "date": "2026-10-21T11:48:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "Document AI Market Size, Share, Trends, and Global Forecast to 2031 | Document AI Market Forecasts Growth from $17.51 Billion (2026) to $35.34 Billion by 2031, Profiling Google, Microsoft, IBM, ABBYY & 40 Other Key Players",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/document-ai-market-size-share-091200021.html",
+      "date": "2026-10-21T11:12:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "Edge AI Software Market Size, Share, Trends, and Global Forecast to 2032 | Generative AI Moves to the Device, Sending Edge AI Software Toward $120 Billion",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/edge-ai-software-market-size-090800352.html",
+      "date": "2026-10-21T11:08:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "Agentic AI Market Size, Share, Trends, and Global Forecast to 2033 | Companies Move From Copilots to Autonomous Agents, Fueling a $206 Billion Market",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/agentic-ai-market-size-share-090700017.html",
+      "date": "2026-10-21T11:07:00+02:00"
+    },
+    {
+      "ticker": "MSFT",
+      "category": "stock",
+      "title": "IBM Has a Chance to Rewrite Its Narrative. Can Earnings Spark a Comeback?",
+      "summary": "Source : Barrons.com",
+      "link": "https://finance.yahoo.com/m/a0d7d835-5df2-3366-bdd4-4acf3f300a8f/ibm-has-a-chance-to-rewrite.html",
+      "date": "2026-10-21T10:15:00+02:00"
+    },
+    {
+      "ticker": "MU",
+      "category": "stock",
+      "title": "Ken Fisher and Jim Cramer Like This Bank Stock. Is It a Buy After Earnings?",
+      "summary": "Source : Insider Monkey",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/ken-fisher-jim-cramer-bank-094622063.html",
+      "date": "2026-10-21T11:46:22+02:00"
+    },
+    {
+      "ticker": "MU",
+      "category": "stock",
+      "title": "Micron conclut un accord entre la direction et le syndicat à Taïwan",
       "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbTdqYXA5UGYxejJYcmRfX2RyNXJxdlYyYVZfMGlaOTl6ejUwXzJlV0JnR2FoY0JnLWUzZnRIdks2ZVNyaXdjeV82cUJPZXBOb3Z6LXJFWFVwaHlyZkZPaHQ2QTFIaTA5YWdpZmd0SVUtUEJtQnRjNEZ0U00tN1d0SThKenFXV0xJTXBOTFphenNTWkN6cnVNNUpnaS0yUTFi?oc=5",
-      "date": "2026-10-19T15:33:54+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "Microsoft (MSFT) Withdraws From UK AI Data Center Project",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/technology/ai/articles/microsoft-msft-withdraws-uk-ai-200925824.html",
-      "date": "2026-10-20T22:09:25+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "Boeing, Microsoft Reveal AI Aircraft Platform, FAA Certifies 737 Max 10",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/71d9b8d2-7bae-3287-a073-f80ce7e01129/boeing%2C-microsoft-reveal-ai.html",
-      "date": "2026-10-20T21:52:41+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "Sector Update: Tech Stocks Mixed Late Afternoon",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-mixed-afternoon-194226083.html",
-      "date": "2026-10-20T21:42:26+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "OpenAI Acquires Orchestra Bio",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/healthcare/articles/openai-acquires-orchestra-bio-184950708.html",
-      "date": "2026-10-20T20:49:50+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "What Happened to $1,000 Invested in Microsoft Before Its Cloud and AI Boom?",
-      "summary": "Source : 24/7 Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/happened-1-000-invested-microsoft-181559898.html",
-      "date": "2026-10-20T20:15:59+02:00"
-    },
-    {
-      "ticker": "MSFT",
-      "category": "stock",
-      "title": "Trump’s FTC Subpoenas OpenAI and Anthropic. Inside the $500 Billion Threat Faced by Microsoft, Amazon, and Google",
-      "summary": "Source : TIKR.com",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxORWoxNnlXc2d2NmgtMzlweVpqSlRNdEIzMk1YUXpMeDdpNlJVZGhfMTFxSW95ZWJpc0E4UWotb3g2ODRnM0hIbS15Mk1UNWVRdkhxWmZJN1JLU1N1b3F2WEs5dWR6RVg3SURWUWRZanI4MEtiVHBINEx0Ukt6OHk5SWNDSG5FWmpiVWxPdEdjTEhwcW03WUtaejlGbHR5V24wUzhJaVE2aU1zWGRDUnJzbnphaWR6Q2NiN3VnTFQzRkx4dnhvTXlpd2pFckNvQlZ1N3BRaw?oc=5",
-      "date": "2026-10-20T20:04:11+02:00"
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTE5QRlp1VDZUZnB4bkdfVnlYSWVsVXAwYVVyN0tBV05Da1FtTVpfLVM1ZmxkU1dGWFRNVzJEVjZWS0JUMUR5ZzhDaG8zMXQ5T0xPbExFSklCelNXVDh0LXI0Uzd6TlRnbkx3TG1xUWs2azNmanBmVG95ODl1c0hSdlNiQ0tYdDlwWjhNU1NGajJTWkl3a3VoMzh3ZzZzYzVhRDQzcFhGX3g2WjdnLUVUVkpvaTZITTlOeV82OTVVVkprSkg4N0E?oc=5",
+      "date": "2026-10-21T11:06:51+02:00"
     },
     {
       "ticker": "MU",
       "category": "stock",
-      "title": "Prediction: Micron Could Turn a $5,000 Investment Into This by 2030",
+      "title": "Market Chatter: Micron Signs Labor-Management Deal With Taiwan Union",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-micron-signs-labor-090504136.html",
+      "date": "2026-10-21T11:05:04+02:00"
+    },
+    {
+      "ticker": "MU",
+      "category": "stock",
+      "title": "Nasdaq Futures Higher After Asian AI Rally",
+      "summary": "Source : The Wall Street Journal",
+      "link": "https://finance.yahoo.com/m/906e98f4-9fa7-3836-9565-d8a3e2dce558/nasdaq-futures-higher-after.html",
+      "date": "2026-10-21T10:43:00+02:00"
+    },
+    {
+      "ticker": "MU",
+      "category": "stock",
+      "title": "Micron and Nvidia Are the 2 Biggest Drivers of S&P 500 Earnings Growth. Are Their Stocks Buys?",
       "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-micron-could-turn-5-193300157.html",
-      "date": "2026-10-20T21:33:00+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/micron-nvidia-2-biggest-drivers-080401707.html",
+      "date": "2026-10-21T10:04:01+02:00"
     },
     {
       "ticker": "MU",
       "category": "stock",
-      "title": "How Investors May Respond To NBT Bancorp Stock As Earnings Expectations Rise",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-nbt-bancorp-191306959.html",
-      "date": "2026-10-20T21:13:06+02:00"
+      "title": "Micron annonce avoir conclu un accord avec le syndicat taïwanais",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZkZoNk9PLVQwYWZ3TzNrQ2FJUU8ySnplUHZmWFFZUzZJd1ZObjEwZ01ZaklGZUNzRmIwWkZhRkJoRWZwelZVQ1hPUEx5YnVYTi01dzhZNjlmaHFreFR5TXZDdnJ6ejlKZThqaFo1SFVwbHBuWlNlOTNVanJqc2M2dUJWMlFWSGJqcFZPVDhiU1ROM2ZwUjBoQWpVOXZ5bzZQbnFDNXZfS3BWTlNWVjZJSlBsV0F1NjAydzZlUlJheVpLZw?oc=5",
+      "date": "2026-10-21T08:23:59+02:00"
     },
     {
-      "ticker": "MU",
+      "ticker": "NBIS",
       "category": "stock",
-      "title": "Trump Dumped Micron, Up 338% in a Year. The Memory Cycle Decides Who’s Right",
+      "title": "Pourquoi l’action Nebius est-elle en hausse aujourd’hui ?",
+      "summary": "Source : Investing.com France",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVjBSd19QMjNFblk1d3U5WmM0bXZ2bHFWRVRTR0hVcUdTVUpSaG5pc2dBZ1BjNWx3T1M5OEpfenBSMURLUzQ4eFlqUjNsRV9wNVFlWHFaZzhON1FSQWZrTk5HN2tfOERqZEpQUEkweEFueHM1VWw2Zkxub0lGV1h2aDVwLVNSdG5OU0lqTmtKMm40NVhSRkdORWJvcTVLZk83anhPQlM5bHdkUkF6LXo5dl9kVl8?oc=5",
+      "date": "2026-10-21T10:24:00+02:00"
+    },
+    {
+      "ticker": "NBIS",
+      "category": "stock",
+      "title": "SpaceX Q3 Earnings: AI Now Brings in Half the Revenue, Starlink Still Earns Most of the Profit",
       "summary": "Source : TIKR.com",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQb3FLQmFZQ0ZZaFN1YW1RV2ZPQlkzTkhHbWFVemRvTEFhT2sxU1VydXdrSmtZdkwzSXAzdDMzVFgzYW5tN3pxNVpldXREM3kzYW8wNkVRNDhyd2VqenFWcmVNcmJlMzBUbVJlV1hCdG1vZlZPY2JlY1ZMMTZMRnp4LS1zdHRxdnpab183ZkdiaHVyZHMwRnVBbHBabWZlZjBQcG11MA?oc=5",
-      "date": "2026-10-20T21:02:38+02:00"
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOelUzRGF2c0MtZGh3RGN2Q3RFanR1T1NjcUtfSHhkQUpyMEVYUndjNU5kMFVvWHY4eUNyWE9kbU9vaFBaS3p3N2MteTdlcDMtemhJS0xUcDl3dEQ0ZjV3QVdZbldIMkpaSGhDOXVXYl9OdmhIY3FTc1ZiWTJVcTBmR0xWOVFfREZENHBuUFpJLUpROGFkMXl3MFB5T1NMbjhMaTRwd1RlZ0FqcFgzMDVIVjRZRXMwaDB2UFZKcGJ0WQ?oc=5",
+      "date": "2026-10-21T09:51:50+02:00"
     },
     {
-      "ticker": "MU",
+      "ticker": "NBIS",
       "category": "stock",
-      "title": "SpaceX, GE Aerospace, Micron, GM, CoreWeave, Braze, and More Stocks That Explain Today’s Market",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/141e2ad6-95bc-3e0c-9567-dff77bb4d64f/spacex%2C-ge-aerospace%2C-micron%2C.html",
-      "date": "2026-10-20T20:51:00+02:00"
+      "title": "CRWV, NBIS, NVDA Jump Overnight: Musk Says SpaceX Could Rent Compute ‘Several Times Over,’ Analyst Dismisses Glut Fears",
+      "summary": "Source : Stocktwits",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/crwv-nbis-nvda-jump-overnight-023720804.html",
+      "date": "2026-10-21T04:37:20+02:00"
     },
     {
-      "ticker": "MU",
+      "ticker": "NBIS",
       "category": "stock",
-      "title": "Micron Just Dropped 10% in a Month. Is It Time to Sell, or Load Up?",
-      "summary": "Source : TIKR",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/micron-just-dropped-10-month-184652114.html",
-      "date": "2026-10-20T20:46:52+02:00"
-    },
-    {
-      "ticker": "MU",
-      "category": "stock",
-      "title": "Micron Stock Rises to Defy 3 Warning Signals",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/c9d6ac79-78a8-3511-b9dc-1046e485c8f8/micron-stock-rises-to-defy-3.html",
-      "date": "2026-10-20T20:14:00+02:00"
+      "title": "Le cours de l'action Neocloud recule alors que l'introduction en",
+      "summary": "Source : The Market Periodical",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOd09rTmdiaFZPWHY2SXJ3SlJXRzRpeXZCT2xBTzd2dEtXNnZ2RWFlT2VOd0tpVi1qYnNGaEVubFNtUEVmTHdTYURaRHJ4TUQyVENDd1g4SkstejVtZlhOeWVBc1h0V2E1aFh1UEdJemJXN0FkUmRmdVJZMXBod0ZnZENUSUFwY1lmeEZXZlE2T2hMdnlmVjRQQzB0X1B2cGNtUXpuSkw2MTgxOXlRR3ptUWNPb09xQUJ1MEN2TlhJVEhBQkFOZFBXUWh2SU5VVUZDRDNGOGQ5M29qakVoMVVfWlZrdXFxSDM4U2t0T0tWQmVNMzYtdkc0VHNBU1V0UmM5OGFjdA?oc=5",
+      "date": "2026-10-20T20:22:00+02:00"
     },
     {
       "ticker": "NBIS",
@@ -2280,84 +2312,68 @@
       "date": "2026-10-20T18:00:00+02:00"
     },
     {
-      "ticker": "NBIS",
-      "category": "stock",
-      "title": "CoreWeave Faces New Warning After 33% AI IPO Drop",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/coreweave-faces-warning-33-ai-154358361.html",
-      "date": "2026-10-20T17:43:58+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "category": "stock",
-      "title": "La chute brutale du cours de l'action d'une entreprise sud-coréenne lors de son introduction en bourse renforc",
-      "summary": "Source : Boursorama",
-      "link": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxPOE9IYWhYY1FJdHphbnA3bW5VVGxTMGhWeHpDTy1rVlRkYzk1UEtmU2FMUFZJNU53TGRtRXVhTzR5Y0pFWlZwMlFVclptZjJ1WGh0ejR3ZmJSanRxY0kxZ1ZTbExDSGdpVG9mWEJuVFpWNmRNOTJPY1p4ZWdjd3hoYjJYSDBuT3pQTWNNMlExcFozWlpKSEhDc0tlMU1QZ2g5cVBlMk9MVTRrR21WSGF0WlBZNHY3WC1BeXcwZHVibWJDTndBYk5PXzI4VWVTQ25Ob0FhZy1BbTJHMmZxWDhCcHJmNkMwUGF3VTJCM0lXamNlOXNHQndGUkpiWTcxMFFNVjZsWm5felJ1YzFBc0NKaGpOeEY3Vzd6Sk9jTGowcDFsc05xanViUUJFVjN1TU5mV2pqVTFVdURPdDgtYXpCX1BiQ1M1UW1WVGhKR25VWTZUb2otWDBOOS0xYjVSd2pOQVYxOGFXSGtwMldGeUlmb2ZueXY3T0xFUEFCbNIB_AJBVV95cUxPOE9IYWhYY1FJdHphbnA3bW5VVGxTMGhWeHpDTy1rVlRkYzk1UEtmU2FMUFZJNU53TGRtRXVhTzR5Y0pFWlZwMlFVclptZjJ1WGh0ejR3ZmJSanRxY0kxZ1ZTbExDSGdpVG9mWEJuVFpWNmRNOTJPY1p4ZWdjd3hoYjJYSDBuT3pQTWNNMlExcFozWlpKSEhDc0tlMU1QZ2g5cVBlMk9MVTRrR21WSGF0WlBZNHY3WC1BeXcwZHVibWJDTndBYk5PXzI4VWVTQ25Ob0FhZy1BbTJHMmZxWDhCcHJmNkMwUGF3VTJCM0lXamNlOXNHQndGUkpiWTcxMFFNVjZsWm5felJ1YzFBc0NKaGpOeEY3Vzd6Sk9jTGowcDFsc05xanViUUJFVjN1TU5mV2pqVTFVdURPdDgtYXpCX1BiQ1M1UW1WVGhKR25VWTZUb2otWDBOOS0xYjVSd2pOQVYxOGFXSGtwMldGeUlmb2ZueXY3T0xFUEFCbA?oc=5",
-      "date": "2026-10-20T17:08:36+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "category": "stock",
-      "title": "AI jitters clobber South Korea's Elice as stock sinks 32% in trading debut",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/stocks/article/ai-jitters-clobber-south-koreas-elice-as-stock-sinks-32-in-trading-debut-145032999.html",
-      "date": "2026-10-20T16:50:32+02:00"
-    },
-    {
-      "ticker": "NBIS",
-      "category": "stock",
-      "title": "Wall Street ouvre en ordre dispersé, entre IA et résultats d'entreprises",
-      "summary": "Source : TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0zUGZibmZrOUc5N1czcVpBenJmMlU2Y3pnMVNudkVLUFNOcGlldVR5NkFKSTJTeDFITVpQU3Y2MFkzVU5FbHJVajF4QUVUTldrcTRJTDIyQ3NkZ1ROeTVYNXJR?oc=5",
-      "date": "2026-10-20T16:19:11+02:00"
-    },
-    {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "BlackRock Is Building a Bitcoin ETF for Investors Who Can't Stomach the Swings",
+      "title": "2 Brilliant Stocks to Buy Now and Hold Forever",
       "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/crypto/articles/blackrock-building-bitcoin-etf-investors-200901920.html",
-      "date": "2026-10-20T22:09:01+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-brilliant-stocks-buy-now-100000784.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Amazon Stock Costs More Than the Market. I'd Still Buy It for the Next 5 Years.",
+      "title": "NVIDIA Launches OpenShell Reference Architecture for Safe AI Agents",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-launches-openshell-reference-architecture-094800780.html",
+      "date": "2026-10-21T11:48:00+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "Dutch Bros Trades at 58 Times Earnings. Here's Whether That's a Reason to Buy or a Reason to Walk Away.",
       "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/amazon-stock-costs-more-market-200701099.html",
-      "date": "2026-10-20T22:07:01+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/dutch-bros-trades-58-times-094500524.html",
+      "date": "2026-10-21T11:45:00+02:00"
     },
     {
       "ticker": "NVDA",
       "category": "stock",
-      "title": "Prediction: Apple’s Stock Is Due for a Reality Check on Nov. 2",
+      "title": "Nvidia in Talks to Back Firmus After IPO Flop, Report Says",
+      "summary": "Source : Bloomberg",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-talks-back-firmus-ipo-235952854.html",
+      "date": "2026-10-21T11:44:19+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "European Ecosystem Builds World’s Most Efficient AI Factories With NVIDIA DSX",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/european-ecosystem-builds-world-most-093500135.html",
+      "date": "2026-10-21T11:35:00+02:00"
+    },
+    {
+      "ticker": "NVDA",
+      "category": "stock",
+      "title": "NVIDIA Introduces DSX POD AI Factories to Accelerate Europe’s Infrastructure Deployment",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-introduces-dsx-pod-ai-093400382.html",
+      "date": "2026-10-21T11:34:00+02:00"
+    },
+    {
+      "ticker": "ONON",
+      "category": "stock",
+      "title": "2 Brilliant Stocks to Buy Now and Hold Forever",
       "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/prediction-apple-stock-due-reality-200300997.html",
-      "date": "2026-10-20T22:03:00+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/2-brilliant-stocks-buy-now-100000784.html",
+      "date": "2026-10-21T12:00:00+02:00"
     },
     {
-      "ticker": "NVDA",
+      "ticker": "ONON",
       "category": "stock",
-      "title": "AI Stocks: SpaceX 2027 Data Center Expansion Could Be Game Changer",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/e47e6de4-e781-3181-adf7-c5685c0abf10/ai-stocks%3A-spacex-2027-data.html",
-      "date": "2026-10-20T22:02:28+02:00"
-    },
-    {
-      "ticker": "NVDA",
-      "category": "stock",
-      "title": "3 High-Yielding Dividend Stocks That Investors Can Safely Buy and Hold for Years",
-      "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/3-high-yielding-dividend-stocks-195301057.html",
-      "date": "2026-10-20T21:53:01+02:00"
-    },
-    {
-      "ticker": "NVDA",
-      "category": "stock",
-      "title": "Should You Invest $1,000 in PayPal (PYPL) Right Now?",
-      "summary": "Source : Motley Fool",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/invest-1-000-paypal-pypl-195000569.html",
-      "date": "2026-10-20T21:50:00+02:00"
+      "title": "Les questions : Que doit-on penser du système \"Déclic Bourse\" de la Société Générale ? - 27/05",
+      "summary": "Source : Orange Actualités",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPOUc3QjRjU19mZ1FUUGJsSHYtSFJJeHBCSTBRYnhaWDNMbk5qOTRaekM2U01RbXh2Z29CRkt5b2xZMmFYSzVzTlg5TXkwdmd4VmVMOFQ5RHFubmNEVnlwTkd5c0UxLUs4S2lJTEcwOWdaZDRqRVVqZ1pab3UtZlVrN1prT2tEWHMyRjlqQ21MVWs5emozRzRYakZjcFJfWnc1dmVIZldUa29LdW9JRHFMLVhCbFU4Q0lFVlN4TWxuR1FGRGxXWU5POGNXSlR3djMyTXFrZEFNNGN1cEdyNzV1cGJoNEQ?oc=5",
+      "date": "2026-10-20T21:17:06+02:00"
     },
     {
       "ticker": "ONON",
@@ -2392,20 +2408,12 @@
       "date": "2026-10-16T23:00:05+02:00"
     },
     {
-      "ticker": "ONON",
+      "ticker": "PEP",
       "category": "stock",
-      "title": "Deckers Outdoor Corporation: Objectif de Cours et Consensus des Analystes | DECK | US2435371073",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQS1XNVRQdTFZVi1kQjJJRWEtcHByV3RLczJTaWE4bl9yR1lMakZoTGt0S25VOWNkLS0yLVZHZFZMckswZEdVeXFOQndXcG5uQ05CM0U1NjdSMTZDcEN6VU95UkZhdVY3andXMHhuSjhna3BVUGJJN3Y3QzN0QjBZMUVqNVYzWThtWnY0MWxR?oc=5",
-      "date": "2026-10-16T22:00:02+02:00"
-    },
-    {
-      "ticker": "ONON",
-      "category": "stock",
-      "title": "Action Steven Madden, Ltd. | Cours SHOO Bourse Nasdaq",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5LaXQ0SU1HaFNWZGlnNm1pVHdsZ21Wem5zZW8wc25LS0xTSlhtQ05uazNWckJaSVNnM2hPZ2FteFRoX25TT29OSGJSbk1rQzRDYWNVU2V2V19fcV9CTmdlU3NiMGMxaUdsZFdJejdVUVlrQQ?oc=5",
-      "date": "2026-10-16T22:00:00+02:00"
+      "title": "PepsiCo to close bottling site in US",
+      "summary": "Source : Just Drinks",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-close-bottling-us-100703466.html",
+      "date": "2026-10-21T12:07:03+02:00"
     },
     {
       "ticker": "PEP",
@@ -2448,12 +2456,28 @@
       "date": "2026-10-20T16:39:00+02:00"
     },
     {
-      "ticker": "PEP",
+      "ticker": "PG",
       "category": "stock",
-      "title": "PepsiCo shutters Tennessee bottling plant amid soda slump",
-      "summary": "Source : Food Dive",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/pepsico-shutters-tennessee-bottling-plant-140800343.html",
-      "date": "2026-10-20T16:08:00+02:00"
+      "title": "What To Expect From Procter & Gamble’s (PG) Q3 Earnings",
+      "summary": "Source : StockStory",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/expect-procter-gamble-pg-q3-080639288.html",
+      "date": "2026-10-21T10:06:39+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "Raymond James Names Top Household and Personal Care Stocks",
+      "summary": "Source : Investing.com",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/raymond-james-names-top-household-070906312.html",
+      "date": "2026-10-21T09:09:06+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "Nike vs. Procter & Gamble: Which Consumer Stock Is a Better Buy in 2026?",
+      "summary": "Source : Motley Fool",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nike-vs-procter-gamble-consumer-015002805.html",
+      "date": "2026-10-21T03:50:02+02:00"
     },
     {
       "ticker": "PG",
@@ -2461,7 +2485,15 @@
       "title": "Earnings live updates: All eyes on Musk and Meta as Q3 earnings rev up",
       "summary": "Source : Yahoo Finance",
       "link": "https://finance.yahoo.com/markets/live/earnings-live-updates-all-eyes-on-musk-and-meta-as-q3-earnings-roll-on-134152191.html",
-      "date": "2026-10-20T22:16:47+02:00"
+      "date": "2026-10-21T01:20:19+02:00"
+    },
+    {
+      "ticker": "PG",
+      "category": "stock",
+      "title": "A 67-Year-Old Swapped JEPQ for SCHD in a $1.32 Million Portfolio. Here’s What Happened to His $8,750 Monthly Paycheck",
+      "summary": "Source : 24/7 Wall St.",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/67-old-swapped-jepq-schd-213228844.html",
+      "date": "2026-10-20T23:32:28+02:00"
     },
     {
       "ticker": "PG",
@@ -2470,38 +2502,6 @@
       "summary": "Source : Motley Fool",
       "link": "https://finance.yahoo.com/markets/stocks/articles/nike-now-yields-more-procter-151200493.html",
       "date": "2026-10-20T17:12:00+02:00"
-    },
-    {
-      "ticker": "PG",
-      "category": "stock",
-      "title": "Procter & Gamble devrait enregistrer une croissance de 2 % de ses ventes organiques au T1 de l’exercice 2027, selon RBC",
-      "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNRjdkTVB0Z1A3aTJtQUh1X19wOG5MeEsydl96ZnZ6eVIzbHJvYWpUb3FmQVVjdEFuT1hUd3BhdDAtd2E0UEdhX1lhTUhqR251NVk2TWE4TWo1QW5oTkR1REFiY3ZKSWdwWkFYaDdUc3VWTkRodkR5Rm1fTjJOWGJmaS1oNzVNVmwzcmluRGxjbGlsMnNDNnZISnpLRWVVRWYyY2t2Y3M4YjRCLTZkMzNOQ3dTalNRbnBNQkNrS1AtMlp1THF2RnUteWhzWUJ0NVFLY0thbFZlWlZIRm1HQWVrdXIyTEFPR0ItSjFr?oc=5",
-      "date": "2026-10-20T17:02:09+02:00"
-    },
-    {
-      "ticker": "PG",
-      "category": "stock",
-      "title": "Procter & Gamble Projected to Deliver 2% Fiscal Q1 Organic Sales Growth, RBC Says",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/procter-gamble-projected-deliver-2-150047930.html",
-      "date": "2026-10-20T17:00:47+02:00"
-    },
-    {
-      "ticker": "PG",
-      "category": "stock",
-      "title": "TIPS vs. Dividend Stocks: Which Keeps More Buying Power in Retirement?",
-      "summary": "Source : 24/7 Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tips-vs-dividend-stocks-keeps-124508801.html",
-      "date": "2026-10-20T14:45:08+02:00"
-    },
-    {
-      "ticker": "PG",
-      "category": "stock",
-      "title": "Rising Income Over Big Yields: 4 Dividend Kings That Have Raised Payouts for 70 Years Straight",
-      "summary": "Source : 24/7 Wall St.",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/rising-income-over-big-yields-122613058.html",
-      "date": "2026-10-20T14:26:13+02:00"
     },
     {
       "ticker": "RMS.PA",
@@ -2522,8 +2522,16 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
+      "title": "Agenda hebdomadaire économique France du mercredi 21 octobre 2026 au mercredi 28 octobre 2026",
+      "summary": "Source : TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5YcHV0Uzc0M0ZUTlBtaFh1OHhUanc1c0hQMUVJWnhjejdEbEhja0NRWmd5T0tja1JpMWt4NUpFcVZ4VnRDeUFfQzZtTlo5WTdUWW9rN0JFclZ5eWNLR3lQXzVn?oc=5",
+      "date": "2026-10-20T16:35:03+02:00"
+    },
+    {
+      "ticker": "RMS.PA",
+      "category": "stock",
       "title": "L'action LVMH proche de son plus bas de 6 ans, -21,5 % sur le trimestre",
-      "summary": "Source : Idéal Investisseur",
+      "summary": "Source : Ideal Investisseur",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUFdlNl9NY0lyRWR2LTdwYi1wRkJZMzMweUtYQm8zUHFOZXN0d3hRZ2NXWHVLa3JvNlhBTklJdGFGMFNUd1NsWFUybGdOd0tjSWRNTHM0LXlhamgyMEZ0XzEwNmhKN1gzTjhseTVvREVWR2plbElDQjlpNW52aExSUWlqZVVvaHVsRWNES2dXRHEzMVlYQWd4LTIwaW1IRFFJWjZLRWlsRXBUcG1feWxUOXJmellFU1d0Rnc4cg?oc=5",
       "date": "2026-10-20T16:07:00+02:00"
     },
@@ -2538,210 +2546,202 @@
     {
       "ticker": "RMS.PA",
       "category": "stock",
-      "title": "Agenda hebdomadaire économique France du mardi 20 octobre 2026 au mardi 27 octobre 2026",
-      "summary": "Source : TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9VbWNzdTRDczQ4S0Z5dDRxMEdkNF81eXdJNHVzcnkyTW41XzY2blhmLTJUaG5tR2J2QkJKeFF3Q3ZZbkdRXzFPYlpRUThtRERyT3Vnc1NmeEJwVWoyaFowMDZB?oc=5",
-      "date": "2026-10-19T16:25:37+02:00"
-    },
-    {
-      "ticker": "RMS.PA",
-      "category": "stock",
-      "title": "Hermès International : Bernstein persiste à l'achat",
-      "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQOWJtNU9nSjI1SmN3UUpqYm9qWnVMczNvc1lkUDRhamU3OW5nM1VoamdsbGx5ZVNuY2xWYWFkT1FIRFI5aVNsWDhoTFo1Rk8wSmUwQVhvZmQyV014RDRocTlMaElsRERPVkVvakktQ3E3c3NReUlRajRFSVVKVHgtYm9OSlhJbWlKTFQ4UEVrTENJYUJ1TDdqYXgwMzdfZEpBMnlBTWhxbkNsWGNjb3c?oc=5",
-      "date": "2026-10-19T15:29:18+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "Stock market today: Dow, S&P 500 rise, Nasdaq slips as investors await SpaceX, Netflix earnings",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/stock-market-today-dow-rises-sp-500-nasdaq-climb-as-dip-buying-resumes-165236471.html",
-      "date": "2026-10-20T22:20:46+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "SpaceX earnings Live: SpaceX beats on earnings, capex comes in less than expected",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/stocks/live/spacex-earnings-live-updates-133218212.html",
-      "date": "2026-10-20T22:18:33+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "Earnings live updates: All eyes on Musk and Meta as Q3 earnings rev up",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/earnings-live-updates-all-eyes-on-musk-and-meta-as-q3-earnings-roll-on-134152191.html",
-      "date": "2026-10-20T22:16:47+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "SpaceX Pops After Q3 Beat, Posts First Profit (Live Coverage)",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/3009a5a9-684d-3ea5-8387-735d1fe2c8d0/spacex-pops-after-q3-beat%2C.html",
-      "date": "2026-10-20T22:15:37+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "SpaceX Revenue Grows 161%",
-      "summary": "Source : Barrons.com",
-      "link": "https://finance.yahoo.com/m/a5987ab7-6d95-3a8d-b2d5-3619319e1934/spacex-revenue-grows-161%25.html",
-      "date": "2026-10-20T22:07:27+02:00"
-    },
-    {
-      "ticker": "SPCX",
-      "category": "stock",
-      "title": "Le chiffre d’affaires trimestriel de SpaceX bondit et dépasse les estimations grâce à l’essor de son activité dans l’intelligence artificielle",
-      "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQdTZsY2xNVFdQR0tIeHFtR1BsTk5lTFpSM3Y4eTQyTUY4Sl9SUVFRX1NDLXBBQkhWTmc4dmpkYnJqT3lxMVYzb0tTcDk3c08xdkpNd0U4OVEtQ1I0cjVHVS1RSUFaaDY5VXFhR3hjTDhWMEY0YXZWdDNjRlBIT09SeDI2eC1RQzVURFFEMEtwTnpQckJ3TmI5TGRWOFk4UVZnMFNGWUVKaHlDby0zT3Bnc25BRDlpOWlrRHdRVXkyampGbDVsRmRfY1VTR3ZLb0xubkpRUjVtbk50UTlnXzZWLWxnanhwSGpPd3hLYkhkNA?oc=5",
-      "date": "2026-10-20T22:06:24+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "S&P Global (SPGI) Warns Of Rising Risks To Global Food Security",
-      "summary": "Source : Simply Wall St.",
-      "link": "https://finance.yahoo.com/markets/commodities/articles/p-global-spgi-warns-rising-200756734.html",
-      "date": "2026-10-20T22:07:56+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "Is BorgWarner Stock Engineered To Make You Money?",
-      "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/borgwarner-stock-engineered-money-180723382.html",
-      "date": "2026-10-20T20:07:23+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "What Could Surprise Vistra Stock Investors On The Upside?",
-      "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/could-surprise-vistra-stock-investors-175613562.html",
-      "date": "2026-10-20T19:56:13+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "How Big Could Coeur Mining Stock's Next Fall Be?",
-      "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/big-could-coeur-mining-stocks-174837107.html",
-      "date": "2026-10-20T19:48:37+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "Is Carvana Stock's Drop A Chance To Buy?",
-      "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/carvana-stocks-drop-chance-buy-172256347.html",
-      "date": "2026-10-20T19:22:56+02:00"
-    },
-    {
-      "ticker": "SPGI",
-      "category": "stock",
-      "title": "How Bad Would Shrinking Store Sales Be For Lowe's Stock?",
-      "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/bad-shrinking-store-sales-lowes-171546277.html",
-      "date": "2026-10-20T19:15:46+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Schneider Electric perd 3,29%",
-      "summary": "Source : Boursier.com",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSUNyZFhsQXdlVHh6X2pueWNzWVEwd1NqMkdDbkdLSUdncTBoUHl2M2k4R3RCWVRCV1BrdS1UdFJlS09mUWZpM2RzVFY3TWUyQmJXVHhKN1FRaHNWS3lQcmxFSXlKdk5xSWZPTnZqcXYwZ2FuOFhVVUNKQzZwb205VHpFWld1SThwM21WMHVTSmJHTHlSbTV4VkxWOVc2TjVUNzVSNU85N1BpblU?oc=5",
-      "date": "2026-10-20T17:43:46+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Action Schneider Electric : 6 milliards levés pour PTC, que faire ?",
-      "summary": "Source : Le Revenu",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNY0lrMS1fek9PTkMxZDJ3OC1CUmZfRXotVkRVX3VUVkswbGNTcENod2RHdy1IS2M4cnVWZGZkZFdEMWYtdFZDTGRKX3AzUEJnSVZEQ3ZuZVh2VEZ5eno0UW1KTXd3Y1VndUJKN3dvZ3NqNV9zWjJkSnJoMnFyQ3JVRlVWQ0pjRXpRSXVSN2pYa3A1ZFdHYW1OUzZkckdNNENqcllzUnNWUlRCOWs?oc=5",
-      "date": "2026-10-20T15:53:00+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Le Cac 40 se reprend en fin de séance, mais la dette française et le financement de l'IA continuent d'inquiéter",
-      "summary": "Source : Investir Les Echos",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPa2FFblNmS0I4cnFCcGQtN2UtV1pOVFVGU19mdVJ1blhTdnB5Zk0wX0dpSXNNZWJsRHVDY0l6VFFkdEJvZnRsTDRtX18tYkVQR0ctemViYzAzcXl4cTREUEFvSThNdkZqVENpdTdJVndvQ1pVLThrdzFUSmlrMXJOb2pYcF9zejRkRGU4QTJ3RU9VTlFEUElWODZnTmhERUo2VlNFN3NXamxGa1gzejJQRmZNQVpoMVEtaEEzRUNNSFFka2NMakhhV05IMVRfWmhQRnlwTHNaSVU4SjlpZ3JISDlKOEFBYno3MGZKXw?oc=5",
-      "date": "2026-10-20T15:08:06+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Schneider Electric SE : Deutsche Bank optimiste sur le dossier",
-      "summary": "Source : Zonebourse Suisse",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVWF2aXd0ZEllUlotN3NPYm5rOWVvWGU5ZmxNQ0NrRWQ1NUFzelB0OGx6ZlFQblhBT2pvV3BiVm5WZ09WM1E4cENoTFA0ci01SlI0a1lLX0ZoT241aEFFOG9ya0VNUVJOMXhCeXlJMWVYZ0x5cDBIeXZCcENLckpMekQxeVozTkNzMHVGV3JGWDFZM3FLdHN4NTQtakJldFkyMDFYSWJjUzU1QlZMQTZqZFVfU2Q5YWE5ZHBXNw?oc=5",
-      "date": "2026-10-20T13:06:18+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Berenberg relève ses prévisions pour Schneider Electric après une croissance organique supérieure aux attentes au T3 et un relèvement des perspectives pour l’exercice 2026",
-      "summary": "Source : Zonebourse",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPV1hxM0VXQTJLYkFIUlM1V0NkTHM1OWpyN3BSU1NmNzZFRjFWQlhqQm5Id0VCaVdQR0ZpRllNXzJrTm1HSkZCbzcyM05POVFKWUY4TTRRb3haLWxCbzNxV1JoYmhYMUs0aXNCdE5MWGhMN1JLVTQ3MW5DM0ZRODROZ2Z3UzhNVFU3N2NHTjZHOXAzSF9pcFFydnVsQ1E0UlBvcFpYaV9HVDlvYWFLenJ1RUtLNl9KUFJGN2pxbTdiQWl2c1o1Y3kxM0kxb0w0VHBRSHNUVERwUGktNXlVR1dKbkpoQm1TNnNmRGo0cWl5dkdFczA?oc=5",
-      "date": "2026-10-20T12:51:28+02:00"
-    },
-    {
-      "ticker": "SU.PA",
-      "category": "stock",
-      "title": "Schneider electric : La bise continue de souffler sur l'IA en Bourse... Un fournisseur de puissance de calcul coréen s'effondre de 32% pour ses débuts à Séoul, Schneider et STMicro chutent à Paris",
-      "summary": "Source : BFM Bourse",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPc0JPcm10bkttczhTbzdzcGpqNkl2TU8yc3lRTnMyMGF6OEZoOVo4Y3dILWFwNG9TOWhuMEs5VmRyZ09ISEw0bTNPd3VMcjBHMHRrUUkwb3F3RF9ySFRTOTB2Ymp3cFh4a2Zpdm9rX0oyTlRhekQyOG1RWU1OWHpYcmduNXNzMktmcGFXSF9nWDRzRTE2aEJ0eXdmb3JZM2lqMWRIa0REX1FVTVE?oc=5",
-      "date": "2026-10-20T12:08:15+02:00"
-    },
-    {
-      "ticker": "TMO",
-      "category": "stock",
-      "title": "Agenda Zonebourse des résultats de sociétés : le 21 octobre 2026",
-      "summary": "Source : Option Finance",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQNEduY2xMMWIxTUowVnRDR2hfZExKeWRxd2JGemEtTUxoNUc4MURNemhKcjdhZmY5Zldsd2V4Z1NtVWFKQk1vM3ZFLWl3d0dkZnI5R1h2cWtsdGp4NnE2eXVUU1hva292MUZEc3UzTjZFUVdtdnRNOVRHM2QtZmFYci1oWnBWdVFLeUdEZTQ0X1NaaklDSWxRMm1ERGQtYWNyc0hsTXpHZmJHUk5HRUF2R0ZOUkx6QlVXVl8zX3BxVHlWa2N4U2JhZTlDNjJCV0dkSnc?oc=5",
-      "date": "2026-10-20T17:21:00+02:00"
-    },
-    {
-      "ticker": "TMO",
-      "category": "stock",
-      "title": "Why Thermo Fisher (TMO) Could Beat Earnings Estimates Again",
-      "summary": "Source : Zacks",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/why-thermo-fisher-tmo-could-151003425.html",
-      "date": "2026-10-20T17:10:03+02:00"
-    },
-    {
-      "ticker": "TMO",
-      "category": "stock",
-      "title": "Thermo Fisher (TMO) Reports Earnings Tomorrow: What To Expect",
-      "summary": "Source : StockStory",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/thermo-fisher-tmo-reports-earnings-052550832.html",
-      "date": "2026-10-20T07:25:50+02:00"
-    },
-    {
-      "ticker": "TMO",
-      "category": "stock",
-      "title": "Deux actions prêtes à profiter de la rotation hors de l'IA",
-      "summary": "Source : TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlUVcyUDFFY0ZBRGpUSjlBdWphZnQwRGVKRURBczNhX1VDUDlEREE3V2ZvbUFkSmx5VkFUZ3lXVkloSHRadTR4Ni14WmdlVnRGUkxDZktGZWtTUjJqTDlwZzRzYnA0Zw?oc=5",
-      "date": "2026-10-19T20:24:06+02:00"
-    },
-    {
-      "ticker": "TMO",
-      "category": "stock",
       "title": "Agenda Zonebourse des résultats de sociétés : semaine du 19 au 23 octobre 2026",
       "summary": "Source : Boursorama",
       "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPWktfREJfcjl6Y3dhUUVaQ2kwZ0lqbTJiNG43bzNScVBzY183ZTFjcDdZVFhqbF93M2M1V0NfbHRIQkhMRmxKU2tWYWVjRkVfV0RpZjNibExGLWxGZzlUZ19iZmRyWlBqOUdaSk12UFVyTzR2S0hEYWtWdVNuT1BDb2FqYXdhSTNIQ2R6QkhTdmZCWlRKUjc4RWhxQlFpWk93YzQ4UktYbjVzbXFSQW5ZLXJlblNRVEVRVmpVelA2czdSZHZaWnplZ3hJajFEOTh2d0s1LThjVUJhb0dwYkItdlVOa0Rsa2FuZm1qbm1IQdIB7wFBVV95cUxPWktfREJfcjl6Y3dhUUVaQ2kwZ0lqbTJiNG43bzNScVBzY183ZTFjcDdZVFhqbF93M2M1V0NfbHRIQkhMRmxKU2tWYWVjRkVfV0RpZjNibExGLWxGZzlUZ19iZmRyWlBqOUdaSk12UFVyTzR2S0hEYWtWdVNuT1BDb2FqYXdhSTNIQ2R6QkhTdmZCWlRKUjc4RWhxQlFpWk93YzQ4UktYbjVzbXFSQW5ZLXJlblNRVEVRVmpVelA2czdSZHZaWnplZ3hJajFEOTh2d0s1LThjVUJhb0dwYkItdlVOa0Rsa2FuZm1qbm1IQQ?oc=5",
       "date": "2026-10-19T17:21:00+02:00"
     },
     {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as earnings roll in, SpaceX stock surges",
+      "summary": "Source : Yahoo Finance",
+      "link": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-21-dow-sp-500-nasdaq-100000105.html",
+      "date": "2026-10-21T12:00:36+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Why would Musk merge SpaceX and Tesla?",
+      "summary": "Source : Reuters",
+      "link": "https://finance.yahoo.com/news/explainer-why-musk-merge-spacex-020904506.html",
+      "date": "2026-10-21T12:00:02+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Elon Musk's SpaceX is now mostly an AI company: Chart of the Day",
+      "summary": "Source : Yahoo Finance",
+      "link": "https://finance.yahoo.com/markets/article/elon-musks-spacex-is-now-mostly-an-ai-company-chart-of-the-day-100000693.html",
+      "date": "2026-10-21T12:00:00+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Global Space-based Data Center Market Forecast to 2040 | Market to Reach $28.16 Billion as In-Orbit AI, Edge Computing, and Orbital Cloud Demand Accelerate at 18.3% CAGR",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/global-space-based-data-center-091500295.html",
+      "date": "2026-10-21T11:15:00+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "SPCX Stock Jumps 10% Premarket: Morningstar Boosts SpaceX’s Fair Value As Starship And Orbital AI Offer Long-Term Upside",
+      "summary": "Source : Stocktwits",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/spcx-stock-jumps-10-premarket-091110658.html",
+      "date": "2026-10-21T11:11:10+02:00"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "title": "Market Chatter: Oracle Chairman Larry Ellison Borrowed Billions to Finance Son's Warner Bros. Discovery Acquisition",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-oracle-chairman-larry-085851192.html",
+      "date": "2026-10-21T10:58:51+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "Action Palantir : cours à 193 $, bull 213 vs bear 186",
+      "summary": "Source : FinanceFeeds",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1qUVpGeTBtTnJhOHJwTDdZX0NvTDgxbFhJSE93UTJWOEoxMzVWLXVlWktmODV3VUhVWFlUU2RhaWVSaHAzTG0tZ2JqaUVJTmxfUnpDeHFrSVQ1SUpnSk9COHpKMDdJdEtYUy0xRjJSa004UUk?oc=5",
+      "date": "2026-10-21T10:21:11+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "OPmobility a relativement bien résisté à la baisse de ses marchés au troisième trimestre",
+      "summary": "Source : ABC Bourse",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbEZWNXYwbnY4M3dkOTdDZUh4YWhfVlJMTUxqOW5rRmdtdUtsSFdQVFRjY2dCM3FMVnNiZlo0TDZaSExRNDVuZjFJUncwN2p6Sk93WEY4TTFpd3JqRHVSTTBfWERpVDRIX3dfR0I2ZFllWXpOTjBHZ2xBSjBINnpsSEM1bXVDamk5WXU4cFptbmZrdmZxS1E1aWNNdVNGSmR6VzFMV1FWMHNxOG4xLXZORzFLS2JuM3ROWEdoSDFn?oc=5",
+      "date": "2026-10-21T07:00:49+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "Would You Have Held McKesson Stock All The Way Up?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/held-mckesson-stock-way-023221517.html",
+      "date": "2026-10-21T04:32:21+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "What Have Pfizer Stock Holders Really Earned?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/pfizer-stock-holders-really-earned-022626514.html",
+      "date": "2026-10-21T04:26:26+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "What Is The Case For Waiting On CoreWeave Stock?",
+      "summary": "Source : Trefis",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/case-waiting-coreweave-stock-022011727.html",
+      "date": "2026-10-21T04:20:11+02:00"
+    },
+    {
+      "ticker": "SPGI",
+      "category": "stock",
+      "title": "Tech Giants May Spend $7 Trillion on AI. His $250,000 Paycheck Still Has a $65,500 Social Security Blind Spot",
+      "summary": "Source : 24/7 Wall St.",
+      "link": "https://finance.yahoo.com/technology/ai/articles/tech-giants-may-spend-7-021231403.html",
+      "date": "2026-10-21T04:12:31+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Schneider Electric renforce son programme de décarbonation avec Greenly",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQ2x5UmtuZktSbHNCMVktSjVMbDdVQTl3WnIwTTc3N0FvSHRwUi1qUHc1c25XUEVqb1JuVEJxdGNiYklrTTc2V2R5VFktY0tYNjFlbUhHV3RjaDZKNmM4Mm5OX0ljQTNxQXozWUJjOVg1VzBVc3JTbTIwSGJwbS10MUgwdlU1WnJtaWZuRG9wbFl3TVllMUQzeFlNU2tsbDQwZ0s4dFNON2VDZXkyc2hFVXNYa3FSclc2OGFreERUc1l4dDJMTE5HQVJKR2s?oc=5",
+      "date": "2026-10-21T10:21:21+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Analyse technique de l'action Schneider Electric : la faiblesse persiste avec une dynamique baissière",
+      "summary": "Source : Traders Union",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQOXVnb3dreGZHR3M0SUR6dE9Gc2ZxbUFKb1F2bktWTnAyeERIbGhVUTZyMV9GLXdIV0lsMEdmWkpsbVdMbUwxeWpkaHZxYlp5ZkFfc21qbWdkT0xjck1GQ2FYaVNheFo3Y3RsZDQyWHVvNk1sYkdCcUliSHZRcHVUc3dfblo4ajJDTUp6WGF4cnNWcFgzVXVfeU9YQUw?oc=5",
+      "date": "2026-10-21T10:19:31+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Schneider Electric SE : Bernstein à l'achat",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZnV2R19wSGl3Zmx0TC00UmtETTZtSXBxQVhTNTNyQWdHTFpIX0wwaWJUSHUyZXNwVFFITlY5UmlyWVFERDBxcFRodkhROXhFZDBOV19pZ3pzTm9zTnkya3R3RnVzRmpfRnRJQVFwaW05dks5Y05BVko4RU1udjFLaFBWZ3N3UWJUTmE2U1BpS2x6ZWJ3Y3pEaXdFVE84b3Z1aHU0?oc=5",
+      "date": "2026-10-21T09:49:55+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Schneider Electric : BNP Paribas reste à surperformance avec un objectif de cours réduit de 340 à 325 EUR.",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPemtJS2JkVTlsVHpKd3BOeHVhLURweGtYYkxwSjhsYXdfTFhCaGkzN3ZtYmlKMmVsVTBhalBZUV9ZMEpsSzlxc0xMaHpZOVo5Mmc0T0xyUnNSdTYtWkE2R0pIMjRHSnNVZWNybW84enkyNGhlSzY0TU9qaGtCVmxhRnpZNmtzS3U5b0dhN3F3UTkyX3JBbzgxc0dKV0lIVy1xbDhDZTVGa3pNbXdFdmgwRkRIZFBSV01qQUplRHBKbHZsYUpHLUszaGtYRHNXR3BCSzM5QnpsQ0M5YUFqM2owN3ljeVBnQm0telZ6bXQwWlU?oc=5",
+      "date": "2026-10-21T08:47:50+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Schneider Electric : Bernstein reste à surperformance avec un objectif de cours réduit de 350 à 340 EUR.",
+      "summary": "Source : Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNT2N2Z3NyQjFNbU5Xb0dRal9QN0N4UXVKS3JMUUNoaFRNWVc1VWZnM3p5N3VQSjQ0ZXZCaXRVaEJGM3ZTWGQ1a3RDZkdfRDBIaW13RzRjYnd6cTQ4eE1NTnU2NFNRbzVRSElzbzZPMThLS083ejhNN1IweGRSdk9lR21HUFpxb2RkSHkxN0ljRno2NUFGcURRd05YeGVnRW1vWWljRkZqTlpXdVgtNkNwV1dYcFRRN2lsN3VTaEZwQ3BWeUY1MjlkX09DMDNmRU52Rk1KaGpKeHV3d21uYjdHbG5waldyUUoybjc5NFJOMA?oc=5",
+      "date": "2026-10-21T08:47:13+02:00"
+    },
+    {
+      "ticker": "SU.PA",
+      "category": "stock",
+      "title": "Schneider Electric, une bonne fenêtre électrique",
+      "summary": "Source : Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZzdXWHp3QmxxR1pZRzRFWlBWMm9UOFhxb1VRUS1yNEhyUVBHN1dBNXMyQWVRZHZ6ZnpGUzliclJkYzRxTzRqY2l1TS1sZWMxQkcwWWUyZ2FMc2dNSXJFVG56SXBidjZkNlYydERXakdCMzl2RmtCQUsxY0s2QS1rR1p6aF9vZkpObjdiaUFITTZVallQUk54NkNjSVM3c2ZISlNPN2gweXhMRzVhdE9xYVA1OTItUFk?oc=5",
+      "date": "2026-10-20T18:43:39+02:00"
+    },
+    {
       "ticker": "TMO",
       "category": "stock",
-      "title": "Cours du Anduril tokenized stock (PreStocks) (ANDURIL), Graphiques, Capitalisation",
-      "summary": "Source : CoinMarketCap",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5waGZDbXJvWkl5bnNLSXpScHZXOGhTZDMzMk43TEppaTRBT3dUd0FiTDdIbENLaTRaU2lXUENQUk5nWW41d1plRkxnQ2xVb3FWNmZoU1N4OVhHeGVtZV8xeGI5OVFrMVdrMXpEekxWZ3Q3UHM2cFVyMTRKdkZiWTA?oc=5",
-      "date": "2026-10-17T09:00:00+02:00"
+      "title": "Global Bioprocessing Reagent Market Report 2026 | Capitalize on 12.3% CAGR as Thermo Fisher, Danaher, Merck KGaA and Sartorius Accelerate AI and Single-Use Systems",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/global-bioprocessing-reagent-market-report-081600489.html",
+      "date": "2026-10-21T10:16:00+02:00"
+    },
+    {
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Global Bioprocessing Support Services Market Report 2026 | Capitalize on $4.13B by 2030 as Thermo Fisher, Merck, Sartorius and Samsung Biologics Scale Single-Use Solutions",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/global-bioprocessing-support-services-market-081500551.html",
+      "date": "2026-10-21T10:15:00+02:00"
+    },
+    {
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Global Cell Culture Media and Single-Use Reagents Market Report 2026 | Capitalize on 13.6% CAGR to $8.34B by 2030 with Thermo Fisher, Merck, Sartorius and Lonza",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/global-cell-culture-media-single-081400554.html",
+      "date": "2026-10-21T10:14:00+02:00"
+    },
+    {
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Upstream Bioprocessing Equipment Market Report 2026: Forecast to 2030 | Accelerate Single-Use Scale-Up as Thermo Fisher, Merck, Danaher, Sartorius and Repligen Drive 10.9% CAGR",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/upstream-bioprocessing-equipment-market-report-081300672.html",
+      "date": "2026-10-21T10:13:00+02:00"
+    },
+    {
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Bioconjugation Market Report 2026: Global Size, Share, Trends and 2030 Forecast | Capitalize on Targeted Therapeutics | Thermo Fisher, Merck, Danaher, Lonza, and Agilent Lead the Industry",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/bioconjugation-market-report-2026-global-081100984.html",
+      "date": "2026-10-21T10:11:00+02:00"
+    },
+    {
+      "ticker": "TMO",
+      "category": "stock",
+      "title": "Cell-Based Biological Reagents Global Market Report 2026-2030 | Capitalize on 8.6% CAGR | Thermo Fisher, Merck, Danaher and Lonza Lead the Industry",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/healthcare/articles/cell-based-biological-reagents-global-081000424.html",
+      "date": "2026-10-21T10:10:00+02:00"
     },
     {
       "ticker": "TTE.PA",
@@ -2762,6 +2762,14 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
+      "title": "Prévision action TotalEnergies SE (TTE) 2026–2030",
+      "summary": "Source : CoinCodex",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA5cHNIOWdoUkJrdFdLWklRUjRjTHd2RGRMZU5TMnhySXNDNXZ6VnVyVkQzdXRoX2pHdjVld29IS2tCb0NQLURtbmprOG5ueGdQS0sxRXBnUXV2YkRVaE5tU01R?oc=5",
+      "date": "2026-10-19T22:34:00+02:00"
+    },
+    {
+      "ticker": "TTE.PA",
+      "category": "stock",
       "title": "La structure française TotalEnergies n'abdique pas et veut rester dans le peloton",
       "summary": "Source : Starsporttv",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPS3NUMjdCdERJUktCR3FJMkdGZGcycV9kRC1KaWJlUUxrZXZiQkFUZFhJcnZFMHgyQkgxc2VTN0ZjUWVSSER1ZjdBUEN6YzdBNnFsdkQ3NDd0bE1lSlNEQ3ViVTRDeTlCNGRwQVU0WFFCZWdOQndSUTNPMjE1dFNlajQtNVVxR3dmVjFxcjQ0TWZUOWNqQU1mRndBbG05T05hdmRvcGVJSUJhRENrcFhMdHhlTUQ?oc=5",
@@ -2778,114 +2786,114 @@
     {
       "ticker": "TTE.PA",
       "category": "stock",
-      "title": "TotalEnergies annonce une hausse de 146% de ses marges de raffinage au Q3",
-      "summary": "Source : Economie Matin",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9MNy1ubFZfdDBRQmdlbURPQWdhaU11V3lUZXBDZWxxc1JtWV9xb0doSUx6QldHbXRxZ2IzN2RtUS1HaFBLeUtUaWMtTVVXX0JXYnh5UHQ4Nl82LVZjNUw0RWZCVjA2R1Z4c1B6QkdyRkFyTUVX?oc=5",
-      "date": "2026-10-19T16:40:08+02:00"
-    },
-    {
-      "ticker": "TTE.PA",
-      "category": "stock",
-      "title": "TotalEnergies annonce des marges de raffinage en hausse de 146 %",
-      "summary": "Source : L'Automobiliste",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAydU45NHRWT0Q0NUJ2bkx0a25Qazl4ZFF5VHF1eVdneWF6T3EwWVNXZU9McE9lWEJhY1QwZnlNeG1lLWJ3ZkZOSDJPTUV6cjhmb3QzVzNxVXBNVHV3NGNRQXpSYkNhZmN6Q29oTGZ2V2dxeDdhcWI2S3d5R01iQQ?oc=5",
-      "date": "2026-10-19T16:39:44+02:00"
+      "title": "« Risque France, Saint-Gobain, Spie, Airbus, TotalEnergies, Genfit mais aussi les ETF sur la Suisse, mes réponses à vos interrogations du moment »",
+      "summary": "Source : Investir Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPS09hSFhBU0JtbmlvdFljMFZqQzZBdU5vQktUSlZJLUJqVmlXU29PNmNyZkU4Qm1CVFFKSVp0Q0hEVlVOcnpnd3lXNHdmX0NjS0g3Z0labnozQnAzSnJoOWx6Vm5YVjNVUzNva3hVOHhtczR6T2RRemUtTC11Zng1bkRVcGNGcjV4OGE4Rkhfcm4zMWl5djNsRndab1hqaWw1ZV84REprQ01MQjVYS3lFNlVVcDh5M042bFFXa2Y4eVB1R2dkdXFkM3ppUWhCMDlzUFo0bm5EcEkzV1AyUU80NkJuR3QzUlB1QkNEYmF5SHFEQXNHMmxXQzFyLVBKaHFDUlhwRS0xd2N5MDM2YkxlTUVlcnROay1pSGVXTFJmWjl5QWpLRk9iVU80aWY0eEY1VWc?oc=5",
+      "date": "2026-10-19T17:16:56+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Stock market today: Dow, S&P 500 rise, Nasdaq slips as investors await SpaceX, Netflix earnings",
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures rise as earnings roll in, SpaceX stock surges",
       "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/stock-market-today-dow-rises-sp-500-nasdaq-climb-as-dip-buying-resumes-165236471.html",
-      "date": "2026-10-20T22:20:46+02:00"
+      "link": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-21-dow-sp-500-nasdaq-100000105.html",
+      "date": "2026-10-21T12:00:36+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Earnings live updates: All eyes on Musk and Meta as Q3 earnings rev up",
-      "summary": "Source : Yahoo Finance",
-      "link": "https://finance.yahoo.com/markets/live/earnings-live-updates-all-eyes-on-musk-and-meta-as-q3-earnings-roll-on-134152191.html",
-      "date": "2026-10-20T22:16:47+02:00"
+      "title": "Why would Musk merge SpaceX and Tesla?",
+      "summary": "Source : Reuters",
+      "link": "https://finance.yahoo.com/news/explainer-why-musk-merge-spacex-020904506.html",
+      "date": "2026-10-21T12:00:02+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "SpaceX Pops After Q3 Beat, Posts First Profit (Live Coverage)",
-      "summary": "Source : Investor's Business Daily",
-      "link": "https://finance.yahoo.com/m/3009a5a9-684d-3ea5-8387-735d1fe2c8d0/spacex-pops-after-q3-beat%2C.html",
-      "date": "2026-10-20T22:15:37+02:00"
+      "title": "Elon Musk confirme des discussions de fusion entre SpaceX et Tesla alors que les actions bondissent",
+      "summary": "Source : CoinDesk",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaVh0OXM5ajdqMFdQNUJDVnFDWGpVancxN3BqZ1JzTHA5ajVQR0hZdjZKMGRNX3Axd3QxY21PSXdHekZzZ1hacHFVbTE3QjVIZ1FURFNweXE0ckhUMGVBcFJTUnI2UU9Cc2REbGF0Zm1IM0QtZ0o5T1dRV2pBbndVd0tpN19FSUIycjVLdk5LdGJaSTdvRjRWa2hxMEJxNURvc1R3THpxS1dUYjNIeF9EbzZUdDRRT2c1Tkx1ZQ?oc=5",
+      "date": "2026-10-21T11:23:00+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Tesla Stocks Rise Ahead of a $323 Million Gross-Profit Forecast Gap",
-      "summary": "Source : GuruFocus.com",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-rise-ahead-323-194534518.html",
-      "date": "2026-10-20T21:45:34+02:00"
+      "title": "Stocks eke out modest gains thanks to earnings cheer",
+      "summary": "Source : Reuters",
+      "link": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-climb-strong-earnings-021016665.html",
+      "date": "2026-10-21T11:09:09+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "What to Watch for in SpaceX’s Earnings Report",
-      "summary": "Source : The Wall Street Journal",
-      "link": "https://finance.yahoo.com/m/7d4d71fb-a75d-3ce1-bbec-db3cf8285faa/what-to-watch-for-in-spacex%E2%80%99s.html",
-      "date": "2026-10-20T21:05:48+02:00"
+      "title": "Market Chatter: Oracle Chairman Larry Ellison Borrowed Billions to Finance Son's Warner Bros. Discovery Acquisition",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-oracle-chairman-larry-085851192.html",
+      "date": "2026-10-21T10:58:51+02:00"
     },
     {
       "ticker": "TSLA",
       "category": "stock",
-      "title": "Ed Yardeni spots a major shakeup in the S&P 500",
-      "summary": "Source : TheStreet",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/ed-yardeni-spots-major-shakeup-181810728.html",
-      "date": "2026-10-20T20:18:10+02:00"
+      "title": "Résultats Tesla : marges, Cybercab et Optimus au centre, la fusion SpaceX s'intensifie",
+      "summary": "Source : Invezz",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxORTh5V0twRzctTWM2ZE5HS0JNODZlX2ZlRThyY3VjN2JReGdtZTI1TTVIQ0o5dS1VaXozQnVpS3RzMzVOUnpGdFd0S3JoSHM4clZBdGxiNlFiWk5KZmhYUmtOeC1XRi01Qkp5S24yV3NjVzVYSWxiWGEwQnBVSmp3dDduZVVVZF9HZW53QWh3dVduNmhBSHVEOFJSMlhpd1NSLXEwMzI3YnVpOTlYOXAwYkhTbFU3b1E5U3F3WU9UV3ZUeGM3?oc=5",
+      "date": "2026-10-21T10:55:00+02:00"
     },
     {
       "ticker": "UBER",
       "category": "stock",
-      "title": "\"Un service de qualité\" : malaise au Parlement bruxellois sur le non-renouvellement des minibus STIB pour les PMR",
-      "summary": "Source : BruxellesToday",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNb2VaYjg5V05xSkxkdDczYzQ5TnY1M0tuWEdDMTFiU2JSQzNIYVVhd3BsYkJBNEFLQ0RfMjFzc3NWa3gzSXl6eHByY3N2TjYwbzlTR0JmZndySlRwQ3FlNmppZWtzdnRFX0JreHBPTGdhMzRVZVdncXh6aXNsbHJaQUNJV2NHWjQ3eW52UWdOOWtpX01lRmM4ZzJad2FpUWNROFVBcHFsVVdyQ0VW?oc=5",
-      "date": "2026-10-20T19:00:00+02:00"
+      "title": "L’acquisition prévue de Foodpanda Taiwan par Grab bloquée par le régulateur pour des raisons de concurrence",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNelFwbVhwckE3VmtxRW9yTjFkbjVXcDlPMDh4LVVCWkZQR1JtM095WkhnLUE2aFRpSWY5UWdRS2lhcGl1ZFdodHl0ZkNKMVVMVVY1dHU5MVhHQklNLXlxRVN4TXNoWk5fWU9YdTRtLU9MTjBwWWNCZnlHR25LUUo3bkpaNlF3eHlPLVpROGN5ZWY0aEZmVnRlSk9zcjhJaFRfX2Z0SGxuV0dHdFAwX0tjbklQdTBYU2ZGLTVIOWtkY2Z6OFkxaWRzM1AxdlREQzNDb2F4VW91WS1xN3YyUzlZVzk3ajg5ZmVld1NZQUtDREs?oc=5",
+      "date": "2026-10-21T11:37:29+02:00"
     },
     {
       "ticker": "UBER",
       "category": "stock",
-      "title": "Hertz en hausse grâce à un investissement de 80 millions de dollars dans sa division de gestion de flottes",
-      "summary": "Source : Boursorama",
-      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQaTFPc1lIdVk2WERNb3ZHWHA1dDBPdHRPQ2tNUVFhbTlLcFVkY3gyalc0cUlTZ1NGQVhFa04wS1JKSzQ2dU9rZF9nTTdIdFZnNW15NzdyM2VCUXc5NFo1WUEwX0ZScFFxd1JWbEtsSnRtOXN6cExTYXZvRnZiTW45SUd0cXFVbEExeHRBZ2JpS3pqVy10ak5nMkNmYXdhaTdsTFJkUnhiYnlIZ0tBUHc5dFRiWFJwdWlqQWJoelZJbGlKWjYyeUpvbVRLQWFLQWVHbUZ4ODV0ZllCcTE1SGUtLXF3b28yQUFCV0pzOHVlVjk1Q2xPM1J5X3FOYWVrX3lIZlE3RVBFWV85MEE3V0hDajFjUE1mNk3SAZcCQVVfeXFMUGkxT3NZSHVZNlhETW92R1hwNXQwT3R0T0NrTVFRYW05S3BVZGN4MmpXNHFJU2dTRkFYRWtOMEtSSks0NnVPa2RfZ003SHRWZzVteTc3cjNlQlF3OTRaNVlBMF9GUnBRcXdSVmxLbEp0bTlzenBMU2F2b0Z2Yk1uOUlHdHFxVWxBMXh0QWdiaUt6alctdGpOZzJDZmF3YWk3bExSZFJ4YmJ5SGdLQVB3OXRUYlhScHVpakFiaHpWSWxpSlo2MnlKb21US0FhS0FlR21GeDg1dGZZQnExNUhlLS1xd29vMkFBQldKczh1ZVY5NUNsTzNSeV9xTmFla195SGZRN0VQRVlfOTBBN1dIQ2oxY1BNZjZN?oc=5",
-      "date": "2026-10-20T17:49:45+02:00"
+      "title": "Grab's Planned Foodpanda Taiwan Deal Blocked by Regulator Over Competition Concerns",
+      "summary": "Source : MT Newswires",
+      "link": "https://finance.yahoo.com/economy/policy/articles/grab-apos-planned-foodpanda-taiwan-093618819.html",
+      "date": "2026-10-21T11:36:18+02:00"
     },
     {
       "ticker": "UBER",
       "category": "stock",
-      "title": "What Are Uber Stock Bulls Not Worried About?",
+      "title": "Laureline Serieys, ex-Uber, prend la tête d'OpenAI en France",
+      "summary": "Source : Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQlF4eG04UDFtOW54MmxqNUxDQV96SFBpZHBINXhhM0JqeHFOdmEyVTJ3YVBhc0dhM1hsTWlyNEY3amltbjgxdUtnLWM1WXVPRmtkWWZoQ0lYY1lMU010cDVxWmZfcGwtbkRLRjJCOGlBeXNFWDRybWZ0WVZTeEhyNF9yaGVGOUZwQmpFQlNCY1R3MlF6Rm52dFlkSUNRaDFYa0NLaFNzcDV2alJZdGg4OUV0NnNIMUNJWTFzQXhNTjc1ODBlVGc?oc=5",
+      "date": "2026-10-21T10:00:31+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Résultats de la loterie Ba Ria-Vung Tau du 20 octobre 2026",
+      "summary": "Source : Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMDVyRnByR1RYUmJwLUVfNjJJeFE1d2VjVGU0ZjNjaUFmYzdzZ1pCcHpxZEtNM0xfd2puekhWNjFJMlc2Q3d3RDF0cXNKUTE1bV92VkM0QUNMM1ROMGx4UUpmeVQwYTNWV3NaY3VKNDRJUE0xNUt2QWJkbzdwZ3BEQy1JZFVMUTZjZWc?oc=5",
+      "date": "2026-10-21T04:40:36+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Uber remporte un procès d'une valeur de près d'un demi-milliard de dollars.",
+      "summary": "Source : Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1FV2kzWmxyZnBvVzVoRzNENXhGVl9OMXQ0WDhuc3V2cEpaNDRDRDlCeUtOUkQzVEpsMTFJd054SkNjaGtZbEFzZ2N3Q0U3NGxFbGxaTFFEcW9uUExFLWV3cVkxTmh4R0pBQXJj?oc=5",
+      "date": "2026-10-21T02:34:48+02:00"
+    },
+    {
+      "ticker": "UBER",
+      "category": "stock",
+      "title": "Uber Technologies (UBER) Stock Sinks As Market Gains: Here's Why",
+      "summary": "Source : Zacks",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/uber-technologies-uber-stock-sinks-204502865.html",
+      "date": "2026-10-20T22:45:02+02:00"
+    },
+    {
+      "ticker": "VRSN",
+      "category": "stock",
+      "title": "What Does GoDaddy Offer That Akamai Does Not?",
       "summary": "Source : Trefis",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/uber-stock-bulls-not-worried-144516575.html",
-      "date": "2026-10-20T16:45:16+02:00"
-    },
-    {
-      "ticker": "UBER",
-      "category": "stock",
-      "title": "Coût de l'IA en entreprise : pourquoi les plafonds se multiplient",
-      "summary": "Source : BlogNT",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNT0RfcEpIN29mRldCREZDcllFandma2ZPQXcyWVNVdUZHNkNkbkJBeEIxVDd5UW1sSEh0X0dBRDU2bHBPd01XbF9ZdWw5by1DQ1NCNEdXTDQ1dWpmTXFVc1pMdTFEQWVLaVNGOHpCbmlxYU5KOGVuRDF3VnZ5c1ByRUhncW51R0YwU01tSm43QlZoX1l1cEdrTWJ5VQ?oc=5",
-      "date": "2026-10-20T15:50:00+02:00"
-    },
-    {
-      "ticker": "UBER",
-      "category": "stock",
-      "title": "Manifestations : le principal syndicat des livreurs indépendants demande la suspension des commandes...",
-      "summary": "Source : Fortuneo",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNWHZGdWJ1Tk9ESXlVaHExczVOSXZvOHp5bWJqZ2lncUlpVjhfRmFJQnkyZmIzd0hKLTZsUXRrcmdVSDRkeS1YSXVjZktrSmh2cUxETGowSXVFNkhWb1pBR296d3M3cEYxMjlWMEt5cG54VEZ3WjU2RlZna0FnVklqR2d2Q09yT0pSdUY5Y3JaYk0taXNRUmhneEJHbExhbnYtc1d1cTZyRURMdTlwZFdTeElFXzdaNUhWeWRHb0NTSG5fY19Sd2xzbXQ5YlU5Qy1mT2tzN3JicmhRTk10RkJydmdIZ04wRGNFaXFnb3ZaWlFxcFU4VllFS0Z5TG5NVHEtaEHSAYICQVVfeXFMTVh2RnVidU5PREl5VWhxMXM1Tkl2bzh6eW1iamdpZ3FJaVY4X0ZhSUJ5MmZiM3dISi02bFF0a3JnVUg0ZHktWEl1Y2ZLa0podnFMRExqMEl1RTZIVm9aQUdvendzN3BGMTI5VjBLeXBueFRGd1o1NkZWZ2tBZ1ZJakdndkNPck9KUnVGOWNyWmJNLWlzUVJoZ3hCR2xMYW52LXNXdXE2ckVETHU5cGRXU3hJRV83WjVIVnlkR29DU0huX2NfUndsc210OWJVOUMtZk9rczdyYnJoUU5NdEZCcnZnSGdOMERjRWlxZ292WlpRcXBVOFZZRUtGeUxuTVRxLWhB?oc=5",
-      "date": "2026-10-20T15:28:00+02:00"
-    },
-    {
-      "ticker": "UBER",
-      "category": "stock",
-      "title": "1 Volatile Stock to Target This Week and 2 That Underwhelm",
-      "summary": "Source : StockStory",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/1-volatile-stock-target-week-132550052.html",
-      "date": "2026-10-20T15:25:50+02:00"
+      "link": "https://finance.yahoo.com/markets/stocks/articles/does-godaddy-offer-akamai-does-204738161.html",
+      "date": "2026-10-20T22:47:38+02:00"
     },
     {
       "ticker": "VRSN",
@@ -2928,12 +2936,20 @@
       "date": "2026-10-14T23:30:53+02:00"
     },
     {
-      "ticker": "VRSN",
+      "ticker": "VRT",
       "category": "stock",
-      "title": "Verisign Insider Sold Shares Worth $999,404, According to a Recent SEC Filing",
-      "summary": "Source : MT Newswires",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/verisign-insider-sold-shares-worth-212718811.html",
-      "date": "2026-10-14T23:27:18+02:00"
+      "title": "NVIDIA Introduces DSX POD AI Factories to Accelerate Europe’s Infrastructure Deployment",
+      "summary": "Source : GlobeNewswire",
+      "link": "https://finance.yahoo.com/technology/ai/articles/nvidia-introduces-dsx-pod-ai-093400382.html",
+      "date": "2026-10-21T11:34:00+02:00"
+    },
+    {
+      "ticker": "VRT",
+      "category": "stock",
+      "title": "Vertiv Holdings Co. (VRT) Stock Sinks As Market Gains: What You Should Know",
+      "summary": "Source : Zacks",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/vertiv-holdings-co-vrt-stock-204504027.html",
+      "date": "2026-10-20T22:45:04+02:00"
     },
     {
       "ticker": "VRT",
@@ -2966,22 +2982,6 @@
       "summary": "Source : TMX Newsfile",
       "link": "https://finance.yahoo.com/technology/articles/bitzero-taps-top-general-contractor-110000442.html",
       "date": "2026-10-20T13:00:00+02:00"
-    },
-    {
-      "ticker": "VRT",
-      "category": "stock",
-      "title": "Vertiv Stock Fell 15% Last Week. Here’s What Its October 28 Report Needs to Show",
-      "summary": "Source : TIKR.com",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZ29MckZEOWdIWWt4anRaVVplRklDQWp6VVNvdkUyQTdLSFduTG9BdGhlX1NUMlhCdjhPYWNQQzQ4dkFwdm03dExWRmQ0bk42VEVRdzJpd3JMU2dXbGhhU1Z0SkQzMVZwRlRlUDhMZ1dod1p4cHo0azYzREJnbVhaOEFkS01uSVcyOFJnanlsVFRTMElqOHplc1B1LUJUdXRTUy1wRDVyZmh4UQ?oc=5",
-      "date": "2026-10-20T11:45:00+02:00"
-    },
-    {
-      "ticker": "VRT",
-      "category": "stock",
-      "title": "Zscaler Stock Has Rebounded 85% Since April. Here’s Where It Could Go by 2031",
-      "summary": "Source : TIKR.com",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT2NlY0M5Wk5uNTNBLXFzUmZqSEN0NnZ1Rm5TU0p1Z2dqSlM4Um9nLXdsb2c3alZob3dncER2M2hiWHJrVG1iYlpkYXBnMGJoRURfLVNYOVYzX1hUN2RyTWdHVFBFOUtjejNoUk15N2wzWEdKWU02RDJtLTZNTTVIbHh1TkdZSlpITVo5bHR5UEtOSWdfS01mWjFtM05td3lZazRCZGhB?oc=5",
-      "date": "2026-10-20T11:22:30+02:00"
     },
     {
       "ticker": "VST",
@@ -3034,50 +3034,90 @@
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "BlackRock prépare un ETF Bitcoin pour limiter les pertes",
+      "title": "Bitcoin, Ethereum... Qui sont les Français qui investissent dans les cryptomonnaies ?",
+      "summary": "Source : MoneyVox",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTXE2RDdxRW9mMUVrNFpGd1VaZTlxNElNNVJtaXd1dFpabGloQmxWdnNaUW9lZDdnU0xBMzY3VXdUUHpWb0t5YUZwWlU0SU5MbE5aaDlTb0lTY0lFU21tWUZULWxxeHVCU2ZHM2FUSHZSUWN6b0x3a0lpZ2U3LUx5RnB5ckZLSl9WNWI4OGNUMUlqdnFLNlJkNmFlRDNKay1Da2FCZUZKd3gtQVRnUndNM2ZNZVR6dERyM0ppR2FhTVA2SkRMM211MDRlSQ?oc=5",
+      "date": "2026-10-21T12:02:58+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "Jim Cramer privilégie l'or comme couverture mais reconnaît deux cryptos « validées »",
+      "summary": "Source : renseignementeconomique.fr",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZFVOaEh3X3c4MS00S1NVTV91cG5xeEw1a3hjQkgwR3pXMVBQd2daS0N3dGZDd29jeHlPUW9PNFdETjNMRzFsU29FMWdaQURLTmQzOEFFYUNoanI5bGEzRUVwX2czMnRnMjU2ZTRKOG5xeGE2cEhWcE9TTjZ3b2pRUnJPbTdIMU1XbXhTNUlSWlY4WmpsVkZ3SlNYZDVzQWMyTUV2WU15MDYxODNUMGlwNzlpemgzUQ?oc=5",
+      "date": "2026-10-21T10:01:01+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "La Suisse approuve son premier ETF Bitcoin spot pour les particuliers",
       "summary": "Source : Cryptoast",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ISXpRY2tPYmNsU3F5eWRwaWRwbUhIY21zUW1FTWhRdXZlQlYtbkRqOWpHamVvdGtHQTV2bktJZlJuWElvOHhZTGFBR29MZFg4eUxzUTYxVUpKSkRGNWc2QkozcjNOS3pYZUVjbkxOWFBpR3pl?oc=5",
-      "date": "2026-10-20T20:45:35+02:00"
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZnV4WExSRVpQZnhXRG5PVjg2ZHE0MVlxbEtualFqdUh3VTZ0R1dPNmdJaFpQbl9IdVprSUVleGFvei1YVTJ0RWd1SFpnamxVS012NXNuejFreVFsdlFBM01LbUdtS1k3aWsyMUNPYW5ZdnVxMEoxZTlmUWJQdm5VcUdtekd5ZGM?oc=5",
+      "date": "2026-10-21T09:03:30+02:00"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "ETF Bitcoin PBIT de BlackRock : amortisseur de 10 %",
-      "summary": "Source : CryptoTicker",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9qd0xmQV9UdWJkd2pvZy1JQzJYTHpiWUliSmdoelU2Q0hNNF9kT3ljYnpUOVUtTDVKOXRHdG83eXIwaTU1WTB6dklxeGhXOVZlZVY2WG1EbW9ZNmtJOUhOOGNmX2NDME80NUlIZ0JYdUNMS0Nha3RtZmdOQVQ5VDA?oc=5",
-      "date": "2026-10-20T20:21:51+02:00"
+      "title": "Bitcoin : BTC remonte à 83 000 dollars, Zcash bondit de 11 % avant NU7",
+      "summary": "Source : TradingView",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0b0NDTm5MNkNKUW9YSWdpYkpxNzhzRXNsUFlCbmVDNzN2bHBTZnB5ZFJrcng4LUZYQXpiMlRmY0xRNzl5YjM2ci1jQ2Nmb3o5U1ZXTl9GQUdmNU5ucGRPVW5HNjZkYXh4Z3laUQ?oc=5",
+      "date": "2026-10-21T09:02:00+02:00"
     },
     {
       "ticker": "BTC-USD",
       "category": "crypto",
-      "title": "La FINMA autorise le premier ETF suisse sur le bitcoin et fixe des conditions strictes",
-      "summary": "Source : https://renseignementeconomique.fr/",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNQkthNnNZbHZ5bWc3dWVTbVpKbGN6QlYtbHpkTTZPV2xmWXgzbXdLdXFFdnhvcngySDhaQThFWG1tVjZmMTd3dkptc0o1Ti11Y1RKSUhZQlROSUd3X2FHQ0FMaXYzaXpUUVZfMFpDQnhlVnZuNld0VnpkX1VGdjVibWlKZmdDZUpHdVdHbnU2c2YzVFVqZl9OTThsVHF2cGlKTHY4Nl9JUDVVUzlMUEhKbXZLb28tb3RsQVdURHl3?oc=5",
-      "date": "2026-10-20T18:51:24+02:00"
-    },
-    {
-      "ticker": "BTC-USD",
-      "category": "crypto",
-      "title": "Michael Saylor affirme que le prochain marché haussier du Bitcoin a commencé",
-      "summary": "Source : Benzinga France",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUEdKRE54ZzdqOXJUSzFSQmFTVk9YYVJQWWlWLXcxUU1JNHhoaXRTMjYzbHJxcnhvR2ZSNURkNEYwMG9iZ2RjYUtYbUFSZWY4bzRvN21GNm5KS2taWUhuRVVwU1FrSXExbnhoMktMOERmMnFadDNkM1M3cWxqZXdiQjBJWF8zNHlVUXFBY0IzS2JVSXg1OVZ4RnprYmI3WURYY1llbEVqNHNNcjY5?oc=5",
-      "date": "2026-10-20T18:50:58+02:00"
-    },
-    {
-      "ticker": "BTC-USD",
-      "category": "crypto",
-      "title": "Le bitcoin repasse au-dessus des 82.000 dollars",
-      "summary": "Source : ABC Bourse",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOSFRwV0FiMzFtdWxGUVFQTzZwNXNUOFFLbWRYOVZ1cnJ4N0REYzRGQm9zT2hYRVRLakhHTmw4YjBFbVdUdW5ZbG5jQjFFcmo4ajc3RS1vdXBfWWpXSE1OYndKYjdQRUpTRnVDQm9YV05Mbzd0ZkdHNmhxSm1rNm9DZHN5YXpLU3Z2TFVUSWhRdng?oc=5",
-      "date": "2026-10-20T18:29:18+02:00"
-    },
-    {
-      "ticker": "BTC-USD",
-      "category": "crypto",
-      "title": "BlackRock cherche à protéger les investisseurs en bitcoin contre les pertes après qu’un fonds concurrent ait résisté à une chute de 50 %",
+      "title": "Le Bitcoin oscille autour de 83 000 $ alors que les résultats dans l'IA relancent la tech, ZEC bondit de 11 %",
       "summary": "Source : CoinDesk",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPNFhKTEx3bVo5QTJZQlEyZ0lIMW5zb0hsb19TeTktbkxTZUtseHViazB4TVhhcXZCM2hVekpGNkRvZTNqd3dQTUUzNF9EVXFmUlp4aS1oZ0Y1WllNVFNfNHNSRVVUem9aRTVKUUVZdG5DQ1ZpSUI1bXpGckI5WXh0dzlCLURLdFdlSHdWbEp5c1JyQzVyR29pcEFvSk1pRDhjVXI3QjU5VVFhMGFlX2N2TUZLVS1GYlVPQUhQLWNzbzFValV2MTFlZjRrS0JQdkRIMDMw?oc=5",
-      "date": "2026-10-20T16:28:39+02:00"
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPSDQ3S21pckh5Y1pRNU9wOEI4ZHZhNUZYMFBGSWdlLUktekcwTW9Gb1ZpN0F5aElzUXdRNzhjYjNMaWVmckRxVGc2UUp2QU9qcW5YUllOYzFGMDFlTFB1YUZKOTJ4LXQtLUd0X2NtbGM5UUVRNEp5YmpCTHp2Q1A2SnphNFM2S0tGSTZocHRIeFZuc3FqZThEQVJFRDlSdGZMN1VNUkNhOXd4YWxDZGQ3dEpyOHJjY3JEUHc?oc=5",
+      "date": "2026-10-21T06:07:07+02:00"
+    },
+    {
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "title": "Jim Cramer préfère l’or à Bitcoin pour assurer un portefeuille, mais soutient deux cryptos « validées »",
+      "summary": "Source : BeInCrypto",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1PQ0U5WVMzYXNqelJMeFdoQVNPZ2t4WF9FZFdVd0N2LVM4VmdKLWVKT056RkkwTTduT18zMkM0SGYtUVphOGdESVAyNEw2TmVNa2MxWFVlRzFmWWFVVDF4VnptdXQ4UENobWRJX1VpRURIa3JfV0NDWmFpNA?oc=5",
+      "date": "2026-10-21T02:19:00+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Bitcoin, Ethereum... Qui sont les Français qui investissent dans les cryptomonnaies ?",
+      "summary": "Source : MoneyVox",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTXE2RDdxRW9mMUVrNFpGd1VaZTlxNElNNVJtaXd1dFpabGloQmxWdnNaUW9lZDdnU0xBMzY3VXdUUHpWb0t5YUZwWlU0SU5MbE5aaDlTb0lTY0lFU21tWUZULWxxeHVCU2ZHM2FUSHZSUWN6b0x3a0lpZ2U3LUx5RnB5ckZLSl9WNWI4OGNUMUlqdnFLNlJkNmFlRDNKay1Da2FCZUZKd3gtQVRnUndNM2ZNZVR6dERyM0ppR2FhTVA2SkRMM211MDRlSQ?oc=5",
+      "date": "2026-10-21T12:02:58+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Ethereum résiste malgré 15 sorties d'ETF près de $2,400 — $2,548 en ligne de mire ?",
+      "summary": "Source : Invezz",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONlZJMHZSNGlMblN6TFRiaHZ6WGNMSklrdzllMk03TXU4SDh5a1JXZ3JCakxwLVZHT3hlMnJoZGpmYWdKRVdld2hMaTFVNnYzbGl3VFFLNi1rbE5RRVoyMDNVQlBqSkJtb3NHNkdEZmFCX2FJLTVBdEpNc2xPSGJyajYtVlo0VDJTenh2eEY1c0I4RXA5MUxrSXBsOTZMQ3IyaS1jbmpCVVVta1I0amI2b1VycHVpTkdWUTd6RWM4TTJObFR2aDVTdWcxOA?oc=5",
+      "date": "2026-10-21T09:55:00+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Ethereum : les Euro Stablecoins atteignent 915,7 millions",
+      "summary": "Source : Coinfomania",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMmFndGRHQmFLQlNBSGZNMDFnV3FrQ0xBMVIzMVhJeVYwbXBCcm9IRWtGY0x6dzFvdDIxdXNwVnlYTjVLVEtIb2hnVHN1YlFvWUJNcmRjNE9RaW5GZXlyS1hDVG9xR2IzZ3N2TEQ2VFZQRzBCVnIwajdjNWxMMl9kRGpwUjh5aWtrOEpCeExR?oc=5",
+      "date": "2026-10-21T05:11:55+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "JPMorgan déploie JPM Coin sur Ethereum pour ses clients",
+      "summary": "Source : Zonebourse Suisse",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOOGZhX21EcE8wejl2aTh3WFYtb0NGc21ZMVVwRHR5Si1laTN6ZGFvbE92amVWRWZPU3JCWmdBRW9aZnZSVHJqN3hudC16WkJ5WjlpNTZXVkdSV0N5bmFWYlpBeGVTc2lYdkRtYU01WkFzbVU5azlQQ053bUM5YjNLUmlFTTYzNGZmM3Rqc0NkNFlyR1Vtb2I2RVV1bEFSMXZHYm16Qkx1QjNIb2ptOXNoWWpLU3J5QQ?oc=5",
+      "date": "2026-10-20T21:19:25+02:00"
+    },
+    {
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "title": "Ethereum, Solana, la croissance de HYPE ne fait pas monter les rendements du staking : Bitwise",
+      "summary": "Source : Benzinga France",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOa1FPV0NJc0JCSUd1VUZvWUtVVFBJWG9CRWFETHltUnhaUzloVlRLOU05aEJ5MlgtcUk3VFEtczVPSVdHSE96MHRCd0ktWHQzOFVQMW11UkNRYTNjRXRCSWE3NGtITlZMWXV5blJmLUtSc3ZEd3YtcmdzTnJUNGhoUC15V29CYUt2QlcwNC1lbXhXdlhoNWxjOGx5dTZPSXB5bFk5MVM2YjFWcVREeS11bl9zbXp6dTR5ajZRQ0xEOA?oc=5",
+      "date": "2026-10-20T20:50:44+02:00"
     },
     {
       "ticker": "ETH-USD",
@@ -3088,98 +3128,74 @@
       "date": "2026-10-20T20:29:27+02:00"
     },
     {
-      "ticker": "ETH-USD",
+      "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Cours Ethereum sous 2 400 $ sur les sorties des ETF Ether",
-      "summary": "Source : FinanceFeeds",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5obnRtNGE1TmdBekNjUXBXVGo3dEhDeElZU3ZOXzZiWkc2dmtSSkV3Q1kxcFVabWw2REM3bzlzNGcyZDBMTTIzcWlTdGRwWnJQbTY3UE9ENktxNzYwa2FDb3JBZTNSeDlhTDhKdlVmazhhRFN0QmhtY0lnVQ?oc=5",
-      "date": "2026-10-20T17:05:36+02:00"
-    },
-    {
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "title": "Ethereum (ETH) : coincé entre 2 300 et 2 560 dollars, quel scénario pourrait débloquer le cours ?",
-      "summary": "Source : Cryptoast",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSXNPX0Nkb05QX0d1d3RCV1FzVlhDVUFsTExUeEdJVDMzejMyMExzRFdBSVZTdEFRSC1XMGQydGNPekYtMUJlNjhqajU1SHYxVl9JVDB1MU53WTdDUDd4cDd3RlIwRm1PWlZWV0hWSHhCbnU3NHFzYk1ZdFEyUExiR3NmWkk?oc=5",
-      "date": "2026-10-20T16:32:35+02:00"
-    },
-    {
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "title": "Les fonds Bitcoin perdent 390 M$ tandis que les ETF altcoins déjouent la tendance",
-      "summary": "Source : Yellow.com",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNlZGVTRYSDMwbWZnVG1QYU5GZ0ptVF9SRHhuRk5ZVE01NzJ1VDJZdVJOdWtHRDNSVWs4Y3paM0ZVSi1BTG12eURmbS05TzZDS1drak80VFB5REFzM25aZ0RIaW03eHJRTEM3SHlUT0xwWXRyeG5kTjNjLW5pTjA4NFkyRE5nZXh3ZEJncEx0ZTh1NWVqR3NzWmpHVmhoUUwzODlCYkNNakh3ek12N3ZlX3F1MUpfdVU?oc=5",
-      "date": "2026-10-20T15:30:00+02:00"
-    },
-    {
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "title": "Krach crypto : pourquoi le bitcoin reste bloqué",
+      "title": "Prévision Solana : Alpenglow en direct, finalité 150 ms",
       "summary": "Source : CryptoTicker",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUFdWU05sMUVrYUxPRXNXdWphYlFtRHZOZTZEY05tRHByUk01Y3BPcUQwOUljREJGWDJsTEpaSDBsLTNEeEVyWFZPeDNuQU9YQmo0d0ZmUENJMm8tcldpbC1CemlaalVlb1M4Ukp4T0U3VmRWemlhX25IWWNGLUVyeA?oc=5",
-      "date": "2026-10-20T14:24:34+02:00"
-    },
-    {
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "title": "Ethereum teste les 2 500 $ alors que la pression d’achat au comptant s’intensifie",
-      "summary": "Source : Yellow.com",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYS0wUG5rWEdKTkVTbzJhcGdfN0xON2ZXWkpESUdodWF3SHhIaTh4aEV6US1Xb3RaS2NlbjRReFF4Ry05bTlRRlR4VVJ4ekFxcHRoYnNvMF9qQ2pQTVJrdWVnUnY0b0plUFd6Z3V1QTBLQlZNMC1hVXlaZlZtNGZRVVlPUGFRcmF5NG1sdlh0VjlTS2FMQ3hQZ25KNFZlZTFDYnFCbFNYYWpEaGVlNUlHWEJEVHViSXNKb2czUHlB?oc=5",
-      "date": "2026-10-20T13:47:01+02:00"
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNenhsd3hZYnczSTZYWHgyVk5CUXlMZldoNkpZUGFKWHpoRnM2T3FIa1dVNmdRTjNKMGNKRThvUmotMlg2czlZR2JmUkgtLXpWdVdPcVRwSHZMVkhDS3RRN2JYTEhrWndraE1MZWVwQzQ2ZUNpRXMxbDlMNGZqaWl5akhn?oc=5",
+      "date": "2026-10-21T11:29:36+02:00"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Robinhood Chain détrône Solana pour la première fois avec 1,45 Md$ de volume DEX quotidien",
-      "summary": "Source : Yellow.com",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZHNlVHItekdoemMyOWxINUlRVjNDUFh6Tl9DVHFXQ2M1N05yaHBWaEhtUGtjNlcxTVB4Z1JkLUwtT2tKei03V3FTUVE5WXJyOWxaYmVXZURVSkw2UkIxU09mbFU2VVB1NE8xZFBLQXJBRGczVzZVSW5XbUthTzhQNFZlU1UwYnE4enZLR2paVEpZSmxGNkpvOWs4czZDaTNpcDE2cU1HOEJDQm9pMzdDb2h1ak4zMlNmQ0RwUG9UV1VKVUx4V3NLN3Nn?oc=5",
-      "date": "2026-10-20T19:02:34+02:00"
+      "title": "Alpenglow de Solana, sa plus grande refonte du réseau depuis 2020, sera mise en ligne mercredi",
+      "summary": "Source : CoinDesk",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQYjlReW1UZVZueEJ6Tm9ZQi1qSFRHQ0t2dTExSVNPTHRtTFpEb2cwbEpaTTlfa09kUEx0eko3eGtwVkota0w2VWh6SlFLWEtWQnJOTUZQS2I0bGZ5eHhGNW0yVlJfYlhMSGoxdnNPOHhwU0loa2stQXVuZE5hWkpocmloRktnMXhaWS1yX3dxOWgzUHlETUpja09RazdFUGhlN1IzZ2hlMUpoVmhjcnVJRTNXTW1NaFVuVVNSLTJ4WQ?oc=5",
+      "date": "2026-10-21T06:35:52+02:00"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Solana remonte, mais le levier rend le rebond fragile",
-      "summary": "Source : Actu Crypto .info",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdFZ5NXB1WnE3RDN2a2stZkFLUVlaSzl2ZV94SldJU1pxQ01HTnd4RjJ1YmhHZ1g2TWRYUGdhX2R0VmxmeHVDTVlFZ0F0d3lGN0g3VUJBbW5tb0hlOHRsdmh4d2xrOFBOTFNpZXVrU2FFSE13Vmt2Unhua096SjVOTHFCY1RHSjg?oc=5",
-      "date": "2026-10-20T17:52:00+02:00"
+      "title": "Solana atteint 1,5 million de détenteurs d’actions jetonisées",
+      "summary": "Source : Coinfomania",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVGVURjFyMXUydXVINmFIdEUxU3AyNTlfTFIzQThvN2dVeTZrMU5ERTRPeFhJdDBwclRJamdOTzBDY3VhcW1ydzBCa0tkZmZHUkJPY0JyMkFMZm9pOVZpdVJPZHdwMGpoOUVId2ZjcVVrZVVSRl9GM0FtbnJmSnRGeVgzaEltV2M3a295ZQ?oc=5",
+      "date": "2026-10-21T05:11:59+02:00"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Les fonds Bitcoin perdent 390 M$ tandis que les ETF altcoins déjouent la tendance",
-      "summary": "Source : Yellow.com",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNlZGVTRYSDMwbWZnVG1QYU5GZ0ptVF9SRHhuRk5ZVE01NzJ1VDJZdVJOdWtHRDNSVWs4Y3paM0ZVSi1BTG12eURmbS05TzZDS1drak80VFB5REFzM25aZ0RIaW03eHJRTEM3SHlUT0xwWXRyeG5kTjNjLW5pTjA4NFkyRE5nZXh3ZEJncEx0ZTh1NWVqR3NzWmpHVmhoUUwzODlCYkNNakh3ek12N3ZlX3F1MUpfdVU?oc=5",
-      "date": "2026-10-20T15:30:00+02:00"
+      "title": "Le prix de Solana fait face à un nouveau risque malgré l’adoption croissante on-chain",
+      "summary": "Source : BeInCrypto",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5LMWQyNzBnV3RhNVpOMTNrWmUwZDZoR1RETXRfMmNqT1o3NENuTnVLbmwxSEVnMXZKQ0lsUEtNLXhjX1dVeXVDNk5jdEt2ZzQwNndzLXJnOS1aazdtY1VLbW9JNWhXNVU?oc=5",
+      "date": "2026-10-21T02:24:32+02:00"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Solana : Alpenglow active demain, la finalité doit passer de 12,8 secondes à 150 ms",
-      "summary": "Source : Coin Academy",
-      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43cUh5cFNCOVpOb1JpRXg2dmxIRERJUHpnZWNyUHI0aE5VaGZkbC1IMXkwUjI5U2phU29DWlJWWFRXYkNDbHlDQnlqRHFraHJySUh2R1VDakdvYkxhRGdGa2t0NVBPa3ItNEwyVzhB?oc=5",
-      "date": "2026-10-20T15:14:50+02:00"
+      "title": "Prévision Solana : le Nasdaq solde 2 millions de SOL",
+      "summary": "Source : CryptoTicker",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9OXzc3cHBkX0tvZkVnTU52U0luZE9DSGIzTUowRDRkVlRlRVNkMHV5SEpDTGhnMHlJYUwwb2tXNVVVLVRGOWZHbWcwdmF1WmxPNTg4c2duMlJodjhlLWdUaVp0NlNXbDd4LTdRbFk4WXVUZWVkdmN3?oc=5",
+      "date": "2026-10-20T23:19:44+02:00"
     },
     {
       "ticker": "SOL-USD",
       "category": "crypto",
-      "title": "Solana reste au-dessus de 100 $ : la mise à jour de demain peut-elle porter SOL à 150 $ ?",
-      "summary": "Source : Invezz",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNdFliS1A5SV9ydXVTX0pHc2lCTXo4cFlCTUdlSWdRcVQ2cnRsaFktaGJsanpsY3BzdmkxZTNvQWVwR3BiQjdwbGdpY2pMQ2RKdTVOSnVhb2JicmpsTWdYR0ZuY3NFTE1mdzQwbnEwUkl2dkh5Z3RleWV0T1hEU3ZpdFZMNVRVTENoUVhQVkhjeF9nVVpkXzNZOGcxQUdudEM3a2lneUZUb3pacTFjMGl6VGFDdGRBeGFaZWxCZ1ZJSU1MakQ2RUFLVkNmcHRhdVJSTk9id09Zaw?oc=5",
-      "date": "2026-10-20T11:26:00+02:00"
+      "title": "Ethereum, Solana, la croissance de HYPE ne fait pas monter les rendements du staking : Bitwise",
+      "summary": "Source : Benzinga France",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOa1FPV0NJc0JCSUd1VUZvWUtVVFBJWG9CRWFETHltUnhaUzloVlRLOU05aEJ5MlgtcUk3VFEtczVPSVdHSE96MHRCd0ktWHQzOFVQMW11UkNRYTNjRXRCSWE3NGtITlZMWXV5blJmLUtSc3ZEd3YtcmdzTnJUNGhoUC15V29CYUt2QlcwNC1lbXhXdlhoNWxjOGx5dTZPSXB5bFk5MVM2YjFWcVREeS11bl9zbXp6dTR5ajZRQ0xEOA?oc=5",
+      "date": "2026-10-20T20:50:44+02:00"
     },
     {
-      "ticker": "SOL-USD",
+      "ticker": "HYPE32196-USD",
       "category": "crypto",
-      "title": "BlackRock dépose une demande pour un troisième ETF Bitcoin, toujours pas de Solana ni de XRP",
+      "title": "Hyperliquid demande à la CFTC d’adopter le calcul par l’IA",
+      "summary": "Source : Coinfomania",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTGlrdWtpV0VnTHM4dVBsbkZXT1Q4R3FSRlRpODY3WnF3M2JSV3N1ZTBpX2syd29SVHZYcHI1RkJHOThtcDhFWVpwOXBFWnFIc2FmQktIdW5pamt3MzZCMEhtdWtGZ0d6RF9Tdzk4YURITlQ5N0tyeV9lejNGLXpvdA?oc=5",
+      "date": "2026-10-21T05:11:57+02:00"
+    },
+    {
+      "ticker": "HYPE32196-USD",
+      "category": "crypto",
+      "title": "Bitwise et Hyperliquid cherchent à faire évoluer les règles de la SEC sur le trading de tokens et les airdrops",
       "summary": "Source : TradingView",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5iLVdpQVlIalhpRDNtV0M3LU1Ba0hWTGxXekRKY18wYzB6RTRmbFRSY20xSzk3SlhXNmJYZmZDQ0J6Z0d0enRXN1dwdERoMmM4bjZSNXhCSTBvZ1JNZE1KTmxETUMxSEp3YldfVEMtZw?oc=5",
-      "date": "2026-10-20T10:12:57+02:00"
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBOWUp1RE52YmE5Z05iemltOHVzZnYyMG1CaW5PYlNFZWpUOG9VTUlmeWx4M1Zva2pMakdnT3d4aVVueW1VaHpmQTRVSDhmeHhnbU45cHRhRzI2blhpUExvS3pYRnUxT1g3SDB4M1pQUQ?oc=5",
+      "date": "2026-10-20T22:38:00+02:00"
     },
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
       "title": "Hyperliquid demande à la SEC de clarifier les largages aériens et les rachats",
-      "summary": "Source : portalcripto.com.br",
+      "summary": "Source : PortalCripto",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdlVHZVJWOGNNT2trQVp5MjBHaVNCdTc3em43UWdENmNsZ0dfNDhKejhVWlM1MzlGRTZDVGp3YnE4Q3l6a2ZGY1pBX0FrS1lRS1QwMWlscUdjNEtPQlFyalE5QUdRQ1JUU3Z5azRIYkdWSEV3TmhQc1FUZEFoeVFnd3NZM2ZnTTg5MHJrRkVuVnAwMHA4UXhRYWJTY2JBcGxDc2dxR3lPRnU3VnM4?oc=5",
       "date": "2026-10-20T17:11:26+02:00"
     },
@@ -3194,34 +3210,26 @@
     {
       "ticker": "HYPE32196-USD",
       "category": "crypto",
+      "title": "Prédiction du prix d'Hyperliquid (HYPE) : Une cassure en biseau descendant pourrait-elle propulser HYPE au-dessus de 90 $ ?",
+      "summary": "Source : Brave New Coin",
+      "link": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNejJDWkVTcWJ2bmNib2RUd2JSTWVCVEUwLTFPZU9zZTNiRWtkT2FjVTlCMWVTSVZmWGlJRGtrUXJ2OVluTFB4bWhwTWduLWx3aVJqTzlNeFh3dEVfX3ZpVEF2NGVVcUxBLVlPY09pZHJHRmJVUEJOU0RKQXFxQnJXbWVOVFhHckY4UlNqUjIySXZvTHd3OHpSOVdqRFc5MDBVbXhLQlUxRW0tdFRPbzFJMm1wUHkwTU1fVWNVbVZVWG51cFpMZTA1bGxkRlJpUVMtNlJSYUg4bkRCZTdkQVB5STFNX2R5RWpxY2t0TkdtSUdkVjBrZ0c5cl95VG50WDhpLVh2VHo4ZkFjTHBVZkxNVVhJZDRGdkJ1NU4wMQ?oc=5",
+      "date": "2026-10-20T11:31:12+02:00"
+    },
+    {
+      "ticker": "HYPE32196-USD",
+      "category": "crypto",
       "title": "Hyperliquid : Un indice de plus pour un second airdrop ?",
       "summary": "Source : Cryptoast",
       "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YVGRoMm1ScFUzNnhoY1lTYlJWUDh1RENydy1LT3lkUTJ0Y3hQa09LcGRCQklRSnZfUzR3amZpTHBTUllwQ1g4YktldG9lRHUtbDFkSVNOVkdVektRVkxuUjZaenpRT0h3NW5mb3d0RGc5QQ?oc=5",
       "date": "2026-10-19T18:32:51+02:00"
     },
     {
-      "ticker": "HYPE32196-USD",
+      "ticker": "PUMP-USD",
       "category": "crypto",
-      "title": "Hyperliquid perd 9 M$ et mise 20x sur Tesla",
-      "summary": "Source : Bitcoin News",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOZDltcDhaYTZRNFVLODBQVTgtSWdjRjFtXzlfa3VuR0VfdVhuT1h1MVFXekg5NDFnaXdodjJMVXdRYmlQQ292YUQweGxCb3RPYkk2N3pXdnNkRU5yMG11cmhGV0JOYkx1MncySGRfSmQtSUtoN1kzbU12TmRZWEU4OU52ZVRBRWg2SXYzNjFmbw?oc=5",
-      "date": "2026-10-19T16:30:46+02:00"
-    },
-    {
-      "ticker": "HYPE32196-USD",
-      "category": "crypto",
-      "title": "Un pari haussier de 98 millions de dollars sur le bitcoin via Hyperliquid ne tient qu'à un fil",
-      "summary": "Source : Bitcoin News",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQX0ZKT3lmNXZ0YU1MUnpLX0c3MVRTTUpndWt1WlFiT0l6NHJYYXRPdWdlNnA2aGhpcEM2WG5GYWp0X2EzbGg3NzVzeHVnV2dTYWJiR3Vsa3U2ZUU3YU9NSnpDZ1RiNkZnNVVmenN4U09lV1lldzBDRDRjcnJQSmhZeDdwTWhLWTc0MXdwbHRaa053azBBMEVPSVBrc2dSdHAyaEw2WWU5cVhZOWxDb1ZMUzEzSG5TUkdKZE90ZGg1aHdnTm5nVmhpUEZ3SQ?oc=5",
-      "date": "2026-10-18T23:30:13+02:00"
-    },
-    {
-      "ticker": "HYPE32196-USD",
-      "category": "crypto",
-      "title": "Comment un trader crypto a gagné plus de 20 millions d’euros en 2 ans",
-      "summary": "Source : https://www.crypto-insiders.fr/",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYmZVRTRYMmNFdW0yTnhzX1lGcy12TlZId1dBenpTaFFvYUxqbEprRW5CTTh6YWFtb2hGQmtXUDkxT0J4aEoxazFuaHBOaUtIYTEwc0ZuRmdVelBKVGFaTXRBZXdDVThqSExiODdLei1icFkzNW40YlpOdU42Tm5GWDhkbGJES3ZNd0N2X2JOb2NENjhLN3hPcDVLY29kamRUdllaUko1NGlfQzZ5T0lrSGZlbV9IV253N3Bn?oc=5",
-      "date": "2026-10-18T13:24:37+02:00"
+      "title": "Pump.fun lance des contrats perpétuels à levier 40 : ce qu'il faut surveiller",
+      "summary": "Source : CryptoTicker",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5Bd0R0Q2ZlM2RETlZYWkFieUltc3VqMThlQ0psVmhBMGdFem1IbThQUE1jZmNBYW0wdWtxMFhWbUMzUklkNV9IOG1COU92Vy15Q0sxMkVtaFYzcEk3WlM4WVgzQldkbG03WFQxWGRnU19ST3pQ?oc=5",
+      "date": "2026-10-21T05:16:56+02:00"
     },
     {
       "ticker": "PUMP-USD",
@@ -3264,20 +3272,20 @@
       "date": "2026-10-16T15:36:59+02:00"
     },
     {
-      "ticker": "PUMP-USD",
-      "category": "crypto",
-      "title": "Le Bitcoin rebondit près de 80 000 $, tandis que le Kospi plonge de 8 %, les altcoins chutant davantage",
-      "summary": "Source : CoinDesk",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUzN4M1Z2dXMxZVQwYlBfRVNJY1k5VGo1SDk5MTkwdE5NTDU4QUxvaVdCV0htdTR2UkU1RURwdFNIZFQ4UENTQXhrb0MxWHIwWGRXaC16UU0wQXlJMFBNY1V0UV9LRkpHUEZ4ZTNLUUpnY0M4enJpZzMwa3V3T3FNeHRINVNiRlJpWjVBUHBpUjhFd0J3VXFScC1DRzJQNzBBMFBSVmQwTzN3OEx6N0lla3dHSFpGM3NIV2JFZg?oc=5",
-      "date": "2026-10-15T12:52:11+02:00"
-    },
-    {
       "ticker": "AAVE-USD",
       "category": "crypto",
       "title": "Un transfert de 133,9 millions USDC vers Aave crée le buzz",
       "summary": "Source : Coinfomania",
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTzdQUlRQVTFqamZJbjFWVk93Z2hTQVN2eDlQaC0yOXFLSzEyb1ZKcEpYWEMxdEQ0SlV2S0Y4VUdTaXViU3k0eVhpM2hsbXYyRTRTZEd1cDdNVVdEU0xQVFNaZ1pHNXJPSVBXdklfQk1aQXlqalhSOTE0T1JZRkQ4X1BTREI3RmFPQlJWTmNFSQ?oc=5",
       "date": "2026-10-20T05:13:57+02:00"
+    },
+    {
+      "ticker": "AAVE-USD",
+      "category": "crypto",
+      "title": "Prévision Aave (AAVE) 2026, 2027-2030",
+      "summary": "Source : CoinCodex",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9Bamd1Ump1QVNhRE8zR25vOVNLa3VTYmszV0o5MGJ0d2hkWGxuMjAxQ3JkREJZakhjeFpMSjg4TVJBc0VXbmRvV2hHOGpGTVVrZnhvN2d3WDlxWUljSF9Fd01Vd2hqY3NDY3JveA?oc=5",
+      "date": "2026-10-19T21:31:00+02:00"
     },
     {
       "ticker": "AAVE-USD",
@@ -3290,10 +3298,10 @@
     {
       "ticker": "AAVE-USD",
       "category": "crypto",
-      "title": "Prévision Aave (AAVE) 2026, 2027-2030",
-      "summary": "Source : CoinCodex",
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9Bamd1Ump1QVNhRE8zR25vOVNLa3VTYmszV0o5MGJ0d2hkWGxuMjAxQ3JkREJZakhjeFpMSjg4TVJBc0VXbmRvV2hHOGpGTVVrZnhvN2d3WDlxWUljSF9Fd01Vd2hqY3NDY3JveA?oc=5",
-      "date": "2026-10-18T13:31:00+02:00"
+      "title": "Aave recule de plus de 10 % dans un contexte de signaux contradictoires et de volatilité accrue : analyse hebdomadaire",
+      "summary": "Source : Traders Union",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOS2Y5bzRkLW1ieWhkX3NhYUpLVXYzR1lyTVJEM214bDJjbkRsVGtyRHpLV2dQSDBhM3VSUXgwYWY5UkNpSTlIUFgyYlhrOFpnMTdISEFwMWVNQmtibjViTTlSc25yZjJaWkRwYVVqSUVSMTQxWEVhNXpFSFN3N1dxYnNsNFRPa21KaGhPZ1JhUXhJbGs2bGdyUlppc2Q0Qk9GS3c?oc=5",
+      "date": "2026-10-17T08:34:26+02:00"
     },
     {
       "ticker": "AAVE-USD",
@@ -3312,12 +3320,12 @@
       "date": "2026-10-16T10:32:13+02:00"
     },
     {
-      "ticker": "AAVE-USD",
+      "ticker": "LINK-USD",
       "category": "crypto",
-      "title": "AAVE prolongera-t-il ses gains alors que la proposition d'expansion du protocole attire l'intérêt des investisseurs ?",
-      "summary": "Source : Traders Union",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUGRPQkRqQUxxbS1fNnRRWHlEQy12WmJCQVFhbkJVR0hVMnVVVnBDVFRTVkVKWDl2WUk1bFVaTDhXanItZ05fZzFjb0NPc3BmYWpISXVnZW9YdmFpVFVjb0szV2xDbVdmTnI5emE1azhsT05CRDRjYnYyNGNIYzNDUi1JOUpLYWF5aGh5M3FxMkhEWVhub25aUjVDamxUQWFsS1pvQg?oc=5",
-      "date": "2026-10-16T09:31:30+02:00"
+      "title": "Kamino confirme que Chainlink CCIP respecte les normes",
+      "summary": "Source : Coinfomania",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVE44Rmp1OC1PZVotR1IxbGx2X3J0V0tmVVNseDBCa3dPcGlMdTVJSEtQQW5KaGlnSmZuckY3UUZfY2VmQWlRYk9LTDcxR2VTa3hJeTBPOVVaNzYxMGFGWjViLVdXYThnd2dCVm1zNERWejRzNjVlbFdhdTJoZjNXcU1xOE02NHZaaG9R?oc=5",
+      "date": "2026-10-20T20:30:17+02:00"
     },
     {
       "ticker": "LINK-USD",
@@ -3338,14 +3346,6 @@
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "title": "Shiba Inu : 99,96 % des tokens en circulation",
-      "summary": "Source : CryptoTicker",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVjRWT0ozNW0tTUtHWW9EdDczWTlRMC1HSHFpdGlxck1IY0x3d1hMcDNDNkNLaGYtLTZzWW5kTkszdDNJanlfODZrLUJPTWNvOVJncDlHZ1BXenFyR0taTlZpeFVVRzk3TVhQb0FmVUNOb0VnN1Y1ZmplRXJ2eVZrYm5hVGVRMlpLZ1JaSGlLREd1U216NjhOTEU4WEMwaXc?oc=5",
-      "date": "2026-10-18T23:17:03+02:00"
-    },
-    {
-      "ticker": "LINK-USD",
-      "category": "crypto",
       "title": "ACE de Chainlink au Japon : ce qu'il en reste pour LINK",
       "summary": "Source : CryptoTicker",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE05ajZTRnNrNEZ5bm9ucEs4VlhZM18wbUF4aDlVb3dURUZRT1FONmJlSXVDT1BLRlZFODVIQ3NRUTExU1gwX3BwSzd1b3NibFd4M3NoYWdINkVDSkVOUHZydjJWQ01IMzNvZW1xWElCN2VJcUhidXJKbTR1Umhldw?oc=5",
@@ -3354,10 +3354,10 @@
     {
       "ticker": "LINK-USD",
       "category": "crypto",
-      "title": "Prévision Chainlink pour octobre 2026 : objectifs LINK",
-      "summary": "Source : CryptoTicker",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zdVl5R2hPWTZGN1F0SXdJNUs1bTQ2NWVGRnZVVnhFM2plaTlrUmwzY3ZhSnJXUzNTV0dMSWVhQ2xHS2FsY1BWSndDcDdLNWt6dmN3Y3B4WDgxamdJLWtheVlZZW04clBva21UZGViZ0EwQQ?oc=5",
-      "date": "2026-10-17T17:29:23+02:00"
+      "title": "Prévision du prix de Chainlink 2026, 2027, 2028-2032",
+      "summary": "Source : Cryptopolitan",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9TeWFVY0ZYREI4b0Q2RFNWQ0YtdW5ZaEdmaDVFRGtiS1QxSXpyUG5XVG1hck1EMDg5UTl0S0ZlU182RnpJNTlZTTJNdVZSUzNzbmx2TmdmYjdsQlNlWjl1VGZBd29XekltOUl5cA?oc=5",
+      "date": "2026-10-18T09:00:00+02:00"
     },
     {
       "ticker": "LINK-USD",
@@ -3373,12 +3373,12 @@
       "ticker": "AED.BR",
       "category": "reit",
       "rev_growth": "+104.3%",
-      "pe": "11.4x",
-      "ev": "28.1x",
+      "pe": "11.5x",
+      "ev": "28.2x",
       "roe": "12.2%",
       "peg": "N/A",
       "net_margin": "132.0%",
-      "fcf_yield": "5.7%",
+      "fcf_yield": "5.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -3402,14 +3402,14 @@
           "119.7%"
         ],
         "Fwd P/E": [
-          "11.4x",
+          "11.5x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "28.1x",
+          "28.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -3430,7 +3430,7 @@
           "N/A"
         ],
         "FCF Yield %": [
-          "5.7%",
+          "5.6%",
           "4.2%",
           "2.0%",
           "-0.6%",
@@ -3442,8 +3442,8 @@
       "ticker": "CPINV.BR",
       "category": "reit",
       "rev_growth": "+11.9%",
-      "pe": "10.9x",
-      "ev": "17.9x",
+      "pe": "11.1x",
+      "ev": "18.0x",
       "roe": "9.4%",
       "peg": "N/A",
       "net_margin": "77.4%",
@@ -3471,14 +3471,14 @@
           "160.9%"
         ],
         "Fwd P/E": [
-          "10.9x",
+          "11.1x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "17.9x",
+          "18.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -3500,9 +3500,9 @@
         ],
         "FCF Yield %": [
           "3.0%",
-          "11.1%",
-          "10.9%",
-          "11.4%",
+          "11.0%",
+          "10.8%",
+          "11.3%",
           "7.5%"
         ]
       }
@@ -3512,7 +3512,7 @@
       "category": "reit",
       "rev_growth": "+18.2%",
       "pe": "14.2x",
-      "ev": "24.4x",
+      "ev": "24.5x",
       "roe": "11.2%",
       "peg": "N/A",
       "net_margin": "122.4%",
@@ -3547,7 +3547,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "24.4x",
+          "24.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -3581,7 +3581,7 @@
       "category": "reit",
       "rev_growth": "+16.4%",
       "pe": "11.4x",
-      "ev": "17.8x",
+      "ev": "17.9x",
       "roe": "8.2%",
       "peg": "9.41",
       "net_margin": "70.8%",
@@ -3616,7 +3616,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "17.8x",
+          "17.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -3638,10 +3638,10 @@
         ],
         "FCF Yield %": [
           "3.8%",
-          "7.3%",
-          "6.5%",
+          "7.2%",
+          "6.4%",
           "5.2%",
-          "6.7%"
+          "6.6%"
         ]
       }
     },
@@ -3650,7 +3650,7 @@
       "category": "reit",
       "rev_growth": "+10.2%",
       "pe": "39.7x",
-      "ev": "22.9x",
+      "ev": "23.4x",
       "roe": "7.7%",
       "peg": "109.47",
       "net_margin": "43.1%",
@@ -3685,7 +3685,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "22.9x",
+          "23.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3718,12 +3718,12 @@
       "ticker": "GMG.AX",
       "category": "reit",
       "rev_growth": "+65.8%",
-      "pe": "16.7x",
+      "pe": "16.3x",
       "ev": "23.4x",
       "roe": "11.5%",
       "peg": "2.72",
       "net_margin": "68.4%",
-      "fcf_yield": "5.5%",
+      "fcf_yield": "5.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -3744,7 +3744,7 @@
           "80.4%"
         ],
         "Fwd P/E": [
-          "16.7x",
+          "16.3x",
           "N/A",
           "N/A",
           "N/A"
@@ -3768,7 +3768,7 @@
           "N/A"
         ],
         "FCF Yield %": [
-          "5.5%",
+          "5.6%",
           "N/A",
           "N/A",
           "N/A"
@@ -3780,7 +3780,7 @@
       "category": "reit",
       "rev_growth": "+29.9%",
       "pe": "63.5x",
-      "ev": "26.5x",
+      "ev": "26.8x",
       "roe": "2.9%",
       "peg": "11.37",
       "net_margin": "11.8%",
@@ -3815,7 +3815,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "26.5x",
+          "26.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -3849,7 +3849,7 @@
       "category": "reit",
       "rev_growth": "+16.7%",
       "pe": "53.3x",
-      "ev": "26.1x",
+      "ev": "26.4x",
       "roe": "10.7%",
       "peg": "2.83",
       "net_margin": "15.5%",
@@ -3884,7 +3884,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "26.1x",
+          "26.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -3918,7 +3918,7 @@
       "category": "reit",
       "rev_growth": "+39.1%",
       "pe": "74.4x",
-      "ev": "56.1x",
+      "ev": "57.1x",
       "roe": "3.8%",
       "peg": "3.66",
       "net_margin": "12.1%",
@@ -3953,7 +3953,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "56.1x",
+          "57.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -3987,7 +3987,7 @@
       "category": "stock",
       "rev_growth": "+86.4%",
       "pe": "16.7x",
-      "ev": "-199.8x",
+      "ev": "-195.9x",
       "roe": "-5.4%",
       "peg": "0.78",
       "net_margin": "-9.6%",
@@ -4022,7 +4022,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "-199.8x",
+          "-195.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -4056,7 +4056,7 @@
       "category": "stock",
       "rev_growth": "+50.1%",
       "pe": "33.9x",
-      "ev": "90.9x",
+      "ev": "90.4x",
       "roe": "10.2%",
       "peg": "0.53",
       "net_margin": "15.6%",
@@ -4091,7 +4091,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "90.9x",
+          "90.4x",
           "N/A",
           "N/A",
           "N/A",
@@ -4262,8 +4262,8 @@
       "ticker": "ASML.AS",
       "category": "stock",
       "rev_growth": "+55.2%",
-      "pe": "26.0x",
-      "ev": "34.8x",
+      "pe": "26.3x",
+      "ev": "33.8x",
       "roe": "65.6%",
       "peg": "0.95",
       "net_margin": "34.1%",
@@ -4291,14 +4291,14 @@
           "26.6%"
         ],
         "Fwd P/E": [
-          "26.0x",
+          "26.3x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "34.8x",
+          "33.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -4401,7 +4401,7 @@
       "category": "stock",
       "rev_growth": "+150.7%",
       "pe": "19.0x",
-      "ev": "25.5x",
+      "ev": "25.1x",
       "roe": "25.7%",
       "peg": "N/A",
       "net_margin": "32.8%",
@@ -4436,7 +4436,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "25.5x",
+          "25.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -4470,7 +4470,7 @@
       "category": "stock",
       "rev_growth": "+8.1%",
       "pe": "13.2x",
-      "ev": "12.1x",
+      "ev": "12.2x",
       "roe": "N/A",
       "peg": "0.90",
       "net_margin": "25.5%",
@@ -4505,7 +4505,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "12.1x",
+          "12.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -4539,7 +4539,7 @@
       "category": "stock",
       "rev_growth": "+2.4%",
       "pe": "15.4x",
-      "ev": "11.3x",
+      "ev": "11.5x",
       "roe": "16.2%",
       "peg": "2.80",
       "net_margin": "31.8%",
@@ -4574,7 +4574,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.3x",
+          "11.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -4608,7 +4608,7 @@
       "category": "stock",
       "rev_growth": "+112.5%",
       "pe": "-33.6x",
-      "ev": "21.1x",
+      "ev": "21.2x",
       "roe": "-43.6%",
       "peg": "N/A",
       "net_margin": "-25.4%",
@@ -4643,7 +4643,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "21.1x",
+          "21.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -4677,7 +4677,7 @@
       "category": "stock",
       "rev_growth": "+33.0%",
       "pe": "21.2x",
-      "ev": "19.4x",
+      "ev": "19.6x",
       "roe": "10.9%",
       "peg": "2.53",
       "net_margin": "10.3%",
@@ -4712,7 +4712,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "19.4x",
+          "19.6x",
           "N/A",
           "N/A",
           "N/A",
@@ -4746,7 +4746,7 @@
       "category": "stock",
       "rev_growth": "+24.2%",
       "pe": "21.9x",
-      "ev": "23.4x",
+      "ev": "23.2x",
       "roe": "48.7%",
       "peg": "1.18",
       "net_margin": "54.8%",
@@ -4781,7 +4781,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "23.4x",
+          "23.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -4815,7 +4815,7 @@
       "category": "stock",
       "rev_growth": "+21.9%",
       "pe": "21.9x",
-      "ev": "22.3x",
+      "ev": "22.5x",
       "roe": "7.7%",
       "peg": "0.61",
       "net_margin": "16.0%",
@@ -4850,7 +4850,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "22.3x",
+          "22.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -4882,13 +4882,13 @@
     {
       "ticker": "ISRG",
       "category": "stock",
-      "rev_growth": "+18.5%",
-      "pe": "36.1x",
-      "ev": "35.4x",
-      "roe": "17.4%",
+      "rev_growth": "+21.7%",
+      "pe": "36.0x",
+      "ev": "35.5x",
+      "roe": "17.9%",
       "peg": "1.98",
-      "net_margin": "28.4%",
-      "fcf_yield": "1.7%",
+      "net_margin": "25.5%",
+      "fcf_yield": "1.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -4898,35 +4898,35 @@
       ],
       "history": {
         "Croit. CA.": [
-          "+18.5%",
+          "+21.7%",
           "+20.5%",
           "+17.2%",
           "+14.5%",
           "N/A"
         ],
         "Marge Net %": [
-          "28.4%",
+          "25.5%",
           "28.4%",
           "27.8%",
           "25.2%",
           "21.3%"
         ],
         "Fwd P/E": [
-          "36.1x",
+          "36.0x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "35.4x",
+          "35.5x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "ROE": [
-          "17.4%",
+          "17.9%",
           "16.7%",
           "15.6%",
           "14.8%",
@@ -4940,7 +4940,7 @@
           "N/A"
         ],
         "FCF Yield %": [
-          "1.7%",
+          "1.6%",
           "1.6%",
           "0.8%",
           "0.5%",
@@ -4953,7 +4953,7 @@
       "category": "stock",
       "rev_growth": "+5.9%",
       "pe": "22.3x",
-      "ev": "18.7x",
+      "ev": "19.1x",
       "roe": "N/A",
       "peg": "2.80",
       "net_margin": "16.2%",
@@ -4988,7 +4988,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "18.7x",
+          "19.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -5091,7 +5091,7 @@
       "category": "stock",
       "rev_growth": "+28.0%",
       "pe": "20.0x",
-      "ev": "16.6x",
+      "ev": "16.3x",
       "roe": "29.8%",
       "peg": "0.94",
       "net_margin": "29.8%",
@@ -5126,7 +5126,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "16.6x",
+          "16.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -5159,12 +5159,12 @@
       "ticker": "MC.PA",
       "category": "stock",
       "rev_growth": "-2.9%",
-      "pe": "16.0x",
-      "ev": "10.9x",
+      "pe": "16.1x",
+      "ev": "10.8x",
       "roe": "16.6%",
       "peg": "1.91",
       "net_margin": "13.7%",
-      "fcf_yield": "6.1%",
+      "fcf_yield": "6.0%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -5188,14 +5188,14 @@
           "17.8%"
         ],
         "Fwd P/E": [
-          "16.0x",
+          "16.1x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "10.9x",
+          "10.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -5216,10 +5216,10 @@
           "N/A"
         ],
         "FCF Yield %": [
-          "6.1%",
-          "7.5%",
+          "6.0%",
+          "7.4%",
           "7.0%",
-          "5.6%",
+          "5.5%",
           "6.7%"
         ]
       }
@@ -5229,7 +5229,7 @@
       "category": "stock",
       "rev_growth": "+17.7%",
       "pe": "22.4x",
-      "ev": "20.7x",
+      "ev": "20.6x",
       "roe": "34.0%",
       "peg": "1.72",
       "net_margin": "40.3%",
@@ -5260,7 +5260,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "20.7x",
+          "20.6x",
           "N/A",
           "N/A",
           "N/A"
@@ -5290,7 +5290,7 @@
       "category": "stock",
       "rev_growth": "+379.3%",
       "pe": "4.3x",
-      "ev": "9.1x",
+      "ev": "9.0x",
       "roe": "88.3%",
       "peg": "0.16",
       "net_margin": "63.8%",
@@ -5325,7 +5325,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "9.1x",
+          "9.0x",
           "N/A",
           "N/A",
           "N/A",
@@ -5359,7 +5359,7 @@
       "category": "stock",
       "rev_growth": "+454.0%",
       "pe": "-48.2x",
-      "ev": "189.2x",
+      "ev": "190.5x",
       "roe": "0.6%",
       "peg": "0.38",
       "net_margin": "3.1%",
@@ -5394,7 +5394,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "189.2x",
+          "190.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -5428,7 +5428,7 @@
       "category": "stock",
       "rev_growth": "+105.9%",
       "pe": "13.6x",
-      "ev": "25.9x",
+      "ev": "25.8x",
       "roe": "117.2%",
       "peg": "0.26",
       "net_margin": "63.7%",
@@ -5463,7 +5463,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "25.9x",
+          "25.8x",
           "N/A",
           "N/A",
           "N/A",
@@ -5566,7 +5566,7 @@
       "category": "stock",
       "rev_growth": "+5.6%",
       "pe": "15.5x",
-      "ev": "11.6x",
+      "ev": "11.7x",
       "roe": "52.2%",
       "peg": "1.37",
       "net_margin": "11.1%",
@@ -5601,7 +5601,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "11.6x",
+          "11.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -5635,7 +5635,7 @@
       "category": "stock",
       "rev_growth": "+1.5%",
       "pe": "21.6x",
-      "ev": "15.9x",
+      "ev": "16.0x",
       "roe": "30.3%",
       "peg": "4.08",
       "net_margin": "18.4%",
@@ -5666,7 +5666,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "15.9x",
+          "16.0x",
           "N/A",
           "N/A",
           "N/A"
@@ -5695,8 +5695,8 @@
       "ticker": "RMS.PA",
       "category": "stock",
       "rev_growth": "+1.6%",
-      "pe": "27.5x",
-      "ev": "18.4x",
+      "pe": "27.7x",
+      "ev": "18.5x",
       "roe": "25.5%",
       "peg": "4.26",
       "net_margin": "28.0%",
@@ -5724,14 +5724,14 @@
           "29.0%"
         ],
         "Fwd P/E": [
-          "27.5x",
+          "27.7x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "18.4x",
+          "18.5x",
           "N/A",
           "N/A",
           "N/A",
@@ -5764,8 +5764,8 @@
       "ticker": "SPCX",
       "category": "stock",
       "rev_growth": "+91.9%",
-      "pe": "72.3x",
-      "ev": "651.3x",
+      "pe": "68.3x",
+      "ev": "650.5x",
       "roe": "N/A",
       "peg": "N/A",
       "net_margin": "-35.7%",
@@ -5790,13 +5790,13 @@
           "-44.6%"
         ],
         "Fwd P/E": [
-          "72.3x",
+          "68.3x",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "651.3x",
+          "650.5x",
           "N/A",
           "N/A",
           "N/A"
@@ -5826,7 +5826,7 @@
       "category": "stock",
       "rev_growth": "+10.4%",
       "pe": "21.7x",
-      "ev": "17.5x",
+      "ev": "17.9x",
       "roe": "14.3%",
       "peg": "2.04",
       "net_margin": "30.5%",
@@ -5861,7 +5861,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "17.5x",
+          "17.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -5895,7 +5895,7 @@
       "category": "stock",
       "rev_growth": "+9.8%",
       "pe": "19.7x",
-      "ev": "18.6x",
+      "ev": "18.1x",
       "roe": "18.6%",
       "peg": "1.35",
       "net_margin": "11.3%",
@@ -5930,7 +5930,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "18.6x",
+          "18.1x",
           "N/A",
           "N/A",
           "N/A",
@@ -5964,7 +5964,7 @@
       "category": "stock",
       "rev_growth": "+10.5%",
       "pe": "24.9x",
-      "ev": "24.7x",
+      "ev": "24.9x",
       "roe": "13.5%",
       "peg": "2.05",
       "net_margin": "15.0%",
@@ -5999,7 +5999,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "24.7x",
+          "24.9x",
           "N/A",
           "N/A",
           "N/A",
@@ -6032,12 +6032,12 @@
       "ticker": "TTE.PA",
       "category": "stock",
       "rev_growth": "+27.8%",
-      "pe": "8.0x",
-      "ev": "5.4x",
+      "pe": "8.1x",
+      "ev": "5.3x",
       "roe": "14.5%",
       "peg": "0.68",
       "net_margin": "9.1%",
-      "fcf_yield": "7.7%",
+      "fcf_yield": "7.6%",
       "quarters": [
         "2026 (TTM)",
         "2025",
@@ -6061,14 +6061,14 @@
           "7.8%"
         ],
         "Fwd P/E": [
-          "8.0x",
+          "8.1x",
           "N/A",
           "N/A",
           "N/A",
           "N/A"
         ],
         "EV/EBITDA": [
-          "5.4x",
+          "5.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -6089,11 +6089,11 @@
           "N/A"
         ],
         "FCF Yield %": [
-          "7.7%",
-          "5.9%",
+          "7.6%",
+          "5.8%",
           "9.0%",
-          "13.0%",
-          "18.0%"
+          "12.9%",
+          "17.8%"
         ]
       }
     },
@@ -6102,7 +6102,7 @@
       "category": "stock",
       "rev_growth": "+25.5%",
       "pe": "172.3x",
-      "ev": "132.7x",
+      "ev": "134.7x",
       "roe": "4.7%",
       "peg": "3.61",
       "net_margin": "3.7%",
@@ -6137,7 +6137,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "132.7x",
+          "134.7x",
           "N/A",
           "N/A",
           "N/A",
@@ -6171,7 +6171,7 @@
       "category": "stock",
       "rev_growth": "+12.2%",
       "pe": "15.6x",
-      "ev": "20.5x",
+      "ev": "20.2x",
       "roe": "37.2%",
       "peg": "6.12",
       "net_margin": "17.3%",
@@ -6206,7 +6206,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "20.5x",
+          "20.2x",
           "N/A",
           "N/A",
           "N/A",
@@ -6309,7 +6309,7 @@
       "category": "stock",
       "rev_growth": "+24.1%",
       "pe": "22.1x",
-      "ev": "29.7x",
+      "ev": "29.3x",
       "roe": "43.9%",
       "peg": "0.70",
       "net_margin": "15.1%",
@@ -6344,7 +6344,7 @@
           "N/A"
         ],
         "EV/EBITDA": [
-          "29.7x",
+          "29.3x",
           "N/A",
           "N/A",
           "N/A",
@@ -6489,7 +6489,7 @@
       "category": "stock",
       "date": "2026-10-20",
       "date_formatted": "20/10/2026",
-      "is_past": false,
+      "is_past": true,
       "link": "https://stockanalysis.com/stocks/isrg/financials/?p=quarterly"
     },
     {
@@ -6497,7 +6497,7 @@
       "category": "stock",
       "date": "2026-10-20",
       "date_formatted": "20/10/2026",
-      "is_past": false,
+      "is_past": true,
       "link": "https://stockanalysis.com/stocks/spcx/financials/?p=quarterly"
     },
     {
@@ -6773,6 +6773,14 @@
       "link": "https://stockanalysis.com/stocks/pld/financials/?p=quarterly"
     },
     {
+      "ticker": "ISRG",
+      "category": "stock",
+      "date": "2027-01-21",
+      "date_formatted": "21/01/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/isrg/financials/?p=quarterly"
+    },
+    {
       "ticker": "JNJ",
       "category": "stock",
       "date": "2027-01-26",
@@ -6781,12 +6789,36 @@
       "link": "https://stockanalysis.com/stocks/jnj/financials/?p=quarterly"
     },
     {
+      "ticker": "MC.PA",
+      "category": "stock",
+      "date": "2027-01-26",
+      "date_formatted": "26/01/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/mc/financials/?p=quarterly"
+    },
+    {
       "ticker": "ASML.AS",
       "category": "stock",
       "date": "2027-01-27",
       "date_formatted": "27/01/2027",
       "is_past": false,
       "link": "https://stockanalysis.com/stocks/asml/financials/?p=quarterly"
+    },
+    {
+      "ticker": "PEP",
+      "category": "stock",
+      "date": "2027-02-02",
+      "date_formatted": "02/02/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/pep/financials/?p=quarterly"
+    },
+    {
+      "ticker": "SPCX",
+      "category": "stock",
+      "date": "2027-02-09",
+      "date_formatted": "09/02/2027",
+      "is_past": false,
+      "link": "https://stockanalysis.com/stocks/spcx/financials/?p=quarterly"
     },
     {
       "ticker": "RMS.PA",
